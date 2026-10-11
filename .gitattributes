@@ -1,0 +1,26 @@
+# Texto normalizado en Git
+* text=auto eol=lf
+
+# Scripts Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Scripts Unix/Linux
+*.sh text eol=lf
+
+# Archivos binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
+*.pdf binary
+*.zip binary
+*.jar binary
+
+*.woff binary
+*.woff2 binary
+*.ttf binary

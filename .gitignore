@@ -1,0 +1,71 @@
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+secrets/
+*.secret
+
+# Java / Maven
+**/target/
+*.class
+
+hs_err_pid*
+replay_pid*
+
+# Node / Angular
+node_modules/
+frontend/node_modules/
+
+dist/
+frontend/dist/
+
+.angular/
+coverage/
+
+# Pruebas y resultados locales
+playwright-report/
+test-results/
+
+# Logs y temporales
+*.log
+logs/
+
+tmp/
+temp/
+
+*.tmp
+*.swp
+*.swo
+
+# Datos locales
+postgres-data/
+.data/
+
+*.sqlite
+*.sqlite3
+
+# Docker local
+compose.override.yaml
+docker-compose.override.yml
+
+# IDE
+.idea/
+*.iml
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
