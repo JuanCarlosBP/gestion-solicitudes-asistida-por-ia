@@ -28,6 +28,22 @@ class BaseVerificableIT {
         return new PostgreSQLContainer(
                         DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                 .withDatabaseName("gestion")
+                .withCommand(
+                        "postgres",
+                        "-c",
+                        "log_error_verbosity=terse",
+                        "-c",
+                        "log_min_error_statement=panic",
+                        "-c",
+                        "log_parameter_max_length_on_error=0",
+                        "-c",
+                        "log_statement=none",
+                        "-c",
+                        "log_min_duration_statement=-1",
+                        "-c",
+                        "log_min_duration_sample=-1",
+                        "-c",
+                        "log_line_prefix=%m [%p] %e ")
                 .withUsername("administrador_prueba")
                 .withPassword("administracion-ficticia-prueba")
                 .withInitScript("postgres-inicial.sql");
@@ -35,6 +51,7 @@ class BaseVerificableIT {
 
     private ConfigurableApplicationContext arrancar(PostgreSQLContainer base, String... opciones) {
         return new SpringApplicationBuilder(GestionSolicitudesApplication.class)
+                .profiles("test")
                 .properties(
                         Map.of(
                                 "DB_URL", base.getJdbcUrl(),
@@ -67,7 +84,7 @@ class BaseVerificableIT {
                 var salud = consultar(cliente, contexto, "/api/salud");
                 assertThat(salud.statusCode()).isEqualTo(200);
                 assertThat(salud.body()).isEqualTo("{\"estado\":\"DISPONIBLE\"}");
-                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(1);
+                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(2);
                 var contrato = consultar(cliente, contexto, "/v3/api-docs");
                 assertThat(contrato.statusCode()).isEqualTo(200);
                 var json = JsonMapper.builder().build().readTree(contrato.body());
@@ -76,7 +93,9 @@ class BaseVerificableIT {
                         json.path("paths").path("/api/salud").path("get").path("responses");
                 assertThat(respuestas.has("200")).isTrue();
                 assertThat(respuestas.has("503")).isTrue();
-                assertThat(json.path("paths").size()).isEqualTo(1);
+                assertThat(json.path("paths").size()).isEqualTo(6);
+                assertThat(json.path("components").path("securitySchemes").has("BearerAuth"))
+                        .isTrue();
                 assertThat(
                                 json.path("components")
                                         .path("schemas")
@@ -87,12 +106,12 @@ class BaseVerificableIT {
                 assertThat(consultar(cliente, contexto, "/swagger-ui/index.html").statusCode())
                         .isEqualTo(200);
                 assertThat(consultar(cliente, contexto, "/actuator/env").statusCode())
-                        .isEqualTo(403);
+                        .isEqualTo(401);
                 comprobarPermisos(base);
             }
             // Mismo PostgreSQL y volumen del contenedor: se conserva el historial.
             try (var segundo = arrancar(base, "--server.port=0")) {
-                assertThat(segundo.getBean(Flyway.class).info().applied()).hasSize(1);
+                assertThat(segundo.getBean(Flyway.class).info().applied()).hasSize(2);
                 assertThat(segundo.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
                 assertThat(consultar(cliente, segundo, "/api/salud").statusCode()).isEqualTo(200);
             }
@@ -128,9 +147,18 @@ class BaseVerificableIT {
                 var resultado =
                         sentencia.executeQuery(
                                 "SELECT tablename FROM pg_tables WHERE schemaname = 'gestion'")) {
-            assertThat(resultado.next()).isTrue();
-            assertThat(resultado.getString(1)).isEqualTo("flyway_schema_history");
-            assertThat(resultado.next()).isFalse();
+            var tablas = new java.util.HashSet<String>();
+            while (resultado.next()) {
+                tablas.add(resultado.getString(1));
+            }
+            assertThat(tablas)
+                    .containsExactlyInAnyOrder(
+                            "flyway_schema_history",
+                            "usuarios",
+                            "roles",
+                            "usuarios_roles",
+                            "sesiones_acceso",
+                            "tokens_refresco");
         }
     }
 
@@ -152,7 +180,7 @@ class BaseVerificableIT {
                     .isInstanceOf(org.springframework.beans.BeansException.class);
             // Una nueva aplicación con ubicaciones válidas se recupera del rollback de PostgreSQL.
             try (var contexto = arrancar(base, "--server.port=0")) {
-                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(1);
+                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(2);
             }
         }
     }
