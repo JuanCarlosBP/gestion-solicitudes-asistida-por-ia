@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <!-- HttpSecurity.build y sus configuradores declaran Exception en su API.
+       No se puede estrechar la firma del factory sin ocultar el fallo de arranque. -->
+  <Match>
+    <Class name="es.gestionsolicitudes.configuracion.SeguridadTecnica"/>
+    <Method name="cadenaTecnica"/>
+    <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION"/>
+  </Match>
+  <!-- El DataSource es un recurso compartido administrado por Spring/Hikari.
+       Copiarlo rompería el ciclo de vida del pool. No se expone con un getter. -->
+  <Match>
+    <Class name="es.gestionsolicitudes.salud.persistencia.ComprobacionPostgres"/>
+    <Method name="&lt;init&gt;" params="javax.sql.DataSource"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+</FindBugsFilter>
