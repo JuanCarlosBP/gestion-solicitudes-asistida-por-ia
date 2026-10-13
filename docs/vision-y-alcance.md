@@ -1,7 +1,7 @@
 # Visión y alcance — Gestión de Solicitudes
 
 **Versión:** 1.0
-**Estado:** Alcance funcional inicial
+**Estado:** Aprobada como alcance funcional inicial
 
 ## 1. Propósito
 
@@ -101,7 +101,14 @@ La primera versión deberá permitir:
 - consultar el historial autorizado;
 - impedir operaciones no permitidas;
 - detectar modificaciones concurrentes incompatibles;
-- evitar efectos duplicados en las operaciones que lo requieran.
+- evitar efectos duplicados en las operaciones que lo requieran;
+- acceder directamente a las pantallas principales mediante rutas de Angular;
+- disponer de endpoints REST independientes para operaciones CRUD y de negocio;
+- consultar la documentación de la API mediante OpenAPI y Swagger UI;
+- utilizar una demo pública validada con datos ficticios.
+
+Un endpoint es una dirección de la API para una operación concreta.
+CRUD agrupa las operaciones de crear, consultar, modificar y eliminar.
 
 ## 7. Integridad y concurrencia
 
@@ -190,7 +197,12 @@ controlada el siguiente recorrido:
 8. la aprueba o rechaza;
 9. el sistema impide operaciones no autorizadas;
 10. los conflictos concurrentes se detectan sin perder información;
-11. el resultado y su historial pueden consultarse posteriormente.
+11. el resultado y su historial pueden consultarse posteriormente;
+12. las pantallas principales admiten acceso directo mediante sus rutas Angular;
+13. las operaciones CRUD y de negocio tienen endpoints REST independientes,
+    con los mismos controles al llamarlos directamente;
+14. OpenAPI y Swagger UI describen la API y permiten consultar su contrato;
+15. la demo pública se ha validado desde Internet con datos ficticios.
 
 Además, el comportamiento deberá ser coherente con los requisitos,
 políticas y criterios de calidad aprobados para la versión.

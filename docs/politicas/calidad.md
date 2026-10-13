@@ -87,6 +87,10 @@ el agente deberá detenerse en lugar de inventarla.
 Dependiendo del cambio, comprobaremos:
 
 - compilación o build;
+- comprobación de tipos;
+- formato y lint, que detecta incumplimientos de las reglas del código;
+- análisis estático;
+- análisis de dependencias y vulnerabilidades;
 - pruebas relacionadas;
 - funcionamiento esperado;
 - datos no válidos;
@@ -96,6 +100,9 @@ Dependiendo del cambio, comprobaremos:
 - concurrencia;
 - regresiones;
 - cambios inesperados.
+
+El análisis estático revisa el código sin ejecutar la aplicación para
+detectar errores, malas prácticas o problemas conocidos.
 
 Si alguna prueba necesaria no pudo ejecutarse,
 se indicará claramente.
@@ -113,7 +120,7 @@ Deberán cumplirse:
 - documentación actualizada;
 - evidencias necesarias.
 
-La aceptación final corresponde al usuario.
+La aceptación final corresponde a la persona responsable del proyecto.
 
 ## 6. Antes de integrar
 

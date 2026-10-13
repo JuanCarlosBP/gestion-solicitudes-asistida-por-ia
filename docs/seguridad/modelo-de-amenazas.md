@@ -252,56 +252,60 @@ Debemos revisar especialmente:
 
 ## 9. Amenazas conocidas desde el principio
 
-| ID | Amenaza | Prioridad |
-|---|---|---|
-| AM-01 | Robar, falsificar o reutilizar credenciales | Alta |
-| AM-02 | Acceder a recursos ajenos cambiando un ID | Alta |
-| AM-03 | Manipular rol, propietario, estado o aprobador | Alta |
-| AM-04 | Conseguir que datos enviados se conviertan en SQL | Alta |
-| AM-05 | Conseguir que contenido del usuario se ejecute en el navegador | Alta |
-| AM-06 | Provocar desde otra web una operación de un usuario autenticado | Alta si aplica |
-| AM-07 | Permitir conexiones web desde orígenes que no deberían estar autorizados | Media/Alta |
-| AM-08 | Saltarse los estados o reglas de aprobación | Alta |
-| AM-09 | Aprobar la propia solicitud | Alta |
-| AM-10 | Manipular importes o totales desde el cliente | Alta |
-| AM-11 | Sobrescribir sin aviso el cambio reciente de otro usuario | Alta |
-| AM-12 | Permitir dos decisiones incompatibles al mismo tiempo | Alta |
-| AM-13 | Repetir una petición y aplicar dos veces el mismo efecto | Alta |
-| AM-14 | Exponer secretos o configuración | Alta |
-| AM-15 | Exponer funciones administrativas o diagnósticos | Alta |
-| AM-16 | Incorporar una dependencia o herramienta comprometida | Alta |
-| AM-17 | Tener un historial insuficiente o manipulable | Alta |
-| AM-18 | Filtrar información mediante logs, navegador o caché | Alta |
-| AM-19 | Agotar recursos mediante abuso del sistema | Media/Alta |
-| AM-20 | Desplegar algo diferente de lo revisado | Alta |
-| AM-21 | Dejar datos a medias cuando ocurre un error | Alta |
-| AM-22 | Permitir una acción porque el control de seguridad ha fallado | Alta |
-| AM-23 | No poder recuperar correctamente el servicio o los datos | Media |
-| AM-24 | Permitir accesos cruzados indebidos en la demo | Alta |
+| ID | STRIDE | Amenaza | Prioridad | Respuesta inicial |
+|---|---|---|---|---|
+| AM-01 | S | Robar, falsificar o reutilizar credenciales | Alta | Mitigar |
+| AM-02 | E / I | Acceder a recursos ajenos cambiando un ID | Alta | Mitigar |
+| AM-03 | T / E | Manipular rol, propietario, estado o aprobador | Alta | Mitigar |
+| AM-04 | T / I | Conseguir que datos enviados se conviertan en SQL | Alta | Mitigar |
+| AM-05 | T / I | Conseguir que contenido del usuario se ejecute en el navegador | Alta | Mitigar |
+| AM-06 | T / E | Provocar desde otra web una operación autenticada | Alta si aplica | Mitigar |
+| AM-07 | I / E | Permitir orígenes web no autorizados | Media/Alta | Mitigar |
+| AM-08 | T / E | Saltarse estados o reglas de aprobación | Alta | Mitigar |
+| AM-09 | T / E | Aprobar la propia solicitud | Alta | Eliminar mediante regla |
+| AM-10 | T | Manipular importes o totales | Alta | Mitigar |
+| AM-11 | T | Sobrescribir cambios recientes | Alta | Mitigar |
+| AM-12 | T | Permitir decisiones incompatibles simultáneas | Alta | Mitigar |
+| AM-13 | T | Aplicar dos veces el mismo efecto | Alta | Mitigar |
+| AM-14 | I | Exponer secretos o configuración | Alta | Mitigar |
+| AM-15 | I / E | Exponer administración o diagnósticos | Alta | Mitigar |
+| AM-16 | T / E | Incorporar un componente comprometido | Alta | Mitigar |
+| AM-17 | R / T | Historial insuficiente o manipulable | Alta | Mitigar |
+| AM-18 | I | Filtrar información mediante logs o caché | Alta | Mitigar |
+| AM-19 | D | Agotar recursos mediante abuso | Media/Alta | Mitigar |
+| AM-20 | T | Desplegar algo diferente de lo revisado | Alta | Mitigar |
+| AM-21 | T / D | Dejar datos a medias tras un error | Alta | Mitigar |
+| AM-22 | E | Permitir una acción porque falló el control | Alta | Eliminar mediante fallo seguro |
+| AM-23 | D | No poder recuperar servicio o datos | Media | Mitigar |
+| AM-24 | I / E | Accesos cruzados indebidos en la demo | Alta | Mitigar |
+
+
+La prioridad inicial no sustituye la evaluación posterior del riesgo que permanezca.
+La respuesta inicial deberá concretarse y comprobarse en cada especificación.
 
 ## 10. Amenazas que dependerán de funciones futuras
 
 Algunos riesgos solo aparecerán si añadimos determinadas funciones.
 
-### SSRF
+### AC-01 — SSRF
 
 Habrá que analizarlo si el backend empieza a acceder
 a direcciones proporcionadas por usuarios.
 
-### Archivos maliciosos
+### AC-02 — Archivos maliciosos
 
 Habrá que analizarlo si incorporamos subida de archivos.
 
-### Inyección de comandos
+### AC-03 — Inyección de comandos
 
 Habrá que analizarla si el sistema comienza a ejecutar procesos externos
 utilizando información recibida.
 
-### Recuperación de cuentas
+### AC-04 — Recuperación de cuentas
 
 Habrá que analizar sus propios riesgos si se incorpora esa funcionalidad.
 
-### Integraciones externas
+### AC-05 — Integraciones externas
 
 Cada nueva integración puede crear nuevas entradas y fronteras de confianza.
 

@@ -43,6 +43,10 @@ y al despliegue.
 - Cada contraseña tendrá una sal aleatoria propia, es decir, un valor diferente
   que ayuda a proteger su almacenamiento.
 - No se usarán directamente hashes rápidos como SHA-256 para guardar contraseñas.
+- Mientras la contraseña sea el único factor de autenticación, se exigirán
+  al menos 15 caracteres.
+- Se admitirán al menos 64 caracteres y la contraseña no se recortará
+  silenciosamente.
 - Se permitirán contraseñas largas, espacios y gestores de contraseñas.
 - No se obligará a usar combinaciones arbitrarias ni a cambiar la contraseña
   cada cierto tiempo sin una razón de seguridad.
@@ -103,6 +107,11 @@ y al despliegue.
 - La información privada no podrá quedar en una caché compartida y terminar
   mostrándose a otro usuario.
 - Toda la aplicación pública funcionará mediante HTTPS.
+- Se utilizarán cabeceras HTTP de seguridad adecuadas para limitar contenido
+  ejecutable, reforzar HTTPS y evitar usos no previstos del navegador.
+- Su configuración concreta se decidirá y probará con la arquitectura real.
+- Al cerrar sesión se eliminarán las credenciales temporales del navegador,
+  según el mecanismo de autenticación aprobado.
 
 ## 8. Secretos y configuración
 
@@ -176,6 +185,8 @@ y al despliegue.
 - Los usuarios normales no podrán modificar libremente el historial
   de auditoría.
 - Los eventos de seguridad importantes deberán poder localizarse y revisarse.
+- Los logs y los datos tendrán plazos definidos de conservación y borrado,
+  acordes con su finalidad y con las obligaciones aplicables.
 
 ## 13. Infraestructura, Docker y PostgreSQL
 

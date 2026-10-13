@@ -15,7 +15,10 @@ cuando esa explicación sea importante.
 
 **Origen:** revisión inicial de `docs/seguridad.md`.
 
-**Informe original:**
+**Estado de CAM-001:** Cerrado
+**Cierre versionado en:** G01 — `4f7eac858fa21b77d0f1184828fb4f2da2f072f7`
+
+**Ruta histórica del informe original, eliminado antes de G01:**
 `docs/evidencias/001-revision-seguridad/informe.md`
 
 El informe encontró aspectos que debían añadirse,
@@ -25,19 +28,19 @@ Aquí registramos qué hacemos con cada uno.
 
 | ID | Tema detectado | Decisión | Dónde se resolverá |
 |---|---|---|---|
-| SEG-001 | Permisos por acción y recurso | Incorporar | Seguridad + specs + QA |
+| SEG-001 | Permisos por acción y recurso | Incorporar | Seguridad + especificaciones + QA |
 | SEG-002 | Duración y finalización de acceso | Incorporar cuando decidamos autenticación | ADR + documentación técnica |
 | SEG-003 | Protección de sesión o tokens | Incorporar cuando decidamos autenticación | ADR + seguridad técnica + QA |
 | SEG-004 | Seguridad de la demo | Incorporar | Modelo de amenazas + spec demo |
 | SEG-005 | CSRF y CORS | Incorporar según la arquitectura elegida | Seguridad + OWASP + ADR |
 | SEG-006 | SQL Injection | Incorporar | Seguridad + OWASP + QA |
 | SEG-007 | XSS | Incorporar | Seguridad + OWASP + QA |
-| SEG-008 | Reglas de aprobación | Incorporar | Specs de solicitudes y aprobaciones |
-| SEG-009 | Cambios simultáneos | Incorporar | Seguridad + specs + concurrencia |
-| SEG-010 | Repetición de operaciones | Incorporar | Specs + idempotencia + QA |
-| SEG-011 | Exactitud de importes | Incorporar | Specs + modelo de datos + QA |
+| SEG-008 | Reglas de aprobación | Incorporar | Especificaciones de solicitudes y aprobaciones |
+| SEG-009 | Cambios simultáneos | Incorporar | Seguridad + especificaciones + concurrencia |
+| SEG-010 | Repetición de operaciones | Incorporar | Especificaciones + idempotencia + QA |
+| SEG-011 | Exactitud de importes | Incorporar | Especificaciones + modelo de datos + QA |
 | SEG-012 | Fallar de forma segura | Incorporar | Seguridad + calidad + OWASP |
-| SEG-013 | Control de datos recibidos | Incorporar | Specs + OpenAPI + QA |
+| SEG-013 | Control de datos recibidos | Incorporar | Especificaciones + OpenAPI + QA |
 | SEG-014 | Abuso de recursos | Incorporar | Seguridad + amenazas + QA |
 | SEG-015 | Gestión y recuperación de cuentas | Decidir cuando exista esa función | Spec de identidad |
 | SEG-016 | Contraseñas | Incorporar | Seguridad |
@@ -76,14 +79,30 @@ la cobertura OWASP, la política de calidad y esta conciliación fueron aprobado
 El informe temporal se eliminó del árbol del proyecto antes del primer commit.
 Esta conciliación conserva las decisiones y los destinos de sus 28 observaciones.
 
-## Cuándo podremos cerrar CAM-001
+## Cierre de CAM-001
 
-Este cambio se considerará resuelto cuando:
+Se cumplieron las condiciones de cierre documental:
 
-- `docs/seguridad.md` esté aprobado;
-- el modelo de amenazas esté aprobado;
-- la cobertura OWASP esté aprobada;
-- la política de calidad esté aprobada;
-- los 28 puntos tengan un destino;
-- el informe temporal se haya eliminado antes del primer commit y su retirada
-  quede recogida en esta conciliación.
+- política de seguridad, modelo de amenazas y cobertura OWASP aprobados;
+- política de calidad aprobada;
+- los 28 puntos SEG tienen una decisión y un destino;
+- informe temporal retirado antes de G01, con su retirada documentada;
+- conciliación incluida en el cierre versionado indicado arriba.
+
+El cierre documental no significa que los controles estén implementados
+ni que se hayan ejecutado sus pruebas. Eso se comprobará en cada incremento.
+
+## CAM-002 — Proyecto único y eliminación de la fase comparativa
+
+**Estado de CAM-002:** Decisión aprobada por instrucción humana.
+**Fecha de la decisión registrada:** 2026-10-13.
+**Versionado de esta actualización:** Pendiente de las operaciones Git del usuario.
+
+Se concentra todo el alcance en un único producto y repositorio.
+P0–P6 pasan a ser las fases definitivas del proyecto.
+Se retira la antigua fase comparativa y se conserva aquí la decisión de eliminarla.
+
+No se reduce ninguna funcionalidad, prueba, documentación o control.
+Solo se elimina el desarrollo comparativo que se había previsto.
+La decisión afecta al mapa, al índice, a la memoria y a las referencias al proceso.
+G02-A y G02-B siguen siendo subdivisiones operativas de G02 dentro de P1.

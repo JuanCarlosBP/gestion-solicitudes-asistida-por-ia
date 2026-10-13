@@ -35,6 +35,11 @@ Nunca escribiremos `Verificado` si no existe evidencia real.
 
 ## 3. A01:2025 — Pérdida de control de acceso
 
+### Amenazas relacionadas
+
+AM-02, AM-03, AM-06, AM-09, AM-24; AC-01 si aparece su función.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
+
 ### Qué significa
 
 Un usuario puede consultar o hacer algo que no debería tener permitido.
@@ -85,6 +90,11 @@ Controles relacionados con:
 
 ## 4. A02:2025 — Configuración de seguridad incorrecta
 
+### Amenazas relacionadas
+
+AM-07, AM-14, AM-15, AM-19.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
+
 ### Qué significa
 
 El código puede ser correcto y el sistema seguir siendo inseguro
@@ -132,7 +142,12 @@ Controles relacionados con:
 
 **Estado:** Pendiente.
 
-## 5. A03:2025 — Fallos en la cadena de suministro
+## 5. A03:2025 — Fallos en la cadena de suministro de software
+
+### Amenazas relacionadas
+
+AM-16, AM-20.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
 
 ### Qué significa
 
@@ -190,6 +205,11 @@ Controles relacionados con:
 
 ## 6. A04:2025 — Fallos criptográficos
 
+### Amenazas relacionadas
+
+AM-01, AM-14, AM-18.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
+
 ### Qué significa
 
 Información que debería estar protegida queda expuesta
@@ -237,6 +257,11 @@ Controles relacionados con:
 
 ## 7. A05:2025 — Inyección
 
+### Amenazas relacionadas
+
+AM-04, AM-05; AC-03 si aparece su función.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
+
 ### Qué significa
 
 Un dato enviado al sistema termina siendo interpretado como una instrucción.
@@ -280,6 +305,11 @@ Controles relacionados con:
 **Estado:** Pendiente.
 
 ## 8. A06:2025 — Diseño inseguro
+
+### Amenazas relacionadas
+
+AM-08, AM-09, AM-10, AM-11, AM-12, AM-13, AM-21, AM-22.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
 
 ### Qué significa
 
@@ -330,6 +360,11 @@ Controles relacionados con:
 
 ## 9. A07:2025 — Fallos de autenticación
 
+### Amenazas relacionadas
+
+AM-01; AC-04 si aparece su función.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
+
 ### Qué significa
 
 Alguien consigue hacerse pasar por otro usuario
@@ -378,7 +413,12 @@ Controles relacionados con:
 
 **Estado:** Pendiente.
 
-## 10. A08:2025 — Fallos de integridad del software o los datos
+## 10. A08:2025 — Fallos de integridad del software o de los datos
+
+### Amenazas relacionadas
+
+AM-03, AM-16, AM-20.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
 
 ### Qué significa
 
@@ -421,7 +461,12 @@ Controles relacionados con:
 
 **Estado:** Pendiente.
 
-## 11. A09:2025 — Fallos de registro y alertas
+## 11. A09:2025 — Fallos de registro y alertas de seguridad
+
+### Amenazas relacionadas
+
+AM-17, AM-18.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
 
 ### Qué significa
 
@@ -467,7 +512,12 @@ Controles relacionados con:
 
 **Estado:** Pendiente.
 
-## 12. A10:2025 — Manejo incorrecto de situaciones excepcionales
+## 12. A10:2025 — Manejo inadecuado de condiciones excepcionales
+
+### Amenazas relacionadas
+
+AM-19, AM-21, AM-22, AM-23.
+Véase el [modelo de amenazas](modelo-de-amenazas.md).
 
 ### Qué significa
 
