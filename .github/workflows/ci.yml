@@ -2,6 +2,8 @@ name: Verificación de la base 001
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 
 permissions:
@@ -17,6 +19,7 @@ jobs:
     timeout-minutes: 25
     env:
       MAVEN_USER_HOME: ${{ github.workspace }}/tmp/maven-user
+      QA_EVIDENCE_DIR: ${{ github.workspace }}/tmp/evidencias/backend
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -24,23 +27,26 @@ jobs:
       - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
         with:
           distribution: temurin
-          java-version: '21.0.12.1+1'
+          java-version: '21.0.12.1'
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.13.0'
+      - name: Preparar evidencias exclusivas del job
+        shell: bash
+        run: |
+          test "$QA_EVIDENCE_DIR" = "$GITHUB_WORKSPACE/tmp/evidencias/backend"
+          rm -rf -- "$QA_EVIDENCE_DIR"
+          mkdir -p -- "$QA_EVIDENCE_DIR"
       - name: Construcción, formato, unitarias, PostgreSQL y análisis
         working-directory: backend
         run: sh mvnw -B -ntp verify
       - name: Inventario de dependencias Maven
-        if: ${{ !cancelled() }}
         working-directory: backend
         run: sh mvnw -B -ntp dependency:list -DoutputFile=target/dependencias.txt -DappendOutput=false
       - name: Preparar base pública de vulnerabilidades
-        if: ${{ !cancelled() }}
         shell: pwsh
         run: ./qa/preparar-auditoria.ps1
       - name: Auditoría Maven sin enviar inventarios
-        if: ${{ !cancelled() }}
         run: node qa/auditar-maven.mjs
       - name: Conservar informes backend
         if: ${{ always() }}
@@ -52,8 +58,8 @@ jobs:
             backend/target/surefire-reports/
             backend/target/failsafe-reports/
             backend/target/spotbugs*.xml
-            qa/evidencias/ag006/maven-osv.json
-            qa/evidencias/ag006/maven.cdx.json
+            ${{ env.QA_EVIDENCE_DIR }}/maven-osv.json
+            ${{ env.QA_EVIDENCE_DIR }}/maven.cdx.json
 
   frontend:
     runs-on: ubuntu-24.04
@@ -103,6 +109,7 @@ jobs:
     env:
       PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tmp/playwright
       npm_config_cache: ${{ github.workspace }}/tmp/npm-cache
+      QA_EVIDENCE_DIR: ${{ github.workspace }}/tmp/evidencias/compose
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -110,6 +117,12 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.13.0'
+      - name: Preparar evidencias exclusivas del job
+        shell: bash
+        run: |
+          test "$QA_EVIDENCE_DIR" = "$GITHUB_WORKSPACE/tmp/evidencias/compose"
+          rm -rf -- "$QA_EVIDENCE_DIR"
+          mkdir -p -- "$QA_EVIDENCE_DIR"
       - name: Preparar dependencias y navegador
         working-directory: frontend
         run: |
@@ -136,6 +149,4 @@ jobs:
           retention-days: 7
           path: |
             frontend/test-results/
-            qa/evidencias/ag006/compose-persistencia-caida.json
-            qa/evidencias/ag006/navegador-*.json
-            qa/evidencias/ag006/inicio-*.png
+            ${{ env.QA_EVIDENCE_DIR }}/

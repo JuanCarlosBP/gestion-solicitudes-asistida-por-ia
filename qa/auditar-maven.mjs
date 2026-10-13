@@ -1,10 +1,11 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { prepararDirectorioEvidencias } from './rutas-evidencia.mjs';
 
 const raiz = resolve(import.meta.dirname, '..');
-const directorio = resolve(raiz, 'qa/evidencias/ag006');
-mkdirSync(directorio, { recursive: true });
+const directorio = prepararDirectorioEvidencias();
+console.log(`Evidencias de auditoría: ${directorio}`);
 const origen = resolve(raiz, 'backend/target/dependencias.txt');
 const componentes = [];
 for (const linea of readFileSync(origen, 'utf8').split(/\r?\n/)) {

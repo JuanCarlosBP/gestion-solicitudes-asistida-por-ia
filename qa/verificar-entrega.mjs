@@ -1,12 +1,20 @@
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { resolve, relative } from 'node:path';
+import { resolve, relative, isAbsolute, sep } from 'node:path';
 import { createHash } from 'node:crypto';
+import { prepararDirectorioEvidencias, rutaDelProyecto } from './rutas-evidencia.mjs';
 
 const raiz = resolve(import.meta.dirname, '..');
-const evidencia = resolve(raiz, 'qa/evidencias/ag006');
+const baseline = rutaDelProyecto(process.env.QA_BASELINE_DIR || 'qa/evidencias/ag006');
+const destino = rutaDelProyecto(process.env.QA_EVIDENCE_DIR || 'tmp/evidencias/local');
+const respectoBaseline = relative(baseline, destino);
+if (!respectoBaseline || (!isAbsolute(respectoBaseline) && respectoBaseline !== '..' && !respectoBaseline.startsWith(`..${sep}`))) {
+  throw new Error('La baseline es de solo lectura; el destino QA no puede estar dentro de ella.');
+}
+const evidencia = prepararDirectorioEvidencias(destino);
+console.log(`Baseline de solo lectura: ${baseline}; salidas de entrega: ${evidencia}`);
 const normalizar = (ruta) => ruta.replaceAll('\\', '/');
 const huella = (datos) => createHash('sha256').update(datos).digest('hex').toUpperCase();
-const inicial = JSON.parse(readFileSync(resolve(evidencia, 'inventario-inicial.json'), 'utf8'));
+const inicial = JSON.parse(readFileSync(resolve(baseline, 'inventario-inicial.json'), 'utf8'));
 const anteriores = new Map(inicial.map((archivo) => [normalizar(archivo.ruta), archivo]));
 const prefijos = [
   'docs/trazabilidad/ejecuciones-agentes.csv',
@@ -34,7 +42,7 @@ const permitidos = new Set([
   'frontend/package.json',
 ]);
 const omitir = new Set(['.git', 'node_modules', 'tmp', 'target', 'dist', '.angular', 'test-results', 'playwright-report']);
-const salidasPropias = new Set(['qa/evidencias/ag006/entrega-manifiesto.json', 'qa/evidencias/ag006/entrega-integridad.json']);
+const salidasPropias = new Set(['entrega-manifiesto.json', 'entrega-integridad.json'].map((nombre) => normalizar(relative(raiz, resolve(evidencia, nombre)))));
 const archivos = [];
 function recorrer(directorio) {
   for (const entrada of readdirSync(directorio, { withFileTypes: true })) {
@@ -59,7 +67,8 @@ const inesperados = archivos.filter((archivo) =>
   archivo.estado === 'CREADO' && !/^(?:backend\/|frontend\/|infraestructura\/|qa\/|\.github\/workflows\/|docs\/trazabilidad\/|docs\/documentaciondev\/|docs\/decisiones\/ADR-0002)/.test(archivo.ruta));
 const csv = readFileSync(resolve(raiz, 'docs/trazabilidad/ejecuciones-agentes.csv'), 'utf8');
 const filasAg006 = csv.split(/\r?\n/).filter((linea) => /^"?AG-006"?,/.test(linea)).length;
-const resultado = { fecha: new Date().toISOString(), controles,
+const resultado = { fecha: new Date().toISOString(), baseline, directorioEvidencias: evidencia,
+  alcance: 'Controles históricos del inventario inicial AG-006; no sustituye la revisión del delta ni las huellas históricas de una ejecución posterior.', controles,
   filasAg006, eliminados, inesperados: inesperados.map((archivo) => archivo.ruta),
   resumen: Object.fromEntries(['CREADO', 'MODIFICADO', 'SIN_CAMBIOS'].map((estado) => [estado, archivos.filter((archivo) => archivo.estado === estado).length])),
   exclusiones: [...omitir, '.env', ...salidasPropias],

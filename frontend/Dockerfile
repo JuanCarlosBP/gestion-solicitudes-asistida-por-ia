@@ -5,7 +5,6 @@ COPY package.json package-lock.json .npmrc ./
 RUN npm ci --no-audit --no-fund
 COPY angular.json tsconfig*.json ./
 COPY src src
-COPY public public
 RUN npm run build
 
 FROM nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc

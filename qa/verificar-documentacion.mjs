@@ -1,7 +1,10 @@
 import { readdirSync, readFileSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { resolve, dirname, relative } from 'node:path';
+import { prepararDirectorioEvidencias } from './rutas-evidencia.mjs';
 
 const raiz = resolve(import.meta.dirname, '..');
+const evidencia = prepararDirectorioEvidencias();
+console.log(`Evidencias documentales: ${evidencia}`);
 const excluidos = new Set(['.git', 'node_modules', 'tmp', 'target', 'dist', '.angular', 'test-results', 'playwright-report']);
 const archivos = [];
 function recorrer(directorio) {
@@ -33,7 +36,7 @@ for (const ruta of archivos) {
   if (patrones.some((patron) => patron.test(texto))) hallazgosSecretos.push(relative(raiz, ruta));
 }
 const resultado = { fecha: new Date().toISOString(), archivos: archivos.length, enlaces, errores, ubicacionesPatronesSecretos: hallazgosSecretos, limite: 'Búsqueda acotada; no garantiza ausencia de todo secreto. No imprime valores encontrados.' };
-writeFileSync(resolve(raiz, 'qa/evidencias/ag006/documentacion-control.json'), `${JSON.stringify(resultado, null, 2)}\n`);
+writeFileSync(resolve(evidencia, 'documentacion-control.json'), `${JSON.stringify(resultado, null, 2)}\n`);
 console.log(`${enlaces} enlaces; ${errores.length} destinos ausentes; ${hallazgosSecretos.length} ubicaciones con patrones de secretos.`);
 for (const error of errores) console.error(error);
 for (const ruta of hallazgosSecretos) console.error(`Revisar ubicación sin reproducir contenido: ${ruta}`);
