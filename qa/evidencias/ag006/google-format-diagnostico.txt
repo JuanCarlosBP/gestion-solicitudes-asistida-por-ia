@@ -1,0 +1,14 @@
+error: class com.google.googlejavaformat.java.JavaInput (in unnamed module @0x5caf6dce) cannot access class com.sun.tools.javac.util.Log$DeferredDiagnosticHandler (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.util to unnamed module @0x5caf6dce
+java.lang.IllegalAccessError: class com.google.googlejavaformat.java.JavaInput (in unnamed module @0x5caf6dce) cannot access class com.sun.tools.javac.util.Log$DeferredDiagnosticHandler (in module jdk.compiler) because module jdk.compiler does not export com.sun.tools.javac.util to unnamed module @0x5caf6dce
+	at com.google.googlejavaformat.java.JavaInput.getDeferredDiagnosticHandlerConstructor(JavaInput.java:499)
+	at com.google.googlejavaformat.java.JavaInput.<clinit>(JavaInput.java:491)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:213)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:200)
+	at com.google.googlejavaformat.java.FormatFileCallable.call(FormatFileCallable.java:75)
+	at com.google.googlejavaformat.java.FormatFileCallable.call(FormatFileCallable.java:30)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

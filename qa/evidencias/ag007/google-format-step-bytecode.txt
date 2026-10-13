@@ -1,0 +1,469 @@
+Compiled from "GoogleJavaFormatStep.java"
+public final class com.diffplug.spotless.java.GoogleJavaFormatStep implements java.io.Serializable {
+  private static final long serialVersionUID;
+
+  private static final java.lang.String DEFAULT_STYLE;
+
+  private static final boolean DEFAULT_REFLOW_LONG_STRINGS;
+
+  private static final boolean DEFAULT_REORDER_IMPORTS;
+
+  private static final boolean DEFAULT_FORMAT_JAVADOC;
+
+  private static final java.lang.String NAME;
+
+  private static final java.lang.String MAVEN_COORDINATE;
+
+  private final com.diffplug.spotless.JarState$Promised jarState;
+
+  private final java.lang.String version;
+
+  private final java.lang.String style;
+
+  private final boolean reflowLongStrings;
+
+  private final boolean reorderImports;
+
+  private final boolean formatJavadoc;
+
+  private static final com.diffplug.spotless.Jvm$Support<java.lang.String> JVM_SUPPORT;
+
+  private com.diffplug.spotless.java.GoogleJavaFormatStep(com.diffplug.spotless.JarState$Promised, java.lang.String, java.lang.String, boolean, boolean, boolean);
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #7                  // Field jarState:Lcom/diffplug/spotless/JarState$Promised;
+       9: aload_0
+      10: aload_2
+      11: putfield      #13                 // Field version:Ljava/lang/String;
+      14: aload_0
+      15: aload_3
+      16: putfield      #17                 // Field style:Ljava/lang/String;
+      19: aload_0
+      20: iload         4
+      22: putfield      #20                 // Field reflowLongStrings:Z
+      25: aload_0
+      26: iload         5
+      28: putfield      #24                 // Field reorderImports:Z
+      31: aload_0
+      32: iload         6
+      34: putfield      #27                 // Field formatJavadoc:Z
+      37: return
+
+  public static com.diffplug.spotless.FormatterStep create(com.diffplug.spotless.Provisioner);
+    Code:
+       0: invokestatic  #30                 // Method defaultVersion:()Ljava/lang/String;
+       3: aload_0
+       4: invokestatic  #34                 // Method create:(Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;)Lcom/diffplug/spotless/FormatterStep;
+       7: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, com.diffplug.spotless.Provisioner);
+    Code:
+       0: aload_0
+       1: ldc           #38                 // String GOOGLE
+       3: aload_1
+       4: invokestatic  #40                 // Method create:(Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;)Lcom/diffplug/spotless/FormatterStep;
+       7: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: iconst_0
+       4: invokestatic  #43                 // Method create:(Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;Z)Lcom/diffplug/spotless/FormatterStep;
+       7: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner, boolean);
+    Code:
+       0: ldc           #46                 // String com.google.googlejavaformat:google-java-format
+       2: aload_0
+       3: aload_1
+       4: aload_2
+       5: iload_3
+       6: invokestatic  #48                 // Method create:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;Z)Lcom/diffplug/spotless/FormatterStep;
+       9: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner, boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: iload         4
+       6: iconst_0
+       7: invokestatic  #51                 // Method create:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;ZZ)Lcom/diffplug/spotless/FormatterStep;
+      10: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner, boolean, boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: aload_3
+       4: iload         4
+       6: iload         5
+       8: iconst_1
+       9: invokestatic  #54                 // Method create:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;ZZZ)Lcom/diffplug/spotless/FormatterStep;
+      12: areturn
+
+  public static com.diffplug.spotless.FormatterStep create(java.lang.String, java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner, boolean, boolean, boolean);
+    Code:
+       0: ldc           #57                 // String google-java-format
+       2: aload_0
+       3: aload_1
+       4: aload_2
+       5: aload_3
+       6: iload         4
+       8: iload         5
+      10: iload         6
+      12: iconst_0
+      13: invokestatic  #59                 // Method createInternally:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;ZZZZ)Lcom/diffplug/spotless/FormatterStep;
+      16: areturn
+
+  static com.diffplug.spotless.FormatterStep createRemoveUnusedImportsOnly(com.diffplug.spotless.Provisioner);
+    Code:
+       0: ldc           #65                 // String removeUnusedImports
+       2: ldc           #46                 // String com.google.googlejavaformat:google-java-format
+       4: invokestatic  #30                 // Method defaultVersion:()Ljava/lang/String;
+       7: invokestatic  #67                 // Method defaultStyle:()Ljava/lang/String;
+      10: aload_0
+      11: invokestatic  #70                 // Method defaultReflowLongStrings:()Z
+      14: invokestatic  #74                 // Method defaultReorderImports:()Z
+      17: invokestatic  #77                 // Method defaultFormatJavadoc:()Z
+      20: iconst_1
+      21: invokestatic  #59                 // Method createInternally:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;ZZZZ)Lcom/diffplug/spotless/FormatterStep;
+      24: areturn
+
+  private static com.diffplug.spotless.FormatterStep createInternally(java.lang.String, java.lang.String, java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner, boolean, boolean, boolean, boolean);
+    Code:
+       0: aload_1
+       1: ldc           #80                 // String groupArtifact
+       3: invokestatic  #82                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+       6: pop
+       7: aload_1
+       8: invokevirtual #88                 // Method java/lang/String.chars:()Ljava/util/stream/IntStream;
+      11: invokedynamic #94,  0             // InvokeDynamic #0:test:()Ljava/util/function/IntPredicate;
+      16: invokeinterface #98,  2           // InterfaceMethod java/util/stream/IntStream.filter:(Ljava/util/function/IntPredicate;)Ljava/util/stream/IntStream;
+      21: invokeinterface #104,  1          // InterfaceMethod java/util/stream/IntStream.count:()J
+      26: lconst_1
+      27: lcmp
+      28: ifeq          41
+      31: new           #108                // class java/lang/IllegalArgumentException
+      34: dup
+      35: ldc           #110                // String groupArtifact must be in the form \'groupId:artifactId\'
+      37: invokespecial #112                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+      40: athrow
+      41: aload_2
+      42: ldc           #115                // String version
+      44: invokestatic  #82                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+      47: pop
+      48: aload_3
+      49: ldc           #116                // String style
+      51: invokestatic  #82                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+      54: pop
+      55: aload         4
+      57: ldc           #117                // String provisioner
+      59: invokestatic  #82                 // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+      62: pop
+      63: new           #8                  // class com/diffplug/spotless/java/GoogleJavaFormatStep
+      66: dup
+      67: aload_1
+      68: aload_2
+      69: aload         4
+      71: invokedynamic #119,  0            // InvokeDynamic #1:get:(Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;)Lcom/diffplug/spotless/ThrowingEx$Supplier;
+      76: invokestatic  #123                // Method com/diffplug/spotless/JarState.promise:(Lcom/diffplug/spotless/ThrowingEx$Supplier;)Lcom/diffplug/spotless/JarState$Promised;
+      79: aload_2
+      80: aload_3
+      81: iload         5
+      83: iload         6
+      85: iload         7
+      87: invokespecial #129                // Method "<init>":(Lcom/diffplug/spotless/JarState$Promised;Ljava/lang/String;Ljava/lang/String;ZZZ)V
+      90: astore        9
+      92: iload         8
+      94: ifeq          114
+      97: aload_0
+      98: aload         9
+     100: invokedynamic #132,  0            // InvokeDynamic #2:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     105: invokedynamic #136,  0            // InvokeDynamic #3:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     110: invokestatic  #137                // InterfaceMethod com/diffplug/spotless/FormatterStep.create:(Ljava/lang/String;Ljava/io/Serializable;Lcom/diffplug/spotless/SerializedFunction;Lcom/diffplug/spotless/SerializedFunction;)Lcom/diffplug/spotless/FormatterStep;
+     113: areturn
+     114: aload_0
+     115: aload         9
+     117: invokedynamic #132,  0            // InvokeDynamic #2:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     122: invokedynamic #142,  0            // InvokeDynamic #4:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     127: invokestatic  #137                // InterfaceMethod com/diffplug/spotless/FormatterStep.create:(Ljava/lang/String;Ljava/io/Serializable;Lcom/diffplug/spotless/SerializedFunction;Lcom/diffplug/spotless/SerializedFunction;)Lcom/diffplug/spotless/FormatterStep;
+     130: areturn
+
+  public static java.lang.String defaultGroupArtifact();
+    Code:
+       0: ldc           #46                 // String com.google.googlejavaformat:google-java-format
+       2: areturn
+
+  public static java.lang.String defaultVersion();
+    Code:
+       0: getstatic     #143                // Field JVM_SUPPORT:Lcom/diffplug/spotless/Jvm$Support;
+       3: invokevirtual #147                // Method com/diffplug/spotless/Jvm$Support.getRecommendedFormatterVersion:()Ljava/lang/Object;
+       6: checkcast     #89                 // class java/lang/String
+       9: invokestatic  #153                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+      12: checkcast     #89                 // class java/lang/String
+      15: areturn
+
+  public static java.lang.String defaultStyle();
+    Code:
+       0: ldc           #38                 // String GOOGLE
+       2: areturn
+
+  public static boolean defaultReflowLongStrings();
+    Code:
+       0: iconst_0
+       1: ireturn
+
+  public static boolean defaultReorderImports();
+    Code:
+       0: iconst_0
+       1: ireturn
+
+  public static boolean defaultFormatJavadoc();
+    Code:
+       0: iconst_1
+       1: ireturn
+
+  private com.diffplug.spotless.java.GoogleJavaFormatStep$State equalityState();
+    Code:
+       0: new           #156                // class com/diffplug/spotless/java/GoogleJavaFormatStep$State
+       3: dup
+       4: aload_0
+       5: getfield      #13                 // Field version:Ljava/lang/String;
+       8: aload_0
+       9: getfield      #17                 // Field style:Ljava/lang/String;
+      12: aload_0
+      13: getfield      #7                  // Field jarState:Lcom/diffplug/spotless/JarState$Promised;
+      16: invokevirtual #158                // Method com/diffplug/spotless/JarState$Promised.get:()Lcom/diffplug/spotless/JarState;
+      19: aload_0
+      20: getfield      #20                 // Field reflowLongStrings:Z
+      23: aload_0
+      24: getfield      #24                 // Field reorderImports:Z
+      27: aload_0
+      28: getfield      #27                 // Field formatJavadoc:Z
+      31: invokespecial #163                // Method com/diffplug/spotless/java/GoogleJavaFormatStep$State."<init>":(Ljava/lang/String;Ljava/lang/String;Lcom/diffplug/spotless/JarState;ZZZ)V
+      34: areturn
+
+  private static java.lang.Object $deserializeLambda$(java.lang.invoke.SerializedLambda);
+    Code:
+       0: aload_0
+       1: invokevirtual #166                // Method java/lang/invoke/SerializedLambda.getImplMethodName:()Ljava/lang/String;
+       4: astore_1
+       5: iconst_m1
+       6: istore_2
+       7: aload_1
+       8: invokevirtual #171                // Method java/lang/String.hashCode:()I
+      11: lookupswitch  { // 3
+
+            -353523260: 72
+
+             256142263: 44
+
+            1158993939: 58
+               default: 83
+          }
+      44: aload_1
+      45: ldc           #175                // String equalityState
+      47: invokevirtual #177                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      50: ifeq          83
+      53: iconst_0
+      54: istore_2
+      55: goto          83
+      58: aload_1
+      59: ldc           #181                // String createFormat
+      61: invokevirtual #177                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      64: ifeq          83
+      67: iconst_1
+      68: istore_2
+      69: goto          83
+      72: aload_1
+      73: ldc           #183                // String createRemoveUnusedImportsOnly
+      75: invokevirtual #177                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      78: ifeq          83
+      81: iconst_2
+      82: istore_2
+      83: iload_2
+      84: tableswitch   { // 0 to 2
+
+                     0: 112
+
+                     1: 260
+
+                     2: 334
+               default: 408
+          }
+     112: aload_0
+     113: invokevirtual #185                // Method java/lang/invoke/SerializedLambda.getImplMethodKind:()I
+     116: iconst_5
+     117: if_icmpne     186
+     120: aload_0
+     121: invokevirtual #188                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceClass:()Ljava/lang/String;
+     124: ldc           #191                // String com/diffplug/spotless/SerializedFunction
+     126: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     129: ifeq          186
+     132: aload_0
+     133: invokevirtual #194                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodName:()Ljava/lang/String;
+     136: ldc           #197                // String apply
+     138: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     141: ifeq          186
+     144: aload_0
+     145: invokevirtual #198                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodSignature:()Ljava/lang/String;
+     148: ldc           #201                // String (Ljava/lang/Object;)Ljava/lang/Object;
+     150: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     153: ifeq          186
+     156: aload_0
+     157: invokevirtual #202                // Method java/lang/invoke/SerializedLambda.getImplClass:()Ljava/lang/String;
+     160: ldc           #205                // String com/diffplug/spotless/java/GoogleJavaFormatStep
+     162: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     165: ifeq          186
+     168: aload_0
+     169: invokevirtual #206                // Method java/lang/invoke/SerializedLambda.getImplMethodSignature:()Ljava/lang/String;
+     172: ldc           #209                // String ()Lcom/diffplug/spotless/java/GoogleJavaFormatStep$State;
+     174: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     177: ifeq          186
+     180: invokedynamic #132,  0            // InvokeDynamic #2:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     185: areturn
+     186: aload_0
+     187: invokevirtual #185                // Method java/lang/invoke/SerializedLambda.getImplMethodKind:()I
+     190: iconst_5
+     191: if_icmpne     408
+     194: aload_0
+     195: invokevirtual #188                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceClass:()Ljava/lang/String;
+     198: ldc           #191                // String com/diffplug/spotless/SerializedFunction
+     200: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     203: ifeq          408
+     206: aload_0
+     207: invokevirtual #194                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodName:()Ljava/lang/String;
+     210: ldc           #197                // String apply
+     212: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     215: ifeq          408
+     218: aload_0
+     219: invokevirtual #198                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodSignature:()Ljava/lang/String;
+     222: ldc           #201                // String (Ljava/lang/Object;)Ljava/lang/Object;
+     224: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     227: ifeq          408
+     230: aload_0
+     231: invokevirtual #202                // Method java/lang/invoke/SerializedLambda.getImplClass:()Ljava/lang/String;
+     234: ldc           #205                // String com/diffplug/spotless/java/GoogleJavaFormatStep
+     236: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     239: ifeq          408
+     242: aload_0
+     243: invokevirtual #206                // Method java/lang/invoke/SerializedLambda.getImplMethodSignature:()Ljava/lang/String;
+     246: ldc           #209                // String ()Lcom/diffplug/spotless/java/GoogleJavaFormatStep$State;
+     248: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     251: ifeq          408
+     254: invokedynamic #132,  0            // InvokeDynamic #2:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     259: areturn
+     260: aload_0
+     261: invokevirtual #185                // Method java/lang/invoke/SerializedLambda.getImplMethodKind:()I
+     264: iconst_5
+     265: if_icmpne     408
+     268: aload_0
+     269: invokevirtual #188                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceClass:()Ljava/lang/String;
+     272: ldc           #191                // String com/diffplug/spotless/SerializedFunction
+     274: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     277: ifeq          408
+     280: aload_0
+     281: invokevirtual #194                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodName:()Ljava/lang/String;
+     284: ldc           #197                // String apply
+     286: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     289: ifeq          408
+     292: aload_0
+     293: invokevirtual #198                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodSignature:()Ljava/lang/String;
+     296: ldc           #201                // String (Ljava/lang/Object;)Ljava/lang/Object;
+     298: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     301: ifeq          408
+     304: aload_0
+     305: invokevirtual #202                // Method java/lang/invoke/SerializedLambda.getImplClass:()Ljava/lang/String;
+     308: ldc           #211                // String com/diffplug/spotless/java/GoogleJavaFormatStep$State
+     310: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     313: ifeq          408
+     316: aload_0
+     317: invokevirtual #206                // Method java/lang/invoke/SerializedLambda.getImplMethodSignature:()Ljava/lang/String;
+     320: ldc           #212                // String ()Lcom/diffplug/spotless/FormatterFunc;
+     322: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     325: ifeq          408
+     328: invokedynamic #142,  0            // InvokeDynamic #4:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     333: areturn
+     334: aload_0
+     335: invokevirtual #185                // Method java/lang/invoke/SerializedLambda.getImplMethodKind:()I
+     338: iconst_5
+     339: if_icmpne     408
+     342: aload_0
+     343: invokevirtual #188                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceClass:()Ljava/lang/String;
+     346: ldc           #191                // String com/diffplug/spotless/SerializedFunction
+     348: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     351: ifeq          408
+     354: aload_0
+     355: invokevirtual #194                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodName:()Ljava/lang/String;
+     358: ldc           #197                // String apply
+     360: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     363: ifeq          408
+     366: aload_0
+     367: invokevirtual #198                // Method java/lang/invoke/SerializedLambda.getFunctionalInterfaceMethodSignature:()Ljava/lang/String;
+     370: ldc           #201                // String (Ljava/lang/Object;)Ljava/lang/Object;
+     372: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     375: ifeq          408
+     378: aload_0
+     379: invokevirtual #202                // Method java/lang/invoke/SerializedLambda.getImplClass:()Ljava/lang/String;
+     382: ldc           #211                // String com/diffplug/spotless/java/GoogleJavaFormatStep$State
+     384: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     387: ifeq          408
+     390: aload_0
+     391: invokevirtual #206                // Method java/lang/invoke/SerializedLambda.getImplMethodSignature:()Ljava/lang/String;
+     394: ldc           #212                // String ()Lcom/diffplug/spotless/FormatterFunc;
+     396: invokevirtual #193                // Method java/lang/Object.equals:(Ljava/lang/Object;)Z
+     399: ifeq          408
+     402: invokedynamic #136,  0            // InvokeDynamic #3:apply:()Lcom/diffplug/spotless/SerializedFunction;
+     407: areturn
+     408: new           #108                // class java/lang/IllegalArgumentException
+     411: dup
+     412: ldc           #214                // String Invalid lambda deserialization
+     414: invokespecial #112                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+     417: athrow
+
+  private static com.diffplug.spotless.JarState lambda$createInternally$1(java.lang.String, java.lang.String, com.diffplug.spotless.Provisioner) throws java.lang.Exception;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokedynamic #216,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       7: aload_2
+       8: invokestatic  #220                // Method com/diffplug/spotless/JarState.from:(Ljava/lang/String;Lcom/diffplug/spotless/Provisioner;)Lcom/diffplug/spotless/JarState;
+      11: areturn
+
+  private static boolean lambda$createInternally$0(int);
+    Code:
+       0: iload_0
+       1: bipush        58
+       3: if_icmpne     10
+       6: iconst_1
+       7: goto          11
+      10: iconst_0
+      11: ireturn
+
+  static {};
+    Code:
+       0: ldc           #57                 // String google-java-format
+       2: invokestatic  #224                // Method com/diffplug/spotless/Jvm.support:(Ljava/lang/String;)Lcom/diffplug/spotless/Jvm$Support;
+       5: bipush        21
+       7: ldc           #230                // String 1.17.0
+       9: invokevirtual #232                // Method com/diffplug/spotless/Jvm$Support.addMin:(ILjava/lang/Object;)Lcom/diffplug/spotless/Jvm$Support;
+      12: bipush        25
+      14: ldc           #236                // String 1.30.0
+      16: invokevirtual #232                // Method com/diffplug/spotless/Jvm$Support.addMin:(ILjava/lang/Object;)Lcom/diffplug/spotless/Jvm$Support;
+      19: bipush        17
+      21: ldc           #238                // String 1.28.0
+      23: invokevirtual #240                // Method com/diffplug/spotless/Jvm$Support.add:(ILjava/lang/Object;)Lcom/diffplug/spotless/Jvm$Support;
+      26: bipush        21
+      28: ldc           #245                // String 1.36.1
+      30: invokevirtual #240                // Method com/diffplug/spotless/Jvm$Support.add:(ILjava/lang/Object;)Lcom/diffplug/spotless/Jvm$Support;
+      33: putstatic     #143                // Field JVM_SUPPORT:Lcom/diffplug/spotless/Jvm$Support;
+      36: return
+}

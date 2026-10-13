@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-13T09:45:28.402Z",
+  "esperado": "Servicio no disponible",
+  "observado": "! Servicio no disponible\n\nNo hemos podido confirmar la conexión. Vuelve a intentarlo en unos instantes.",
+  "resultado": "PASS",
+  "origen": "PostgreSQL real de Compose, sin interceptar HTTP"
+}

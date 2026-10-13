@@ -1,0 +1,26 @@
+[
+  {
+    "ruta": "/api/salud",
+    "http": 200,
+    "resultado": "PASS",
+    "fecha": "2026-10-13T11:45:08.9060834+02:00"
+  },
+  {
+    "ruta": "/v3/api-docs",
+    "http": 200,
+    "resultado": "PASS",
+    "fecha": "2026-10-13T11:45:09.0824804+02:00"
+  },
+  {
+    "ruta": "/swagger-ui/index.html",
+    "http": 200,
+    "resultado": "PASS",
+    "fecha": "2026-10-13T11:45:09.1136286+02:00"
+  },
+  {
+    "ruta": "/inicio",
+    "http": 200,
+    "resultado": "PASS",
+    "fecha": "2026-10-13T11:45:09.1176592+02:00"
+  }
+]

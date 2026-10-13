@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-10-13T09:54:04.216Z",
+  "resultado": "PASS",
+  "errores": [],
+  "inesperados": [],
+  "eliminados": [],
+  "prefijos": [
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 32072,
+      "esperado": "5B92A0375062BAFF4933EC99FDD96AD15ED447FA8524717632CAC9EC4086C468",
+      "observado": "5B92A0375062BAFF4933EC99FDD96AD15ED447FA8524717632CAC9EC4086C468",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "docs/documentaciondev/versiones.md",
+      "bytes": 29713,
+      "esperado": "A07B8309139E70C2D8032396FB876A70154F525792DB74E8FF9338AE2461BB6C",
+      "observado": "A07B8309139E70C2D8032396FB876A70154F525792DB74E8FF9338AE2461BB6C",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "bytes": 19100,
+      "esperado": "F36BA1D9D5B1045C471ABE1FC01D3FD8BFDB6BC4B47EB153AFFA99053FC12CE5",
+      "observado": "F36BA1D9D5B1045C471ABE1FC01D3FD8BFDB6BC4B47EB153AFFA99053FC12CE5",
+      "resultado": "PASS"
+    }
+  ],
+  "filasAg008": 1,
+  "javaSinCambiosPosteriores": true,
+  "historicosIntactos": 134,
+  "enlaces": 50,
+  "enlacesAusentes": [],
+  "espaciosFinales": [],
+  "ubicacionesPatronesSecretos": [],
+  "resumen": {
+    "CREADO": 51,
+    "MODIFICADO": 12,
+    "SIN_CAMBIOS": 238
+  },
+  "limite": "Patrones acotados, no garantía absoluta de ausencia de secretos. Solo se propone el delta autorizado de AG-008; preserva la historia y no representa estado Git."
+}

@@ -1,0 +1,37 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:apply (default-cli) @ gestion-solicitudes ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.959 s
+[INFO] Finished at: 2026-10-13T11:17:18+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:3.10.4:apply (default-cli) on project gestion-solicitudes: There were 14 lint error(s), they must be fixed or suppressed.
+[ERROR]   src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/test/java/es/gestionsolicitudes/salud/aplicacion/ServicioSaludTest.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   src/test/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgresTest.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR]   Resolve these lints or suppress with `<lintSuppressions>`
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -1,0 +1,190 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.15kB 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 683B done
+#2 DONE 0.0s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.17kB done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#4 ...
+
+#5 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#5 DONE 0.6s
+
+#6 [frontend internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#6 DONE 0.6s
+
+#7 [frontend internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#7 DONE 0.7s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#4 DONE 0.6s
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 104B done
+#8 DONE 0.0s
+
+#9 [backend internal] load .dockerignore
+#9 transferring context: 59B done
+#9 DONE 0.0s
+
+#10 [frontend construccion 1/8] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#10 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#10 DONE 0.0s
+
+#11 [backend construccion 1/8] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#11 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87 0.0s done
+#11 DONE 0.0s
+
+#12 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#12 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#12 DONE 0.0s
+
+#13 [backend stage-1 1/4] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#13 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c 0.0s done
+#13 DONE 0.0s
+
+#14 [frontend internal] load build context
+#14 transferring context: 1.16kB done
+#14 DONE 0.0s
+
+#15 [frontend construccion 8/8] RUN npm run build
+#15 CACHED
+
+#16 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#16 CACHED
+
+#17 [frontend construccion 7/8] COPY public public
+#17 CACHED
+
+#18 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#18 CACHED
+
+#19 [frontend construccion 3/8] COPY package.json package-lock.json .npmrc ./
+#19 CACHED
+
+#20 [frontend construccion 2/8] WORKDIR /construccion
+#20 CACHED
+
+#21 [frontend construccion 5/8] COPY angular.json tsconfig*.json ./
+#21 CACHED
+
+#22 [frontend construccion 6/8] COPY src src
+#22 CACHED
+
+#23 [frontend stage-1 3/3] COPY --from=construccion /construccion/dist/gestion-solicitudes-frontend/browser /usr/share/nginx/html
+#23 CACHED
+
+#24 [backend internal] load build context
+#24 transferring context: 28.31kB 0.0s done
+#24 DONE 0.0s
+
+#25 [frontend] exporting to image
+#25 exporting layers
+#25 exporting layers done
+#25 exporting manifest sha256:f30f28f500277bffa03f7f44b99dd5ff4f2f254a6ed578ffce34f86fc1826eba done
+#25 exporting config sha256:819a3a74c045896957bc8fc495e2ce0c48f022ced07a3e738b422e1eacdaed36 done
+#25 exporting attestation manifest sha256:f262f30d6af1e230f947ba7bcc889bcaf690b96e9bc137c3c466780ef47e80d3 0.0s done
+#25 exporting manifest list sha256:4c307921f103a0f4e04fee8970a6a96fb5626afcf0b56416dcb14d2d7f2626b0 0.0s done
+#25 naming to docker.io/library/gestion-solicitudes-001-frontend:latest done
+#25 unpacking to docker.io/library/gestion-solicitudes-001-frontend:latest done
+#25 DONE 0.1s
+
+#26 [backend construccion 3/8] WORKDIR /construccion/backend
+#26 CACHED
+
+#27 [backend construccion 2/8] RUN apt-get update && apt-get install -y --no-install-recommends unzip=6.0-28ubuntu4.1 && rm -rf /var/lib/apt/lists/*
+#27 CACHED
+
+#28 [backend construccion 4/8] COPY .mvn .mvn
+#28 CACHED
+
+#29 [backend construccion 5/8] COPY mvnw pom.xml spotbugs-exclusiones.xml ./
+#29 DONE 0.0s
+
+#30 [frontend] resolving provenance for metadata file
+#30 DONE 0.0s
+
+#31 [backend construccion 6/8] RUN chmod +x mvnw
+#31 DONE 0.2s
+
+#32 [backend construccion 7/8] COPY src src
+#32 DONE 0.0s
+
+#33 [backend construccion 8/8] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#33 1.861 [INFO] Scanning for projects...
+#33 4.847 [INFO] 
+#33 4.847 [INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+#33 4.847 [INFO] Building Gestión de Solicitudes 0.0.1
+#33 4.847 [INFO]   from pom.xml
+#33 4.847 [INFO] --------------------------------[ jar ]---------------------------------
+#33 11.99 [INFO] 
+#33 11.99 [INFO] --- resources:3.3.1:resources (default-cli) @ gestion-solicitudes ---
+#33 12.69 [INFO] Copying 1 resource from src/main/resources to target/classes
+#33 12.70 [INFO] Copying 1 resource from src/main/resources to target/classes
+#33 12.70 [INFO] 
+#33 12.70 [INFO] --- compiler:3.14.1:compile (default-cli) @ gestion-solicitudes ---
+#33 13.55 [INFO] Recompiling the module because of changed source code.
+#33 13.55 [INFO] Compiling 10 source files with javac [debug parameters release 21] to target/classes
+#33 14.08 [INFO] 
+#33 14.08 [INFO] --- jar:3.4.2:jar (default-cli) @ gestion-solicitudes ---
+#33 15.96 [INFO] Building jar: /construccion/backend/target/gestion-solicitudes-0.0.1.jar
+#33 15.99 [INFO] 
+#33 15.99 [INFO] --- spring-boot:4.0.8:repackage (default-cli) @ gestion-solicitudes ---
+#33 17.88 [INFO] Replacing main artifact /construccion/backend/target/gestion-solicitudes-0.0.1.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#33 17.88 [INFO] The original artifact has been renamed to /construccion/backend/target/gestion-solicitudes-0.0.1.jar.original
+#33 17.88 [INFO] ------------------------------------------------------------------------
+#33 17.88 [INFO] BUILD SUCCESS
+#33 17.88 [INFO] ------------------------------------------------------------------------
+#33 17.89 [INFO] Total time:  16.040 s
+#33 17.89 [INFO] Finished at: 2026-10-13T09:44:08Z
+#33 17.89 [INFO] ------------------------------------------------------------------------
+#33 DONE 18.0s
+
+#34 [backend stage-1 2/4] WORKDIR /aplicacion
+#34 CACHED
+
+#35 [backend stage-1 3/4] RUN groupadd --gid 10001 aplicacion && useradd --uid 10001 --gid 10001 --no-create-home aplicacion
+#35 CACHED
+
+#36 [backend stage-1 4/4] COPY --from=construccion --chown=10001:10001 /construccion/backend/target/gestion-solicitudes-0.0.1.jar aplicacion.jar
+#36 DONE 0.0s
+
+#37 [backend] exporting to image
+#37 exporting layers
+#37 exporting layers 0.6s done
+#37 exporting manifest sha256:ca3579cd78f98e5250c1f1f62125ecc96474ae922a23d9bbb80e0832d8601c7c 0.0s done
+#37 exporting config sha256:943286fe2263f4875b51bf7794fc38f7bada096058fd69729a596c500ffa84f1 done
+#37 exporting attestation manifest sha256:a574effcf51f0038c303450ab699fe1b125a8fc29e3e19944ff5ddc4a2997e79 0.0s done
+#37 exporting manifest list sha256:4ab7b88f42f4317e18da633caf08aded1ebda6fdccd8b070846677b09919d887 done
+#37 naming to docker.io/library/gestion-solicitudes-001-backend:latest done
+#37 unpacking to docker.io/library/gestion-solicitudes-001-backend:latest 0.1s done
+#37 DONE 0.7s
+
+#38 [backend] resolving provenance for metadata file
+#38 DONE 0.0s
+ gestion-solicitudes-001-backend  Built
+ gestion-solicitudes-001-frontend  Built
+ Container gestion-solicitudes-001-backend-1  Recreate
+ Container gestion-solicitudes-001-backend-1  Recreated
+ Container gestion-solicitudes-001-frontend-1  Recreate
+ Container gestion-solicitudes-001-frontend-1  Recreated
+ Container gestion-solicitudes-001-postgres-1  Starting
+ Container gestion-solicitudes-001-postgres-1  Started
+ Container gestion-solicitudes-001-postgres-1  Waiting
+ Container gestion-solicitudes-001-postgres-1  Healthy
+ Container gestion-solicitudes-001-backend-1  Starting
+ Container gestion-solicitudes-001-backend-1  Started
+ Container gestion-solicitudes-001-frontend-1  Starting
+ Container gestion-solicitudes-001-frontend-1  Started
+ Container gestion-solicitudes-001-backend-1  Waiting
+ Container gestion-solicitudes-001-frontend-1  Waiting
+ Container gestion-solicitudes-001-postgres-1  Waiting
+ Container gestion-solicitudes-001-backend-1  Healthy
+ Container gestion-solicitudes-001-postgres-1  Healthy
+ Container gestion-solicitudes-001-frontend-1  Healthy

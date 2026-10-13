@@ -1,0 +1,49 @@
+{
+  "estado": 200,
+  "cuerpo": "{\"estado\":\"DISPONIBLE\"}",
+  "cabeceras": {
+    "Server": [
+      "nginx"
+    ],
+    "Date": [
+      "Tue, 13 Oct 2026 08:42:20 GMT"
+    ],
+    "Transfer-Encoding": [
+      "chunked"
+    ],
+    "Connection": [
+      "keep-alive"
+    ],
+    "X-Content-Type-Options": [
+      "nosniff",
+      "nosniff"
+    ],
+    "X-XSS-Protection": [
+      "0"
+    ],
+    "Cache-Control": [
+      "no-store, must-revalidate, no-cache, max-age=0"
+    ],
+    "Pragma": [
+      "no-cache"
+    ],
+    "X-Frame-Options": [
+      "DENY",
+      "DENY"
+    ],
+    "Content-Security-Policy": [
+      "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'",
+      "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'"
+    ],
+    "Referrer-Policy": [
+      "no-referrer",
+      "no-referrer"
+    ],
+    "Content-Type": [
+      "application/json"
+    ],
+    "Expires": [
+      "0"
+    ]
+  }
+}

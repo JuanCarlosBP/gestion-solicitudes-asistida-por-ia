@@ -1,0 +1,6 @@
+ Container gestion-solicitudes-001-frontend-1  Stopping
+ Container gestion-solicitudes-001-frontend-1  Stopped
+ Container gestion-solicitudes-001-backend-1  Stopping
+ Container gestion-solicitudes-001-backend-1  Stopped
+ Container gestion-solicitudes-001-postgres-1  Stopping
+ Container gestion-solicitudes-001-postgres-1  Stopped

@@ -1,0 +1,103 @@
+{
+  "fechaControl": "2026-10-13T11:51:40.7380515+02:00",
+  "rol": "Revisión de solo lectura de la misma sesión",
+  "independiente": false,
+  "codigoCorregidoDuranteRevision": false,
+  "fuentes": [
+    "especificaciones/001-base-verificable/especificacion.md",
+    "especificaciones/001-base-verificable/plan.md",
+    "especificaciones/001-base-verificable/tareas.md",
+    "backend/pom.xml",
+    "qa/evidencias/ag008/java-comparacion.json",
+    "qa/evidencias/ag008/pruebas-backend.json",
+    "qa/evidencias/ag008/e2e.xml",
+    "qa/evidencias/ag008/compose-cierre.json",
+    "docs/trazabilidad/AG-008-informe.md",
+    "especificaciones/001-base-verificable/validacion.md"
+  ],
+  "controles": {
+    "backendFallos": 0,
+    "e2ePruebas": 5,
+    "backendPruebas": 13,
+    "e2eOmitidas": 0,
+    "javaConCambiosPosteriores": 0,
+    "volumenConservado": true,
+    "e2eFallos": 0,
+    "historicosModificados": 0,
+    "backendOmitidas": 0,
+    "serviciosDetenidos": true,
+    "filaUnicaAg008": true,
+    "historicosComparados": 134,
+    "frontendWorkflowHuellasIdenticas": 35,
+    "backendErrores": 0
+  },
+  "criterios": [
+    {
+      "id": "BV-01",
+      "limite": "Otra máquina Windows y CI Linux remota pendientes",
+      "evidencia": "configuracion-efectiva.json; backend-verify.txt; compose-build-arranque.txt",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-02",
+      "evidencia": "backend-verify.txt; http-integrado.json; configuración ausente AG-006 reutilizada",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-03",
+      "evidencia": "3 IT PostgreSQL/Flyway; compose-persistencia-caida.json",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-04",
+      "evidencia": "10 unitarias/HTTP y contrato real 200/503/200",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-05",
+      "evidencia": "http-integrado.json; e2e.xml: Swagger/OpenAPI",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-06",
+      "evidencia": "11 Angular AG-006 reutilizadas; e2e.xml nuevo",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-07",
+      "evidencia": "compose-build-arranque.txt; compose-regresion.txt; compose-cierre.json",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-08",
+      "limite": "Auditorías con fecha/alcance heredados; sin plugins Maven ni SO de imágenes",
+      "evidencia": "apply/check/verify; informes-backend; e2e; auditorías AG-006 reutilizadas",
+      "resultado": "PASS local"
+    },
+    {
+      "id": "BV-09",
+      "evidencia": "ci-local.json; workflow idéntico; actionlint AG-006/007 reutilizado",
+      "resultado": "PASS local; remoto pendiente"
+    },
+    {
+      "id": "BV-10",
+      "evidencia": "Informe AG-008, validación, versiones, MEMORY, manifiesto y controles de entrega",
+      "resultado": "Evidencia local documentada; aceptación pendiente"
+    }
+  ],
+  "hallazgosBloqueantes": [],
+  "observaciones": [
+    "Primer POM efectivo falló por DNS sandbox; repetición con red específica PASS, fallo conservado",
+    "Warnings Mockito/Byte Buddy, agentes dinámicos, class sharing y NO_COLOR/FORCE_COLOR documentados",
+    "Caché normal de Spotless y report goal de SpotBugs no ocultan omisiones; análisis/check e informes observados",
+    "No se corrigen fuentes durante la revisión; después solo se consolida evidencia documental"
+  ],
+  "resultado": "Propuesta de verificación local; no aceptación",
+  "pendientes": [
+    "Push humano",
+    "CI remota: Pendiente de push humano",
+    "Revisión independiente posterior al push",
+    "Aceptación humana",
+    "Integración en main"
+  ]
+}

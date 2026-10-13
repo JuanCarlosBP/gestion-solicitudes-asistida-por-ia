@@ -1,0 +1,46 @@
+# MEMORY.md — Gestión de Solicitudes
+
+Memoria vigente; la historia íntegra anterior está en
+[AG-001–AG-005](docs/trazabilidad/memoria-hasta-ag005.md).
+
+## Decisiones y límites
+
+- P0, G02-A/G02-B y P2 aprobados documentalmente; CAM-001/002 conservan su estado.
+- Visión, constitución, seguridad, calidad, SDD y orquestación siguen vigentes.
+- 001: especificación, plan, tareas y DT-01–DT-08 aprobados el 2026-10-13.
+- Rama declarada por la persona responsable: `feature/001-base-verificable`.
+- No se consultó ni ejecutó Git; tampoco publicación o despliegue.
+- AG-006 aplicó la política general humana de ADR-0002 antes de implementar.
+- Directas estables exactas; 16 preliminares transitivas controladas, sin overrides.
+
+## Estado real al cierre de AG-006
+
+- Inicio 2026-10-13 10:16:08 +02:00; nueva ventana hasta 20:16:08.
+- Hora de cierre y duración en `qa/evidencias/ag006/cierre.json` y CSV.
+- Backend Java 21.0.12.1 / Boot 4.0.8 / Maven 3.9.16 y Wrapper 3.3.4.
+- Angular 21.2.25, CLI/build 21.2.26; Node 24.13.0 y npm 11.6.2 conservados.
+- PostgreSQL 17.11, Flyway, permisos separados; sin tablas ni dominios de negocio.
+- API salud 200/503, OpenAPI 3.1, Swagger y pantalla/rutas Angular implementados.
+- T001–T005 comprobadas localmente con límites; T002 verify integral depende de T006.
+- 10 unitarias/HTTP backend, 3 IT PostgreSQL, 11 Angular y 5 E2E PASS.
+- Tipos/lint/formato frontend, builds, SpotBugs y actionlint PASS.
+- npm auditorías final producción/completa: 0 vulnerabilidades informadas.
+- Maven OSV offline: 125 componentes, 0 coincidencias tras parches Tomcat/Jackson.
+- T006 parcial: Spotless/google-java-format falla con InvocationTargetException.
+- Dos correcciones fallidas: JAVA_HOME 21 de proceso y exports de jdk.compiler.
+- Verify obligatorio falla; pruebas con spotless.skip=true NO acreditan verify completo.
+- T007 documentada; T008 revisión secuencial no independiente, aceptación pendiente.
+- TEMP de QA Compose corregido tras revisión; repetición real PASS.
+- Compose detenido sin borrar volumen; persistencia y caída/recuperación PASS.
+- CI remota sin ejecutar; ningún borrador 002–008 creado.
+
+## Retomar
+
+- Revisar [informe AG-006](docs/trazabilidad/AG-006-informe.md) y
+  [validación](especificaciones/001-base-verificable/validacion.md).
+- [Entorno](docs/documentaciondev/entorno.md) contiene comandos y límites reales.
+- AG-003/004/005, lockfile y memoria histórica preservados por SHA-256.
+- Incidencia: primera caché npm fue la predeterminada; corregida a workspace.
+- Auditoría OSV API rechazada; alternativa offline completada sin subir inventario.
+- Pendiente decisión humana sobre otra ronda de formato, verify sin omisiones,
+  publicación/CI remota y aceptación. No reanudar automáticamente ni ejecutar Git.

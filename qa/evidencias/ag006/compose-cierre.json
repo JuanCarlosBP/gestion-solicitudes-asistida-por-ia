@@ -1,0 +1,66 @@
+{
+  "usuarios": {
+    "backend": "10001",
+    "postgres": "999",
+    "frontend": "101"
+  },
+  "despues": [
+    {
+      "Service": "backend",
+      "State": "exited",
+      "ExitCode": 143
+    },
+    {
+      "Service": "frontend",
+      "State": "exited",
+      "ExitCode": 0
+    },
+    {
+      "Service": "postgres",
+      "State": "exited",
+      "ExitCode": 0
+    }
+  ],
+  "fecha": "2026-10-13T11:09:04.4177391+02:00",
+  "resultado": "PASS",
+  "operacion": "stop; sin eliminación de contenedores ni volúmenes",
+  "antes": [
+    {
+      "Service": "backend",
+      "State": "running",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 8080,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "frontend",
+      "State": "running",
+      "Publishers": [
+        {
+          "URL": "127.0.0.1",
+          "TargetPort": 8080,
+          "PublishedPort": 18080,
+          "Protocol": "tcp"
+        }
+      ]
+    },
+    {
+      "Service": "postgres",
+      "State": "running",
+      "Publishers": [
+        {
+          "URL": "",
+          "TargetPort": 5432,
+          "PublishedPort": 0,
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "volumenConservado": "gestion-solicitudes-001_datos-postgres"
+}

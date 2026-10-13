@@ -1,0 +1,484 @@
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.6.1/build-helper-maven-plugin-3.6.1.pom
+Progress (1): 1.0 kB
+Progress (1): 2.7 kB
+Progress (1): 6.0 kB
+Progress (1): 8.1 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.6.1/build-helper-maven-plugin-3.6.1.pom (8.1 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/91/mojo-parent-91.pom
+Progress (1): 715 B
+Progress (1): 1.6 kB
+Progress (1): 5.2 kB
+Progress (1): 7.2 kB
+Progress (1): 8.9 kB
+Progress (1): 11 kB 
+Progress (1): 14 kB
+Progress (1): 17 kB
+Progress (1): 23 kB
+Progress (1): 27 kB
+Progress (1): 28 kB
+Progress (1): 31 kB
+Progress (1): 35 kB
+Progress (1): 38 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/91/mojo-parent-91.pom (38 kB at 1.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.0/junit-bom-5.13.0.pom
+Progress (1): 908 B
+Progress (1): 2.3 kB
+Progress (1): 5.6 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.0/junit-bom-5.13.0.pom (5.6 kB at 195 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.6.1/build-helper-maven-plugin-3.6.1.jar
+Progress (1): 0.9/72 kB
+Progress (1): 2.3/72 kB
+Progress (1): 3.6/72 kB
+Progress (1): 5.0/72 kB
+Progress (1): 6.4/72 kB
+Progress (1): 7.7/72 kB
+Progress (1): 9.1/72 kB
+Progress (1): 10/72 kB 
+Progress (1): 11/72 kB
+Progress (1): 13/72 kB
+Progress (1): 14/72 kB
+Progress (1): 15/72 kB
+Progress (1): 17/72 kB
+Progress (1): 18/72 kB
+Progress (1): 20/72 kB
+Progress (1): 21/72 kB
+Progress (1): 22/72 kB
+Progress (1): 24/72 kB
+Progress (1): 25/72 kB
+Progress (1): 26/72 kB
+Progress (1): 28/72 kB
+Progress (1): 29/72 kB
+Progress (1): 31/72 kB
+Progress (1): 32/72 kB
+Progress (1): 33/72 kB
+Progress (1): 35/72 kB
+Progress (1): 36/72 kB
+Progress (1): 37/72 kB
+Progress (1): 39/72 kB
+Progress (1): 43/72 kB
+Progress (1): 47/72 kB
+Progress (1): 51/72 kB
+Progress (1): 56/72 kB
+Progress (1): 60/72 kB
+Progress (1): 64/72 kB
+Progress (1): 68/72 kB
+Progress (1): 72 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/3.6.1/build-helper-maven-plugin-3.6.1.jar (72 kB at 1.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom
+Progress (1): 776 B
+Progress (1): 2.0 kB
+Progress (1): 4.9 kB
+Progress (1): 9.1 kB
+Progress (1): 10 kB 
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom (10 kB at 346 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/49/maven-plugins-49.pom
+Progress (1): 772 B
+Progress (1): 2.3 kB
+Progress (1): 4.9 kB
+Progress (1): 7.2 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/49/maven-plugins-49.pom (7.2 kB at 257 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.jar
+Progress (1): 3.8/72 kB
+Progress (1): 8.0/72 kB
+Progress (1): 12/72 kB 
+Progress (1): 15/72 kB
+Progress (1): 20/72 kB
+Progress (1): 24/72 kB
+Progress (1): 28/72 kB
+Progress (1): 32/72 kB
+Progress (1): 36/72 kB
+Progress (1): 40/72 kB
+Progress (1): 45/72 kB
+Progress (1): 49/72 kB
+Progress (1): 53/72 kB
+Progress (1): 57/72 kB
+Progress (1): 61/72 kB
+Progress (1): 66/72 kB
+Progress (1): 70/72 kB
+Progress (1): 72 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.jar (72 kB at 2.5 MB/s)
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- help:3.5.2:effective-pom (default-cli) @ gestion-solicitudes ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.pom
+Progress (1): 842 B
+Progress (1): 3.5 kB
+Progress (1): 3.8 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.pom (3.8 kB at 109 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.15.2/maven-plugin-tools-3.15.2.pom
+Progress (1): 792 B
+Progress (1): 2.3 kB
+Progress (1): 4.0 kB
+Progress (1): 9.0 kB
+Progress (1): 13 kB 
+Progress (1): 16 kB
+Progress (1): 18 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.15.2/maven-plugin-tools-3.15.2.pom (18 kB at 631 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.0/junit-bom-5.14.0.pom
+Progress (1): 908 B
+Progress (1): 4.1 kB
+Progress (1): 5.7 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.0/junit-bom-5.14.0.pom (5.7 kB at 202 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.19.1/jsoup-1.19.1.pom
+Progress (1): 857 B
+Progress (1): 2.5 kB
+Progress (1): 4.3 kB
+Progress (1): 7.4 kB
+Progress (1): 11 kB 
+Progress (1): 12 kB
+Progress (1): 16 kB
+Progress (1): 17 kB
+Progress (1): 20 kB
+Progress (1): 21 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.19.1/jsoup-1.19.1.pom (21 kB at 603 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.pom
+Progress (1): 1.6 kB
+Progress (1): 1.7 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.pom (1.7 kB at 60 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.5.1/plexus-interactivity-1.5.1.pom
+Progress (1): 1.3 kB
+Progress (1): 1.7 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.5.1/plexus-interactivity-1.5.1.pom (1.7 kB at 53 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.pom
+Progress (1): 1.0 kB
+Progress (1): 3.0 kB
+Progress (1): 3.2 kB
+Progress (1): 6.8 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.pom (6.8 kB at 200 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.pom
+Progress (1): 850 B
+Progress (1): 4.2 kB
+Progress (1): 7.2 kB
+Progress (1): 9.9 kB
+Progress (1): 14 kB 
+Progress (1): 22 kB
+Progress (1): 24 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.pom (24 kB at 462 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.21/xstream-parent-1.4.21.pom
+Progress (1): 799 B
+Progress (1): 3.1 kB
+Progress (1): 5.8 kB
+Progress (1): 10 kB 
+Progress (1): 14 kB
+Progress (1): 19 kB
+Progress (1): 24 kB
+Progress (1): 29 kB
+Progress (1): 34 kB
+Progress (1): 38 kB
+Progress (1): 41 kB
+Progress (1): 44 kB
+Progress (1): 44 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.21/xstream-parent-1.4.21.pom (44 kB at 1.3 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.pom
+Progress (1): 817 B
+Progress (1): 2.9 kB
+Progress (1): 6.3 kB
+Progress (1): 10 kB 
+Progress (1): 15 kB
+Progress (1): 19 kB
+Progress (1): 23 kB
+Progress (1): 24 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.pom (24 kB at 795 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom
+Progress (1): 386 B
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom (386 B at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.jar
+Progress (1): 7.7/42 kB
+Progress (1): 11/42 kB 
+Progress (1): 28/42 kB
+Progress (1): 42 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.jar (42 kB at 1.5 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.19.1/jsoup-1.19.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.jar
+Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.jar
+Downloading from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar
+Progress (1): 7.7/473 kB
+Progress (1): 11/473 kB 
+Progress (1): 28/473 kB
+Progress (1): 44/473 kB
+Progress (1): 61/473 kB
+Progress (1): 77/473 kB
+Progress (1): 93/473 kB
+Progress (1): 98/473 kB
+Progress (1): 115/473 kB
+Progress (1): 131/473 kB
+Progress (1): 147/473 kB
+Progress (1): 164/473 kB
+Progress (1): 180/473 kB
+Progress (1): 197/473 kB
+Progress (1): 213/473 kB
+Progress (1): 229/473 kB
+Progress (1): 246/473 kB
+Progress (1): 262/473 kB
+Progress (1): 279/473 kB
+Progress (1): 295/473 kB
+Progress (1): 311/473 kB
+Progress (1): 328/473 kB
+Progress (1): 344/473 kB
+Progress (1): 360/473 kB
+Progress (1): 377/473 kB
+Progress (1): 393/473 kB
+Progress (1): 410/473 kB
+Progress (1): 426/473 kB
+Progress (1): 442/473 kB
+Progress (1): 459/473 kB
+Progress (1): 473 kB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.19.1/jsoup-1.19.1.jar (473 kB at 9.9 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
+Progress (1): 0.9/30 kB
+Progress (1): 2.3/30 kB
+Progress (1): 3.6/30 kB
+Progress (1): 5.0/30 kB
+Progress (1): 6.4/30 kB
+Progress (1): 7.7/30 kB
+Progress (1): 9.1/30 kB
+Progress (1): 10/30 kB 
+Progress (1): 12/30 kB
+Progress (1): 13/30 kB
+Progress (1): 15/30 kB
+Progress (1): 15/30 kB
+Progress (1): 17/30 kB
+Progress (1): 18/30 kB
+Progress (1): 20/30 kB
+Progress (1): 21/30 kB
+Progress (1): 22/30 kB
+Progress (1): 24/30 kB
+Progress (1): 25/30 kB
+Progress (1): 26/30 kB
+Progress (1): 28/30 kB
+Progress (1): 29/30 kB
+Progress (1): 30 kB   
+Progress (2): 30 kB | 0.9/647 kB
+Progress (2): 30 kB | 2.3/647 kB
+Progress (2): 30 kB | 3.6/647 kB
+Progress (2): 30 kB | 5.0/647 kB
+Progress (2): 30 kB | 6.4/647 kB
+Progress (2): 30 kB | 7.7/647 kB
+Progress (2): 30 kB | 9.1/647 kB
+Progress (2): 30 kB | 10/647 kB 
+Progress (2): 30 kB | 12/647 kB
+Progress (2): 30 kB | 13/647 kB
+Progress (2): 30 kB | 15/647 kB
+Progress (2): 30 kB | 16/647 kB
+Progress (2): 30 kB | 17/647 kB
+Progress (2): 30 kB | 19/647 kB
+Progress (2): 30 kB | 20/647 kB
+Progress (2): 30 kB | 21/647 kB
+Progress (2): 30 kB | 23/647 kB
+Progress (2): 30 kB | 24/647 kB
+Progress (2): 30 kB | 26/647 kB
+Progress (2): 30 kB | 27/647 kB
+Progress (2): 30 kB | 28/647 kB
+Progress (2): 30 kB | 30/647 kB
+Progress (2): 30 kB | 31/647 kB
+Progress (2): 30 kB | 32/647 kB
+Progress (2): 30 kB | 34/647 kB
+Progress (2): 30 kB | 35/647 kB
+Progress (2): 30 kB | 36/647 kB
+Progress (2): 30 kB | 38/647 kB
+Progress (2): 30 kB | 39/647 kB
+Progress (2): 30 kB | 41/647 kB
+Progress (2): 30 kB | 42/647 kB
+Progress (2): 30 kB | 43/647 kB
+Progress (2): 30 kB | 45/647 kB
+Progress (2): 30 kB | 46/647 kB
+Progress (2): 30 kB | 47/647 kB
+Progress (2): 30 kB | 49/647 kB
+Progress (2): 30 kB | 50/647 kB
+Progress (2): 30 kB | 52/647 kB
+Progress (2): 30 kB | 53/647 kB
+                               
+Downloaded from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar (30 kB at 503 kB/s)
+Progress (1): 54/647 kB
+Progress (1): 56/647 kB
+Progress (1): 60/647 kB
+Progress (2): 60/647 kB | 0.9/10 kB
+Progress (2): 60/647 kB | 2.3/10 kB
+Progress (2): 60/647 kB | 3.2/10 kB
+Progress (2): 60/647 kB | 4.5/10 kB
+Progress (2): 60/647 kB | 5.9/10 kB
+Progress (2): 60/647 kB | 7.3/10 kB
+Progress (2): 60/647 kB | 8.7/10 kB
+Progress (2): 60/647 kB | 10/10 kB 
+Progress (2): 60/647 kB | 10 kB   
+Progress (2): 64/647 kB | 10 kB
+Progress (2): 68/647 kB | 10 kB
+Progress (2): 73/647 kB | 10 kB
+Progress (2): 77/647 kB | 10 kB
+Progress (2): 81/647 kB | 10 kB
+Progress (3): 81/647 kB | 10 kB | 7.2 kB
+Progress (3): 85/647 kB | 10 kB | 7.2 kB
+Progress (3): 89/647 kB | 10 kB | 7.2 kB
+Progress (3): 94/647 kB | 10 kB | 7.2 kB
+Progress (3): 98/647 kB | 10 kB | 7.2 kB
+Progress (3): 102/647 kB | 10 kB | 7.2 kB
+Progress (3): 106/647 kB | 10 kB | 7.2 kB
+Progress (3): 111/647 kB | 10 kB | 7.2 kB
+Progress (3): 115/647 kB | 10 kB | 7.2 kB
+Progress (3): 119/647 kB | 10 kB | 7.2 kB
+Progress (3): 123/647 kB | 10 kB | 7.2 kB
+Progress (3): 128/647 kB | 10 kB | 7.2 kB
+Progress (3): 132/647 kB | 10 kB | 7.2 kB
+Progress (4): 132/647 kB | 10 kB | 7.2 kB | 0.9/193 kB
+Progress (4): 136/647 kB | 10 kB | 7.2 kB | 0.9/193 kB
+Progress (4): 136/647 kB | 10 kB | 7.2 kB | 2.3/193 kB
+Progress (4): 139/647 kB | 10 kB | 7.2 kB | 2.3/193 kB
+Progress (4): 139/647 kB | 10 kB | 7.2 kB | 3.6/193 kB
+Progress (4): 143/647 kB | 10 kB | 7.2 kB | 3.6/193 kB
+Progress (4): 143/647 kB | 10 kB | 7.2 kB | 5.0/193 kB
+Progress (4): 147/647 kB | 10 kB | 7.2 kB | 5.0/193 kB
+Progress (4): 147/647 kB | 10 kB | 7.2 kB | 6.4/193 kB
+Progress (4): 147/647 kB | 10 kB | 7.2 kB | 7.7/193 kB
+                                                      
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.jar (10 kB at 147 kB/s)
+Progress (3): 151/647 kB | 7.2 kB | 7.7/193 kB
+Progress (3): 151/647 kB | 7.2 kB | 9.1/193 kB
+Progress (3): 151/647 kB | 7.2 kB | 10/193 kB 
+Progress (3): 151/647 kB | 7.2 kB | 12/193 kB
+Progress (3): 156/647 kB | 7.2 kB | 12/193 kB
+Progress (3): 156/647 kB | 7.2 kB | 13/193 kB
+Progress (3): 156/647 kB | 7.2 kB | 15/193 kB
+Progress (3): 160/647 kB | 7.2 kB | 15/193 kB
+Progress (3): 160/647 kB | 7.2 kB | 16/193 kB
+Progress (3): 164/647 kB | 7.2 kB | 16/193 kB
+Progress (3): 164/647 kB | 7.2 kB | 17/193 kB
+Progress (3): 164/647 kB | 7.2 kB | 19/193 kB
+Progress (3): 164/647 kB | 7.2 kB | 20/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 20/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 21/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 23/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 24/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 25/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 27/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 28/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 30/193 kB
+Progress (3): 168/647 kB | 7.2 kB | 31/193 kB
+Progress (3): 173/647 kB | 7.2 kB | 31/193 kB
+Progress (3): 173/647 kB | 7.2 kB | 32/193 kB
+Progress (3): 177/647 kB | 7.2 kB | 32/193 kB
+Progress (3): 177/647 kB | 7.2 kB | 34/193 kB
+Progress (3): 177/647 kB | 7.2 kB | 35/193 kB
+Progress (3): 181/647 kB | 7.2 kB | 35/193 kB
+Progress (3): 181/647 kB | 7.2 kB | 36/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 36/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 38/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 39/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 41/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 42/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 43/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 45/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 46/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 47/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 49/193 kB
+Progress (3): 185/647 kB | 7.2 kB | 50/193 kB
+                                             
+Downloaded from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar (7.2 kB at 101 kB/s)
+Progress (2): 185/647 kB | 51/193 kB
+Progress (2): 185/647 kB | 53/193 kB
+Progress (2): 185/647 kB | 54/193 kB
+Progress (2): 185/647 kB | 56/193 kB
+Progress (2): 185/647 kB | 60/193 kB
+Progress (2): 190/647 kB | 60/193 kB
+Progress (2): 194/647 kB | 60/193 kB
+Progress (2): 198/647 kB | 60/193 kB
+Progress (2): 202/647 kB | 60/193 kB
+Progress (2): 206/647 kB | 60/193 kB
+Progress (2): 211/647 kB | 60/193 kB
+Progress (2): 215/647 kB | 60/193 kB
+Progress (2): 219/647 kB | 60/193 kB
+Progress (2): 223/647 kB | 60/193 kB
+Progress (2): 240/647 kB | 60/193 kB
+Progress (2): 256/647 kB | 60/193 kB
+Progress (2): 270/647 kB | 60/193 kB
+Progress (2): 286/647 kB | 60/193 kB
+Progress (2): 303/647 kB | 60/193 kB
+Progress (2): 319/647 kB | 60/193 kB
+Progress (2): 319/647 kB | 64/193 kB
+Progress (2): 335/647 kB | 64/193 kB
+Progress (2): 352/647 kB | 64/193 kB
+Progress (2): 368/647 kB | 64/193 kB
+Progress (2): 368/647 kB | 68/193 kB
+Progress (2): 368/647 kB | 73/193 kB
+Progress (2): 368/647 kB | 77/193 kB
+Progress (2): 368/647 kB | 81/193 kB
+Progress (2): 368/647 kB | 85/193 kB
+Progress (2): 385/647 kB | 85/193 kB
+Progress (2): 385/647 kB | 89/193 kB
+Progress (2): 385/647 kB | 94/193 kB
+Progress (2): 385/647 kB | 98/193 kB
+Progress (2): 401/647 kB | 98/193 kB
+Progress (2): 417/647 kB | 98/193 kB
+Progress (2): 417/647 kB | 102/193 kB
+Progress (2): 417/647 kB | 106/193 kB
+Progress (2): 417/647 kB | 111/193 kB
+Progress (2): 434/647 kB | 111/193 kB
+Progress (2): 450/647 kB | 111/193 kB
+Progress (2): 466/647 kB | 111/193 kB
+Progress (2): 483/647 kB | 111/193 kB
+Progress (2): 499/647 kB | 111/193 kB
+Progress (2): 516/647 kB | 111/193 kB
+Progress (2): 532/647 kB | 111/193 kB
+Progress (2): 548/647 kB | 111/193 kB
+Progress (2): 565/647 kB | 111/193 kB
+Progress (2): 581/647 kB | 111/193 kB
+Progress (2): 598/647 kB | 111/193 kB
+Progress (2): 614/647 kB | 111/193 kB
+Progress (2): 630/647 kB | 111/193 kB
+Progress (2): 647 kB | 111/193 kB    
+Progress (2): 647 kB | 115/193 kB
+Progress (2): 647 kB | 119/193 kB
+Progress (2): 647 kB | 123/193 kB
+Progress (2): 647 kB | 127/193 kB
+Progress (2): 647 kB | 132/193 kB
+Progress (2): 647 kB | 136/193 kB
+                                 
+Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.jar (647 kB at 6.6 MB/s)
+Progress (1): 140/193 kB
+Progress (1): 144/193 kB
+Progress (1): 149/193 kB
+Progress (1): 153/193 kB
+Progress (1): 155/193 kB
+Progress (1): 159/193 kB
+Progress (1): 164/193 kB
+Progress (1): 168/193 kB
+Progress (1): 172/193 kB
+Progress (1): 176/193 kB
+Progress (1): 181/193 kB
+Progress (1): 185/193 kB
+Progress (1): 189/193 kB
+Progress (1): 193 kB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.jar (193 kB at 1.8 MB/s)
+[INFO] Effective-POM written to: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\ag008-effective-pom.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.879 s
+[INFO] Finished at: 2026-10-13T11:41:28+02:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+Java: 21.0.12.1
+java.lang.NoSuchMethodError: 'com.google.googlejavaformat.java.JavaFormatterOptions$Style com.google.googlejavaformat.java.JavaFormatterOptions$Style.valueOf(java.lang.String)'
+	at com.diffplug.spotless.glue.java.GoogleJavaFormatFormatterFunc.<init>(GoogleJavaFormatFormatterFunc.java:51)
+	at DiagnosticoFormato.main(DiagnosticoFormato.java:8)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at jdk.compiler/com.sun.tools.javac.launcher.Main.execute(Main.java:484)
+	at jdk.compiler/com.sun.tools.javac.launcher.Main.run(Main.java:208)
+	at jdk.compiler/com.sun.tools.javac.launcher.Main.main(Main.java:135)

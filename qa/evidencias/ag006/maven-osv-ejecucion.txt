@@ -1,0 +1,7 @@
+Warning: --sbom has been deprecated in favor of -L
+Starting filesystem walk for root: C:\
+Scanned C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag006\maven.cdx.json file and found 125 packages
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 10.3605ms elapsed, 10.3609ms wall time
+could not load db for Maven ecosystem: unable to fetch OSV database: no offline version of the OSV database is available
+Error during extraction: (extracting as vulnmatch/osvlocal) unable to fetch OSV database: no offline version of the OSV database is available
+Inventario local: 125 componentes; auditoría sin envío de metadatos.

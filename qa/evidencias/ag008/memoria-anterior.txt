@@ -1,0 +1,49 @@
+# MEMORY.md — Gestión de Solicitudes
+
+Memoria vigente; historia inicial en
+[AG-001–AG-005](docs/trazabilidad/memoria-hasta-ag005.md).
+
+## Decisiones y límites
+
+- P0, G02-A/G02-B, P2 y CAM-001/002 conservan su estado documental.
+- 001: especificación, plan, tareas y DT-01–DT-08 aprobados el 2026-10-13.
+- Rama declarada: `feature/001-base-verificable`; sin consultas de rama ni comandos Git.
+- ADR-0001/0002 y versiones conservados; sin funciones de 002–008.
+- La persona responsable decide cambios de versiones, aceptación, publicación e integración.
+
+## Estado heredado de AG-006
+
+- Base local operativa; T001–T005 ejecutadas, T006 parcial, T007 documentada.
+- T008 tuvo revisión de la misma sesión, no independiente.
+- 10 unitarias/HTTP + 3 IT backend, 11 Angular y 5 E2E PASS en AG-006.
+- Builds, tipos/lint/formato frontend, SpotBugs, actionlint y auditorías PASS en AG-006.
+- Auditorías de aquella fecha: npm 0 vulnerabilidades; Maven OSV 0 coincidencias.
+- Compose se detuvo conservando volumen; no hay despliegue ni CI remota ejecutada.
+- Historia íntegra: [informe AG-006](docs/trazabilidad/AG-006-informe.md).
+
+## AG-007 — bloqueo identificado
+
+- Inicio 2026-10-13 11:16:00 +02:00; límite autorizado 12:01:00.
+- Cierre/duración: `qa/evidencias/ag007/cierre.json` y fila única AG-007 del CSV.
+- Ejecutados spotless:check, spotless:apply y check con -e -X: todos FAIL.
+- Java efectivo 21.0.12.1; Spotless 3.10.4, lib 4.10.4, formatter 1.37.0/AOSP.
+- Causa: Spotless llama a Style.valueOf(String), ausente en el record Style de 1.37.0.
+- NoSuchMethodError reproducido; Spotless lo envuelve en InvocationTargetException.
+- No se pudo calcular formato. 14 Java idénticos por contenido/SHA-256.
+- Sin cambios de POM/configuración/versiones, exclusiones ni omisiones de pruebas.
+- Una opción de configuración no restaura el método; cambiar versiones no autorizado.
+- Verify NO ejecutado en AG-007: el prerrequisito Spotless no pasó.
+- Builds/Compose/HTTP/E2E no repetidos; evidencias AG-006 reutilizadas por ausencia de cambios.
+- Actionlint repetido PASS; CI remota pendiente de push humano.
+- Revisión de solo lectura por la misma sesión, no independiente; cierre local no propuesto.
+- Sin comandos Git; Spotless/JGit leyó automáticamente .git/config para finales de línea.
+- AG-006 y evidencias preservados; MEMORY anterior en `qa/evidencias/ag007/memoria-anterior.txt`.
+
+## Retomar
+
+- Leer [informe AG-007](docs/trazabilidad/AG-007-informe.md) y
+  [validación](especificaciones/001-base-verificable/validacion.md).
+- Requiere decisión humana para alinear versiones del formatter y su integración.
+- Después: apply/check, verify sin omisiones y regresión aplicable.
+- Pendientes CI remota, revisión independiente, aceptación humana e integración en main.
+- No reanudar automáticamente ni ejecutar Git.

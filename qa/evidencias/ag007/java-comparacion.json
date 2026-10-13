@@ -1,0 +1,93 @@
+{
+  "modificados": 0,
+  "diferencia": "Sin diferencias: el formatter falla en su constructor antes de calcular formato",
+  "fuentes": [
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java",
+      "antes": "175A4F446F178E5FAC16657D45331D25736A666E6E07AC8CCE721D0A349EAE24",
+      "despues": "175A4F446F178E5FAC16657D45331D25736A666E6E07AC8CCE721D0A349EAE24",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+      "antes": "C2B3BEDDE0B264E0D432881954455421F4F1B48DDFCFBA1486153146FF97A2DB",
+      "despues": "C2B3BEDDE0B264E0D432881954455421F4F1B48DDFCFBA1486153146FF97A2DB",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+      "antes": "0AAA29E461EEC984325CEC0BA635A1ECDD047DC2A72EDA9E7ED7800FE8DA4DA6",
+      "despues": "0AAA29E461EEC984325CEC0BA635A1ECDD047DC2A72EDA9E7ED7800FE8DA4DA6",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+      "antes": "4ACF272D1B82DE8D5E5CEC4D2054D433AEC5F95E521816CD7C214BD4E9049702",
+      "despues": "4ACF272D1B82DE8D5E5CEC4D2054D433AEC5F95E521816CD7C214BD4E9049702",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java",
+      "antes": "BF179A37E19DD8795EA0BC41B744A230A96E2039F78B30952F1CFAD760A935BD",
+      "despues": "BF179A37E19DD8795EA0BC41B744A230A96E2039F78B30952F1CFAD760A935BD",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java",
+      "antes": "88A34A835D3410219FC90DBBAAD804F35DDE2DA1DCBC46FE1E0CA820D429534D",
+      "despues": "88A34A835D3410219FC90DBBAAD804F35DDE2DA1DCBC46FE1E0CA820D429534D",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java",
+      "antes": "0BBB21AE877166B4CA76CD8F8DB1A7457839F054C404453323A16441629FFA0D",
+      "despues": "0BBB21AE877166B4CA76CD8F8DB1A7457839F054C404453323A16441629FFA0D",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java",
+      "antes": "6F04EA04F7E4E6529731C768174B8DFDDE9120F72CAA5ADA6A2DC4A9D5D7ED96",
+      "despues": "6F04EA04F7E4E6529731C768174B8DFDDE9120F72CAA5ADA6A2DC4A9D5D7ED96",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java",
+      "antes": "EEF2FFE1133421D46019D2E6250072C2A053874F749AEA69D40E0E23BF91A772",
+      "despues": "EEF2FFE1133421D46019D2E6250072C2A053874F749AEA69D40E0E23BF91A772",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java",
+      "antes": "0AA89BFC24274091FE089DE09CAC6F54D5534E7A9E130050ECBBAC4189EE3E7B",
+      "despues": "0AA89BFC24274091FE089DE09CAC6F54D5534E7A9E130050ECBBAC4189EE3E7B",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+      "antes": "56D4418BF66B647407BE575734C0D6F336A0962A594ACFA33B916473174A61F6",
+      "despues": "56D4418BF66B647407BE575734C0D6F336A0962A594ACFA33B916473174A61F6",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/aplicacion/ServicioSaludTest.java",
+      "antes": "AD569B62F5BFE48670003B9655C60DBFC7349BD50B35219016219ED36C0151B4",
+      "despues": "AD569B62F5BFE48670003B9655C60DBFC7349BD50B35219016219ED36C0151B4",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java",
+      "antes": "0B939469AF1D2B3EDB160C07B5E867295CB0545B7F125E18E0BC189E307DCE4E",
+      "despues": "0B939469AF1D2B3EDB160C07B5E867295CB0545B7F125E18E0BC189E307DCE4E",
+      "contenidoIdentico": true
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgresTest.java",
+      "antes": "49FB58CC4CD6E9F4EDBCA8409C5145CEBF52DB093AE73DCFE91577CF28F90FCE",
+      "despues": "49FB58CC4CD6E9F4EDBCA8409C5145CEBF52DB093AE73DCFE91577CF28F90FCE",
+      "contenidoIdentico": true
+    }
+  ],
+  "fuentesTest": 4,
+  "fecha": "2026-10-13T11:19:22.5683743+02:00",
+  "fuentesMain": 10
+}

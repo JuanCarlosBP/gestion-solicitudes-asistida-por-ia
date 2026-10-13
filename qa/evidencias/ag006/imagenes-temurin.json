@@ -1,0 +1,34 @@
+[
+  {
+    "name": "21.0.12.1_1-jre-ubi9-minimal",
+    "digest": "sha256:a2ac0a3b20101094cbf7a7129581fabb409d9f03c923d138bd8eee634ba04d64"
+  },
+  {
+    "name": "21.0.12.1_1-jre-ubi10-minimal",
+    "digest": "sha256:51db1b291d07a921cf943f4bfb19c11136d0e25dee8e3357e39c461a5592a286"
+  },
+  {
+    "name": "21.0.12.1_1-jdk-ubi9-minimal",
+    "digest": "sha256:d5f86a8cd711db347ac98120f7902425ee2acaccf6c43b4161b19b92068fbd8c"
+  },
+  {
+    "name": "21.0.12.1_1-jdk-ubi10-minimal",
+    "digest": "sha256:504a4000a57b1f78b7fb871f24f89e5f8f354db3d2226888c830ccdcf0cce18d"
+  },
+  {
+    "name": "21.0.12.1_1-jre-noble",
+    "digest": "sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c"
+  },
+  {
+    "name": "21.0.12.1_1-jdk-noble",
+    "digest": "sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87"
+  },
+  {
+    "name": "21.0.12.1_1-jre-resolute",
+    "digest": "sha256:e9a838377dc3719c0a0e7d1ac2e13d6f49c5cacd643f9a22024845736bb00ad9"
+  },
+  {
+    "name": "21.0.12.1_1-jre-jammy",
+    "digest": "sha256:f04fb34e053148344e83317976114ec3f37e4b830ec8bdab5a2fe3cecd7d010b"
+  }
+]

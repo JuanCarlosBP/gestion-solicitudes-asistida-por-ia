@@ -1,0 +1,9 @@
+{
+  "copiaDuradera": "qa/evidencias/ag007/DiagnosticoFormato.java.txt",
+  "informePreservado": "docs/trazabilidad/AG-007-informe.md",
+  "fecha": "2026-10-13T11:46:20.9042031+02:00",
+  "carpetaConservada": true,
+  "motivoCarpeta": "Contiene verificar-cierre.mjs, no está vacía",
+  "sha256": "DFB4CB7883AE5712CE2D601A053FD9CEB306C0C1B453E374084B2272F0605C45",
+  "eliminado": "tmp/ag007/DiagnosticoFormato.java"
+}

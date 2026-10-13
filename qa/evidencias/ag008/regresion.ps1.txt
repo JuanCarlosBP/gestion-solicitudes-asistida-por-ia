@@ -1,0 +1,59 @@
+$ErrorActionPreference = 'Stop'
+$raizAg008 = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+Set-Location $raizAg008
+$evidenciaAg008 = Join-Path $raizAg008 'qa/evidencias/ag008'
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $raizAg008 'tmp/playwright'
+$env:npm_config_cache = Join-Path $raizAg008 'tmp/npm-cache'
+$env:TEMP = Join-Path $raizAg008 'tmp/pruebas-frontend'
+$env:TMP = $env:TEMP
+$composeAg008 = @('compose','--env-file','infraestructura/.env','-f','infraestructura/compose.yaml')
+function Registrar([string]$Comando, [DateTimeOffset]$Inicio, [int]$Salida) {
+    @{comando=$Comando;inicio=$Inicio.ToString('o');fin=[DateTimeOffset]::Now.ToString('o');salida=$Salida} | ConvertTo-Json -Compress | Add-Content (Join-Path $evidenciaAg008 'comandos.jsonl')
+}
+$salidaGlobal = 0
+try {
+    $httpAg008 = @('/api/salud','/v3/api-docs','/swagger-ui/index.html','/inicio' | ForEach-Object {
+        $respuesta = Invoke-WebRequest -Uri ('http://127.0.0.1:18080' + $_) -TimeoutSec 10 -SkipHttpErrorCheck
+        if ($respuesta.StatusCode -ne 200) { throw "HTTP inesperado en $_" }
+        if ($_ -eq '/api/salud' -and $respuesta.Content -ne '{"estado":"DISPONIBLE"}') { throw 'Contrato de salud inesperado' }
+        if ($_ -eq '/v3/api-docs') {
+            $contrato = $respuesta.Content | ConvertFrom-Json
+            if ($contrato.openapi -notlike '3.1.*' -or @($contrato.paths.PSObject.Properties).Count -ne 1) { throw 'Contrato OpenAPI inesperado' }
+        }
+        [pscustomobject]@{ruta=$_;http=[int]$respuesta.StatusCode;resultado='PASS';fecha=[DateTimeOffset]::Now.ToString('o')}
+    })
+    $httpAg008 | ConvertTo-Json | Set-Content (Join-Path $evidenciaAg008 'http-integrado.json')
+    & docker @composeAg008 ps --all --format json > (Join-Path $evidenciaAg008 'compose-servicios.jsonl')
+    if ($LASTEXITCODE -ne 0) { throw 'No se pudieron consultar servicios' }
+    $inicio = [DateTimeOffset]::Now
+    & pwsh -NoProfile -File tmp/ag008/verificar-compose.ps1 *> (Join-Path $evidenciaAg008 'compose-regresion.txt')
+    $codigo = $LASTEXITCODE
+    Registrar 'pwsh -NoProfile -File tmp/ag008/verificar-compose.ps1 (procedimiento AG-006; solo rutas de salida adaptadas)' $inicio $codigo
+    if ($codigo -ne 0) { throw 'Regresión de persistencia/caída/recuperación fallida' }
+    Set-Location (Join-Path $raizAg008 'frontend')
+    $inicio = [DateTimeOffset]::Now
+    & npm.cmd run test:e2e *> (Join-Path $evidenciaAg008 'e2e.txt')
+    $codigo = $LASTEXITCODE
+    Registrar 'npm run test:e2e (desde frontend)' $inicio $codigo
+    Copy-Item test-results/e2e.xml (Join-Path $evidenciaAg008 'e2e.xml')
+    if ($codigo -ne 0) { throw 'E2E fallido' }
+} catch {
+    $salidaGlobal = 1
+    $_.Exception.Message | Set-Content (Join-Path $evidenciaAg008 'regresion-error.txt')
+} finally {
+    Set-Location $raizAg008
+    $inicio = [DateTimeOffset]::Now
+    & docker @composeAg008 stop *> (Join-Path $evidenciaAg008 'compose-parada.txt')
+    $codigo = $LASTEXITCODE
+    Registrar 'docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop' $inicio $codigo
+    if ($codigo -ne 0) { $salidaGlobal = 1 }
+    $servicios = @(& docker @composeAg008 ps --all --format json | ForEach-Object { $_ | ConvertFrom-Json })
+    $volumen = & docker volume inspect gestion-solicitudes-001_datos-postgres --format '{{.Name}}'
+    $volumenConservado = $LASTEXITCODE -eq 0 -and $volumen -eq 'gestion-solicitudes-001_datos-postgres'
+    $detenidos = $servicios.Count -eq 3 -and @($servicios | Where-Object State -ne 'exited').Count -eq 0
+    if (-not $volumenConservado -or -not $detenidos) { $salidaGlobal = 1 }
+    @{fecha=[DateTimeOffset]::Now.ToString('o');servicios=@($servicios | Select-Object Service,State,ExitCode);detenidos=$detenidos;volumen=$volumen;volumenConservado=$volumenConservado;salidaRegresion=$salidaGlobal} | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $evidenciaAg008 'compose-cierre.json')
+}
+Get-Content (Join-Path $evidenciaAg008 'compose-cierre.json')
+if (Test-Path (Join-Path $evidenciaAg008 'e2e.txt')) { Get-Content (Join-Path $evidenciaAg008 'e2e.txt') -Tail 15 }
+exit $salidaGlobal
