@@ -1,0 +1,6 @@
+URL base: http://127.0.0.1:18083; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag009\precedencia; archivo de entorno: C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag009\precedencia.env
+Exception: C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag009\probar-precedencia.ps1:31
+Line |
+  31 |  … 0.0.1:$($caso.esperado)") { throw 'Prioridad de puerto incorrecta.' }
+     |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Prioridad de puerto incorrecta.

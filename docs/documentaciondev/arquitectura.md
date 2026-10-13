@@ -54,7 +54,8 @@ al propio origen; `style-src 'unsafe-inline'` permite estilos de Angular/Swagger
 No hay scripts externos ni interpolación de HTML no fiable. Se revisará CSP
 al cambiar estas superficies. HSTS/HTTPS públicos no se acreditan en HTTP local.
 
-Compose solo publica `127.0.0.1:18080`. PostgreSQL está en red interna sin puertos
+Compose solo publica loopback, con 18080 por defecto y `FRONTEND_PUERTO` configurable.
+AG-009 comprobó también 18081. PostgreSQL está en red interna sin puertos
 publicados; backend tampoco tiene puerto en el host. Usuarios efectivos comprobados:
 backend 10001, Nginx 101 y PostgreSQL 999. Se eliminan capacidades Linux y se
 activa no-new-privileges; backend/frontend tienen raíz de solo lectura y tmpfs.
@@ -82,10 +83,16 @@ Las imágenes están fijadas por etiqueta exacta y digest. Maven Wrapper verific
 el ZIP mediante SHA-256; el constructor Linux incluye unzip fijado.
 El backend Docker construye el artefacto con objetivos Maven de empaquetado;
 las pruebas y controles se ejecutan fuera de ese build, en QA/CI.
-Construir una imagen no sustituye `verify`, actualmente bloqueado por Spotless.
+Construir una imagen no sustituye `verify`: AG-008 completó Spotless y verify,
+y AG-009 repitió la verificación local íntegra con éxito.
 
 Se han ejecutado pruebas unitarias/HTTP, Testcontainers, Angular y navegador.
 El workflow usa Actions por SHA, permisos contents:read y conserva informes.
 La [política de transitivas](../decisiones/ADR-0002-politica-dependencias-transitivas.md)
 permite preliminares controladas sin omitir instalación, auditoría ni QA.
 La revisión final de AG-006 es de la misma sesión y no es independiente.
+La primera revisión independiente [REV-001](../trazabilidad/REV-001-revision-independiente-01.md)
+registró R-01 a R-04; [AG-009](../trazabilidad/AG-009-informe.md) documenta su respuesta.
+La rama y PR #1 se publicaron por intervención humana. La primera CI pasó frontend
+y falló por setup-java y la copia de public; AG-009 corrige ambas sin cambiar arquitectura.
+La segunda CI espera el siguiente push humano. 001 no está aceptada ni integrada.

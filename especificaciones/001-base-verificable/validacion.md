@@ -332,3 +332,87 @@ Se preservan por huella todos los históricos, fallos anteriores, ADR y lockfile
 Solo se elimina tmp/ag007/DiagnosticoFormato.java, con copia duradera idéntica y
 explicación completa en AG-007. Búsqueda acotada de secretos sin coincidencias;
 no es garantía absoluta. No se detectan archivos inesperados en el delta autorizado.
+
+---
+
+## AG-009 — Correcciones de CI y respuesta a REV-001
+
+**Estado vigente, 2026-10-13:** correcciones locales verificadas; segunda CI remota,
+aceptación humana e integración pendientes. Este apéndice actualiza el estado;
+los apartados AG-006–AG-008 anteriores conservan su contexto y bytes originales.
+Inicio 14:42:45 +02:00; cierre/duración en [cierre.json](../../qa/evidencias/ag009/cierre.json).
+[Informe AG-009](../../docs/trazabilidad/AG-009-informe.md) y
+[primera revisión independiente](../../docs/trazabilidad/REV-001-revision-independiente-01.md).
+
+AG-008 completó Spotless y verify local. Después la persona responsable publicó
+feature/001-base-verificable, los commits 2a4c15c, 7184ff8, 3f379d0, 234e2d5 y f05be8a,
+y la PR borrador #1. Primera CI **ejecutada**, runs 38388926539 (push) y 38389011007
+(pull_request): frontend PASS; backend FAIL por setup-java `21.0.12.1+1`;
+Compose FAIL por copiar public vacío. Son datos del encargo humano, sin consulta Git.
+La segunda CI queda pendiente del siguiente push humano; 001 no está aceptada ni integrada.
+
+| REV-001 | Respuesta comprobada en AG-009 | Resultado |
+|---|---|---|
+| R-01 | Retirada COPY public public; comprobación de carpeta totalmente vacía y eliminación exclusiva; build frontend Docker sin caché PASS sin public. | PASS local |
+| R-02 | QA_EVIDENCE_DIR o tmp/evidencias/local; AG-003–AG-008 protegidos, QA_BASELINE_DIR solo lectura, rechazo de salida igual/descendiente; jobs CI con directorios nuevos; 187 históricos idénticos antes/después. | PASS local; artefactos del segundo run por revisar |
+| R-03 | README, índice, entorno, arquitectura, plan, este apéndice y MEMORY distinguen AG-008 PASS, primera CI fallida, correcciones AG-009 y segunda CI pendiente. | PASS documental |
+| R-04 | Puerto por parámetro > entorno > .env elegido > 18080; BASE_URL única; Compose y Chromium probados en 18080 y 18081. | PASS local |
+
+REV-001 conserva sus hallazgos originales y su estado Correcciones requeridas.
+La versión solicitada a setup-java cambia exactamente a `21.0.12.1`, manteniendo
+Temurin/Java 21 y todos los controles. Workflow: pull_request y push solo main,
+Actions por SHA y permisos mínimos. No se han cambiado dependencias, lockfiles,
+requisitos funcionales, código de aplicación ni arquitectura.
+
+Evidencias nuevas bajo [AG-009](../../qa/evidencias/ag009/):
+
+- `mvnw.cmd verify` sin omisiones PASS: 13 pruebas backend (10 unitarias/HTTP + 3 IT
+  PostgreSQL/Flyway), cero fallos/errores/omitidas; Spotless y SpotBugs PASS (0 bugs/errores).
+  Tiempo de pared 28,141 s. Logs e informes JUnit en backend-verify.txt e informes-backend/.
+- Frontend tipos/lint/formato PASS, 11 Angular PASS y build PASS. Se usó el script real
+  ng test --watch=false con salida JUnit, sin reducir las pruebas.
+- `docker build --no-cache --file frontend/Dockerfile frontend` PASS, 13,906 s;
+  ninguna carpeta public ni asset artificial añadido.
+- Compose 18080: HTTP salud/OpenAPI/Swagger/Angular 200, persistencia stop/start,
+  PostgreSQL caído → 503 real en 2010 ms, error en navegador, recuperación 200 y 5 E2E PASS.
+- Compose 18081: mismo recorrido, 503 real en 2013 ms y las mismas 5 E2E PASS.
+  Entorno ficticio temporal retirado; tres servicios detenidos y volumen conservado.
+- Actionlint PASS y YAML/estructura de triggers/artefactos/prerrequisitos PASS.
+  Sintaxis de 6 Node .mjs y 2 PowerShell PASS; utilidades modificadas ejecutadas.
+  Cinco casos enfocados de prioridad de puerto PASS, con Docker interceptado solo
+  en el arnés; no sustituyen las dos integraciones reales.
+- Maven OSV: 125 componentes, sin coincidencias con base pública previamente descargada.
+  No actualizada en AG-009. Inventario npm repetido: 689 entradas, 16 preliminares
+  transitivos controlados; auditorías npm históricas conservan fecha/alcance.
+- Los primeros auxiliares YAML y de ámbito PowerShell fallaron; repeticiones corregidas
+  PASS, logs fallidos conservados. Ninguna dependencia nueva por esos fallos.
+
+| BV | Resultado vigente | Evidencia y límite |
+|---|---|---|
+| BV-01 | PASS local; Linux CI pendiente | Verify Windows, builds Docker Linux, lockfile/POM/digests intactos, construcción sin public. Falta nuevo runner remoto. |
+| BV-02 | PASS local | Verify y arranque Compose; fallo sin configuración de AG-006 reutilizado para aplicación intacta. |
+| BV-03 | PASS local | 3 IT PostgreSQL/Flyway y persistencia real en ambos recorridos. |
+| BV-04 | PASS local | HTTP 200/503/200, respuestas controladas y error visible. |
+| BV-05 | PASS local | OpenAPI y Swagger con petición real desde Chromium en ambos puertos. |
+| BV-06 | PASS local | 11 Angular, build y E2E de rutas, estados, teclado y móvil. |
+| BV-07 | PASS local | Build limpio, Compose 18080/18081, parada y volumen conservado. |
+| BV-08 | PASS local con límites | Tipos/lint/formato, Spotless/SpotBugs, 13 backend, 11 Angular y 5 E2E por puerto; auditorías con fecha/alcance declarados. |
+| BV-09 | PENDIENTE remoto; PASS local | Primera CI fallida real. Workflow y equivalentes corregidos PASS; segundo run y artefactos por revisar tras push humano. |
+| BV-10 | PASS documental local | Estado conciliado, manifiestos, enlaces y hashes. Aceptación humana pendiente. |
+
+Un revisor delegado distinto del escritor examinó las correcciones sin ejecutar
+Git, builds, pruebas, Docker ni escrituras. Identificó una colisión baseline/salida,
+corregida antes de mkdir y comprobada por arnés; confirmó el cierre del hallazgo.
+También se retiró únicamente de AG-009 un dumpstream residual anterior al verify,
+con ruta/hash conservados en residuo-excluido.json. No quedan hallazgos técnicos
+abiertos en su alcance. El entorno anunciaba workspace-write: solo lectura por
+instrucción, sin barrera de escritura acreditada. No aprueba 001.
+La revisión de documentos finales corresponde a la sesión principal.
+
+Se preservan 187 archivos históricos por SHA-256 y los prefijos de CSV/validación.
+Una sola fila AG-009; REV-001 original intacta. Manifiesto e inventario actual
+separados del verificador histórico AG-006. Búsqueda acotada de secretos y delta
+sin archivos inesperados; .env local coincide con el ejemplo ficticio.
+No se midió cobertura, no se auditó SO de imágenes/plugins Maven y no se reprodujo
+el workflow en GitHub. No hubo comandos Git ni integración. Próximo paso: revisión
+humana de los dos grupos de commit, push y segunda CI; aceptación y main posteriores.

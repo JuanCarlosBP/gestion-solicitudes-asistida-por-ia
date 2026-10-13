@@ -1,0 +1,1 @@
+{"log":"C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\qa\\evidencias\\ag009\\integracion-dos-puertos.txt","segundos":77.6099229,"nombre":"integracion-dos-puertos","programa":"pwsh","directorio":".","inicio":"2026-10-13T14:48:58.8874325+02:00","salida":0,"argumentos":["-NoProfile","-File","tmp/ag009/integracion.ps1"],"fin":"2026-10-13T14:50:16.5027740+02:00"}

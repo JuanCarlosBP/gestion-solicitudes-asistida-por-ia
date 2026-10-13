@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-10-13T13:05:16.738Z",
+  "resultado": "PASS",
+  "baseline": "Inventario inicial AG-009",
+  "archivos": 410,
+  "sha256Manifiesto": "0F403E1B2FD0BE4852A03A5E5E0334F9F31D97923784F5E8544500234929A1D1",
+  "historicos": 187,
+  "prefijos": [
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 33755,
+      "esperado": "9C69E9FEE0F8635DBDB956A1601F2337BE151A1D22162308F6864655448F5A57",
+      "observado": "9C69E9FEE0F8635DBDB956A1601F2337BE151A1D22162308F6864655448F5A57",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "bytes": 23883,
+      "esperado": "A6F8A5DF49357F86191D494E241EBE0A816901499461450AA9D65B86F06A7024",
+      "observado": "A6F8A5DF49357F86191D494E241EBE0A816901499461450AA9D65B86F06A7024",
+      "resultado": "PASS"
+    }
+  ],
+  "exclusiones": [
+    ".git",
+    "tmp",
+    "node_modules",
+    "target",
+    "dist",
+    ".angular",
+    "test-results",
+    "playwright-report",
+    ".env",
+    "qa/evidencias/ag009/entrega-manifiesto.json",
+    "qa/evidencias/ag009/entrega-integridad.json"
+  ],
+  "operacionesGit": 0
+}

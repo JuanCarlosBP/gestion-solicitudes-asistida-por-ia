@@ -1,0 +1,212 @@
+{
+  "fecha": "2026-10-13T13:05:16.677Z",
+  "resultado": "PASS",
+  "historicos": {
+    "antes": 187,
+    "despues": 187,
+    "sinCambios": true,
+    "huellaCanonicaAntes": "B99004E4B83FDAEDCBA37C218900301FBBF64802251F25C209A8EBCE916C4EA4",
+    "huellaCanonicaDespues": "B99004E4B83FDAEDCBA37C218900301FBBF64802251F25C209A8EBCE916C4EA4"
+  },
+  "prefijos": [
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 33755,
+      "esperado": "9C69E9FEE0F8635DBDB956A1601F2337BE151A1D22162308F6864655448F5A57",
+      "observado": "9C69E9FEE0F8635DBDB956A1601F2337BE151A1D22162308F6864655448F5A57",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "bytes": 23883,
+      "esperado": "A6F8A5DF49357F86191D494E241EBE0A816901499461450AA9D65B86F06A7024",
+      "observado": "A6F8A5DF49357F86191D494E241EBE0A816901499461450AA9D65B86F06A7024",
+      "resultado": "PASS"
+    }
+  ],
+  "intactos": [
+    {
+      "ruta": "backend/pom.xml",
+      "sha256": "7B6ADCA71B3ED2A6D274F77B5798C39E0AE5EC24F716B8085863BE3CDE847B82",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "frontend/package.json",
+      "sha256": "E9A71302D587FE917A9E05B23B209CE8F36595CFF8F2E5822FE1275D301E1690",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "frontend/angular.json",
+      "sha256": "6EF7A4DD69CF2D7549F380DC11DB585E4F4E72C4DD65783026D74C077149132E",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "frontend/playwright.config.ts",
+      "sha256": "07B4D860B3C3EA0A8C8BABFE15F1F92EEA501534CB79DFA4091ECC18EB96B6DC",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "infraestructura/compose.yaml",
+      "sha256": "E64FE5E0D53DACAFF66F48D8CF2B869EF74542F76C742EC5FCF7D580B7127DE9",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "infraestructura/.env.example",
+      "sha256": "CF52FDCE9340A2CCBA376A704D6D4436D14C8B19B202CD727B064A6EF2EB7FDF",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "docs/documentaciondev/versiones.md",
+      "sha256": "0BB68A106F94EEDD91F129118FC3E774627FCF9CA90145402A535F495773A9C0",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/especificacion.md",
+      "sha256": "AFD62D03025692C9F9B0CE8FB289063B766D1387D6EA331992283ABC08A6724E",
+      "resultado": "SIN_CAMBIOS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/tareas.md",
+      "sha256": "7F56B00426D3881B02AC251B6E376D93155356CDE3A0A99F40B0C0A52856FC87",
+      "resultado": "SIN_CAMBIOS"
+    }
+  ],
+  "fuentes": [
+    {
+      "ruta": ".github/workflows/ci.yml",
+      "bytes": 5851,
+      "sha256": "2ACC843A03D5BEBC30A5D475B90B7077C4EC0289E718B87C4608F37F7D502942",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "docs/documentaciondev/arquitectura.md",
+      "bytes": 5676,
+      "sha256": "319FEB35707A72A2215EF6DC6C007D575FDA2A5C6BC4381AB66DCD36F347C2A1",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "docs/documentaciondev/entorno.md",
+      "bytes": 10171,
+      "sha256": "2C20EC18FF67575A721991CB9802B83D64402A271160CC621D25A1C980F8ECA1",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "docs/README.md",
+      "bytes": 8346,
+      "sha256": "7DEB46D5C1DE04101799A6E9DBC05E2C9145D13E622B9E34ABEAD690112BF65E",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "docs/trazabilidad/AG-009-informe.md",
+      "bytes": 14029,
+      "sha256": "3491C1C5A07555374443DC879E943A0D8B67CA70922A7000372737C62468CA23",
+      "estado": "CREADO"
+    },
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 34796,
+      "sha256": "FFFDFACF0C99ACFB187FF3CCA5010E22048E249F67720B6C3C684AC75AB52B92",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "docs/trazabilidad/REV-001-revision-independiente-01.md",
+      "bytes": 2535,
+      "sha256": "6778ED8923D21D0D707F46F397F8CDF55E12BC6EB1707AA37B07EAE38399FBBE",
+      "estado": "CREADO"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/plan.md",
+      "bytes": 12511,
+      "sha256": "73DCB6F5BACBC2FEF85145CB9B457C2D29E782FC7BF45C59AF41321D14503443",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "bytes": 30348,
+      "sha256": "D89F4DDA9219802460C5DB870CA81FEFF84FADC66513294D2595F5EF58C598E9",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "frontend/Dockerfile",
+      "bytes": 625,
+      "sha256": "8102329BD1EF779DE62EFDEA1547A02DA52E25EF1F7A1E4F5C622CE19BCBA82D",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "MEMORY.md",
+      "bytes": 3087,
+      "sha256": "9122AC1AC78D8CB8430CE3DF465D241307A4FD4713F3DF647AD221BB7A713D5B",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "qa/auditar-maven.mjs",
+      "bytes": 2206,
+      "sha256": "C01B43D3E64DC8DDF7020AFD1A3C4103E9A8695FFBBA3AB57CFEE3E533052946",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "qa/rutas-evidencia.mjs",
+      "bytes": 1762,
+      "sha256": "7EA8EF4F2F2792A7DE6CCE6365982B9B3FA490E58181619A24E2BAAA6957B6B0",
+      "estado": "CREADO"
+    },
+    {
+      "ruta": "qa/verificar-compose.ps1",
+      "bytes": 5638,
+      "sha256": "146A280802290EACF88083AC3F0EA810E825A951CAF4ECD3321EE9AC8284C969",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "qa/verificar-documentacion.mjs",
+      "bytes": 2626,
+      "sha256": "7803C9F2F1F04296FC471866565449924AA3A91AF49951640BE6A7A73698812A",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "qa/verificar-entrega.mjs",
+      "bytes": 5384,
+      "sha256": "EEA9D0473899FCAE2B7347771313B7267407A1B159583439B13FD3208DF11A22",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "qa/verificar-estado-navegador.mjs",
+      "bytes": 1379,
+      "sha256": "CAEBE937A14756168005BCECE4567035E7AA3A0DCC1EF62634E2F9D916FB0574",
+      "estado": "MODIFICADO"
+    },
+    {
+      "ruta": "README.md",
+      "bytes": 7946,
+      "sha256": "B3B77EB0ADC061C45D0A1EF01C706E9099904ACFCD9414A731425EDD57A812E4",
+      "estado": "MODIFICADO"
+    }
+  ],
+  "eliminados": [],
+  "inesperados": [],
+  "frasesObsoletas": [],
+  "puerto18080SoloPredeterminado": [
+    {
+      "ruta": "qa/verificar-compose.ps1",
+      "linea": 29,
+      "contenido": "if ([string]::IsNullOrWhiteSpace($puerto)) { $puerto = '18080' }"
+    },
+    {
+      "ruta": "qa/verificar-estado-navegador.mjs",
+      "linea": 9,
+      "contenido": "const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:18080';"
+    }
+  ],
+  "configuracionLocalIgualEjemploFicticio": true,
+  "publicExiste": false,
+  "filasAg009": 1,
+  "limites": [
+    "No se consulta Git ni el remoto.",
+    "Inventario omite cachés/salidas de herramientas declaradas y configuración local.",
+    "La búsqueda de secretos se registra por separado y es acotada."
+  ]
+}

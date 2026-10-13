@@ -65,23 +65,19 @@ Adaptar JAVA_HOME a una instalación Java 21 comprobada. En este equipo `java`
 del PATH era 21, pero JAVA_HOME apuntaba a 17; Maven utiliza JAVA_HOME.
 La caché Maven se fija por `.mvn/maven.config` en `../tmp/m2`.
 
-**Resultado actual del comando obligatorio:** falla en Spotless con
-InvocationTargetException; T006 y la aceptación completa siguen bloqueadas.
-No es un resultado verde de `verify`. Tras dos correcciones fallidas no se
-continuó reparando ese control durante AG-006.
+**Resultado actual del comando obligatorio:** PASS en AG-008 y repetido en AG-009,
+sin omisiones: Spotless, 10 pruebas unitarias/HTTP, 3 Testcontainers y SpotBugs.
+El fallo de formato de AG-006 y su diagnóstico AG-007 permanecen en los informes
+históricos; no son el estado actual. Docker es obligatorio para las integraciones.
 
-Para obtener evidencia independiente de los demás controles se ejecutó:
+Para generar el inventario de dependencias después de verify:
 
 ```powershell
-.\mvnw.cmd -B -ntp '-Dspotless.skip=true' verify
 .\mvnw.cmd -B -ntp dependency:list '-DoutputFile=target/dependencias.txt' '-DappendOutput=false'
 ```
 
-La primera variante pasó 10 pruebas unitarias/HTTP, 3 Testcontainers y SpotBugs,
-y produjo el JAR. Es una comprobación parcial explícita, no una alternativa de
-aceptación que permita omitir formato. Docker es obligatorio para las integraciones.
 Los informes están en `backend/target/surefire-reports` y `failsafe-reports`.
-Se copiaron informes finales a `qa/evidencias/ag006/informes-backend/`.
+Los informes conservados de esta ejecución están en `qa/evidencias/ag009/informes-backend/`.
 
 El arranque sin variables DB se comprobó con una instancia Docker propia sin red:
 falló con salida 1, identificó DB_URL y no necesitó secretos reales.
@@ -108,7 +104,9 @@ npm audit --omit=dev --json
 npm audit --json
 ```
 
-Los comandos pasaron en AG-006 con las escalaciones concretas documentadas.
+AG-009 repitió tipos, lint, formato, 11 pruebas Angular y build con PASS.
+La instalación y auditorías npm de AG-006 conservan su fecha y alcance;
+no se presentan como auditorías nuevas. El lockfile no se modificó.
 Los tests necesitan poder crear procesos/temporales; el sandbox provocó EPERM
 y errores de resolución, resueltos ejecutando el comando autorizado con temporales
 locales. No modificar node_modules, usar force, overrides ni legacy-peer-deps.
@@ -126,7 +124,24 @@ $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Split-Path (Get-Location) -Parent) 't
 npm run test:e2e
 ```
 
-Con Compose activo, desde la raíz se ejecutó `./qa/verificar-compose.ps1`.
+Con Compose activo, desde la raíz:
+
+```powershell
+$env:QA_EVIDENCE_DIR = 'tmp/evidencias/local'
+./qa/verificar-compose.ps1 -ArchivoEntorno infraestructura/.env
+```
+
+`-DirectorioEvidencias` permite elegir la salida explícitamente; en su ausencia
+se usa `QA_EVIDENCE_DIR` y después `tmp/evidencias/local`. La utilidad crea el
+directorio e imprime la ruta. Rechaza destinos AG-003–AG-008 y rutas fuera del proyecto.
+La prioridad del puerto es `-PuertoFrontend`, variable `FRONTEND_PUERTO`, valor
+del archivo indicado por `-ArchivoEntorno` y, por último, 18080.
+El script calcula `BASE_URL=http://127.0.0.1:<puerto>` y lo transmite al navegador.
+El conjunto debe haberse creado con ese mismo puerto; cambiarlo requiere recrear
+el frontend mediante `docker compose ... up -d --build --wait` con la configuración elegida.
+Para ejecutar E2E por separado en otro puerto, definir `BASE_URL` en esa consola
+antes de `npm run test:e2e`. AG-009 probó realmente 18080 y 18081.
+
 Detiene/arranca solo los servicios de este proyecto; verifica historial idéntico,
 503 real al parar PostgreSQL, error visible en Chromium y recuperación 200.
 No borra datos. Las pruebas E2E ordinarias prueban además navegación, foco,
@@ -155,11 +170,24 @@ Salida distinta por fallo del servicio/preparación deja aceptación pendiente.
 Los parches Tomcat/Jackson eliminaron las 17 coincidencias iniciales del análisis.
 No se afirma cobertura de CVE desconocidas, plugins Maven ni sistema operativo de imágenes.
 
+El auditor y los verificadores de navegador, entrega y documentación escriben en
+`QA_EVIDENCE_DIR`, con `tmp/evidencias/local` como destino predeterminado.
+`qa/verificar-entrega.mjs` lee `QA_BASELINE_DIR` (por defecto `qa/evidencias/ag006`)
+sin modificarlo: conserva los controles históricos específicos de AG-006 y no
+sustituye un inventario del cambio actual. AG-009 aporta su propio manifiesto y
+comparación SHA-256 de la historia. Las rutas de lectura y escritura se imprimen.
+
 ## CI, depuración y límites
 
 `.github/workflows/ci.yml` prepara backend, frontend y Compose en Ubuntu 24.04.
 Actions por SHA, permisos mínimos, sin publicación de imágenes ni despliegue.
-Actionlint 1.7.12 pasó localmente. CI remota está pendiente de push y ejecución humanos.
+Actionlint 1.7.12 pasó localmente. La rama y PR borrador #1 ya fueron publicadas.
+La primera CI (runs 38388926539 y 38389011007) pasó frontend y falló backend
+por `21.0.12.1+1` en setup-java y Compose por `COPY public` sobre una carpeta vacía.
+AG-009 usa `21.0.12.1`, retira esa copia y atiende R-01 a R-04 de REV-001.
+El workflow se dispara por PR y por push solo a main, con salidas nuevas por job
+en `tmp/evidencias/backend` y `tmp/evidencias/compose`; no publica evidencias históricas.
+La segunda CI está pendiente del siguiente push humano; 001 no está aceptada ni integrada.
 El Wrapper Linux y los builds multietapa pasaron en Docker; no equivalen a haber
 ejecutado el workflow remoto. El conjunto de pruebas en un runner Linux queda pendiente.
 
@@ -167,6 +195,6 @@ Errores reales registrados: Docker denegado en sandbox, DNS restringido,
 JAVA_HOME 17, caché npm mal asignada inicialmente, exports/formateador, temporales
 Vitest, compatibilidad de imagen por digest en Testcontainers, falta de unzip,
 `start --wait` no admitido y foco del enlace de salto. Sus evidencias se conservan.
-Para depurar, revisar el informe específico en `qa/evidencias/ag006` y los informes
+Para depurar, revisar la ejecución correspondiente en `qa/evidencias/` y los informes
 JUnit; no habilitar trazas públicas ni imprimir la configuración completa de Compose.
 No se ha usado Full Access ni se han actualizado herramientas globales.

@@ -1,0 +1,66 @@
+{
+  "spotbugs": {
+    "bugs": 0,
+    "errores": 0
+  },
+  "fecha": "2026-10-13T14:55:53.4544915+02:00",
+  "e2e18081": {
+    "fallos": 0,
+    "pruebas": 5,
+    "omitidas": 0,
+    "errores": 0
+  },
+  "e2e18080": {
+    "fallos": 0,
+    "pruebas": 5,
+    "omitidas": 0,
+    "errores": 0
+  },
+  "baseOsv": {
+    "limite": "Reutilizada la base pública descargada previamente; no acredita actualización remota.",
+    "sha256": "C0E8F6D2AAEAB6904D0B0277B002C759290611D725E9446884EB5A833E84DFAF",
+    "ultimaEscritura": "2026-10-13T10:58:45.9109864+02:00",
+    "ruta": "tmp/osv-cache/osv-scalibr/Maven/all.zip",
+    "actualizadaEnAg009": false
+  },
+  "angular": {
+    "fallos": 0,
+    "pruebas": 11,
+    "errores": 0
+  },
+  "backend": [
+    {
+      "archivo": "qa/evidencias/ag009/informes-backend/failsafe-reports/TEST-es.gestionsolicitudes.integracion.BaseVerificableIT.xml",
+      "nombre": "es.gestionsolicitudes.integracion.BaseVerificableIT",
+      "pruebas": 3,
+      "fallos": 0,
+      "errores": 0,
+      "omitidas": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+      "nombre": "es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest",
+      "pruebas": 2,
+      "fallos": 0,
+      "errores": 0,
+      "omitidas": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+      "nombre": "es.gestionsolicitudes.salud.http.ControladorSaludTest",
+      "pruebas": 5,
+      "fallos": 0,
+      "errores": 0,
+      "omitidas": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+      "nombre": "es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest",
+      "pruebas": 3,
+      "fallos": 0,
+      "errores": 0,
+      "omitidas": 0
+    }
+  ],
+  "totalBackend": 13.0
+}

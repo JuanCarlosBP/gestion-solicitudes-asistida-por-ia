@@ -146,8 +146,9 @@ No se modificará Docker global ni se borrarán volúmenes ajenos.
 Los comandos creados y comprobados se documentan en la guía de entorno.
 Para backend se prevé `mvnw.cmd verify` y su equivalente Linux `./mvnw verify`.
 Para frontend se prevén scripts npm de build, pruebas sin vigilancia, tipos y lint.
-AG-006 ejecutó estos controles con los resultados de validación: el comando
-verify íntegro sigue fallando en formato Maven, sin ocultar ni retirar ese control.
+AG-006 conserva su fallo histórico de formato. AG-008 completó Spotless y verify
+íntegro; AG-009 repitió los controles locales afectados y Compose en 18080/18081.
+Los resultados actuales y sus límites se registran en validación y en el informe AG-009.
 No se saltarán pruebas de integración porque Docker no esté disponible.
 
 ## 9. CI y evidencias
@@ -157,9 +158,12 @@ Ejecutará integración con PostgreSQL y guardará informes cuando falle.
 Usará permisos mínimos, versiones fijadas y ningún secreto del producto.
 No publicará imágenes ni desplegará servicios.
 
-La ejecución nocturna validará estructura y comandos que pueda ejecutar localmente.
-No ejecutará Git ni podrá acreditar por ello una ejecución remota nueva.
-Esa comprobación quedará pendiente para después del push humano.
+La persona responsable publicó la rama y la PR borrador #1. La primera CI se
+ejecutó (38388926539 y 38389011007): frontend PASS, backend FAIL por la versión
+de setup-java y Compose FAIL por COPY public. REV-001 registró R-01 a R-04.
+AG-009 corrige esas causas, aísla las salidas QA y actualiza el estado documental.
+El workflow usa pull_request y push solo a main; conserva los controles existentes.
+AG-009 no ejecuta Git. Una segunda CI sigue pendiente del siguiente push humano.
 La base no se declarará totalmente aceptada mientras falte una evidencia obligatoria.
 
 ## 10. Documentación a producir durante la ejecución

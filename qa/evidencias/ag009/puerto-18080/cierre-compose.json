@@ -1,0 +1,22 @@
+{
+  "servicios": [
+    {
+      "Service": "backend",
+      "State": "exited",
+      "ExitCode": 143
+    },
+    {
+      "Service": "frontend",
+      "State": "exited",
+      "ExitCode": 0
+    },
+    {
+      "Service": "postgres",
+      "State": "exited",
+      "ExitCode": 0
+    }
+  ],
+  "fecha": "2026-10-13T14:49:38.9987925+02:00",
+  "detenidos": true,
+  "volumenConservado": true
+}

@@ -9,24 +9,25 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
-AG-006 implementó la base técnica de 001: backend Spring Boot/Java 21, Angular 21,
-PostgreSQL real con Flyway, Compose, API de salud, OpenAPI 3.1 y Swagger UI.
-Pasaron 10 pruebas unitarias/HTTP backend, 3 integraciones PostgreSQL,
-11 pruebas Angular y 5 pruebas de navegador. Se comprobaron persistencia,
-caída real de base de datos, recuperación, permisos y cabeceras.
+AG-008 completó la verificación local de la base implementada en AG-006:
+Spotless y `mvnw verify` pasaron, con 13 pruebas backend, 11 Angular y 5 E2E
+acreditadas. PostgreSQL/Flyway, persistencia, caída 503 y recuperación pasaron.
 
-**La base no está completamente verificada ni aceptada:** `mvnw verify` falla
-en Spotless. T006 y el cierre de aceptación de T008 siguen bloqueados por ese
-control, detenido tras dos correcciones fallidas. La CI remota está pendiente
-de publicación y ejecución humanas; no se ha ejecutado Git.
+La persona responsable publicó `feature/001-base-verificable` y la PR borrador #1.
+La primera CI remota se ejecutó: frontend pasó; backend falló por la notación
+de versión Java de setup-java y Compose por `COPY public` sobre una carpeta vacía.
+[REV-001](docs/trazabilidad/REV-001-revision-independiente-01.md) registró R-01 a R-04.
+[AG-009](docs/trazabilidad/AG-009-informe.md) aplica las correcciones y repite la QA local.
+**La segunda CI remota está pendiente del siguiente push humano; 001 no está
+aceptada ni integrada.** AG-009 no ejecuta operaciones Git.
 
 La [validación](especificaciones/001-base-verificable/validacion.md) conserva los
-resultados actuales y la historia de AG-005. [Versiones](docs/documentaciondev/versiones.md)
+resultados actuales y la historia anterior. [Versiones](docs/documentaciondev/versiones.md)
 conserva AG-004/005 y la selección de AG-006. La política autorizada de
 [ADR-0002](docs/decisiones/ADR-0002-politica-dependencias-transitivas.md) permite
 las transitivas preliminares verificadas; las directas siguen estables y exactas.
-El [informe AG-006](docs/trazabilidad/AG-006-informe.md) reúne tiempos, archivos,
-auditorías, riesgos y propuestas de commits para revisión humana.
+El [informe AG-006](docs/trazabilidad/AG-006-informe.md) conserva los resultados
+históricos; el informe AG-009 reúne las correcciones, evidencias y pendientes actuales.
 
 Ya existen:
 

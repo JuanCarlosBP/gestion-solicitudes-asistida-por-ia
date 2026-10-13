@@ -1,0 +1,43 @@
+$ErrorActionPreference = 'Stop'
+$raiz = (Get-Location).Path
+$archivo = Join-Path $raiz 'tmp/ag009/precedencia.env'
+$resultados = [System.Collections.Generic.List[object]]::new()
+# Solo este arnés sustituye Docker para observar el puerto antes de operar.
+# La integración real de ambos puertos se registra por separado.
+function global:docker {
+    $script:observado = $env:BASE_URL
+    throw 'FIN_OBSERVACION_SIN_DOCKER'
+}
+try {
+    foreach ($caso in @(
+        @{nombre='Parámetro sobre entorno y archivo'; parametro=18083; entorno='18082'; archivo='FRONTEND_PUERTO=18081'; esperado='18083'},
+        @{nombre='Entorno sobre archivo'; parametro=$null; entorno='18082'; archivo='FRONTEND_PUERTO=18081'; esperado='18082'},
+        @{nombre='Archivo con comillas y comentario'; parametro=$null; entorno=$null; archivo='FRONTEND_PUERTO="18081" # ficticio'; esperado='18081'},
+        @{nombre='Predeterminado sin variable'; parametro=$null; entorno=$null; archivo='# Sin puerto'; esperado='18080'},
+        @{nombre='Puerto inválido rechazado'; parametro=$null; entorno='70000'; archivo='# Sin puerto'; esperado=$null}
+    )) {
+        [IO.File]::WriteAllText($archivo, $caso.archivo)
+        $env:FRONTEND_PUERTO = $caso.entorno
+        $script:observado = $null
+        $argumentos = @{ArchivoEntorno=$archivo; DirectorioEvidencias='qa/evidencias/ag009/precedencia'; OmitirNavegador=$true}
+        if ($null -ne $caso.parametro) { $argumentos.PuertoFrontend=$caso.parametro }
+        try { & ./qa/verificar-compose.ps1 @argumentos; throw 'No se detuvo antes de operar.' }
+        catch {
+            if ($null -eq $caso.esperado) {
+                if ($_.Exception.Message -notmatch 'entero entre 1 y 65535') { throw }
+                if ($null -ne $script:observado) { throw 'Un puerto inválido alcanzó Docker.' }
+            } else {
+                if ($_.Exception.Message -notmatch 'FIN_OBSERVACION_SIN_DOCKER') { throw }
+                if ($script:observado -ne "http://127.0.0.1:$($caso.esperado)") { throw 'Prioridad de puerto incorrecta.' }
+            }
+        }
+        $resultados.Add(@{control=$caso.nombre; resultado='PASS'; baseUrl=$script:observado})
+    }
+} finally {
+    Remove-Item Function:\docker
+    if ([IO.Path]::GetFullPath($archivo) -ne (Join-Path $raiz 'tmp/ag009/precedencia.env')) { throw 'Ruta temporal no esperada.' }
+    if (Test-Path -LiteralPath $archivo) { Remove-Item -LiteralPath $archivo }
+}
+@{fecha=[DateTimeOffset]::Now.ToString('o'); controles=$resultados; alcance='Prueba enfocada de precedencia con Docker interceptado; integración real acreditada por puerto-18080 y puerto-18081.'; archivoTemporalEliminado=(-not (Test-Path -LiteralPath $archivo))} |
+    ConvertTo-Json -Depth 6 | Set-Content qa/evidencias/ag009/precedencia-puerto.json -Encoding utf8
+Write-Output 'PASS: cinco casos de precedencia y validación; ningún comando Docker real en este arnés.'
