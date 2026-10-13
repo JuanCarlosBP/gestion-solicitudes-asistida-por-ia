@@ -14,7 +14,8 @@ Aplicación empresarial para gestionar proveedores, solicitudes, conceptos, impo
 - Mantén `MEMORY.md` breve (≈50 líneas), sin secretos ni historial que corresponda a Git o a documentación durable.
 - Antes de implementar, consulta la especificación, el plan y las tareas activas; usa las políticas y skills aplicables.
 - Cuando una tarea afecte a seguridad, consulta `docs/seguridad.md` mientras sea su ruta vigente.
-- No cargues todos los `.md` ni todas las skills por defecto.
+- Selecciona las lecturas con [contexto](docs/metodologia/contexto.md); no cargues todos los `.md` ni todas las skills por defecto.
+- Para preguntas sobre Codex/OpenAI consulta el MCP oficial descrito en [MCP](docs/metodologia/mcp.md); contrasta la versión y sus límites.
 - No des por existente, aprobado, implementado o probado nada sin evidencia.
 - Si falta información o hay contradicciones, detente y pregunta.
 
@@ -39,12 +40,13 @@ Aplicación empresarial para gestionar proveedores, solicitudes, conceptos, impo
 - No inventes pruebas, métricas, evidencias ni resultados.
 
 ## Agentes, Git y entrega
-- Planificador: analiza y propone. Implementador: ejecuta tareas aprobadas. Revisor: valida sin reparar en la misma revisión. Coordinador: organiza sin aprobar por el usuario.
-- Usa el contexto mínimo suficiente y las skills pertinentes; evita escritores simultáneos sobre los mismos archivos.
+- Planificador: analiza y propone. Implementador: ejecuta tareas aprobadas. Revisor: valida sin reparar en la misma revisión. Coordinador: organiza sin aprobar por la persona responsable del proyecto.
+- Coordina roles, relevos y un único escritor por archivo según [orquestación](docs/metodologia/orquestacion.md).
+- Skills disponibles: [SDD](.agents/skills/sdd/SKILL.md), [seguridad](.agents/skills/revision-seguridad/SKILL.md), [QA](.agents/skills/verificacion-qa/SKILL.md) y [documentación](.agents/skills/mantenimiento-documental/SKILL.md); aplica solo las pertinentes.
 - Tras dos correcciones fallidas del mismo problema, detente y solicita decisión humana.
-- `add`, `commit`, `push`, ramas, PR, integración y despliegue los realiza el usuario salvo autorización expresa.
+- `add`, `commit`, `push`, ramas, PR, integración y despliegue los realiza la persona responsable del proyecto salvo autorización expresa.
 - Al terminar informa: cambios, archivos afectados, comprobaciones ejecutadas, resultados, pendientes y siguiente paso.
 - Actualiza `MEMORY.md` si cambió el estado, detente y espera autorización.
 
 ## Regla final
-La IA ejecuta; el usuario decide, comprende y aprueba. No sacrifiques requisitos, seguridad, calidad, trazabilidad o verificación para terminar antes. No declares éxito sin evidencia.
+La IA ejecuta; la persona responsable del proyecto decide, comprende y aprueba. No sacrifiques requisitos, seguridad, calidad, trazabilidad o verificación para terminar antes. No declares éxito sin evidencia.

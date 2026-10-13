@@ -1,0 +1,16 @@
+# Configuración local aprobada como valor predeterminado.
+# La interfaz puede aplicar permisos efectivos distintos en cada sesión.
+# La ejecución debe registrar el sandbox y la aprobación realmente observados.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[features]
+multi_agent = true
+goals = true
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
