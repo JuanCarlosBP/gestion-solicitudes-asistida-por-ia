@@ -14,6 +14,10 @@ REV-001 registró R-01 a R-04; AG-009 aplica las correcciones y repite QA local.
 La segunda CI espera el siguiente push humano. 001 no está aceptada ni integrada.
 Las evidencias históricas permanecen conservadas.
 
+AG-010 implementa 002 por autorización humana integral. Pasan 55 pruebas backend,
+56 Angular, 8 E2E, Docker/Compose y auditorías. La revisión independiente no
+encontró nuevos bloqueantes; cierre en el [informe AG-010](trazabilidad/AG-010-informe.md).
+
 ## Orientación y reglas
 
 | Documento | Responsabilidad | Estado |
@@ -39,6 +43,7 @@ Las evidencias históricas permanecen conservadas.
 | [Informe AG-006](trazabilidad/AG-006-informe.md) | Resultados históricos y manifiesto. | Historia preservada; no describe el estado vigente. |
 | [REV-001](trazabilidad/REV-001-revision-independiente-01.md) | Primera revisión independiente, R-01 a R-04. | Correcciones requeridas; informe original conservado. |
 | [Informe AG-009](trazabilidad/AG-009-informe.md) | Respuesta a REV-001, primera CI, QA y manifiesto de commits. | Correcciones locales; segunda CI y aceptación pendientes. |
+| [Informe AG-010](trazabilidad/AG-010-informe.md) | Identidad y acceso, resultados propios, incidencias y manifiesto. | QA local superada; aceptación e integración pendientes. |
 | [Memoria hasta AG-005](trazabilidad/memoria-hasta-ag005.md) | Copia íntegra del MEMORY anterior. | Historia preservada, no estado vigente. |
 
 ## G02-B: documentación operativa de P1
@@ -97,8 +102,17 @@ la revisión no es independiente. No se probaron nuevamente capacidades opcional
 | [001: validación](../especificaciones/001-base-verificable/validacion.md) | Matriz BV, pruebas, fallos y límites de aceptación. | QA local superada; segunda CI remota y aceptación pendientes. |
 | [ADR-0001: Rolldown transitivo](decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md) | Excepción exacta para la cadena oficial Angular 21.2.26, controles y parada. | Aprobado por decisión humana del 2026-10-13. |
 | [ADR-0002: transitivas](decisiones/ADR-0002-politica-dependencias-transitivas.md) | Política general de evaluación y continuidad. | Aprobado expresamente para AG-006. |
+| [002: especificación](../especificaciones/002-identidad-acceso/especificacion.md) | IA-01–IA-14 y alcance de identidad. | Aprobada por decisión humana AG-010. |
+| [002: plan](../especificaciones/002-identidad-acceso/plan.md) | JWT, sesiones, CSRF, contrato y verificación. | Aprobado por decisión humana AG-010. |
+| [002: tareas](../especificaciones/002-identidad-acceso/tareas.md) | Trabajo, dependencia y escritor por archivo. | Aprobadas por decisión humana AG-010. |
+| [002: validación](../especificaciones/002-identidad-acceso/validacion.md) | Resultados ejecutados y pendientes IA. | QA local superada; cierre de revisión en informe. |
+| [ADR-0003: identidad](decisiones/ADR-0003-identidad-jwt-y-sesiones.md) | Decisión JWT RS256, refresh, PostgreSQL y cookies. | Aprobado por decisión humana AG-010. |
+| [003: especificación](../especificaciones/003-proveedores/especificacion.md) | Propuestas de catálogo de proveedores y preguntas abiertas. | Borrador pendiente de aprobación humana; no implementado. |
 | [Entorno](documentaciondev/entorno.md) | Construcción, pruebas, arranque, parada y errores reales. | Comprobado con límites declarados; revisión humana pendiente. |
 | [Arquitectura](documentaciondev/arquitectura.md) | Responsabilidades, contrato, permisos y topología existentes. | Implementación descrita; revisión humana pendiente. |
+| [API y rutas](documentaciondev/api-y-rutas.md) | Contratos 001/002, errores, CSRF y navegación. | Verificados localmente en AG-010. |
+| [Datos de identidad](documentaciondev/modelo-de-datos.md) | V2, tablas, restricciones y transacciones. | Verificados con PostgreSQL real en AG-010. |
+| [Seguridad técnica](documentaciondev/seguridad.md) | Argon2, claves, JWT, refresh, cookies y riesgos restantes. | Controles acotados verificados en AG-010. |
 | [Sesión nocturna 01](metodologia/prompts/sesion-nocturna-01.md) | Encargo limitado a 001 y borradores posteriores. | Aprobado para lanzamiento humano tras preflight bloqueante, con fallback. |
 
 Los informes y evidencias AG-003–AG-008 conservan sus resultados y fechas.

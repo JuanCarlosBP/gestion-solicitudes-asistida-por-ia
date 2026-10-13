@@ -1,11 +1,13 @@
-# Arquitectura de la base 001
+# Arquitectura: base técnica e identidad
 
 **Estado:** Implementada; documentación pendiente de revisión humana.
-**Fecha:** 2026-10-13. Resultados y límites en la [validación](../../especificaciones/001-base-verificable/validacion.md).
+**Fecha:** AG-010, 2026-10-14. Resultados de la base en
+[validación 001](../../especificaciones/001-base-verificable/validacion.md) y cambios de identidad en
+[validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
 
 El backend es un monolito modular Spring Boot 4.0.8 con Java 21.
-001 contiene exclusivamente comprobación técnica; no hay entidades, CRUD,
-usuarios, autenticación funcional ni módulos de negocio vacíos.
+001 aporta la comprobación técnica y 002 añade el módulo funcional `identidad`.
+No hay CRUD de usuarios ni módulos de proveedores/solicitudes/importes/aprobaciones.
 
 ## Responsabilidades
 
@@ -15,14 +17,21 @@ usuarios, autenticación funcional ni módulos de negocio vacíos.
 | `salud/aplicacion` | Estado público y puerto de comprobación de la dependencia. |
 | `salud/persistencia` | Consulta constante SELECT 1 mediante JDBC y cierre de recursos. |
 | `configuracion` | Seguridad, contrato OpenAPI y errores controlados. |
+| `identidad/http` | Login, refresh, logout, CSRF, identidad pública y cookies. |
+| `identidad/aplicacion` | Contraseñas, JWT y casos transaccionales de sesión. |
+| `identidad/dominio` | Correo, roles, intentos, usuarios, sesiones y tokens técnicos. |
+| `identidad/persistencia` | Consultas parametrizadas JdbcTemplate, versiones y bloqueos de filas. |
+| `identidad/configuracion` | Clock, duraciones, RSA, validación JWT y aprovisionamiento local. |
 | `frontend/src/app/inicio` | Servicio HTTP y pantalla con carga, disponibilidad y error. |
+| `frontend/src/app/identidad` | Store signals, servicio, guard, interceptor y pantallas de acceso/cuenta. |
 | `frontend/src/app/navegacion` | Salida controlada para direcciones desconocidas. |
 | `infraestructura` | Compose y preparación administrativa de PostgreSQL. |
 | `qa` | Inventario de preliminares, auditoría offline, QA de Compose y evidencias. |
 
 El controlador depende del servicio, que utiliza un puerto implementado por JDBC.
 Los detalles SQL, conexiones y mensajes del driver no llegan al DTO HTTP.
-No se necesita una capa de dominio sin reglas en este incremento.
+Salud conserva su estructura mínima. Identidad incorpora dominio porque sí tiene
+reglas de correo, contraseña, intentos, caducidad y estados de sesión.
 
 ## Contrato y límites
 
@@ -30,7 +39,9 @@ No se necesita una capa de dominio sin reglas en este incremento.
 o `{"estado":"NO_DISPONIBLE"}` con 503 si PostgreSQL falla.
 No recibe un cuerpo de entrada ni acredita funciones de negocio.
 Un fallo inesperado se traduce a `{"error":"ERROR_INTERNO"}` con 500.
-La denegación técnica devuelve 403 y `{"error":"ACCESO_NO_PERMITIDO"}`.
+La falta de autenticación devuelve 401 y `{"error":"NO_AUTENTICADO"}`;
+CSRF o permiso insuficiente devuelven 403 y `{"error":"ACCESO_NO_PERMITIDO"}`.
+El contrato completo y las rutas están en [API y rutas](api-y-rutas.md).
 
 Hikari limita espera de conexión a 2 s, validación a 1 s y pool a 5 conexiones.
 JDBC limita conexión/socket a 3 s y consulta a 2 s. Son límites de operaciones
@@ -44,10 +55,20 @@ Swagger no carga Petstore ni un validador remoto.
 
 ## Seguridad local
 
-Spring Security permite únicamente GET de salud y documentación técnica;
-deniega las demás rutas y métodos. No hay cuentas, login, HTTP Basic ni sesiones.
-CSRF sigue activo para métodos no seguros; no se abre CORS.
+Spring Security permite las operaciones públicas de salud y autenticación;
+documentación solo en local/test. `/api/identidad/yo` exige Bearer válido y toda
+otra API se deniega. HTTP Basic y formulario automático de Spring están deshabilitados.
+No se usa sesión HTTP/JSESSIONID: la sesión técnica reside en PostgreSQL.
+CSRF sigue activo para métodos no seguros, incluso con Bearer; no se abre CORS.
 Los errores públicos no exponen excepciones, SQL, host o credenciales.
+
+El acceso JWT RS256 se conserva en memoria Angular. Un refresh opaco en cookie
+HttpOnly permite restaurar y renovar; solo su hash de secreto se almacena.
+Rotación y revocación bloquean sesión dentro de una transacción; el `sid` se
+consulta por petición protegida para invalidar JWT tras el cierre o reutilización.
+La familia tiene duración absoluta de ocho horas. La decisión y riesgos están en
+[ADR-0003](../decisiones/ADR-0003-identidad-jwt-y-sesiones.md) y
+[seguridad técnica](seguridad.md). No hay servidor OAuth completo ni Redis.
 
 Nginx sirve Angular y dirige API/documentación al backend. CSP limita recursos
 al propio origen; `style-src 'unsafe-inline'` permite estilos de Angular/Swagger.
@@ -68,8 +89,10 @@ contenedores de la aplicación. No se usan contenedores privilegiados.
 El inicializador administrativo crea roles separados y el esquema `gestion`.
 Flyway usa `gestion_migracion`, propietario del esquema; la aplicación usa
 `gestion_app` con CONNECT y USAGE, sin DDL, roles ni acceso al historial Flyway.
-V1 configura permisos y comentario del esquema. La única tabla en `gestion`
-es `flyway_schema_history`; no se incluyen tablas ni datos de negocio.
+V1 conserva permisos iniciales. V2 añade usuarios, roles, usuarios_roles,
+sesiones_acceso y tokens_refresco con privilegios mínimos explícitos;
+[modelo de datos](modelo-de-datos.md) explica claves, restricciones y transacciones.
+No se incluyen tablas de los dominios funcionales excluidos de AG-010.
 
 El proceso backend recibe ambas credenciales para ejecutar Flyway al arrancar.
 La separación de roles no equivale a aislamiento entre procesos de migración
@@ -96,3 +119,8 @@ registró R-01 a R-04; [AG-009](../trazabilidad/AG-009-informe.md) documenta su 
 La rama y PR #1 se publicaron por intervención humana. La primera CI pasó frontend
 y falló por setup-java y la copia de public; AG-009 corrige ambas sin cambiar arquitectura.
 La segunda CI espera el siguiente push humano. 001 no está aceptada ni integrada.
+
+AG-010 añade pruebas de identidad, concurrencia refresh, Angular y recorrido
+E2E de login/restauración/cierre. La CI fija además Docker 29.1.3 y Compose 2.40.3,
+conserva salidas por job y ejecuta QA de sesiones sobre Compose. Sus resultados
+locales se registran en validación 002; no se presentan como una CI remota ejecutada.

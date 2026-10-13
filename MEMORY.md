@@ -1,49 +1,41 @@
 # MEMORY.md — Gestión de Solicitudes
 
-Memoria vigente; historia inicial en
-[AG-001–AG-005](docs/trazabilidad/memoria-hasta-ag005.md).
+Memoria vigente; historia inicial en [AG-001–AG-005](docs/trazabilidad/memoria-hasta-ag005.md).
+Entrada AG-010 conservada en `qa/evidencias/ag010/memoria-entrada.txt`.
 
 ## Decisiones y límites
 
-- P0, G02-A/G02-B, P2 y CAM-001/002 conservan su estado documental.
-- 001: especificación, plan, tareas y DT-01–DT-08 aprobados el 2026-10-13.
-- ADR-0001/0002 intactos; sin funciones 002–008 ni cambios de arquitectura.
-- La persona responsable decide aceptación, publicación e integración.
+- La persona responsable conserva aceptación, integración, publicación y Git.
+- 001 verificada localmente en AG-009; CI posterior, aceptación e integración pendientes.
+- PR borrador #1 humana intacta; primera CI histórica falló en setup-java/copia public.
+- AG-003–AG-009, REV-001, ADR-0001/0002, V1 y configuración de agentes preservados.
+- Rama comunicada: feature/002-identidad-acceso; no comprobada con Git.
+- Orden AG-010 aprueba definición e implementación de 002 sin nueva aprobación documental.
+- Sin CRUD usuarios, proveedores ni otros módulos de negocio implementados.
 
-## Historia preservada
+## Resultado AG-010
 
-- AG-006 implementó la base; verify falló en Spotless; AG-007 identificó la causa.
-- [AG-008](docs/trazabilidad/AG-008-informe.md) completó Spotless y verify sin skip.
-- AG-008: 13 backend, 11 Angular acreditadas y 5 E2E; Compose/503/recuperación PASS.
-- Informes/evidencias AG-003–AG-008 íntegros; anteriores memorias conservadas.
-- La persona responsable publicó `feature/001-base-verificable` y PR borrador #1.
-- Commits comunicados: 2a4c15c, 7184ff8, 3f379d0, 234e2d5, f05be8a.
-- Primera CI real: runs 38388926539 y 38389011007; frontend PASS en ambos.
-- Backend FAIL por setup-java `21.0.12.1+1`; Compose FAIL por carpeta public vacía.
-- [REV-001](docs/trazabilidad/REV-001-revision-independiente-01.md): R-01–R-04 originales.
+- Inicio: 2026-10-13 23:55:26 +02:00; límite: 2026-10-14 09:55:26 +02:00, Europe/Madrid.
+- Cierre AG-010: 2026-10-14 00:32:05 +02:00; duración registrada 00:36:39.
+- [002](especificaciones/002-identidad-acceso/especificacion.md), plan y tareas aprobados por decisión humana AG-010.
+- [ADR-0003](docs/decisiones/ADR-0003-identidad-jwt-y-sesiones.md) aprobado; JWT RS256, refresh opaco, PostgreSQL y CSRF.
+- IA-01–IA-14 verificados localmente; [validación](especificaciones/002-identidad-acceso/validacion.md).
+- Verify PASS 55 backend, 56 Angular y 8 E2E; tipos/lint/formato/build/SpotBugs PASS.
+- Docker sin caché, Compose persistencia/503/200 y 88 controles de sesión PASS.
+- npm audit producción/completo y OSV Maven132 sin avisos finales; BC fijada en 1.86.
+- Revisión independiente sin nuevos bloqueantes; R-002-01 RSA y R-002-02 logs corregidos.
+- Revisores solo lectura por instrucción; workspace-write efectivo, sin aislamiento acreditado.
+- Un escritor backend, otro frontend; coordinador docs/infra/CI/QA; evidencias en AG-010.
+- 303 protegidos intactos; CSV histórico conservado; manifiestos por SHA-256 sin Git.
+- Servicios detenidos; volumen y datos ficticios conservados; ninguna publicación.
+- Incidencia inicial: git status --short antes de leer adjunto, salida vacía; ningún Git posterior.
+- npm audit inicialmente rechazado por auto-review; autorización expresa posterior y auditoría PASS.
+- [Informe AG-010](docs/trazabilidad/AG-010-informe.md) conserva detalles, riesgos y tiempos finales.
 
-## AG-009 — correcciones y comprobación local
+## Pendientes y parada
 
-- [Informe AG-009](docs/trazabilidad/AG-009-informe.md); inicio 14:42:45 +02:00, 2026-10-13.
-- Cierre y duración: `qa/evidencias/ag009/cierre.json`; límite orientativo 15:57:45.
-- setup-java usa `21.0.12.1`; Dockerfile sin COPY public; directorio vacío eliminado.
-- CI por PR y push solo main; salidas nuevas por job sin subir AG históricas.
-- QA_EVIDENCE_DIR o tmp/evidencias/local; baseline solo lectura; históricos protegidos.
-- Puerto: parámetro > entorno > archivo elegido > 18080; BASE_URL única para navegador.
-- Verify íntegro PASS: 13 backend, Spotless, SpotBugs; 11 Angular y controles/build PASS.
-- Docker sin caché PASS; Compose real 18080 y 18081, 5 E2E en cada puerto PASS.
-- Persistencia/503/200 PASS; tres servicios detenidos, volumen conservado y .env temporal retirado.
-- Actionlint/YAML/scripts PASS; incidencias auxiliares y repeticiones registradas.
-- 187 históricos intactos; POM, lockfile, requisitos y configuración funcional sin cambios.
-- OSV repetido con base previa; npm conserva auditorías históricas y sus límites.
-- Revisor distinto del escritor: dos observaciones resueltas; sin hallazgos técnicos abiertos.
-- Solo lectura del revisor por instrucción; workspace-write, sin prueba de escritura.
-- Cierre documental/control final por sesión principal. REV-001 original intacta.
-- Ningún comando Git ejecutado; ningún commit, push, integración ni despliegue.
-
-## Siguiente paso humano
-
-- Revisar informe, [validación](especificaciones/001-base-verificable/validacion.md) y manifiestos AG-009.
-- Segunda CI pendiente del siguiente push humano; revisar resultados y artefactos.
-- 001 verificada localmente con límites declarados; todavía no aceptada ni integrada.
-- Trabajo autorizado concluido; esperar decisión humana, sin reanudación automática.
+- CI remota pendiente del push humano; 002 no aceptada ni integrada.
+- [003 proveedores](especificaciones/003-proveedores/especificacion.md): borrador pendiente de aprobación humana; sin plan/tareas/código.
+- Condición opcional acreditada al verificar 002: 564 minutos disponibles, superior a sesenta.
+- Al entregar, sesión detenida; sin reanudación programada.
+- Siguiente decisión humana: revisar evidencias, realizar Git/CI y decidir aceptación/integración.

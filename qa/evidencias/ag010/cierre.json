@@ -1,0 +1,18 @@
+{
+  "ejecucion": "AG-010",
+  "fase": "cierre",
+  "inicio": "2026-10-13T23:55:26.0000000+02:00",
+  "limite": "2026-10-14T09:55:26.0000000+02:00",
+  "zona": "Europe/Madrid",
+  "fecha": "2026-10-14T00:32:05+02:00",
+  "duracionSegundos": 2199,
+  "duracion": "00:36:39",
+  "margenMinutosHastaLimite": 563,
+  "resultado": "IA-01–IA-14 verificados localmente; no aceptada ni integrada.",
+  "git": "Incidencia inicial de git status --short, sin salida; ningún Git posterior ni mutación Git.",
+  "servicios": "Detenidos, volumen conservado",
+  "pendientes": [
+    "CI remota tras push humano",
+    "Aceptación e integración humanas"
+  ]
+}

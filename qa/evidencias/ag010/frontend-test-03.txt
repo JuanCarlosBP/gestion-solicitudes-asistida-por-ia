@@ -1,0 +1,43 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false
+
+> Building...
+√ Building...
+Initial chunk files                      | Names                                 |  Raw size
+chunk-JQEND4QI.js                        | -                                     |  11.86 kB | 
+chunk-MWG6SIDI.js                        | -                                     |  10.18 kB | 
+chunk-JJTJAN5D.js                        | -                                     |   9.62 kB | 
+spec-app-app.js                          | spec-app-app                          |   8.17 kB | 
+spec-app-identidad-sesion-interceptor.js | spec-app-identidad-sesion-interceptor |   7.57 kB | 
+spec-app-identidad-autenticacion.js      | spec-app-identidad-autenticacion      |   6.56 kB | 
+spec-app-app.routes.js                   | spec-app-app.routes                   |   5.75 kB | 
+chunk-RSTWSNOR.js                        | -                                     |   4.75 kB | 
+spec-app-identidad-mi-cuenta.js          | spec-app-identidad-mi-cuenta          |   3.87 kB | 
+spec-app-identidad-acceso.js             | spec-app-identidad-acceso             |   3.61 kB | 
+chunk-OHQ7K2QL.js                        | -                                     |   3.48 kB | 
+spec-app-inicio-inicio.js                | spec-app-inicio-inicio                |   2.40 kB | 
+spec-app-inicio-salud-api.js             | spec-app-inicio-salud-api             |   1.96 kB | 
+spec-app-identidad-sesion-guard.js       | spec-app-identidad-sesion-guard       |   1.53 kB | 
+chunk-YCQTGEDS.js                        | -                                     |   1.48 kB | 
+init-testbed.js                          | init-testbed                          |   1.21 kB | 
+spec-app-identidad-sesion-store.js       | spec-app-identidad-sesion-store       |   1.19 kB | 
+chunk-K32UC3AB.js                        | -                                     |   1.18 kB | 
+vitest-mock-patch.js                     | vitest-mock-patch                     | 974 bytes | 
+chunk-WFW6VFOU.js                        | -                                     | 538 bytes | 
+chunk-2PECFU4L.js                        | -                                     | 436 bytes | 
+styles.css                               | styles                                | 381 bytes | 
+
+                                         | Initial total                         |  88.70 kB
+
+Application bundle generation complete. [1.190 seconds] - 2026-10-13T22:06:49.314Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  10 passed (10)
+      Tests  56 passed (56)
+   Start at  00:06:49
+   Duration  1.84s (transform 573ms, setup 4.29s, import 1.05s, tests 708ms, environment 9.58s)
+

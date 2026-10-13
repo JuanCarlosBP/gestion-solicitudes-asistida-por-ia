@@ -1,0 +1,497 @@
+{
+  "fecha": "2026-10-13T22:32:30.628Z",
+  "archivos": [
+    {
+      "ruta": "backend/.dockerignore",
+      "sha256": "2566615AE6EFACBA123AA1BB0805ED398B6297F7F70B31DF6993908269E30BE5"
+    },
+    {
+      "ruta": "backend/.mvn/jvm.config",
+      "sha256": "C9B2E15CE57F3177ED34632CB0440AE92B7E894647D58FCD30365C65E4F90CF8"
+    },
+    {
+      "ruta": "backend/.mvn/maven.config",
+      "sha256": "32C93E93C049B087D746AA79572A27FDCFBDE7E26656B1E94C8043C669E780D7"
+    },
+    {
+      "ruta": "backend/.mvn/wrapper/maven-wrapper.properties",
+      "sha256": "51B221EDE4E074D19BB44D6D485BB7B298E77874572A09697ABA0A9E234E0745"
+    },
+    {
+      "ruta": "backend/Dockerfile",
+      "sha256": "ED2E8B86B46AC74F42A0FDFEB08F83204FA4957CD16C6ED3CE98F4F49AB61409"
+    },
+    {
+      "ruta": "backend/mvnw",
+      "sha256": "CAE96CEF89EBEA3531221F4AE17C23CF8EDF67D00EAE8306D4186AE1BBED4D02"
+    },
+    {
+      "ruta": "backend/mvnw.cmd",
+      "sha256": "46EEDB8419BD14FE70D5BB2916D7B6F51806E51B39D5B76A42610384CA929C1C"
+    },
+    {
+      "ruta": "backend/pom.xml",
+      "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7"
+    },
+    {
+      "ruta": "backend/spotbugs-exclusiones.xml",
+      "sha256": "E8087186FA1B4CDA0C0A11032BBE78EC6C27979D408B721F61E41D8989B9DB59"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+      "sha256": "4B45448ACFA893FDA32323A39955AD127DEEF9FD6A9CEFA185F9D10C79214852"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+      "sha256": "05EDAFBE880384B3557039F4E812152189A8E691322CB93EE7F2EBE1C76FA5DF"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+      "sha256": "7E351E00C56937E0494C540CFD83316206EF011EB639EBA51D2EA3B0ED70BA7F"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java",
+      "sha256": "175A4F446F178E5FAC16657D45331D25736A666E6E07AC8CCE721D0A349EAE24"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.java",
+      "sha256": "8463B49DBF0B8EC89291C08CB53969F4F2155AB7620446F6F1E348B3BC3CD30E"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/Contrasenas.java",
+      "sha256": "CB5E7EDD61FFFFB715AABD399D80CF362D00860B5A9BA7DA161BF9DFB88726C8"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.java",
+      "sha256": "D833396EE30052849E684B7157484158064B8E90402086F2345E8C347408BCFF"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.java",
+      "sha256": "E488E9E70D16DAF7C8DEBE8FAECB89A964A7F304205B836247082C3CF3703DE3"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.java",
+      "sha256": "E39B9DDFB3BB451ABA45703CE17FC2A2B047534CC47F142D8A22C9F6B8AFBB81"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.java",
+      "sha256": "B85CBC7AB03E37658F530E56F6177983F014AE3727F496E5CC2FD76B3FD5C3DE"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.java",
+      "sha256": "B7E17F33B2FF64AA605315A6323625BAA6F1EBA2F2548706047D254779D70FC4"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ClavesRsa.java",
+      "sha256": "117D4483BB2A6C2C29AC163CCC5F9A3EDFBE93C369A3B54E6FEA263C1D8BF108"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.java",
+      "sha256": "8344DB7E30CCBB93FC63DCF903FAF0308E35526C2E0E309EA40CFA5BE0A77E00"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.java",
+      "sha256": "EF33346BA8BB71137B54D008E178611D1C94AAF1E9D469369A7A338B1B2E27CB"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java",
+      "sha256": "FAF6987DF4A7B423761AFDF04C26A8C18DD18257084C4A63DDA4A45D03F4A76A"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Correo.java",
+      "sha256": "0421EEAA594A555B4D028FBA52B4A34321CBBF27A19625F8DAA969D43CE78896"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/IntentosAcceso.java",
+      "sha256": "3E60F8D2EE616828FB6B61419FB341A71F024CA71E54938E1064E9130F9D182C"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Rol.java",
+      "sha256": "BFCB1C27A8F7A91C61FD90D80524DA70B17DFD170F2265D1957AEA48E93BFA60"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/SesionAcceso.java",
+      "sha256": "97D1AA9B07A2E8E22610C9FA54E3D3210AE81EAD72749E9118B23D1EF09BABA7"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/TokenRefresco.java",
+      "sha256": "3BF220E73A1A3853B7C1CA7CD6DF538EAE75ADBA06806BB2CF32033639FDB536"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Usuario.java",
+      "sha256": "A8FD43EA4196C327DCC7EBCAF696AD98EB99E1070A29F422F8130E92468F81A0"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/UsuarioPublico.java",
+      "sha256": "50DCE39B8AE2D28A9C9BE77D9909BD79A67D3A5FCAE12ACCF42E112684B8E1F4"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java",
+      "sha256": "75DAC5644971CF89DA9EE62C698BFCFAED5597ECA46018C93F8E032E735D75A0"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java",
+      "sha256": "D1C3A2484A34BB0313952BC02A09FD4FE16E16A91C1FB35D6D3455AAB68FD96E"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/CookiesIdentidad.java",
+      "sha256": "B394CFB9DCEF14DFE9B2990532DF72AACA56B2892ABF39D2E8582B963B7BDDC9"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java",
+      "sha256": "379C49B88C1FB8DF8F58C82888A868546214D54FB696ECF9BBAF2B4B8AA0E632"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.java",
+      "sha256": "EE6D0D3BDCA67CF550D80FEEC7C7B1152B2E37F3B3A93F84FF7DD95B09824345"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java",
+      "sha256": "BF179A37E19DD8795EA0BC41B744A230A96E2039F78B30952F1CFAD760A935BD"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java",
+      "sha256": "88A34A835D3410219FC90DBBAAD804F35DDE2DA1DCBC46FE1E0CA820D429534D"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java",
+      "sha256": "0BBB21AE877166B4CA76CD8F8DB1A7457839F054C404453323A16441629FFA0D"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java",
+      "sha256": "4EFB26E3DEE680AC5CC5EA03273D26234503D44648EA056C1534BA801419BFBD"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java",
+      "sha256": "EEF2FFE1133421D46019D2E6250072C2A053874F749AEA69D40E0E23BF91A772"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java",
+      "sha256": "0AA89BFC24274091FE089DE09CAC6F54D5534E7A9E130050ECBBAC4189EE3E7B"
+    },
+    {
+      "ruta": "backend/src/main/resources/application.yaml",
+      "sha256": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql",
+      "sha256": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql",
+      "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacionTest.java",
+      "sha256": "085908D04416DB2809C9EBE0575089DB5F462EC07DAF0B3CED382C12CEB6CCFB"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/configuracion/JwtYClavesTest.java",
+      "sha256": "DFF488191DAEC6670AA187C8FF016BF6277C930D0D3B6D4536E1AF7485F3D934"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/dominio/IdentidadDominioTest.java",
+      "sha256": "3F2D0FCB21D4561364531B7C43A24FB9D064459E0187DF21560AA965D1E99880"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/http/CookiesIdentidadTest.java",
+      "sha256": "FBD7E57D72B3998AC80FF97C374F6E6EC768D8A8EF7795E249A31B5E5DDF2D06"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java",
+      "sha256": "3C3A244BECF70D8711AC01C436435D9959C3806DB87E65830EA654CB00B21E98"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/PerfilesIdentidadIT.java",
+      "sha256": "F61DBC5E0D0DBCAB9E97F36A89AC68EDD046E1FB5BBF6258EB1F962715F41B22"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+      "sha256": "40EE335F2BA1C805B9673251A3D8070D78AA679FE41CD3CE4ECDC754C245B2EA"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/aplicacion/ServicioSaludTest.java",
+      "sha256": "6BFE58CCA213A3B679A5768F3DA7A8ED3908BE449B1E0E673DF1A7A814CBD855"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java",
+      "sha256": "79C5C1CF0161922D5EF2D6A7ACD391B5F9FDAA98058A537096D029A0A2325EDF"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgresTest.java",
+      "sha256": "C44690BCF1389ED3E1C5F91EE08537C98D128FF8145342B5919DD9EB14EE1C2D"
+    },
+    {
+      "ruta": "backend/src/test/resources/db/invalida/V999__fallo_intencionado.sql",
+      "sha256": "ADB96B6A3EC68563BEE777303F64C79257DA8A53B606FB77FFE837B7A5B6F786"
+    },
+    {
+      "ruta": "backend/src/test/resources/postgres-inicial.sql",
+      "sha256": "C933E9661A90BB006A6E858B921134720B66BDC393921C405CFBC41B63F1BEAA"
+    },
+    {
+      "ruta": "frontend/.dockerignore",
+      "sha256": "079D03AB07D37F50F3AAB7F8D34DB7C8FCCA9E5F9E4A914C48645497E90C482F"
+    },
+    {
+      "ruta": "frontend/.npmrc",
+      "sha256": "E5D8F4340708A6F899E2A794BC3E947520F78156C6E648B725C68A192EFD6BDB"
+    },
+    {
+      "ruta": "frontend/.prettierignore",
+      "sha256": "DD51D748ADA9C3FDC64752CB1827192FDAE80A5469526E2D180C7B096AB914E0"
+    },
+    {
+      "ruta": "frontend/.prettierrc",
+      "sha256": "8CD4A6408C3EADD007F0E8986754F4F03E6F2EA451A0181040555671491069A9"
+    },
+    {
+      "ruta": "frontend/angular.json",
+      "sha256": "6EF7A4DD69CF2D7549F380DC11DB585E4F4E72C4DD65783026D74C077149132E"
+    },
+    {
+      "ruta": "frontend/Dockerfile",
+      "sha256": "8102329BD1EF779DE62EFDEA1547A02DA52E25EF1F7A1E4F5C622CE19BCBA82D"
+    },
+    {
+      "ruta": "frontend/e2e/base.spec.ts",
+      "sha256": "0546A016F10F505EB988ADBF6D64B1EB7E7F5F2C79175BB4E7D97925DA1B923E"
+    },
+    {
+      "ruta": "frontend/e2e/identidad.spec.ts",
+      "sha256": "1FB0E6BF897B67DA9011598EA8ED0464C79D08DB223E5B7FBC7DAD8AB6DF38D8"
+    },
+    {
+      "ruta": "frontend/eslint.config.mjs",
+      "sha256": "0C5A88BB833F5CB9F4A5658FB46460765E3050F88B5C6B045784316DE744EF6F"
+    },
+    {
+      "ruta": "frontend/nginx.conf",
+      "sha256": "DD72AE72FF0CCC21C54A9665474968ED17F146BC95517C4FFA8C08B2D3B70170"
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F"
+    },
+    {
+      "ruta": "frontend/package.json",
+      "sha256": "E9A71302D587FE917A9E05B23B209CE8F36595CFF8F2E5822FE1275D301E1690"
+    },
+    {
+      "ruta": "frontend/playwright.config.ts",
+      "sha256": "BD594F8A9A26DC664DA839A0833D3073C1F74C2A234F1B142CB3AD83C2D6236B"
+    },
+    {
+      "ruta": "frontend/proxy.conf.json",
+      "sha256": "966957043CFAB67B573DA544096258E1A84E567139C0CC079CDD66893B104F59"
+    },
+    {
+      "ruta": "frontend/src/app/app.config.ts",
+      "sha256": "8F70B9965253FAEAC032EA7056722DA96065B4FA1E33FD998CC3DC309056CBED"
+    },
+    {
+      "ruta": "frontend/src/app/app.css",
+      "sha256": "D701E5C778E10B5EF65346ECC83E719091C8876ACBD2886EE7A6A93420DF7A0F"
+    },
+    {
+      "ruta": "frontend/src/app/app.html",
+      "sha256": "5B7B5F0A8C589AC3FE2BA76F3896BEA86F38C6567957C7C1442F5818CFC66917"
+    },
+    {
+      "ruta": "frontend/src/app/app.routes.spec.ts",
+      "sha256": "7BFA4290737E212D87B357E55AC15C8EA9778E0C2BFDDA6DEF69AC0D213F12E6"
+    },
+    {
+      "ruta": "frontend/src/app/app.routes.ts",
+      "sha256": "F7D0878E49867E15187D784FE6C2C37266214564B7190B79E702117F7D35F8F8"
+    },
+    {
+      "ruta": "frontend/src/app/app.spec.ts",
+      "sha256": "2A54073F3BEA75A3B131746D197E6C417C616ED9D6980FC6169902D206091141"
+    },
+    {
+      "ruta": "frontend/src/app/app.ts",
+      "sha256": "836A149EB46B3FE5B51643A0CCF209571647E7E31F587B21310E8BAA23769AB2"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.html",
+      "sha256": "91527BE24A59CFC942367E16D87C96C94632AAFA29CD2AE0BF1B4535408C290C"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.spec.ts",
+      "sha256": "A5524C454B91E3B77F2CE102F296235D74874F3B7F12DC3ACA0C7C24203835D4"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.ts",
+      "sha256": "1D1CF213AD51559F8880A58DFD5EF7EF2C3F98820AC690EB5DA03D92AA2D0C8E"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/autenticacion.spec.ts",
+      "sha256": "CE4F920AF1581B363FD3FFE0219F21226AECB31012A88A3053679B5C145C6D71"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/autenticacion.ts",
+      "sha256": "291D926D33EA9408EEECE2F8C0C11BE4720E411D308A864E66A8CE644BC708AE"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/datos-prueba.ts",
+      "sha256": "799BBEA1C7E54DAE09605F5C78E541A0793298D57FBA880EAA8BD98135824052"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/identidad-modelo.ts",
+      "sha256": "5F4094CD879215DC22B0C5FB15E0F17CB6703D811CAE936C2AC7DC4EF025D6DD"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/identidad.css",
+      "sha256": "118EAAD36554DEA9A9B1E9983DD0040DB074A05EC9339729B20FCF470C4C88C9"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.html",
+      "sha256": "EEC732E37460E82CD388A227A69EF6BBADEC5EA9754C95BCC34212E8EA88A358"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.spec.ts",
+      "sha256": "44D50E9B2F45CEE7BC80430C8117D3F2435F866B47782D2DC3D4755B92495ACF"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.ts",
+      "sha256": "AE95B29E75BB3FE2E8CBCC7FD0422CC97429F2C9338173B44FC3B11F533B8751"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-guard.spec.ts",
+      "sha256": "3E8ACBB499B5FD1A6F5535EDFF4705F9300441FA9F1633C7D59C1A6F6D5927E8"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-guard.ts",
+      "sha256": "E03E68FE46EBCFE45AC644990003BE4336044C4CF5EE7D168DEDBCD9DCFE1864"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-interceptor.spec.ts",
+      "sha256": "ABF60FDE4515D7D5569FE6EE92009C45695AA7B27C003A6430DC91FC0295C646"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-interceptor.ts",
+      "sha256": "24227EAF86426AE856002D1B5265BEADBFC2EBEBB0CB17C6266B9C0B5D4F13E1"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-store.spec.ts",
+      "sha256": "D3FFC300E0697190098E4C56E0D920806AE9DDB7FD06F797F8FF8000F3B82546"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-store.ts",
+      "sha256": "105A26894DA5EFE90E0C4892006FD021A2BEBC3B61B7AB6E74D3D073B6223903"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.css",
+      "sha256": "4FDB38D228226E0795F02693A05874AD00A84590C409AA12EC628880372B15CA"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.html",
+      "sha256": "1F8ED714BDDA02FB0DC8989789ABC5F4CE7D40864D4E183D5BE36D1387F11AAB"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.spec.ts",
+      "sha256": "34A74FAD7A47670FD63795AA48B949D1BC6596F5E4B493A04742A225435DCCE3"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.ts",
+      "sha256": "01C8739EC8F711AC0FD47F1B83E5DF30CB47EB09D0110D8E528D31811DC401BF"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/salud-api.spec.ts",
+      "sha256": "C47E04D48C47C5900BD7262FFD962487D9B3986147189C51F343564DD21ED19C"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/salud-api.ts",
+      "sha256": "AD2857F5D7D2C6FC1B76BA3911A6010D273FC55521920D3F60F00602BF4249A9"
+    },
+    {
+      "ruta": "frontend/src/app/navegacion/no-encontrada.ts",
+      "sha256": "AE1EAA0E066CE10F52EFC6D1A309041257E6150DE2706730A004F364ADF95588"
+    },
+    {
+      "ruta": "frontend/src/index.html",
+      "sha256": "6A28C322B70310773221D735F852E544E0740CB77ADAB653493012981989CF40"
+    },
+    {
+      "ruta": "frontend/src/main.ts",
+      "sha256": "ECC610FB7D56C95A01A8AA6C274A63210D45B2944DD6B9A88B2C8F70B6351037"
+    },
+    {
+      "ruta": "frontend/src/styles.css",
+      "sha256": "5723A2736CC602B9C6792557B3DC6211C18E2D2F809EE7985F1382E2AAB23CD5"
+    },
+    {
+      "ruta": "frontend/tsconfig.app.json",
+      "sha256": "D89269F457AE56F3C9808C3C1980A78053284E1968513070A8DA8614D56FD967"
+    },
+    {
+      "ruta": "frontend/tsconfig.e2e.json",
+      "sha256": "D9C0ECF853557F06ABF35781FEFE17B7C15AFE007DB99E9F06F7B7C75F9961B1"
+    },
+    {
+      "ruta": "frontend/tsconfig.json",
+      "sha256": "B6445B51AAFFFBE2FED1026BBE83C8BDF1F9194C928F6BAD0DB9BAD66FA10B4A"
+    },
+    {
+      "ruta": "frontend/tsconfig.spec.json",
+      "sha256": "6E4739692D45DEC5F69346358B09FCF02F1A6C789A47BEE654F773EA9AF1F234"
+    },
+    {
+      "ruta": "infraestructura/.env",
+      "sha256": "CF52FDCE9340A2CCBA376A704D6D4436D14C8B19B202CD727B064A6EF2EB7FDF"
+    },
+    {
+      "ruta": "infraestructura/.env.example",
+      "sha256": "6980206E53F8C4794F0AB5A5C774BF8917C413FD9001B43F23119663DB4DAE1C"
+    },
+    {
+      "ruta": "infraestructura/compose.yaml",
+      "sha256": "4C471767FB8A314EDBF52CB888DA0F26BFBF3544CFFE6FC0F5FDE3879A61A195"
+    },
+    {
+      "ruta": "infraestructura/postgres/inicializar.sh",
+      "sha256": "5D2C7EFB2DA4715BCE0E78A7FF96BF61F3992048D336180AB44E0043539B8DDB"
+    },
+    {
+      "ruta": "qa/auditar-maven.mjs",
+      "sha256": "C01B43D3E64DC8DDF7020AFD1A3C4103E9A8695FFBBA3AB57CFEE3E533052946"
+    },
+    {
+      "ruta": "qa/auditar-npm-offline.mjs",
+      "sha256": "6C39758051EB9D6C910BE75C4CFC26F19F2726DC8BB92F86E15A27C240531D3D"
+    },
+    {
+      "ruta": "qa/preparar-auditoria.ps1",
+      "sha256": "3F8498C521F42285A1A51C118F9EFE4016924FBE2F7BF2193E636B3407830758"
+    },
+    {
+      "ruta": "qa/rutas-evidencia.mjs",
+      "sha256": "B854055E66393CD95965B67311129BE6EBBE8874A126F1921998BA5332A9F0AF"
+    },
+    {
+      "ruta": "qa/verificar-compose.ps1",
+      "sha256": "146A280802290EACF88083AC3F0EA810E825A951CAF4ECD3321EE9AC8284C969"
+    },
+    {
+      "ruta": "qa/verificar-dependencias-preliminares.mjs",
+      "sha256": "6427D9DAD8886B2DC8FA56E83361A746CBB8713ADF75E7E3753A459258DE025D"
+    },
+    {
+      "ruta": "qa/verificar-documentacion.mjs",
+      "sha256": "7803C9F2F1F04296FC471866565449924AA3A91AF49951640BE6A7A73698812A"
+    },
+    {
+      "ruta": "qa/verificar-entrega.mjs",
+      "sha256": "EEA9D0473899FCAE2B7347771313B7267407A1B159583439B13FD3208DF11A22"
+    },
+    {
+      "ruta": "qa/verificar-estado-navegador.mjs",
+      "sha256": "CAEBE937A14756168005BCECE4567035E7AA3A0DCC1EF62634E2F9D916FB0574"
+    },
+    {
+      "ruta": "qa/verificar-sesiones-compose.mjs",
+      "sha256": "74EB6E241D8ECFF6C8FB65B310C1EBDE0D185ADFCB6F6B4759952E211B256AA2"
+    }
+  ]
+}

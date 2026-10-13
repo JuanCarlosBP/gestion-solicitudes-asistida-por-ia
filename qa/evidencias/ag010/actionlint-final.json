@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-14T00:19:34.8497666+02:00",
+  "comando": "actionlint .github/workflows/ci.yml",
+  "version": "1.7.12",
+  "salida": 0,
+  "nota": "Configuración final sin desactivar integraciones de análisis disponibles",
+  "ciRemota": "Pendiente de push humano"
+}

@@ -6,8 +6,8 @@
 Este documento analiza qué cosas importantes debemos proteger,
 qué podría salir mal y qué riesgos tendremos que controlar.
 
-No explica todavía cómo se programará cada protección.
-Eso se decidirá después en las especificaciones y planes correspondientes.
+Las soluciones concretas se definen en las especificaciones y planes.
+El apartado de identidad enlaza los controles de 002 y su evidencia parcial.
 
 ## 1. Qué queremos conseguir
 
@@ -282,6 +282,29 @@ Debemos revisar especialmente:
 
 La prioridad inicial no sustituye la evaluación posterior del riesgo que permanezca.
 La respuesta inicial deberá concretarse y comprobarse en cada especificación.
+
+### Concreción de identidad en AG-010
+
+La [especificación 002](../../especificaciones/002-identidad-acceso/especificacion.md)
+concreta las siguientes amenazas; su [validación](../../especificaciones/002-identidad-acceso/validacion.md)
+mantiene pruebas ejecutadas y pendientes. La decisión de tokens está en
+[ADR-0003](../decisiones/ADR-0003-identidad-jwt-y-sesiones.md).
+
+| Amenaza | Control de 002 | Riesgo que permanece |
+|---|---|---|
+| AM-01 | Argon2id, política de contraseña, errores genéricos, bloqueo temporal, RS256, fechas, sid y refresh rotatorio. | Robo durante sesión, contraseñas comprometidas fuera de lista local, diferencias temporales residuales. |
+| AM-03 | Roles emitidos/validados por backend, usuario habilitado y método protegido; `/yo` no acepta roles del cliente. | Permisos de recursos y reglas de negocio futuros. |
+| AM-04 | JdbcTemplate con parámetros, restricciones/FKs e IDs UUID. | Nuevas consultas futuras requieren sus propias pruebas. |
+| AM-05 | Token de acceso solo en memoria, refresh HttpOnly, CSP y salida Angular segura. | XSS activo todavía puede actuar como el usuario. |
+| AM-06/07 | Cookie Strict, XSRF en login/refresh/logout incluso Bearer, mismo origen, CORS cerrado. | SameSite no sustituye XSRF ni una futura configuración HTTPS. |
+| AM-14/18 | Claves externas fuera de local/test, hash de secretos aleatorios, no-store, errores y logs controlados. | Claves operativas, retención y entornos públicos pendientes; búsquedas acotadas no garantizan ausencia total. |
+| AM-15 | Denegación por defecto y documentación pública solo local/test. | Demo pública y administración aún no disponibles. |
+| AM-19 | Cinco fallos/ventana/bloqueo temporal persistido y límites de longitud. | Bloqueo abusivo de cuenta y agotamiento global requieren controles futuros. |
+| AM-21/22 | Transacciones, bloqueo de sesión, revocación confirmada antes del 401 y validación de sid que falla cerrada. | Dependencia de disponibilidad PostgreSQL; dos pestañas pueden provocar revocación segura. |
+| AM-23 | Refresh persistido recupera acceso tras reinicio con clave efímera nueva; segundo arranque. | No equivale a un procedimiento completo de backup/restauración. |
+
+No se amplía este incremento a las amenazas de aprobación, importes, historial
+funcional o concurrencia de negocio. Ninguna categoría completa se da por cubierta.
 
 ## 10. Amenazas que dependerán de funciones futuras
 

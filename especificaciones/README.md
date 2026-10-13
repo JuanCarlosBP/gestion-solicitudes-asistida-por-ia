@@ -13,8 +13,13 @@ El proceso está en [SDD](../docs/metodologia/sdd.md).
 |---|---|---|
 | 001 — Base verificable | [Especificación](001-base-verificable/especificacion.md) | Aprobada. |
 | 001 — Base verificable | [Plan](001-base-verificable/plan.md) | Aprobado; DT-01 a DT-08 aprobadas. |
-| 001 — Base verificable | [Tareas](001-base-verificable/tareas.md) | Ejecutadas en AG-006; T006 y aceptación T008 bloqueadas por formato Maven. |
-| 001 — Base verificable | [Validación](001-base-verificable/validacion.md) | Aplicación local y pruebas reales; aceptación integral y CI remota pendientes. |
+| 001 — Base verificable | [Tareas](001-base-verificable/tareas.md) | Ejecutadas; verify corregido en AG-008 y repetido en AG-009. Aceptación pendiente. |
+| 001 — Base verificable | [Validación](001-base-verificable/validacion.md) | Verificada localmente en AG-009; segunda CI, aceptación e integración pendientes. |
+| 002 — Identidad y acceso | [Especificación](002-identidad-acceso/especificacion.md) | Aprobada por decisión humana AG-010. |
+| 002 — Identidad y acceso | [Plan](002-identidad-acceso/plan.md) | Aprobado por decisión humana AG-010. |
+| 002 — Identidad y acceso | [Tareas](002-identidad-acceso/tareas.md) | Aprobadas por decisión humana AG-010; ejecución y QA local superadas. |
+| 002 — Identidad y acceso | [Validación](002-identidad-acceso/validacion.md) | Resultados locales AG-010; aceptación e integración pendientes. |
+| 003 — Proveedores | [Especificación](003-proveedores/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas, validación ni código. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
@@ -25,14 +30,17 @@ gensync preliminar no autorizado y se detuvo antes de instalar o generar código
 funcional. AG-006 aprobó [ADR-0002](../docs/decisiones/ADR-0002-politica-dependencias-transitivas.md)
 y ejecutó la base local con pruebas. [Versiones](../docs/documentaciondev/versiones.md)
 conserva la historia y los parches de seguridad; validación distingue controles
-superados, el bloqueo de formato y el pendiente remoto.
+superados, la resolución del bloqueo de formato y el pendiente remoto.
+
+AG-010 aprueba e inicia 002 expresamente, con
+[ADR-0003](../docs/decisiones/ADR-0003-identidad-jwt-y-sesiones.md).
+Esta autorización sustituye para 002 el límite anterior de solo borrador.
 
 ## Incrementos posteriores previstos
 
 El [prompt nocturno](../docs/metodologia/prompts/sesion-nocturna-01.md)
 está aprobado para redactar únicamente borradores de especificación para:
 
-- 002-identidad-y-acceso;
 - 003-proveedores;
 - 004-solicitudes-conceptos-importes;
 - 005-aprobaciones;
@@ -40,7 +48,7 @@ está aprobado para redactar únicamente borradores de especificación para:
 - 007-historial-auditoria;
 - 008-demo-y-operacion.
 
-Esas carpetas y documentos todavía no se han creado.
+Las carpetas 003–008 todavía no se han creado.
 No se prepararán sus planes ni tareas sin aprobación posterior.
 Su orden no resuelve por sí solo las dudas de cada funcionalidad.
 

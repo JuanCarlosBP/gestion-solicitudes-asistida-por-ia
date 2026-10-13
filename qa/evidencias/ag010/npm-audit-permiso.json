@@ -1,0 +1,9 @@
+{
+  "control": "npm audit de producción y desarrollo",
+  "estado": "AUTORIZADO_POR_RESPUESTA_HUMANA",
+  "motivo": "Revisión automática rechaza envío de nombres y versiones de dependencias a registry.npmjs.org; requiere autorización específica del usuario.",
+  "ejecutado": true,
+  "accion": "Reanudar npm audit con autorización expresa; rechazo previo preservado como incidencia.",
+  "autorizacion": "npm audit y consultas de red de solo lectura necesarias para dependencias, vulnerabilidades y documentación oficial. Solo nombres, versiones y metadatos de dependencias; nunca código, archivos, credenciales, tokens, secretos o datos privados.",
+  "resultado": "Producción y completo salida0, cero vulnerabilidades reportadas"
+}

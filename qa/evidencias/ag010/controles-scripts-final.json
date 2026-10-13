@@ -1,0 +1,30 @@
+{
+  "controles": [
+    {
+      "archivo": "qa/verificar-sesiones-compose.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/auditar-npm-offline.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag010/crear-manifiesto.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag010/crear-manifiesto-commits.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag010/comprobar-compose-activo.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/evidencias/ag010/comprobar-datos-sensibles.mjs",
+      "salida": 0
+    }
+  ],
+  "fecha": "2026-10-14T00:28:11.5673623+02:00",
+  "resultado": "PASS"
+}

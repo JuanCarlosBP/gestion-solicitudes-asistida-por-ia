@@ -1,0 +1,22 @@
+<testsuites id="" name="" tests="8" failures="0" skipped="0" errors="0" time="3.3271550000000003">
+<testsuite name="base.spec.ts" timestamp="2026-10-13T22:24:35.874Z" hostname="" tests="5" failures="0" skipped="0" time="1.656" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.373">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.26">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.165">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="0.838">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.02">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-13T22:24:35.874Z" hostname="" tests="3" failures="0" skipped="0" time="1.077" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.524">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.34">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.213">
+</testcase>
+</testsuite>
+</testsuites>

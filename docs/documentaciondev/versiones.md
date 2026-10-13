@@ -1,3 +1,11 @@
+# Versiones vigentes e historial de investigación
+
+**Estado vigente AG-010:** dependencias finales verificadas localmente; BC 1.86,
+auditorías npm/Maven y verify PASS. CI remota y aceptación humanas pendientes.
+El apartado final «AG-010» recoge la ampliación de identidad.
+Los bloques siguientes conservan sus estados históricos, incluido el bloqueo
+inicial de T001; esas cabeceras no describen el estado actual del proyecto.
+
 # Versiones de 001 — Investigación de T001
 
 **Estado:** T001 bloqueada; registro factual pendiente de revisión humana.
@@ -533,3 +541,40 @@ Resultados, tiempos, advertencias y límites en [AG-008](../trazabilidad/AG-008-
 y [validación](../../especificaciones/001-base-verificable/validacion.md).
 Se propone verificación local; CI remota, revisión independiente, aceptación e
 integración siguen pendientes. No se sustituye ningún resultado histórico.
+
+## AG-010 — dependencias y herramientas de identidad
+
+La autorización 002 conserva Java 21, Boot 4.0.8, Angular 21 y PostgreSQL 17.
+Se añade `spring-boot-starter-security-oauth2-resource-server` gestionado por
+el BOM 4.0.8: resuelve Spring Security 7.0.7 y Nimbus JOSE JWT 10.4.
+Argon2PasswordEncoder utiliza `org.bouncycastle:bcprov-jdk18on:1.86`, directa
+estable y exacta. No se añade un Authorization Server.
+
+La selección inicial Bouncy Castle 1.83 produjo cinco avisos OSV: GOST,
+Name Constraints, LDAP, FrodoKEM y ASN.1. El código no usa esas funciones, pero
+se sustituye por 1.86 estable oficial dentro de la línea mayor 1. El inventario
+final de 132 componentes pasa OSV offline sin coincidencias. La historia inicial
+y su evaluación se conservan en `qa/evidencias/ag010/auditorias.md`.
+Fuente primaria de versiones: [metadatos Maven Central](https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/maven-metadata.xml),
+consultados durante AG-010; copia exacta en sus evidencias.
+
+El lockfile Angular permanece idéntico al inicio. No se repite la investigación
+AG-006 de transitivas preliminares; se aplica ADR-0002. La instalación npm ci,
+build y pruebas se ejecutan, al igual que auditorías actuales npm de producción
+y completas, ambas salida 0. Se añade comprobación OSV offline con volcados
+públicos completos: 7 componentes de producción y 653 únicos en total,
+sin coincidencias conocidas. No implica ausencia de vulnerabilidades desconocidas.
+
+La CI fija Docker Engine 29.1.3 mediante
+[docker/setup-docker-action](https://github.com/docker/setup-docker-action/tree/e43656e248c0bd0647d3f5c195d116aacf6fcaf4)
+por SHA `e43656e248c0bd0647d3f5c195d116aacf6fcaf4` (tag v4 consultado).
+Compose 2.40.3 Linux se verifica con SHA-256
+`dba9d98e1ba5bfe11d88c99b9bd32fc4a0624a30fafe68eea34d61a3e42fd372` de la
+[publicación oficial](https://github.com/docker/compose/releases/tag/v2.40.3).
+Se mantiene actionlint 1.7.12; su binario Linux amd64 queda fijado por la suma
+`8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8`.
+Las otras Actions conservan sus SHA. CI remota pendiente del push humano;
+la configuración inspeccionada no se presenta como ejecución de un runner Linux.
+
+Resultados exactos, fallos corregidos y límites en
+[validación 002](../../especificaciones/002-identidad-acceso/validacion.md).

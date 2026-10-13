@@ -1,0 +1,377 @@
+[
+  {
+    "clase": "es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "1.112",
+    "casos": [
+      {
+        "nombre": "usuarioDeshabilitadoRevocaSuSesionAlRenovar",
+        "segundos": "0.147",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "usuarioAusenteYCorreoInvalidoVerificanHashFicticio",
+        "segundos": "0.021",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "unaSesionRevocadaOCaducadaNoSeRenueva",
+        "segundos": "0.002",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "secretoIncorrectoNoEmiteNiRevocaUnaFamiliaAjena",
+        "segundos": "0.003",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "reutilizacionDevuelveVacioSinExcepcionYOrdenaRevocacionDeFamilia",
+        "segundos": "0.009",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "rotacionCreaNuevoHashConservaCaducidadYReleeBajoBloqueo",
+        "segundos": "0.014",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "logoutSoloRevocaConCredencialAutenticaYUsaBloqueoComun",
+        "segundos": "0.004",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.925",
+    "casos": [
+      {
+        "nombre": "firmaAlteradaClaveAjenaYAlgoritmoDistintoNoSeAceptan",
+        "segundos": "0.324",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "rechazaPublicaConMismoModuloPeroExponenteIncompatible",
+        "segundos": "0.075",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "sesionInactivaOBaseInaccesibleRechazanElToken",
+        "segundos": "0.01",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "normalExigeClavesExternasYLocalTestGeneranRsaEfimera",
+        "segundos": "0.285",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "emiteRs256ConClaimsMinimosYConvierteRoles",
+        "segundos": "0.074",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "rechazaIssuerAudienceFechasClaimsAusentesYRolesAjenos",
+        "segundos": "0.004",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "normalCargaPkcs8X509PorValorYPorRutaSinRegistrarClaves(Path)",
+        "segundos": "0.142",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.298",
+    "casos": [
+      {
+        "nombre": "aceptaLimitesUnicodeEspaciosYSinComposicionArbitraria",
+        "segundos": "0.003",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "quintoFalloBloqueaQuinceMinutosYLosBloqueadosNoAmplianVentana",
+        "segundos": "0.001",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "argon2idTieneCosteAprobadoSalAleatoriaYNoRecortaClaves",
+        "segundos": "0.155",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "ventanaDeFallosCaducaExactamenteYElExitoPuedeRestablecerla",
+        "segundos": "0.001",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "lasColeccionesYHashInternosNoSeExponenParaModificacion",
+        "segundos": "0.003",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "secretosOpacosAleatoriosSeComparanSinConservarElValor",
+        "segundos": "0.001",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "normalizaCorreoConLocaleRootYRechazaEntradasInvalidas",
+        "segundos": "0.002",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.identidad.http.CookiesIdentidadTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.032",
+    "casos": [
+      {
+        "nombre": "secureSoloSeRelajaEnPerfilLocalHttpYHostLoopback",
+        "segundos": "0.01",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "cookieRefrescoRestringeAtributosYCaducidadYElBorradoEsExplicito",
+        "segundos": "0.02",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.006",
+    "casos": [
+      {
+        "nombre": "informaFalloDeDependenciaSinDetallesInternos",
+        "segundos": "0.004",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "informaDisponibilidadSoloSiLaDependenciaResponde",
+        "segundos": "0.001",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.salud.http.ControladorSaludTest",
+    "pruebas": 5,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "3.395",
+    "casos": [
+      {
+        "nombre": "controlaUnFalloInesperado",
+        "segundos": "0.275",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "noAbreCorsAUnOrigenAjeno",
+        "segundos": "0.01",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "deniegaOperacionesYRutasNoPublicas",
+        "segundos": "0.01",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "devuelve200ConElContratoMinimo",
+        "segundos": "0.031",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "devuelve503SinInformacionInterna",
+        "segundos": "0.007",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.258",
+    "casos": [
+      {
+        "nombre": "traduceErrorDeConexionSinPropagarSuMensaje",
+        "segundos": "0.053",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "limitaLaConsultaYLiberaLosRecursos",
+        "segundos": "0.201",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "rechazaConsultaFallidaYLiberaConexion",
+        "segundos": "0.001",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.identidad.integracion.IdentidadAccesoIT",
+    "pruebas": 13,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "9.67",
+    "casos": [
+      {
+        "nombre": "bearerAusenteAlteradoCaducadoYUsuarioDeshabilitadoSeRechazan",
+        "segundos": "0.514",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "csrfLoginYoContratoMinimoCookiesYNoCache",
+        "segundos": "0.111",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "logoutAutenticaRefreshRevocaSesionCompletaBorraCookieYEsIdempotente",
+        "segundos": "0.121",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "loginNoEnumeraCuentasIncorrectasDeshabilitadasNiBloqueadas",
+        "segundos": "0.328",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "refreshRotaYReutilizacionConfirmaRevocacionAunqueDevuelva401",
+        "segundos": "0.139",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "carreraRefreshLogoutSiempreTerminaConSesionRevocada",
+        "segundos": "0.09",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "denegacionPorDefectoYMethodSecurityUsanRolesDeJwt",
+        "segundos": "0.074",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "refreshCaducaAbsolutamenteSinAmpliarseYHashIncorrectoNoRevoca",
+        "segundos": "0.082",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "usuariosRolesUnicidadRestriccionesYPermisosPostgres",
+        "segundos": "0.077",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "losErroresSqlDeAplicacionNoIncluyenHashesDeFilas",
+        "segundos": "0.139",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "intentosPersistenVentanaCaducaYUnExitoRestablece",
+        "segundos": "0.45",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "dosRenovacionesConcurrentesEsperanElMismoBloqueoYRevocanElResultadoGanador",
+        "segundos": "0.106",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "csrfSeExigeEnCadaPostInclusoConBearerValido",
+        "segundos": "0.075",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.identidad.integracion.PerfilesIdentidadIT",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "7.113",
+    "casos": [
+      {
+        "nombre": "localSinVariablesOConGruposVaciosNoCreaUsuarios",
+        "segundos": "1.266",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "perfilNormalConClavesExternasNoAprovisionaNiPublicaSwagger",
+        "segundos": "0.568",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "localCreaCuatroRolesIdempotentementeYRefreshSobreviveReinicio",
+        "segundos": "1.399",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "perfilTestNoAprovisionaAunqueRecibaVariablesDemo",
+        "segundos": "0.509",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "grupoParcialOClaveFueraDePoliticaFallaSinAprovisionarParcialmente",
+        "segundos": "1.164",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "perfilNormalSinClavesNoArranca",
+        "segundos": "0.243",
+        "resultado": "PASS"
+      }
+    ]
+  },
+  {
+    "clase": "es.gestionsolicitudes.integracion.BaseVerificableIT",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "6.974",
+    "casos": [
+      {
+        "nombre": "unaMigracionInvalidaImpideElArranqueSinAlterarOtraBase",
+        "segundos": "2.285",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "primerArranqueContratoPermisosYSegundoArranque",
+        "segundos": "2.684",
+        "resultado": "PASS"
+      },
+      {
+        "nombre": "caidaRealDePostgresDevuelve503AcotadoSinDatosInternos",
+        "segundos": "2.002",
+        "resultado": "PASS"
+      }
+    ]
+  }
+]

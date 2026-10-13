@@ -1,0 +1,132 @@
+[
+  {
+    "ruta": "frontend\\src\\app\\app.config.ts",
+    "sha256": "8F70B9965253FAEAC032EA7056722DA96065B4FA1E33FD998CC3DC309056CBED",
+    "bytes": 864
+  },
+  {
+    "ruta": "frontend\\src\\app\\app.css",
+    "sha256": "D701E5C778E10B5EF65346ECC83E719091C8876ACBD2886EE7A6A93420DF7A0F",
+    "bytes": 1132
+  },
+  {
+    "ruta": "frontend\\src\\app\\app.html",
+    "sha256": "5B7B5F0A8C589AC3FE2BA76F3896BEA86F38C6567957C7C1442F5818CFC66917",
+    "bytes": 929
+  },
+  {
+    "ruta": "frontend\\src\\app\\app.routes.ts",
+    "sha256": "F7D0878E49867E15187D784FE6C2C37266214564B7190B79E702117F7D35F8F8",
+    "bytes": 810
+  },
+  {
+    "ruta": "frontend\\src\\app\\app.routes.spec.ts",
+    "sha256": "7BFA4290737E212D87B357E55AC15C8EA9778E0C2BFDDA6DEF69AC0D213F12E6",
+    "bytes": 3157
+  },
+  {
+    "ruta": "frontend\\src\\app\\app.ts",
+    "sha256": "836A149EB46B3FE5B51643A0CCF209571647E7E31F587B21310E8BAA23769AB2",
+    "bytes": 398
+  },
+  {
+    "ruta": "frontend\\playwright.config.ts",
+    "sha256": "BD594F8A9A26DC664DA839A0833D3073C1F74C2A234F1B142CB3AD83C2D6236B",
+    "bytes": 393
+  },
+  {
+    "ruta": "frontend\\e2e\\base.spec.ts",
+    "sha256": "0546A016F10F505EB988ADBF6D64B1EB7E7F5F2C79175BB4E7D97925DA1B923E",
+    "bytes": 4688
+  },
+  {
+    "ruta": "frontend\\e2e\\identidad.spec.ts",
+    "sha256": "1FB0E6BF897B67DA9011598EA8ED0464C79D08DB223E5B7FBC7DAD8AB6DF38D8",
+    "bytes": 6411
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\acceso.html",
+    "sha256": "91527BE24A59CFC942367E16D87C96C94632AAFA29CD2AE0BF1B4535408C290C",
+    "bytes": 1253
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\acceso.spec.ts",
+    "sha256": "A5524C454B91E3B77F2CE102F296235D74874F3B7F12DC3ACA0C7C24203835D4",
+    "bytes": 3559
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\acceso.ts",
+    "sha256": "1D1CF213AD51559F8880A58DFD5EF7EF2C3F98820AC690EB5DA03D92AA2D0C8E",
+    "bytes": 1476
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\autenticacion.spec.ts",
+    "sha256": "CE4F920AF1581B363FD3FFE0219F21226AECB31012A88A3053679B5C145C6D71",
+    "bytes": 6590
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\autenticacion.ts",
+    "sha256": "291D926D33EA9408EEECE2F8C0C11BE4720E411D308A864E66A8CE644BC708AE",
+    "bytes": 4007
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\datos-prueba.ts",
+    "sha256": "799BBEA1C7E54DAE09605F5C78E541A0793298D57FBA880EAA8BD98135824052",
+    "bytes": 487
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\identidad-modelo.ts",
+    "sha256": "5F4094CD879215DC22B0C5FB15E0F17CB6703D811CAE936C2AC7DC4EF025D6DD",
+    "bytes": 310
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\identidad.css",
+    "sha256": "118EAAD36554DEA9A9B1E9983DD0040DB074A05EC9339729B20FCF470C4C88C9",
+    "bytes": 878
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\mi-cuenta.html",
+    "sha256": "EEC732E37460E82CD388A227A69EF6BBADEC5EA9754C95BCC34212E8EA88A358",
+    "bytes": 1363
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\mi-cuenta.spec.ts",
+    "sha256": "44D50E9B2F45CEE7BC80430C8117D3F2435F866B47782D2DC3D4755B92495ACF",
+    "bytes": 3790
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\mi-cuenta.ts",
+    "sha256": "AE95B29E75BB3FE2E8CBCC7FD0422CC97429F2C9338173B44FC3B11F533B8751",
+    "bytes": 1890
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-guard.spec.ts",
+    "sha256": "3E8ACBB499B5FD1A6F5535EDFF4705F9300441FA9F1633C7D59C1A6F6D5927E8",
+    "bytes": 1533
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-guard.ts",
+    "sha256": "E03E68FE46EBCFE45AC644990003BE4336044C4CF5EE7D168DEDBCD9DCFE1864",
+    "bytes": 467
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-interceptor.spec.ts",
+    "sha256": "ABF60FDE4515D7D5569FE6EE92009C45695AA7B27C003A6430DC91FC0295C646",
+    "bytes": 5722
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-interceptor.ts",
+    "sha256": "24227EAF86426AE856002D1B5265BEADBFC2EBEBB0CB17C6266B9C0B5D4F13E1",
+    "bytes": 2236
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-store.spec.ts",
+    "sha256": "D3FFC300E0697190098E4C56E0D920806AE9DDB7FD06F797F8FF8000F3B82546",
+    "bytes": 1038
+  },
+  {
+    "ruta": "frontend\\src\\app\\identidad\\sesion-store.ts",
+    "sha256": "105A26894DA5EFE90E0C4892006FD021A2BEBC3B61B7AB6E74D3D073B6223903",
+    "bytes": 861
+  }
+]

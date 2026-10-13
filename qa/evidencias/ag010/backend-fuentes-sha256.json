@@ -1,0 +1,226 @@
+[
+  {
+    "archivo": "backend/.mvn/jvm.config",
+    "sha256": "c9b2e15ce57f3177ed34632cb0440ae92b7e894647d58fcd30365c65e4f90cf8"
+  },
+  {
+    "archivo": "backend/.mvn/maven.config",
+    "sha256": "32c93e93c049b087d746aa79572a27fdcfbde7e26656b1e94c8043c669e780d7"
+  },
+  {
+    "archivo": "backend/.mvn/wrapper/maven-wrapper.properties",
+    "sha256": "51b221ede4e074d19bb44d6d485bb7b298e77874572a09697aba0a9e234e0745"
+  },
+  {
+    "archivo": "backend/Dockerfile",
+    "sha256": "ed2e8b86b46ac74f42a0fdfeb08f83204fa4957cd16c6ed3ce98f4f49ab61409"
+  },
+  {
+    "archivo": "backend/mvnw",
+    "sha256": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02"
+  },
+  {
+    "archivo": "backend/mvnw.cmd",
+    "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+  },
+  {
+    "archivo": "backend/pom.xml",
+    "sha256": "0ab04b8625746659c463f263bcf5f7ce5d923f4acaf18429ca81795ff2415cf7"
+  },
+  {
+    "archivo": "backend/spotbugs-exclusiones.xml",
+    "sha256": "e8087186fa1b4cda0c0a11032bbe78ec6c27979d408b721f61e41d8989b9db59"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+    "sha256": "4b45448acfa893fda32323a39955ad127deef9fd6a9cefa185f9d10c79214852"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+    "sha256": "05edafbe880384b3557039f4e812152189a8e691322cb93ee7f2ebe1c76fa5df"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+    "sha256": "7e351e00c56937e0494c540cfd83316206ef011eb639eba51d2ea3b0ed70ba7f"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java",
+    "sha256": "175a4f446f178e5fac16657d45331d25736a666e6e07ac8cce721d0a349eae24"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.java",
+    "sha256": "8463b49dbf0b8ec89291c08cb53969f4f2155ab7620446f6f1e348b3bc3cd30e"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/Contrasenas.java",
+    "sha256": "cb5e7edd61ffffb715aabd399d80cf362d00860b5a9ba7da161bf9dfb88726c8"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.java",
+    "sha256": "d833396ee30052849e684b7157484158064b8e90402086f2345e8c347408bcff"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.java",
+    "sha256": "e488e9e70d16daf7c8debe8faecb89a964a7f304205b836247082c3cf3703de3"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.java",
+    "sha256": "e39b9ddfb3bb451aba45703ce17fc2a2b047534cc47f142d8a22c9f6b8afbb81"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.java",
+    "sha256": "b85cbc7ab03e37658f530e56f6177983f014ae3727f496e5cc2fd76b3fd5c3de"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.java",
+    "sha256": "b7e17f33b2ff64aa605315a6323625baa6f1eba2f2548706047d254779d70fc4"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ClavesRsa.java",
+    "sha256": "117d4483bb2a6c2c29ac163ccc5f9a3edfbe93c369a3b54e6fea263c1d8bf108"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.java",
+    "sha256": "8344db7e30ccbb93fc63dcf903faf0308e35526c2e0e309ea40cfa5be0a77e00"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.java",
+    "sha256": "ef33346ba8bb71137b54d008e178611d1c94aaf1e9d469369a7a338b1b2e27cb"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java",
+    "sha256": "faf6987df4a7b423761afdf04c26a8c18dd18257084c4a63dda4a45d03f4a76a"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Correo.java",
+    "sha256": "0421eeaa594a555b4d028fba52b4a34321cbbf27a19625f8daa969d43ce78896"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/IntentosAcceso.java",
+    "sha256": "3e60f8d2ee616828fb6b61419fb341a71f024ca71e54938e1064e9130f9d182c"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Rol.java",
+    "sha256": "bfcb1c27a8f7a91c61fd90d80524da70b17dfd170f2265d1957aea48e93bfa60"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/SesionAcceso.java",
+    "sha256": "97d1aa9b07a2e8e22610c9fa54e3d3210ae81ead72749e9118b23d1ef09baba7"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/TokenRefresco.java",
+    "sha256": "3bf220e73a1a3853b7c1ca7cd6df538eae75adba06806bb2cf32033639fdb536"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Usuario.java",
+    "sha256": "a8fd43ea4196c327dcc7ebcaf696ad98eb99e1070a29f422f8130e92468f81a0"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/UsuarioPublico.java",
+    "sha256": "50dce39b8ae2d28a9c9be77d9909bd79a67d3a5fcae12accf42e112684b8e1f4"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java",
+    "sha256": "75dac5644971cf89da9ee62c698bfcfaed5597eca46018c93f8e032e735d75a0"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java",
+    "sha256": "d1c3a2484a34bb0313952bc02a09fd4fe16e16a91c1fb35d6d3455aab68fd96e"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/http/CookiesIdentidad.java",
+    "sha256": "b394cfb9dcef14dfe9b2990532df72aaca56b2892abf39d2e8582b963b7bddc9"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java",
+    "sha256": "379c49b88c1fb8df8f58c82888a868546214d54fb696ecf9bbaf2b4b8aa0e632"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.java",
+    "sha256": "ee6d0d3bdca67cf550d80feec7c7b1152b2e37f3b3a93f84ff7dd95b09824345"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java",
+    "sha256": "bf179a37e19dd8795ea0bc41b744a230a96e2039f78b30952f1cfad760a935bd"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java",
+    "sha256": "88a34a835d3410219fc90dbbaad804f35dde2da1dcbc46fe1e0ca820d429534d"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java",
+    "sha256": "0bbb21ae877166b4ca76cd8f8db1a7457839f054c404453323a16441629ffa0d"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java",
+    "sha256": "4efb26e3dee680ac5cc5ea03273d26234503d44648ea056c1534ba801419bfbd"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java",
+    "sha256": "eef2ffe1133421d46019d2e6250072c2a053874f749aea69d40e0e23bf91a772"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java",
+    "sha256": "0aa89bfc24274091fe089de09cac6f54d5534e7a9e130050ecbbac4189ee3e7b"
+  },
+  {
+    "archivo": "backend/src/main/resources/application.yaml",
+    "sha256": "6a6e3be447bb04bc5bbce88abd7f3ffdaf0b405694ec948341bf99ffaa0c1e3f"
+  },
+  {
+    "archivo": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql",
+    "sha256": "7853d9a29e2dc6aa24dc9740c0390f49f1c46b7c00d7394bb0d31c94943cf7b2"
+  },
+  {
+    "archivo": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql",
+    "sha256": "a19208eb1d925f43d08883bd69affe9e8c5ea16841bd57118a9aa48186a249c3"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacionTest.java",
+    "sha256": "085908d04416db2809c9ebe0575089db5f462ec07daf0b3ced382c12ceb6ccfb"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/configuracion/JwtYClavesTest.java",
+    "sha256": "dff488191daec6670aa187c8ff016bf6277c930d0d3b6d4536e1af7485f3d934"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/dominio/IdentidadDominioTest.java",
+    "sha256": "3f2d0fcb21d4561364531b7c43a24fb9d064459e0187df21560aa965d1e99880"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/http/CookiesIdentidadTest.java",
+    "sha256": "fbd7e57d72b3998ac80ff97c374f6e6ec768d8a8ef7795e249a31b5e5ddf2d06"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java",
+    "sha256": "3c3a244becf70d8711ac01c436435d9959c3806db87e65830ea654cb00b21e98"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/PerfilesIdentidadIT.java",
+    "sha256": "f61dbc5e0d0dbcab9e97f36a89ac68edd046e1fb5bbf6258eb1f962715f41b22"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+    "sha256": "40ee335f2ba1c805b9673251a3d8070d78aa679fe41cd3ce4ecdc754c245b2ea"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/salud/aplicacion/ServicioSaludTest.java",
+    "sha256": "6bfe58cca213a3b679a5768f3da7a8ed3908be449b1e0e673df1a7a814cbd855"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java",
+    "sha256": "79c5c1cf0161922d5ef2d6a7acd391b5f9fdaa98058a537096d029a0a2325edf"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgresTest.java",
+    "sha256": "c44690bcf1389ed3e1c5f91ee08537c98d128ff8145342b5919dd9eb14ee1c2d"
+  },
+  {
+    "archivo": "backend/src/test/resources/db/invalida/V999__fallo_intencionado.sql",
+    "sha256": "adb96b6a3ec68563bee777303f64c79257da8a53b606fb77ffe837b7a5b6f786"
+  },
+  {
+    "archivo": "backend/src/test/resources/postgres-inicial.sql",
+    "sha256": "c933e9661a90bb006a6e858b921134720b66bdc393921c405cfbc41b63f1beaa"
+  }
+]
