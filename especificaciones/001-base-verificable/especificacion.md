@@ -7,7 +7,8 @@
 Crear una base técnica pequeña que pueda construirse, arrancarse y comprobarse.
 Debe permitir añadir después funcionalidades completas sin comenzar
 con un entorno desconocido o sin pruebas.
-Este documento describe resultados exigidos; todavía no hay implementación.
+Este documento describe resultados exigidos; el estado implementado y las
+comprobaciones se mantienen en [validación](validacion.md).
 
 ## Alcance y actores
 
@@ -156,4 +157,6 @@ La persona responsable del proyecto aprobó expresamente esta especificación,
 el [plan](plan.md), las [tareas](tareas.md) y DT-01 a DT-08 el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
 Esta consolidación documental no inicia su ejecución.
-Ninguna aceptación descrita en este documento se considera ejecutada todavía.
+En el momento de esa aprobación no se había ejecutado ninguna aceptación.
+AG-006 implementó la base técnica; los resultados y pendientes actuales están
+en validación, sin cambiar los requisitos anteriores.

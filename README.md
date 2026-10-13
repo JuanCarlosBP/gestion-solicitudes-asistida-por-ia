@@ -9,12 +9,24 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
-El proyecto está en preparación documental, sin una aplicación ejecutable.
-P0 está completada y G01 está publicado en GitHub.
-G02-A y G02-B están aprobados; P1 está preparado para cierre Git humano.
-P2 está aprobado documentalmente y 001 está aprobado para implementación.
-El prompt nocturno está aprobado con preflight y fallback; espera lanzamiento humano
-después de la revisión Git y los dos commits/pushes. Esta consolidación no ejecutó Git.
+AG-006 implementó la base técnica de 001: backend Spring Boot/Java 21, Angular 21,
+PostgreSQL real con Flyway, Compose, API de salud, OpenAPI 3.1 y Swagger UI.
+Pasaron 10 pruebas unitarias/HTTP backend, 3 integraciones PostgreSQL,
+11 pruebas Angular y 5 pruebas de navegador. Se comprobaron persistencia,
+caída real de base de datos, recuperación, permisos y cabeceras.
+
+**La base no está completamente verificada ni aceptada:** `mvnw verify` falla
+en Spotless. T006 y el cierre de aceptación de T008 siguen bloqueados por ese
+control, detenido tras dos correcciones fallidas. La CI remota está pendiente
+de publicación y ejecución humanas; no se ha ejecutado Git.
+
+La [validación](especificaciones/001-base-verificable/validacion.md) conserva los
+resultados actuales y la historia de AG-005. [Versiones](docs/documentaciondev/versiones.md)
+conserva AG-004/005 y la selección de AG-006. La política autorizada de
+[ADR-0002](docs/decisiones/ADR-0002-politica-dependencias-transitivas.md) permite
+las transitivas preliminares verificadas; las directas siguen estables y exactas.
+El [informe AG-006](docs/trazabilidad/AG-006-informe.md) reúne tiempos, archivos,
+auditorías, riesgos y propuestas de commits para revisión humana.
 
 Ya existen:
 
@@ -23,13 +35,11 @@ Ya existen:
 - política de calidad y conciliación de los 28 hallazgos iniciales de seguridad;
 - configuración básica de edición y Git, y un repositorio público en GitHub.
 
-La configuración está reconocida y los roles y skills son visibles.
-El MCP documental funciona; la delegación, los permisos reales de roles y el uso
-explícito de skills quedan pendientes del preflight, con el
-[fallback aprobado](docs/metodologia/orquestacion.md#16-fallback-agéntico).
-Todavía no existen backend, frontend ni base de datos ejecutables.
-Tampoco hay pruebas de la aplicación, integración continua,
-configuración Docker funcional, contrato OpenAPI, Swagger UI ni despliegue.
+Los diagnósticos previos de configuración y MCP permanecen en la trazabilidad.
+AG-006 leyó y aplicó las cuatro skills locales pertinentes y utilizó el
+[fallback aprobado](docs/metodologia/orquestacion.md#16-fallback-agéntico)
+de nivel 3, sin delegación. No volvió a probar MCP ni permisos de roles delegados.
+Existen aplicación local, pruebas y configuración de CI. No existe despliegue público.
 La integración continua es la automatización de comprobaciones de los cambios.
 
 ## Actores previstos
@@ -64,7 +74,8 @@ La primera versión deberá permitir:
 CRUD significa crear, consultar, modificar y eliminar.
 Un endpoint es una dirección de la API para una operación concreta.
 
-Estas capacidades forman parte del alcance previsto; todavía no están implementadas.
+Las capacidades de negocio siguen previstas. Solo están implementadas las rutas
+técnicas Angular, la API de salud, OpenAPI y Swagger descritos en 001.
 No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
 La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
 
@@ -89,7 +100,8 @@ organizada en módulos con responsabilidades claras.
 Separará la entrada HTTP, los casos de uso, las reglas de negocio y la persistencia.
 Persistencia significa cómo se guarda y recupera la información.
 Angular se organizará por funcionalidades.
-Este diseño de referencia no implica que sus componentes ya existan.
+La [arquitectura actual](docs/documentaciondev/arquitectura.md) describe la base
+existente sin atribuirle módulos funcionales futuros.
 
 ## Forma de trabajo
 
@@ -118,6 +130,20 @@ y [documentación](docs/politicas/documentacion.md) desarrollan sus reglas.
 
 ## Ejecución
 
-Las instrucciones de ejecución se añadirán cuando exista una aplicación ejecutable
-y sus pasos se hayan comprobado.
-En el estado actual no hay un procedimiento de arranque del producto.
+Desde la raíz, con Docker disponible y solo si no existe una configuración local:
+
+```powershell
+Copy-Item infraestructura/.env.example infraestructura/.env
+docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml up -d --build --wait --wait-timeout 120
+```
+
+Abrir [inicio](http://127.0.0.1:18080/inicio) o
+[Swagger](http://127.0.0.1:18080/swagger-ui/index.html). El ejemplo usa valores ficticios.
+PostgreSQL no publica puertos. Para detener sin borrar datos:
+
+```powershell
+docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop
+```
+
+La [guía de entorno](docs/documentaciondev/entorno.md) detalla requisitos,
+construcción, pruebas, arranque, parada, errores comprobados y límites pendientes.

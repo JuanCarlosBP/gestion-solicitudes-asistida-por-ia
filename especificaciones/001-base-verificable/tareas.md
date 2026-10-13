@@ -2,7 +2,8 @@
 
 **Estado:** Aprobado
 
-Todas las tareas están aprobadas y pendientes de ejecución.
+Todas las tareas están aprobadas. El estado real de AG-006 se registra al final
+y en la validación; la aprobación no equivale a aceptación de la entrega.
 La persona responsable aprobó el paquete y DT-01 a DT-08 el 2026-10-13.
 El trabajo de 001 requiere lanzamiento humano y superar el preflight bloqueante;
 esta consolidación documental no comienza T001.
@@ -27,7 +28,7 @@ Un bloqueo en una dependencia impide dar su tarea dependiente por verificada.
 Comprobar aprobaciones, permisos, herramientas locales, red y motor Docker.
 Resolver versiones exactas dentro de las líneas y límites del plan.
 Consultar fuentes oficiales y registrar fecha, fuente, motivo, mantenimiento e integridad.
-Fijar el parche mantenido y compatible, sin versiones preliminares ni `latest`.
+Fijar directas estables y exactas, sin `latest`; transitivas según ADR-0002 aprobado.
 Ante incompatibilidad o vulnerabilidad relevante sin solución, detenerse antes de código.
 Escribir únicamente documentación de versiones y decisiones antes de generar código.
 
@@ -160,3 +161,19 @@ No ejecutar Git ni desplegar.
 Entregar manifiesto de archivos y sugerencias de commits semánticos.
 Las especificaciones futuras del prompt nocturno son borradores separados;
 no forman parte de la implementación funcional de 001.
+
+## Estado de ejecución AG-006
+
+| Tarea | Estado real |
+|---|---|
+| T001 | Controles de versiones, lockfile, instalación, auditorías y Docker ejecutados; directas exactas. |
+| T002 | Backend y contrato implementados; unitarias/HTTP, compilación y empaquetado comprobados. El verify integral depende del formato T006. |
+| T003 | Migraciones, roles y 3 integraciones PostgreSQL real superadas. |
+| T004 | Pantalla, rutas, 11 pruebas, tipos, lint, formato y build superados. |
+| T005 | Imágenes y Compose comprobados; persistencia, 200/503 real, recuperación y navegador superados. |
+| T006 | Parcial: SpotBugs, auditorías y workflow/actionlint superados. Formato Maven bloqueado tras dos correcciones; verify obligatorio falla. CI remota pendiente. |
+| T007 | Documentación y evidencias consolidadas con las limitaciones de T006; revisión humana pendiente. |
+| T008 | Revisión secuencial de la misma sesión; aceptación bloqueada por control local pendiente y CI remota. |
+
+Las aprobaciones originales se conservan. No se declara el incremento aceptado
+ni totalmente verificado; no se han ejecutado operaciones Git.

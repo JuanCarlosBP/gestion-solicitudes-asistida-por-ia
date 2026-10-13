@@ -1,58 +1,50 @@
 # MEMORY.md — Gestión de Solicitudes
 
-Memoria breve del estado real; no sustituye requisitos, decisiones ni Git.
+Memoria vigente; historia inicial en
+[AG-001–AG-005](docs/trazabilidad/memoria-hasta-ag005.md).
 
-## Estado actual
+## Decisiones y límites
 
-- P0 completada; G02-B aprobado; P1 preparado para cierre Git humano.
-- G01 publicado: `4f7eac858fa21b77d0f1184828fb4f2da2f072f7`.
-- La referencia procede del trabajo anterior; remoto no consultado en esta consolidación.
-- Visión, constitución, seguridad, amenazas, OWASP y calidad mantienen su aprobación.
-- CAM-001 cerrado documentalmente; SEG-001 a SEG-028 conservan destinos.
-- CAM-002 aprobado: proyecto único y fases definitivas P0–P6.
-- G02-A aprobado: presentación, índice, mapa y política documental.
-- G02-B aprobado: CONTRIBUTING, SECURITY y fuentes.
-- P2 aprobado documentalmente el 2026-10-13.
-- Aprobados SDD, contexto, orquestación, eficiencia, MCP, relevo y prompts.
-- Configuración local, tres roles y cuatro skills aprobados y descubiertos.
-- Codex CLI comprobado: 0.153.4; TOML reconocido por la CLI.
-- Proyecto: sandbox `workspace-write` y aprobación predeterminada `on-request`.
-- `multi_agent` y `goals` habilitados; máximo de tres subagentes configurado.
-- Sesión observada: `workspace-write`, red restringida y escalaciones con revisión automática.
-- Roles visibles: planificador, implementador y revisor.
-- Skills visibles: sdd, revision-seguridad, verificacion-qa y mantenimiento-documental.
-- MCP `openaiDeveloperDocs` operativo: búsqueda y lectura reales comprobadas.
-- 001 aprobado para implementación: especificación, plan, tareas y DT-01 a DT-08.
-- T001 fijará parches compatibles de las líneas aprobadas, sin preliminares ni latest.
-- Prompt nocturno aprobado para lanzamiento humano tras preflight bloqueante.
-- Máximo diez horas; implementación limitada a 001 y borradores posteriores solo de especificación.
-- Fallback aprobado: roles personalizados, agentes incorporados o ejecución secuencial.
-- No existe todavía código funcional nuevo, pruebas de aplicación, CI ni despliegue.
-- No se crearon validación de 001 ni borradores 002–008.
-- No se implementó 001 ni se inició o programó la sesión nocturna.
+- P0, G02-A/G02-B, P2 y CAM-001/002 conservan su estado documental.
+- 001: especificación, plan, tareas y DT-01–DT-08 aprobados el 2026-10-13.
+- Rama declarada: `feature/001-base-verificable`; sin consultas ni comandos Git.
+- ADR-0001/0002 intactos; sin funciones 002–008 ni cambios de arquitectura.
+- La persona responsable decide aceptación, publicación e integración.
 
-## Evidencia y pendientes operativos
+## Historia conservada
 
-- Delegación real e inicio de cada rol pendientes del preflight y tarea autorizada.
-- Permisos efectivos de planificador, implementador y revisor aún sin comprobar.
-- Invocaciones explícitas de $sdd y $mantenimiento-documental pendientes del preflight.
-- Lectura/aplicación manual de skills no acredita invocación explícita.
-- /debug-config llegó como texto; no ejecutó el diagnóstico nativo y no bloquea 001.
-- Avisos de temporales solo bloquean si impiden una operación necesaria.
-- Diagnósticos anteriores tuvieron límites de SQLite, sandbox, terminal y red.
-- No se demostró corrupción ni se reparó configuración global.
-- El fallo previo de quick_validate por PyYAML no demuestra un fallo de invocación.
-- MCP no es bloqueante si las versiones se fijan con otras fuentes oficiales accesibles.
-- Recursos, dependencias, Docker daemon, disco y permisos se comprobarán en el preflight.
-- Evidencias y límites: docs/metodologia/mcp.md y registro de ejecuciones AG-002.
-- Esta consolidación no ejecutó Git, no instaló herramientas ni ejecutó pruebas de aplicación.
+- [AG-006](docs/trazabilidad/AG-006-informe.md): base operativa; verify falló en Spotless.
+- AG-006: 10 unitarias/HTTP + 3 IT backend, 11 Angular y 5 E2E PASS.
+- Builds, frontend tipos/lint/formato, SpotBugs, actionlint y auditorías PASS AG-006.
+- Auditorías de aquella fecha: npm 0 vulnerabilidades; Maven OSV 0 coincidencias.
+- [AG-007](docs/trazabilidad/AG-007-informe.md): causa binaria Style.valueOf identificada.
+- AG-007 apply/check FAIL, 14 Java idénticos; verify no ejecutado; sin cambio de versiones.
+- Informes, evidencias, fallos y registros AG-003–AG-007 íntegros.
+- Memoria anterior íntegra en `qa/evidencias/ag008/memoria-anterior.txt`.
 
-## Siguiente acción
+## AG-008 — propuesta de verificación local
 
-- La persona responsable revisa Git y prepara dos commits/pushes humanos.
-- Commit 1: cierre G02/P1; commit 2: P2 y paquete 001/nocturno.
-- Separar bloques compartidos para no enlazar documentos ausentes en el primer commit.
-- Comprobar remotos y lanzar expresamente la sesión nocturna.
-- La sesión registra preflight, permisos efectivos, red y nivel agéntico utilizado.
-- Si falla una comprobación bloqueante, no comienza T001: registra y se detiene.
-- Si falla una capacidad opcional del arnés, aplica fallback sin reducir requisitos ni pruebas.
+- Autorización humana: google-java-format 1.37.0 → 1.36.1; Spotless 3.10.4 intacto.
+- Inicio 2026-10-13 11:39:31 +02:00; límite 12:24:31; cierre en evidencia AG-008.
+- Java 21, style=AOSP existente, check en validate y los 14 Java conservados.
+- POM efectivo PASS; primer intento falló por DNS sandbox, repetición autorizada PASS.
+- Apply/check PASS; 7 Java reformateados, tokens/literales/imports conservados por comparación.
+- Verify íntegro PASS: 10 unitarias/HTTP + 3 IT, cero omisiones; SpotBugs 0 bugs/errores.
+- Verify: 24,718 s de pared; compilación y empaquetado PASS, sin parámetros skip.
+- Compose/backend final reconstruido; 5 E2E PASS; salud/OpenAPI/Swagger/Angular PASS.
+- Persistencia, caída PostgreSQL 503 en 2014 ms y recuperación 200 PASS.
+- Tres servicios detenidos; volumen conservado. Sin CI remota ni despliegue.
+- Frontend/workflow idénticos por SHA-256: 11 Angular y controles no afectados reutilizados.
+- Auditorías AG-006 conservan fecha/alcance; no repetidas ni ampliadas.
+- Auxiliar tmp/ag007/DiagnosticoFormato.java eliminado; copia durable intacta.
+- Revisión final de misma sesión en solo lectura, no independiente.
+- Ningún comando Git; JGit interno de Spotless conserva mecanismo documentado en AG-007.
+
+## Entrega y siguiente paso
+
+- Leer [informe AG-008](docs/trazabilidad/AG-008-informe.md) y
+  [validación](especificaciones/001-base-verificable/validacion.md).
+- Manifiesto, integridad, revisión y cierre en `qa/evidencias/ag008/`.
+- 001 propuesta como verificada localmente; no aceptada ni integrada.
+- Pendientes: push humano, CI remota, revisión independiente, aceptación e integración en main.
+- Trabajo autorizado terminado; esperar decisión humana. Sin reanudación automática.
