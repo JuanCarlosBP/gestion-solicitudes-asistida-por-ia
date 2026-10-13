@@ -1,0 +1,64 @@
+.panel {
+  max-width: 38rem;
+}
+.contexto {
+  color: #435b66;
+  font-size: 0.9rem;
+}
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+form {
+  display: grid;
+  gap: 0.65rem;
+  margin: 2rem 0;
+}
+label,
+dt {
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  padding: 0.8rem;
+  font: inherit;
+  color: inherit;
+  border: 1px solid #536671;
+  border-radius: 0.3rem;
+  background: #fff;
+  margin-bottom: 0.6rem;
+}
+button {
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: #184d55;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.error {
+  color: #8d271b;
+}
+.error:empty,
+[role='status']:empty {
+  margin: 0;
+}
+dl {
+  overflow-wrap: anywhere;
+}
+dd {
+  margin: 0.3rem 0 1.3rem;
+}
+ul {
+  padding-left: 1.3rem;
+}
+section > a {
+  display: inline-block;
+  margin: 1rem;
+}

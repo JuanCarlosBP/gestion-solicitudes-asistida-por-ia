@@ -9,7 +9,7 @@ export default defineConfig({
   use: {
     baseURL: process.env['BASE_URL'] ?? 'http://127.0.0.1:18080',
     browserName: 'chromium',
-    trace: 'retain-on-failure',
+    trace: 'off',
     screenshot: 'only-on-failure',
   },
 });

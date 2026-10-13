@@ -5,7 +5,17 @@
   <a routerLink="/inicio" class="marca" aria-label="Gestión de Solicitudes, inicio"
     ><span class="simbolo" aria-hidden="true">GS</span><span>Gestión de Solicitudes</span></a
   >
+  <nav aria-label="Navegación principal">
+    <a routerLink="/inicio" routerLinkActive="activo" ariaCurrentWhenActive="page">Inicio</a>
+    @if (sesion.autenticado()) {
+      <a routerLink="/mi-cuenta" routerLinkActive="activo" ariaCurrentWhenActive="page"
+        >Mi cuenta</a
+      >
+    } @else {
+      <a routerLink="/acceso" routerLinkActive="activo" ariaCurrentWhenActive="page">Acceso</a>
+    }
+  </nav>
   <span class="entorno">Entorno local</span>
 </header>
 <main #contenido id="contenido" tabindex="-1"><router-outlet /></main>
-<footer>Base técnica · Incremento 001</footer>
+<footer>Gestión de Solicitudes · Identidad y acceso</footer>
