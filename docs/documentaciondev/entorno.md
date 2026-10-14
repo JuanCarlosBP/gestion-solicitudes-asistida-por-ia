@@ -1,10 +1,11 @@
-# Preparación, ejecución y comprobación de 001 y 002
+# Preparación, ejecución y comprobación de 001, 002 y 003
 
 **Estado:** Procedimientos comprobados con los límites indicados; revisión humana pendiente.
 **Entorno observado:** Windows 11, PowerShell 7, Docker Desktop con contenedores Linux.
-**Fecha:** AG-010, 2026-10-14. [Versiones y fuentes](versiones.md),
+**Fecha:** AG-011, 2026-10-14. [Versiones y fuentes](versiones.md),
 [resultados 001](../../especificaciones/001-base-verificable/validacion.md) y
-[resultados 002](../../especificaciones/002-identidad-acceso/validacion.md).
+[resultados 002](../../especificaciones/002-identidad-acceso/validacion.md) y
+[resultados 003](../../especificaciones/003-proveedores/validacion.md).
 
 ## Requisitos
 
@@ -84,8 +85,8 @@ Adaptar JAVA_HOME a una instalación Java 21 comprobada. En este equipo `java`
 del PATH era 21, pero JAVA_HOME apuntaba a 17; Maven utiliza JAVA_HOME.
 La caché Maven se fija por `.mvn/maven.config` en `../tmp/m2`.
 
-**Resultado actual del comando obligatorio:** PASS en AG-008 y repetido en AG-009,
-sin omisiones: Spotless, 10 pruebas unitarias/HTTP, 3 Testcontainers y SpotBugs.
+**Resultado actual del comando obligatorio:** PASS en AG-011 sin omisiones:
+Spotless,61 pruebas unitarias/HTTP,37 IT PostgreSQL y SpotBugs. Incluye001/002/003.
 El fallo de formato de AG-006 y su diagnóstico AG-007 permanecen en los informes
 históricos; no son el estado actual. Docker es obligatorio para las integraciones.
 
@@ -96,7 +97,7 @@ Para generar el inventario de dependencias después de verify:
 ```
 
 Los informes están en `backend/target/surefire-reports` y `failsafe-reports`.
-Los informes conservados de esta ejecución están en `qa/evidencias/ag009/informes-backend/`.
+Los informes nuevos de esta ejecución están en `qa/evidencias/ag011/backend-*`.
 
 El arranque sin variables DB se comprobó con una instancia Docker propia sin red:
 falló con salida 1, identificó DB_URL y no necesitó secretos reales.
@@ -123,7 +124,7 @@ npm audit --omit=dev --json
 npm audit --json
 ```
 
-AG-009 repitió tipos, lint, formato, 11 pruebas Angular y build con PASS.
+AG-011 repitió tipos, lint, formato,130 pruebas Angular y build con PASS.
 La instalación y auditorías npm de AG-006 conservan su fecha y alcance;
 no se presentan como auditorías nuevas. El lockfile no se modificó.
 Los tests necesitan poder crear procesos/temporales; el sandbox provocó EPERM
@@ -152,7 +153,7 @@ $env:QA_EVIDENCE_DIR = 'tmp/evidencias/local'
 
 `-DirectorioEvidencias` permite elegir la salida explícitamente; en su ausencia
 se usa `QA_EVIDENCE_DIR` y después `tmp/evidencias/local`. La utilidad crea el
-directorio e imprime la ruta. Rechaza destinos AG-003–AG-008 y rutas fuera del proyecto.
+directorio e imprime la ruta. Rechaza destinos AG-003–AG-010 y rutas fuera del proyecto.
 La prioridad del puerto es `-PuertoFrontend`, variable `FRONTEND_PUERTO`, valor
 del archivo indicado por `-ArchivoEntorno` y, por último, 18080.
 El script calcula `BASE_URL=http://127.0.0.1:<puerto>` y lo transmite al navegador.
@@ -257,3 +258,29 @@ Vitest, compatibilidad de imagen por digest en Testcontainers, falta de unzip,
 Para depurar, revisar la ejecución correspondiente en `qa/evidencias/` y los informes
 JUnit; no habilitar trazas públicas ni imprimir la configuración completa de Compose.
 No se ha usado Full Access ni se han actualizado herramientas globales.
+
+## Comprobaciones de proveedores — AG-011
+
+La orden AG-011 autoriza consultas a npm/Maven y registros públicos de vulnerabilidades
+con solo nombres, versiones y metadatos; sin código, secretos ni datos privados.
+Todas las salidas nuevas se dirigen a qa/evidencias/ag011 o temporales ignorados.
+Los verificadores rechazan destinos históricos AG-003–AG-010.
+
+El contrato y los datos de ejemplo están en especificación 003. El catálogo usa
+V3 sobre el volumen existente, sin borrar V1/V2 ni datos. Los usuarios ficticios
+siguen siendo los cuatro de infraestructura/.env.example. La comprobación API
+propia, desde raíz con Compose listo, usa QA_EVIDENCE_DIR y QA_ENTORNO:
+`node qa/verificar-proveedores-compose.mjs`. Pasan78 controles REST, junto a88 de
+sesiones,9 E2E y persistencia/caída503/recuperación200 en imágenes definitivas.
+La validación conserva resultados y primeros fallos antes de correcciones.
+
+El verificador solo permite loopback HTTP y datos QA-AG011 ficticios. Crea registros
+que conserva sin borrado físico, comprueba permisos, duplicados, carreras reales,
+versiones, búsquedas/páginas, reinicio de backend y logs acotados en memoria.
+No publica tokens, cookies, cuerpos ni logs completos. No acredita carga de 50.000.
+
+`node qa/verificar-entrega-ag011.mjs` compara baseline/huellas protegidas y prefijo
+CSV sin Git, y genera inventario de archivos y agrupaciones de commits sugeridas.
+La CI añade API y navegador 003 a 001/002. Cada job conserva evidencias exclusivas,
+Actions por SHA, permisos mínimos e imágenes/versiones fijadas. CI remota queda
+pendiente del push humano; actionlint local no equivale a una CI remota ejecutada.

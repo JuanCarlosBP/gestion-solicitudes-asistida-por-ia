@@ -643,3 +643,21 @@ convierten en «Verificado» por completar este incremento.
 
 No se añaden identificadores ASVS sin comprobar su texto y aplicabilidad.
 Trazabilidad concreta de amenazas en el [modelo](modelo-de-amenazas.md).
+
+## Controles parciales de proveedores — AG-011
+
+La [validación 003](../../especificaciones/003-proveedores/validacion.md) es la fuente
+de resultados ejecutados. Estas filas no cambian a verificado ningún estado global.
+
+| Categoría | Controles del incremento | Evidencia exigida y límite |
+|---|---|---|
+| A01 Acceso | PR-08/11: matriz backend, visibilidad, unión de roles, CSRF, campos cerrados. | HTTP cuatro roles, acceso directo y negativos. No cubre solicitudes futuras. |
+| A02 Configuración | PR-11/12: no-store/errores, mínimo privilegio DB, logging controlado. | PostgreSQL real, respuestas y logs. HTTPS público pendiente. |
+| A03 Cadena de suministro | PR-12: versiones fijadas, auditorías, CI SHA y artefactos propios. | Auditorías actuales y actionlint; CI remota tras push humano. |
+| A05 Inyección | PR-03/11: parámetros, sort cerrado, comodines literales, salida Angular segura. | Límites/campos/SQL/XSS comprobables, sin garantía universal. |
+| A06 Diseño inseguro | PR-05/06/07/09: baja lógica, unique incluyendo inactivos y versión. | Carreras reales y no-op vigente/obsoleto; 006 transversal pendiente. |
+| A09 Registro | PR-11: seis eventos técnicos limitados, éxito después de commit. | Presencia y ausencia fiscal/contacto; historial/alertas/retención pendientes. |
+| A10 Excepciones | PR-07/09/12: conflicto controlado, rollback, dependencia caída y recuperación. | PostgreSQL/Compose y regresión; no acredita desastre completo. |
+
+No se añaden identificadores ASVS sin comprobar texto/aplicabilidad ni se declara
+cobertura completa de OWASP. Retención/eliminación definitiva requieren decisión futura.

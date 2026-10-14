@@ -1,0 +1,92 @@
+{
+  "Edicion": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "tipo": {
+        "type": "string",
+        "enum": [
+          "PERSONA_JURIDICA",
+          "PROFESIONAL"
+        ]
+      },
+      "denominacion": {
+        "type": "string",
+        "maxLength": 160,
+        "minLength": 1
+      },
+      "paisFiscal": {
+        "type": "string",
+        "maxLength": 2,
+        "minLength": 2
+      },
+      "identificadorFiscal": {
+        "type": "string",
+        "maxLength": 64,
+        "minLength": 3
+      },
+      "correoContacto": {
+        "type": "string",
+        "format": "email",
+        "maxLength": 254
+      },
+      "telefonoContacto": {
+        "type": "string",
+        "maxLength": 32
+      },
+      "version": {
+        "type": "integer",
+        "format": "int64",
+        "minimum": 0
+      }
+    }
+  },
+  "Estado": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "type": "integer",
+        "format": "int64",
+        "minimum": 0
+      }
+    }
+  },
+  "Alta": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "tipo": {
+        "type": "string",
+        "enum": [
+          "PERSONA_JURIDICA",
+          "PROFESIONAL"
+        ]
+      },
+      "denominacion": {
+        "type": "string",
+        "maxLength": 160,
+        "minLength": 1
+      },
+      "paisFiscal": {
+        "type": "string",
+        "maxLength": 2,
+        "minLength": 2
+      },
+      "identificadorFiscal": {
+        "type": "string",
+        "maxLength": 64,
+        "minLength": 3
+      },
+      "correoContacto": {
+        "type": "string",
+        "format": "email",
+        "maxLength": 254
+      },
+      "telefonoContacto": {
+        "type": "string",
+        "maxLength": 32
+      }
+    }
+  }
+}

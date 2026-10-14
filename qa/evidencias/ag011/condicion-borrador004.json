@@ -1,0 +1,10 @@
+{
+  "estado003": "Verificada localmente; revisión independiente sin hallazgos abiertos",
+  "controles": "Documento de validación y registro actualizados; enlaces e integridad PASS tras escrituras",
+  "resultado": "AUTORIZADO SOLO BORRADOR",
+  "aceptacionHumana": false,
+  "minimoExigido": 45,
+  "fechaMadrid": "2026-10-14T02:18:30.6172368+02:00",
+  "limite": "2026-10-14T11:29:00.0000000+02:00",
+  "minutosRestantes": 550.49
+}

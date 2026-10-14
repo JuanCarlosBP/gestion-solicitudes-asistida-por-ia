@@ -1,0 +1,10 @@
+{
+  "exitCode": 0,
+  "fecha": "2026-10-14T02:06:55.3380827+02:00",
+  "comando": "node qa/auditar-maven.mjs",
+  "limite": "Base pública descargada en AG-010 esta misma fecha; comparación nueva offline, sin envío de inventario. No cubre vulnerabilidades desconocidas ni SO de imágenes.",
+  "baseLocalFecha": "2026-10-14T00:05:04.6023023+02:00",
+  "herramienta": "OSV-Scanner 2.7.0 offline",
+  "baseLocalSha256": "0FFEF8697C44B3D1A44093CB205367DC92F8E6F4AA51D98F8CAE82A80D881198",
+  "inventarioSha256": "1C492E851ACAE6EEF71E25BD921D0DCB68344045E40CCB6C1FBFE942D2770792"
+}

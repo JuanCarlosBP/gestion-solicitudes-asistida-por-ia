@@ -1,0 +1,26 @@
+{
+  "fecha": "2026-10-14T02:12:29.0902803+02:00",
+  "destructivo": false,
+  "baseUrl": "http://127.0.0.1:18080",
+  "navegadorEjecutado": true,
+  "controles": [
+    {
+      "control": "Persistencia tras stop/start",
+      "despues": "1:-60045458:2026-10-13 08:41:14.03714\r\n2:1974314313:2026-10-13 22:23:09.454464\r\n3:-1445419552:2026-10-13 23:39:02.1057",
+      "antes": "1:-60045458:2026-10-13 08:41:14.03714\r\n2:1974314313:2026-10-13 22:23:09.454464\r\n3:-1445419552:2026-10-13 23:39:02.1057",
+      "resultado": "PASS"
+    },
+    {
+      "control": "Caída real de PostgreSQL",
+      "cuerpo": "{\"estado\":\"NO_DISPONIBLE\"}",
+      "http": 503,
+      "resultado": "PASS",
+      "milisegundos": 2020
+    },
+    {
+      "control": "Recuperación de PostgreSQL",
+      "http": 200,
+      "resultado": "PASS"
+    }
+  ]
+}

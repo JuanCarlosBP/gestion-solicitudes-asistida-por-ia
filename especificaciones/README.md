@@ -19,7 +19,11 @@ El proceso está en [SDD](../docs/metodologia/sdd.md).
 | 002 — Identidad y acceso | [Plan](002-identidad-acceso/plan.md) | Aprobado por decisión humana AG-010. |
 | 002 — Identidad y acceso | [Tareas](002-identidad-acceso/tareas.md) | Aprobadas por decisión humana AG-010; ejecución y QA local superadas. |
 | 002 — Identidad y acceso | [Validación](002-identidad-acceso/validacion.md) | Resultados locales AG-010; aceptación e integración pendientes. |
-| 003 — Proveedores | [Especificación](003-proveedores/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas, validación ni código. |
+| 003 — Proveedores | [Especificación](003-proveedores/especificacion.md) | Aprobada por decisión humana AG-011. |
+| 003 — Proveedores | [Plan](003-proveedores/plan.md) | Aprobado por decisión humana AG-011. |
+| 003 — Proveedores | [Tareas](003-proveedores/tareas.md) | Aprobadas por decisión humana AG-011; implementación y pruebas ejecutadas. |
+| 003 — Proveedores | [Validación](003-proveedores/validacion.md) | Verificada localmente en AG-011; aceptación e integración pendientes. |
+| 004 — Solicitudes, conceptos e importes | [Especificación](004-solicitudes-conceptos-importes/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas ni implementación. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
@@ -36,19 +40,22 @@ AG-010 aprueba e inicia 002 expresamente, con
 [ADR-0003](../docs/decisiones/ADR-0003-identidad-jwt-y-sesiones.md).
 Esta autorización sustituye para 002 el límite anterior de solo borrador.
 
+AG-011 aprueba e inicia 003 con las decisiones D-003-01 a D-003-08 y
+[ADR-0004](../docs/decisiones/ADR-0004-catalogo-proveedores-y-concurrencia.md).
+
 ## Incrementos posteriores previstos
 
 El [prompt nocturno](../docs/metodologia/prompts/sesion-nocturna-01.md)
 está aprobado para redactar únicamente borradores de especificación para:
 
-- 003-proveedores;
-- 004-solicitudes-conceptos-importes;
 - 005-aprobaciones;
 - 006-concurrencia-idempotencia;
 - 007-historial-auditoria;
 - 008-demo-y-operacion.
 
-Las carpetas 003–008 todavía no se han creado.
+003 ya dispone del paquete SDD aprobado. AG-011 creó solo la especificación
+borrador 004 después de verificar 003 localmente y comprobar más de 45 minutos
+de margen. Las carpetas 005–008 todavía no se han creado.
 No se prepararán sus planes ni tareas sin aprobación posterior.
 Su orden no resuelve por sí solo las dudas de cada funcionalidad.
 

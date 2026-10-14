@@ -1,0 +1,13 @@
+{
+  "fechaMadrid": "2026-10-14T02:21:52+02:00",
+  "nota": "Comprobación final tras cierre de revisión y antes de generar el manifiesto definitivo.",
+  "resultado": "PASS",
+  "fuentesAlteradas": [],
+  "fuentesComprobadas": 106,
+  "borrador004Archivos": [
+    "especificacion.md"
+  ],
+  "metadatos": "PASS: cálculo ISO y coincidencia JSON/informe/MEMORY/CSV",
+  "duracion": "00:52:52",
+  "segundos": 3172
+}

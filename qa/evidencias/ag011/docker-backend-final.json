@@ -1,0 +1,6 @@
+{
+  "motivo": "Candidata final tras verify, CSRF, contrato required y constructor JDBC",
+  "fecha": "2026-10-14T02:06:58.9308173+02:00",
+  "exitCode": 0,
+  "comando": "docker compose build --no-cache backend"
+}

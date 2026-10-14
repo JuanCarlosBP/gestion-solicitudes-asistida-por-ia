@@ -1,0 +1,2 @@
+FAIL: 0 controles de proveedores; evidencia sin credenciales en C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag011
+Fallo de infraestructura o respuesta inesperada en QA proveedores; sin volcar datos.

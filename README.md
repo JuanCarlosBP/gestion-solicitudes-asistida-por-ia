@@ -9,6 +9,14 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+AG-011 implementa [003 — Proveedores](especificaciones/003-proveedores/especificacion.md)
+por autorización humana integral: catálogo, permisos, baja/reactivación y versión
+optimista. Especificación, plan, tareas y ADR-0004 aprobados. Pasan 98 pruebas backend,
+130 Angular, 9 E2E y las comprobaciones de Docker/Compose, seguridad y auditorías.
+La revisión independiente concluye sin hallazgos abiertos. Los resultados propios se registran en
+[validación 003](especificaciones/003-proveedores/validacion.md).
+CI remota, aceptación e integración pendientes de actuación humana.
+
 AG-010 ha implementado [002 — Identidad y acceso](especificaciones/002-identidad-acceso/especificacion.md),
 con especificación, plan y tareas aprobados expresamente por la persona responsable.
 Las comprobaciones locales pasan: 55 pruebas backend, 56 Angular, 8 E2E,
@@ -85,8 +93,9 @@ La primera versión deberá permitir:
 CRUD significa crear, consultar, modificar y eliminar.
 Un endpoint es una dirección de la API para una operación concreta.
 
-Las capacidades de negocio siguen previstas. Están implementadas la base técnica
-001 y la identidad de 002: acceso, cuenta, sesiones, roles y sus controles de seguridad.
+Están implementadas la base técnica001, la identidad002 (acceso, cuenta, sesiones
+y roles) y el catálogo003 con baja/reactivación y versión. Solicitudes, conceptos,
+importes, aprobaciones e historial funcional siguen previstos.
 No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
 La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
 

@@ -1,13 +1,13 @@
-# Arquitectura: base técnica e identidad
+# Arquitectura: base técnica, identidad y proveedores
 
 **Estado:** Implementada; documentación pendiente de revisión humana.
-**Fecha:** AG-010, 2026-10-14. Resultados de la base en
+**Fecha:** AG-011, 2026-10-14. Resultados de la base en
 [validación 001](../../especificaciones/001-base-verificable/validacion.md) y cambios de identidad en
-[validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
+[validación 002](../../especificaciones/002-identidad-acceso/validacion.md); el catálogo y sus controles propios constan en [validación 003](../../especificaciones/003-proveedores/validacion.md).
 
 El backend es un monolito modular Spring Boot 4.0.8 con Java 21.
 001 aporta la comprobación técnica y 002 añade el módulo funcional `identidad`.
-No hay CRUD de usuarios ni módulos de proveedores/solicitudes/importes/aprobaciones.
+003 añade el catálogo de proveedores por autorización AG-011. No hay CRUD de usuarios, solicitudes, importes ni aprobaciones; resultados de 003 en su validación.
 
 ## Responsabilidades
 
@@ -57,7 +57,7 @@ Swagger no carga Petstore ni un validador remoto.
 
 Spring Security permite las operaciones públicas de salud y autenticación;
 documentación solo en local/test. `/api/identidad/yo` exige Bearer válido y toda
-otra API se deniega. HTTP Basic y formulario automático de Spring están deshabilitados.
+otra API no autorizada se deniega. 003 habilita exclusivamente los seis endpoints de proveedores con permisos explícitos. HTTP Basic y formulario automático de Spring están deshabilitados.
 No se usa sesión HTTP/JSESSIONID: la sesión técnica reside en PostgreSQL.
 CSRF sigue activo para métodos no seguros, incluso con Bearer; no se abre CORS.
 Los errores públicos no exponen excepciones, SQL, host o credenciales.
@@ -92,7 +92,7 @@ Flyway usa `gestion_migracion`, propietario del esquema; la aplicación usa
 V1 conserva permisos iniciales. V2 añade usuarios, roles, usuarios_roles,
 sesiones_acceso y tokens_refresco con privilegios mínimos explícitos;
 [modelo de datos](modelo-de-datos.md) explica claves, restricciones y transacciones.
-No se incluyen tablas de los dominios funcionales excluidos de AG-010.
+V3 incorpora únicamente proveedores; siguen excluidos solicitudes, importes e historial funcional.
 
 El proceso backend recibe ambas credenciales para ejecutar Flyway al arrancar.
 La separación de roles no equivale a aislamiento entre procesos de migración
@@ -124,3 +124,23 @@ AG-010 añade pruebas de identidad, concurrencia refresh, Angular y recorrido
 E2E de login/restauración/cierre. La CI fija además Docker 29.1.3 y Compose 2.40.3,
 conserva salidas por job y ejecuta QA de sesiones sobre Compose. Sus resultados
 locales se registran en validación 002; no se presentan como una CI remota ejecutada.
+
+## Módulo proveedores — AG-011
+
+[003](../../especificaciones/003-proveedores/especificacion.md) incorpora paquete
+proveedores con dominio, aplicación transaccional, persistencia JdbcTemplate y HTTP.
+El contrato cerrado reutiliza identidad/CSRF de 002 y Clock del servidor.
+V3 agrega catálogo con unique fiscal compuesto y versión optimista; actualización
+por id/version y baja lógica/reactivación. No se añade JPA ni una segunda base.
+
+Angular organiza servicio, tipos, lista, detalle y formulario en proveedores,
+reutilizando guard/interceptor y tokens solo en memoria. Los cuatro roles leen
+activos; AUDITOR/ADMINISTRADOR también inactivos; solo ADMINISTRADOR escribe.
+La interfaz presenta permisos para UX y el backend aplica la autoridad final.
+
+El listado usa offset limitado, contiene literal con acentos significativos y
+sort de lista cerrada más id como desempate. Los índices B-tree de orden no
+acreditan acelerar contiene; 50.000 es volumen previsto, sin medición de carga.
+[ADR-0004](../decisiones/ADR-0004-catalogo-proveedores-y-concurrencia.md) explica
+alternativas y límites. La [validación 003](../../especificaciones/003-proveedores/validacion.md)
+distingue implementación, comprobaciones locales y pendientes humanos.

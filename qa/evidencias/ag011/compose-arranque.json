@@ -1,0 +1,6 @@
+{
+  "fecha": "2026-10-14T01:39:00.5898429+02:00",
+  "exitCode": 0,
+  "datos": "Ejemplo ficticio y volumen existente conservado",
+  "comando": "docker compose --env-file infraestructura/.env.example -f infraestructura/compose.yaml up -d --no-build --wait --wait-timeout 120"
+}

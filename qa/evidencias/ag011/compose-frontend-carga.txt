@@ -1,0 +1,4 @@
+ Container gestion-solicitudes-001-frontend-1  Recreate
+ Container gestion-solicitudes-001-frontend-1  Recreated
+ Container gestion-solicitudes-001-frontend-1  Starting
+ Container gestion-solicitudes-001-frontend-1  Started

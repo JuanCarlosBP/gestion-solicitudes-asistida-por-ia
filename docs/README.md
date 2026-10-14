@@ -18,6 +18,11 @@ AG-010 implementa 002 por autorización humana integral. Pasan 55 pruebas backen
 56 Angular, 8 E2E, Docker/Compose y auditorías. La revisión independiente no
 encontró nuevos bloqueantes; cierre en el [informe AG-010](trazabilidad/AG-010-informe.md).
 
+AG-011 aprueba 003: catálogo de proveedores, permisos, baja/reactivación,
+unicidad fiscal y concurrencia optimista. Pasan 98 backend, 130 Angular, 9 E2E y
+Docker/Compose/auditorías; revisión independiente sin hallazgos abiertos;
+la [validación 003](../especificaciones/003-proveedores/validacion.md) conserva su estado.
+
 ## Orientación y reglas
 
 | Documento | Responsabilidad | Estado |
@@ -44,6 +49,7 @@ encontró nuevos bloqueantes; cierre en el [informe AG-010](trazabilidad/AG-010-
 | [REV-001](trazabilidad/REV-001-revision-independiente-01.md) | Primera revisión independiente, R-01 a R-04. | Correcciones requeridas; informe original conservado. |
 | [Informe AG-009](trazabilidad/AG-009-informe.md) | Respuesta a REV-001, primera CI, QA y manifiesto de commits. | Correcciones locales; segunda CI y aceptación pendientes. |
 | [Informe AG-010](trazabilidad/AG-010-informe.md) | Identidad y acceso, resultados propios, incidencias y manifiesto. | QA local superada; aceptación e integración pendientes. |
+| [Informe AG-011](trazabilidad/AG-011-informe.md) | Catálogo, concurrencia, regresión 001/002, incidencias y entrega. | Verificada localmente; aceptación e integración pendientes. |
 | [Memoria hasta AG-005](trazabilidad/memoria-hasta-ag005.md) | Copia íntegra del MEMORY anterior. | Historia preservada, no estado vigente. |
 
 ## G02-B: documentación operativa de P1
@@ -107,12 +113,17 @@ la revisión no es independiente. No se probaron nuevamente capacidades opcional
 | [002: tareas](../especificaciones/002-identidad-acceso/tareas.md) | Trabajo, dependencia y escritor por archivo. | Aprobadas por decisión humana AG-010. |
 | [002: validación](../especificaciones/002-identidad-acceso/validacion.md) | Resultados ejecutados y pendientes IA. | QA local superada; cierre de revisión en informe. |
 | [ADR-0003: identidad](decisiones/ADR-0003-identidad-jwt-y-sesiones.md) | Decisión JWT RS256, refresh, PostgreSQL y cookies. | Aprobado por decisión humana AG-010. |
-| [003: especificación](../especificaciones/003-proveedores/especificacion.md) | Propuestas de catálogo de proveedores y preguntas abiertas. | Borrador pendiente de aprobación humana; no implementado. |
+| [003: especificación](../especificaciones/003-proveedores/especificacion.md) | PR-01–PR-12 y decisiones del catálogo. | Aprobada por decisión humana AG-011. |
+| [003: plan](../especificaciones/003-proveedores/plan.md) | V3, contrato, módulos, concurrencia y verificación. | Aprobado por decisión humana AG-011. |
+| [003: tareas](../especificaciones/003-proveedores/tareas.md) | Dependencias, escritores y criterios. | Aprobadas por decisión humana AG-011. |
+| [003: validación](../especificaciones/003-proveedores/validacion.md) | Resultados propios y pendientes PR. | Verificada localmente; aceptación e integración pendientes. |
+| [ADR-0004: proveedores](decisiones/ADR-0004-catalogo-proveedores-y-concurrencia.md) | Catálogo, identidad fiscal, baja/reactivación y versión. | Aprobado por decisión humana AG-011. |
+| [004: especificación](../especificaciones/004-solicitudes-conceptos-importes/especificacion.md) | Solicitudes/conceptos/importes: propuesta y once decisiones pendientes. | Borrador pendiente de aprobación humana; ninguna implementación 004. |
 | [Entorno](documentaciondev/entorno.md) | Construcción, pruebas, arranque, parada y errores reales. | Comprobado con límites declarados; revisión humana pendiente. |
 | [Arquitectura](documentaciondev/arquitectura.md) | Responsabilidades, contrato, permisos y topología existentes. | Implementación descrita; revisión humana pendiente. |
-| [API y rutas](documentaciondev/api-y-rutas.md) | Contratos 001/002, errores, CSRF y navegación. | Verificados localmente en AG-010. |
-| [Datos de identidad](documentaciondev/modelo-de-datos.md) | V2, tablas, restricciones y transacciones. | Verificados con PostgreSQL real en AG-010. |
-| [Seguridad técnica](documentaciondev/seguridad.md) | Argon2, claves, JWT, refresh, cookies y riesgos restantes. | Controles acotados verificados en AG-010. |
+| [API y rutas](documentaciondev/api-y-rutas.md) | Contratos001/002/003, errores, CSRF y navegación. | Comprobados localmente; aceptación pendiente. |
+| [Modelo de datos](documentaciondev/modelo-de-datos.md) | V2/V3, restricciones, roles y transacciones. | Comprobado con PostgreSQL real en AG-011. |
+| [Seguridad técnica](documentaciondev/seguridad.md) | Identidad y catálogo: permisos, versión, eventos y límites. | Controles acotados verificados; sin declarar OWASP completo. |
 | [Sesión nocturna 01](metodologia/prompts/sesion-nocturna-01.md) | Encargo limitado a 001 y borradores posteriores. | Aprobado para lanzamiento humano tras preflight bloqueante, con fallback. |
 
 Los informes y evidencias AG-003–AG-008 conservan sus resultados y fechas.

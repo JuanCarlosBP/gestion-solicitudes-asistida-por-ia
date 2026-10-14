@@ -1,0 +1,7 @@
+{
+  "resultado": "PASS",
+  "comando": "actionlint 1.7.12 .github/workflows/ci.yml",
+  "fecha": "2026-10-14T02:15:18.9944042+02:00",
+  "salida": [],
+  "exitCode": 0
+}

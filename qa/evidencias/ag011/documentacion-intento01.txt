@@ -1,0 +1,2 @@
+Evidencias documentales: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag011
+417 enlaces; 0 destinos ausentes; 0 ubicaciones con patrones de secretos.
