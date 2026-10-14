@@ -1,0 +1,107 @@
+<section aria-labelledby="titulo-formulario">
+  <a [routerLink]="id() ? ['/proveedores', id()] : ['/proveedores']" queryParamsHandling="preserve"
+    >Cancelar y volver</a
+  >
+  <h1 #titulo id="titulo-formulario" tabindex="-1">
+    {{ id() ? 'Editar proveedor' : 'Nuevo proveedor' }}
+  </h1>
+  <p #alerta role="alert" class="aviso" tabindex="-1" [hidden]="!error()">{{ error() }}</p>
+  @if (conflicto()) {
+    <p>La recarga sustituirá los cambios del formulario por los datos vigentes.</p>
+  }
+  @if (id() && error()) {
+    <button type="button" class="secundario" [disabled]="guardando()" (click)="recargar()">
+      Recargar datos
+    </button>
+  }
+  @if (cargando()) {
+    <p role="status">Cargando proveedor…</p>
+  }
+  @if (!cargando() && (!id() || proveedor()) && permisos.escribir()) {
+    <p>Los campos marcados con * son obligatorios. Los datos de contacto son opcionales.</p>
+    <form
+      #formulario
+      class="panel formulario"
+      novalidate
+      (submit)="guardar($event, formulario)"
+      [attr.aria-busy]="guardando()"
+    >
+      <div class="campo">
+        <label for="tipo">Tipo *</label
+        ><select
+          id="tipo"
+          name="tipo"
+          required
+          [value]="datos().tipo"
+          aria-describedby="error-tipo"
+          [attr.aria-invalid]="!!errores()['tipo']"
+        >
+          <option value="PERSONA_JURIDICA">Persona jurídica</option>
+          <option value="PROFESIONAL">Profesional</option></select
+        ><small id="error-tipo">{{ errores()['tipo'] }}</small>
+      </div>
+      <div class="campo">
+        <label for="denominacion">Denominación * (máximo 160 caracteres)</label
+        ><input
+          id="denominacion"
+          name="denominacion"
+          required
+          [value]="datos().denominacion"
+          aria-describedby="error-denominacion"
+          [attr.aria-invalid]="!!errores()['denominacion']"
+        /><small id="error-denominacion">{{ errores()['denominacion'] }}</small>
+      </div>
+      <div class="campo">
+        <label for="paisFiscal">País fiscal * (ISO, dos letras mayúsculas)</label
+        ><input
+          id="paisFiscal"
+          name="paisFiscal"
+          required
+          maxlength="2"
+          placeholder="ES"
+          [value]="datos().paisFiscal"
+          aria-describedby="error-pais"
+          [attr.aria-invalid]="!!errores()['paisFiscal']"
+        /><small id="error-pais">{{ errores()['paisFiscal'] }}</small>
+      </div>
+      <div class="campo">
+        <label for="identificadorFiscal">Identificador fiscal * (3–64 caracteres)</label
+        ><input
+          id="identificadorFiscal"
+          name="identificadorFiscal"
+          required
+          [value]="datos().identificadorFiscal"
+          aria-describedby="error-fiscal"
+          [attr.aria-invalid]="!!errores()['identificadorFiscal']"
+        /><small id="error-fiscal">{{ errores()['identificadorFiscal'] }}</small>
+      </div>
+      <div class="campo">
+        <label for="correoContacto">Correo de contacto (máximo 254 caracteres)</label
+        ><input
+          id="correoContacto"
+          name="correoContacto"
+          type="email"
+          [value]="datos().correoContacto ?? ''"
+          aria-describedby="error-correo"
+          [attr.aria-invalid]="!!errores()['correoContacto']"
+        /><small id="error-correo">{{ errores()['correoContacto'] }}</small>
+      </div>
+      <div class="campo">
+        <label for="telefonoContacto">Teléfono de contacto (máximo 32 caracteres)</label
+        ><input
+          id="telefonoContacto"
+          name="telefonoContacto"
+          type="tel"
+          [value]="datos().telefonoContacto ?? ''"
+          aria-describedby="error-telefono"
+          [attr.aria-invalid]="!!errores()['telefonoContacto']"
+        /><small id="error-telefono">{{ errores()['telefonoContacto'] }}</small>
+      </div>
+      <div class="acciones">
+        <button type="submit" [disabled]="guardando() || conflicto()">
+          {{ guardando() ? 'Guardando…' : 'Guardar proveedor' }}
+        </button>
+      </div>
+    </form>
+  }
+</section>
