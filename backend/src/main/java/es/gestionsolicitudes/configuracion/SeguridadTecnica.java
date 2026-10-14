@@ -48,6 +48,23 @@ public class SeguridadTecnica {
                                                 "/swagger-ui/**")
                                         .permitAll();
                             }
+                            reglas.requestMatchers(
+                                            HttpMethod.GET,
+                                            "/api/proveedores",
+                                            "/api/proveedores/*")
+                                    .hasAnyRole(
+                                            "SOLICITANTE",
+                                            "SUPERVISOR",
+                                            "AUDITOR",
+                                            "ADMINISTRADOR");
+                            reglas.requestMatchers(
+                                            HttpMethod.POST,
+                                            "/api/proveedores",
+                                            "/api/proveedores/*/desactivar",
+                                            "/api/proveedores/*/reactivar")
+                                    .hasRole("ADMINISTRADOR");
+                            reglas.requestMatchers(HttpMethod.PUT, "/api/proveedores/*")
+                                    .hasRole("ADMINISTRADOR");
                             reglas.requestMatchers(HttpMethod.GET, "/api/identidad/yo")
                                     .authenticated()
                                     .anyRequest()
@@ -73,9 +90,14 @@ public class SeguridadTecnica {
                                                                 "ACCESO_NO_PERMITIDO")))
                 .csrf(
                         csrf -> {
+                            var manejador = new CsrfTokenRequestAttributeHandler();
+                            // Materializa también el token rotado tras autenticar Bearer. Sin
+                            // ello Spring borra la cookie y difiere su reposición, dejando al
+                            // navegador sin token para la siguiente escritura. Conserva la
+                            // rotación y la comprobación de cookie + cabecera en cada mutable.
+                            manejador.setCsrfRequestAttributeName(null);
                             csrf.csrfTokenRepository(new RepositorioCsrfPorEntorno(cookies))
-                                    .csrfTokenRequestHandler(
-                                            new CsrfTokenRequestAttributeHandler());
+                                    .csrfTokenRequestHandler(manejador);
                             // Resource Server añade una exclusión Bearer durante init. Se
                             // restablece el
                             // matcher final para que TODO método mutable exija XSRF, también con
