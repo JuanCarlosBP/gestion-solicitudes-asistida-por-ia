@@ -1,6 +1,70 @@
 <p class="etiqueta">INICIO</p>
 <h1>Gestión de Solicitudes</h1>
 <p class="introduccion">Comprueba la conexión con el servicio antes de comenzar.</p>
+@if (sesion.autenticado()) {
+  <section
+    class="resumen-inicio"
+    aria-labelledby="titulo-resumen"
+    [attr.aria-busy]="estadoResumen() === 'carga'"
+  >
+    <div class="cabecera-resumen">
+      <div>
+        <p class="etiqueta">TU ESPACIO DE TRABAJO</p>
+        <h2 id="titulo-resumen">Solicitudes a tu alcance</h2>
+      </div>
+      <button type="button" (click)="actualizarResumen()" [disabled]="estadoResumen() === 'carga'">
+        Actualizar resumen
+      </button>
+    </div>
+    <p class="detalle">
+      Datos actuales según tus permisos. Los recuentos incluyen únicamente las solicitudes que
+      puedes consultar.
+    </p>
+    @if (estadoResumen() === 'carga') {
+      <p role="status">Cargando resumen…</p>
+    }
+    @if (estadoResumen() === 'error') {
+      <p role="alert" class="error">No se ha podido cargar el resumen. Vuelve a intentarlo.</p>
+    }
+    @if (resumen(); as datos) {
+      <p class="total-resumen" role="status">
+        <strong>{{ datos.solicitudes.total }}</strong> solicitudes visibles
+      </p>
+      <dl class="contadores">
+        @for (estado of estadosSolicitud; track estado.clave) {
+          <div>
+            <dt>{{ estado.nombre }}</dt>
+            <dd>{{ datos.solicitudes[estado.clave] }}</dd>
+          </div>
+        }
+      </dl>
+      <div class="pendientes-resumen" aria-label="Tus acciones pendientes">
+        @if (permisos.crear()) {
+          <a
+            routerLink="/solicitudes"
+            [queryParams]="{
+              estado: 'BORRADOR',
+              autor: permisos.global() ? permisos.actorId() : null,
+            }"
+            ><strong>{{ datos.accionesPendientes.borradoresPropios }}</strong> borradores propios
+            por completar</a
+          >
+        }
+        @if (permisos.supervisar()) {
+          <a routerLink="/aprobaciones"
+            ><strong>{{ datos.accionesPendientes.presentadasAsignadas }}</strong> solicitudes
+            asignadas por decidir</a
+          >
+        }
+        @if (!permisos.crear() && !permisos.supervisar()) {
+          <p>
+            Tu perfil permite consulta. No tienes acciones de solicitud o supervisión asignadas.
+          </p>
+        }
+      </div>
+    }
+  </section>
+}
 <section class="tarjeta" aria-labelledby="titulo-estado">
   <div class="titulo-tarjeta">
     <span class="icono" aria-hidden="true">↔</span>

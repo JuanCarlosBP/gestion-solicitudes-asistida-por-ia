@@ -86,3 +86,67 @@ button:disabled {
   line-height: 1.6;
   margin-top: 1.5rem;
 }
+.resumen-inicio {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+}
+.cabecera-resumen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cabecera-resumen h2 {
+  font-size: 1.5rem;
+}
+.cabecera-resumen .etiqueta {
+  margin-bottom: 0.5rem;
+}
+.total-resumen {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+}
+.total-resumen strong {
+  font-size: 2.5rem;
+  color: var(--color-primario);
+}
+.contadores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.contadores div {
+  background: var(--color-fondo);
+  border-radius: var(--radio-control);
+  padding: 1rem;
+}
+.contadores dt {
+  color: var(--color-tenue);
+}
+.contadores dd {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0.3rem 0 0;
+}
+.pendientes-resumen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.pendientes-resumen a {
+  padding: 0.8rem 1rem;
+  background: var(--color-suave);
+  border-radius: var(--radio-control);
+}
+@media (max-width: 600px) {
+  .contadores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

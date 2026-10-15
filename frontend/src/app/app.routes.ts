@@ -12,7 +12,29 @@ import { SolicitudesLista } from './solicitudes/solicitudes-lista';
 import { SolicitudFormulario } from './solicitudes/solicitud-formulario';
 import { SolicitudDetalle } from './solicitudes/solicitud-detalle';
 import { solicitudesGuard } from './solicitudes/solicitudes-permisos';
+import { HistorialPagina } from './historial/historial-pagina';
+import { historialGuard } from './historial/historial-permisos';
 export const routes: Routes = [
+  {
+    path: 'historial',
+    component: HistorialPagina,
+    canActivate: [historialGuard],
+    title: 'Historial · Gestión de Solicitudes',
+  },
+  {
+    path: 'solicitudes/:id/historial',
+    component: HistorialPagina,
+    canActivate: [solicitudesGuard],
+    data: { tipoRecurso: 'SOLICITUD' },
+    title: 'Historial de solicitud · Gestión de Solicitudes',
+  },
+  {
+    path: 'proveedores/:id/historial',
+    component: HistorialPagina,
+    canActivate: [historialGuard],
+    data: { tipoRecurso: 'PROVEEDOR' },
+    title: 'Historial de proveedor · Gestión de Solicitudes',
+  },
   {
     path: 'aprobaciones',
     component: SolicitudesLista,

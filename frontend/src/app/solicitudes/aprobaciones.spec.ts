@@ -1,6 +1,8 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { HistorialApi } from '../historial/historial-api';
+import { historialVacioPrueba } from '../historial/datos-prueba';
 import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
 
 beforeEach(prepararOperacionesPrueba);
@@ -106,6 +108,7 @@ describe('AP-01–08: contrato, bandeja y decisiones Angular', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         provideRouter(routes),
+        { provide: HistorialApi, useValue: historialVacioPrueba },
         {
           provide: Autenticacion,
           useValue: { restaurar: () => of(undefined), identidad: () => of(accesoPrueba.usuario) },

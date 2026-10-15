@@ -298,7 +298,7 @@ test('SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales', 
       };
       resultadoPresentacion = (await enviada.json()) as Record<string, unknown>;
       await expect(page.locator('.estado')).toHaveText('Presentada');
-      await expect(page.locator('app-solicitud-detalle').getByRole('status')).toContainText(
+      await expect(page.locator('app-solicitud-detalle > .exito[role="status"]')).toContainText(
         'Solicitud presentada.',
       );
       await expect(page.getByRole('link', { name: 'Editar borrador', exact: true })).toHaveCount(0);

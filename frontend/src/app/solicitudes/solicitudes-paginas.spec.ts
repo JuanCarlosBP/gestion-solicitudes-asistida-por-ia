@@ -1,6 +1,8 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { HistorialApi } from '../historial/historial-api';
+import { historialVacioPrueba } from '../historial/datos-prueba';
 import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
 import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
 
@@ -46,6 +48,7 @@ describe('Solicitudes: páginas, rutas y permisos SCI-01–12', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         provideRouter(routes),
+        { provide: HistorialApi, useValue: historialVacioPrueba },
         {
           provide: Autenticacion,
           useValue: { restaurar: () => of(undefined), identidad: () => of(accesoPrueba.usuario) },

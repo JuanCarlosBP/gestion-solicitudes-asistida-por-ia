@@ -1,5 +1,5 @@
 <section aria-labelledby="titulo-detalle">
-  <a routerLink="/proveedores" queryParamsHandling="preserve">Volver a proveedores</a>
+  <a routerLink="/proveedores" [queryParams]="parametrosListado()">Volver a proveedores</a>
   <h1 #titulo id="titulo-detalle" tabindex="-1">
     {{ proveedor()?.denominacion ?? 'Detalle de proveedor' }}
   </h1>
@@ -57,5 +57,13 @@
         </div>
       }
     </div>
+    @if (historial.global()) {
+      <app-historial-timeline
+        tipo="PROVEEDOR"
+        [recursoId]="datos.id"
+        [revision]="datos.version"
+        [integrado]="true"
+      />
+    }
   }
 </section>

@@ -53,7 +53,10 @@ select,
 textarea {
   -webkit-tap-highlight-color: transparent;
 }
-button:enabled,
+/* Evita contrastes intermedios al cambiar simultáneamente texto y fondo. */
+button:enabled {
+  transition: none;
+}
 a {
   transition:
     background-color 120ms ease,

@@ -1,0 +1,202 @@
+<section class="historial-panel" aria-labelledby="titulo-historial">
+  <div class="cabecera-historial">
+    <div>
+      <p class="ceja">TRAZABILIDAD</p>
+      <h2 #titulo id="titulo-historial" tabindex="-1">Historial registrado</h2>
+    </div>
+    @if (integrado()) {
+      <a
+        [routerLink]="[rutaRecurso(), recursoId(), 'historial']"
+        [queryParams]="parametrosDirectos()"
+        >Abrir historial completo</a
+      >
+    }
+  </div>
+  <p class="ayuda">Más recientes primero · Fechas mostradas en {{ zona }}.</p>
+  @if (!tipo()) {
+    <p class="limite-historia">
+      La cobertura anterior al inicio del historial es limitada. Se conservan las decisiones
+      registradas previamente; las altas y los cambios anteriores no se reconstruyen.
+    </p>
+  }
+  <form #formulario (submit)="buscar($event, formulario)" aria-label="Filtros del historial">
+    <div class="filtros-historial">
+      @if (!tipo()) {
+        <div class="campo-historial">
+          <label for="historial-tipo">Tipo de recurso</label>
+          <select id="historial-tipo" name="tipoRecurso">
+            <option value="" [selected]="filtros().tipoRecurso === ''">Todos</option>
+            <option value="SOLICITUD" [selected]="filtros().tipoRecurso === 'SOLICITUD'">
+              Solicitudes
+            </option>
+            <option value="PROVEEDOR" [selected]="filtros().tipoRecurso === 'PROVEEDOR'">
+              Proveedores
+            </option>
+          </select>
+        </div>
+        <div class="campo-historial">
+          <label for="historial-recurso">Recurso (UUID)</label
+          ><input
+            id="historial-recurso"
+            name="recursoId"
+            [value]="filtros().recursoId"
+            autocomplete="off"
+            maxlength="36"
+          />
+        </div>
+      }
+      <div class="campo-historial">
+        <label for="historial-accion">Acción</label
+        ><select id="historial-accion" name="accion">
+          <option value="" [selected]="filtros().accion === ''">Todas</option>
+          @for (accion of acciones; track accion.valor) {
+            <option [value]="accion.valor" [selected]="filtros().accion === accion.valor">
+              {{ accion.nombre }}
+            </option>
+          }
+        </select>
+      </div>
+      <div class="campo-historial">
+        <label for="historial-actor">Actor (UUID)</label
+        ><input
+          id="historial-actor"
+          name="actor"
+          [value]="filtros().actor"
+          autocomplete="off"
+          maxlength="36"
+        />
+      </div>
+      <div class="campo-historial">
+        <label for="historial-desde">Desde (ISO con zona)</label
+        ><input
+          id="historial-desde"
+          name="desde"
+          [value]="filtros().desde"
+          placeholder="2026-10-15T00:00:00+02:00"
+          aria-describedby="ayuda-fechas"
+        />
+      </div>
+      <div class="campo-historial">
+        <label for="historial-hasta">Hasta (ISO con zona)</label
+        ><input
+          id="historial-hasta"
+          name="hasta"
+          [value]="filtros().hasta"
+          placeholder="2026-10-15T23:59:59+02:00"
+          aria-describedby="ayuda-fechas"
+        />
+      </div>
+      <div class="campo-historial">
+        <label for="historial-tamano">Eventos por página</label
+        ><select id="historial-tamano" name="size">
+          @for (tamano of [1, 10, 20, 50, 100]; track tamano) {
+            <option [value]="tamano" [selected]="filtros().size === tamano">{{ tamano }}</option>
+          }
+          @if (![1, 10, 20, 50, 100].includes(filtros().size)) {
+            <option [value]="filtros().size" [selected]="true">{{ filtros().size }}</option>
+          }
+        </select>
+      </div>
+    </div>
+    <p id="ayuda-fechas" class="ayuda">
+      Fechas inclusivas. Indica Z para UTC o el desfase, por ejemplo +02:00.
+    </p>
+    <div class="acciones-historial">
+      <button type="submit" [disabled]="cargando()">Aplicar filtros</button
+      ><button
+        type="button"
+        class="secundario"
+        [disabled]="cargando()"
+        (click)="restablecer(formulario)"
+      >
+        Restablecer filtros
+      </button>
+    </div>
+  </form>
+  @if (error()) {
+    <div #alerta class="error-historial" role="alert" tabindex="-1">
+      <p>{{ error() }}</p>
+      <button type="button" class="secundario" (click)="recargar()">Reintentar historial</button>
+    </div>
+  }
+  <div [attr.aria-busy]="cargando()">
+    @if (cargando()) {
+      <p role="status" class="estado-consulta">Cargando historial…</p>
+    }
+    @if (pagina(); as resultado) {
+      @if (tipo() && resultado.historiaAnteriorDesconocida) {
+        <p class="limite-historia">
+          Historia anterior desconocida: este recurso ya existía antes del registro de altas. Los
+          eventos mostrados no representan toda su historia.
+        </p>
+      }
+      <p role="status" class="estado-consulta">
+        {{ resultado.totalElementos }} eventos encontrados
+      </p>
+      @if (!resultado.elementos.length) {
+        <p class="historial-vacio">No hay eventos registrados para esta consulta.</p>
+      } @else {
+        <ol class="timeline" aria-label="Eventos del historial">
+          @for (evento of resultado.elementos; track evento.id) {
+            <li class="evento-historial">
+              <div class="evento-cabecera">
+                <h3>{{ nombresAccion[evento.accion] }}</h3>
+                <time [attr.datetime]="evento.ocurridoEn">{{
+                  evento.ocurridoEn | date: 'dd/MM/yyyy HH:mm:ss'
+                }}</time>
+              </div>
+              <p class="actor">{{ evento.actor.nombreVisible }}</p>
+              <p>{{ evento.resumen }}</p>
+              <div class="transicion">
+                <span
+                  >{{ evento.estadoAnterior ?? 'Sin estado anterior' }} →
+                  {{ evento.estadoResultante }}</span
+                ><span
+                  >Versión {{ evento.versionAnterior ?? '—' }} →
+                  {{ evento.versionResultante }}</span
+                >
+              </div>
+              <p class="fuente">
+                {{ evento.origen === 'DECISION_V5' ? 'Decisión registrada' : 'Evento de negocio' }}
+              </p>
+              @if (!tipo()) {
+                <a
+                  [routerLink]="[
+                    evento.tipoRecurso === 'SOLICITUD' ? '/solicitudes' : '/proveedores',
+                    evento.recursoId,
+                    'historial',
+                  ]"
+                  >{{ evento.tipoRecurso === 'SOLICITUD' ? 'Solicitud' : 'Proveedor' }} ·
+                  {{ evento.recursoId }}</a
+                >
+              }
+            </li>
+          }
+        </ol>
+      }
+      <nav class="paginacion-historial" aria-label="Paginación del historial">
+        <button
+          type="button"
+          class="secundario"
+          [disabled]="resultado.pagina === 0"
+          (click)="cambiarPagina(resultado.pagina - 1)"
+        >
+          Página anterior de eventos</button
+        ><span>Página {{ resultado.pagina + 1 }} de {{ resultado.totalPaginas || 1 }}</span
+        ><button
+          type="button"
+          class="secundario"
+          [disabled]="resultado.pagina + 1 >= resultado.totalPaginas"
+          (click)="cambiarPagina(resultado.pagina + 1)"
+        >
+          Siguiente página de eventos
+        </button>
+      </nav>
+      <p class="ayuda">
+        Si se registran eventos nuevos durante la consulta, las páginas pueden desplazarse. Recarga
+        para actualizar.
+      </p>
+      <button type="button" class="secundario" (click)="recargar()">Actualizar historial</button>
+    }
+  </div>
+</section>

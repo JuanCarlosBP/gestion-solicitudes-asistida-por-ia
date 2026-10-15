@@ -1,4 +1,4 @@
-import { expect, Page, Route, test } from '@playwright/test';
+import { expect, Page, request, Route, test } from '@playwright/test';
 import { createHash, randomUUID } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -111,11 +111,43 @@ test('CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuper
     { headers },
   );
   expect(((await lista.json()) as { totalElementos: number }).totalElementos).toBe(1);
-  const replay = await page.request.post('/api/proveedores', {
-    headers: await escritura(page.request, headers, clave),
-    data: cuerpo,
+  // El replay HTTP conserva la sesión, clave y cuerpo de la intención original.
+  // Una cookie jar independiente evita que los GET de la vista modifiquen la
+  // cookie entre la lectura de su valor CSRF y el envío de esta petición manual.
+  const replayApi = await request.newContext({
+    baseURL,
+    storageState: await page.context().storageState(),
   });
-  expect(await replay.json()).toEqual(original);
+  try {
+    const cabecerasReplay = await escritura(replayApi, headers, clave);
+    const cookieReplay = await csrf(replayApi);
+    const csrfPresente = cookieReplay.length > 0;
+    const csrfCoincide = cabecerasReplay['X-XSRF-TOKEN'] === cookieReplay;
+    expect(csrfPresente).toBe(true);
+    expect(csrfCoincide).toBe(true);
+    const replay = await replayApi.post('/api/proveedores', {
+      headers: cabecerasReplay,
+      data: cuerpo,
+    });
+    const diagnosticoReplay = test.info().outputPath('replay-csrf.json');
+    await writeFile(
+      diagnosticoReplay,
+      JSON.stringify({
+        cookieJarAislada: true,
+        csrfPresente,
+        csrfCoincide,
+        status: replay.status(),
+      }),
+    );
+    await test.info().attach('replay-csrf', {
+      path: diagnosticoReplay,
+      contentType: 'application/json',
+    });
+    expect(replay.status()).toBe(201);
+    expect(await replay.json()).toEqual(original);
+  } finally {
+    await replayApi.dispose();
+  }
   for (const [accion, etiqueta, estado] of [
     ['desactivar', 'Desactivar proveedor', 'Inactivo'],
     ['reactivar', 'Reactivar proveedor', 'Activo'],

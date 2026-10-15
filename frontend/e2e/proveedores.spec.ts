@@ -86,8 +86,16 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
     await expect(page.locator('.estado')).toHaveText('Activo');
     await captura(page, 'detalle-escritorio');
     await page.getByRole('link', { name: 'Volver a proveedores', exact: true }).click();
+    // Espera la restauración y renderización de los filtros de la URL antes de editarlos.
+    await expect(page.getByRole('heading', { name: 'Proveedores', exact: true })).toBeFocused();
+    await expect(page.getByRole('form', { name: 'Filtros de proveedores' })).toHaveAttribute(
+      'aria-busy',
+      'false',
+    );
     await page.getByLabel('Denominación contiene', { exact: true }).fill(prefijo);
+    await expect(page.getByLabel('Denominación contiene', { exact: true })).toHaveValue(prefijo);
     await page.getByRole('button', { name: 'Buscar', exact: true }).click();
+    await expect(page).toHaveURL((url) => url.searchParams.get('denominacion') === prefijo);
     await expect(page.getByRole('link', { name: `${prefijo} A`, exact: true })).toBeVisible();
     await page.getByRole('link', { name: `${prefijo} A`, exact: true }).click();
   });
@@ -140,7 +148,7 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
     await page.getByRole('link', { name: 'Cancelar y volver', exact: true }).click();
     await page.getByRole('button', { name: 'Desactivar proveedor', exact: true }).click();
     await expect(page.locator('.estado')).toHaveText('Inactivo');
-    await expect(page.locator('app-proveedor-detalle').getByRole('status')).toHaveText(
+    await expect(page.locator('app-proveedor-detalle > section > p[role="status"]')).toHaveText(
       'Proveedor desactivado.',
     );
   });
@@ -198,7 +206,7 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
   await test.step('08 ADMINISTRADOR reactiva', async () => {
     await page.getByRole('button', { name: 'Reactivar proveedor', exact: true }).click();
     await expect(page.locator('.estado')).toHaveText('Activo');
-    await expect(page.locator('app-proveedor-detalle').getByRole('status')).toHaveText(
+    await expect(page.locator('app-proveedor-detalle > section > p[role="status"]')).toHaveText(
       'Proveedor reactivado.',
     );
   });
