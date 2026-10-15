@@ -1,4 +1,4 @@
-name: Verificación de base, identidad y proveedores
+name: Verificación de base, identidad, proveedores, solicitudes y aprobaciones
 
 on:
   push:
@@ -164,7 +164,16 @@ jobs:
         run: node qa/verificar-sesiones-compose.mjs
       - name: Proveedores, permisos, concurrencia y persistencia
         run: node qa/verificar-proveedores-compose.mjs
-      - name: Navegador 001, 002 y 003, accesibilidad y Swagger
+      - name: Solicitudes, importes, permisos e idempotencia
+        run: node qa/verificar-solicitudes-compose.mjs
+      - name: Aprobaciones, eventos, permisos y concurrencia
+        run: node qa/verificar-aprobaciones-compose.mjs
+      - name: Usuario ficticio ajeno para navegador
+        run: >-
+          node --input-type=module -e "import {readFileSync,appendFileSync} from 'node:fs';
+          const usuarios=JSON.parse(readFileSync(process.env.QA_EVIDENCE_DIR+'/usuarios-aprobaciones.json','utf8'));
+          appendFileSync(process.env.GITHUB_ENV,'E2E_AJENO_CORREO='+usuarios.ajeno.correo+'\n'+'E2E_MULTIPLE_CORREO='+usuarios.multiple.correo+'\n');"
+      - name: Navegador 001 a 005, accesibilidad y Swagger
         working-directory: frontend
         run: npm run test:e2e
       - name: Documentación y búsqueda acotada de secretos
@@ -178,6 +187,10 @@ jobs:
           "$RUNNER_TEMP/actionlint" .github/workflows/ci.yml
           node --check qa/verificar-sesiones-compose.mjs
           node --check qa/verificar-proveedores-compose.mjs
+          node --check qa/verificar-solicitudes-compose.mjs
+          node --check qa/verificar-aprobaciones-compose.mjs
+          node --check qa/verificar-evolucion-v5.mjs
+          node --check qa/preparar-usuarios-solicitudes.mjs
       - name: Parada sin eliminar volúmenes
         if: ${{ always() }}
         run: docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop
