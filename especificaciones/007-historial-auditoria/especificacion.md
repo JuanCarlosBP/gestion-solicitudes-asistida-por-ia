@@ -1,139 +1,158 @@
 # Especificación — 007 Historial y auditoría
 
-**Estado:** Borrador pendiente de aprobación humana
-**Origen:** Continuación documental autorizada por AG-013, después de verificar006.
-**Puerta:** 2026-10-15T13:23:37+02:00, Europe/Madrid; 537,298 minutos restantes,
-superiores a los 45 exigidos. [Evidencia](../../qa/evidencias/ag013/puerta007.json).
+**Estado:** Aprobada por decisión humana AG-014.
+**Origen:** Encargo humano de 15 de octubre de 2026; D-007-01–10 y ejecución007 autorizada.
+**Base:** Borrador AG-013 conservado en [evidencia de entrada](../../qa/evidencias/ag014/especificacion-borrador-entrada.txt).
+La aprobación del alcance y de su ejecución no equivale a aceptación, integración
+ni despliegue. Los resultados se registran en [validación](validacion.md).
 
-Este documento propone requisitos para decidir el alcance de007. No aprueba
-decisiones ni autoriza plan, tareas, ADR, migración o código. No se han ejecutado
-pruebas de007. Los criterios siguientes son propuestos, no resultados observados.
+## Objetivo y continuidad
 
-## Objetivo y fuentes
+Historial empresarial consultable, PostgreSQL, transacciones, permisos vigentes,
+Angular, OpenAPI y QA. Separar historia de negocio, logs técnicos mínimos y
+registros de seguridad. Idempotencia protege replay y no acredita por sí sola
+un hecho histórico. Preservar contratos de [004](../004-solicitudes-conceptos-importes/especificacion.md),
+[005](../005-aprobaciones/especificacion.md) y [006](../006-concurrencia-idempotencia/especificacion.md),
+ADR-0005–0007 y [seguridad](../../docs/seguridad.md). V1–V6, hashes, resultados
+idempotentes y evidencias AG-003–013 son inmutables para esta ejecución.
 
-Permitir a una persona autorizada comprender la evolución de una solicitud:
-quién actuó, cuándo, sobre qué recurso, qué acción confirmó y qué cambió, sin
-exponer información fuera de sus permisos ni confundir una consulta con una nueva
-acción. Dar continuidad a la [visión](../../docs/vision-y-alcance.md), a
-[004](../004-solicitudes-conceptos-importes/especificacion.md),
-[005](../005-aprobaciones/especificacion.md),
-[006](../006-concurrencia-idempotencia/especificacion.md) y la
-[política de seguridad](../../docs/seguridad.md).
+## D-007-01 — Hechos registrados
 
-Se distinguirán tres finalidades: historial funcional, registros técnicos y
-eventos de seguridad. El registro de resultados idempotentes protege el replay;
-no equivale por sí solo a un historial completo ni sustituye una política de auditoría.
+Desde V7: PROVEEDOR_CREADO, PROVEEDOR_MODIFICADO, PROVEEDOR_DESACTIVADO,
+PROVEEDOR_REACTIVADO, BORRADOR_CREADO, BORRADOR_GUARDADO y SOLICITUD_PRESENTADA.
+APROBADA y RECHAZADA se proyectan únicamente de gestion.decisiones_solicitud V5.
+No hay segunda inserción de decisiones en V7. Lecturas, replay y reintentos no
+crean hechos. Un estado repetido de proveedor conserva versión/fecha y no genera
+evento. Un PUT autorizado que incrementa versión según003/004 acredita guardado,
+aunque los valores coincidan; no se inventan diferencias de campos. Fallos y
+rechazos conservan los registros técnicos mínimos existentes, sin eventos de éxito.
 
-## Base existente que se debe preservar
+## D-007-02 — Historia anterior
 
-- 004 conserva la presentación en la solicitud y su resultado idempotente.
-- V5 incorpora decisiones_solicitud: actor y nombre fotografiado, decisión,
-  fecha, versiones y texto de negocio autorizado. La cuenta de aplicación dispone
-  de SELECT/INSERT; no tiene UPDATE/DELETE sobre esos eventos de decisión.
-- 006 generaliza los resultados persistidos para siete POST, conserva hashes y
-  replays de004/005, permite recuperación mínima y no realiza purga automática.
-- Las consultas siguen permisos por recurso: el solicitante consulta propias,
-  el supervisor las asignadas, y auditor/administrador tienen la lectura definida
-  en004/005. Ninguna nueva vista concede permisos para modificar o decidir.
+No reconstruir altas, cambios ni presentaciones anteriores con fechas, estado
+actual, Git o logs. Las decisiones V5 sí son hechos durables con autor, fecha y
+transición. La ausencia de evento de creación V7 de un recurso existente se
+informa como historia anterior desconocida, incluso si hay decisiones V5 o
+cambios posteriores. Este indicador se calcula antes de filtrar eventos.
+El global explica siempre la cobertura limitada anterior a V7. No hay backfill.
 
-No existe todavía un historial general aprobado de todos los cambios. La
-preservación de una fecha o un resultado no acredita que se conozcan todos los
-valores anteriores ni cada edición intermedia.
+## D-007-03 — Persistencia
 
-## Alcance propuesto para aprobación
+Una única migración nueva V7 crea eventos append-only: UUID, tipo_recurso cerrado,
+recurso_id UUID, accion cerrada, actor_id UUID, nombre visible fotografiado y
+acotado, versiones y estados anterior/resultante cuando aplican, ocurrido_en
+TIMESTAMPTZ del servidor, petición UUID cuando existe y datos mínimos de
+presentación. No guardar cuerpos ni claves idempotentes completas. La cuenta
+gestion_app recibe solo SELECT/INSERT; no UPDATE/DELETE. La inserción ocurre
+dentro de la misma transacción que el efecto y resultado idempotente: cualquier
+fallo de evento revierte el conjunto. No insertar después del commit.
+El administrador de BD puede alterar datos; no se promete inalterabilidad
+criptográfica. No hay endpoint de escritura, edición, borrado ni purga del historial.
 
-Priorizar la consulta del historial de una solicitud desde su detalle y una ruta
-directa Angular. Presentar una secuencia legible, ordenada de forma estable y con
-fecha del servidor, tipo de acción, actor autorizado y resumen mínimo del resultado.
-Mostrar explícitamente los límites de la información histórica disponible.
+## D-007-04 — Privacidad
 
-Proponer consulta REST autenticada por solicitud, documentada en OpenAPI. La ruta
-tentativa es GET /api/solicitudes/{id}/historial; su contrato exacto, DTO, filtros,
-orden y límites de paginación se decidirán tras aclarar las preguntas de este
-borrador. Los filtros y conteos deben aplicar primero la visibilidad del recurso.
+Nunca persistir ni devolver en eventos JWT, refresh, cookies, CSRF, contraseñas,
+claves, IP completa, fiscal completo, correo/teléfono de proveedor, descripción
+larga, conceptos, cuerpo/cabeceras HTTP ni stacks. No incluir comentario/motivo de
+decisión en la proyección, ni global ni por recurso. El detalle autorizado V5 de
+la solicitud mantiene su texto original conforme005. Resúmenes cerrados por acción,
+sin interpolar entradas privadas. Nombre visible fotografiado autorizado, acotado
+y mostrado como texto; no sincronizarlo después con cambios de identidad.
 
-Para eventos nuevos, proponer una lista cerrada de campos permitidos: identificador
-de evento/recurso/actor, tipo, fecha del servidor, resultado y versiones cuando
-existan. Registrar cambios de negocio solo con el detalle expresamente aprobado;
-evitar cuerpos completos o copiar indiscriminadamente cabeceras, conceptos o datos
-de proveedor. La clave idempotente completa, hashes internos, credenciales y
-datos de sesión no formarán parte de la respuesta del historial.
+## D-007-05 — Autorización
 
-La selección de acciones que generarán nuevos eventos requiere decisión humana.
-La propuesta inicial es distinguir creación, guardado de borrador, presentación
-y decisión. Historial de proveedores y auditoría global transversal se mantienen
-como opciones por aclarar, sin ampliar automáticamente este incremento.
+Cada GET consulta habilitación e identidad/roles actuales en backend; un JWT antiguo
+no conserva roles revocados. La unión explícita de roles se aplica antes del conteo.
 
-## Reglas propuestas de integridad y seguridad
-
-1. El backend revalida identidad, permisos actuales y visibilidad en cada consulta.
-   Una revocación impide acceder también a eventos anteriores. Conocer un ID,
-   número de solicitud o clave de operación no concede acceso.
-2. El historial no modifica estados ni permite eludir las restricciones de005.
-   No admite editar o borrar eventos desde la interfaz ni desde endpoints públicos.
-   La protección se verificará con la cuenta de aplicación; no se afirmará que un
-   administrador de base de datos carece de capacidad de alteración.
-3. Un efecto confirmado y su evento nuevo se guardarán atómicamente. Rollback no
-   dejará eventos de éxito. Replay, consulta, errores y conflictos no producirán
-   un segundo evento de negocio. Los no-op necesitan una decisión explícita.
-4. Conservar eventos y resultados existentes sin modificar V1–V6 ni reconstruir
-   cambios desconocidos. Cualquier dato derivado o importado se identificará como
-   tal, conservará su procedencia y se limitará a hechos comprobables. No atribuir
-   retrospectivamente un actor o un valor anterior que no se haya conservado.
-5. Los textos de usuario se mostrarán como texto, sin HTML ejecutable. Se decidirá
-   si comentario/motivo aparecen en historial o solo mediante el detalle ya
-   autorizado; no se duplicarán en logs técnicos ni almacenamiento del navegador.
-6. Fechas con zona/offset inequívocos y desempate estable entre eventos simultáneos.
-   La pantalla explicará la zona de visualización. La paginación no permitirá
-   mezclar filas autorizadas con conteos de recursos ocultos.
-7. Errores controlados: identidad ausente, acceso denegado/no visible, filtros
-   inválidos y dependencia no disponible; sin SQL, stacks, cuerpos almacenados,
-   hashes ni confirmación de existencia de recursos no visibles. Los códigos
-   exactos se conciliarán con los contratos vigentes antes del plan.
-
-## Conservación y límites
-
-D-006-07 continúa vigente: sin purga automática de resultados idempotentes.
-El TTL cliente de24h no es un plazo de retención del servidor ni del historial.
-007 debe identificar finalidad, responsables, obligaciones aplicables, acceso y
-crecimiento; la persona responsable decidirá retención y posible archivo/tombstone
-para007/008. No se propone un plazo jurídico ni borrado automático en este borrador.
-Una estrategia futura deberá preservar replay y evitar que desaparezca la
-protección frente a repetir efectos antiguos.
-
-No se incluyen firma electrónica con validez jurídica, certificación de
-inalterabilidad, exportación masiva, auditoría global, SIEM, notificaciones,
-Redis, colas, otra base, multiinstancia ni cambios de reglas de aprobación.
-No se afirma rendimiento productivo ni cobertura completa de seguridad.
-
-## Aclaraciones pendientes de decisión humana
-
-| ID | Decisión necesaria antes de planificar |
+| Consulta | Visibilidad |
 |---|---|
-| Q-007-01 | Confirmar si007 consulta solo solicitudes o también incluye proveedores y una vista global de auditor. |
-| Q-007-02 | Aprobar catálogo de eventos nuevos y tratamiento de no-op, guardados sin cambios y operaciones fallidas; separar eventos de seguridad. |
-| Q-007-03 | Aprobar campos visibles y detalle de diferencias por evento; resolver comentario/motivo, nombre fotografiado y cambios posteriores de identidad. |
-| Q-007-04 | Confirmar matriz exacta de consulta por rol/recurso, combinación de roles y comportamiento ante revocación. Conservar permisos existentes mientras no cambie el requisito aprobado. |
-| Q-007-05 | Elegir presentación de datos anteriores: solo hechos existentes, procedencia y aviso de historia incompleta; decidir si hace falta importación limitada. |
-| Q-007-06 | Aprobar filtros, orden, tamaño máximo de página, volumen objetivo y tiempos medibles; sin fijar un SLA sin carga acordada. |
-| Q-007-07 | Determinar responsable y política de retención/archivo/tombstone, sin eliminar protección idempotente ni inventar plazos legales. |
+| Historial solicitud | SOLICITANTE propias; SUPERVISOR asignadas PRESENTADA/APROBADA/RECHAZADA; AUDITOR/ADMINISTRADOR todas. |
+| Historial proveedor | Solo AUDITOR/ADMINISTRADOR, incluidos inactivos. |
+| Global | Solo AUDITOR/ADMINISTRADOR. |
+| Resumen | Unión de visibilidad anterior sobre solicitudes. |
 
-## Criterios propuestos de aceptación
+No se concede acceso a borradores ajenos por asignación de supervisor. No se amplían
+permisos de modificación, presentación o decisión; nadie decide su solicitud.
+Recurso inexistente/no visible:404 controlado indistinguible; global sin rol:403;
+sin identidad válida:401. Conocer ID, número o clave no concede permisos.
 
-| ID | Comportamiento que deberá demostrarse tras aprobar y ejecutar007 |
+## D-007-06/07/08 — Contrato HTTP
+
+GET autenticados /api/solicitudes/{id}/historial, /api/proveedores/{id}/historial,
+/api/historial y /api/resumen. Sin nuevos endpoints mutables. OpenAPI describe
+campos, filtros, estados de error, seguridad, límites y fuentes.
+
+Página: elementos, pagina, tamano, totalElementos, totalPaginas,
+historiaAnteriorDesconocida. Evento: id estable prefijado EVENTO:UUID o DECISION:UUID,
+tipoRecurso SOLICITUD/PROVEEDOR, recursoId, accion, actor {id,nombreVisible},
+ocurridoEn, versionAnterior nullable, versionResultante, estadoAnterior nullable,
+estadoResultante, resumen cerrado, origen EVENTO_V7/DECISION_V5.
+Proveedor usa ACTIVO/INACTIVO; creación no tiene versión ni estado anterior.
+Decisión usa PRESENTADA→APROBADA/RECHAZADA y versiones/actor/fecha originales.
+UUID no es secuencia cronológica; el prefijo evita colisiones entre fuentes.
+
+Filtros comunes: page>=0, size20 por defecto y1–100, accion cerrada, actor UUID,
+desde/hasta instantes ISO con offset válidos e inclusivos, desde<=hasta.
+Global añade tipoRecurso cerrado y recursoId UUID opcional. El desplazamiento
+page×size no supera100000, conservando el límite de consulta heredado. Desconocidos,
+duplicados, valores vacíos/malformados y periodos incoherentes:400 controlado.
+Orden fijo ocurridoEn DESC y clave estable de evento DESC. SQL parametrizado,
+sin entrada de orden libre, páginas acotadas y sin consultas N+1.
+Permisos y filtros preceden totalElementos. Elementos/conteo comparten lectura
+coherente; offset puede desplazarse entre peticiones concurrentes. No se promete
+snapshot multipágina ni SLA. Se medirá un volumen local y se publicará su límite.
+
+Resumen: solicitudes {BORRADOR,PRESENTADA,APROBADA,RECHAZADA,total} visibles;
+accionesPendientes {borradoresPropios,presentadasAsignadas}. Borradores propios
+requiere rol SOLICITANTE; presentadas asignadas requiere SUPERVISOR vigente,
+asignación propia y autor distinto. Auditor/admin sin estos roles no adquieren
+acciones pendientes de otros usuarios. Sin métricas ficticias.
+
+## D-007-09 — Angular
+
+Timeline paginado en detalle de solicitud; proveedor solo auditor/admin; vista
+global autorizada y resumen real. Rutas directas, filtros y páginas en URL,
+recarga y navegación. Estados cargando, vacío, fallo, sin acceso y límites
+históricos explícitos. Zona temporal visible; texto escapado por Angular.
+Reutilizar sistema visual004–006, sin nuevas dependencias. Verificar etiquetas,
+teclado, foco, contraste acotado y anchos360/768/1440. No editar/borrar eventos.
+
+## D-007-10 — Retención y verificación
+
+Sin purga física ni plazo jurídico inventado. Retención definitiva, responsables
+jurídicos y procedimiento posterior requieren decisión humana; TTL cliente24h
+no borra servidor ni sustituye esa decisión. Documentar crecimiento por cambios,
+índices, medición real y riesgo residual de datos personales mínimos.
+Pruebas reales de rollback evento/efecto, replay, carreras, privacidad, revocación,
+multirrol, recursos ajenos, datos anteriores y decisiones V5. PostgreSQL real,
+regresión001–006, QA/CI y auditorías. CI remota nueva pendiente del push humano.
+
+## Conciliación del borrador
+
+Q-007-01–06 quedan resueltas por D-007-01–09. D-007-10 difiere expresamente el
+plazo jurídico Q-007-07, sin impedir v1 sin purga. La antigua exclusión de global
+queda sustituida por su autorización D-007-05/06. Los HA se renumeran conforme
+encargo AG-014 manteniendo todos los controles del borrador. Nombre visible y
+comentario se resuelven como fotografía mínima y detalle V5 separado.
+Se conservan exclusiones: firma con validez jurídica, certificación de
+inalterabilidad, exportación masiva, SIEM, notificaciones, Redis, colas, segunda BD,
+microservicios, multiinstancia, cambios de aprobaciones y despliegue público.
+
+## Criterios de aceptación
+
+| ID | Evidencia exigida |
 |---|---|
-| HA-01 | La vista por solicitud muestra únicamente hechos conservados o eventos nuevos aprobados, con actor, acción, fecha y resultado comprensibles. |
-| HA-02 | API, ruta directa, filtros y conteos respetan permisos actuales; actor ajeno y permisos revocados no obtienen datos históricos ocultos. |
-| HA-03 | Evento y efecto se confirman juntos; fallo antes de commit revierte ambos; replay/reinicio/carrera no duplican eventos. |
-| HA-04 | Los datos anteriores, versiones, hashes y replays de001–006 se preservan; no aparecen actores ni cambios históricos inventados. |
-| HA-05 | La cuenta de aplicación no puede actualizar/borrar eventos protegidos; los lectores no obtienen permisos mutables por consultar el historial. |
-| HA-06 | Respuesta y logs omiten secretos, claves reutilizables, hashes internos y cuerpos completos; textos se presentan sin ejecutar contenido. |
-| HA-07 | Orden estable, zona temporal, filtros y paginación funcionan con empates y escrituras concurrentes según el contrato aprobado. |
-| HA-08 | Angular diferencia carga, vacío, historia incompleta, error y acceso perdido; teclado, foco y anchos360/768/1440 conservan legibilidad. |
-| HA-09 | Se documentan tamaño, crecimiento y política decidida; ninguna retención reintroduce duplicación de efectos ni cambia D-006-07 sin aprobación. |
-| HA-10 | Pruebas unitarias, HTTP, PostgreSQL real, Angular, E2E, regresión001–006, auditorías, revisión y documentación aportan evidencias propias de007. |
+| HA-01 | Fuentes reales y aviso de historia desconocida; cero hechos reconstruidos. |
+| HA-02 | Siete acciones nuevas atómicas; rollback completo si falla auditoría; no-op sin evento. |
+| HA-03 | V5 proyectada con identidad estable, orden común y sin duplicación nueva/antigua. |
+| HA-04 | Proyección y almacenamiento mínimos; sin datos privados, secretos ni texto ejecutable. |
+| HA-05 | Identidad vigente, permisos por recurso, unión multirrol, revocación y404 sin fuga. |
+| HA-06 | Filtros cerrados, ISO, límites, conteo autorizado, empates y paginación estable. |
+| HA-07 | Resumen real por perfil y acciones propias sin ampliar permisos. |
+| HA-08 | Angular/rutas/estados/filtros/páginas, teclado/foco/contraste y360/768/1440. |
+| HA-09 | PostgreSQL, migración preservadora, carreras, replay, restricciones y pruebas negativas. |
+| HA-10 | Regresión001–006, QA, análisis/auditorías, CI local, documentación y revisión independiente. |
 
-La verificación propuesta incluirá negativos de permisos, datos ficticios,
-fallos transaccionales, consultas paginadas y recuperación después de reinicio.
-No hay resultados007 que reportar. El siguiente paso es aclarar y aprobar esta
-especificación; las fases posteriores requieren su autorización correspondiente.
+La aceptación es humana. El [plan](plan.md), [tareas](tareas.md) y
+[ADR-0008](../../docs/decisiones/ADR-0008-historial-de-negocio-y-consulta.md)
+concretan la ejecución ya autorizada por AG-014.
