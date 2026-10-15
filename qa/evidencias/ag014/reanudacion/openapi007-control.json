@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-10-15T21:58:01.4947971+02:00",
+  "http": 200,
+  "openapi": "3.1.0",
+  "rutas": 21,
+  "controles": [
+    {
+      "ruta": "/api/historial",
+      "metodos": [
+        "get"
+      ],
+      "soloGet": true,
+      "respuesta200": true
+    },
+    {
+      "ruta": "/api/resumen",
+      "metodos": [
+        "get"
+      ],
+      "soloGet": true,
+      "respuesta200": true
+    },
+    {
+      "ruta": "/api/solicitudes/{id}/historial",
+      "metodos": [
+        "get"
+      ],
+      "soloGet": true,
+      "respuesta200": true
+    },
+    {
+      "ruta": "/api/proveedores/{id}/historial",
+      "metodos": [
+        "get"
+      ],
+      "soloGet": true,
+      "respuesta200": true
+    }
+  ],
+  "resultado": "PASS"
+}

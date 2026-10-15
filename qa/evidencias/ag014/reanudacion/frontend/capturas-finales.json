@@ -1,0 +1,86 @@
+[
+  {
+    "archivo": "frontend007-global-1440.png",
+    "ancho": 1440,
+    "alto": 2144,
+    "sha256": "156C65026AE6F28714C60D37D9769D9F62A87D9727D299EB2701001391E39BA5",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-global-360.png",
+    "ancho": 360,
+    "alto": 3293,
+    "sha256": "BB61B2EB65F84E03E525C4C33E160133BCEC3A42A03ED5C0F891AA95C926E808",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-global-768.png",
+    "ancho": 768,
+    "alto": 2329,
+    "sha256": "99762F5DA4B8879168402144550615871037CA1A71C85DE06E547C404E2C8F7D",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-proveedor-1440.png",
+    "ancho": 1440,
+    "alto": 1999,
+    "sha256": "FD159CC05237A6C0F9D2813A2C92C74F0B3073575DC5A4BC5D26812C44249C1A",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-proveedor-360.png",
+    "ancho": 360,
+    "alto": 2696,
+    "sha256": "6F4DBE04E7514581DF3E5E6CB8DDF1174CDE4D1D34BB6A4C72F677EAA2ED453E",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-proveedor-768.png",
+    "ancho": 768,
+    "alto": 2069,
+    "sha256": "556F10CE22762B38434865029DF0AA5C11756B2F9674E24F8E563C337ECB666B",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-resumen-1440.png",
+    "ancho": 1440,
+    "alto": 1312,
+    "sha256": "368953AE6D15FB1B6097795318088E9F30842AEF67A6121EA9E17155A0DFC600",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-resumen-360.png",
+    "ancho": 360,
+    "alto": 1646,
+    "sha256": "3FE5DADB9BBDFAF7ED9A7F9CA8A6851E2D277CB3509C2E11FB335B7764627CFC",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-resumen-768.png",
+    "ancho": 768,
+    "alto": 1276,
+    "sha256": "13A497112C5F9AE723BDB255DB9AF04F8A582275329A02603E78AF53CDCCE837",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-timeline-1440.png",
+    "ancho": 1440,
+    "alto": 1999,
+    "sha256": "E3C482B079E2C7CF85EAE64AA3CD4D4F100B752D46D6969A685423757984F425",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-timeline-360.png",
+    "ancho": 360,
+    "alto": 2773,
+    "sha256": "BA48090C0A0232CE4333E5B8ABFAFC478647D2C831CA18E34B529E85BE241A24",
+    "inspeccionada": true
+  },
+  {
+    "archivo": "frontend007-timeline-768.png",
+    "ancho": 768,
+    "alto": 2069,
+    "sha256": "3DB4B83D5002C08AAE4BBE8C42E04B5C514BB67C28FF6C1C7158D8BE391104EF",
+    "inspeccionada": true
+  }
+]

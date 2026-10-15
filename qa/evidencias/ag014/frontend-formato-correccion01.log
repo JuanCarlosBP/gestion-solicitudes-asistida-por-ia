@@ -1,0 +1,3 @@
+src/app/historial/historial-paginas.spec.ts 65ms
+src/app/inicio/inicio.spec.ts 10ms
+e2e/historial.spec.ts 30ms

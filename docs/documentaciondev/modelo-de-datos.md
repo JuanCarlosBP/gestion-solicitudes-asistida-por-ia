@@ -1,7 +1,9 @@
-# Modelo de datos: identidad y proveedores
+# Modelo de datos de la aplicación
 
-**Estado:** V2 de identidad y V3 de proveedores implementadas; resultados en [validación 003](../../especificaciones/003-proveedores/validacion.md) y
-[validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
+**Estado:** Migraciones V1–V6 heredadas conservadas. V7 aplicada y comprobada
+en PostgreSQL real durante AG-014, sobre una copia de los datos ficticios V6.
+Las siete tablas anteriores y sus checksums se conservaron. Resultados y límites en
+[validación007](../../especificaciones/007-historial-auditoria/validacion.md).
 
 Esquema PostgreSQL `gestion`. V1 permanece intacta; V2 añade exclusivamente
 identidad y sesiones. `flyway_schema_history` conserva la historia de migraciones
@@ -150,3 +152,42 @@ Sin purga automática. Crecimiento por éxito con clave nueva, incluidos no-op;
 medir pg_total_relation_size de la tabla con índices. Archivo/tombstone y plazo
 jurídico pendientes007/008. TTL cliente24h no borra servidor. Compatibilidad real
 V5→V6 y resultados en [validación006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).
+
+## Eventos empresariales V7 — AG-014
+
+La única migración nueva007 crea gestion.eventos_historial. V1–V6 quedan intactas.
+UUID propio, tipo/recurso, acción cerrada, actor FK/nombre fotografiado120,
+versiones y estados, TIMESTAMPTZ del servidor y peticiónUUID nullable. Referencias
+solicitud/proveedor coherentes con recurso_id; unicidad por recurso/versión.
+No contiene fiscal/contacto, descripción/conceptos, comentario/motivo, secretos,
+cuerpos HTTP ni clave idempotente. Resumen se deriva de catálogo cerrado.
+
+Siete acciones V7: PROVEEDOR_CREADO/MODIFICADO/DESACTIVADO/REACTIVADO,
+BORRADOR_CREADO/GUARDADO y SOLICITUD_PRESENTADA. SELECT/INSERT para gestion_app,
+sin UPDATE/DELETE; transacción compartida con efecto y resultado006. No-op y
+replay no crean filas. PUT con versión nueva registra el guardado confirmado.
+Índices de fecha/id, recurso/fecha/id, actor y acción; tamaño y límites observados
+se publican en validación007, sin promesa de SLA.
+
+V5 sigue siendo la única autoridad de decisiones; UNION ALL de columnas mínimas
+permite ordenar ambos orígenes. DECISION:UUID y EVENTO:UUID evitan colisiones;
+UUID desempata y no funciona como secuencia temporal.
+No backfill. La falta de creaciónV7 se indica explícitamente incluso si hay
+decisionesV5 antiguas. No purga ni plazo legal inventado. Capacidad crece con
+cambios exitosos e índices; responsable humano decidirá retención y operación.
+Privilegios mínimos no impiden alteraciones por un administrador de BD.
+Ver [ADR0008](../decisiones/ADR-0008-historial-de-negocio-y-consulta.md).
+
+Observaciones locales de la reanudación AG-014, sin extrapolación productiva:
+
+- Tras migrar una copia ficticiaV6 sin backfill, tablaV7 e índices: 49.152 bytes.
+- IT con 251 eventos, página20: 311.296 bytes; una consulta HTTP tardó10ms en
+  verify completo (11ms en la ejecución enfocada anterior).
+- Compose con10 eventosV7 y68 decisionesV5: 106.496 bytes de tablaV7 e índices.
+  Veinte GET secuenciales con size100 midieron5,34–13,68ms, media7,44ms.
+
+Son muestras pequeñas con datos ficticios y cachés locales; no definen SLA ni
+una tasa lineal de bytes por evento. Índices, páginas y mantenimiento de PostgreSQL
+añaden costes; el volumen crecerá mientras no exista una política de archivo
+aprobada. Evidencia: [medición Compose](../../qa/evidencias/ag014/reanudacion/api007-01/historial-medicion.json)
+y [verify backend](../../qa/evidencias/ag014/reanudacion/backend-completo-01.log).

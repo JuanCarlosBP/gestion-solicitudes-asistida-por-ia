@@ -1,0 +1,9 @@
+
+> gestion-solicitudes-frontend@0.0.1 format:check
+> prettier --check src e2e playwright.config.ts *.json *.mjs .prettierrc
+
+Checking formatting...
+[warn] src/app/historial/historial-paginas.spec.ts
+[warn] src/app/inicio/inicio.spec.ts
+[warn] e2e/historial.spec.ts
+[warn] Code style issues found in 3 files. Run Prettier with --write to fix.

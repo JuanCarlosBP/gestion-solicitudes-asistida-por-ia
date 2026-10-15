@@ -1,0 +1,29 @@
+src/app/historial/datos-prueba.ts 32ms
+src/app/historial/historial-api.spec.ts 14ms
+src/app/historial/historial-api.ts 9ms
+src/app/historial/historial-modelo.spec.ts 6ms
+src/app/historial/historial-modelo.ts 14ms
+src/app/historial/historial-pagina.ts 33ms
+src/app/historial/historial-paginas.spec.ts 19ms
+src/app/historial/historial-permisos.ts 2ms
+src/app/historial/historial-timeline.css 24ms
+src/app/historial/historial-timeline.html 28ms
+src/app/historial/historial-timeline.ts 13ms
+src/app/inicio/inicio.css 6ms
+src/app/inicio/inicio.html 11ms
+src/app/inicio/inicio.spec.ts 6ms
+src/app/inicio/inicio.ts 3ms
+src/app/inicio/salud-api.spec.ts 2ms (unchanged)
+src/app/inicio/salud-api.ts 2ms (unchanged)
+src/app/app.ts 1ms (unchanged)
+src/app/app.html 4ms
+src/app/app.routes.ts 2ms
+src/app/solicitudes/solicitud-detalle.ts 8ms (unchanged)
+src/app/solicitudes/solicitud-detalle.html 24ms
+src/app/solicitudes/solicitudes-paginas.spec.ts 24ms (unchanged)
+src/app/solicitudes/aprobaciones.spec.ts 21ms (unchanged)
+src/app/proveedores/proveedor-detalle.ts 3ms (unchanged)
+src/app/proveedores/proveedor-detalle.html 9ms
+src/app/proveedores/proveedores-paginas.spec.ts 23ms (unchanged)
+e2e/historial.spec.ts 13ms
+e2e/operaciones-ayudas.ts 6ms (unchanged)

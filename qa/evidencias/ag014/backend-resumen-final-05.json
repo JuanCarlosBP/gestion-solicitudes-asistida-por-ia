@@ -1,0 +1,23 @@
+{
+  "fecha": "2026-10-15T20:39:51.8408074+02:00",
+  "comando": ".\\mvnw.cmd -B spotless:check test spotbugs:check -DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar",
+  "directorio": "backend",
+  "java_home": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.12.101-hotspot",
+  "maven_user_home": "<workspace>/tmp/maven-user",
+  "temp_tmp": "<workspace>/tmp/pruebas-backend",
+  "repo_maven": "<workspace>/tmp/m2",
+  "salida": 0,
+  "pruebas": 122,
+  "fallos": 0,
+  "errores": 0,
+  "omitidas": 0,
+  "informes": 14,
+  "spotless": "PASS",
+  "spotbugs_hallazgos": 0,
+  "spotbugs_errores": 0,
+  "fuentes": 128,
+  "fuentes_modificadas_desde_manifiesto_previo": [],
+  "integracion_ejecutada": false,
+  "pendiente": "PostgreSQL13 IT nuevos, regresión IT y verify completo por Docker",
+  "git_ejecutado": false
+}

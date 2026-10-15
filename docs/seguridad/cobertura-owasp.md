@@ -710,3 +710,18 @@ certificación de seguridad ni auditoría integral de ASVS.
 Resultados y límites en [validación 006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).
 Se mantiene cobertura parcial; no se atribuyen certificaciones ni requisitos ASVS
 sin contrastar su texto. La auditoría de dependencias no cubre todo el sistema operativo.
+
+## Controles parciales de historial007
+
+| Categoría | Control y evidencia exigida |
+|---|---|
+| A01 Acceso | HA05/07: recurso/rol vigente, unión multirrol,404 sin fuga y resumen autorizado. |
+| A02 Configuración | HA02/09: privilegios SELECT/INSERT, V1–V6 intactas, no-store y error seguro. |
+| A03 Cadena | HA10: dependencias conservadas, auditorías, ActionsSHA y builds. |
+| A05 Inyección | HA04/06/08: consultas parametrizadas, filtros cerrados y texto Angular escapado. |
+| A06 Diseño | HA01–03/09: fuentes reales, transacción atómica, no duplicarV5, replay/no-op. |
+| A09 Registro | HA01/04: evento mínimo, sin datos privados ni historia ficticia; retención diferida. |
+| A10 Excepciones | HA02/09/10: rollback, fallos controlados y recuperación/Compose. |
+
+La [validación007](../../especificaciones/007-historial-auditoria/validacion.md)
+distingue ejecutado/pendiente. No se atribuye cobertura OWASP/ASVS completa.

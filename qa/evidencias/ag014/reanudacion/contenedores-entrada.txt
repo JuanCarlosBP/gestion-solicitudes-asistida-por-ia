@@ -1,0 +1,11 @@
+9c764430e01718bf758301fd76f4e56c0537f87b27ba8e610283f8bae21e3aa9|gestion-solicitudes-001-frontend-1|gestion-solicitudes-001-frontend|Exited (0) 9 hours ago
+5f66d755ec7d00e07bd547fb6ff8c1168af7db611b8788636de49c430543cc1b|gestion-solicitudes-001-backend-1|gestion-solicitudes-001-backend|Exited (143) 9 hours ago
+d09d1e15f7261236f4f5dd0f939a062758b9aef1bdc33a802b33bd7dce531c88|gestion-solicitudes-001-postgres-1|postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826|Exited (0) 9 hours ago
+1c43f99c6d7d64a33c04a146dd690206ca069621e9b764868c6d704b83768eb4|openhands-runtime-8dd4ccb04b874bb78d943f703b35d0fc|ghcr.io/all-hands-ai/runtime:oh_v0.59.0_o7nt9lingn02n8vm_zkh2cxomfn2m9ama|Exited (137) 5 months ago
+02b62208f591741c0e64e84c4c4a26fc70ec671bc7e5d43f3dd149211742b176|openhands-runtime-b0c7cd6270bc4b12a5b355e77672a831|ghcr.io/all-hands-ai/runtime:oh_v0.59.0_o7nt9lingn02n8vm_zkh2cxomfn2m9ama|Exited (252) 6 months ago
+6322d6c139cda5e4d90247b5dafb2924271868ebd806f7ca8661ffdf2bb7a899|arquitecto-ia|ghcr.io/all-hands-ai/openhands:main|Exited (137) 5 months ago
+0d10719df8ba1cd648f6f47cd205e0feb2aaee303ffe3733edcb58f6e0ccda6b|openhands-runtime-6fa949663c9a4be2a2e258543397a4d6|ghcr.io/all-hands-ai/runtime:oh_v0.59.0_o7nt9lingn02n8vm_zkh2cxomfn2m9ama|Exited (137) 6 months ago
+d07bca9b7ecdc7ccc3b63025a665ec993a9c3ff0e2140874ac085e09de6c09e8|chat-privado|ghcr.io/open-webui/open-webui:main|Exited (137) 5 months ago
+8fcfcdd4b4a5b8f48aaf0b4871703df655202c35a42dcc5d1b8ab6f6d2715a27|biteacademy_backend|biteacademy-backend|Exited (0) 8 months ago
+30fd50b77d31a7d50a61f5e9ffb26a0b6ae02993392288694d6f3775fc8aef8b|biteacademy_db|postgres:15-alpine|Exited (0) 8 months ago
+b4d931777e0c446b4a3d74aa3ec521c3edac508a749a5cb53093c8bdbf1d581a|biteacademy_redis|redis:7-alpine|Exited (0) 8 months ago

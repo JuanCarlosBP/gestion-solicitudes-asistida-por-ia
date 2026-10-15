@@ -1,0 +1,30 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/historial/*.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                     | Names                                |  Raw size
+spec-app-historial-historial-paginas.js | spec-app-historial-historial-paginas | 494.94 kB | 
+chunk-ADL4GKOW.js                       | -                                    |   6.91 kB | 
+chunk-RSTWSNOR.js                       | -                                    |   4.75 kB | 
+spec-app-historial-historial-modelo.js  | spec-app-historial-historial-modelo  |   2.81 kB | 
+spec-app-historial-historial-api.js     | spec-app-historial-historial-api     |   2.39 kB | 
+chunk-PI6UK3KX.js                       | -                                    |   2.17 kB | 
+styles.css                              | styles                               |   1.47 kB | 
+init-testbed.js                         | init-testbed                         |   1.21 kB | 
+vitest-mock-patch.js                    | vitest-mock-patch                    | 974 bytes | 
+
+                                        | Initial total                        | 517.62 kB
+
+Application bundle generation complete. [2.365 seconds] - 2026-10-15T18:27:51.558Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  3 passed (3)
+      Tests  59 passed (59)
+   Start at  20:27:52
+   Duration  3.01s (transform 325ms, setup 1.92s, import 571ms, tests 394ms, environment 4.50s)
+

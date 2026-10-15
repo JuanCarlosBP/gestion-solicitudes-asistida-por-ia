@@ -168,4 +168,18 @@ desviaciones, corrección remota y pendientes, sin aceptación ni integración.
 
 La puerta de continuación se cumplió tras verificar006, con537,298min restantes.
 [007 — Historial y auditoría](../especificaciones/007-historial-auditoria/especificacion.md)
-es únicamente una especificación borrador pendiente de aprobación humana.
+nació como borrador; AG-014 aprueba D-007-01–10 y autoriza su implementación.
+[Plan007](../especificaciones/007-historial-auditoria/plan.md),
+[tareas](../especificaciones/007-historial-auditoria/tareas.md),
+[validación](../especificaciones/007-historial-auditoria/validacion.md) y
+[ADR0008](decisiones/ADR-0008-historial-de-negocio-y-consulta.md)
+conservan contrato, fuentes reales, límites y comprobaciones. No hay aceptación
+ni integración por el agente.
+
+[Informe AG-014](trazabilidad/AG-014-informe.md): implementación realizada,
+247 pruebas backend,479 Angular y639 controles API superados; migración,
+Compose y auditorías comprobados;33 E2E,12 capturas y revisión independiente sin
+hallazgos abiertos. HA-01–10 verificados localmente, sin aceptación ni integración.
+La [puerta008](../qa/evidencias/ag014/reanudacion/puerta008.json) permite únicamente
+el [borrador de demo/operación/entrega](../especificaciones/008-demo-operacion-entrega/especificacion.md),
+pendiente de clarificación y aprobación humana, sin código ni despliegue.

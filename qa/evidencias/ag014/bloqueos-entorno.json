@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-15",
+  "docker": {
+    "estado": "PENDIENTE_AUTORIZACION",
+    "causa": "Docker Desktop no arranca: inicialización Inference manager no puede retirar/abrir socket temporal dockerInference fuera del workspace.",
+    "ruta": "C:/Users/carli/AppData/Local/Docker/run/dockerInference",
+    "observado": "Elemento temporal vacío, Length0 y Attributes1056. Get-Acl falló1920. El diagnóstico Docker indicó motores detenidos y backend crashed.",
+    "intentos": ["Arranque normal en aislamiento sin motor disponible", "Arranque Desktop con permiso de herramienta: crash documentado", "Reinicio CLI documentado --timeout45 sin respuesta; cancelado mediante herramienta junto con consultas colgadas"],
+    "accionSolicitada": "Detener Docker, retirar únicamente socket temporal vacío y reiniciar; conservar imágenes y volúmenes.",
+    "accionNoEjecutada": "No se borró el socket ni se cambiaron permisos/configuración/volúmenes.",
+    "impacto": "PostgreSQL IT, verify íntegro, migración real, Docker build, Compose/API/E2E/capturas pendientes."
+  },
+  "npmAudit": {
+    "estado": "PENDIENTE_AUTORIZACION",
+    "primerIntento": "ENOTFOUND registry.npmjs.org dentro del aislamiento; JSON de error conservados.",
+    "revisionAutomatica": "Rechazó el envío del inventario de dependencias a registry.npmjs.org sin autorización explícita de payload y destino.",
+    "accionSolicitada": "Enviar nombres/versiones de dependencias al registro oficial npm para npm audit.",
+    "alternativaEjecutada": "Descarga completa pública OSV Maven/npm, auditorías offline sin enviar inventario. No se presenta como npm audit."
+  }
+}

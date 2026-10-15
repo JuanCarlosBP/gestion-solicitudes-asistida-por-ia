@@ -1,0 +1,22 @@
+{
+  "fecha": "2026-10-15T22:07:03.2170784+02:00",
+  "sintaxisNode": [
+    {
+      "archivo": "qa/verificar-historial-compose.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/verificar-evolucion-v7.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/verificar-entrega-ag014.mjs",
+      "salida": 0
+    },
+    {
+      "archivo": "qa/rutas-evidencia.mjs",
+      "salida": 0
+    }
+  ],
+  "actionlint": 0
+}

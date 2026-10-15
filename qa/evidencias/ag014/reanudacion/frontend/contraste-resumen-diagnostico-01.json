@@ -1,0 +1,14 @@
+{
+  "fechaUTC": "2026-10-15T20:10:41.168Z",
+  "terminado": true,
+  "muestras": [
+    {
+      "milisegundos": 0.5,
+      "texto": "rgb(255, 255, 255)",
+      "fondo": "rgb(19, 91, 99)",
+      "contraste": 7.765427575475824,
+      "deshabilitado": false,
+      "animaciones": 0
+    }
+  ]
+}

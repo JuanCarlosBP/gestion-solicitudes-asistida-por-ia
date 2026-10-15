@@ -1,0 +1,110 @@
+[
+  {
+    "ruta": "frontend/e2e/historial.spec.ts",
+    "sha256": "CFA1FB6924A7EFB762069ABE8256F705993B9C030ED16892FA07B9EA3D4376E6"
+  },
+  {
+    "ruta": "frontend/e2e/operaciones-ayudas.ts",
+    "sha256": "22137C86B6D6904BF347F1E09816A2488A3A34F0CB033BABADEB1F29FF3703A6"
+  },
+  {
+    "ruta": "frontend/src/app/app.html",
+    "sha256": "EF36ED078F71718BB52C66AFB0BAB4340A99C4DFFFE1542425F1267B467DE820"
+  },
+  {
+    "ruta": "frontend/src/app/app.routes.ts",
+    "sha256": "C023B453D7160A4E54EA781990FEE531CDD0E1DC93F22CB13CAE0F3AF6CFE759"
+  },
+  {
+    "ruta": "frontend/src/app/app.ts",
+    "sha256": "98A8C4AA3957E3830DDCC7DEAFED1015A76CB69F5478279DD2CD727093608068"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\datos-prueba.ts",
+    "sha256": "E76604E2CE3108CC51D36A56C02DA5BF257A4E909352B965DD8368D62B763D69"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-api.spec.ts",
+    "sha256": "DCD04E904987766B86225F6D8C51DF5724570E17FEDE69F297D1A807629822CD"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-api.ts",
+    "sha256": "A4B3045C02439C0B48C3F109F0CCE4C07CD1875836D9B75601C0A0D2EC8E08CE"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-modelo.spec.ts",
+    "sha256": "D1017290BFF031B64FD1C9B692D37BC4A67012CDEAB80CA2BEC8BE2913E0FC62"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-modelo.ts",
+    "sha256": "165C6771E4314635D3EFB86D2D1780E1AFCF8C8BC8639FD7ED62D5D2F354C8A8"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-pagina.ts",
+    "sha256": "0BA735B11E1E2E827F0AF174235430993F4FF3AC1A5EBA8C6F6809EF4F3DFDAF"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-paginas.spec.ts",
+    "sha256": "7BF441E44A3DEEB530C2D7677E408F84936A48630C13595E6905AFD245930421"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-permisos.ts",
+    "sha256": "9B5F70642A33EAC296A32E3D132660E6E67B764E2D296DF15087DAAA857EAE71"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-timeline.css",
+    "sha256": "4634F69305FC4A8B167945B44B9893F310C65377549B0A01F2529F73E5178193"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-timeline.html",
+    "sha256": "99D62894CA711558E027C213D9AD77BF090FDAB81198B14A8705357B58B71A9F"
+  },
+  {
+    "ruta": "frontend/src/app/historial\\historial-timeline.ts",
+    "sha256": "DB351AF6E8199C1EDB366F09B2D89484F5E7C9B6358A5A551C2D5B833197ECA3"
+  },
+  {
+    "ruta": "frontend/src/app/inicio/inicio.css",
+    "sha256": "18A560581E0685756F38F7F94277909F63C73997C7CB8F0C2B94DE69A23A694A"
+  },
+  {
+    "ruta": "frontend/src/app/inicio/inicio.html",
+    "sha256": "97F547A83E2BBF33E9557D089EB09DC92434EEA28AC7B95604EAEB5809EDEFFA"
+  },
+  {
+    "ruta": "frontend/src/app/inicio/inicio.spec.ts",
+    "sha256": "A3FDF6FC3970A4E69499F080BDE15DB80594BEB47EDF62A6DE0B12A71183DDFE"
+  },
+  {
+    "ruta": "frontend/src/app/inicio/inicio.ts",
+    "sha256": "B50B35502DE71E43F95E0506F62CBC169558327C5654F16E349702AE38CB5367"
+  },
+  {
+    "ruta": "frontend/src/app/proveedores/proveedor-detalle.html",
+    "sha256": "C3BE1B8F22D512A24A005AEC465820218A65DC53121EEAB469FCB1F7123DB5E7"
+  },
+  {
+    "ruta": "frontend/src/app/proveedores/proveedor-detalle.ts",
+    "sha256": "1F5D8E384EB32EC9053EB3C424200298B06C0E1A19F4EC22BAEB9A4B57BF3E05"
+  },
+  {
+    "ruta": "frontend/src/app/proveedores/proveedores-paginas.spec.ts",
+    "sha256": "F81FF956904BB5B63113F36015023E1A5807CC300B7151790B07044894BF1B03"
+  },
+  {
+    "ruta": "frontend/src/app/solicitudes/aprobaciones.spec.ts",
+    "sha256": "CD7DE61729866F96DAA04C2E4852B42A4DB06635CEA47100A4E4F1B38BA0AB88"
+  },
+  {
+    "ruta": "frontend/src/app/solicitudes/solicitud-detalle.html",
+    "sha256": "D747DB14AF8B96D03A821B82BC0CBA52C6FEAA7970C8D124953A71DAAFA35558"
+  },
+  {
+    "ruta": "frontend/src/app/solicitudes/solicitud-detalle.ts",
+    "sha256": "E0F058A20D90D68BF1A6A50D0C6A069AD76FAB515D3A76E03524C815BD2258D5"
+  },
+  {
+    "ruta": "frontend/src/app/solicitudes/solicitudes-paginas.spec.ts",
+    "sha256": "26B3070E63A23BEDCFBA087C7C499215F7B54D8411DE654BA8BA6ADDBCCABE4D"
+  }
+]

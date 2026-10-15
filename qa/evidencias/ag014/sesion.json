@@ -1,0 +1,11 @@
+{
+  "inicioObservado": "2026-10-15T20:09:15+02:00",
+  "limiteConservador": "2026-10-16T04:05:00+02:00",
+  "zona": "Europe/Madrid",
+  "notaTiempo": "Primera lectura de reloj tras reconocimiento inicial; límite conservador anterior a ocho horas desde esa observación.",
+  "ramaLeidaEnHead": "feature/007-historial-auditoria",
+  "desviaciones": [
+    "git status --short ejecutado antes de leer la prohibición adjunta; salida vacía. No autoriza más comandos Git."
+  ],
+  "autorizacion": "AG-014 y D-007-01–10 por encargo humano; implementación007 autorizada; aceptación humana pendiente."
+}

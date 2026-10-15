@@ -1,0 +1,44 @@
+{
+  "resultado": "007 IMPLEMENTADO Y HA01–10 VERIFICADOS LOCALMENTE",
+  "cierreParcial": "2026-10-15T20:42:08.0000000+02:00",
+  "frontend": {
+    "reintentos": 0,
+    "capturas": 12,
+    "contrastes": 42,
+    "e2e": 33,
+    "contrasteMinimo": 5.526858588998478,
+    "angular": 479
+  },
+  "limiteConservador": "2026-10-16T04:05:00.0000000+02:00",
+  "aceptado": false,
+  "recursos": "30 contenedores detenidos,17 volúmenes,20 imágenes; todos los previos conservados",
+  "api": {
+    "regresion": 492,
+    "total": 639,
+    "historial": 147
+  },
+  "revision": "Independiente sin hallazgos materiales abiertos",
+  "sumaPeriodosObservados": "01:09:56",
+  "duracionTotalObservada": "02:11:39",
+  "desplegado": false,
+  "borrador008": true,
+  "backend": {
+    "errores": 0,
+    "omitidas": 0,
+    "total": 247,
+    "integracion": 125,
+    "unitarias": 122,
+    "spotbugs": 0,
+    "spotless": "PASS",
+    "fallos": 0
+  },
+  "pausaEntreTurnos": "01:01:43",
+  "finContenido": "2026-10-15T22:20:54.0000000+02:00",
+  "reanudacion": "2026-10-15T21:43:51.0000000+02:00",
+  "precision": "Primer reloj posterior a lecturas iniciales. Duración observada, no tiempo CPU. Controles documentales/manifiesto inmediatamente posteriores al cierre de contenido.",
+  "git": "git status --short inicial antes de leer prohibición, salida vacía; ningún Git posterior ni escritura Git",
+  "inicioObservado": "2026-10-15T20:09:15.0000000+02:00",
+  "minutosRestantes": 344.1,
+  "integrado": false,
+  "zona": "Europe/Madrid"
+}

@@ -1,0 +1,4 @@
+Starting filesystem walk for root: C:\
+Scanned C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag014\npm-produccion.cdx.json file and found 7 packages
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 6.0723ms elapsed, 6.0723ms wall time
+Loaded npm local db from C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\osv-cache/osv-scalibr/npm/all.zip

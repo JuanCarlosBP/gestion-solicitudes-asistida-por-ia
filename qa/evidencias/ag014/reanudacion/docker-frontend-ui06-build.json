@@ -1,0 +1,7 @@
+{
+  "buildxGitInfo": "false",
+  "salida": 0,
+  "inicio": "2026-10-15T22:12:25.8303615+02:00",
+  "comando": "docker compose -p gestion-solicitudes-ag014-ui06 -f qa/compose-frontend-conservado.yaml build --no-cache frontend",
+  "fin": "2026-10-15T22:12:38.1958917+02:00"
+}

@@ -1,0 +1,7 @@
+{
+  "inicio": "2026-10-15T21:48:29.9902497+02:00",
+  "fin": "2026-10-15T21:48:34.4460766+02:00",
+  "salida": 0,
+  "proyecto": "gestion-solicitudes-ag014",
+  "script": "qa/verificar-sesiones-compose.mjs"
+}

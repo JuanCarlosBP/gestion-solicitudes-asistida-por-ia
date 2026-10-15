@@ -1,0 +1,13 @@
+{
+  "solicitudes": [
+    {
+      "id": "062d8783-3415-4243-b9da-86145eb29668",
+      "estado": "APROBADA"
+    },
+    {
+      "id": "072d1bf8-1df5-49fc-b3fb-f6695c0a473e",
+      "estado": "RECHAZADA"
+    }
+  ],
+  "fuente": "Filas V5 anteriores a V7; solo IDs de entorno ficticio."
+}

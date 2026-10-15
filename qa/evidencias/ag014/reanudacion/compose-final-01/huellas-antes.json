@@ -1,0 +1,11 @@
+{
+  "usuarios": "42:8254bffdfd332bd51ead4147490f811c",
+  "usuarios_roles": "75:32d3e93ba0d49376f5b23c9abce98ab2",
+  "proveedores": "236:3003e757c44acbbd086a360eb2f2b969",
+  "solicitudes": "338:20f244bc0a08dd1f53a64a00c8b1af64",
+  "conceptos_solicitud": "319:cce82357709e4d1c823710e00a50dbef",
+  "operaciones_idempotentes_solicitud": "830:12b07c61b102d92306dad606c88da588",
+  "decisiones_solicitud": "128:5cfbdb749e717bed381ed9d4efa5a8e2",
+  "eventos_historial": "540:7edb3e3f13bea6896fda70c008acc53e",
+  "flyway_schema_history": "7:37113933ccf311340ebb349aa12a5103"
+}

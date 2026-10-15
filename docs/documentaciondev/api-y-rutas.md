@@ -1,7 +1,8 @@
-# API y rutas de identidad y proveedores
+# API y rutas de la aplicación
 
-**Estado:** Contratos de identidad AG-010 y proveedores AG-011; comprobaciones respectivas en [validación 003](../../especificaciones/003-proveedores/validacion.md) y
-[validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
+**Estado:** Contratos 001–006 conservados. API 007 implementada y verificada localmente;
+[validación007](../../especificaciones/007-historial-auditoria/validacion.md) identifica
+las comprobaciones y pendientes. Las secciones históricas conservan su alcance.
 
 Frontend y API comparten origen a través de Nginx. Los cuerpos propios usan JSON
 y los errores controlados solo incluyen `error`. El backend decide el acceso.
@@ -202,3 +203,38 @@ huella ni snapshot interno.400UUID inválido;401sin identidad;404inexistente/no 
 Angular conserva descriptor mínimo24h y consulta al restaurar sesión.404 o timeout
 no generan nueva clave. Criterios y resultados en
 [validación006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).
+
+## Historial y resumen007 — AG-014
+
+Contrato autorizado en [especificación007](../../especificaciones/007-historial-auditoria/especificacion.md);
+resultados en [validación](../../especificaciones/007-historial-auditoria/validacion.md).
+
+| GET | Acceso y respuesta |
+|---|---|
+| /api/solicitudes/{id}/historial | Unión de permisos vigentes004/005;404 si no visible. |
+| /api/proveedores/{id}/historial | AUDITOR/ADMINISTRADOR;404 si no visible o inexistente. |
+| /api/historial | AUDITOR/ADMINISTRADOR;403 para otros roles. |
+| /api/resumen | Identidad vigente; conteos visibles y pendientes propios. |
+
+Los cuatro están autenticados y no-store. Filtros historial: page0, size20
+(máximo100), desplazamiento<=100000, accion cerrada, actor UUID, desde/hasta ISO
+con offset e inclusivos. Global añade tipoRecurso y recursoId. Desconocidos,
+repetidos, vacíos, formatos inválidos o periodo incoherente400. Orden fijo por
+ocurridoEn DESC y clave estable prefijada DESC; no se acepta SQL/orden libre.
+
+Página: elementos,pagina,tamano,totalElementos,totalPaginas,historiaAnteriorDesconocida.
+Evento mínimo: id EVENTO:UUID o DECISION:UUID; tipoRecurso/recursoId/accion;
+actor{id,nombreVisible}; ocurridoEn; versiones/estados anterior y resultante;
+resumen cerrado y origen EVENTO_V7/DECISION_V5. Sin comentario/motivo ni datos
+privados del recurso. El detalle de solicitud existente conserva textoV5 autorizado.
+Ausencia creaciónV7 se evalúa antes de filtros; global explica cobertura limitada.
+Orden estable no garantiza snapshot entre varias páginas ante escrituras nuevas.
+
+Resumen: solicitudes{BORRADOR,PRESENTADA,APROBADA,RECHAZADA,total} y
+accionesPendientes{borradoresPropios,presentadasAsignadas}. Unión de roles,
+supervisor sin borradores ajenos y pendientes propios únicamente con rol habilitante.
+No modifica permisos de negocio ni representa indicadores externos o estimados.
+
+Rutas Angular previstas por contrato: /historial, /solicitudes/:id/historial y
+/proveedores/:id/historial, además del timeline en los detalles existentes y
+resumen en inicio. Las rutas no sustituyen autorización backend.

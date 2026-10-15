@@ -1,0 +1,39 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test --list
+
+Listing tests:
+  aprobaciones.spec.ts:192:5 › AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales
+  aprobaciones.spec.ts:341:5 › AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible
+  aprobaciones.spec.ts:484:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora
+  base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real
+  base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación
+  base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil
+  base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real
+  base.spec.ts:119:5 › cabeceras, mínimo contrato y denegación por el backend
+  historial.spec.ts:150:7 › 007: diez recorridos de historial y resumen › HA-E2E01: autor lee timeline integrado y directo con fuentes y transición real
+  historial.spec.ts:185:7 › 007: diez recorridos de historial y resumen › HA-E2E02: supervisor ve rechazo y el historial omite el motivo del detalle
+  historial.spec.ts:199:7 › 007: diez recorridos de historial y resumen › HA-E2E03: global filtra, pagina, recarga y vuelve atrás con URL persistente
+  historial.spec.ts:229:7 › 007: diez recorridos de historial y resumen › HA-E2E04: administrador y auditor consultan ciclo completo de proveedor
+  historial.spec.ts:249:7 › 007: diez recorridos de historial y resumen › HA-E2E05: resumen corresponde a API por cuatro perfiles y conserva salud
+  historial.spec.ts:277:7 › 007: diez recorridos de historial y resumen › HA-E2E06: sin rol no hay global/proveedor y recurso ajeno equivale a inexistente
+  historial.spec.ts:320:7 › 007: diez recorridos de historial y resumen › HA-E2E07: historia anterior a V7 explícita y decisión previa conservada
+  historial.spec.ts:339:7 › 007: diez recorridos de historial y resumen › HA-E2E08: vacío e inválidos muestran recuperación sin inventar eventos
+  historial.spec.ts:359:7 › 007: diez recorridos de historial y resumen › HA-E2E09: fallo de red controlado y recuperación consulta PostgreSQL real
+  historial.spec.ts:374:7 › 007: diez recorridos de historial y resumen › HA-E2E10: teclado, foco, etiquetas y capturas360/768/1440
+  identidad.spec.ts:15:5 › acceso, identidad, restauración, cierre y guard con backend real
+  identidad.spec.ts:93:5 › formulario por teclado, error genérico, foco y validación nativa
+  identidad.spec.ts:124:5 › CSRF obligatorio, restauración anónima y recursos públicos disponibles
+  operaciones.spec.ts:66:5 › CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta
+  operaciones.spec.ts:145:7 › CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva
+  operaciones.spec.ts:145:7 › CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva
+  operaciones.spec.ts:246:5 › CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar
+  operaciones.spec.ts:285:5 › CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable
+  operaciones.spec.ts:389:5 › CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave
+  operaciones.spec.ts:458:5 › CI-05/07: permiso revocado antes de recuperar y replay no concede acceso
+  operaciones.spec.ts:537:5 › CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable
+  operaciones.spec.ts:579:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña
+  proveedores.spec.ts:39:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales
+  solicitudes.spec.ts:107:5 › SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales
+  solicitudes.spec.ts:421:5 › SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga
+Total: 33 tests in 7 files

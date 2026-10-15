@@ -453,3 +453,18 @@ identifica las comprobaciones ejecutadas y pendientes de cada control.
 La revisión de carreras incluye respuestas tardías y preservación de conflictos:
 una confirmación recuperada no debe habilitar otra alta ni convertir una entrada
 incompatible en éxito. No se declara mitigada una amenaza global por esta cobertura.
+
+## Historial007 — AG-014
+
+| Amenaza | Control exigido | Límite residual |
+|---|---|---|
+| AM-02/03 | HA05/07: identidad vigente, recurso y unión multirrol antes del conteo. | La gestión administrativa de identidades no se amplía. |
+| AM-04/05 | HA04/06: SQL parametrizado, filtros cerrados y texto escapado. | Revisión acotada a superficies007. |
+| AM-11/12/13 | HA02/03/09: evento transaccional, no-op/replay sin duplicados, V5 única. | Offset entre peticiones puede desplazarse con escrituras nuevas. |
+| AM-17/18 | HA01/04: minimización, no backfill, SELECT/INSERT y aviso de cobertura. | Administración BD puede alterar; nombre visible sigue siendo dato personal. |
+| AM-19 | HA06/10: tamaño<=100, desplazamiento<=100000, índices y medición local. | No SLA ni prueba de carga productiva. |
+| AM-21/22/23 | HA02/09: rollback si falla evento, evoluciónV6→V7 y regresión. | No acredita restauración de desastres. |
+
+Retención definitiva, archivo y purga posterior requieren decisión humana.
+Resultados en [validación007](../../especificaciones/007-historial-auditoria/validacion.md);
+ninguna amenaza global se declara cerrada solo por esta cobertura.

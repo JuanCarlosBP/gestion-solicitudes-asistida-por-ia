@@ -1,0 +1,11 @@
+{
+  "navegadorEjecutado": true,
+  "resultado": "PASS",
+  "tablasConservadas": 9,
+  "recuperacionHttp": 200,
+  "caidaHttp": 503,
+  "fecha": "2026-10-15T22:15:05.4229741+02:00",
+  "eliminaciones": false,
+  "caidaMs": 2001,
+  "frontend": "ui06"
+}

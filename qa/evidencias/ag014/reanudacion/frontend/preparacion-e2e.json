@@ -1,0 +1,22 @@
+{
+  "node": "v24.13.0",
+  "npm": "11.6.2",
+  "pruebasDescubiertas": 33,
+  "archivosPruebas": 7,
+  "pruebasEjecutadas": false,
+  "reintentosConfigurados": 0,
+  "baseURL": "http://127.0.0.1:18080",
+  "proyectoComposeRequerido": "gestion-solicitudes-ag014",
+  "variablesPendientes": [
+    "E2E_AJENO_CORREO",
+    "E2E_MULTIPLE_CORREO",
+    "E2E_HISTORIAL_ANTERIOR_ID"
+  ],
+  "decisionAnteriorRealRequerida": true,
+  "navegadoresPresentes": [
+    "tmp/playwright\\chromium-1248\\chrome-win64\\chrome.exe"
+  ],
+  "auditoriaProduccion": "PASS, 0 vulnerabilidades",
+  "auditoriaCompleta": "PASS, 0 vulnerabilidades",
+  "registroAutorizado": "https://registry.npmjs.org"
+}

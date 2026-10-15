@@ -1,0 +1,19 @@
+{
+  "fechaUTC": "2026-10-15T20:01:27.054Z",
+  "status": 200,
+  "cspScriptRestringido": true,
+  "bloqueosHandlerInline": 1,
+  "hojas": [
+    {
+      "archivo": "/styles-UGMBM6JM.css",
+      "media": "print",
+      "tieneOnload": true
+    }
+  ],
+  "foco": {
+    "elemento": "A",
+    "focusVisible": true,
+    "outlineAncho": "1px",
+    "outlineEstilo": "auto"
+  }
+}

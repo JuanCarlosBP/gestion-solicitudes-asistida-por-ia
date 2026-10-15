@@ -1,0 +1,14 @@
+{
+  "comando": "npm run test:e2e -- --retries=0",
+  "inicioUTC": "2026-10-15T20:13:22.4200478Z",
+  "finUTC": "2026-10-15T20:14:18.4740960Z",
+  "salida": 0,
+  "proyectoCompose": "gestion-solicitudes-ag014",
+  "baseURL": "http://127.0.0.1:18080",
+  "recursoAnteriorV7": "062d8783-3415-4243-b9da-86145eb29668",
+  "decisionV5Real": true,
+  "fuentes": "fuentes-corregidas-06.json",
+  "bundle": "main-WKPT366M.js",
+  "css": "styles-6GABB4AX.css",
+  "proyectoFrontend": "gestion-solicitudes-ag014-ui06"
+}

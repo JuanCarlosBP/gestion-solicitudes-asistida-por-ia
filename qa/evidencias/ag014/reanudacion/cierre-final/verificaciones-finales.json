@@ -1,0 +1,15 @@
+{
+  "resultado": "PASS",
+  "nota": "El manifiesto de entrega se genera inmediatamente después de este registro; cierre de contenido y pausa en cierre.json.",
+  "sintaxisManifiesto": "PASS",
+  "finVerificaciones": "2026-10-15T22:22:38.6657259+02:00",
+  "inicioObservado": "2026-10-15T20:09:15.0000000+02:00",
+  "enlaces": 699,
+  "duracionTotalObservada": "02:13:23",
+  "cambiosFuentesProbadas": [],
+  "ubicacionesPatronesSecretos": 0,
+  "csv": "11campos correctos y42676bytes anteriores intactos",
+  "fuentesFrontend": 33,
+  "fuentesBackend": 130,
+  "destinosAusentes": 0
+}

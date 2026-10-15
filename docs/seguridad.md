@@ -285,3 +285,21 @@ descriptor mínimo24h; ninguna credencial ni cuerpo. La retención del servidor
 no tiene purga automática por D00607; plazo jurídico/archivo pendientes007/008.
 Requisitos y comprobaciones en [006](../especificaciones/006-concurrencia-idempotencia/validacion.md),
 sin afirmar cobertura integral de seguridad ni rendimiento productivo.
+
+## Aplicación al historial007 — AG-014
+
+D-007-01–10 autoriza historia mínima de negocio con fuente V7/V5, permisos
+vigentes por recurso y ausencia de backfill. El acceso al catálogo no concede
+historial de proveedor. La unión multirrol mantiene límites004/005 y el resumen
+cuenta después de aplicar visibilidad. Revocar roles/habilitación afecta también
+las consultas de eventos antiguos; no se confía solo en roles del JWT.
+
+Los eventos nuevos comparten transacción con negocio e idempotencia. Solo
+SELECT/INSERT de eventos para aplicación, sin API mutable ni purga. La BD
+administrativa sigue pudiendo alterar datos; no se afirma integridad criptográfica.
+Minimización excluye secretos, cuerpo/cabeceras, fiscal/contactos, IP completa,
+descripción/conceptos y texto de decisión de las proyecciones. El detalleV5
+autorizado conserva comentario/motivo. Nombres visibles fotografiados son datos
+personales mínimos, sujetos a acceso/finalidad y decisión posterior de retención.
+La [validación007](../especificaciones/007-historial-auditoria/validacion.md)
+registra resultados reales y pendientes; no constituye certificación integral.

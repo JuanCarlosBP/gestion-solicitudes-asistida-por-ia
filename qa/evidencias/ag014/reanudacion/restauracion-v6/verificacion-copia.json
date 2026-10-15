@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-15T21:46:56.8858129+02:00",
+  "datosIguales": true,
+  "migracionesIguales": true,
+  "originalConservado": true,
+  "operacion": "Restauración de copia ficticia V6; se omite solo CREATE SCHEMA gestion existente y vacío; no se borran tablas ni recursos",
+  "resultado": "PASS"
+}

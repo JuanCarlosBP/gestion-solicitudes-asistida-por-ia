@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-10-15T18:20:39.270Z",
+  "inicioObservado": "2026-10-15T20:09:15+02:00",
+  "java": "21.0.12.1",
+  "node": "24.13.0",
+  "npm": "11.6.2",
+  "backendCompile": "PASS",
+  "frontendBuild": "PASS",
+  "protegidos": 1454,
+  "docker": "BLOQUEADO: socket temporal externo dockerInference inaccesible; permiso reparación pendiente",
+  "resultado": "PARCIAL: construcción disponible; PostgreSQL/Compose pendientes",
+  "limite": "Reconocimiento cerrado dentro de15min; continúa trabajo independiente. No se omite PostgreSQL."
+}

@@ -1,0 +1,42 @@
+AG-014 frontend — entrega para integración y revisión
+Fecha: 2026-10-15, Europe/Madrid. Node v24.13.0; npm 11.6.2.
+Propietario: frontend_007; frontend/** y evidencia frontend-* propia.
+Fuentes: frontend-fuentes-01.json (27 archivos, SHA256, sin Git).
+
+Implementado: módulo historial (modelo, cliente, filtros, permisos y timeline);
+rutas global y directas; integración en solicitud/proveedor; resumen autenticado
+conservando salud; navegación y estados accesibles. La API mantiene autoridad
+final. Sin dependencias nuevas ni escritura de eventos desde el cliente.
+
+Esperado: HA01/03/04/05/06/07/08 de cliente, regresión frontend001–006 y diez
+recorridos E2E completos.
+
+Ejecutado y observado:
+- Tipos PASS: frontend-typecheck-05.log.
+- Lint PASS: frontend-lint-05.log.
+- Formato PASS: frontend-format-check-05.log.
+- 476 pruebas PASS en 23 archivos: frontend-tests-completos-05.log.
+- Build PASS: frontend-build-05.log.
+
+Revisión01: comparación exacta de instantes con 1–9 decimales y desplazamiento
+page*size<=100000 alineados; rango invertido de un nanosegundo y extremos probados.
+Reaplicar la misma URL tras un error es recuperable; el regreso al listado no
+traslada los filtros del historial. Ambos comportamientos tienen pruebas.
+
+Las regresiones de páginas004–006 aíslan el cliente nuevo con un historial vacío;
+las pruebas007 verifican HTTP integrado y visibilidad por rol. No se retiraron
+criterios anteriores. La primera comprobación de formato detectó tres specs;
+se reformatearon con el ejecutable local y las siguientes comprobaciones pasaron.
+No hubo pruebas fallidas ocultadas ni reintentos.
+
+Pendiente: ejecutar frontend/e2e/historial.spec.ts y la regresión E2E completa
+contra Docker/PostgreSQL reales cuando el coordinador libere la ventana.
+Aún no hay capturas ni medidas de contraste ejecutadas. E2E10 prepara doce
+capturas (cuatro vistas × 360/768/1440), teclado/foco, desbordamiento y contraste
+>=4.5:1 en una muestra acotada. E2E07 requiere E2E_HISTORIAL_ANTERIOR_ID; el flag
+E2E_HISTORIAL_ANTERIOR_DECISION=true exige una decisión V5 anterior real.
+E2E_AJENO_CORREO procede de las fixtures de QA de aprobaciones.
+
+Siguiente paso: integración E2E coordinada y revisión independiente final.
+Aceptación humana pendiente. Sin comandos Git, despliegues ni cambios fuera
+del workspace o de los archivos asignados.

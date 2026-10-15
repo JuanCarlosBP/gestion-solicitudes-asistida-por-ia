@@ -1,0 +1,22 @@
+{
+  "contenedoresActivos": [],
+  "fecha": "2026-10-15T22:15:25.7820604+02:00",
+  "previos": {
+    "imagenes": 13,
+    "volumenes": 4,
+    "contenedores": 11
+  },
+  "recursosPreviosAusentes": {
+    "imagenes": [],
+    "volumenes": [],
+    "contenedores": []
+  },
+  "eliminacionEjecutada": false,
+  "resultado": "PASS",
+  "restablecimientoFabrica": false,
+  "finales": {
+    "imagenes": 20,
+    "volumenes": 17,
+    "contenedores": 30
+  }
+}

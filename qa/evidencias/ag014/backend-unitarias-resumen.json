@@ -1,0 +1,109 @@
+{
+  "fecha": "2026-10-15T18:35:58.212Z",
+  "total": {
+    "tests": 122,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "filas": [
+    {
+      "archivo": "TEST-es.gestionsolicitudes.historial.http.FiltrosHistorialTest.xml",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest.xml",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.identidad.http.CookiesIdentidadTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest.xml",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest.xml",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest.xml",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.proveedores.http.ErroresProveedorTest.xml",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest.xml",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "archivo": "TEST-es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest.xml",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

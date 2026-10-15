@@ -1,0 +1,6 @@
+{
+  "inicio": "2026-10-15T22:04:50.2863775+02:00",
+  "fin": "2026-10-15T22:04:51.8480287+02:00",
+  "comando": "docker compose -p gestion-solicitudes-ag014-ui04 -f qa/compose-frontend-conservado.yaml up --no-build --no-recreate --wait",
+  "salida": 0
+}

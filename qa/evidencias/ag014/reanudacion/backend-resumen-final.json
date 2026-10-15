@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-10-15T21:53:50.3508747+02:00",
+  "salida": 0,
+  "unitarias": 122,
+  "integracion": 125,
+  "suites": 22,
+  "pruebas": 247.0,
+  "fallos": 0.0,
+  "errores": 0.0,
+  "omitidas": 0.0,
+  "spotless": "PASS",
+  "spotbugsHallazgos": 0,
+  "spotbugsErrores": 0,
+  "contenedoresQa": 11,
+  "qaNoDetenidos": 0,
+  "qaConSesionReaper": 0,
+  "qaSinVolumen": 0,
+  "recursosPreviosAusentes": {
+    "contenedores": [],
+    "volumenes": [],
+    "imagenes": []
+  },
+  "fuentesFinales": 130,
+  "produccionModificada": false,
+  "gitEjecutado": false,
+  "falloPrevio": "Guard del helper de conservación: paquete compartido sin Implementation-Version; una corrección test-only, focused02 y verify01 PASS",
+  "medicionLocal": {
+    "pagina": 20,
+    "httpMsVerify": 10,
+    "eventos": 251,
+    "tablaIndicesBytes": 311296,
+    "httpMsFocused": 11
+  }
+}

@@ -1,0 +1,19 @@
+# Solo QA local AG-014: archivo independiente para conservar los frontends previos.
+# Comparte la red del backend de QA; no crea PostgreSQL ni volúmenes adicionales.
+# No usar como configuración de despliegue.
+name: gestion-solicitudes-ag014-ui05
+services:
+  frontend:
+    image: gestion-solicitudes-ag014-frontend:correccion-04
+    build: ../frontend
+    ports: ["127.0.0.1:18080:8080"]
+    networks: [web]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: "no"
+networks:
+  web:
+    external: true
+    name: gestion-solicitudes-ag014_web

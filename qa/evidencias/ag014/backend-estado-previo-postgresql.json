@@ -1,0 +1,17 @@
+{
+  "fecha": "2026-10-15T20:28:24.0703443+02:00",
+  "compilacion": "PASS",
+  "unitarias": 122,
+  "unitarias_nuevas": 23,
+  "unitarias_omitidas": 0,
+  "spotbugs_hallazgos": 0,
+  "integracion_007_preparada": 13,
+  "integracion_007_ejecutada": false,
+  "motivo_pendiente": "Docker no disponible; pendiente decisión humana sobre reparación externa al workspace",
+  "migraciones_previas": "V1-V6 sin editar",
+  "git_ejecutado": false,
+  "comando_unitarias": "mvnw.cmd -B spotless:apply test spotbugs:check -DargLine=-javaagent:<workspace>/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar",
+  "evidencia_unitarias": "backend-unitarias-estatico-02.log",
+  "evidencia_estatico": "backend-estatico-dependencias-03.log",
+  "limite_offset": 100000
+}

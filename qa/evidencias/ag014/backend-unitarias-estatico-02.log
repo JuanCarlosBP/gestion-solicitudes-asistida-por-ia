@@ -1,0 +1,152 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:apply (default-cli) @ gestion-solicitudes ---
+[INFO] clean file: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\test\java\es\gestionsolicitudes\historial\integracion\HistorialIT.java
+[INFO] Spotless.Java is keeping 113 files clean - 1 were changed to be clean, 0 were already clean, 112 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default) @ gestion-solicitudes ---
+[INFO] Spotless.Java is keeping 113 files clean - 0 needs changes to be clean, 0 were already clean, 113 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gestion-solicitudes ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 7 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gestion-solicitudes ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gestion-solicitudes ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 22 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] /C:/Users/carli/gestion-solicitudes-asistida-por-ia/backend/src/test/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperacionesTest.java: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\test\java\es\gestionsolicitudes\operaciones\aplicacion\ServicioOperacionesTest.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/carli/gestion-solicitudes-asistida-por-ia/backend/src/test/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperacionesTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.historial.http.FiltrosHistorialTest
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.199 s -- in es.gestionsolicitudes.historial.http.FiltrosHistorialTest
+[INFO] Running es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+20:25:17.502 [main] INFO es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacion -- IDENTIDAD_LOGIN_RECHAZADO
+20:25:17.505 [main] INFO es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacion -- IDENTIDAD_LOGIN_RECHAZADO
+20:25:17.518 [main] WARN es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacion -- IDENTIDAD_REFRESH_REUTILIZADO sesionId=650a8cf1-53c7-42c3-a13f-34117cd8ae95
+20:25:17.543 [main] INFO es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacion -- IDENTIDAD_SESION_CERRADA sesionId=219f6c35-89f1-46ef-9b1f-905337f1e56a
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.677 s -- in es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest
+[INFO] Running es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.961 s -- in es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest
+[INFO] Running es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest
+ARGON2ID_MEDICION hashMs=22 memoriaKiB=19456 iteraciones=2 paralelismo=1; muestra local, no garant�a temporal
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 s -- in es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest
+[INFO] Running es.gestionsolicitudes.identidad.http.CookiesIdentidadTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in es.gestionsolicitudes.identidad.http.CookiesIdentidadTest
+[INFO] Running es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.330 s -- in es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest
+[INFO] Running es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] Running es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s -- in es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest
+[INFO] Running es.gestionsolicitudes.proveedores.http.ErroresProveedorTest
+20:25:19.363 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.gestionsolicitudes.proveedores.http.ErroresProveedorTest]: ErroresProveedorTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:25:19.574 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.proveedores.http.ErroresProveedorTest
+20:25:19.577 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.gestionsolicitudes.proveedores.http.ErroresProveedorTest]: ErroresProveedorTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:25:19.587 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.proveedores.http.ErroresProveedorTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-15T20:25:20.123+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.p.http.ErroresProveedorTest          : Starting ErroresProveedorTest using Java 21.0.12.1 with PID 22516 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T20:25:20.125+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.p.http.ErroresProveedorTest          : No active profile set, falling back to 1 default profile: "default"
+2026-10-15T20:25:22.420+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-15T20:25:22.421+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-15T20:25:22.421+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-15T20:25:22.444+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.p.http.ErroresProveedorTest          : Started ErroresProveedorTest in 2.77 seconds (process running for 6.407)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.376 s -- in es.gestionsolicitudes.proveedores.http.ErroresProveedorTest
+[INFO] Running es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest
+[INFO] Running es.gestionsolicitudes.salud.http.ControladorSaludTest
+2026-10-15T20:25:22.660+02:00  INFO 22516 --- [gestion-solicitudes] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.gestionsolicitudes.salud.http.ControladorSaludTest]: ControladorSaludTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-15T20:25:22.703+02:00  INFO 22516 --- [gestion-solicitudes] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.salud.http.ControladorSaludTest
+2026-10-15T20:25:22.705+02:00  INFO 22516 --- [gestion-solicitudes] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [es.gestionsolicitudes.salud.http.ControladorSaludTest]: ControladorSaludTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-15T20:25:22.711+02:00  INFO 22516 --- [gestion-solicitudes] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.salud.http.ControladorSaludTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-15T20:25:22.751+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.salud.http.ControladorSaludTest      : Starting ControladorSaludTest using Java 21.0.12.1 with PID 22516 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T20:25:22.752+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.salud.http.ControladorSaludTest      : No active profile set, falling back to 1 default profile: "default"
+2026-10-15T20:25:23.177+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-15T20:25:23.178+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-15T20:25:23.180+02:00  INFO 22516 --- [gestion-solicitudes] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-15T20:25:23.189+02:00  INFO 22516 --- [gestion-solicitudes] [           main] e.g.salud.http.ControladorSaludTest      : Started ControladorSaludTest in 0.473 seconds (process running for 7.152)
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.649 s -- in es.gestionsolicitudes.salud.http.ControladorSaludTest
+[INFO] Running es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 s -- in es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest
+[INFO] Running es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest
+[INFO] Running es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.050 s -- in es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 122, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] >>> spotbugs:4.10.5.0:check (default-cli) > :spotbugs @ gestion-solicitudes >>>
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:spotbugs (spotbugs) @ gestion-solicitudes ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.10.5.0:check (default-cli) < :spotbugs @ gestion-solicitudes <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:check (default-cli) @ gestion-solicitudes ---
+[INFO] BugInstance size is 3
+[INFO] Error size is 0
+[INFO] Total bugs: 3
+[ERROR] Medium: new es.gestionsolicitudes.historial.aplicacion.RegistroHistorial(RepositorioHistorial) may expose internal representation by storing an externally mutable object into RegistroHistorial.repositorio [es.gestionsolicitudes.historial.aplicacion.RegistroHistorial] At RegistroHistorial.java:[line 13] EI_EXPOSE_REP2
+[ERROR] Medium: new es.gestionsolicitudes.historial.aplicacion.ServicioHistorial(RepositorioHistorial, RepositorioOperaciones, PlatformTransactionManager) may expose internal representation by storing an externally mutable object into ServicioHistorial.repositorio [es.gestionsolicitudes.historial.aplicacion.ServicioHistorial] At ServicioHistorial.java:[line 22] EI_EXPOSE_REP2
+[ERROR] Medium: new es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores(RepositorioProveedores, Clock, PlatformTransactionManager, ServicioOperaciones, RegistroHistorial) may expose internal representation by storing an externally mutable object into ServicioProveedores.repositorio [es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores] At ServicioProveedores.java:[line 37] EI_EXPOSE_REP2
+[INFO] 
+
+
+To see bug detail using the Spotbugs GUI, use the following command "mvn spotbugs:gui"
+
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.284 s
+[INFO] Finished at: 2026-10-15T20:25:31+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:check (default-cli) on project gestion-solicitudes: failed with 3 bugs and 0 errors -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
