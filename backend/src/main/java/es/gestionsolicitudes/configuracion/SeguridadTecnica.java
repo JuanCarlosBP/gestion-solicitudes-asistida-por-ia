@@ -65,7 +65,31 @@ public class SeguridadTecnica {
                                     .hasRole("ADMINISTRADOR");
                             reglas.requestMatchers(HttpMethod.PUT, "/api/proveedores/*")
                                     .hasRole("ADMINISTRADOR");
-                            reglas.requestMatchers(HttpMethod.GET, "/api/identidad/yo")
+                            reglas.requestMatchers(
+                                            HttpMethod.GET,
+                                            "/api/solicitudes",
+                                            "/api/solicitudes/*")
+                                    .hasAnyRole(
+                                            "SOLICITANTE",
+                                            "SUPERVISOR",
+                                            "AUDITOR",
+                                            "ADMINISTRADOR");
+                            reglas.requestMatchers(
+                                            HttpMethod.POST,
+                                            "/api/solicitudes",
+                                            "/api/solicitudes/*/presentar")
+                                    .hasRole("SOLICITANTE");
+                            reglas.requestMatchers(HttpMethod.PUT, "/api/solicitudes/*")
+                                    .hasRole("SOLICITANTE");
+                            reglas.requestMatchers(
+                                            HttpMethod.POST,
+                                            "/api/solicitudes/*/aprobar",
+                                            "/api/solicitudes/*/rechazar")
+                                    .hasRole("SUPERVISOR");
+                            reglas.requestMatchers(
+                                            HttpMethod.GET,
+                                            "/api/identidad/yo",
+                                            "/api/identidad/supervisores")
                                     .authenticated()
                                     .anyRequest()
                                     .denyAll();

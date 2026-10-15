@@ -96,7 +96,7 @@ class ProveedoresIT {
         opciones.setProperty("logServerErrorDetail", "false");
         fuente.setConnectionProperties(opciones);
         administrador = new JdbcTemplate(fuente);
-        // Escenario de actualización: una base V1/V2 existente recibe solo V3 al arrancar.
+        // Escenario de actualización: una base V1/V2 existente recibe V3/V4 al arrancar.
         var anterior =
                 Flyway.configure()
                         .dataSource(
@@ -134,7 +134,7 @@ class ProveedoresIT {
                                         "spring.main.banner-mode",
                                         "off"))
                         .run("--server.port=0");
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(3);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(5);
         assertThat(
                         administrador.queryForObject(
                                 "SELECT count(*) FROM gestion.usuarios WHERE id=?",
@@ -192,7 +192,8 @@ class ProveedoresIT {
 
     @BeforeEach
     void limpiar() {
-        administrador.execute("TRUNCATE gestion.proveedores");
+        administrador.execute(
+                "TRUNCATE gestion.decisiones_solicitud, gestion.proveedores, gestion.solicitudes, gestion.conceptos_solicitud, gestion.operaciones_idempotentes_solicitud");
         eventos.list.clear();
     }
 
