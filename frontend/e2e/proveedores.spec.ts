@@ -1,4 +1,5 @@
 import { expect, Page, test } from '@playwright/test';
+import { randomUUID } from 'node:crypto';
 import { join } from 'node:path';
 
 type RolDemo = 'ADMINISTRADOR' | 'SOLICITANTE' | 'SUPERVISOR' | 'AUDITOR';
@@ -40,10 +41,11 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
   browser,
 }) => {
   test.setTimeout(120000);
-  const marca = Date.now().toString(36);
-  const prefijo = `AG011 ${marca}`;
+  const marca = randomUUID();
+  const prefijo = `E2E ${marca}`;
   const fiscal = `FICTICIO-${marca}`;
-  const fiscalUnicode = '😀'.repeat(33) + marca;
+  // 63 puntos de código y 90 unidades UTF-16: conserva el caso Unicode y la unicidad.
+  const fiscalUnicode = '😀'.repeat(27) + marca;
   const denominacionUnicode = `${prefijo} B ${'😀'.repeat(65)}`;
   let rutaDetalle = '';
   let escriturasConCsrf = 0;
@@ -216,7 +218,14 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
       page.getByRole('heading', { name: denominacionUnicode, exact: true }),
     ).toBeVisible();
     await page.getByRole('link', { name: 'Volver a proveedores', exact: true }).click();
-    await page.getByLabel('Denominación contiene', { exact: true }).fill('😀'.repeat(65));
+    // El foco se asigna después de completar y renderizar la consulta inicial.
+    // Evita escribir filtros mientras Angular todavía restaura los de la URL.
+    await expect(page.getByRole('heading', { name: 'Proveedores', exact: true })).toBeFocused();
+    await expect(page.getByRole('form', { name: 'Filtros de proveedores' })).toHaveAttribute(
+      'aria-busy',
+      'false',
+    );
+    await page.getByLabel('Denominación contiene', { exact: true }).fill(denominacionUnicode);
     await page.getByLabel('Identificador fiscal exacto', { exact: true }).fill(fiscalUnicode);
     await expect(page.getByLabel('Identificador fiscal exacto', { exact: true })).toHaveValue(
       fiscalUnicode,
@@ -226,6 +235,12 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
     await page.getByLabel('Resultados por página (1–100)', { exact: true }).fill('1');
     await page.getByLabel('Orden', { exact: true }).selectOption('denominacion,asc');
     await page.getByRole('button', { name: 'Buscar', exact: true }).click();
+    await expect(page).toHaveURL(
+      (url) =>
+        url.searchParams.get('denominacion') === denominacionUnicode &&
+        url.searchParams.get('identificadorFiscal') === fiscalUnicode &&
+        url.searchParams.get('size') === '1',
+    );
     await expect(page.getByRole('status')).toHaveText('1 proveedores encontrados.');
     await expect(page.getByRole('link', { name: denominacionUnicode, exact: true })).toBeVisible();
     await page.getByLabel('Denominación contiene', { exact: true }).fill(prefijo);
