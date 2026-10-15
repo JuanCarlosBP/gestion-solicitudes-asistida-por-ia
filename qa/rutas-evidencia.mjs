@@ -21,11 +21,11 @@ export function rutaDelProyecto(valor) {
   return destino;
 }
 
-/** AG-003 a AG-012 son evidencia de solo lectura, incluso con destino explícito. */
+/** AG-003 a AG-013 son evidencia de solo lectura, incluso con destino explícito. */
 export function prepararDirectorioEvidencias(valor = process.env.QA_EVIDENCE_DIR || 'tmp/evidencias/local') {
   const destino = rutaDelProyecto(valor);
   const relativa = relative(raizProyecto, destino).replaceAll('\\', '/');
-  if (/^qa\/evidencias\/ag(?:00[3-9]|01[0-2])(?:\/|$)/i.test(relativa) || /^\.git(?:\/|$)/i.test(relativa)) {
+  if (/^qa\/evidencias\/ag(?:00[3-9]|01[0-3])(?:\/|$)/i.test(relativa) || /^\.git(?:\/|$)/i.test(relativa)) {
     throw new Error('El destino QA está protegido; las evidencias históricas no se pueden sobrescribir.');
   }
   mkdirSync(destino, { recursive: true });

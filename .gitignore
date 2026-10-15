@@ -38,6 +38,7 @@ test-results/
 *.log
 !qa/evidencias/ag011/backend-verify-final.log
 !qa/evidencias/ag013/**/*.log
+!qa/evidencias/ag014/**/*.log
 logs/
 
 tmp/
