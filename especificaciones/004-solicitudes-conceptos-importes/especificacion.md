@@ -1,142 +1,379 @@
 # Especificación — 004 Solicitudes, conceptos e importes
 
-**Estado:** Borrador pendiente de aprobación humana
-**Origen:** Trabajo opcional autorizado en AG-011 después de verificar localmente003.
-**Fecha:** 2026-10-14. No autoriza plan, tareas ni implementación.
+**Estado:** Aprobada por decisión humana AG-012
+**Origen:** orden humana integral AG-012 recibida el 2026-10-14, D-004-01–11.
+**Inicio:** 2026-10-14 23:34:02 +02:00; **límite:** 2026-10-15 09:34:02 +02:00, Europe/Madrid.
 
-## Propósito y fuentes
+## Propósito y autorización
 
-Preparar una porción vertical para crear y consultar solicitudes, gestionar sus
-conceptos, calcular importes en el servidor, guardar borradores y presentarlos
-para revisión. Este documento distingue el alcance general ya aprobado de las
-reglas específicas que todavía debe decidir la persona responsable.
+Crear, consultar y listar solicitudes; editar cabecera y conceptos como agregado,
+calcular importes exactos, guardar borradores y presentarlos atómicamente.
+La orden aprueba expresamente esta especificación, su plan, tareas e implementación.
+Sustituye las preguntas pendientes del borrador AG-011. Verificar localmente no
+significa aceptar, integrar ni publicar. Git pertenece a la persona responsable.
 
-Fuentes: [visión y alcance](../../docs/vision-y-alcance.md),
-[seguridad](../../docs/seguridad.md), [calidad](../../docs/politicas/calidad.md),
-[002 identidad](../002-identidad-acceso/especificacion.md) y
-[003 proveedores](../003-proveedores/especificacion.md).
-La verificación local de003 no equivale a su aceptación o integración.
+Fuentes: [002](../002-identidad-acceso/especificacion.md),
+[003](../003-proveedores/especificacion.md), [seguridad](../../docs/seguridad.md),
+[calidad](../../docs/politicas/calidad.md) y [visión](../../docs/vision-y-alcance.md).
 
-La condición temporal para redactar este borrador está registrada en
-[AG-011](../../qa/evidencias/ag011/condicion-borrador004.json).
-No existen plan, tareas, validación, migraciones ni código004 por este encargo.
+## Decisiones humanas aprobadas
 
-## Alcance general disponible
+El texto siguiente conserva íntegramente las once decisiones del encargo.
+D-004-01 — Cabecera
 
-La visión aprobada incluye solicitudes con conceptos e importes, borradores y
-presentación; consultas/listados/filtros, permisos por acción/recurso, concurrencia
-sin sobrescritura y atomicidad. El backend es autoridad sobre cálculos, estados
-y autorización. Los actores generales son solicitante, supervisor, auditor y
-administrador; el nombre del rol no concede permisos aún no definidos.
+Una solicitud tiene:
 
-El ciclo de referencia contempla Borrador, Presentada, Aprobada y Rechazada.
-Las transiciones y condiciones exactas siguen pendientes. Se propone que004
-abarque Borrador y Presentada; aprobación/rechazo corresponderían a005.
-La prohibición de aprobar una solicitud propia sigue vigente para ese incremento.
+- id UUID;
+- numero público generado por backend con formato `SOL-AAAA-NNNNNN`;
+- autor obtenido de la identidad autenticada;
+- asunto obligatorio, 3–160 caracteres;
+- descripcion opcional, máximo 2.000 caracteres;
+- proveedor opcional mientras es borrador;
+- supervisor opcional mientras es borrador;
+- moneda fija EUR;
+- estado;
+- importe total calculado;
+- version;
+- creadoEn, actualizadoEn y presentadoEn del servidor.
 
-## Propuesta para clarificación
+El número se genera al crear, es único e inmutable.
+El cliente nunca decide autor, número, estado, total, versión o fechas.
 
-Las siguientes reglas son propuestas revisables, no decisiones aprobadas:
+D-004-02 — Borrador y presentación
 
-- Una solicitud reúne cabecera, autor, proveedor del catálogo, conceptos, importe
-  calculado, estado, versión e instantes del servidor.
-- Los conceptos pertenecen a una sola solicitud y se modifican junto a ella de
-  forma coherente; no son un catálogo independiente salvo decisión posterior.
-- El borrador admite edición autorizada. Presentar es una operación de negocio
-  explícita, no un cambio libre del campo estado enviado por el cliente.
-- La presentación valida íntegramente cabecera, conceptos, importes y proveedor
-  y se aplica en una sola transacción. Un error conserva el borrador anterior.
-- Los importes se representan con decimales exactos. El cliente puede mostrar
-  una previsualización, pero el servidor vuelve a calcular y decide el resultado.
-- Una versión conocida de la solicitud protege la edición de cabecera/conceptos
-  y presentación; no se aceptan sobrescrituras silenciosas.
-- La interfaz ofrece lista, detalle y formulario, estados de carga/vacío/error,
-  conflictos comprensibles, navegación directa, recarga y uso por teclado.
+Para crear un borrador se exige únicamente un asunto válido.
 
-No se fijan todavía campos obligatorios, longitudes, moneda, escala, redondeo,
-permisos, rutas HTTP, estados editables ni operaciones de eliminación. Las
-preguntas siguientes deben resolverse antes de convertir propuestas en contrato.
+Un borrador puede estar temporalmente sin proveedor, supervisor o conceptos.
 
-## Decisiones humanas necesarias
+Para presentar se exige:
 
-| ID | Decisión pendiente | Efecto en requisitos y pruebas |
-|---|---|---|
-| D-004-01 | ¿Qué campos de cabecera se requieren para guardar borrador y para presentar? ¿Número público, asunto, descripción u otros? | Definir límites, búsqueda, DTO y datos sensibles; no copiar automáticamente los del proveedor. |
-| D-004-02 | ¿El borrador puede carecer de proveedor o conceptos? ¿Cuál es el mínimo al presentar y el máximo de conceptos? | Distinguir incompleto permitido de dato inválido y acotar tamaño de petición. |
-| D-004-03 | ¿Qué puede consultar/crear/editar/presentar cada rol y sobre qué solicitudes: propias, asignadas o todas? ¿Cómo se combinan roles? | Matriz por acción/recurso; auditor no adquiere escritura por su función de consulta y administrador no evita reglas. |
-| D-004-04 | ¿Se elige siempre proveedor activo? ¿Qué ocurre si queda inactivo mientras se edita/presenta? ¿Se conserva referencia actual o instantánea de datos? | Integridad temporal, privacidad, concurrencia con003 y contenido visible después de presentar. |
-| D-004-05 | ¿Qué campos tiene cada concepto: descripción, cantidad, unidad, precio, posición? ¿Qué límites y valores cero/negativos se permiten? | Modelo de línea, validaciones y casos de frontera; no inventar unidades ni reglas fiscales. |
-| D-004-06 | ¿Moneda única o varias? ¿Qué monedas, precisión de cantidad/precio/total, modo y punto de redondeo? ¿Se admiten impuestos/descuentos? | Fórmula aprobada con ejemplos exactos, desbordamientos y reconciliación línea/total; ningún cálculo aprobado todavía. |
-| D-004-07 | ¿Qué estados puede editarse y qué ocurre al presentar? ¿Cabe retirar, reabrir, anular o eliminar un borrador? | Transiciones cerradas, retención y permisos; borrar físicamente no se presume permitido. |
-| D-004-08 | ¿Cómo se selecciona el revisor/supervisor para la futura005? ¿La presentación ya exige asignación? | Definir frontera004/005 sin implementar aprobaciones ni reglas de asignación inventadas. |
-| D-004-09 | ¿Qué exige repetir guardar/presentar y cómo se distingue de una versión obsoleta? | Definir efectos únicos y códigos;006 ampliará idempotencia transversal, sin dejar indefinida la operación local. |
-| D-004-10 | ¿Qué búsquedas, filtros, orden y tamaño/volumen previsto necesita el listado? | Contrato acotado y pruebas de permisos/páginas; no copiar automáticamente defaults003. |
-| D-004-11 | ¿Qué contenido puede mostrarse por rol y registrarse técnicamente? ¿Retención de borradores y solicitudes presentadas? | Minimización de datos, visibilidad por recurso, eventos sin cuerpos y frontera con historial007. |
+- proveedor activo;
+- supervisor habilitado con rol SUPERVISOR;
+- supervisor distinto del autor;
+- entre 1 y 100 conceptos;
+- todos los conceptos válidos;
+- total mayor que 0;
+- versión actual;
+- clave de idempotencia válida.
 
-Estas preguntas no piden nuevas decisiones para003 y no alteran su catálogo.
+D-004-03 — Permisos y visibilidad
 
-## Requisitos candidatos y criterios observables
+SOLICITANTE:
+- crea solicitudes propias;
+- consulta, lista, modifica y presenta sus propios borradores;
+- consulta sus solicitudes presentadas;
+- no modifica solicitudes presentadas.
 
-IDs estables propuestos para revisar tras las decisiones anteriores. Ninguno se
-marca aprobado, implementado o probado en AG-011.
+SUPERVISOR:
+- consulta solicitudes presentadas que tenga asignadas;
+- no modifica borradores;
+- las decisiones corresponden a 005.
 
-| ID | Capacidad candidata | Criterio observable que deberá concretarse |
-|---|---|---|
-| SCI-01 | Crear borrador | Usuario autorizado obtiene identificador/autor/tiempos del servidor; entrada ajena o inválida no persiste. |
-| SCI-02 | Consultar detalle | Solo se muestran solicitudes y campos autorizados; inexistente/no visible usa respuesta controlada. |
-| SCI-03 | Listar y buscar | Filtros/orden/páginas cerrados, límites explícitos y visibilidad aplicados por backend. |
-| SCI-04 | Editar cabecera | Solo campos y estados aprobados, preservando identificador/autor/fechas de servidor. |
-| SCI-05 | Gestionar conceptos | Alta/edición/reordenación/retirada según reglas aprobadas; ninguna línea queda huérfana ni modifica otra solicitud. |
-| SCI-06 | Calcular importes | Resultado exacto conforme a fórmula/moneda/redondeo aprobados; no confiar en total enviado por cliente. |
-| SCI-07 | Presentar | Validación integral y transición explícita atómica; ningún estado parcial después de un fallo. |
-| SCI-08 | Aplicar permisos | Matriz por rol/acción/recurso y combinación aprobada, comprobada llamando directamente a REST. |
-| SCI-09 | Evitar conflictos | Dos escrituras incompatibles no se sobrescriben; repetición de presentación tiene resultado definido. |
-| SCI-10 | Gestionar proveedor | Comportamiento aprobado frente a proveedor inexistente/inactivo/cambiado durante la operación. |
-| SCI-11 | Interfaz accesible | Rutas directas/recarga, formularios/errores asociados, teclado/foco, móvil y conflicto recuperable. |
-| SCI-12 | Contrato y evidencias | OpenAPI, migración y documentación coherentes; regresión001–003 y pruebas propias sin omisiones. |
+AUDITOR:
+- consulta todas las solicitudes y estados;
+- no modifica ni presenta.
 
-## Seguridad, datos y contratos por concretar
+ADMINISTRADOR:
+- consulta todas las solicitudes;
+- no modifica solicitudes ajenas;
+- no evita reglas de negocio;
+- solo crea y modifica como solicitante si también tiene SOLICITANTE.
 
-Identidad proviene de002, nunca de un autor o rol enviado libremente en JSON.
-Cada operación debe validar acción y recurso, incluidos identificadores de líneas.
-Las operaciones mutables conservarán CSRF y la autoridad backend. Los errores
-no expondrán datos de otra solicitud, SQL, configuración o cuerpos sensibles.
+Los roles se combinan por unión de permisos explícitos.
+El backend aplica siempre acción + recurso + estado.
 
-La relación con proveedores debe resolverse mediante reglas explícitas; no se
-duplicarán proveedores ni se reutilizará su baja lógica para cambiar solicitudes.
-Las garantías de atomicidad, unicidad o concurrencia que se aprueben deben
-depender también de PostgreSQL. No se decide aquí una tabla ni migración concreta.
+D-004-04 — Proveedor y fotografía temporal
 
-Tras clarificar, el contrato deberá enumerar por operación: método/ruta, campos
-editables/servidor, visibilidad, validaciones, respuesta, errores estables, versión
-y comportamiento ante repetición. Una ruta propuesta no constituye API disponible.
+En borrador se conserva la referencia al proveedor actual.
 
-## Escenarios de aceptación que faltará concretar y ejecutar
+Si el proveedor se desactiva antes de presentar:
 
-Se prepararán ejemplos numéricos con resultados aprobados antes de implementar:
-fracciones, límites, redondeo en línea/total, cero/negativos y valores fuera de rango.
-Se comprobarán manipulación de totales, autor/estado/campos internos, líneas de
-otra solicitud, roles sin permiso y lectura de recursos no visibles.
+- el borrador continúa existiendo;
+- no puede presentarse hasta cambiarlo o reactivarlo.
 
-PostgreSQL real deberá acreditar rollback sin estados parciales y carreras entre
-edición/edición, edición/presentación y cambio del proveedor según D-004-04.
-La repetición de presentación se verificará según D-004-09, sin simular garantías
-de base de datos. Las migraciones futuras deberán preservar001–003.
+Al presentar se guarda una fotografía inmutable de:
 
-El recorrido E2E se fijará con usuarios ficticios: crear borrador, añadir conceptos,
-comprobar total, editar, gestionar conflicto y presentar; validar lectura por roles
-y reglas elegidas. Incluirá rutas directas/recarga, errores y teclado/foco/móvil.
-Se mantendrán verify backend, controles Angular, Compose, auditorías, CI y
-evidencias exclusivas de la ejecución futura. **No se ejecutó ninguna prueba004.**
+- denominación;
+- país fiscal;
+- identificador fiscal;
+- tipo de proveedor.
 
-## Exclusiones y puerta siguiente
+Después de presentar, la solicitud muestra esa fotografía aunque el catálogo cambie.
 
-No se incluyen aprobación/rechazo005, infraestructura transversal006, historial
-funcional007, publicación008, pagos/bancos, multiempresa, integraciones externas,
-datos reales ni reglas fiscales jurídicas inventadas. Cualquier ampliación exige
-actualizar primero la especificación y obtener decisión humana.
+D-004-05 — Conceptos
 
-Siguiente paso: responder D-004-01–11, conciliar requisitos/criterios y aprobar
-expresamente la especificación. Solo después corresponde un plan y tareas;
-implementación requiere su autorización. Este borrador no concede ninguna de
-esas aprobaciones y no altera el estado pendiente de aceptación/integración de003.
+Cada concepto tiene:
+
+- id UUID;
+- descripcion obligatoria, 1–300 caracteres;
+- cantidad decimal mayor que 0, precisión máxima 15 y escala 3;
+- unidad cerrada:
+  - UNIDAD;
+  - HORA;
+  - DIA;
+  - MES;
+  - KILOGRAMO;
+  - LITRO;
+  - METRO;
+  - SERVICIO;
+- precioUnitario mayor que 0, precisión 15 y escala 4;
+- importeLinea calculado por servidor, escala 2;
+- posicion entera positiva y única dentro de la solicitud.
+
+Los conceptos pertenecen exclusivamente a una solicitud.
+La edición de borrador reemplaza atómicamente cabecera y colección completa.
+No existen líneas huérfanas.
+
+D-004-06 — Cálculos monetarios
+
+Moneda única: EUR.
+
+No se incluyen:
+
+- impuestos;
+- descuentos;
+- recargos;
+- conversión de divisas.
+
+Cálculo:
+
+1. cantidad × precioUnitario;
+2. redondeo de cada línea a 2 decimales;
+3. modo HALF_UP;
+4. total = suma de líneas ya redondeadas.
+
+El servidor recalcula siempre.
+No acepta total ni importe de línea como autoridad del cliente.
+
+Límites:
+
+- cantidad máxima: 999999999999.999;
+- precio máximo: 99999999999.9999;
+- total máximo: 9999999999999.99;
+- desbordamiento o exceso: error controlado.
+
+Ejemplos obligatorios en pruebas:
+
+- 1 × 10.0000 = 10.00;
+- 2.500 × 4.1250 = 10.31;
+- 3 × 0.3350 = 1.01.
+
+D-004-07 — Estados
+
+004 implementa únicamente:
+
+- BORRADOR;
+- PRESENTADA.
+
+Transición permitida:
+
+BORRADOR → PRESENTADA
+
+El borrador del autor es editable.
+La solicitud presentada queda inmutable para 004.
+
+No se incluyen todavía:
+
+- retirar;
+- reabrir;
+- anular;
+- borrar físicamente;
+- aprobar;
+- rechazar.
+
+El cliente no puede escribir libremente el campo estado.
+
+D-004-08 — Supervisor
+
+El autor selecciona supervisor durante el borrador.
+
+Para presentar:
+
+- supervisor obligatorio;
+- usuario habilitado;
+- rol SUPERVISOR;
+- distinto del autor.
+
+Crear un endpoint autenticado de consulta acotada de supervisores para el selector.
+No devolver hashes, sesiones ni datos internos.
+La asignación queda fijada al presentar.
+No se implementa reasignación en 004.
+
+D-004-09 — Concurrencia e idempotencia local
+
+Guardar borrador:
+
+- requiere version esperada;
+- actualización condicional por id + version + estado BORRADOR;
+- conflicto: HTTP 409 `VERSION_OBSOLETA`.
+
+Presentar:
+
+- requiere cabecera `Idempotency-Key` con UUID;
+- primera ejecución válida presenta en una transacción;
+- repetir misma clave con misma operación devuelve el mismo resultado;
+- misma clave con petición incompatible devuelve HTTP 409;
+- dos claves concurrentes no producen dos presentaciones;
+- el estado y la versión también protegen la transición.
+
+Crear persistencia mínima de idempotencia para esta operación.
+006 generalizará el mecanismo; no dejar 004 sin garantía local.
+
+D-004-10 — Listado
+
+Volumen previsto inicial: hasta 100.000 solicitudes.
+
+Paginación:
+
+- page inicial 0;
+- size predeterminado 20;
+- máximo 100.
+
+Filtros:
+
+- numero exacto;
+- asunto contiene, sin distinguir mayúsculas y con acentos significativos;
+- estado;
+- proveedor;
+- autor, solo para roles con visibilidad global;
+- supervisor;
+- fechaDesde y fechaHasta.
+
+Orden predeterminado:
+
+- actualizadoEn descendente;
+- id ascendente como desempate.
+
+Campos ordenables cerrados:
+
+- numero;
+- creadoEn;
+- actualizadoEn;
+- importeTotal.
+
+La visibilidad se aplica antes de contar y devolver resultados.
+
+D-004-11 — Datos, eventos y retención
+
+Visibilidad:
+
+- solicitante: propias;
+- supervisor: asignadas y presentadas;
+- auditor/administrador: todas;
+- combinación de roles: unión explícita.
+
+Eventos técnicos:
+
+- crear borrador;
+- guardar borrador;
+- presentar;
+- duplicado idempotente;
+- conflicto de versión;
+- rechazo por proveedor/supervisor/conceptos inválidos.
+
+Registrar solo:
+
+- acción;
+- usuario;
+- solicitud;
+- resultado;
+- identificador de petición;
+- clave de idempotencia mediante hash o referencia no reutilizable.
+
+No registrar descripciones, conceptos completos, tokens ni datos fiscales completos.
+
+No hay borrado físico.
+Retención y borrado jurídico definitivo se decidirán en 007/008.
+
+
+## Excelencia visual aprobada
+
+La interfaz debe ser profesional, limpia y atractiva, no solo funcional.
+
+Mantener accesibilidad y añadir un sistema visual coherente sin dependencia
+externa nueva:
+
+- variables CSS para colores, tipografía, espaciado, radios, sombras y estados;
+- jerarquía visual clara;
+- cabecera y navegación consistentes;
+- tarjetas y paneles con profundidad moderada;
+- chips de estado;
+- tabla de conceptos clara en escritorio;
+- tarjetas o distribución legible en móvil;
+- resumen de importes destacado;
+- acciones principales y secundarias inequívocas;
+- barra de acciones/resumen visible sin dificultar teclado;
+- estados de carga, vacío, error, conflicto y éxito diseñados;
+- foco visible;
+- contraste suficiente;
+- movimiento mínimo y respeto a `prefers-reduced-motion`;
+- diseño comprobado en aproximadamente 360, 768 y 1440 px;
+- capturas de las pantallas principales.
+
+No introducir efectos llamativos impropios de una aplicación empresarial.
+No sacrificar claridad por decoración.
+Armonizar gradualmente inicio, acceso, cuenta y proveedores con los mismos tokens
+cuando pueda hacerse sin reescribir funcionalidad no afectada.
+
+La auditoría visual final completa se realizará en 008.
+
+## Criterios observables SCI-01 a SCI-14
+
+Esta numeración sustituye la tabla candidata del borrador; no son requisitos futuros.
+
+| ID | Criterio y evidencia exigida |
+|---|---|
+| SCI-01 | Crear solo como SOLICITANTE; asunto 3–160; 201/Location; identidad, número, fechas y versión0 del servidor; inválidos sin persistencia. |
+| SCI-02 | Detalle coherente y conceptos ordenados; referencia actual en borrador y fotografía presentada; inexistente/no visible404. |
+| SCI-03 | Todos los filtros AND y orden cerrado; acentos significativos/comodines literales; paginación limitada; visibilidad antes de conteo. |
+| SCI-04 | Reemplazo atómico de cabecera y colección de 0–100 conceptos en borrador; IDs exclusivos, posiciones positivas únicas; rollback. |
+| SCI-05 | Cálculo servidor HALF_UP por línea; ejemplos10.00/10.31/1.01; precisión/escala/límites y desbordamiento controlados; total cliente rechazado. |
+| SCI-06 | Proveedor opcional en borrador; inactividad conserva referencia y bloquea presentación; fotografía inmutable bajo concurrencia. |
+| SCI-07 | Selector mínimo acotado; presentación revalida supervisor habilitado con rol y distinto del autor. |
+| SCI-08 | Solo BORRADOR→PRESENTADA, 1–100 líneas válidas y total positivo; fecha, versión, fotografía y resultado en una transacción. |
+| SCI-09 | Matriz por acción/recurso/estado y unión de roles; ninguna escritura ajena; supervisor solo asignadas presentadas. |
+| SCI-10 | Versión obsoleta409 y carreras edición/edición/edición-presentación; UI conserva entrada y permite recargar. |
+| SCI-11 | Clave UUID obligatoria, mismo resultado al repetir, reuso incompatible409, misma clave y claves distintas concurrentes sin duplicación. |
+| SCI-12 | Cuatro rutas, query params, estados completos, estimación/total confirmado, selectores/confirmación; teclado/foco y360/768/1440px. |
+| SCI-13 | Bearer/CSRF/default deny/no-store; DTO cerrado/SQL parametrizado; errores seguros y eventos mínimos sin datos sensibles. |
+| SCI-14 | V4, OpenAPI, pruebas completas/regresión001–003, Compose/CI/auditorías y documentación/evidencias propias preservando históricos. |
+
+## Contrato y límites técnicos
+
+Contrato exacto en [plan](plan.md), que fija representaciones y no añade reglas de negocio.
+POST /api/solicitudes; GET /api/solicitudes/{id}; GET /api/solicitudes;
+PUT /api/solicitudes/{id}; POST /api/solicitudes/{id}/presentar;
+GET /api/identidad/supervisores. Bearer en todos, CSRF en escrituras.
+Errores {error:CODIGO}:400 SOLICITUD_INVALIDA;401 NO_AUTENTICADO;
+403 ACCESO_NO_PERMITIDO;404 SOLICITUD_NO_ENCONTRADA;
+409 VERSION_OBSOLETA/SOLICITUD_NO_EDITABLE/PROVEEDOR_INACTIVO/
+SUPERVISOR_INVALIDO/CLAVE_IDEMPOTENCIA_REUTILIZADA;
+500 ERROR_INTERNO;503 DEPENDENCIA_NO_DISPONIBLE. No se introduce422.
+Rutas Angular: /solicitudes, /solicitudes/nueva, /solicitudes/:id,
+/solicitudes/:id/editar. Backend Java21/JdbcTemplate/BigDecimal/Clock/PostgreSQL real.
+
+## Verificación obligatoria
+
+Dominio: ejemplos, fronteras, escalas, precisión y desbordamientos. HTTP: permisos,
+visibilidad, filtros, proveedor, supervisor, versión, entrada cerrada y CSRF.
+PostgreSQL real: migración nueva/evolución/segundo arranque, restricciones,
+rollback y carreras de guardado/presentación/repetición/referencias.
+Angular: servicio, listado/filtros/páginas, formulario/editor/importes, permisos,
+errores/conflicto/presentación/rutas/accesibilidad. E2E: crear, conceptos, total,
+guardar/recargar, conflicto/corregir, referencias, presentar/repetir, supervisor,
+auditor, ajeno, móvil/teclado/rutas. Capturas de pantallas principales.
+Backend mvnw verify, Spotless y SpotBugs; frontend tipos/lint/formato/tests/build;
+Docker limpio, Compose, salud200/503, Swagger, identidad/proveedores/solicitudes,
+auditorías, actionlint, documentación y búsqueda acotada de secretos.
+CI remota queda pendiente de push humano. Resultados en [validación](validacion.md).
+
+## Exclusiones y condiciones siguientes
+
+Sin impuestos, descuentos, divisas, pagos, borrar solicitudes, retirar, reabrir,
+anular, reasignar, historial funcional completo ni aprobación/rechazo en004.
+Retención y borrado jurídico pendientes007/008. Sin datos reales, Git ni cambios
+mayores. AG-003–AG-011, REV-001, ADR0001–0004 y validaciones anteriores intactos.
+La corrección heredada se registra en adenda nueva de003, sin reescribir su historia.
+005 solo después de004 completamente verificada y al menos120min disponibles;
+con60–119min solo SDD005; menos60min no crear005.006 solo borrador tras005
+verificada y al menos45min. Cierre y aceptación siempre humanos.
