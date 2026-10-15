@@ -5,7 +5,7 @@ La [validación AG-011](validacion.md) y sus evidencias permanecen íntegramente
 conservadas. Esta adenda registra hechos posteriores, autorizados por AG-012.
 
 PR3 run38633782500: backend/frontend success, Compose failure solo en E2E003,
-paso10; esperaba1 y recibió2. [Extracto original](../../qa/evidencias/ag012/primer-fallo-remoto.txt).
+paso10; esperaba1 y recibió2. [Ejecución original de GitHub Actions](https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia/actions/runs/38633782500).
 Reproducción local sin modificar prueba: mismo punto, recibió6 sobre catálogo
 acumulado. Captura mostró denominación/fiscal vacíos. Esto respalda una carrera
 de preparación/restauración del formulario, no un defecto demostrado de SQL.
