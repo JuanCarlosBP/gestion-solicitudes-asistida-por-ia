@@ -1,0 +1,9 @@
+{
+  "rama_verificada": false,
+  "rama_comunicada": "feature/006-concurrencia-idempotencia",
+  "inicio": "2026-10-15T12:20:55+02:00",
+  "zona": "Europe/Madrid",
+  "desviacion_git": "git status --short ejecutado en lectura antes de conocer prohibición del adjunto; salida vacía; no se ejecutarán más comandos Git",
+  "limite": "2026-10-15T22:20:55+02:00",
+  "archivos": 1135
+}

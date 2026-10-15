@@ -1,0 +1,72 @@
+{
+  "incremento": "AG-013 / 006",
+  "rol": "Implementador frontend; aceptación reservada a la persona responsable",
+  "estado": "Implementación y verificaciones frontend ejecutadas; fuentes congeladas y ventana Compose devuelta al coordinador",
+  "fuentes": {
+    "manifesto": "huellas-fuentes-finales.csv",
+    "metadatos": "huellas-fuentes-finales.json",
+    "cantidad": 111,
+    "algoritmo": "SHA256; sin Git",
+    "modulos": [
+      "frontend/src/app/operaciones: descriptor, plataforma de coordinación, servicio, panel accesible y pruebas",
+      "frontend/src/app/proveedores: API idempotente, identidad de intento de alta, mensajes y pruebas",
+      "frontend/src/app/solicitudes: API idempotente, identidad de intento de alta, decisiones, mensajes y pruebas",
+      "frontend/src/app/app y configuración de pruebas: panel global e inyección HTTP",
+      "frontend/e2e: regresión 001–005 adaptada al UUID, casos006 y ayudas de entorno local",
+      "frontend/playwright.config.ts: directorio de resultados parametrizable"
+    ]
+  },
+  "ejecutado": [
+    { "comprobacion": "Unitarias completas", "esperado": "0 fallos", "observado": "411/411 PASS, 20 archivos, salida0", "evidencia": "unitarias-intencion-final-02.xml" },
+    { "comprobacion": "E2E completas", "esperado": "0 fallos, retries0", "observado": "23/23 PASS, 44,1s, Chromium real contra Angular/API/PostgreSQL Compose", "evidencia": "e2e-intencion-completo-final/e2e.xml" },
+    { "comprobacion": "Nuevos E2E de intención de altas", "esperado": "Manual/otra pestaña bloquean reenvío; nueva navegación SPA admite clave distinta", "observado": "2/2 PASS cubriendo cuatro combinaciones, cambio de entrada/fiscal y submit programático sin POST adicional", "evidencia": "e2e-intencion-focalizada/e2e.xml" },
+    { "comprobacion": "Tipos aplicación/unitarias/E2E", "observado": "PASS salida0", "evidencia": "tipos-definitivo.json" },
+    { "comprobacion": "ESLint", "observado": "PASS salida0, max-warnings0", "evidencia": "lint-definitivo.json" },
+    { "comprobacion": "Prettier", "observado": "PASS salida0", "evidencia": "formato-definitivo.json" },
+    { "comprobacion": "Angular build", "observado": "PASS; main-7QNN5UUP.js 433,65kB, total434,82kB", "evidencia": "build-intencion-final.txt" },
+    { "comprobacion": "Docker sin caché y salud Compose", "observado": "PASS; tres servicios saludables al activar imagen", "evidencia": "compose-construir-intencion.txt y compose-arrancar-intencion.txt" }
+  ],
+  "imagen_frontend": "sha256:a9d2df00eaeaa86be20f6e2b4cfec3c8dd927442fc53105156e97ecce125adb1",
+  "imagen_backend_sin_modificar": "sha256:026172927d8ee988934ef84f52c84816e3a0e2e2e1f9b34ab0e2fde489fdc88f",
+  "imagenes_evidencia": "compose-imagenes-intencion.txt",
+  "cobertura": [
+    "CI01: siete POST emiten UUID desde servicio transversal; PUT conserva versión sin clave obligatoria nueva",
+    "CI04/07: errores conservan clave; dos pestañas A400 tardío/Bcommit con respuesta perdida no eliminan descriptor; 409 incompatible nunca se convierte en éxito",
+    "CI05: rol ficticio supervisor revocado antes de GET/replay deniega acceso; finally restaura rol y consulta vuelve a funcionar",
+    "CI06/07: altas, presentación, aprobación/rechazo recuperan respuesta perdida mediante GET autorizado; recarga, reapertura y reinicio real no duplican efecto",
+    "CI07: descriptor estricto de cuatro campos máximos, TTL24h y ámbito SHA256 de usuario; cuerpos/credenciales solo memoria; cambio de cuenta y falta de Web Locks cubiertos por unitarias",
+    "CI07: confirmación terminal prevalece ante respuestas tardías; identidad del formulario por UUID realmente reclamada sobrevive a limpieza localStorage y sustitución de tarjeta; nueva navegación SPA permite intención independiente",
+    "CI09: advisory lock PostgreSQL real produce GET EN_PROGRESO y POST409 OPERACION_EN_PROGRESO con Retry-After1; tras liberar, mismaUUID confirma una única versión adicional"
+  ],
+  "espera_observada": {
+    "milisegundos_navegador": 3061,
+    "limite_servidor_configurado_ms": 3000,
+    "interpretacion": "Medida de extremo a extremo que incluye navegador/red/planificación; no afirma un SLA universal ni que el servidor espere3061ms",
+    "evidencia": "e2e-intencion-completo-final/operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña/diagnostico-progreso.json"
+  },
+  "inspeccion_visual_y_accesibilidad": {
+    "observado": "Panel legible, enlace al resultado visible, botones de alta confirmada deshabilitados, campos y foco sin solapamientos en las capturas inspeccionadas",
+    "capturas_inspeccionadas": [
+      "capturas/frontend006-proveedor-pendiente-360.png",
+      "capturas/frontend006-alta-solicitud-manual-confirmada-360.png",
+      "capturas/frontend006-alta-solicitud-otra-pestana-confirmada-768.png",
+      "capturas/frontend006-alta-proveedor-otra-pestana-confirmada-1440.png"
+    ],
+    "automatizado": "E2E comprueba ausencia de desbordamiento a360/768/1440; recuperación por Enter y foco real en Abrir resultado. Unitarias verifican nombres accesibles y estados. No se ejecutó una auditoría WCAG exhaustiva."
+  },
+  "fallos_preservados_y_correcciones": [
+    { "evidencia": "tests-inicial.txt / tests-inicial-local.txt", "causa": "Resolución Vite bloqueada por entorno aislado; ejecución autorizada fuera de aislamiento resolvió módulos. Dos expectativas heredadas prohibían cualquier almacenamiento y se actualizaron al descriptor mínimo aprobado." },
+    { "evidencia": "alta-terminal-reproduccion.txt", "causa": "Alta de solicitud confirmada con detalle fallido ofrecía descartar/recargar sin id; corregida rama terminal y recargar solo con id; terminal-conflicto-01 PASS95." },
+    { "evidencia": "unitarias-cierre.txt", "causa": "Expectativa textual heredada pedía confirmación; mensaje de conflicto ahora dice explícitamente No se ha aplicado. Se mantuvo comprobación de mensaje seguro; unitarias-cierre-02 PASS405." },
+    { "evidencia": "e2e-completo-01/e2e.xml", "causa": "19PASS/2fallos. Swagger omitía endpoint006 en lista exacta; lista ampliada conservando igualdad exacta y comprobaciones de respuestas." },
+    { "evidencia": "e2e-progreso-cookies-originales/operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña/diagnostico-progreso.json", "causa": "La pausa DevTools del POST dejaba rotar cookieCSRF en otra pestaña. Pareja original cookie/cabecera coincidente=true; cookie posterior distinta; route.continue enviaba403 y GET404. Fixture usa route.fetch con todos los headers originales y fulfill, sin fabricar/renovar token ni omitir CSRF. e2e-correccion-02 PASS12 y e2e-completo-final PASS21." },
+    { "evidencia": "e2e-correccion-01.txt", "causa": "CLI Windows interpretó separador de filtro grep como tubería; no ejecutó pruebas. Se ejecutaron suites completas focalizadas, sin filtro con separador." },
+    { "evidencia": "intencion-formulario-reproduccion.txt", "causa": "Orden nuevo POSTerror0 primero/GETCOMPLETADA después dejaba formulario anterior habilitado. Reproducido con dos fallos; corregido mediante asociación en memoria al descriptor concreto. Primer intento corregido PASS143; regresión final411 y E2Efinal23." },
+    { "evidencia": "formato-intencion-final.txt", "causa": "Formato de una prueba de proveedor; aplicado Prettier, formato-intencion-final-02 y formato-definitivo PASS." }
+  ],
+  "pendiente": [
+    "Consolidación documental y verificación global por coordinador/revisor",
+    "Aceptación, integración y Git por la persona responsable"
+  ],
+  "limites": "Sin Git, publicación ni cambios de backend, variables de entorno o volúmenes. Datos de QA ficticios. Evidencia frontend no sustituye los criterios exclusivos de backend/migración/auditorías. No se modificaron históricosAG003–012."
+}

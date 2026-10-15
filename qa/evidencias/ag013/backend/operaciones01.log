@@ -1,0 +1,455 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:apply (default-cli) @ gestion-solicitudes ---
+[INFO] clean file: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\test\java\es\gestionsolicitudes\operaciones\integracion\OperacionesIT.java
+[INFO] Spotless.Java is keeping 97 files clean - 1 were changed to be clean, 1 were already clean, 95 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default) @ gestion-solicitudes ---
+[INFO] Spotless.Java is keeping 97 files clean - 0 needs changes to be clean, 0 were already clean, 97 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gestion-solicitudes ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 6 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gestion-solicitudes ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gestion-solicitudes ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 19 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 s -- in es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ gestion-solicitudes ---
+[INFO] Building jar: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ gestion-solicitudes ---
+[INFO] Replacing main artifact C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.operaciones.integracion.OperacionesIT
+12:43:58.934 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+12:43:58.937 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+12:43:58.966 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+12:43:59.108 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+12:43:59.420 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+12:43:59.422 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+12:43:59.439 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.1.3
+  API Version: 1.52
+  Operating System: Docker Desktop
+  Total Memory: 31775 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+12:43:59.527 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+12:43:59.605 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+12:43:59.709 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 8899cd54d5512b1d38d55698131b3b7aac764e7dfcdda318b2a857d30f9bf2fc
+12:43:59.980 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.453467S
+12:43:59.984 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+12:43:59.984 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+12:43:59.985 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+12:44:00.016 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+12:44:00.070 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 9bef58a0f94a95f7a72649a5556e802fc95af65cad9adb49aef8c665285dd5ec
+12:44:01.045 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.02879S
+12:44:01.046 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:50928/gestion?loggerLevel=OFF)
+12:44:01.052 [main] INFO org.testcontainers.ext.ScriptUtils -- Executing database script from postgres-inicial.sql
+12:44:01.174 [main] INFO org.testcontainers.ext.ScriptUtils -- Executed database script from postgres-inicial.sql in 121 ms.
+12:44:01.410 [main] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://localhost:50928/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+12:44:01.451 [main] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "gestion"."flyway_schema_history" does not exist yet
+12:44:01.455 [main] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 6 migrations (execution time 00:00.020s)
+12:44:01.467 [main] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "gestion"."flyway_schema_history" ...
+12:44:01.516 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "gestion": << Empty Schema >>
+12:44:01.529 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "gestion" to version "1 - preparar esquema tecnico"
+12:44:01.560 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "gestion" to version "2 - identidad y acceso"
+12:44:01.591 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "gestion" to version "3 - proveedores"
+12:44:01.614 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "gestion" to version "4 - solicitudes conceptos importes"
+12:44:01.644 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "gestion" to version "5 - aprobaciones y evento minimo"
+12:44:01.667 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 5 migrations to schema "gestion", now at version v5 (execution time 00:00.066s)
+2026-10-15T12:44:02.291+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 36300 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:44:02.293+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:44:03.662+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:44:03.679+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:44:03.679+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:44:03.770+02:00  INFO 36300 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1437 ms
+2026-10-15T12:44:05.039+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:50928/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:44:05.056+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.009s)
+2026-10-15T12:44:05.070+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 5
+2026-10-15T12:44:05.075+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "6 - idempotencia transversal"
+2026-10-15T12:44:05.093+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "gestion", now at version v6 (execution time 00:00.011s)
+2026-10-15T12:44:05.139+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62943 (http) with context path '/'
+2026-10-15T12:44:05.144+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 3.208 seconds (process running for 6.938)
+2026-10-15T12:44:05.147+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:44:05.147+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:44:05.348+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=b95a3aee-e952-4417-9b84-7a280bbe10ec sesionId=774bc6af-a8b3-4584-ade6-2b5412b13e1e
+2026-10-15T12:44:05.414+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=8dd4b421-9094-441c-92b8-607ae45b1c1b sesionId=ef89e486-99ec-47ef-a7a0-b3614350329f
+2026-10-15T12:44:05.442+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=1b8102bd-bb5a-435a-88ef-f603b2f6feda sesionId=748cc31d-ce70-4052-93ff-7f225c0a5973
+2026-10-15T12:44:05.466+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=732ff551-e09f-4184-b711-532d0123d7ca sesionId=1a98eb47-aec7-4cd8-90b0-7d583fb73f96
+2026-10-15T12:44:05.497+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=781a435c-d311-4789-bdaa-224bb1e07808 sesionId=7819aa73-faa7-4f8f-b4ce-bed997c753ae
+2026-10-15T12:44:05.544+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:44:05.544+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:44:05.545+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-15T12:44:05.634+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-2] e.g.s.aplicacion.ServicioSolicitudes     : accion=DUPLICADO_IDEMPOTENTE usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=f5db3ceb-6261-473f-b425-a4e8af266d0d resultado=CORRECTO peticion=00c033ca-7d58-47c9-ba7d-3badf6da8a45 clave_hash=c2e73b5aee573501faf2b025da36d2616b603221aa38a2aa2010807b51e531a7
+2026-10-15T12:44:05.698+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-4] e.g.s.aplicacion.ServicioSolicitudes     : accion=DUPLICADO_IDEMPOTENTE usuario=1b8102bd-bb5a-435a-88ef-f603b2f6feda solicitud=14f91651-e564-45ea-8f2d-9ef9069cd8d0 resultado=CORRECTO peticion=e0d32c47-e711-49c2-befc-2fc6a6e4d2e0 clave_hash=7166291afbdbac3626955e675211639cf01ebc93db851d5db1c0dbd54ff10dd3
+2026-10-15T12:44:05.720+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-6] e.g.s.aplicacion.ServicioSolicitudes     : accion=DUPLICADO_IDEMPOTENTE usuario=1b8102bd-bb5a-435a-88ef-f603b2f6feda solicitud=4dd7f269-8ffe-40e3-9696-7027096308fb resultado=CORRECTO peticion=7084bc8f-9394-4440-a91f-65d4ab2a2337 clave_hash=8cea828b4b028b9afc2d024e6801fd81270da74bc62c8143c981787b3f25dd53
+2026-10-15T12:44:06.264+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 464 ms
+2026-10-15T12:44:06.409+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-1-exec-9] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=45f60cbe-7183-4469-8c0e-93a8a02dd844 resultado=CORRECTO
+2026-10-15T12:44:06.454+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:44:06.456+02:00  INFO 36300 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-15T12:44:06.480+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 36300 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:44:06.480+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:44:06.676+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:44:06.677+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:44:06.677+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:44:06.737+02:00  INFO 36300 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 255 ms
+2026-10-15T12:44:06.965+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:50928/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:44:06.982+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.008s)
+2026-10-15T12:44:06.997+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:44:06.998+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:44:07.013+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62969 (http) with context path '/'
+2026-10-15T12:44:07.015+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.55 seconds (process running for 8.809)
+2026-10-15T12:44:07.016+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:44:07.016+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:44:07.092+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=b95a3aee-e952-4417-9b84-7a280bbe10ec sesionId=1b5daf18-1690-4d05-9f2d-6593d1121936
+2026-10-15T12:44:07.122+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=8dd4b421-9094-441c-92b8-607ae45b1c1b sesionId=fd9abacd-c2de-452f-8618-d13b7b7d3938
+2026-10-15T12:44:07.148+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=1b8102bd-bb5a-435a-88ef-f603b2f6feda sesionId=47b1019e-8e18-4204-b078-3b03e1afcc4f
+2026-10-15T12:44:07.174+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=732ff551-e09f-4184-b711-532d0123d7ca sesionId=39b75ac5-09bd-4ec1-9edd-916531a62f4f
+2026-10-15T12:44:07.206+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=781a435c-d311-4789-bdaa-224bb1e07808 sesionId=7507c58b-c2a3-4737-bb8c-bfbc61c90d22
+2026-10-15T12:44:07.212+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:44:07.212+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:44:07.213+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-15T12:44:07.310+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-4] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=14bc2393-878b-4962-bbb8-4912f1e3b77f resultado=CORRECTO
+2026-10-15T12:44:07.407+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-10] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=b10316f7-3689-4613-8cb8-ca2553dd27fd resultado=CORRECTO peticion=10bba2a9-0362-423e-b8ee-4bf2995af441 clave_hash=-
+2026-10-15T12:44:07.486+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=65abe5e2-dcba-4a33-bf8f-336502ff51c2 resultado=CORRECTO peticion=1a731c6d-7b1b-46f6-8b06-30292e34f476 clave_hash=-
+2026-10-15T12:44:07.488+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=c1cfeec4-58aa-4f3a-978e-bacaa3b0fda5 resultado=CORRECTO
+2026-10-15T12:44:07.500+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=GUARDAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=65abe5e2-dcba-4a33-bf8f-336502ff51c2 resultado=CORRECTO peticion=aa161c53-213f-4bf5-bb6f-ee6bd9e589a1 clave_hash=-
+2026-10-15T12:44:07.512+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=65abe5e2-dcba-4a33-bf8f-336502ff51c2 resultado=CORRECTO peticion=6a4cf118-4a1b-4d2a-a6c7-51775fd001d1 clave_hash=0bd95e843a2b72f0ef20d3b862a1c0376f18d0b90971fc898dbe576f281ec624
+2026-10-15T12:44:07.526+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-6] e.g.s.aplicacion.ServicioSolicitudes     : accion=APROBAR usuario=1b8102bd-bb5a-435a-88ef-f603b2f6feda solicitud=65abe5e2-dcba-4a33-bf8f-336502ff51c2 resultado=CORRECTO peticion=6805248a-f32c-44ac-9fe6-e646a7a385e5 clave_hash=f9486534ea5a3af8af77557355f53a3f19d7933a315ce05ee854d78837b4e99d
+2026-10-15T12:44:07.663+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-4] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=6ed5c057-e8ed-4151-a98f-776775afed4c resultado=CORRECTO peticion=372721b5-35b5-478a-92df-a7bcb97abaa3 clave_hash=-
+2026-10-15T12:44:07.673+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=GUARDAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=6ed5c057-e8ed-4151-a98f-776775afed4c resultado=CORRECTO peticion=7dfc1aef-9b6d-448a-8b03-cd101b8c4c90 clave_hash=-
+2026-10-15T12:44:07.762+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-7] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=f62a1a1e-4d6a-4406-927a-f949342cf5e2 resultado=CORRECTO
+2026-10-15T12:44:07.779+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=f62a1a1e-4d6a-4406-927a-f949342cf5e2 resultado=CORRECTO
+2026-10-15T12:44:07.810+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=f62a1a1e-4d6a-4406-927a-f949342cf5e2 resultado=CORRECTO
+2026-10-15T12:44:07.839+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-4] e.g.p.aplicacion.ServicioProveedores     : accion=REACTIVAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=f62a1a1e-4d6a-4406-927a-f949342cf5e2 resultado=CORRECTO
+2026-10-15T12:44:07.924+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=a089e585-4120-4823-a37c-3170b6e22a48 resultado=CORRECTO
+2026-10-15T12:44:07.934+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-8] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=a089e585-4120-4823-a37c-3170b6e22a48 resultado=CORRECTO
+2026-10-15T12:44:07.946+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=6afc5e51-c7fe-4fe5-876f-0d7a356d390a resultado=CORRECTO
+2026-10-15T12:44:07.980+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-3] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=bcaddd99-fb97-4f17-9e70-825a4232946f resultado=CORRECTO peticion=5e3bd401-1b06-4809-a495-8eca3350d998 clave_hash=-
+MEDICION006 duplicado_pool_completo_ms=3003
+2026-10-15T12:44:11.226+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-5] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=5c5f1d42-c55b-4712-8cc6-bd89ca0e7005 resultado=CORRECTO
+2026-10-15T12:44:11.304+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-7] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=2460268a-9f0c-4807-b3fd-3307a49e47e1 resultado=CORRECTO peticion=93d6bf54-891e-46c9-86ff-4a1ee21f6bac clave_hash=-
+2026-10-15T12:44:11.305+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=97d79955-eea7-42e8-9a9d-5e8ba6be326f resultado=CORRECTO peticion=23dfcae8-3e2f-4c8f-a89d-f157081e81e4 clave_hash=-
+2026-10-15T12:44:11.307+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-6] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=bcf0557c-6b57-4e6e-8071-18ca70a9ccc6 resultado=CORRECTO peticion=a636a7fe-6edf-4ded-a668-35108b26f9bd clave_hash=-
+2026-10-15T12:44:11.308+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-3] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=1c08331a-652c-49c4-9932-d542066c9b29 resultado=CORRECTO peticion=94e85fc3-764c-419b-9deb-cdb797ce1797 clave_hash=-
+2026-10-15T12:44:11.310+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-10] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=8cb103e8-2d4f-452b-b189-890c1b715f1c resultado=CORRECTO peticion=b976487c-3509-4bf4-b60c-5f76487aef02 clave_hash=-
+2026-10-15T12:44:11.311+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-5] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=6c30a09a-8853-4e3f-9e85-9546bd06dc72 resultado=CORRECTO peticion=e1398228-d6d9-4d4b-8bbc-264d22e19121 clave_hash=-
+2026-10-15T12:44:11.312+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-4] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=085760e8-61d5-4757-a532-9a77032ff5fb resultado=CORRECTO peticion=c04fd043-fd0a-41dd-88e7-7578fe42b6ab clave_hash=-
+2026-10-15T12:44:11.315+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-9] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=c07e88ca-adac-4543-8aa9-79899f29415f resultado=CORRECTO peticion=6e3be61a-e9d9-45b8-ad30-4c19a7e09a20 clave_hash=-
+2026-10-15T12:44:11.315+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-11] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=928577a6-d3dd-4716-b6e4-aec29119a5e8 resultado=CORRECTO peticion=b77c9455-b431-459f-8b4b-7181464e23ab clave_hash=-
+2026-10-15T12:44:11.318+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-2] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=022b0185-9d31-4f05-b5ad-0447a72fc4ee resultado=CORRECTO peticion=baef1c06-d42e-41db-8798-c0cc77fb9027 clave_hash=-
+2026-10-15T12:44:11.318+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-8] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=6508f811-b326-480c-a5fc-cce27e00fc67 resultado=CORRECTO peticion=df8f3d84-1b3b-4b77-be21-cc0eaad8d2c1 clave_hash=-
+2026-10-15T12:44:11.320+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-14] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=c5d964be-50e1-4253-a702-ea82677eb6b0 resultado=CORRECTO peticion=aa24c4b9-85a5-4f2e-b956-669baf93c791 clave_hash=-
+2026-10-15T12:44:11.322+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-13] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=c0e941f8-e9c6-4926-aa15-986f7b2d4f81 resultado=CORRECTO peticion=baeb2a48-f0f0-4a8c-bb68-8f364623b102 clave_hash=-
+2026-10-15T12:44:11.323+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-12] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=c6c5fc05-04a9-4101-8be7-93e5674e6c7a resultado=CORRECTO peticion=12b077e5-0afd-4625-8107-5abaead7120c clave_hash=-
+2026-10-15T12:44:11.325+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-15] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=018f2253-05cd-4850-becf-de5028a351fc resultado=CORRECTO peticion=0f702d06-d29a-44f9-96ad-f7899583caf0 clave_hash=-
+2026-10-15T12:44:11.325+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-18] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=5977b10f-b583-423b-bdf0-d9b1f33867cc resultado=CORRECTO peticion=3182f4bb-efe2-484e-9146-bbaeaa3e77ef clave_hash=-
+2026-10-15T12:44:11.328+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-16] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=866de348-b46c-485e-9320-188ecccbb9cd resultado=CORRECTO peticion=1dd9a7af-0614-43bf-b56f-5b47157bf31c clave_hash=-
+2026-10-15T12:44:11.329+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-17] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=2aa7738f-f755-472b-abe6-02b710746573 resultado=CORRECTO peticion=b9de97d1-3068-4fd8-9bc4-36a2bf3574c8 clave_hash=-
+2026-10-15T12:44:11.329+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-20] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=767545c2-5f0a-4f28-8eb9-bfbeb064ce8e resultado=CORRECTO peticion=de45d493-da4d-41a7-8add-35456dac2dec clave_hash=-
+2026-10-15T12:44:11.331+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-19] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=ae8daf5d-8b4a-4273-9921-5a041997e984 resultado=CORRECTO peticion=1386f572-ebce-4e8f-aafd-a4df93be7c29 clave_hash=-
+MEDICION006 veinte_distintas_ms=63
+2026-10-15T12:44:11.403+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=1830888d-635a-4c3a-866d-5991f0bc4ec4 resultado=CORRECTO peticion=aa62accc-43d9-465e-aced-17c0abca341d clave_hash=-
+2026-10-15T12:44:14.445+02:00  WARN 36300 --- [gestion-solicitudes] [1-auto-2-exec-7] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-2 - Connection org.postgresql.jdbc.PgConnection@1201ca2 marked as broken because of SQLSTATE(08006), ErrorCode(0)
+
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:474) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:140) ~[postgresql-42.7.13.jar:42.7.13]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$query$0(JdbcTemplate.java:738) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:670) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:732) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:893) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:912) ~[spring-jdbc-7.0.9.jar:7.0.9]
+	at es.gestionsolicitudes.identidad.persistencia.RepositorioIdentidadJdbc.sesionActiva(RepositorioIdentidadJdbc.java:187) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.9.jar:7.0.9]
+	at es.gestionsolicitudes.identidad.persistencia.RepositorioIdentidadJdbc$$SpringCGLIB$$0.sesionActiva(<generated>) ~[classes/:na]
+	at es.gestionsolicitudes.identidad.configuracion.ValidadorJwt.validate(ValidadorJwt.java:51) ~[classes/:na]
+	at es.gestionsolicitudes.identidad.configuracion.ValidadorJwt.validate(ValidadorJwt.java:15) ~[classes/:na]
+	at org.springframework.security.oauth2.jwt.NimbusJwtDecoder.validateJwt(NimbusJwtDecoder.java:195) ~[spring-security-oauth2-jose-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.jwt.NimbusJwtDecoder.decode(NimbusJwtDecoder.java:145) ~[spring-security-oauth2-jose-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationProvider.getJwt(JwtAuthenticationProvider.java:100) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationProvider.authenticate(JwtAuthenticationProvider.java:88) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:183) ~[spring-security-core-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:180) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.web.OAuth2ProtectedResourceMetadataFilter.doFilterInternal(OAuth2ProtectedResourceMetadataFilter.java:97) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2201) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099) ~[na:na]
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:192) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:159) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:144) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:76) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:480) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2383) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446) ~[postgresql-42.7.13.jar:42.7.13]
+	... 86 common frames omitted
+
+2026-10-15T12:44:14.611+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-5] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=c6366f8d-34cd-488f-8ea1-7428674e4be4 resultado=CORRECTO
+2026-10-15T12:44:14.628+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-9] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=d47d9fe0-8d1e-4622-8c20-46e9ad5f2428 resultado=CORRECTO peticion=2dfb0713-bcf5-4ec1-9b5d-20633cae69d6 clave_hash=-
+MEDICION006 espera_advisory_http_ms=3018
+2026-10-15T12:44:17.740+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-7] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=95924395-af94-4899-9cfb-db751520d7bf resultado=CORRECTO
+2026-10-15T12:44:17.798+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=CORRECTO peticion=3a77a5f1-9ec5-40fa-9f6b-1bee88400b3d clave_hash=-
+2026-10-15T12:44:17.799+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=33176f7d-f318-4db6-ba9a-251a241e8cf6 resultado=CORRECTO
+2026-10-15T12:44:17.807+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=GUARDAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=CORRECTO peticion=9e9f6d54-818d-4349-997f-abc9eed7854c clave_hash=-
+2026-10-15T12:44:17.829+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-20] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=CORRECTO peticion=e74bc94f-8155-4627-90c2-02c5594debb8 clave_hash=d78ab75e434d0973a69c0bca4e67cc3686ec9c93a2130e470c4dc01628410deb
+2026-10-15T12:44:17.831+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-3] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=ceb98cad-ff50-4fde-91e5-eaa312c98b38 clave_hash=55fda93d805c08fb6cc927daef1d5e9c6b5d6a6570fee73c62937480ae2c002a
+2026-10-15T12:44:17.833+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-14] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=1cf7d8e0-49c2-4a56-988c-a4cfccf96a26 clave_hash=f5211563485df5ce86a23953e340d3fdaeb2769470fd450c0d7123983dc44220
+2026-10-15T12:44:17.835+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-4] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=6e27900b-3548-4453-8477-600120eca98e clave_hash=136c71c7ec79b2cc968db370dc577443417e40ae8702e7b35212253473f0b8b8
+2026-10-15T12:44:17.839+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-5] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=72109568-c898-4a8c-a924-98dc6bcd04c1 clave_hash=4c4fd3a51ffe0adf9c0b694b2d7a20c9a5dfc615835366c294022ff27408450a
+2026-10-15T12:44:17.842+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-18] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=cb8ceef8-6e77-42e8-942b-2ce8f7476f60 clave_hash=7b4f41c477f991c813988b0b6ef0108a88bf4ea23c28b483b2b652b4c7864d06
+2026-10-15T12:44:17.845+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-2] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=621e938f-0ec4-4bb4-9a80-4511373a750c clave_hash=1310c391224d3287c79a5e4e713d2a55e3d391ac87d0150a0cd2b22cadaf751d
+2026-10-15T12:44:17.848+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-10] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=13203832-a777-4739-a749-8105af0b7db0 clave_hash=35f6e07bc3416069777417b5c19cf3b7c659e4c5f6ecf28dd7808fb4c6bf9576
+2026-10-15T12:44:17.851+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-15] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=0fc4fecb-0cde-4a12-9a5b-a3f18868d8e5 clave_hash=76c87544a586b15e08b0afe88fc37de408afa1000672ad82ea4a51bed6c90d07
+2026-10-15T12:44:17.854+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-6] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=99db2543-3537-4c81-a1b9-6e4a2b7eb203 clave_hash=946badab06852b5d0fed3580ac207f32ff9a391d8b6081607023d3939cc7822f
+2026-10-15T12:44:17.856+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-16] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=35bc044b-0337-4ad2-94b6-e3a857dde48f clave_hash=26233e914f6d67be4dd315470ad20cd7bd7e54cb2daaac561feb6327b1d24e37
+2026-10-15T12:44:17.859+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-1] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=305a1fa7-68c3-40de-bcea-195ad1891180 clave_hash=7b5301fe861fc9930349a787475ead0d09e0b6aaab671e219efd2b6bece4da54
+2026-10-15T12:44:17.861+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-12] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=c533ae75-ad89-432c-a943-734a3ef6be0b clave_hash=f141482f3d744060c81fe52cb9a1fab85d9ad829f0a7612bcfd523ab7a8c4205
+2026-10-15T12:44:17.862+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-13] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=592528c6-9cf9-4a83-9f4c-7ecc2dd328df clave_hash=3cf8fce9aa35a125b098cc298f1cc9dbcc9ee8395c9b22e83e4f85fb9defc1c4
+2026-10-15T12:44:17.865+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-19] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=faaecf8f-6abe-4632-ad30-80e31726c76d clave_hash=53100ac21c996e3e6f9015426d267f26d5d6e354cb1a6c6ad9e1804383c208b5
+2026-10-15T12:44:17.866+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-8] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=40fbb0b5-686c-45c1-bd89-daa44d114469 clave_hash=4e17a2fe31af21c49dddeba5a50567b449637b18286cac94898b8ef30b6cc7be
+2026-10-15T12:44:17.868+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-17] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=437517c7-52d2-4c0a-95ea-7256493f3ab5 clave_hash=a58d249cf75d1b442856f407fc33f5d42d6552800b18ef546643f97846ddd664
+2026-10-15T12:44:17.870+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-9] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=ab854538-8910-431b-9dd4-712365ffa112 clave_hash=b8ea3cf7833adf36c7b1df64f7d2766b2d0f31e19705417988fde6f741295bbd
+2026-10-15T12:44:17.871+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-7] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=c3c9d739-fb53-4d93-842b-1a413a9adce7 clave_hash=0500bbc6bc13c78919510e2f86f6a4e3661ed100dd37561a079ddb7ce277b102
+2026-10-15T12:44:17.873+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-2-exec-11] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=e750272e-7678-4dc7-a287-b0189815feab resultado=SOLICITUD_NO_EDITABLE peticion=c5226025-9865-49f0-9c18-4c425e144793 clave_hash=b50ea1905c38183da01663ddf81b7801b621e6816fa2089af82be0e2f3760140
+MEDICION006 veinte_claves_mismo_agregado_ms=77
+2026-10-15T12:44:17.958+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:44:17.969+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:44:17.970+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:44:18.083+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-2-exec-5] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=28de2f88-f0cc-4a51-9db8-108c7d928a14 resultado=CORRECTO
+MEDICION006 veinte_misma_clave_ms=159
+2026-10-15T12:44:18.258+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=a1e683d4-6710-4d88-a722-9eb4f70e5d41 resultado=CORRECTO peticion=131f5652-296e-4486-a629-cebaaa7804df clave_hash=-
+2026-10-15T12:44:18.260+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=e6dadf77-c1ed-4050-902d-dfba0e45b955 resultado=CORRECTO
+2026-10-15T12:44:18.267+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=GUARDAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=a1e683d4-6710-4d88-a722-9eb4f70e5d41 resultado=CORRECTO peticion=becbea82-8a9e-470b-b21b-cde186674383 clave_hash=-
+2026-10-15T12:44:18.275+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=PRESENTAR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=a1e683d4-6710-4d88-a722-9eb4f70e5d41 resultado=CORRECTO peticion=885c10b0-a9b1-4f1e-82bb-f375b6444569 clave_hash=8d14c5fded7729c65722e83b5f53af121783709b806123c7a2f51254f61d1d6b
+2026-10-15T12:44:18.284+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=APROBAR usuario=1b8102bd-bb5a-435a-88ef-f603b2f6feda solicitud=a1e683d4-6710-4d88-a722-9eb4f70e5d41 resultado=CORRECTO peticion=107ce3ce-eb1b-4dca-ae9c-d1be077d887e clave_hash=c287cb5ff755c163064747d81f8a3563e82edc0f4af398d261903199bddda8f1
+2026-10-15T12:44:18.347+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=9c0824ed-e6f4-4ba7-8743-4bce47f9d92f resultado=CORRECTO
+2026-10-15T12:44:18.352+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=CREAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=f334ca4d-7b57-412b-b903-f28424f5fb85 resultado=CORRECTO peticion=574ee3c4-1c9d-48a8-96fe-541d6e19cd7a clave_hash=-
+2026-10-15T12:44:18.356+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=b95a3aee-e952-4417-9b84-7a280bbe10ec proveedor=00f1a0cf-894a-4e2a-b55e-69edad16e9f9 resultado=CORRECTO
+2026-10-15T12:44:18.364+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.s.aplicacion.ServicioSolicitudes     : accion=GUARDAR_BORRADOR usuario=732ff551-e09f-4184-b711-532d0123d7ca solicitud=f334ca4d-7b57-412b-b903-f28424f5fb85 resultado=CORRECTO peticion=86b98968-2999-4586-ba14-eadfe411895c clave_hash=-
+2026-10-15T12:44:18.509+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:44:18.510+02:00  INFO 36300 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.10 s -- in es.gestionsolicitudes.operaciones.integracion.OperacionesIT
+[INFO] Running es.gestionsolicitudes.proveedores.integracion.ProveedoresIT
+2026-10-15T12:44:18.826+02:00  INFO 36300 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+2026-10-15T12:44:18.940+02:00  INFO 36300 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: fa392fd9046d3b32bb364aa73da06488d8aec325a69ce08bf5b549076b753bc0
+2026-10-15T12:44:19.849+02:00  INFO 36300 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.0232851S
+2026-10-15T12:44:19.849+02:00  INFO 36300 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container is started (JDBC URL: jdbc:postgresql://localhost:63158/gestion?loggerLevel=OFF)
+2026-10-15T12:44:19.849+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executing database script from postgres-inicial.sql
+2026-10-15T12:44:19.881+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executed database script from postgres-inicial.sql in 31 ms.
+2026-10-15T12:44:19.899+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63158/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:44:19.916+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "gestion"."flyway_schema_history" does not exist yet
+2026-10-15T12:44:19.916+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:44:19.924+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "gestion"."flyway_schema_history" ...
+2026-10-15T12:44:19.949+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": << Empty Schema >>
+2026-10-15T12:44:19.953+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "1 - preparar esquema tecnico"
+2026-10-15T12:44:19.969+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "2 - identidad y acceso"
+2026-10-15T12:44:19.996+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "gestion", now at version v2 (execution time 00:00.025s)
+2026-10-15T12:44:20.031+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 36300 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:44:20.031+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:44:20.194+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:44:20.195+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:44:20.195+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:44:20.266+02:00  INFO 36300 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 233 ms
+2026-10-15T12:44:20.482+02:00  INFO 36300 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63158/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:44:20.495+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:44:20.510+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 2
+2026-10-15T12:44:20.513+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "3 - proveedores"
+2026-10-15T12:44:20.531+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "4 - solicitudes conceptos importes"
+2026-10-15T12:44:20.558+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "5 - aprobaciones y evento minimo"
+2026-10-15T12:44:20.579+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "6 - idempotencia transversal"
+2026-10-15T12:44:20.597+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 4 migrations to schema "gestion", now at version v6 (execution time 00:00.047s)
+2026-10-15T12:44:20.611+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 63167 (http) with context path '/'
+2026-10-15T12:44:20.613+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.598 seconds (process running for 22.407)
+2026-10-15T12:44:20.614+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:44:20.614+02:00  WARN 36300 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:44:20.686+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:44:20.699+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:44:20.700+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:44:20.770+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=beb3fab1-1179-47f4-8c69-438bfc01bf31 sesionId=22d48312-defb-4883-9eaa-a00a0bea4bfa
+2026-10-15T12:44:20.800+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=70ecade3-bb75-43a4-ab45-d428fa44bdd5 sesionId=93ca68de-0aee-4e68-9e0c-39f72b3171f9
+2026-10-15T12:44:20.833+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=ea4a8c97-ce36-41a5-b5a9-a30d867c623e sesionId=f9b20699-d749-475a-b6cd-4f16701ee7c7
+2026-10-15T12:44:20.862+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=cfd8410d-c403-45c8-b14f-25835942a5cf sesionId=483459a0-9074-4f46-b84b-b3938449c5bd
+2026-10-15T12:44:20.890+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=9078109b-8206-439b-b20a-19ac5c646961 sesionId=55facef0-145e-448d-b2b1-f54e24a9889f
+2026-10-15T12:44:20.923+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.i.aplicacion.ServicioAutenticacion   : IDENTIDAD_SESION_INICIADA usuarioId=a896fc4b-c882-4d15-8ba7-8812b229678a sesionId=10419dc1-2973-4f50-8fe0-0dfb48b09198
+2026-10-15T12:44:20.928+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:44:20.928+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:44:20.928+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-15T12:44:20.950+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=7d708c2d-481d-4990-8577-33adb42786e7 resultado=CORRECTO
+2026-10-15T12:44:20.952+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=dea5997c-b673-47d9-9236-5f69493ad3f7 resultado=CORRECTO
+2026-10-15T12:44:20.955+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=54703a84-435c-4b56-8ab7-220186cd7b4e resultado=CORRECTO
+2026-10-15T12:44:20.957+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=898e641e-39ae-45ff-93ec-302fc0de553f resultado=CORRECTO
+2026-10-15T12:44:21.063+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=CORRECTO
+2026-10-15T12:44:21.076+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-6] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=CORRECTO
+2026-10-15T12:44:21.095+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-3] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=VERSION_OBSOLETA
+2026-10-15T12:44:21.196+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-2] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=CORRECTO
+2026-10-15T12:44:21.207+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-6] e.g.p.aplicacion.ServicioProveedores     : accion=REACTIVAR usuario=a896fc4b-c882-4d15-8ba7-8812b229678a proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=CORRECTO
+2026-10-15T12:44:21.226+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-3] e.g.p.aplicacion.ServicioProveedores     : accion=REACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=2a5deebf-bc35-4cc5-8b77-cb521903fea7 resultado=VERSION_OBSOLETA
+2026-10-15T12:44:21.470+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 210 ms
+2026-10-15T12:44:21.493+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=36ff34bb-0774-4ee8-840e-4ac7140b6286 resultado=CORRECTO
+2026-10-15T12:44:21.542+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=db06aef9-afdc-4c7f-9320-8f4d5810d670 resultado=CORRECTO
+2026-10-15T12:44:21.600+02:00  INFO 36300 --- [gestion-solicitudes] [pool-8-thread-1] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=db06aef9-afdc-4c7f-9320-8f4d5810d670 resultado=CORRECTO
+2026-10-15T12:44:21.600+02:00  INFO 36300 --- [gestion-solicitudes] [pool-8-thread-2] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=db06aef9-afdc-4c7f-9320-8f4d5810d670 resultado=VERSION_OBSOLETA
+2026-10-15T12:44:21.630+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=99a9a507-1d49-4a51-a8f0-d4520798da96 resultado=CORRECTO
+2026-10-15T12:44:21.633+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=99a9a507-1d49-4a51-a8f0-d4520798da96 resultado=CORRECTO
+2026-10-15T12:44:21.636+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=99a9a507-1d49-4a51-a8f0-d4520798da96 resultado=CORRECTO
+2026-10-15T12:44:21.640+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=REACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=99a9a507-1d49-4a51-a8f0-d4520798da96 resultado=CORRECTO
+2026-10-15T12:44:21.642+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=39141252-d97b-4140-9452-ce4d1adda00e resultado=PROVEEDOR_DUPLICADO
+2026-10-15T12:44:21.643+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=99a9a507-1d49-4a51-a8f0-d4520798da96 resultado=VERSION_OBSOLETA
+2026-10-15T12:44:21.683+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=98a930d5-5b15-4bdf-b1d1-6ddc95412def resultado=CORRECTO
+2026-10-15T12:44:21.848+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-8] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=3e00d000-a57b-4ef5-a37d-f1268afdbb80 resultado=CORRECTO
+2026-10-15T12:44:21.869+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-4] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=3e00d000-a57b-4ef5-a37d-f1268afdbb80 resultado=CORRECTO
+2026-10-15T12:44:21.884+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=0a5092f6-983f-4a77-b2cb-fb8e1fdabdf7 resultado=CORRECTO
+2026-10-15T12:44:21.888+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=0a5092f6-983f-4a77-b2cb-fb8e1fdabdf7 resultado=CORRECTO
+2026-10-15T12:44:21.892+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-7] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=7f8eb89d-df9c-445e-b0f3-c87d15e42162 resultado=PROVEEDOR_DUPLICADO
+2026-10-15T12:44:21.900+02:00  INFO 36300 --- [gestion-solicitudes] [-auto-3-exec-10] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=5d243880-f423-4c66-88ee-0ee6533eb90e resultado=CORRECTO
+2026-10-15T12:44:21.908+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-1] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=87726c7a-a52a-421c-8d88-4727e0f13d95 resultado=CORRECTO
+2026-10-15T12:44:21.938+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-2] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=899efbd5-50c2-4806-b3ad-e08fbc924fa6 resultado=CORRECTO
+2026-10-15T12:44:21.953+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-5] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=899efbd5-50c2-4806-b3ad-e08fbc924fa6 resultado=CORRECTO
+2026-10-15T12:44:21.962+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-3] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=899efbd5-50c2-4806-b3ad-e08fbc924fa6 resultado=CORRECTO
+2026-10-15T12:44:21.969+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-8] e.g.p.aplicacion.ServicioProveedores     : accion=REACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=899efbd5-50c2-4806-b3ad-e08fbc924fa6 resultado=CORRECTO
+2026-10-15T12:44:22.007+02:00  INFO 36300 --- [gestion-solicitudes] [pool-9-thread-2] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=7873d5cc-755c-4860-99f2-ad1c0b78c78f resultado=CORRECTO
+2026-10-15T12:44:22.008+02:00  INFO 36300 --- [gestion-solicitudes] [pool-9-thread-1] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=3a974a16-de61-49db-be9b-f8a1826e1f33 resultado=PROVEEDOR_DUPLICADO
+2026-10-15T12:44:22.133+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=b2829bb3-b626-46fb-b99d-3e48ceccafe9 resultado=CORRECTO
+2026-10-15T12:44:22.308+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=081a6edc-c24f-4969-9a92-663083482a71 resultado=CORRECTO
+2026-10-15T12:44:22.330+02:00  INFO 36300 --- [gestion-solicitudes] [ool-10-thread-1] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=081a6edc-c24f-4969-9a92-663083482a71 resultado=CORRECTO
+2026-10-15T12:44:22.330+02:00  INFO 36300 --- [gestion-solicitudes] [ool-10-thread-2] e.g.p.aplicacion.ServicioProveedores     : accion=DESACTIVAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=081a6edc-c24f-4969-9a92-663083482a71 resultado=VERSION_OBSOLETA
+2026-10-15T12:44:22.350+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=d61731cf-c751-497d-b789-3daf9c28b6ad resultado=CORRECTO
+2026-10-15T12:44:22.353+02:00  INFO 36300 --- [gestion-solicitudes] [           main] e.g.p.aplicacion.ServicioProveedores     : accion=CREAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=65b0eb96-f59c-4103-b0ff-20386255555f resultado=CORRECTO
+2026-10-15T12:44:22.358+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-6] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=65b0eb96-f59c-4103-b0ff-20386255555f resultado=PROVEEDOR_DUPLICADO
+2026-10-15T12:44:22.371+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-5] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=65b0eb96-f59c-4103-b0ff-20386255555f resultado=CORRECTO
+2026-10-15T12:44:22.377+02:00  INFO 36300 --- [gestion-solicitudes] [1-auto-3-exec-3] e.g.p.aplicacion.ServicioProveedores     : accion=MODIFICAR usuario=cfd8410d-c403-45c8-b14f-25835942a5cf proveedor=65b0eb96-f59c-4103-b0ff-20386255555f resultado=VERSION_OBSOLETA
+2026-10-15T12:44:22.402+02:00  INFO 36300 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:44:22.403+02:00  INFO 36300 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.891 s -- in es.gestionsolicitudes.proveedores.integracion.ProveedoresIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ gestion-solicitudes ---
+[INFO] 
+[INFO] >>> spotbugs:4.10.5.0:check (default) > :spotbugs @ gestion-solicitudes >>>
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:spotbugs (spotbugs) @ gestion-solicitudes ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.10.5.0:check (default) < :spotbugs @ gestion-solicitudes <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:check (default) @ gestion-solicitudes ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  37.771 s
+[INFO] Finished at: 2026-10-15T12:44:29+02:00
+[INFO] ------------------------------------------------------------------------

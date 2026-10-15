@@ -1,0 +1,43 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test operaciones.spec.ts --grep CI-07/09
+
+
+Running 1 test using 1 worker
+
+(node:74004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\operaciones.spec.ts:472:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña (7.1s)
+
+
+  1) e2e\operaciones.spec.ts:472:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "EN_PROGRESO"
+    Received: ""
+
+    Call Log:
+    - Timeout 2000ms exceeded while waiting on the predicate
+
+      570 |         { timeout: 2000, intervals: [50, 100] },
+      571 |       )
+    > 572 |       .toBe('EN_PROGRESO');
+          |        ^
+      573 |     await expect(
+      574 |       panel(segunda).getByRole('button', {
+      575 |         name: 'Consultar resultado: Desactivación de proveedor',
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\operaciones.spec.ts:572:8
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\error-context.md
+
+  1 failed
+    e2e\operaciones.spec.ts:472:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña 

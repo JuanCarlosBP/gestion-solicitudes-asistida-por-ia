@@ -7,6 +7,11 @@ La especificación define qué se necesita; el plan propone cómo conseguirlo;
 las tareas ordenan el trabajo y sus evidencias.
 El proceso está en [SDD](../docs/metodologia/sdd.md).
 
+Estado vigente comunicado por el encargo AG-013: gobierno/001/002 aceptados
+formalmente;003–005 verificados localmente. Las referencias AG-009/010 de la tabla
+conservan el resultado documentado en aquellas ejecuciones.006 queda verificada
+localmente en AG-013; su aceptación e integración continúan pendientes.
+
 ## Paquete existente
 
 | Incremento | Documento | Estado |
@@ -32,7 +37,11 @@ El proceso está en [SDD](../docs/metodologia/sdd.md).
 | 005 — Aprobaciones | [Plan](005-aprobaciones/plan.md) | Aprobado por decisión humana AG-012. |
 | 005 — Aprobaciones | [Tareas](005-aprobaciones/tareas.md) | Aprobadas y ejecutadas en AG-012. |
 | 005 — Aprobaciones | [Validación](005-aprobaciones/validacion.md) | AP-01–10 verificados localmente, sin aceptación ni integración. |
-| 006 — Concurrencia e idempotencia | [Especificación](006-concurrencia-idempotencia/especificacion.md) | Borrador pendiente de aprobación humana; sin otros artefactos ni implementación006. |
+| 006 — Concurrencia e idempotencia | [Especificación](006-concurrencia-idempotencia/especificacion.md) | Aprobada por decisión humana AG-013. |
+| 006 — Concurrencia e idempotencia | [Plan](006-concurrencia-idempotencia/plan.md) | Aprobado por decisión humana AG-013. |
+| 006 — Concurrencia e idempotencia | [Tareas](006-concurrencia-idempotencia/tareas.md) | Aprobadas y ejecutadas en AG-013. |
+| 006 — Concurrencia e idempotencia | [Validación](006-concurrencia-idempotencia/validacion.md) | CI-01–10 verificados localmente, revisión sin hallazgos abiertos; aceptación e integración pendientes. |
+| 007 — Historial y auditoría | [Especificación](007-historial-auditoria/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas, ADR, migración ni código007. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
@@ -69,7 +78,11 @@ completamente verificada y al menos120 minutos de margen (60–119 solo SDD005).
 La puerta005 se cumplió a2026-10-15 00:09:52+02:00, con564 minutos restantes.
 Su SDD se redactó antes del código. Tras verificar005, la puerta006 se cumplió
 a2026-10-15 00:39:11+02:00 con534 minutos restantes. Se creó únicamente su
-especificación borrador;006–008 siguen sin implementación.
+especificación borrador. Ese límite histórico queda sustituido para006 por AG-013:
+D-006-01–10, SDD/ADR e implementación expresamente autorizados.007solo borrador
+si006queda completamente verificada y restan45min;008 continúa prevista.
+La [puerta007](../qa/evidencias/ag013/puerta007.json) se cumplió a13:23:37+02:00,
+con537,298min restantes. Se creó únicamente la especificación borrador007.
 
 ## Estados y evidencias
 

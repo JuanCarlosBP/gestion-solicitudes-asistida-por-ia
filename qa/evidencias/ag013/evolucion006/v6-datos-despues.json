@@ -1,0 +1,172 @@
+{
+  "fecha": "2026-10-15T10:48:08.355Z",
+  "modo": "despues",
+  "historial": [
+    {
+      "installed_rank": 1,
+      "version": "1",
+      "checksum": -60045458,
+      "success": true
+    },
+    {
+      "installed_rank": 2,
+      "version": "2",
+      "checksum": 1974314313,
+      "success": true
+    },
+    {
+      "installed_rank": 3,
+      "version": "3",
+      "checksum": -1445419552,
+      "success": true
+    },
+    {
+      "installed_rank": 4,
+      "version": "4",
+      "checksum": 1005696110,
+      "success": true
+    },
+    {
+      "installed_rank": 5,
+      "version": "5",
+      "checksum": 1415710217,
+      "success": true
+    },
+    {
+      "installed_rank": 6,
+      "version": "6",
+      "checksum": 622457969,
+      "success": true
+    }
+  ],
+  "columnas": {
+    "usuarios": [
+      "id",
+      "correo",
+      "nombre_visible",
+      "clave_hash",
+      "habilitado",
+      "intentos_fallidos",
+      "inicio_ventana",
+      "bloqueado_hasta",
+      "creado_en",
+      "actualizado_en",
+      "version"
+    ],
+    "usuarios_roles": [
+      "usuario_id",
+      "rol"
+    ],
+    "proveedores": [
+      "id",
+      "tipo",
+      "denominacion",
+      "pais_fiscal",
+      "identificador_fiscal",
+      "identificador_fiscal_normalizado",
+      "correo_contacto",
+      "telefono_contacto",
+      "activo",
+      "version",
+      "creado_en",
+      "actualizado_en"
+    ],
+    "solicitudes": [
+      "id",
+      "numero",
+      "autor_id",
+      "proveedor_id",
+      "supervisor_id",
+      "asunto",
+      "descripcion",
+      "moneda",
+      "estado",
+      "total",
+      "version",
+      "proveedor_denominacion",
+      "proveedor_pais_fiscal",
+      "proveedor_identificador_fiscal",
+      "proveedor_tipo",
+      "creado_en",
+      "actualizado_en",
+      "presentado_en"
+    ],
+    "conceptos_solicitud": [
+      "id",
+      "solicitud_id",
+      "descripcion",
+      "cantidad",
+      "unidad",
+      "precio_unitario",
+      "importe_linea",
+      "posicion"
+    ],
+    "operaciones_idempotentes_solicitud": [
+      "usuario_id",
+      "clave",
+      "solicitud_id",
+      "operacion",
+      "huella",
+      "resultado_numero",
+      "resultado_estado",
+      "resultado_version",
+      "resultado_actualizado_en",
+      "resultado_presentado_en",
+      "resultado_moneda",
+      "resultado_total",
+      "creado_en",
+      "expira_en",
+      "resultado_decidido_en"
+    ],
+    "decisiones_solicitud": [
+      "id",
+      "solicitud_id",
+      "actor_id",
+      "actor_nombre_visible",
+      "tipo",
+      "comentario",
+      "motivo",
+      "decidido_en",
+      "version_anterior",
+      "version_resultante",
+      "peticion_id"
+    ]
+  },
+  "tablas": {
+    "usuarios": {
+      "filas": 28,
+      "huella": "0616e6c53550ade9d8e7c61c38fa93e2"
+    },
+    "usuarios_roles": {
+      "filas": 49,
+      "huella": "3c850198dcb18882d0685f5907ee49c1"
+    },
+    "proveedores": {
+      "filas": 60,
+      "huella": "96e30f4a1dac25032d68ab16ed5aec6a"
+    },
+    "solicitudes": {
+      "filas": 75,
+      "huella": "b0e25cd6877ba9ff0126fe028540c1f4"
+    },
+    "conceptos_solicitud": {
+      "filas": 98,
+      "huella": "bdacf3b20e7a7ef93bb74256d738ac19"
+    },
+    "operaciones_idempotentes_solicitud": {
+      "filas": 86,
+      "huella": "25d6e1e8ea83cc3ed9e8f576ef3db9fe"
+    },
+    "decisiones_solicitud": {
+      "filas": 31,
+      "huella": "a1c572c9452e35389d38d08cc67cc452"
+    }
+  },
+  "controles": {
+    "migracionesAnteriores": true,
+    "v6Aplicada": true,
+    "datosConservados": true
+  },
+  "tamanoRegistroBytes": 139264,
+  "resultado": "PASS"
+}

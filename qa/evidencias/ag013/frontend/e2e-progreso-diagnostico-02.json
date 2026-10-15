@@ -1,0 +1,1 @@
+{"fin":"2026-10-15T12:58:50.7055506+02:00","comando":"npm","inicio":"2026-10-15T12:58:42.4010832+02:00","salida":1,"segundos":8.3017224,"argumentos":["run","test:e2e","--","operaciones.spec.ts","--grep","CI-07/09"]}

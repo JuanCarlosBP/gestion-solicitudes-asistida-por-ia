@@ -1,0 +1,1 @@
+{"argumentos":["spotless:apply","verify","dependency:list","-DoutputFile=target/dependencias.txt"],"segundos":88.6663433,"inicio":"2026-10-15T12:48:29.3075522+02:00","nombre":"verify-final02","fin":"2026-10-15T12:49:57.9785140+02:00","salida":0}

@@ -1,0 +1,19 @@
+{
+  "fecha": "2026-10-15T13:23:37.1028528+02:00",
+  "zona": "Europe/Madrid",
+  "limite": "2026-10-15T22:20:55.0000000+02:00",
+  "minutosRestantes": 537.298,
+  "minimoMinutos": 45,
+  "cierre006": "2026-10-15T13:23:17.9145718+02:00",
+  "criterios": "CI-01 a CI-10 verificados localmente",
+  "revision": "Sin hallazgos abiertos",
+  "documentos": {
+    "errores": 0,
+    "patrones": 0,
+    "enlaces": 577
+  },
+  "integridad": "1075 protegidos intactos; prefijo CSV conservado",
+  "resultado": "CUMPLIDA",
+  "permitido": "Unicamente especificaciones/007-historial-auditoria/especificacion.md; borrador pendiente de aprobacion humana",
+  "excluido": "Plan; tareas; ADR; migracion; codigo007"
+}

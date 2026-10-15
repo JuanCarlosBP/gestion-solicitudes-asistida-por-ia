@@ -1,0 +1,38 @@
+{
+  "fecha": "2026-10-15T12:54:51.8600650+02:00",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-sesiones-compose.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-proveedores-compose.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-solicitudes-compose.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-aprobaciones-compose.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-concurrencia-compose.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-evolucion-v6.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/verificar-entrega-ag013.mjs"
+    },
+    {
+      "salida": 0,
+      "archivo": "qa/rutas-evidencia.mjs"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "mavenComponentes": 132,
+  "npmCompleta": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "dependencias": [
+    {
+      "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7",
+      "ruta": "backend/pom.xml",
+      "igualEntrada": true
+    },
+    {
+      "sha256": "E9A71302D587FE917A9E05B23B209CE8F36595CFF8F2E5822FE1275D301E1690",
+      "ruta": "frontend/package.json",
+      "igualEntrada": true
+    },
+    {
+      "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+      "ruta": "frontend/package-lock.json",
+      "igualEntrada": true
+    }
+  ],
+  "limite": "Auditoría de dependencias contra bases consultadas, no del sistema operativo ni vulnerabilidades desconocidas.",
+  "mavenAvisos": 0,
+  "fecha": "2026-10-15T12:53:43.7945891+02:00",
+  "npmProduccion": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  }
+}

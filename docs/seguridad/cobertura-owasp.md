@@ -695,3 +695,18 @@ ASVS/WCAG completas siguen pendientes; no se inventan identificadores ASVS.
 La [validación 005](../../especificaciones/005-aprobaciones/validacion.md) distingue
 resultados ejecutados de pendientes. Esta cobertura es parcial y no constituye
 certificación de seguridad ni auditoría integral de ASVS.
+
+## Controles parciales de concurrencia — incremento 006
+
+| Categoría | Control y evidencia exigida |
+|---|---|
+| A01 Acceso | CI-05: permisos actuales, visibilidad por usuario y CSRF antes de replay; revocación con JWT aún vigente y claves ajenas. |
+| A02 Configuración | CI-08/09: V6, privilegios mínimos, errores sin SQL/stack y límites explícitos de espera. |
+| A03 Cadena | CI-10: versiones conservadas, npm/OSV Maven actuales, Actions por SHA y builds sin caché. |
+| A06 Diseño | CI-02/03/04/07: versión y huella con finalidades distintas, resultado persistido original, recuperación entre pestañas y tratamiento de respuestas tardías. |
+| A09 Registro | CI-04/05/08: solo éxitos atómicos, sin cuerpos de petición/errores/credenciales; recuperación mínima. Retención pendiente. |
+| A10 Excepciones | CI-06/09: rollback reintentable, plazo de espera, reinicio, dependencia caída y recuperación real. |
+
+Resultados y límites en [validación 006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).
+Se mantiene cobertura parcial; no se atribuyen certificaciones ni requisitos ASVS
+sin contrastar su texto. La auditoría de dependencias no cubre todo el sistema operativo.

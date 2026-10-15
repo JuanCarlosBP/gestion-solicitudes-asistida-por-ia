@@ -1,0 +1,61 @@
+{
+  "estado": "006 VERIFICADA LOCALMENTE; CI-01 a CI-10; revision sin hallazgos abiertos",
+  "inicio": "2026-10-15T12:20:55.0000000+02:00",
+  "limite": "2026-10-15T22:20:55.0000000+02:00",
+  "cierre": "2026-10-15T13:27:21.1188059+02:00",
+  "zona": "Europe/Madrid",
+  "duracion": "01:06:26",
+  "duracionSegundos": 3986.119,
+  "dentroDelLimite": true,
+  "pruebas": {
+    "reintentosE2e": 0,
+    "angular": 411,
+    "backend": 211,
+    "e2e": 23,
+    "controlesApi": 492,
+    "unitariasBackend": 99,
+    "integracionBackend": 112
+  },
+  "herramientas": "Spotless; SpotBugs0; tipos; lint; formato; build; Docker sin cache; Compose persistencia503/200; actionlint PASS",
+  "auditorias": "npm produccion/completa0; OSV Maven132 componentes0 avisos; dependencias sin cambios",
+  "fuentesComparadas": 251,
+  "divergenciasFuentes": 0,
+  "protegidos": 1075,
+  "alteracionesProtegidos": 0,
+  "documentos": {
+    "destinosAusentes": 0,
+    "resultado": "PASS",
+    "enlaces": 592,
+    "patronesSecretos": 0
+  },
+  "borrador007": {
+    "revision": "Coherencia y alcance confirmados; no aprobacion",
+    "minutosRestantes": 537.298,
+    "creado": true,
+    "puerta": "2026-10-15T13:23:37.1028528+02:00",
+    "estado": "Borrador pendiente de aprobacion humana",
+    "unicoArchivo": "especificaciones/007-historial-auditoria/especificacion.md"
+  },
+  "compose": "Tres servicios detenidos; volumen conservado; evidencia compose-cierre.json",
+  "git": {
+    "ausenciaAbsoluta": false,
+    "desviacion": "git status --short inicial antes de leer prohibicion; salida vacia; sin comandos Git posteriores",
+    "escrituras": false
+  },
+  "aceptacion006": false,
+  "integracion": false,
+  "despliegue": false,
+  "pendientesLocales": [],
+  "pendientesHumanos": [
+    "Revision y aceptacion006",
+    "Seleccion de cambios y operaciones Git",
+    "Nueva CI remota e integracion",
+    "Aclaracion y aprobacion de especificacion007 antes de planificar"
+  ],
+  "limites": [
+    "EN_PROGRESO de una instancia",
+    "Web Locks necesario para iniciar operaciones coordinadas",
+    "Retencion servidor sin purga; politica juridica pendiente",
+    "Carga, OWASP, accesibilidad y sistema operativo no certificados integralmente"
+  ]
+}

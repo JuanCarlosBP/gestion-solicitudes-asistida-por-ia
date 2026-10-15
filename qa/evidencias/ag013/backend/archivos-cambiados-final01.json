@@ -1,0 +1,147 @@
+[
+  {
+    "ruta": "backend/spotbugs-exclusiones.xml",
+    "estado": "modificado",
+    "sha256": "940F7C5E667B9EDA6D43F6078A0C8459D9E5F3E853435FEF7D00D04B4BB290BE"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+    "estado": "modificado",
+    "sha256": "54DD095F6E858BDDA3214F8412D2D73DC2316C1A72F489D05C58922DFCBDCBC9"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+    "estado": "modificado",
+    "sha256": "B79DCC1ED3F46002C29834FD0017F66428CD193EA7A835EBD7B1AF8F46946C5A"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+    "estado": "modificado",
+    "sha256": "C6B987DE3BD0BEA8DC4DF5D00988071B9F563068C3DCB0E9E3923FBF4E3E76EE"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java",
+    "estado": "modificado",
+    "sha256": "F292BEA76F3031B906C171BFAFE9DE4339D14B86FDD8E99D49503A83F14CBEC6"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/AutorizacionOperaciones.java",
+    "estado": "nuevo",
+    "sha256": "2EA28E52A346322452311EE97C6313C6CE2A03D81D945C143FDA4F30C3BF4C80"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones.java",
+    "estado": "nuevo",
+    "sha256": "369B23E5A5293F111CB6A36DF7B0042E0384EAADDB5BC8715310254DB36F4C84"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones.java",
+    "estado": "nuevo",
+    "sha256": "4A35CC47851E631A46CD79E1597D9BF0261E0D34AE60A1DEB995448769C07156"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/ErrorOperacion.java",
+    "estado": "nuevo",
+    "sha256": "30F651E51D2B5DD604E6EF3136FA9F2EE9457184F32B9F5369C7CE84C5D3EBC8"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/EstadoOperacion.java",
+    "estado": "nuevo",
+    "sha256": "CFE1B96FDC0F22FEFD64B8CD70B9A41A42F53C24F441FA8DFC50950CA73FEF8E"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/HuellaOperacion.java",
+    "estado": "nuevo",
+    "sha256": "067C209E924F58ABA909C229C41A1B950959F1D4C3B7645748B1903AB4661DD4"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/PeticionOperacion.java",
+    "estado": "nuevo",
+    "sha256": "0389C66FEBC0AB6C0968373DFC9CDEC6FAFFE09493EF923A19175C266965F900"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/TipoOperacion.java",
+    "estado": "nuevo",
+    "sha256": "ECDBA0971630BA6C97431E009B090B29F109BF44B3EAD061024CF6E2B1A4849E"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/http/ControladorOperaciones.java",
+    "estado": "nuevo",
+    "sha256": "BB944FC3BF1D031123A4A4DE812A15D28C7028CF9093CCE5A7895F85A983CFAD"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc.java",
+    "estado": "nuevo",
+    "sha256": "4645F28307B2CAA4B3F4B45B77EBFF114920C27BCBDC0C6DB5E8D43A23DE5F33"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.java",
+    "estado": "modificado",
+    "sha256": "8BA2BD0F0AC87F81CED713F84CF0104568AF96F81E00DD681DE3072D3020B34A"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java",
+    "estado": "modificado",
+    "sha256": "8E0CBE3D4976901C38A245C632160413506F97C79CA0B6130BEC00BF37800FA8"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/RepositorioSolicitudes.java",
+    "estado": "modificado",
+    "sha256": "D081FC81C96EAFAD7C783BA1C751B1F0438561FA87EDE2502C017C7D84ED36C6"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.java",
+    "estado": "modificado",
+    "sha256": "D9A29609C8B9AE69591D0DEF65C5072C2A0604EAF138A3CF1734C2259CF1DBA3"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java",
+    "estado": "modificado",
+    "sha256": "6846D816022EF466CDD308AFD51277862DE6264E1F4695BC5410D5218400D4FE"
+  },
+  {
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc.java",
+    "estado": "modificado",
+    "sha256": "9D5DA999BC7131C958742D1D1F57070931AEB247847E1F6673E9549D42A52056"
+  },
+  {
+    "ruta": "backend/src/main/resources/db/migration/V6__idempotencia_transversal.sql",
+    "estado": "nuevo",
+    "sha256": "8CDB4B35515B6E3E5AABF310266CBCBAF9C623CF201EA45DC0702BFC8707959B"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+    "estado": "modificado",
+    "sha256": "92913D5225A22B5F11ACE79AB632B33950E80965A6C0FC4EECE7395CCE21AC42"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperacionesTest.java",
+    "estado": "nuevo",
+    "sha256": "D17780CCDFB88FCCDD8C78581BFD1CEC8155650875E107B168D974682FC90035"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/dominio/OperacionesDominioTest.java",
+    "estado": "nuevo",
+    "sha256": "7D73B7383631477E43C3489A9F3415700D821EB0A709CA8D2681FA39313BE127"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/integracion/OperacionesIT.java",
+    "estado": "nuevo",
+    "sha256": "3CE2D6BCA4680BD001DD879C4164C6A90CA4FC47A8B0DADCD481784039E82F98"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/integracion/ProveedoresIT.java",
+    "estado": "modificado",
+    "sha256": "F048039E58361771464466CB28E87EAAA287DE90CCC36141F783FA29054E35FC"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/AprobacionesIT.java",
+    "estado": "modificado",
+    "sha256": "D88E25D3AF040197301F4123BDC3E7EC3FAD3119B0F30E268242EF1F4DA514A4"
+  },
+  {
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/SolicitudesIT.java",
+    "estado": "modificado",
+    "sha256": "4D1CEBBAC2B96B2402EB560B1D2AB7EEAF8EE73F5BE560BB0EFD04D6C3F9405E"
+  }
+]

@@ -1,0 +1,4 @@
+
+> gestion-solicitudes-frontend@0.0.1 lint
+> eslint src e2e playwright.config.ts --max-warnings=0
+

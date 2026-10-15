@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-15T11:12:18.070Z",
+  "baseUrl": "http://127.0.0.1:18080",
+  "esperado": "Servicio no disponible",
+  "observado": "! Servicio no disponible\n\nNo hemos podido confirmar la conexión. Vuelve a intentarlo en unos instantes.",
+  "resultado": "PASS",
+  "origen": "PostgreSQL real de Compose, sin interceptar HTTP"
+}

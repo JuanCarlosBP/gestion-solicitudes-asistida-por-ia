@@ -1,0 +1,188 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --reporters=default --reporters=junit --output-file=../qa/evidencias/ag013/frontend/unitarias-cierre.xml
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+chunk-4H46WY5O.js                            | -                                         | 196.54 kB | 
+chunk-I5UUE7ON.js                            | -                                         |  68.78 kB | 
+chunk-7RQC6DRA.js                            | -                                         |  45.71 kB | 
+chunk-3FASO6ML.js                            | -                                         |  27.99 kB | 
+spec-app-solicitudes-solicitudes-paginas.js  | spec-app-solicitudes-solicitudes-paginas  |  21.55 kB | 
+spec-app-proveedores-proveedores-paginas.js  | spec-app-proveedores-proveedores-paginas  |  21.52 kB | 
+spec-app-solicitudes-aprobaciones.js         | spec-app-solicitudes-aprobaciones         |  20.65 kB | 
+spec-app-operaciones-operaciones-seguras.js  | spec-app-operaciones-operaciones-seguras  |  18.63 kB | 
+chunk-OYRBCIIT.js                            | -                                         |  13.98 kB | 
+spec-app-app.js                              | spec-app-app                              |  12.86 kB | 
+chunk-3XEGGSRF.js                            | -                                         |  12.54 kB | 
+chunk-YWMT7MJJ.js                            | -                                         |  10.79 kB | 
+chunk-VKMDZW7L.js                            | -                                         |  10.46 kB | 
+chunk-LQPAF5PF.js                            | -                                         |  10.30 kB | 
+spec-app-solicitudes-solicitudes-editores.js | spec-app-solicitudes-solicitudes-editores |   8.05 kB | 
+spec-app-solicitudes-solicitud-calculos.js   | spec-app-solicitudes-solicitud-calculos   |   7.89 kB | 
+spec-app-identidad-sesion-interceptor.js     | spec-app-identidad-sesion-interceptor     |   7.57 kB | 
+chunk-GTL7QEGV.js                            | -                                         |   6.57 kB | 
+spec-app-identidad-autenticacion.js          | spec-app-identidad-autenticacion          |   6.56 kB | 
+chunk-DZ3OUIDB.js                            | -                                         |   5.42 kB | 
+spec-app-proveedores-proveedores-api.js      | spec-app-proveedores-proveedores-api      |   5.37 kB | 
+spec-app-solicitudes-solicitudes-api.js      | spec-app-solicitudes-solicitudes-api      |   5.37 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+chunk-PGDIXICS.js                            | -                                         |   4.22 kB | 
+spec-app-identidad-mi-cuenta.js              | spec-app-identidad-mi-cuenta              |   3.87 kB | 
+spec-app-app.routes.js                       | spec-app-app.routes                       |   3.76 kB | 
+spec-app-identidad-acceso.js                 | spec-app-identidad-acceso                 |   3.61 kB | 
+chunk-6MMWZKPE.js                            | -                                         |   3.48 kB | 
+spec-app-solicitudes-foco-visible.js         | spec-app-solicitudes-foco-visible         |   3.45 kB | 
+spec-app-proveedores-proveedor-validacion.js | spec-app-proveedores-proveedor-validacion |   2.92 kB | 
+chunk-DH3JMKOI.js                            | -                                         |   2.87 kB | 
+chunk-JSY2MG7V.js                            | -                                         |   2.63 kB | 
+chunk-W3RB43HL.js                            | -                                         |   2.42 kB | 
+spec-app-inicio-inicio.js                    | spec-app-inicio-inicio                    |   2.40 kB | 
+chunk-EBKMLM7D.js                            | -                                         |   2.12 kB | 
+spec-app-inicio-salud-api.js                 | spec-app-inicio-salud-api                 |   1.96 kB | 
+spec-app-identidad-sesion-guard.js           | spec-app-identidad-sesion-guard           |   1.53 kB | 
+chunk-YCQTGEDS.js                            | -                                         |   1.48 kB | 
+styles.css                                   | styles                                    |   1.47 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+spec-app-identidad-sesion-store.js           | spec-app-identidad-sesion-store           |   1.19 kB | 
+chunk-K32UC3AB.js                            | -                                         |   1.18 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+chunk-DW3ZE5EW.js                            | -                                         | 799 bytes | 
+chunk-Z5TOCO3O.js                            | -                                         | 538 bytes | 
+chunk-2PECFU4L.js                            | -                                         | 436 bytes | 
+
+                                             | Initial total                             | 600.39 kB
+
+Application bundle generation complete. [1.920 seconds] - 2026-10-15T10:54:28.010Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/salud-api.spec.ts (4 tests) 30ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-store.spec.ts (2 tests) 2ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedor-validacion.spec.ts (18 tests) 5ms
+ ❯ |gestion-solicitudes-frontend| src/app/solicitudes/solicitud-calculos.spec.ts (81 tests | 1 failed) 22ms
+     ✓ 1 × 10.0000 = 10.00, HALF_UP por línea 2ms
+     ✓ 2.500 × 4.1250 = 10.31, HALF_UP por línea 0ms
+     ✓ 3 × 0.3350 = 1.01, HALF_UP por línea 0ms
+     ✓ 1 × 0.0050 = 0.01, HALF_UP por línea 0ms
+     ✓ 1 × 0.0049 = 0.00, HALF_UP por línea 0ms
+     ✓ 0.001 × 0.0001 = 0.00, HALF_UP por línea 0ms
+     ✓ 1 × 99999999999.9999 = 100000000000.00, HALF_UP por línea 0ms
+     ✓ 999999999999.999 × 0.0001 = 100000000.00, HALF_UP por línea 0ms
+     ✓ 100 × 99999999999.9999 = 9999999999999.99, HALF_UP por línea 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 0 × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos -1 × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1e3 × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1.0001 × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1000000000000 × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1 × 0 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1 × -1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1 × 1.00001 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1 × 100000000000 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 999999999999.999 × 99999999999.9999 0ms
+     ✓ rechaza cantidad/precio/límite inválidos  × 1 0ms
+     ✓ rechaza cantidad/precio/límite inválidos 1,1 × 1 0ms
+     ✓ suma líneas ya redondeadas, no el producto acumulado 0ms
+     ✓ detecta desbordamiento de suma aunque cada línea quepa 0ms
+     ✓ formatea máximos sin convertirlos a coma flotante 0ms
+     ✓ admite borrador mínimo sin referencias ni conceptos 1ms
+     ✓ aplica longitudes por puntos Unicode tras recorte 2ms
+     ✓ admite unidad UNIDAD 0ms
+     ✓ admite unidad HORA 0ms
+     ✓ admite unidad DIA 0ms
+     ✓ admite unidad MES 0ms
+     ✓ admite unidad KILOGRAMO 0ms
+     ✓ admite unidad LITRO 0ms
+     ✓ admite unidad METRO 0ms
+     ✓ admite unidad SERVICIO 0ms
+     ✓ rechaza concepto inválido { descripcion: '' } 0ms
+     ✓ rechaza concepto inválido { descripcion: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } 0ms
+     ✓ rechaza concepto inválido { unidad: 'OTRA' } 0ms
+     ✓ rechaza concepto inválido { posicion: +0 } 0ms
+     ✓ rechaza concepto inválido { posicion: 1.1 } 0ms
+     ✓ rechaza concepto inválido { id: 'no-uuid' } 0ms
+     ✓ rechaza más de cien, posiciones e identificadores repetidos 1ms
+     ✓ permite cien, UUID nuevos nulos y posiciones no contiguas 1ms
+     ✓ valida referencias y exceso total con error controlado 1ms
+     ✓ rechaza filtros inválidos { page: '-1' } 0ms
+     ✓ rechaza filtros inválidos { page: '1.5' } 0ms
+     ✓ rechaza filtros inválidos { page: '9999999999999999999999' } 0ms
+     ✓ rechaza filtros inválidos { size: '0' } 0ms
+     ✓ rechaza filtros inválidos { size: '101' } 0ms
+     ✓ rechaza filtros inválidos { sort: 'id,asc' } 0ms
+     ✓ rechaza filtros inválidos { numero: 'SOL-1' } 0ms
+     ✓ rechaza filtros inválidos { estado: 'ANULADA' } 0ms
+     ✓ rechaza filtros inválidos { proveedor: 'otro' } 0ms
+     ✓ rechaza filtros inválidos { supervisor: 'otro' } 0ms
+     ✓ rechaza filtros inválidos { autor: 'otro' } 0ms
+     ✓ rechaza filtros inválidos { asunto: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } 0ms
+     ✓ rechaza filtros inválidos { extra: 'dato' } 0ms
+     ✓ rechaza filtros inválidos { size: [ '1', '2' ] } 0ms
+     ✓ rechaza filtros inválidos { fechaDesde: '2026-02-30' } 0ms
+     ✓ rechaza filtros inválidos { fechaHasta: 'ayer' } 0ms
+     ✓ rechaza filtros inválidos { fechaDesde: '2026-10-15', fechaHasta: '2026-10-14' } 0ms
+     ✓ admite orden cerrado actualizadoEn,desc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado actualizadoEn,asc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado numero,asc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado numero,desc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado creadoEn,desc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado creadoEn,asc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado importeTotal,desc y fechas inclusivas iguales 0ms
+     ✓ admite orden cerrado importeTotal,asc y fechas inclusivas iguales 0ms
+     ✓ autor solo global y conserva acentos/comodines literales 0ms
+     ✓ error 400/ presenta texto propio 0ms
+     ✓ error 401/ presenta texto propio 0ms
+     ✓ error 403/ presenta texto propio 0ms
+     ✓ error 404/ presenta texto propio 0ms
+     ✓ error 409/VERSION_OBSOLETA presenta texto propio 0ms
+     ✓ error 409/SOLICITUD_NO_EDITABLE presenta texto propio 0ms
+     ✓ error 409/PROVEEDOR_INACTIVO presenta texto propio 0ms
+     ✓ error 409/SUPERVISOR_INVALIDO presenta texto propio 0ms
+     × error 409/CLAVE_IDEMPOTENCIA_REUTILIZADA presenta texto propio 5ms
+     ✓ error 500/ presenta texto propio 0ms
+     ✓ error 503/ presenta texto propio 0ms
+     ✓ no revela mensajes remotos ni confunde referencias con conflictos de versión 0ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-api.spec.ts (14 tests) 98ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-api.spec.ts (14 tests) 102ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/autenticacion.spec.ts (12 tests) 71ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-guard.spec.ts (2 tests) 55ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-interceptor.spec.ts (18 tests) 83ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.spec.ts (1 test) 89ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/foco-visible.spec.ts (4 tests) 159ms
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/inicio.spec.ts (3 tests) 151ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/mi-cuenta.spec.ts (4 tests) 133ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/acceso.spec.ts (4 tests) 151ms
+ ✓ |gestion-solicitudes-frontend| src/app/operaciones/operaciones-seguras.spec.ts (57 tests) 175ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.routes.spec.ts (6 tests) 137ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-editores.spec.ts (9 tests) 335ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-paginas.spec.ts (43 tests) 490ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts (38 tests) 626ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/aprobaciones.spec.ts (71 tests) 647ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitud-calculos.spec.ts > Filtros cerrados y errores seguros > error 409/CLAVE_IDEMPOTENCIA_REUTILIZADA presenta texto propio
+AssertionError: expected 'Esta entrada es distinta de la operac…' to contain 'confirmación'
+
+Expected: "confirmación"
+Received: "Esta entrada es distinta de la operación confirmada. No se ha aplicado. Consulta el resultado antes de continuar."
+
+ ❯ src/app/solicitudes/solicitud-calculos.spec.ts:209:7
+    207|     expect(
+    208|       mensajeErrorSolicitud({ status, error: { error: codigo, detalle:…
+    209|     ).toContain(mensaje),
+       |       ^
+    210|   );
+    211|   it('no revela mensajes remotos ni confunde referencias con conflicto…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 19 passed (20)
+      Tests  1 failed | 404 passed (405)
+   Start at  12:54:28
+   Duration  3.42s (transform 1.21s, setup 12.79s, import 2.90s, tests 3.56s, environment 32.29s)
+
+JUNIT report written to C:/Users/carli/gestion-solicitudes-asistida-por-ia/qa/evidencias/ag013/frontend/unitarias-cierre.xml

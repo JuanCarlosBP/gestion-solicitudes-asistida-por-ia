@@ -1,0 +1,67 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+chunk-SQNYKPE5.js                            | -                                         | 195.39 kB | 
+chunk-EHZC2GXF.js                            | -                                         |  68.78 kB | 
+chunk-W5Q7ZOY7.js                            | -                                         |  45.71 kB | 
+chunk-H76U6OQB.js                            | -                                         |  27.99 kB | 
+spec-app-solicitudes-aprobaciones.js         | spec-app-solicitudes-aprobaciones         |  20.65 kB | 
+spec-app-proveedores-proveedores-paginas.js  | spec-app-proveedores-proveedores-paginas  |  20.03 kB | 
+spec-app-solicitudes-solicitudes-paginas.js  | spec-app-solicitudes-solicitudes-paginas  |  19.98 kB | 
+spec-app-operaciones-operaciones-seguras.js  | spec-app-operaciones-operaciones-seguras  |  14.70 kB | 
+spec-app-app.js                              | spec-app-app                              |  12.86 kB | 
+chunk-J5Y65BD5.js                            | -                                         |  12.66 kB | 
+chunk-3XEGGSRF.js                            | -                                         |  12.54 kB | 
+chunk-VKMDZW7L.js                            | -                                         |  10.46 kB | 
+chunk-LQPAF5PF.js                            | -                                         |  10.30 kB | 
+chunk-IZSJHBUN.js                            | -                                         |   9.85 kB | 
+spec-app-solicitudes-solicitudes-editores.js | spec-app-solicitudes-solicitudes-editores |   8.05 kB | 
+spec-app-solicitudes-solicitud-calculos.js   | spec-app-solicitudes-solicitud-calculos   |   7.89 kB | 
+spec-app-identidad-sesion-interceptor.js     | spec-app-identidad-sesion-interceptor     |   7.57 kB | 
+spec-app-identidad-autenticacion.js          | spec-app-identidad-autenticacion          |   6.56 kB | 
+chunk-QQGK4LSB.js                            | -                                         |   6.14 kB | 
+spec-app-proveedores-proveedores-api.js      | spec-app-proveedores-proveedores-api      |   5.37 kB | 
+spec-app-solicitudes-solicitudes-api.js      | spec-app-solicitudes-solicitudes-api      |   5.37 kB | 
+chunk-IZPIEHWI.js                            | -                                         |   4.80 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+chunk-MSGZ3UTH.js                            | -                                         |   4.22 kB | 
+spec-app-identidad-mi-cuenta.js              | spec-app-identidad-mi-cuenta              |   3.87 kB | 
+spec-app-app.routes.js                       | spec-app-app.routes                       |   3.76 kB | 
+spec-app-identidad-acceso.js                 | spec-app-identidad-acceso                 |   3.61 kB | 
+chunk-6MMWZKPE.js                            | -                                         |   3.48 kB | 
+spec-app-solicitudes-foco-visible.js         | spec-app-solicitudes-foco-visible         |   3.45 kB | 
+spec-app-proveedores-proveedor-validacion.js | spec-app-proveedores-proveedor-validacion |   2.92 kB | 
+chunk-DH3JMKOI.js                            | -                                         |   2.87 kB | 
+chunk-JSY2MG7V.js                            | -                                         |   2.63 kB | 
+chunk-W3RB43HL.js                            | -                                         |   2.42 kB | 
+spec-app-inicio-inicio.js                    | spec-app-inicio-inicio                    |   2.40 kB | 
+chunk-EBKMLM7D.js                            | -                                         |   2.12 kB | 
+spec-app-inicio-salud-api.js                 | spec-app-inicio-salud-api                 |   1.96 kB | 
+spec-app-identidad-sesion-guard.js           | spec-app-identidad-sesion-guard           |   1.53 kB | 
+chunk-YCQTGEDS.js                            | -                                         |   1.48 kB | 
+styles.css                                   | styles                                    |   1.47 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+spec-app-identidad-sesion-store.js           | spec-app-identidad-sesion-store           |   1.19 kB | 
+chunk-K32UC3AB.js                            | -                                         |   1.18 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+chunk-XWSH2MEJ.js                            | -                                         | 799 bytes | 
+chunk-Z5TOCO3O.js                            | -                                         | 538 bytes | 
+chunk-2PECFU4L.js                            | -                                         | 436 bytes | 
+
+                                             | Initial total                             | 588.93 kB
+
+Application bundle generation complete. [2.070 seconds] - 2026-10-15T10:37:01.376Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  20 passed (20)
+      Tests  397 passed (397)
+   Start at  12:37:01
+   Duration  3.71s (transform 1.43s, setup 13.58s, import 3.70s, tests 4.50s, environment 34.39s)
+

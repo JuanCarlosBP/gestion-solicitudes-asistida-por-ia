@@ -1,0 +1,47 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/solicitudes/solicitudes-paginas.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                         | Names                                    |  Raw size
+spec-app-solicitudes-solicitudes-paginas.js | spec-app-solicitudes-solicitudes-paginas | 442.41 kB | 
+chunk-RSTWSNOR.js                           | -                                        |   4.75 kB | 
+styles.css                                  | styles                                   |   1.47 kB | 
+init-testbed.js                             | init-testbed                             |   1.21 kB | 
+vitest-mock-patch.js                        | vitest-mock-patch                        | 974 bytes | 
+
+                                            | Initial total                            | 450.82 kB
+
+Application bundle generation complete. [1.899 seconds] - 2026-10-15T11:04:35.641Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts (40 tests | 2 failed) 560ms
+     × alta con error previo y recuperación manual conserva la intención terminal 14ms
+     × alta con error previo y recuperación otra-pestana conserva la intención terminal 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts > Solicitudes: páginas, rutas y permisos SCI-01–12 > alta con error previo y recuperación manual conserva la intención terminal
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts > Solicitudes: páginas, rutas y permisos SCI-01–12 > alta con error previo y recuperación otra-pestana conserva la intención terminal
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/app/solicitudes/solicitudes-paginas.spec.ts:316:105
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 38 passed (40)
+   Start at  13:04:35
+   Duration  1.79s (transform 155ms, setup 291ms, import 180ms, tests 560ms, environment 623ms)
+

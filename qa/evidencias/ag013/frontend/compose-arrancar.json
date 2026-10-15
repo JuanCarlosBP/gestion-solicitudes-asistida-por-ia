@@ -1,0 +1,1 @@
+{"salida":0,"argumentos":["compose","--env-file","infraestructura/.env.example","-f","infraestructura/compose.yaml","up","-d","--no-build","--wait","frontend"],"comando":"docker","segundos":2.1051041,"inicio":"2026-10-15T12:55:53.5798020+02:00","fin":"2026-10-15T12:55:55.6870175+02:00"}

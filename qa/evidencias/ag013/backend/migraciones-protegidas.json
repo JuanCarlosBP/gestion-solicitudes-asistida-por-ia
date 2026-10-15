@@ -1,0 +1,27 @@
+[
+  {
+    "igual": true,
+    "sha256": "9F79968E2504E0B1A8C24FCCF2CACCDBDFF2DC87DBB7F1BF6442379397AD27FE",
+    "ruta": "backend/src/main/resources/db/migration/V5__aprobaciones_y_evento_minimo.sql"
+  },
+  {
+    "igual": true,
+    "sha256": "EDAACDEF093739757CC25172D9E350729BDFCEB7F9795FD21D227C547F0BCD50",
+    "ruta": "backend/src/main/resources/db/migration/V4__solicitudes_conceptos_importes.sql"
+  },
+  {
+    "igual": true,
+    "sha256": "2082F182E01E5923BECE5BCF34F3C214C3AD4957FBB388DDDBD04FD3C519E8FD",
+    "ruta": "backend/src/main/resources/db/migration/V3__proveedores.sql"
+  },
+  {
+    "igual": true,
+    "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3",
+    "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql"
+  },
+  {
+    "igual": true,
+    "sha256": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2",
+    "ruta": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "limite20min": true,
+  "backend": "PASS compile Java21",
+  "docker": "29.1.3 accesible con escalación",
+  "historicos": "1135 huellas iniciales; sin cambios históricos",
+  "duracionMinutos": 9.009381435,
+  "pr3": "consultada lectura; run38718798024 failure",
+  "frontend": "PASS build",
+  "fin": "2026-10-15T12:29:55.5628861+02:00",
+  "pr4": "consultada lectura; run38718789285 failure"
+}

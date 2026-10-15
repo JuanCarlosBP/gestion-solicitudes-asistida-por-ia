@@ -1,0 +1,6 @@
+Evidencias de auditoría: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag013\auditoria-maven
+Starting filesystem walk for root: C:\
+Scanned C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag013\auditoria-maven\maven.cdx.json file and found 132 packages
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 12.192ms elapsed, 12.1925ms wall time
+Loaded Maven local db from C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\osv-cache/osv-scalibr/Maven/all.zip
+Inventario local: 132 componentes; auditoría sin envío de metadatos.

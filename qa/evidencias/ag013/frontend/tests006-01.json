@@ -1,0 +1,1 @@
+{"argumentos":["test","--","--include=src/app/operaciones/*.spec.ts"],"segundos":5.2668751,"salida":0,"fin":"2026-10-15T12:36:42.6458534+02:00","comando":"npm","inicio":"2026-10-15T12:36:37.3764526+02:00"}

@@ -1,0 +1,894 @@
+{
+  "controles": [
+    {
+      "sha256Local": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F",
+      "archivo": "application.yaml",
+      "coincide": true,
+      "sha256Imagen": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2",
+      "archivo": "db/migration/V1__preparar_esquema_tecnico.sql",
+      "coincide": true,
+      "sha256Imagen": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3",
+      "archivo": "db/migration/V2__identidad_y_acceso.sql",
+      "coincide": true,
+      "sha256Imagen": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2082F182E01E5923BECE5BCF34F3C214C3AD4957FBB388DDDBD04FD3C519E8FD",
+      "archivo": "db/migration/V3__proveedores.sql",
+      "coincide": true,
+      "sha256Imagen": "2082F182E01E5923BECE5BCF34F3C214C3AD4957FBB388DDDBD04FD3C519E8FD",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "EDAACDEF093739757CC25172D9E350729BDFCEB7F9795FD21D227C547F0BCD50",
+      "archivo": "db/migration/V4__solicitudes_conceptos_importes.sql",
+      "coincide": true,
+      "sha256Imagen": "EDAACDEF093739757CC25172D9E350729BDFCEB7F9795FD21D227C547F0BCD50",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "9F79968E2504E0B1A8C24FCCF2CACCDBDFF2DC87DBB7F1BF6442379397AD27FE",
+      "archivo": "db/migration/V5__aprobaciones_y_evento_minimo.sql",
+      "coincide": true,
+      "sha256Imagen": "9F79968E2504E0B1A8C24FCCF2CACCDBDFF2DC87DBB7F1BF6442379397AD27FE",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "8CDB4B35515B6E3E5AABF310266CBCBAF9C623CF201EA45DC0702BFC8707959B",
+      "archivo": "db/migration/V6__idempotencia_transversal.sql",
+      "coincide": true,
+      "sha256Imagen": "8CDB4B35515B6E3E5AABF310266CBCBAF9C623CF201EA45DC0702BFC8707959B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "B5E09DFD355348588F48B7F4437F4DC87B53A2A7DEC54D5D9B30EBB911018E97",
+      "archivo": "es/gestionsolicitudes/GestionSolicitudesApplication.class",
+      "coincide": true,
+      "sha256Imagen": "B5E09DFD355348588F48B7F4437F4DC87B53A2A7DEC54D5D9B30EBB911018E97",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "46BA568BE5E322AE41E3E8D5269AB10541A8098374FCAF48EE653A510100E8CC",
+      "archivo": "es/gestionsolicitudes/configuracion/ContratoApi.class",
+      "coincide": true,
+      "sha256Imagen": "46BA568BE5E322AE41E3E8D5269AB10541A8098374FCAF48EE653A510100E8CC",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "0632CCBEE2238B8A5DBEEFA585B59029C13BA53AA8CDD934647EB8CB6233B8E6",
+      "archivo": "es/gestionsolicitudes/configuracion/ErroresControlados$1.class",
+      "coincide": true,
+      "sha256Imagen": "0632CCBEE2238B8A5DBEEFA585B59029C13BA53AA8CDD934647EB8CB6233B8E6",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4E83C1ED62FABC72DE608D446A6A0B617BA523D2933FC420EEAB192957FFC65E",
+      "archivo": "es/gestionsolicitudes/configuracion/ErroresControlados$ErrorPublico.class",
+      "coincide": true,
+      "sha256Imagen": "4E83C1ED62FABC72DE608D446A6A0B617BA523D2933FC420EEAB192957FFC65E",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "EE25CC1C115975A230E3784975A50CE48900A30448A47968046CC6F782D97908",
+      "archivo": "es/gestionsolicitudes/configuracion/ErroresControlados.class",
+      "coincide": true,
+      "sha256Imagen": "EE25CC1C115975A230E3784975A50CE48900A30448A47968046CC6F782D97908",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4E9D1669951861A7EF6F85EC71E6C82039EC4B3EA9D36738A2BD16F6CE8EF976",
+      "archivo": "es/gestionsolicitudes/configuracion/SeguridadTecnica$1.class",
+      "coincide": true,
+      "sha256Imagen": "4E9D1669951861A7EF6F85EC71E6C82039EC4B3EA9D36738A2BD16F6CE8EF976",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "9000CAF8516A0EB3553CF4DED9EA91D11B23EED933CEB9E306B66375E985E10D",
+      "archivo": "es/gestionsolicitudes/configuracion/SeguridadTecnica.class",
+      "coincide": true,
+      "sha256Imagen": "9000CAF8516A0EB3553CF4DED9EA91D11B23EED933CEB9E306B66375E985E10D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2FDC490D332C4EB7F0AACC9F858695A2510C04AE530238EFF9167666F095128D",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.class",
+      "coincide": true,
+      "sha256Imagen": "2FDC490D332C4EB7F0AACC9F858695A2510C04AE530238EFF9167666F095128D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "577DF4B066795EA6DABAAA961CFE66364406955849977D92D3898967BCD70AB7",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/Contrasenas.class",
+      "coincide": true,
+      "sha256Imagen": "577DF4B066795EA6DABAAA961CFE66364406955849977D92D3898967BCD70AB7",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "42F7F07A75302A303EF668586FF3D5B12F16E6048F8E51C821C7C55437AC0968",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.class",
+      "coincide": true,
+      "sha256Imagen": "42F7F07A75302A303EF668586FF3D5B12F16E6048F8E51C821C7C55437AC0968",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "AC271E864FE7F102F9C99D2BB322D939C7CE99A3093AE4C8352B329B93DA9A9A",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.class",
+      "coincide": true,
+      "sha256Imagen": "AC271E864FE7F102F9C99D2BB322D939C7CE99A3093AE4C8352B329B93DA9A9A",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "20ED4ADFD82082F73CF86B41F72F6B809AA4D54F1BBBB8D98185224CF4482ABA",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco$Credencial.class",
+      "coincide": true,
+      "sha256Imagen": "20ED4ADFD82082F73CF86B41F72F6B809AA4D54F1BBBB8D98185224CF4482ABA",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "DC9C314104D539748D47482F9C1C004207455998D6F4C0ED587FA69A5338BE49",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.class",
+      "coincide": true,
+      "sha256Imagen": "DC9C314104D539748D47482F9C1C004207455998D6F4C0ED587FA69A5338BE49",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "3D68130F552C7FD8175365E2325923FB32941B769ABAC358A7B2EBF210C4ADB0",
+      "archivo": "es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.class",
+      "coincide": true,
+      "sha256Imagen": "3D68130F552C7FD8175365E2325923FB32941B769ABAC358A7B2EBF210C4ADB0",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "689D3B9148EF8B64E490869639DE749DC0B6B29DF881597C06B538434FD3F0E9",
+      "archivo": "es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.class",
+      "coincide": true,
+      "sha256Imagen": "689D3B9148EF8B64E490869639DE749DC0B6B29DF881597C06B538434FD3F0E9",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "8022B5E2DAC12562E8396D9E5067932266CD36FE6BA0772EC3D56B5679A67871",
+      "archivo": "es/gestionsolicitudes/identidad/configuracion/ClavesRsa.class",
+      "coincide": true,
+      "sha256Imagen": "8022B5E2DAC12562E8396D9E5067932266CD36FE6BA0772EC3D56B5679A67871",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "3D5D1C6426F916CE9319635E2BADBB73C4845DF766A11756EA80AF3A843423D2",
+      "archivo": "es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.class",
+      "coincide": true,
+      "sha256Imagen": "3D5D1C6426F916CE9319635E2BADBB73C4845DF766A11756EA80AF3A843423D2",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E19F794A9CB570FE0D4210772159A586F96ADFB4C0BD6AF105B9B4D53720DCFF",
+      "archivo": "es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.class",
+      "coincide": true,
+      "sha256Imagen": "E19F794A9CB570FE0D4210772159A586F96ADFB4C0BD6AF105B9B4D53720DCFF",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4814EAD8DEAF5F2B836CFC732F165011C3916DC357CBC83B8E74B00255CDE474",
+      "archivo": "es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.class",
+      "coincide": true,
+      "sha256Imagen": "4814EAD8DEAF5F2B836CFC732F165011C3916DC357CBC83B8E74B00255CDE474",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "983D89056E09030E41A64113218BC099975979ED23F89CD0A9B664F05D458D9F",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/Correo.class",
+      "coincide": true,
+      "sha256Imagen": "983D89056E09030E41A64113218BC099975979ED23F89CD0A9B664F05D458D9F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6F1B4DB93623B01320D7576E077CBAC1435281C533D94B383015D480E46284AE",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/IntentosAcceso.class",
+      "coincide": true,
+      "sha256Imagen": "6F1B4DB93623B01320D7576E077CBAC1435281C533D94B383015D480E46284AE",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "32EA17959DB9EA057067CFAE18FB43DD36DD7BD38C14204356345108CAB41D83",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/Rol.class",
+      "coincide": true,
+      "sha256Imagen": "32EA17959DB9EA057067CFAE18FB43DD36DD7BD38C14204356345108CAB41D83",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FF985EF5AF6134C2838D3075324FB5D666B0A14AF1E4C480ACF00D80A0528853",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/SesionAcceso.class",
+      "coincide": true,
+      "sha256Imagen": "FF985EF5AF6134C2838D3075324FB5D666B0A14AF1E4C480ACF00D80A0528853",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FDA4157AFD07333A3508E231D09F9982934CD864E0521D008D4A7662B31D2026",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/TokenRefresco.class",
+      "coincide": true,
+      "sha256Imagen": "FDA4157AFD07333A3508E231D09F9982934CD864E0521D008D4A7662B31D2026",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "78CEC73999174D3AD7893BB326917F1E7668E8C9A5493D92897ABEE7255BE947",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/Usuario.class",
+      "coincide": true,
+      "sha256Imagen": "78CEC73999174D3AD7893BB326917F1E7668E8C9A5493D92897ABEE7255BE947",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "404471C3DEBFCB79A7C6F3CF6603F1499093E88E89990F23E853DFEEE02495A3",
+      "archivo": "es/gestionsolicitudes/identidad/dominio/UsuarioPublico.class",
+      "coincide": true,
+      "sha256Imagen": "404471C3DEBFCB79A7C6F3CF6603F1499093E88E89990F23E853DFEEE02495A3",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7A9A72E838044B62E0870DC4475CDA17D2E33B647466B9318A2A179A644E6133",
+      "archivo": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion$RespuestaAcceso.class",
+      "coincide": true,
+      "sha256Imagen": "7A9A72E838044B62E0870DC4475CDA17D2E33B647466B9318A2A179A644E6133",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "433EBA0B9F4D06241541811D14A5ED9E71C3482380AA1C745FF5C209828A4298",
+      "archivo": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion$SolicitudLogin.class",
+      "coincide": true,
+      "sha256Imagen": "433EBA0B9F4D06241541811D14A5ED9E71C3482380AA1C745FF5C209828A4298",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6A375569BAA2617B54A098009DFB886889342479B585CCAF17070C9A42ABEE2F",
+      "archivo": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion.class",
+      "coincide": true,
+      "sha256Imagen": "6A375569BAA2617B54A098009DFB886889342479B585CCAF17070C9A42ABEE2F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2E1A46BEB47247916219F43470668158D02DDE4EBDABED008AC3D4E1C62C2C54",
+      "archivo": "es/gestionsolicitudes/identidad/http/ControladorIdentidad.class",
+      "coincide": true,
+      "sha256Imagen": "2E1A46BEB47247916219F43470668158D02DDE4EBDABED008AC3D4E1C62C2C54",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "338F08EFC36D4F34C5A11909A7D8F7FD37E00B77340F900BD7A5202C11AEE10F",
+      "archivo": "es/gestionsolicitudes/identidad/http/ControladorSupervisores.class",
+      "coincide": true,
+      "sha256Imagen": "338F08EFC36D4F34C5A11909A7D8F7FD37E00B77340F900BD7A5202C11AEE10F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "1DD2181240843765A99653668BE326996F73F9395373F2D5EF014A2E96C8462B",
+      "archivo": "es/gestionsolicitudes/identidad/http/CookiesIdentidad.class",
+      "coincide": true,
+      "sha256Imagen": "1DD2181240843765A99653668BE326996F73F9395373F2D5EF014A2E96C8462B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6B0593897BB766144F085724C47DE52EEE79F9712D2CCE89F17DE8A08DCFFABC",
+      "archivo": "es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.class",
+      "coincide": true,
+      "sha256Imagen": "6B0593897BB766144F085724C47DE52EEE79F9712D2CCE89F17DE8A08DCFFABC",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2FAA9188C67729DA23EED9EB72CCB787299EC5E5FAFF3C9C8E6F81A65687F229",
+      "archivo": "es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.class",
+      "coincide": true,
+      "sha256Imagen": "2FAA9188C67729DA23EED9EB72CCB787299EC5E5FAFF3C9C8E6F81A65687F229",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "90E87A5C729488BCA2BCB301DA68CD7421B0AE2ECC773F87BD521C1EEA6544A2",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/AutorizacionOperaciones.class",
+      "coincide": true,
+      "sha256Imagen": "90E87A5C729488BCA2BCB301DA68CD7421B0AE2ECC773F87BD521C1EEA6544A2",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "BE946B9A9F8BFD1D87CE850872DCE916B70BC05E09DEE46369755EA550094E56",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones$Confirmada.class",
+      "coincide": true,
+      "sha256Imagen": "BE946B9A9F8BFD1D87CE850872DCE916B70BC05E09DEE46369755EA550094E56",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "86CB0EE8434F5EB25D76737A0E56353F726B55E1A316EFE60478D5A66A2244E4",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones.class",
+      "coincide": true,
+      "sha256Imagen": "86CB0EE8434F5EB25D76737A0E56353F726B55E1A316EFE60478D5A66A2244E4",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "64C95A5A9A9B99B7BB3006495D6AE1B9949D06CC519A1BC556D6FBB5FC77CCEB",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$1.class",
+      "coincide": true,
+      "sha256Imagen": "64C95A5A9A9B99B7BB3006495D6AE1B9949D06CC519A1BC556D6FBB5FC77CCEB",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "3CD967DA550020F6BCCEDB250A564762ABB605744C96358C67AE3E8242F1CE88",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$Clave.class",
+      "coincide": true,
+      "sha256Imagen": "3CD967DA550020F6BCCEDB250A564762ABB605744C96358C67AE3E8242F1CE88",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7565BA9DBD574F468FB9D6DCE1ED8872A050BB23323EE4265B5D7DC9BA19CBCB",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$EnCurso.class",
+      "coincide": true,
+      "sha256Imagen": "7565BA9DBD574F468FB9D6DCE1ED8872A050BB23323EE4265B5D7DC9BA19CBCB",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7061D69D369C8531BF9CB5DAAC2AF67B2A4223D36C7AEDF73BA14CC7AB9CE2C3",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$Terminada.class",
+      "coincide": true,
+      "sha256Imagen": "7061D69D369C8531BF9CB5DAAC2AF67B2A4223D36C7AEDF73BA14CC7AB9CE2C3",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "BF3C0581E6AF37C697C533C3A51A6689260D765033876E35AF3E82E040C68B75",
+      "archivo": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones.class",
+      "coincide": true,
+      "sha256Imagen": "BF3C0581E6AF37C697C533C3A51A6689260D765033876E35AF3E82E040C68B75",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C65C4F5F2305C7D979D2224F0D4DF832E43C20C8B0C84ECD2EE90612ACBC502E",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/ErrorOperacion$Codigo.class",
+      "coincide": true,
+      "sha256Imagen": "C65C4F5F2305C7D979D2224F0D4DF832E43C20C8B0C84ECD2EE90612ACBC502E",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FFE909C4ABAC3173941353413FE9202C7307598CD3FA3A8A74ECE57C08D07FFD",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/ErrorOperacion.class",
+      "coincide": true,
+      "sha256Imagen": "FFE909C4ABAC3173941353413FE9202C7307598CD3FA3A8A74ECE57C08D07FFD",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6DB4AB2FAB5C73E8F05F7FA8E6102D80613168700F0788BC99629F7DD18FF2A8",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/EstadoOperacion$Resultado.class",
+      "coincide": true,
+      "sha256Imagen": "6DB4AB2FAB5C73E8F05F7FA8E6102D80613168700F0788BC99629F7DD18FF2A8",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "1F3695B06A5B29AB4D3456EFC93CA2900CF11DDD805BC6D1331BF34060532623",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/EstadoOperacion.class",
+      "coincide": true,
+      "sha256Imagen": "1F3695B06A5B29AB4D3456EFC93CA2900CF11DDD805BC6D1331BF34060532623",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6EC642F2037077BD72A587E62C74D1ACA2C0DA2DD435E5A208EBFBA5F2067C16",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/HuellaOperacion.class",
+      "coincide": true,
+      "sha256Imagen": "6EC642F2037077BD72A587E62C74D1ACA2C0DA2DD435E5A208EBFBA5F2067C16",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "A81F475C47498056581ED0C93C899F586932FAAEAF6ABFBFC2465C73CB26FD09",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/PeticionOperacion.class",
+      "coincide": true,
+      "sha256Imagen": "A81F475C47498056581ED0C93C899F586932FAAEAF6ABFBFC2465C73CB26FD09",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7B51ECD2AEBA915B9FC895D69AA06088CFD5E083A7335AA25911FBD374FAE879",
+      "archivo": "es/gestionsolicitudes/operaciones/dominio/TipoOperacion.class",
+      "coincide": true,
+      "sha256Imagen": "7B51ECD2AEBA915B9FC895D69AA06088CFD5E083A7335AA25911FBD374FAE879",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C0B8D24DFBE730E1444B6246EAAC20590AEE11E0181D8AF23F34B10E9F251C17",
+      "archivo": "es/gestionsolicitudes/operaciones/http/ControladorOperaciones.class",
+      "coincide": true,
+      "sha256Imagen": "C0B8D24DFBE730E1444B6246EAAC20590AEE11E0181D8AF23F34B10E9F251C17",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "CB69A47E5CB76C6016A2D6FFA5251E6671C39DE88E71CC8E11522600746BD186",
+      "archivo": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc$1.class",
+      "coincide": true,
+      "sha256Imagen": "CB69A47E5CB76C6016A2D6FFA5251E6671C39DE88E71CC8E11522600746BD186",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "702BE90D61F90358E2A9B7B948E6F6DE32F86C3AE54AFF17233088471F6D4BBE",
+      "archivo": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc$BorradorPersistido.class",
+      "coincide": true,
+      "sha256Imagen": "702BE90D61F90358E2A9B7B948E6F6DE32F86C3AE54AFF17233088471F6D4BBE",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4E2CE6AE18D5B826E04FBA82ABAC8F1527FC8299E9B07C05987AA5F23CA1712E",
+      "archivo": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc.class",
+      "coincide": true,
+      "sha256Imagen": "4E2CE6AE18D5B826E04FBA82ABAC8F1527FC8299E9B07C05987AA5F23CA1712E",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E41B207CB0153B6FAA4871A939C715A57FB3ADBBA76740C1CEBF3D2D3405B180",
+      "archivo": "es/gestionsolicitudes/proveedores/aplicacion/RepositorioProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "E41B207CB0153B6FAA4871A939C715A57FB3ADBBA76740C1CEBF3D2D3405B180",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "D1BD187C7B786E5B56F6B30CAB5AFCE295C0795C09B6EEB928BD32293641D76F",
+      "archivo": "es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores$1.class",
+      "coincide": true,
+      "sha256Imagen": "D1BD187C7B786E5B56F6B30CAB5AFCE295C0795C09B6EEB928BD32293641D76F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "21A47017A90B92A82CE64B0B089AA3C9BC054CAEA6DD06F42B80A8495645B0D9",
+      "archivo": "es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "21A47017A90B92A82CE64B0B089AA3C9BC054CAEA6DD06F42B80A8495645B0D9",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C80E474C27A523F088E3869F06B52A52F4559371FBD967340C3AEE9058B98659",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/ActorProveedor.class",
+      "coincide": true,
+      "sha256Imagen": "C80E474C27A523F088E3869F06B52A52F4559371FBD967340C3AEE9058B98659",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FDF0DA53589E917D0104C183544160201AB3A2C628D924FC67F94166E81FFF8D",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores$Orden.class",
+      "coincide": true,
+      "sha256Imagen": "FDF0DA53589E917D0104C183544160201AB3A2C628D924FC67F94166E81FFF8D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "42EA6C1878BE296324AEC6756D6D556E7EDABF861D33628B4D6FFA4BD4903359",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "42EA6C1878BE296324AEC6756D6D556E7EDABF861D33628B4D6FFA4BD4903359",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "28BFAD14E913184C35B63F1985A04786D1ED330D485E0B88F3977EAF95F3F773",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/DatosProveedor.class",
+      "coincide": true,
+      "sha256Imagen": "28BFAD14E913184C35B63F1985A04786D1ED330D485E0B88F3977EAF95F3F773",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "9EF5B02A7458D7288602248DAF68E61D9DFD3F05E4628F476D72EC359F6083A0",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/ErrorProveedor$Codigo.class",
+      "coincide": true,
+      "sha256Imagen": "9EF5B02A7458D7288602248DAF68E61D9DFD3F05E4628F476D72EC359F6083A0",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "04A676DCB879BEAA020DA00BD3521B6332FE2865AB1A339D717E4A6CEBD3E965",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/ErrorProveedor.class",
+      "coincide": true,
+      "sha256Imagen": "04A676DCB879BEAA020DA00BD3521B6332FE2865AB1A339D717E4A6CEBD3E965",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "03DDB75C8BB5B6B6A8561A9A97804D919DA16641609919F5DCD0A7D6C0569052",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/PaginaProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "03DDB75C8BB5B6B6A8561A9A97804D919DA16641609919F5DCD0A7D6C0569052",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "F1BF099CD993DBA279090537FA8715160778A1016EB472F66264C2643E8C236C",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/Proveedor.class",
+      "coincide": true,
+      "sha256Imagen": "F1BF099CD993DBA279090537FA8715160778A1016EB472F66264C2643E8C236C",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6F42891485950AB92CC1BF5700334E47864BD48E27B96ED46DA451E648264A57",
+      "archivo": "es/gestionsolicitudes/proveedores/dominio/TipoProveedor.class",
+      "coincide": true,
+      "sha256Imagen": "6F42891485950AB92CC1BF5700334E47864BD48E27B96ED46DA451E648264A57",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "EB443DDD96088AFB66B6002E4182F4DDCD2D0BCEB3A62FD1804DA4CC9131B195",
+      "archivo": "es/gestionsolicitudes/proveedores/http/ControladorProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "EB443DDD96088AFB66B6002E4182F4DDCD2D0BCEB3A62FD1804DA4CC9131B195",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E669C638584C3571F300E9CC84DFE7AE13019C88A61CCA616A0B439F8C8F1DE1",
+      "archivo": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Alta.class",
+      "coincide": true,
+      "sha256Imagen": "E669C638584C3571F300E9CC84DFE7AE13019C88A61CCA616A0B439F8C8F1DE1",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "BD189B32386DFA9931FC7254C69C5C75A764BE49D8F533BB8AA3F8A2E6614249",
+      "archivo": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Edicion.class",
+      "coincide": true,
+      "sha256Imagen": "BD189B32386DFA9931FC7254C69C5C75A764BE49D8F533BB8AA3F8A2E6614249",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "DA555E5DE19378787715A7E6E7EB528C85723A6272DC94475A66DC8A35BC1F71",
+      "archivo": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Estado.class",
+      "coincide": true,
+      "sha256Imagen": "DA555E5DE19378787715A7E6E7EB528C85723A6272DC94475A66DC8A35BC1F71",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2F1FF0DAE7BC18EEB02EF313B623B38DF793114EDB740E066A32747646FD68BB",
+      "archivo": "es/gestionsolicitudes/proveedores/http/EntradaProveedor.class",
+      "coincide": true,
+      "sha256Imagen": "2F1FF0DAE7BC18EEB02EF313B623B38DF793114EDB740E066A32747646FD68BB",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "D29B317811D7052E146AF6A70568A51682C3CAA3218675FDB52EEF1BB66DF37A",
+      "archivo": "es/gestionsolicitudes/proveedores/http/FiltrosProveedores.class",
+      "coincide": true,
+      "sha256Imagen": "D29B317811D7052E146AF6A70568A51682C3CAA3218675FDB52EEF1BB66DF37A",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "81DF5A8284F101E3B6404125A5B968D98B6BEB40159D4D6963DDEB84419C5F78",
+      "archivo": "es/gestionsolicitudes/proveedores/http/ProveedorPublico$Pagina.class",
+      "coincide": true,
+      "sha256Imagen": "81DF5A8284F101E3B6404125A5B968D98B6BEB40159D4D6963DDEB84419C5F78",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "02E5173DDBC7745512CA7AF603B04B1A2AB569C51C0D25BA9D51372820A669F3",
+      "archivo": "es/gestionsolicitudes/proveedores/http/ProveedorPublico.class",
+      "coincide": true,
+      "sha256Imagen": "02E5173DDBC7745512CA7AF603B04B1A2AB569C51C0D25BA9D51372820A669F3",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "A53D6875901C534718CD5E87430BA486037910D4D9142A55E5EB4B246E84F08B",
+      "archivo": "es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc$1.class",
+      "coincide": true,
+      "sha256Imagen": "A53D6875901C534718CD5E87430BA486037910D4D9142A55E5EB4B246E84F08B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "B213FE04197A96098AD3050B7DD5BA982833BA408246CF9A89CF249979DC2700",
+      "archivo": "es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc.class",
+      "coincide": true,
+      "sha256Imagen": "B213FE04197A96098AD3050B7DD5BA982833BA408246CF9A89CF249979DC2700",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "6D6FCED78C017D4763BAC78131DA6F75E8AB981025B2BDF01255FF2FA61FB86F",
+      "archivo": "es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.class",
+      "coincide": true,
+      "sha256Imagen": "6D6FCED78C017D4763BAC78131DA6F75E8AB981025B2BDF01255FF2FA61FB86F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4050B7DC2A0C165FD9116539B2E1D81ECA088D6719E1BD5740A8F62DF4423EB1",
+      "archivo": "es/gestionsolicitudes/salud/aplicacion/EstadoSalud.class",
+      "coincide": true,
+      "sha256Imagen": "4050B7DC2A0C165FD9116539B2E1D81ECA088D6719E1BD5740A8F62DF4423EB1",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "1B7561320EBA1B8ED8A116F0556755520C65049E0B95A672ADC4BA05D30675A4",
+      "archivo": "es/gestionsolicitudes/salud/aplicacion/ServicioSalud.class",
+      "coincide": true,
+      "sha256Imagen": "1B7561320EBA1B8ED8A116F0556755520C65049E0B95A672ADC4BA05D30675A4",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "24523C4742520B7871B997DEEDA0E20F4538CBC29C3CAC5759914A58B66AB8FF",
+      "archivo": "es/gestionsolicitudes/salud/http/ControladorSalud.class",
+      "coincide": true,
+      "sha256Imagen": "24523C4742520B7871B997DEEDA0E20F4538CBC29C3CAC5759914A58B66AB8FF",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "651DE8AE273E5AE39A3922CE3760B674DAF7627C168ACBE17471437B857D31FA",
+      "archivo": "es/gestionsolicitudes/salud/http/RespuestaSalud.class",
+      "coincide": true,
+      "sha256Imagen": "651DE8AE273E5AE39A3922CE3760B674DAF7627C168ACBE17471437B857D31FA",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2BAAA02B89063945D3564825B32231B8B1590CFCDEB068020ADE8BCE7C64853C",
+      "archivo": "es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.class",
+      "coincide": true,
+      "sha256Imagen": "2BAAA02B89063945D3564825B32231B8B1590CFCDEB068020ADE8BCE7C64853C",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "CD3AD9810C75D2D29CA21B1164FA26E14268615608FA016183E550F7FBBAB958",
+      "archivo": "es/gestionsolicitudes/solicitudes/aplicacion/RepositorioSolicitudes.class",
+      "coincide": true,
+      "sha256Imagen": "CD3AD9810C75D2D29CA21B1164FA26E14268615608FA016183E550F7FBBAB958",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "CDAF54F1D9FDB2CBFCA94BD949346EE59A5CAAAF8191046F4DDEC61CF4619471",
+      "archivo": "es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes$1.class",
+      "coincide": true,
+      "sha256Imagen": "CDAF54F1D9FDB2CBFCA94BD949346EE59A5CAAAF8191046F4DDEC61CF4619471",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2D4EBFC15569B05A186472CD5E80D38A7F44CEBE8354834A8AA389629156C9A9",
+      "archivo": "es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.class",
+      "coincide": true,
+      "sha256Imagen": "2D4EBFC15569B05A186472CD5E80D38A7F44CEBE8354834A8AA389629156C9A9",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "F3477176BBFD4611E5C5BC27B278DC174204314661F61F7DBB95FF7825461E9A",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ActorSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "F3477176BBFD4611E5C5BC27B278DC174204314661F61F7DBB95FF7825461E9A",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "92C09BC57249E68E67DD8DEBE5443AC654A5192BC7F0149F32C08D21505C6ACD",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Concepto$Unidad.class",
+      "coincide": true,
+      "sha256Imagen": "92C09BC57249E68E67DD8DEBE5443AC654A5192BC7F0149F32C08D21505C6ACD",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FE94E410AF5459D224F2B259D22A79B36C65C25CAD1408EFEABB9E923383DF8B",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Concepto.class",
+      "coincide": true,
+      "sha256Imagen": "FE94E410AF5459D224F2B259D22A79B36C65C25CAD1408EFEABB9E923383DF8B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "FC1EE59EA1E187A067E0C18A6CC7059479AF2FEDC55E95168AEC73FC8D705E0B",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes$Orden.class",
+      "coincide": true,
+      "sha256Imagen": "FC1EE59EA1E187A067E0C18A6CC7059479AF2FEDC55E95168AEC73FC8D705E0B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C34A5644FAA07D28E80842A1D52E32589907CEB9514A11EA56D77052A3A74516",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes.class",
+      "coincide": true,
+      "sha256Imagen": "C34A5644FAA07D28E80842A1D52E32589907CEB9514A11EA56D77052A3A74516",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "0463A44EE49F6EB4210A8CE695180C6DADA2AAD5CF06F0356915F8512483E4C1",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/DatosBorrador.class",
+      "coincide": true,
+      "sha256Imagen": "0463A44EE49F6EB4210A8CE695180C6DADA2AAD5CF06F0356915F8512483E4C1",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "12B122B81FF37C0BE95211AE6243D226AAF96B84D9BA36BF8111BD8E8DD0CA94",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/DatosDecision$Tipo.class",
+      "coincide": true,
+      "sha256Imagen": "12B122B81FF37C0BE95211AE6243D226AAF96B84D9BA36BF8111BD8E8DD0CA94",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "BEA1FD3D90C2398EB83B3FF019CDEBD5502F16F32EE78E8F7747E700C9CC65C6",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/DatosDecision.class",
+      "coincide": true,
+      "sha256Imagen": "BEA1FD3D90C2398EB83B3FF019CDEBD5502F16F32EE78E8F7747E700C9CC65C6",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2CA188A9783598340DA321677A599930FB6D64CC57A2BC96620C4B85694B4578",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/DecisionSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "2CA188A9783598340DA321677A599930FB6D64CC57A2BC96620C4B85694B4578",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "4CACFA2C1C5C3CBC41245A5C1F4A2FC609EDA55331254DF4F551B9E9889E7AA5",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud$Codigo.class",
+      "coincide": true,
+      "sha256Imagen": "4CACFA2C1C5C3CBC41245A5C1F4A2FC609EDA55331254DF4F551B9E9889E7AA5",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7CE545FF3FC3F86D5ADEDE311AD2BB3A9A3050FBD9FF830DA1CDE7A7139FE118",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "7CE545FF3FC3F86D5ADEDE311AD2BB3A9A3050FBD9FF830DA1CDE7A7139FE118",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E2F75C1F3C99F532D710C360E0F9C11ED9B2E1FF186DC49328EE81A0B831DD60",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Pagina.class",
+      "coincide": true,
+      "sha256Imagen": "E2F75C1F3C99F532D710C360E0F9C11ED9B2E1FF186DC49328EE81A0B831DD60",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C060955EC61ED11EBE4B9EE9602A92958EC7076A885D6AAE18F96E5850E1033D",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ResultadoDecision.class",
+      "coincide": true,
+      "sha256Imagen": "C060955EC61ED11EBE4B9EE9602A92958EC7076A885D6AAE18F96E5850E1033D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "78CD5F823A90FD024B2D60A197AA5B399887097F28404FD32EA099899AF969E3",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/ResultadoPresentacion.class",
+      "coincide": true,
+      "sha256Imagen": "78CD5F823A90FD024B2D60A197AA5B399887097F28404FD32EA099899AF969E3",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "44D6AF936D2CDE0262CC799FE597E41DF3EE6D5B6653CC0C8F95534CC42A4DBB",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Solicitud$Persona.class",
+      "coincide": true,
+      "sha256Imagen": "44D6AF936D2CDE0262CC799FE597E41DF3EE6D5B6653CC0C8F95534CC42A4DBB",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "29C1037CA2D9D258184A20B40D02CA4313A24B4F4B655C6FDECE8AF693A1F751",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Solicitud$Proveedor.class",
+      "coincide": true,
+      "sha256Imagen": "29C1037CA2D9D258184A20B40D02CA4313A24B4F4B655C6FDECE8AF693A1F751",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "9A03C0AE2846BEDC7B399EDA146A80A281CBCDB3FF301828853CD4A072E7979D",
+      "archivo": "es/gestionsolicitudes/solicitudes/dominio/Solicitud.class",
+      "coincide": true,
+      "sha256Imagen": "9A03C0AE2846BEDC7B399EDA146A80A281CBCDB3FF301828853CD4A072E7979D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "B9E0171462AF75E2BA59A80F3CE3564F9278D96F9362DE13715BEF84DEC4B20B",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.class",
+      "coincide": true,
+      "sha256Imagen": "B9E0171462AF75E2BA59A80F3CE3564F9278D96F9362DE13715BEF84DEC4B20B",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "C55AF0EBA1C7678C21EF0ACC031FD97CD24B1CF698DBDE4D00D2C65F3BE624CD",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/DetalleSolicitud$Linea.class",
+      "coincide": true,
+      "sha256Imagen": "C55AF0EBA1C7678C21EF0ACC031FD97CD24B1CF698DBDE4D00D2C65F3BE624CD",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "DC9954A435F5FF0F96503EA90515D085804B567838E302D32640C7BE92ED9E24",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/DetalleSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "DC9954A435F5FF0F96503EA90515D085804B567838E302D32640C7BE92ED9E24",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "D57EEE7E345AD5A33D256F7ADBA12552A81B26BB72CA3FA7AEE57F43D8865900",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaDecision$Aprobacion.class",
+      "coincide": true,
+      "sha256Imagen": "D57EEE7E345AD5A33D256F7ADBA12552A81B26BB72CA3FA7AEE57F43D8865900",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "754DFA9C2192695660080BDDE0015C4D8C95910E40D7E9D2FC19D541C0C947E5",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaDecision$Rechazo.class",
+      "coincide": true,
+      "sha256Imagen": "754DFA9C2192695660080BDDE0015C4D8C95910E40D7E9D2FC19D541C0C947E5",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "12D3F90E9D4D2807FE4426832C6BE82CDC40427BC0BB7F2AE6A4098BF9F38128",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaDecision.class",
+      "coincide": true,
+      "sha256Imagen": "12D3F90E9D4D2807FE4426832C6BE82CDC40427BC0BB7F2AE6A4098BF9F38128",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "46001DE449B45E218CE1EF6E50411A8CCB9A408CCCB5A993BEE45470D5C8AB98",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Alta.class",
+      "coincide": true,
+      "sha256Imagen": "46001DE449B45E218CE1EF6E50411A8CCB9A408CCCB5A993BEE45470D5C8AB98",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E4564430AC9A88C267C3E73C6CF82E196496594EB8C076651C1585653E93880F",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Borrador.class",
+      "coincide": true,
+      "sha256Imagen": "E4564430AC9A88C267C3E73C6CF82E196496594EB8C076651C1585653E93880F",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "8059BB553CA76E0B42892D68238982565E7FA5872DA899AE9B1B6624D9D6E497",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Linea.class",
+      "coincide": true,
+      "sha256Imagen": "8059BB553CA76E0B42892D68238982565E7FA5872DA899AE9B1B6624D9D6E497",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "AE39DC477E74C3F95C3E0D1E391B8A7C97DB4B16E41730A82A6E2A52073F3EFC",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Presentacion.class",
+      "coincide": true,
+      "sha256Imagen": "AE39DC477E74C3F95C3E0D1E391B8A7C97DB4B16E41730A82A6E2A52073F3EFC",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "7868501C65F222199CBC710C2E0D977FF6BB30A54A2BA5808224B898545393ED",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "7868501C65F222199CBC710C2E0D977FF6BB30A54A2BA5808224B898545393ED",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "98AAED6E2514554B0A56A7A542021009DD4F1FCA18113861F1485F18E6848964",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/FiltrosSolicitudes.class",
+      "coincide": true,
+      "sha256Imagen": "98AAED6E2514554B0A56A7A542021009DD4F1FCA18113861F1485F18E6848964",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "E2EE9087CB740BF1FCCBF6ACAFE9F9745C58F587B7EB4AB646C8ED9811ED169D",
+      "archivo": "es/gestionsolicitudes/solicitudes/http/ResumenSolicitud.class",
+      "coincide": true,
+      "sha256Imagen": "E2EE9087CB740BF1FCCBF6ACAFE9F9745C58F587B7EB4AB646C8ED9811ED169D",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "2918A1AAF685CCF0B0A4094413B4CA7654745FD653FC60826E3374BE05AD6EE4",
+      "archivo": "es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc$1.class",
+      "coincide": true,
+      "sha256Imagen": "2918A1AAF685CCF0B0A4094413B4CA7654745FD653FC60826E3374BE05AD6EE4",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "017983305821FD75F5D26909731619A0664FEBD3174625C3CBDEA1E9ECD51EC2",
+      "archivo": "es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc.class",
+      "coincide": true,
+      "sha256Imagen": "017983305821FD75F5D26909731619A0664FEBD3174625C3CBDEA1E9ECD51EC2",
+      "modulo": "backend"
+    },
+    {
+      "sha256Local": "5B8D28D032FC6C6002DDF27220853F83D65E743396AB77920759C09588EE66DD",
+      "archivo": "index.html",
+      "coincide": true,
+      "sha256Imagen": "5B8D28D032FC6C6002DDF27220853F83D65E743396AB77920759C09588EE66DD",
+      "modulo": "frontend"
+    },
+    {
+      "sha256Local": "C0F470A1CE72ACA1B6994E592ACED4E43D772D6BEBA9F13A8B85E5621027E2C8",
+      "archivo": "main-7QNN5UUP.js",
+      "coincide": true,
+      "sha256Imagen": "C0F470A1CE72ACA1B6994E592ACED4E43D772D6BEBA9F13A8B85E5621027E2C8",
+      "modulo": "frontend"
+    },
+    {
+      "sha256Local": "95B182D7EF1D9A450E6C1F6ACD87778C45C4D10D053212FDE2F2373DDA13F0B7",
+      "archivo": "styles-UGMBM6JM.css",
+      "coincide": true,
+      "sha256Imagen": "95B182D7EF1D9A450E6C1F6ACD87778C45C4D10D053212FDE2F2373DDA13F0B7",
+      "modulo": "frontend"
+    }
+  ],
+  "resultado": "PASS",
+  "fecha": "2026-10-15T13:11:48.4408575+02:00",
+  "comparados": 126,
+  "diferentes": 0,
+  "imagenes": [
+    "/gestion-solicitudes-001-backend-1 sha256:026172927d8ee988934ef84f52c84816e3a0e2e2e1f9b34ab0e2fde489fdc88f",
+    "/gestion-solicitudes-001-frontend-1 sha256:a9d2df00eaeaa86be20f6e2b4cfec3c8dd927442fc53105156e97ecce125adb1"
+  ]
+}

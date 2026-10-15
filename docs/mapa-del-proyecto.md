@@ -143,7 +143,7 @@ Al cerrar un paso se revisarán estado, enlaces y siguiente acción.
 No se enlazarán archivos futuros como si ya existieran.
 Las decisiones duraderas se guardarán en su documento principal.
 
-## Estado vigente AG-012
+## Estado histórico AG-012
 
 La base001, identidad002 y proveedores003 están implementadas y verificadas localmente;
 existen código, pruebas, Docker, CI, OpenAPI y Swagger. Aceptación/integración y
@@ -154,3 +154,15 @@ La corrección heredada003 supera regresión;004 está verificada localmente (SC
 [Informe AG-012](trazabilidad/AG-012-informe.md) y [SDD](../especificaciones/README.md)
 son la entrada al trabajo vigente.005 solo podrá continuar tras004 verificada y
 comprobar el margen autorizado. No existe despliegue público validado.
+
+## Estado vigente AG-013
+
+004/005 quedaron verificadas localmente en AG-012. AG-013 aprueba D-006-01–10,
+SDD/ADR0007 e implementación006, con regresión001–005 y preservación de históricos.
+[Informe AG-013](trazabilidad/AG-013-informe.md) y
+[validación006](../especificaciones/006-concurrencia-idempotencia/validacion.md)
+registran CI-01–10 verificados localmente y revisión sin hallazgos abiertos.
+Aceptación e integración de006 corresponden a la persona responsable.
+La puerta007 se cumplió a13:23:37+02:00 con537,298min restantes; se creó únicamente
+su [especificación borrador](../especificaciones/007-historial-auditoria/especificacion.md),
+pendiente de aprobación humana.008 y despliegue público siguen fuera del encargo.

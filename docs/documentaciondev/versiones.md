@@ -580,3 +580,16 @@ la configuración inspeccionada no se presenta como ejecución de un runner Linu
 
 Resultados exactos, fallos corregidos y límites en
 [validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
+
+## AG-013 — comprobación de la línea vigente
+
+006 no añade dependencias ni cambia versiones mayores. Se utilizan Java 21,
+Node 24.13.0, npm 11.6.2 y Docker 29.1.3; se conserva la configuración de CI fijada.
+Auditorías npm de producción y completas: salida 0 y cero vulnerabilidades
+informadas. OSV Scanner 2.7.0 contrasta sin enviar metadatos los 132 componentes
+Maven con una base pública descargada durante AG-013: cero coincidencias.
+Los artefactos y la fecha de descarga se conservan en `qa/evidencias/ag013/`.
+
+La comprobación de dependencias preliminares mantiene las transitivas controladas
+por ADR-0002. Estos resultados describen la base consultada y no cubren fallos
+desconocidos ni constituyen una auditoría completa de imágenes/sistema operativo.

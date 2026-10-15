@@ -334,3 +334,29 @@ El cierre de 004 en `qa/evidencias/ag012/cierre004/` permanece inmutable; incluy
 fuentes comprimidas y SHA-256 para revisar por separado los incrementos. Los
 resultados de 005 se guardan con nombres y directorios propios. Véase
 [validación 005](../../especificaciones/005-aprobaciones/validacion.md).
+
+## Concurrencia y comprobaciones AG-013
+
+El resolutor de evidencias protege ahora AG-003–AG-012. Usar un directorio nuevo
+mediante `QA_EVIDENCE_DIR`; nunca reutilizar una evidencia histórica. V6 evoluciona
+la tabla de operaciones sin editar V1–V5. `qa/verificar-evolucion-v6.mjs antes`
+captura V5; ejecutar `despues` tras aplicar V6 y antes de cualquier mutación de QA.
+Se comparan checksums y todas las columnas heredadas de siete tablas, sin guardar filas.
+
+`node qa/verificar-concurrencia-compose.mjs` verifica siete POST, recuperación,
+veinte peticiones iguales/distintas, versiones, espera, revocación, reinicio y
+PostgreSQL caído. Opera exclusivamente en loopback y con cuentas ficticias; restaura
+roles y servicios en finally. No ejecutarlo simultáneamente con otros verificadores
+que cambien los mismos servicios o permisos.
+
+Los E2E de 006 simulan la pérdida de una respuesta después de que el backend
+complete la petición. Incluyen dos pestañas, recarga/reapertura y recuperación
+después de reiniciar el backend. `E2E_RESULTS_DIR` permite separar capturas/XML;
+los usuarios ajeno y multirrol proceden del descriptor de QA de aprobaciones.
+Los ayudantes Docker de navegador solo operan el Compose ficticio y restauran estado.
+
+La CI ejecuta API y navegador 001–006, sin reintentos E2E, con Actions por SHA y
+evidencias por job. El log histórico enlazado `qa/evidencias/ag011/backend-verify-final.log`
+se incluye mediante una excepción exacta de `.gitignore`, conservando sus bytes.
+La corrección del fallo remoto se reprodujo localmente; requiere commit/push humano
+y nueva ejecución remota. Véase [AG-013](../trazabilidad/AG-013-informe.md).

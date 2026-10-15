@@ -156,6 +156,16 @@ AP-01–10; sin aceptación ni integración.
 [ADR0006](decisiones/ADR-0006-aprobaciones-y-evento-minimo.md) explica decisión,
 evento mínimo e idempotencia compartida conservando004.
 
-[Borrador006](../especificaciones/006-concurrencia-idempotencia/especificacion.md):
-único documento del incremento, pendiente de aprobación humana. Puerta cumplida
-tras verificar005, a00:39:11+02:00 con534 minutos restantes. Sin plan/tareas/código006.
+[006](../especificaciones/006-concurrencia-idempotencia/especificacion.md) nació como
+borrador de AG-012 tras la puerta00:39:11+02:00. AG-013 aprueba D-006-01–10 y autoriza
+su [plan](../especificaciones/006-concurrencia-idempotencia/plan.md),
+[tareas](../especificaciones/006-concurrencia-idempotencia/tareas.md),
+[ADR0007](decisiones/ADR-0007-concurrencia-idempotencia-transversal.md) e implementación.
+[Validación006](../especificaciones/006-concurrencia-idempotencia/validacion.md):
+CI-01–10 verificados localmente, revisión sin hallazgos abiertos.
+El [informe AG-013](trazabilidad/AG-013-informe.md) conserva hechos,
+desviaciones, corrección remota y pendientes, sin aceptación ni integración.
+
+La puerta de continuación se cumplió tras verificar006, con537,298min restantes.
+[007 — Historial y auditoría](../especificaciones/007-historial-auditoria/especificacion.md)
+es únicamente una especificación borrador pendiente de aprobación humana.

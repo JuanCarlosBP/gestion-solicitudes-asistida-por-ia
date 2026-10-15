@@ -1,0 +1,216 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --reporters=default
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+chunk-MVKYBCFS.js                            | -                                         | 195.39 kB | 
+chunk-B3UDM33E.js                            | -                                         |  68.78 kB | 
+chunk-NP3YPJLB.js                            | -                                         |  45.71 kB | 
+chunk-J3X7T62U.js                            | -                                         |  27.99 kB | 
+spec-app-app.js                              | spec-app-app                              |  22.61 kB | 
+spec-app-solicitudes-aprobaciones.js         | spec-app-solicitudes-aprobaciones         |  20.65 kB | 
+spec-app-proveedores-proveedores-paginas.js  | spec-app-proveedores-proveedores-paginas  |  19.79 kB | 
+spec-app-solicitudes-solicitudes-paginas.js  | spec-app-solicitudes-solicitudes-paginas  |  19.74 kB | 
+chunk-VG5OQV24.js                            | -                                         |  12.61 kB | 
+chunk-3XEGGSRF.js                            | -                                         |  12.54 kB | 
+chunk-VKMDZW7L.js                            | -                                         |  10.46 kB | 
+chunk-LQPAF5PF.js                            | -                                         |  10.30 kB | 
+spec-app-solicitudes-solicitudes-editores.js | spec-app-solicitudes-solicitudes-editores |   8.05 kB | 
+spec-app-solicitudes-solicitud-calculos.js   | spec-app-solicitudes-solicitud-calculos   |   7.89 kB | 
+spec-app-identidad-sesion-interceptor.js     | spec-app-identidad-sesion-interceptor     |   7.57 kB | 
+spec-app-identidad-autenticacion.js          | spec-app-identidad-autenticacion          |   6.56 kB | 
+chunk-REX6ZWVN.js                            | -                                         |   6.14 kB | 
+spec-app-solicitudes-solicitudes-api.js      | spec-app-solicitudes-solicitudes-api      |   5.20 kB | 
+spec-app-proveedores-proveedores-api.js      | spec-app-proveedores-proveedores-api      |   5.08 kB | 
+chunk-LSP5VSVU.js                            | -                                         |   4.80 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+chunk-O3SAM5B3.js                            | -                                         |   4.22 kB | 
+spec-app-identidad-mi-cuenta.js              | spec-app-identidad-mi-cuenta              |   3.87 kB | 
+spec-app-app.routes.js                       | spec-app-app.routes                       |   3.76 kB | 
+spec-app-identidad-acceso.js                 | spec-app-identidad-acceso                 |   3.61 kB | 
+chunk-6MMWZKPE.js                            | -                                         |   3.48 kB | 
+spec-app-solicitudes-foco-visible.js         | spec-app-solicitudes-foco-visible         |   3.45 kB | 
+spec-app-proveedores-proveedor-validacion.js | spec-app-proveedores-proveedor-validacion |   2.92 kB | 
+chunk-DH3JMKOI.js                            | -                                         |   2.87 kB | 
+chunk-JSY2MG7V.js                            | -                                         |   2.63 kB | 
+chunk-W3RB43HL.js                            | -                                         |   2.42 kB | 
+spec-app-inicio-inicio.js                    | spec-app-inicio-inicio                    |   2.40 kB | 
+chunk-EBKMLM7D.js                            | -                                         |   2.12 kB | 
+spec-app-inicio-salud-api.js                 | spec-app-inicio-salud-api                 |   1.96 kB | 
+spec-app-identidad-sesion-guard.js           | spec-app-identidad-sesion-guard           |   1.53 kB | 
+chunk-YCQTGEDS.js                            | -                                         |   1.48 kB | 
+styles.css                                   | styles                                    |   1.47 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+spec-app-identidad-sesion-store.js           | spec-app-identidad-sesion-store           |   1.19 kB | 
+chunk-K32UC3AB.js                            | -                                         |   1.18 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+chunk-TRO44DD7.js                            | -                                         | 768 bytes | 
+chunk-Z5TOCO3O.js                            | -                                         | 538 bytes | 
+chunk-2PECFU4L.js                            | -                                         | 436 bytes | 
+
+                                             | Initial total                             | 573.13 kB
+
+Application bundle generation complete. [1.918 seconds] - 2026-10-15T10:34:28.277Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/salud-api.spec.ts (4 tests) 22ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/autenticacion.spec.ts (12 tests) 50ms
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/inicio.spec.ts (3 tests) 107ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-store.spec.ts (2 tests) 5ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedor-validacion.spec.ts (18 tests) 6ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-guard.spec.ts (2 tests) 27ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-api.spec.ts (14 tests) 64ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-api.spec.ts (14 tests) 53ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitud-calculos.spec.ts (81 tests) 13ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-interceptor.spec.ts (18 tests) 66ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.spec.ts (1 test) 83ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/foco-visible.spec.ts (4 tests) 145ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/mi-cuenta.spec.ts (4 tests) 169ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/acceso.spec.ts (4 tests) 173ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.routes.spec.ts (6 tests) 133ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-editores.spec.ts (9 tests) 296ms
+ ❯ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-paginas.spec.ts (42 tests | 1 failed) 436ms
+     ✓ unión de roles SOLICITANTE: escritura=false, inactivos=false 9ms
+     ✓ unión de roles SUPERVISOR: escritura=false, inactivos=false 2ms
+     ✓ unión de roles AUDITOR: escritura=false, inactivos=true 1ms
+     ✓ unión de roles ADMINISTRADOR: escritura=true, inactivos=true 1ms
+     ✓ unión de roles SOLICITANTE,AUDITOR: escritura=false, inactivos=true 1ms
+     ✓ unión de roles AUDITOR,ADMINISTRADOR: escritura=true, inactivos=true 1ms
+     ✓ unión de roles : escritura=false, inactivos=false 1ms
+     ✓ rutas sin sesión redirigen a acceso sin consultar proveedores 61ms
+     ✓ escritura directa /proveedores/nuevo denegada al auditor 34ms
+     ✓ escritura directa /proveedores/00000000-0000-4000-8000-000000000101/editar denegada al auditor 13ms
+     ✓ filtros esperan inicialización completa antes de permitir escritura y recuperan disponibilidad 15ms
+     ✓ listado muestra carga, resultados, filtros URL y enlace de detalle conservado 20ms
+     ✓ nuevo y cancelar conservan filtros, página y orden del listado 28ms
+     ✓ volver de página fuera de rango recupera página disponible con totalPaginas=0 15ms
+     ✓ volver de página fuera de rango recupera página disponible con totalPaginas=2 15ms
+     ✓ búsqueda admite Unicode suplementario hasta límites por caracteres, sin truncar UTF-16 14ms
+     ✓ búsqueda rechaza límite de caracteres en buscar-denominacion antes de navegar 10ms
+     ✓ búsqueda rechaza límite de caracteres en buscar-fiscal antes de navegar 9ms
+     ✓ formulario de filtros combina valores y reinicia página en URL 13ms
+     ✓ rechaza filtro URL page=-1 sin petición inválida 6ms
+     ✓ rechaza filtro URL page=1.5 sin petición inválida 8ms
+     ✓ rechaza filtro URL size=0 sin petición inválida 8ms
+     ✓ rechaza filtro URL size=101 sin petición inválida 8ms
+     ✓ rechaza filtro URL sort=id,asc sin petición inválida 7ms
+     ✓ rechaza filtro URL tipo=OTRO sin petición inválida 6ms
+     ✓ rechaza filtro URL paisFiscal=ZZ sin petición inválida 7ms
+     ✓ rechaza filtro URL activo=otro sin petición inválida 7ms
+     ✓ rechaza filtro URL denominacion=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx sin petición inválida 6ms
+     ✓ SOLICITANTE no ofrece inactivos ni acepta filtro todos 11ms
+     ✓ SUPERVISOR no ofrece inactivos ni acepta filtro todos 6ms
+     ✓ listado cancela petición previa y recupera un error sin contenido interno 10ms
+     ✓ detalle público para SOLICITANTE con controles correctos 8ms
+     ✓ detalle público para SUPERVISOR con controles correctos 5ms
+     ✓ detalle público para AUDITOR con controles correctos 5ms
+     ✓ detalle público para ADMINISTRADOR con controles correctos 6ms
+     ✓ 404 de detalle no revela proveedor y permite recarga 5ms
+     ✓ desactiva/reactiva, evita doble envío y conserva versión recibida 11ms
+     ✓ conflicto de estado exige recarga y no sobrescribe 7ms
+     ✓ alta tiene etiquetas, valida campos antes de enviar y conserva entrada al duplicar 10ms
+     × alta válida navega al detalle conservando filtros sin persistir almacenamiento web 9ms
+     ✓ edición conserva entrada al conflicto y recarga antes de usar versión vigente 8ms
+     ✓ edición 404 no presenta formulario de alta ni permite escribir 5ms
+ ❯ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts (37 tests | 1 failed) 599ms
+     ✓ unión de roles SOLICITANTE: crear=true global=false 9ms
+     ✓ unión de roles SUPERVISOR: crear=false global=false 2ms
+     ✓ unión de roles AUDITOR: crear=false global=true 1ms
+     ✓ unión de roles ADMINISTRADOR: crear=false global=true 1ms
+     ✓ unión de roles ADMINISTRADOR,SOLICITANTE: crear=true global=true 1ms
+     ✓ unión de roles SUPERVISOR,SOLICITANTE: crear=true global=false 1ms
+     ✓ unión de roles : crear=false global=false 1ms
+     ✓ sin sesión redirige a acceso sin cargar solicitudes 63ms
+     ✓ SUPERVISOR no puede abrir nueva ni recibe controles de alta 38ms
+     ✓ AUDITOR no puede abrir nueva ni recibe controles de alta 15ms
+     ✓ ADMINISTRADOR no puede abrir nueva ni recibe controles de alta 13ms
+     ✓ sin roles redirige a cuenta 9ms
+     ✓ listado muestra carga, total, estados, importes y enlaces con filtros 33ms
+     ✓ formulario de filtros navega y recarga conserva su búsqueda 22ms
+     ✓ filtro autor local denegado y restablecimiento recupera listado 14ms
+     ✓ lista cancela petición anterior y reintenta 503 sin mostrar mensaje interno 14ms
+     × alta valida asunto, presenta etiquetas y nunca persiste almacenamiento web 24ms
+     ✓ editor recupera agregado, etiquetas y estimación exacta diferenciada del total confirmado 71ms
+     ✓ guardar colección completa conserva los UUID y elimina importes de entrada 27ms
+     ✓ conceptos inválidos muestran errores asociados y bloquean HTTP 29ms
+     ✓ 409 conserva todos los cambios y exige recarga antes de usar versión nueva 42ms
+     ✓ edición de presentada no ofrece formulario ni mutaciones 6ms
+     ✓ edición de ajena no ofrece formulario ni mutaciones 5ms
+     ✓ 404 de edición no se convierte en alta y permite reintentar 5ms
+     ✓ proveedor invisible conserva referencia y advierte sin exponer datos 18ms
+     ✓ detalle SOLICITANTE muestra fotografía presentada sin edición 14ms
+     ✓ detalle SUPERVISOR muestra fotografía presentada sin edición 14ms
+     ✓ detalle AUDITOR muestra fotografía presentada sin edición 10ms
+     ✓ detalle ADMINISTRADOR muestra fotografía presentada sin edición 11ms
+     ✓ detalle inexistente/no visible responde con mensaje seguro y recarga 6ms
+     ✓ presentar requiere confirmación, evita doble envío y consulta detalle posterior 12ms
+     ✓ respuesta incierta conserva la misma clave y versión al reintentar 10ms
+     ✓ éxito de presentación con fallo GET no habilita escritura de estado obsoleto 12ms
+     ✓ presentación rechazada VERSION_OBSOLETA conserva detalle y estado 13ms
+     ✓ presentación rechazada SOLICITUD_NO_EDITABLE conserva detalle y estado 12ms
+     ✓ presentación rechazada PROVEEDOR_INACTIVO conserva detalle y estado 12ms
+     ✓ presentación rechazada SUPERVISOR_INVALIDO conserva detalle y estado 9ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/aprobaciones.spec.ts (71 tests) 629ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/proveedores/proveedores-paginas.spec.ts > Páginas, permisos y navegación de proveedores > alta válida navega al detalle conservando filtros sin persistir almacenamiento web
+AssertionError: expected "setItem" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st setItem call:
+
+    Array [
+      "gs.operacion-segura.00000000-0000-4000-8000-000000000001.faf04f74-1c9a-46ad-8c36-65fbdebabc82",
+      "{"clave":"faf04f74-1c9a-46ad-8c36-65fbdebabc82","operacion":"CREAR_PROVEEDOR","fecha":1792060471783}",
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/app/proveedores/proveedores-paginas.spec.ts:403:27
+    401|       queryParamsHandling: 'preserve',
+    402|     });
+    403|     expect(persistir).not.toHaveBeenCalled();
+       |                           ^
+    404|     persistir.mockRestore();
+    405|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts > Solicitudes: páginas, rutas y permisos SCI-01–12 > alta valida asunto, presenta etiquetas y nunca persiste almacenamiento web
+AssertionError: expected "setItem" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st setItem call:
+
+    Array [
+      "gs.operacion-segura.00000000-0000-4000-8000-000000000001.ac6132a8-20d0-4625-ae47-500ed2e278f8",
+      "{"clave":"ac6132a8-20d0-4625-ae47-500ed2e278f8","operacion":"CREAR_BORRADOR","fecha":1792060471624}",
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/app/solicitudes/solicitudes-paginas.spec.ts:253:27
+    251|       queryParamsHandling: 'preserve',
+    252|     });
+    253|     expect(persistir).not.toHaveBeenCalled();
+       |                           ^
+    254|     persistir.mockRestore();
+    255|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 17 passed (19)
+      Tests  2 failed | 344 passed (346)
+   Start at  12:34:28
+   Duration  3.43s (transform 1.02s, setup 12.55s, import 2.52s, tests 3.08s, environment 30.79s)
+

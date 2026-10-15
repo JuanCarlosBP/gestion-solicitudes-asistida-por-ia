@@ -1,0 +1,18 @@
+{
+  "ajeno": {
+    "id": "011a024d-d3db-4477-9639-89d34952d393",
+    "correo": "qa-ajeno-011a024d-d3db-4477-9639-89d34952d393@demo.invalid"
+  },
+  "multiple": {
+    "id": "aff35cd6-71e5-4c11-9821-275cb29a52e5",
+    "correo": "qa-multiple-aff35cd6-71e5-4c11-9821-275cb29a52e5@demo.invalid"
+  },
+  "inhabilitado": {
+    "id": "e835e118-8d5d-4431-97e7-820d23060e9b",
+    "correo": "qa-inhabilitado-e835e118-8d5d-4431-97e7-820d23060e9b@demo.invalid"
+  },
+  "supervisorAjeno": {
+    "id": "f09ddfba-0796-438f-8c4a-4a298f751a04",
+    "correo": "qa-supervisor-f09ddfba-0796-438f-8c4a-4a298f751a04@demo.invalid"
+  }
+}
