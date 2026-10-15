@@ -34,6 +34,9 @@ async function pedir(ruta, { sesion, metodo = 'GET', cuerpo, xsrf = true, clave 
     headers['X-XSRF-TOKEN'] = decodeURIComponent(sesion.cookies.get('XSRF-TOKEN'));
   if (cuerpo !== undefined) headers['Content-Type'] = 'application/json';
   if (clave !== undefined) headers['Idempotency-Key'] = clave;
+  // Solo nuevas operaciones006: mantener el negativo sin clave de PRESENTAR.
+  else if (metodo === 'POST' && (ruta === '/api/solicitudes' || /^\/api\/proveedores(?:\/|$)/.test(ruta)))
+    headers['Idempotency-Key'] = randomUUID();
   const r = await fetch(new URL(ruta, base), { method: metodo, headers,
     body: cuerpo !== undefined ? JSON.stringify(cuerpo) : undefined,
     signal: AbortSignal.timeout(15000), redirect: 'error' });
