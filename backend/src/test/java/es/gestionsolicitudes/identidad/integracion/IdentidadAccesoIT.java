@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.*;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -116,7 +117,7 @@ class IdentidadAccesoIT {
     @BeforeAll
     void arrancar() {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withCommand(

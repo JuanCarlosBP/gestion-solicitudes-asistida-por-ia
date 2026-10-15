@@ -25,7 +25,7 @@ class BaseVerificableIT {
             "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826";
 
     private PostgreSQLContainer contenedor() {
-        return new PostgreSQLContainer(
+        return ContenedoresPrueba.postgres(
                         DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                 .withDatabaseName("gestion")
                 .withCommand(
@@ -84,7 +84,7 @@ class BaseVerificableIT {
                 var salud = consultar(cliente, contexto, "/api/salud");
                 assertThat(salud.statusCode()).isEqualTo(200);
                 assertThat(salud.body()).isEqualTo("{\"estado\":\"DISPONIBLE\"}");
-                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
                 var contrato = consultar(cliente, contexto, "/v3/api-docs");
                 assertThat(contrato.statusCode()).isEqualTo(200);
                 var json = JsonMapper.builder().build().readTree(contrato.body());
@@ -93,7 +93,7 @@ class BaseVerificableIT {
                         json.path("paths").path("/api/salud").path("get").path("responses");
                 assertThat(respuestas.has("200")).isTrue();
                 assertThat(respuestas.has("503")).isTrue();
-                assertThat(json.path("paths").size()).isEqualTo(17);
+                assertThat(json.path("paths").size()).isEqualTo(21);
                 assertThat(json.path("components").path("securitySchemes").has("BearerAuth"))
                         .isTrue();
                 assertThat(
@@ -111,7 +111,7 @@ class BaseVerificableIT {
             }
             // Mismo PostgreSQL y volumen del contenedor: se conserva el historial.
             try (var segundo = arrancar(base, "--server.port=0")) {
-                assertThat(segundo.getBean(Flyway.class).info().applied()).hasSize(6);
+                assertThat(segundo.getBean(Flyway.class).info().applied()).hasSize(7);
                 assertThat(segundo.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
                 assertThat(consultar(cliente, segundo, "/api/salud").statusCode()).isEqualTo(200);
             }
@@ -163,7 +163,8 @@ class BaseVerificableIT {
                             "solicitudes",
                             "conceptos_solicitud",
                             "operaciones_idempotentes_solicitud",
-                            "decisiones_solicitud");
+                            "decisiones_solicitud",
+                            "eventos_historial");
         }
     }
 
@@ -185,7 +186,7 @@ class BaseVerificableIT {
                     .isInstanceOf(org.springframework.beans.BeansException.class);
             // Una nueva aplicación con ubicaciones válidas se recupera del rollback de PostgreSQL.
             try (var contexto = arrancar(base, "--server.port=0")) {
-                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+                assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
             }
         }
     }

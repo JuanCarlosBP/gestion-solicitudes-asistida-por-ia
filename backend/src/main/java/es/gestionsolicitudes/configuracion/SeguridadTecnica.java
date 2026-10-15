@@ -50,6 +50,13 @@ public class SeguridadTecnica {
                             }
                             reglas.requestMatchers(
                                             HttpMethod.GET,
+                                            "/api/solicitudes/*/historial",
+                                            "/api/proveedores/*/historial",
+                                            "/api/historial",
+                                            "/api/resumen")
+                                    .authenticated();
+                            reglas.requestMatchers(
+                                            HttpMethod.GET,
                                             "/api/proveedores",
                                             "/api/proveedores/*")
                                     .hasAnyRole(

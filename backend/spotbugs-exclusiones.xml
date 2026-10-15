@@ -21,7 +21,22 @@
        análisis para todos los demás campos, métodos y clases. -->
   <Match>
     <Class name="es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores"/>
-    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.proveedores.aplicacion.RepositorioProveedores,java.time.Clock,org.springframework.transaction.PlatformTransactionManager,es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones"/>
+    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.proveedores.aplicacion.RepositorioProveedores,java.time.Clock,org.springframework.transaction.PlatformTransactionManager,es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones,es.gestionsolicitudes.historial.aplicacion.RegistroHistorial"/>
+    <Field name="repositorio"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  <!-- Mismo puerto JDBC compartido por Spring: copiarlo separaría la transacción
+       de negocio del registro de historial. Campos privados/finales sin acceso
+       público; exclusiones limitadas a su inyección, no a datos de las respuestas. -->
+  <Match>
+    <Class name="es.gestionsolicitudes.historial.aplicacion.RegistroHistorial"/>
+    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.historial.aplicacion.RepositorioHistorial"/>
+    <Field name="repositorio"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  <Match>
+    <Class name="es.gestionsolicitudes.historial.aplicacion.ServicioHistorial"/>
+    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.historial.aplicacion.RepositorioHistorial,es.gestionsolicitudes.operaciones.aplicacion.RepositorioOperaciones,org.springframework.transaction.PlatformTransactionManager"/>
     <Field name="repositorio"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
