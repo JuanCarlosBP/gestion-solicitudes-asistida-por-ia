@@ -200,7 +200,7 @@ describe('Filtros cerrados y errores seguros', () => {
     [409, 'SOLICITUD_NO_EDITABLE', 'no es un borrador'],
     [409, 'PROVEEDOR_INACTIVO', 'inactivo'],
     [409, 'SUPERVISOR_INVALIDO', 'supervisor'],
-    [409, 'CLAVE_IDEMPOTENCIA_REUTILIZADA', 'confirmación'],
+    [409, 'CLAVE_IDEMPOTENCIA_REUTILIZADA', 'No se ha aplicado'],
     [500, '', 'Inténtalo'],
     [503, '', 'Inténtalo'],
   ])('error %s/%s presenta texto propio', (status, codigo, mensaje) =>

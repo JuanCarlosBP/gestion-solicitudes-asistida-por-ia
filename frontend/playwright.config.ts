@@ -5,7 +5,11 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   retries: 0,
-  reporter: [['list'], ['junit', { outputFile: 'test-results/e2e.xml' }]],
+  outputDir: process.env['E2E_RESULTS_DIR'] ?? 'test-results',
+  reporter: [
+    ['list'],
+    ['junit', { outputFile: `${process.env['E2E_RESULTS_DIR'] ?? 'test-results'}/e2e.xml` }],
+  ],
   use: {
     baseURL: process.env['BASE_URL'] ?? 'http://127.0.0.1:18080',
     browserName: 'chromium',

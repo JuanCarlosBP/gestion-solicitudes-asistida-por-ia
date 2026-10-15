@@ -1,6 +1,7 @@
 import { expect, Page, test } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
 import { join } from 'node:path';
+import { verificarAlmacenamientoOperaciones } from './operaciones-ayudas';
 
 type RolDemo = 'ADMINISTRADOR' | 'SOLICITANTE' | 'SUPERVISOR' | 'AUDITOR';
 
@@ -139,7 +140,9 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
     await page.getByRole('link', { name: 'Cancelar y volver', exact: true }).click();
     await page.getByRole('button', { name: 'Desactivar proveedor', exact: true }).click();
     await expect(page.locator('.estado')).toHaveText('Inactivo');
-    await expect(page.getByRole('status')).toHaveText('Proveedor desactivado.');
+    await expect(page.locator('app-proveedor-detalle').getByRole('status')).toHaveText(
+      'Proveedor desactivado.',
+    );
   });
 
   await test.step('06 SOLICITANTE y SUPERVISOR no ven el inactivo', async () => {
@@ -195,7 +198,9 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
   await test.step('08 ADMINISTRADOR reactiva', async () => {
     await page.getByRole('button', { name: 'Reactivar proveedor', exact: true }).click();
     await expect(page.locator('.estado')).toHaveText('Activo');
-    await expect(page.getByRole('status')).toHaveText('Proveedor reactivado.');
+    await expect(page.locator('app-proveedor-detalle').getByRole('status')).toHaveText(
+      'Proveedor reactivado.',
+    );
   });
 
   await test.step('09 Duplicado se explica y conserva los datos introducidos', async () => {
@@ -241,12 +246,16 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
         url.searchParams.get('identificadorFiscal') === fiscalUnicode &&
         url.searchParams.get('size') === '1',
     );
-    await expect(page.getByRole('status')).toHaveText('1 proveedores encontrados.');
+    await expect(page.locator('app-proveedores-lista').getByRole('status')).toHaveText(
+      '1 proveedores encontrados.',
+    );
     await expect(page.getByRole('link', { name: denominacionUnicode, exact: true })).toBeVisible();
     await page.getByLabel('Denominación contiene', { exact: true }).fill(prefijo);
     await page.getByLabel('Identificador fiscal exacto', { exact: true }).fill('');
     await page.getByRole('button', { name: 'Buscar', exact: true }).click();
-    await expect(page.getByRole('status')).toHaveText('2 proveedores encontrados.');
+    await expect(page.locator('app-proveedores-lista').getByRole('status')).toHaveText(
+      '2 proveedores encontrados.',
+    );
     await expect(page.locator('.proveedores li')).toHaveCount(1);
     await expect(
       page.getByRole('link', { name: `${prefijo} A concurrente`, exact: true }),
@@ -256,16 +265,14 @@ test('PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales', as
     await expect(page).toHaveURL(/page=1/);
   });
 
-  await test.step('11 Recarga restaura sesión, filtros y página sin web storage', async () => {
+  await test.step('11 Recarga restaura sesión, filtros y página con solo descriptores mínimos', async () => {
     const url = page.url();
     await page.reload();
     await expect(page.getByRole('heading', { name: 'Proveedores', exact: true })).toBeFocused();
     await expect(page).toHaveURL(url);
     await expect(page.getByLabel('Denominación contiene', { exact: true })).toHaveValue(prefijo);
     await expect(page.getByRole('link', { name: denominacionUnicode, exact: true })).toBeVisible();
-    expect(
-      await page.evaluate(() => localStorage.length === 0 && sessionStorage.length === 0),
-    ).toBe(true);
+    await verificarAlmacenamientoOperaciones(page);
   });
 
   await test.step('12 Móvil, teclado, foco, etiquetas y mensajes', async () => {

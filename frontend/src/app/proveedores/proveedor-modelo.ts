@@ -79,7 +79,14 @@ export const paisesFiscales = new Set(
 
 /** Mensajes controlados; nunca se refleja el cuerpo de un error de API. */
 export function mensajeErrorProveedor(error: unknown): string {
-  const fallo = error as { status?: number; error?: { error?: string } } | null;
+  const fallo = error as {
+    status?: number;
+    error?: { error?: string; operacionConfirmada?: boolean };
+  } | null;
+  if (fallo?.error?.error === 'CLAVE_IDEMPOTENCIA_REUTILIZADA')
+    return 'La clave corresponde a una entrada distinta. Esta petición no se ha aplicado. Consulta el resultado confirmado antes de continuar.';
+  if (fallo?.error?.error === 'OPERACION_YA_COMPLETADA')
+    return 'La operación ya está confirmada. Abre el resultado desde Operaciones seguras para consultar el detalle.';
   if (fallo?.status === 409 && fallo.error?.error === 'VERSION_OBSOLETA')
     return 'Otro usuario ha cambiado este proveedor. Recarga los datos antes de volver a guardar.';
   if (fallo?.status === 409 && fallo.error?.error === 'PROVEEDOR_DUPLICADO')
@@ -92,6 +99,15 @@ export function mensajeErrorProveedor(error: unknown): string {
 }
 
 export function esConflictoProveedor(error: unknown): boolean {
-  const fallo = error as { status?: number; error?: { error?: string } } | null;
-  return fallo?.status === 409 && fallo.error?.error === 'VERSION_OBSOLETA';
+  const fallo = error as {
+    status?: number;
+    error?: { error?: string; operacionConfirmada?: boolean };
+  } | null;
+  return (
+    fallo?.error?.operacionConfirmada === true ||
+    (fallo?.status === 409 &&
+      ['VERSION_OBSOLETA', 'OPERACION_YA_COMPLETADA', 'CLAVE_IDEMPOTENCIA_REUTILIZADA'].includes(
+        fallo.error?.error ?? '',
+      ))
+  );
 }

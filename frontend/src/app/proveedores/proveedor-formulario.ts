@@ -1,6 +1,7 @@
 import {
   afterNextRender,
   Component,
+  computed,
   DestroyRef,
   ElementRef,
   inject,
@@ -32,6 +33,8 @@ import {
 } from './proveedor-modelo';
 import { ProveedoresApi } from './proveedores-api';
 import { PermisosProveedores } from './proveedores-permisos';
+import { DescriptorOperacion } from '../operaciones/operacion-modelo';
+import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
 
 const datosVacios: DatosProveedor = {
   tipo: 'PERSONA_JURIDICA',
@@ -83,6 +86,11 @@ export function validarProveedor(datos: DatosProveedor): Record<string, string> 
 })
 export class ProveedorFormulario implements OnInit {
   private readonly api = inject(ProveedoresApi);
+  private readonly operaciones = inject(OperacionesSeguras);
+  private readonly intencionAlta = signal<DescriptorOperacion | undefined>(undefined);
+  readonly resultadoAlta = computed(
+    () => this.operaciones.resultadoConfirmado(this.intencionAlta())?.id ?? null,
+  );
   private readonly ruta = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly destruccion = inject(DestroyRef);
@@ -111,6 +119,7 @@ export class ProveedorFormulario implements OnInit {
           this.error.set('');
           this.errores.set({});
           this.conflicto.set(false);
+          this.intencionAlta.set(undefined);
           const consulta: Observable<Proveedor | null> = id ? this.api.consultar(id) : of(null);
           return consulta.pipe(
             map((proveedor) => ({ proveedor, error: '' })),
@@ -135,6 +144,7 @@ export class ProveedorFormulario implements OnInit {
       this.guardando() ||
       this.cargando() ||
       this.conflicto() ||
+      this.resultadoAlta() ||
       (this.id() && !this.proveedor())
     )
       return;
@@ -160,7 +170,7 @@ export class ProveedorFormulario implements OnInit {
     const actual = this.proveedor();
     const peticion = actual
       ? this.api.modificar(actual.id, datos, actual.version)
-      : this.api.crear(datos);
+      : this.api.crear(datos, this.intencionAlta);
     peticion
       .pipe(
         takeUntilDestroyed(this.destruccion),
@@ -180,7 +190,7 @@ export class ProveedorFormulario implements OnInit {
   }
 
   recargar(): void {
-    if (!this.guardando()) this.refrescar.next();
+    if (!this.guardando() && this.id()) this.refrescar.next();
   }
 
   private enfocar(): void {

@@ -1,6 +1,10 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
+import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
+
+beforeEach(prepararOperacionesPrueba);
 import { provideRouter, Router } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { of } from 'rxjs';
@@ -226,7 +230,7 @@ describe('Solicitudes: páginas, rutas y permisos SCI-01–12', () => {
     await estable(vista);
     expect(texto(vista)).toContain(solicitudPrueba.asunto);
   });
-  it('alta valida asunto, presenta etiquetas y nunca persiste almacenamiento web', async () => {
+  it('alta valida asunto, presenta etiquetas y persiste solo descriptor hasta confirmar', async () => {
     const persistir = vi.spyOn(Storage.prototype, 'setItem');
     const vista = await RouterTestingHarness.create('/solicitudes/nueva?estado=BORRADOR');
     const navegar = vi.spyOn(TestBed.inject(Router), 'navigate').mockResolvedValue(true);
@@ -247,9 +251,88 @@ describe('Solicitudes: páginas, rutas y permisos SCI-01–12', () => {
     expect(navegar).toHaveBeenCalledWith(['/solicitudes', solicitudPrueba.id, 'editar'], {
       queryParamsHandling: 'preserve',
     });
-    expect(persistir).not.toHaveBeenCalled();
+    expect(persistir).toHaveBeenCalledOnce();
+    expect(JSON.parse(persistir.mock.calls[0][1])).toEqual({
+      clave: alta.request.headers.get('Idempotency-Key'),
+      operacion: 'CREAR_BORRADOR',
+      fecha: expect.any(Number),
+    });
+    expect(localStorage.length).toBe(0);
     persistir.mockRestore();
   });
+  it('alta confirmada recuperada no ofrece descartar y crear otra al fallar detalle', async () => {
+    const vista = await RouterTestingHarness.create('/solicitudes/nueva');
+    campo(vista, 'asunto', 'Solicitud confirmada ficticia');
+    enviar(vista);
+    const alta = http().expectOne('/api/solicitudes');
+    const operaciones = TestBed.inject(OperacionesSeguras);
+    const descriptor = operaciones.operaciones()[0].descriptor;
+    operaciones.recuperar(descriptor);
+    http()
+      .expectOne(`/api/operaciones-idempotentes/${descriptor.clave}`)
+      .flush({
+        estado: 'COMPLETADA',
+        operacion: 'CREAR_BORRADOR',
+        recursoId: solicitudPrueba.id,
+        resultado: { estadoHttp: 201, id: solicitudPrueba.id, version: 0, estado: 'BORRADOR' },
+      });
+    alta.error(new ProgressEvent('error'));
+    http()
+      .expectOne(url)
+      .flush({ error: 'DEPENDENCIA_NO_DISPONIBLE' }, { status: 503, statusText: 'Error' });
+    await estable(vista);
+    expect(texto(vista)).toContain('La operación ya está confirmada');
+    expect(texto(vista)).not.toContain('Descartar cambios y recargar');
+    const componente = vista.routeDebugElement!.componentInstance as SolicitudFormulario;
+    componente.recargar();
+    await estable(vista);
+    enviar(vista);
+    http().expectNone('/api/solicitudes');
+    expect(
+      vista.routeNativeElement!.querySelector<HTMLButtonElement>('button[type=submit]')?.disabled,
+    ).toBe(true);
+    expect(vista.routeNativeElement!.querySelector('a.resultado-alta')?.getAttribute('href')).toBe(
+      `/solicitudes/${solicitudPrueba.id}`,
+    );
+    expect(localStorage.length).toBe(0);
+  });
+  it.each(['manual', 'otra-pestana'])(
+    'alta con error previo y recuperación %s conserva la intención terminal',
+    async (modo) => {
+      const vista = await RouterTestingHarness.create('/solicitudes/nueva');
+      campo(vista, 'asunto', 'Intención confirmada ficticia');
+      enviar(vista);
+      const alta = http().expectOne('/api/solicitudes');
+      const operaciones = TestBed.inject(OperacionesSeguras);
+      const descriptor = operaciones.operaciones()[0].descriptor;
+      alta.error(new ProgressEvent('error'));
+      await estable(vista);
+      if (modo === 'manual') operaciones.recuperar(descriptor);
+      else {
+        const claveStorage = localStorage.key(0)!;
+        localStorage.removeItem(claveStorage);
+        window.dispatchEvent(new StorageEvent('storage', { key: claveStorage }));
+      }
+      http()
+        .expectOne(`/api/operaciones-idempotentes/${descriptor.clave}`)
+        .flush({
+          estado: 'COMPLETADA',
+          operacion: 'CREAR_BORRADOR',
+          recursoId: solicitudPrueba.id,
+          resultado: { estadoHttp: 201, id: solicitudPrueba.id, version: 0, estado: 'BORRADOR' },
+        });
+      await estable(vista);
+      expect(
+        vista.routeNativeElement!.querySelector<HTMLButtonElement>('button[type=submit]')?.disabled,
+      ).toBe(true);
+      enviar(vista);
+      http().expectNone('/api/solicitudes');
+      expect(
+        vista.routeNativeElement!.querySelector('a.resultado-alta')?.getAttribute('href'),
+      ).toBe(`/solicitudes/${solicitudPrueba.id}`);
+      expect(localStorage.length).toBe(0);
+    },
+  );
   it('editor recupera agregado, etiquetas y estimación exacta diferenciada del total confirmado', async () => {
     const vista = await editor();
     expect(texto(vista)).toContain('Total estimado');

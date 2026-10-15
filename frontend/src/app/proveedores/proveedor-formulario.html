@@ -5,8 +5,24 @@
   <h1 #titulo id="titulo-formulario" tabindex="-1">
     {{ id() ? 'Editar proveedor' : 'Nuevo proveedor' }}
   </h1>
-  <p #alerta role="alert" class="aviso" tabindex="-1" [hidden]="!error()">{{ error() }}</p>
-  @if (conflicto()) {
+  @if (resultadoAlta()) {
+    <div class="aviso" role="status">
+      <p>Esta alta ya está confirmada. Abre el resultado para consultar el proveedor creado.</p>
+      <a class="resultado-alta" [routerLink]="['/proveedores', resultadoAlta()]"
+        >Abrir proveedor creado</a
+      >
+    </div>
+  }
+  <p
+    #alerta
+    role="alert"
+    class="aviso"
+    tabindex="-1"
+    [hidden]="!error() || (!!resultadoAlta() && !conflicto())"
+  >
+    {{ error() }}
+  </p>
+  @if (conflicto() && id()) {
     <p>La recarga sustituirá los cambios del formulario por los datos vigentes.</p>
   }
   @if (id() && error()) {
@@ -98,7 +114,7 @@
         /><small id="error-telefono">{{ errores()['telefonoContacto'] }}</small>
       </div>
       <div class="acciones">
-        <button type="submit" [disabled]="guardando() || conflicto()">
+        <button type="submit" [disabled]="guardando() || conflicto() || !!resultadoAlta()">
           {{ guardando() ? 'Guardando…' : 'Guardar proveedor' }}
         </button>
       </div>

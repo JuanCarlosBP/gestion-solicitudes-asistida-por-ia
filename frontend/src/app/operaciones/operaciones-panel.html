@@ -1,0 +1,34 @@
+@if (sesion.autenticado() && (servicio.operaciones().length || servicio.problema())) {
+  <section aria-label="Operaciones seguras" class="operaciones-panel">
+    @if (servicio.problema()) {
+      <p role="status" class="problema">{{ servicio.problema() }}</p>
+    }
+    @for (vista of servicio.operaciones(); track vista.descriptor.clave) {
+      <article class="operacion" [attr.data-estado]="vista.estado">
+        <div>
+          <strong>{{ nombres[vista.descriptor.operacion] }}</strong>
+          <p role="status" aria-live="polite">{{ vista.mensaje }}</p>
+        </div>
+        <div class="acciones-operacion">
+          @if (vista.estado === 'COMPLETADA' && vista.resultado) {
+            <a
+              [id]="'resultado-operacion-' + vista.descriptor.clave"
+              [routerLink]="servicio.ruta(vista)"
+              >Abrir resultado</a
+            >
+          } @else if (vista.estado !== 'ENVIANDO') {
+            <button
+              type="button"
+              [disabled]="vista.estado === 'RECUPERANDO'"
+              (click)="consultar(vista.descriptor)"
+              [attr.aria-label]="'Consultar resultado: ' + nombres[vista.descriptor.operacion]"
+            >
+              Consultar resultado
+            </button>
+            <a [routerLink]="servicio.ruta(vista)">Volver a la operación</a>
+          }
+        </div>
+      </article>
+    }
+  </section>
+}

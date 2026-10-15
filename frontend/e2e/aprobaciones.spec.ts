@@ -50,7 +50,7 @@ async function consultar(sesion: Sesion, id: string): Promise<DetalleSolicitud> 
 }
 async function presentada(admin: Sesion, autor: Sesion, supervisor: Sesion, asunto: string) {
   const proveedor = await admin.api.post('/api/proveedores', {
-    headers: await escritura(admin.api, admin.headers),
+    headers: await escritura(admin.api, { ...admin.headers, 'Idempotency-Key': randomUUID() }),
     data: {
       tipo: 'PROFESIONAL',
       denominacion: `Proveedor aprobaciones ${randomUUID()}`,
@@ -63,7 +63,7 @@ async function presentada(admin: Sesion, autor: Sesion, supervisor: Sesion, asun
   expect(proveedor.status()).toBe(201);
   const proveedorId = ((await proveedor.json()) as { id: string }).id;
   const alta = await autor.api.post('/api/solicitudes', {
-    headers: await escritura(autor.api, autor.headers),
+    headers: await escritura(autor.api, { ...autor.headers, 'Idempotency-Key': randomUUID() }),
     data: { asunto },
   });
   expect(alta.status()).toBe(201);

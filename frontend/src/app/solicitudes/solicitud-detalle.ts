@@ -45,7 +45,7 @@ export class SolicitudDetalle implements OnInit {
   private readonly alerta = viewChild<ElementRef<HTMLElement>>('alerta');
   private readonly confirmacion = viewChild<ElementRef<HTMLElement>>('confirmacion');
   private readonly refrescar = new Subject<void>();
-  private intento: { id: string; version: number; clave: string } | null = null;
+  private intento: { id: string; version: number } | null = null;
   readonly permisos = inject(PermisosSolicitudes);
   readonly solicitud = signal<DetalleSolicitud | null>(null);
   readonly cargando = signal(true);
@@ -107,12 +107,12 @@ export class SolicitudDetalle implements OnInit {
     const solicitud = this.solicitud();
     if (!solicitud || !this.confirmar() || !this.puedePresentar() || this.presentando()) return;
     // La misma intención conserva clave y versión tras una respuesta incierta.
-    this.intento ??= { id: solicitud.id, version: solicitud.version, clave: crypto.randomUUID() };
+    this.intento ??= { id: solicitud.id, version: solicitud.version };
     this.presentando.set(true);
     this.error.set('');
     this.aviso.set('');
     this.api
-      .presentar(this.intento.id, this.intento.version, this.intento.clave)
+      .presentar(this.intento.id, this.intento.version)
       .pipe(
         switchMap(() => {
           this.presentada.set(true);

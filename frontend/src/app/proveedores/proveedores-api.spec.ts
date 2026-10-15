@@ -3,6 +3,9 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 import { filtrosIniciales, mensajeErrorProveedor, Proveedor } from './proveedor-modelo';
 import { ProveedoresApi } from './proveedores-api';
+import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
+
+beforeEach(prepararOperacionesPrueba);
 
 export const proveedorPrueba: Proveedor = {
   id: '00000000-0000-4000-8000-000000000101',
@@ -82,6 +85,9 @@ describe('Contrato HTTP proveedores', () => {
         accion === 'crear' ? '/api/proveedores' : `/api/proveedores/${proveedorPrueba.id}`,
       );
       expect(peticion.request.method).toBe(accion === 'crear' ? 'POST' : 'PUT');
+      if (accion === 'crear')
+        expect(peticion.request.headers.get('Idempotency-Key')).toMatch(/^[0-9a-f-]{36}$/);
+      else expect(peticion.request.headers.has('Idempotency-Key')).toBe(false);
       expect(Object.keys(peticion.request.body).sort()).toEqual(
         [
           'correoContacto',
@@ -109,6 +115,7 @@ describe('Contrato HTTP proveedores', () => {
       );
       expect(peticion.request.method).toBe('POST');
       expect(peticion.request.body).toEqual({ version: 3 });
+      expect(peticion.request.headers.get('Idempotency-Key')).toMatch(/^[0-9a-f-]{36}$/);
       peticion.flush({ ...proveedorPrueba, activo: !activo, version: 4 });
     },
   );
