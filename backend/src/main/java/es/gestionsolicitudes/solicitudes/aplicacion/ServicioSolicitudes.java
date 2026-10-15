@@ -1,5 +1,7 @@
 package es.gestionsolicitudes.solicitudes.aplicacion;
 
+import es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones;
+import es.gestionsolicitudes.operaciones.dominio.*;
 import es.gestionsolicitudes.solicitudes.dominio.*;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
@@ -20,17 +22,31 @@ public class ServicioSolicitudes {
     private final Clock reloj;
     private final TransactionTemplate escritura;
     private final TransactionTemplate lectura;
+    private final ServicioOperaciones operaciones;
 
     public ServicioSolicitudes(
             RepositorioSolicitudes repositorio,
             Clock reloj,
-            PlatformTransactionManager transacciones) {
+            PlatformTransactionManager transacciones,
+            ServicioOperaciones operaciones) {
         this.repositorio = repositorio;
         this.reloj = reloj;
+        this.operaciones = operaciones;
         escritura = new TransactionTemplate(transacciones);
         lectura = new TransactionTemplate(transacciones);
         lectura.setReadOnly(true);
         lectura.setIsolationLevel(TransactionDefinition.ISOLATION_REPEATABLE_READ);
+    }
+
+    public Solicitud crearIdempotente(
+            ActorSolicitud actor, String asunto, UUID clave, UUID peticion) {
+        actor.exigirCreacion();
+        String limpio = DatosBorrador.texto(asunto, 3, 160);
+        return operaciones.ejecutar(
+                PeticionOperacion.de(
+                        TipoOperacion.CREAR_BORRADOR, actor.id(), clave, null, null, limpio),
+                Solicitud.class,
+                () -> crear(actor, limpio, peticion));
     }
 
     public Solicitud crear(ActorSolicitud actor, String asunto, UUID peticion) {
@@ -120,28 +136,14 @@ public class ServicioSolicitudes {
     public ResultadoPresentacion presentar(
             ActorSolicitud actor, UUID id, long version, UUID clave, UUID peticion) {
         if (clave == null || version < 0) throw ErrorSolicitud.invalida();
-        String huella = hash("PRESENTAR:" + id + ":" + version);
+        var intento = PeticionOperacion.de(TipoOperacion.PRESENTAR, actor.id(), clave, id, version);
         try {
-            return escritura.execute(
-                    tx -> {
-                        repositorio.bloquearClave(actor.id(), clave);
+            return operaciones.ejecutar(
+                    intento,
+                    ResultadoPresentacion.class,
+                    () -> {
                         Solicitud anterior = existente(id, true);
                         actor.exigirPropiedad(anterior);
-                        var previa = repositorio.operacion(actor.id(), clave);
-                        if (previa.isPresent()) {
-                            if (!previa.get().tipo().equals("PRESENTAR")
-                                    || !previa.get().huella().equals(huella))
-                                throw new ErrorSolicitud(
-                                        ErrorSolicitud.Codigo.CLAVE_IDEMPOTENCIA_REUTILIZADA);
-                            trasCommit(
-                                    "DUPLICADO_IDEMPOTENTE",
-                                    actor,
-                                    id,
-                                    "CORRECTO",
-                                    peticion,
-                                    clave);
-                            return previa.get().presentacion();
-                        }
                         anterior.exigirEditable(version);
                         if (anterior.proveedorId() == null)
                             throw new ErrorSolicitud(ErrorSolicitud.Codigo.PROVEEDOR_INACTIVO);
@@ -174,10 +176,17 @@ public class ServicioSolicitudes {
                             throw ErrorSolicitud.invalida();
                         repositorio.presentar(anterior, proveedor, siguiente(anterior));
                         var resultado = ResultadoPresentacion.de(existente(id, false));
-                        repositorio.registrar(actor.id(), clave, huella, resultado);
                         trasCommit("PRESENTAR", actor, id, "CORRECTO", peticion, clave);
                         return resultado;
-                    });
+                    },
+                    () ->
+                            trasCommit(
+                                    "DUPLICADO_IDEMPOTENTE",
+                                    actor,
+                                    id,
+                                    "CORRECTO",
+                                    peticion,
+                                    clave));
         } catch (ErrorSolicitud error) {
             rechazo("PRESENTAR", actor, id, error, peticion, clave);
             throw error;
@@ -199,19 +208,21 @@ public class ServicioSolicitudes {
             DatosDecision datos,
             UUID peticion) {
         if (clave == null || version < 0 || datos == null) throw ErrorSolicitud.invalida();
-        String huella =
-                hash(
-                        datos.tipo().name()
-                                + ":"
-                                + id
-                                + ":"
-                                + version
-                                + ":"
-                                + datos.textoParaHuella());
+        var intento =
+                PeticionOperacion.de(
+                        TipoOperacion.valueOf(datos.tipo().name()),
+                        actor.id(),
+                        clave,
+                        id,
+                        version,
+                        datos.tipo() == DatosDecision.Tipo.APROBAR
+                                ? datos.comentario()
+                                : datos.motivo());
         try {
-            return escritura.execute(
-                    tx -> {
-                        repositorio.bloquearClave(actor.id(), clave);
+            return operaciones.ejecutar(
+                    intento,
+                    ResultadoDecision.class,
+                    () -> {
                         Solicitud anterior = existente(id, true);
                         actor.exigirDecision(anterior);
                         // La autorización vigente también precede al replay, aunque el JWT aún
@@ -224,21 +235,6 @@ public class ServicioSolicitudes {
                                                         new ErrorSolicitud(
                                                                 ErrorSolicitud.Codigo
                                                                         .ACCESO_NO_PERMITIDO));
-                        var previa = repositorio.operacion(actor.id(), clave);
-                        if (previa.isPresent()) {
-                            if (!previa.get().tipo().equals(datos.tipo().name())
-                                    || !previa.get().huella().equals(huella))
-                                throw new ErrorSolicitud(
-                                        ErrorSolicitud.Codigo.CLAVE_IDEMPOTENCIA_REUTILIZADA);
-                            trasCommit(
-                                    "DUPLICADO_IDEMPOTENTE",
-                                    actor,
-                                    id,
-                                    "CORRECTO",
-                                    peticion,
-                                    clave);
-                            return previa.get().decision();
-                        }
                         anterior.exigirDecidible(version);
                         Instant ahora = siguiente(anterior);
                         repositorio.decidir(anterior, datos, supervisor, ahora, peticion);
@@ -250,11 +246,17 @@ public class ServicioSolicitudes {
                                         anterior.version() + 1,
                                         ahora,
                                         ahora);
-                        repositorio.registrarDecision(
-                                actor.id(), clave, huella, datos.tipo(), resultado, anterior);
                         trasCommit(datos.tipo().name(), actor, id, "CORRECTO", peticion, clave);
                         return resultado;
-                    });
+                    },
+                    () ->
+                            trasCommit(
+                                    "DUPLICADO_IDEMPOTENTE",
+                                    actor,
+                                    id,
+                                    "CORRECTO",
+                                    peticion,
+                                    clave));
         } catch (ErrorSolicitud error) {
             rechazo(datos.tipo().name(), actor, id, error, peticion, clave);
             throw error;

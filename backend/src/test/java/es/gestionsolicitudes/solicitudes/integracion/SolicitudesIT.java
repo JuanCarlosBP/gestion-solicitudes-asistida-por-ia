@@ -132,7 +132,7 @@ class SolicitudesIT {
                                         "spring.main.banner-mode",
                                         "off"))
                         .run("--server.port=0");
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(5);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
         assertThat(
                         administrador.queryForObject(
                                 "SELECT count(*) FROM gestion.proveedores WHERE id=?",
@@ -1519,6 +1519,11 @@ class SolicitudesIT {
                     administrador.queryForObject(
                             "SELECT count(*) FROM pg_stat_activity WHERE datname=current_database() AND usename='gestion_app' AND wait_event_type='Lock'",
                             Integer.class);
+            esperando +=
+                    contexto.getBean(
+                                    es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones
+                                            .class)
+                            .esperasEnCurso();
             if (esperando < cantidad) Thread.sleep(20);
         }
         assertThat(esperando)
@@ -1638,6 +1643,8 @@ class SolicitudesIT {
                                         : HttpRequest.BodyPublishers.ofString(cuerpo));
         if (actor != null) p.header("Authorization", "Bearer " + tokens.get(actor));
         if (conCsrf) p.header("Cookie", "XSRF-TOKEN=" + csrf).header("X-XSRF-TOKEN", csrf);
+        if (clave == null && metodo.equals("POST") && ruta.equals("/api/solicitudes"))
+            clave = UUID.randomUUID().toString();
         if (clave != null) p.header("Idempotency-Key", clave);
         return cliente.send(p.build(), HttpResponse.BodyHandlers.ofString());
     }

@@ -2,10 +2,6 @@ package es.gestionsolicitudes.solicitudes.persistencia;
 
 import es.gestionsolicitudes.solicitudes.aplicacion.RepositorioSolicitudes;
 import es.gestionsolicitudes.solicitudes.dominio.*;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.time.*;
 import java.util.*;
@@ -288,64 +284,6 @@ public class RepositorioSolicitudesJdbc implements RepositorioSolicitudes {
     }
 
     @Override
-    public void bloquearClave(UUID usuario, UUID clave) {
-        try {
-            byte[] hash =
-                    MessageDigest.getInstance("SHA-256")
-                            .digest((usuario + ":" + clave).getBytes(StandardCharsets.UTF_8));
-            jdbc.query("SELECT pg_advisory_xact_lock(?)", r -> {}, ByteBuffer.wrap(hash).getLong());
-        } catch (NoSuchAlgorithmException error) {
-            throw new IllegalStateException("SHA-256 no disponible", error);
-        }
-    }
-
-    @Override
-    public Optional<Operacion> operacion(UUID usuario, UUID clave) {
-        return jdbc
-                .query(
-                        "SELECT * FROM gestion.operaciones_idempotentes_solicitud WHERE usuario_id=? AND clave=?",
-                        (r, n) -> mapearOperacion(r),
-                        usuario,
-                        clave)
-                .stream()
-                .findFirst();
-    }
-
-    private static Operacion mapearOperacion(ResultSet r) throws SQLException {
-        String tipo = r.getString("operacion");
-        UUID id = r.getObject("solicitud_id", UUID.class);
-        String numero = r.getString("resultado_numero"), estado = r.getString("resultado_estado");
-        long version = r.getLong("resultado_version");
-        Instant actualizado = r.getTimestamp("resultado_actualizado_en").toInstant();
-        // Leer primero el discriminador: un replay004 jamás incorpora campos nuevos005.
-        if (tipo.equals("PRESENTAR"))
-            return new Operacion(
-                    tipo,
-                    r.getString("huella"),
-                    new ResultadoPresentacion(
-                            id,
-                            numero,
-                            estado,
-                            version,
-                            actualizado,
-                            r.getTimestamp("resultado_presentado_en").toInstant(),
-                            r.getString("resultado_moneda"),
-                            r.getBigDecimal("resultado_total").toPlainString()),
-                    null);
-        return new Operacion(
-                tipo,
-                r.getString("huella"),
-                null,
-                new ResultadoDecision(
-                        id,
-                        numero,
-                        estado,
-                        version,
-                        actualizado,
-                        r.getTimestamp("resultado_decidido_en").toInstant()));
-    }
-
-    @Override
     public void presentar(Solicitud s, Solicitud.Proveedor p, Instant ahora) {
         int actualizadas =
                 jdbc.update(
@@ -359,24 +297,6 @@ public class RepositorioSolicitudesJdbc implements RepositorioSolicitudes {
                         s.id(),
                         s.version());
         if (actualizadas != 1) throw new ErrorSolicitud(ErrorSolicitud.Codigo.VERSION_OBSOLETA);
-    }
-
-    @Override
-    public void registrar(UUID usuario, UUID clave, String huella, ResultadoPresentacion r) {
-        jdbc.update(
-                "INSERT INTO gestion.operaciones_idempotentes_solicitud(usuario_id,clave,solicitud_id,operacion,huella,resultado_numero,resultado_estado,resultado_version,resultado_actualizado_en,resultado_presentado_en,resultado_moneda,resultado_total,creado_en) VALUES (?,?,?,'PRESENTAR',?,?,?,?,?,?,?,?,?)",
-                usuario,
-                clave,
-                r.id(),
-                huella,
-                r.numero(),
-                r.estado(),
-                r.version(),
-                Timestamp.from(r.actualizadoEn()),
-                Timestamp.from(r.presentadoEn()),
-                r.moneda(),
-                new java.math.BigDecimal(r.importeTotal()),
-                Timestamp.from(r.presentadoEn()));
     }
 
     @Override
@@ -407,32 +327,6 @@ public class RepositorioSolicitudesJdbc implements RepositorioSolicitudes {
                 s.version(),
                 s.version() + 1,
                 peticion);
-    }
-
-    @Override
-    public void registrarDecision(
-            UUID usuario,
-            UUID clave,
-            String huella,
-            DatosDecision.Tipo tipo,
-            ResultadoDecision r,
-            Solicitud anterior) {
-        jdbc.update(
-                "INSERT INTO gestion.operaciones_idempotentes_solicitud(usuario_id,clave,solicitud_id,operacion,huella,resultado_numero,resultado_estado,resultado_version,resultado_actualizado_en,resultado_presentado_en,resultado_moneda,resultado_total,creado_en,resultado_decidido_en) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                usuario,
-                clave,
-                r.id(),
-                tipo.name(),
-                huella,
-                r.numero(),
-                r.estado(),
-                r.version(),
-                Timestamp.from(r.actualizadoEn()),
-                Timestamp.from(anterior.presentadoEn()),
-                anterior.moneda(),
-                anterior.importeTotal(),
-                Timestamp.from(r.decididoEn()),
-                Timestamp.from(r.decididoEn()));
     }
 
     private static void agregar(

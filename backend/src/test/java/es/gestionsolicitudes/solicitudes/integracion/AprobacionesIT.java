@@ -166,12 +166,12 @@ class AprobacionesIT {
                         solicitud);
         String operacionAntes =
                 administrador.queryForObject(
-                        "SELECT (to_jsonb(t)-'resultado_decidido_en')::text FROM gestion.operaciones_idempotentes_solicitud t WHERE usuario_id=? AND clave=?",
+                        "SELECT (to_jsonb(t)-'resultado_decidido_en'-'version_huella'-'recurso_id'-'proveedor_id'-'estado_http'-'resultado_json')::text FROM gestion.operaciones_idempotentes_solicitud t WHERE usuario_id=? AND clave=?",
                         String.class,
                         autor,
                         clave);
         iniciarAplicacion();
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(5);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
         assertThat(contexto.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
         assertThat(
                         administrador.queryForObject(
@@ -181,7 +181,7 @@ class AprobacionesIT {
                 .isEqualTo(filaAntes);
         assertThat(
                         administrador.queryForObject(
-                                "SELECT (to_jsonb(t)-'resultado_decidido_en')::text FROM gestion.operaciones_idempotentes_solicitud t WHERE usuario_id=? AND clave=?",
+                                "SELECT (to_jsonb(t)-'resultado_decidido_en'-'version_huella'-'recurso_id'-'proveedor_id'-'estado_http'-'resultado_json')::text FROM gestion.operaciones_idempotentes_solicitud t WHERE usuario_id=? AND clave=?",
                                 String.class,
                                 autor,
                                 clave))
@@ -1159,7 +1159,7 @@ class AprobacionesIT {
         iniciarAplicacion();
         autenticarTodos();
         obtenerCsrf();
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(5);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
         assertThat(contexto.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
         var replay =
                 decidir(
@@ -1402,6 +1402,11 @@ class AprobacionesIT {
                     administrador.queryForObject(
                             "SELECT count(*) FROM pg_stat_activity WHERE datname=current_database() AND usename='gestion_app' AND wait_event_type='Lock'",
                             Integer.class);
+            esperando +=
+                    contexto.getBean(
+                                    es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones
+                                            .class)
+                            .esperasEnCurso();
             if (esperando < cantidad) Thread.sleep(20);
         }
         assertThat(esperando)
@@ -1515,6 +1520,8 @@ class AprobacionesIT {
                                         : HttpRequest.BodyPublishers.ofString(cuerpo));
         if (actor != null) p.header("Authorization", "Bearer " + tokens.get(actor));
         if (conCsrf) p.header("Cookie", "XSRF-TOKEN=" + csrf).header("X-XSRF-TOKEN", csrf);
+        if (clave == null && metodo.equals("POST") && ruta.equals("/api/solicitudes"))
+            clave = UUID.randomUUID().toString();
         if (clave != null) p.header("Idempotency-Key", clave);
         return cliente.send(p.build(), HttpResponse.BodyHandlers.ofString());
     }
