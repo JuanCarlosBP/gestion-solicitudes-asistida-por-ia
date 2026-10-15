@@ -1,0 +1,6 @@
+{
+  "historicoVisible": true,
+  "sinGit": true,
+  "logsAG013Visibles": 7,
+  "herramienta": "rg --files respeta exclusiones"
+}

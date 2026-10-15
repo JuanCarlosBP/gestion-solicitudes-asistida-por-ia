@@ -1,0 +1,3 @@
+Evidencias documentales: C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag013\reproduccion-ci\tmp\evidencia
+523 enlaces; 1 destinos ausentes; 0 ubicaciones con patrones de secretos.
+especificaciones\003-proveedores\validacion.md: destino ausente ../../qa/evidencias/ag011/backend-verify-final.log
