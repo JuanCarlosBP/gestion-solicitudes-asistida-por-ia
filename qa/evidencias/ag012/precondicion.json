@@ -1,0 +1,10 @@
+{
+  "inicio": "2026-10-14T23:34:02+02:00",
+  "finConstruccion": "2026-10-14T23:35:28+02:00",
+  "duracionMinutos": 1.43,
+  "backendCompile": "PASS",
+  "frontendBuild": "PASS",
+  "docker": "29.1.3",
+  "composeArranque": "PASS",
+  "regresionAdicional": "Corrección E2E heredada exigida, documentada separadamente"
+}

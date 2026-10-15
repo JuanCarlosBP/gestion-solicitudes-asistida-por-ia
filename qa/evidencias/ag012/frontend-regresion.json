@@ -1,0 +1,22 @@
+[
+  {
+    "comando": "npm run typecheck",
+    "salida": 0,
+    "log": "../qa/evidencias/ag012/frontend-regresion-typecheck.log"
+  },
+  {
+    "comando": "npm run lint",
+    "salida": 0,
+    "log": "../qa/evidencias/ag012/frontend-regresion-lint.log"
+  },
+  {
+    "comando": "npm run format:check",
+    "salida": 0,
+    "log": "../qa/evidencias/ag012/frontend-regresion-format-check.log"
+  },
+  {
+    "comando": "npm run test",
+    "salida": 1,
+    "log": "../qa/evidencias/ag012/frontend-regresion-test.log"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "fechaMadrid": "2026-10-15T00:39:11.3916477+02:00",
+  "limiteMadrid": "2026-10-15T09:34:02.0000000+02:00",
+  "minutosRestantes": 534.0,
+  "verificacion005": "AP01–10 PASS local; cierre técnico y documental independiente sin hallazgos",
+  "integridad": "PASS496+63, prefijoCSV, V4 y snapshot004 intactos",
+  "continuacion": "Únicamente especificacion006 borrador pendiente de aprobación humana; sin plan/tareas/validación/código",
+  "origen": "Orden humana AG-012, condición de005verificada+45min cumplida"
+}

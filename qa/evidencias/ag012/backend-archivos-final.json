@@ -1,0 +1,102 @@
+[
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/RepositorioSolicitudes.java",
+    "sha256": "7f54c91a19fb4ebaa8b66d327fd6937ef0e4e6bbf7746a9a103e92d0d840f8bb"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.java",
+    "sha256": "bd44e02b888bee8581d145d4e3c1776cdd9675f5f90737b75e6f5cc19d4daee2"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ActorSolicitud.java",
+    "sha256": "ec19ed33813cb6faf8ed92f22379b3f027459fe60534c3a081b205305e86532f"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Concepto.java",
+    "sha256": "8871e9d201f9aef88b759b7768da6f93bedc81178aba55456c91f6dbc9897888"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes.java",
+    "sha256": "b30e4651687868810cd46e5d4ef0b4eb4e19b29e7796302f67631f2c3a7bde55"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/DatosBorrador.java",
+    "sha256": "ede6dc4718f57779d60ee9f099e2b7e975409128193772c8c98f1db01b98da24"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud.java",
+    "sha256": "129383dc07676d1b810294b8595e9168acce8282ef6b74d5025bbf06b50721ed"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Pagina.java",
+    "sha256": "01dec3d17043ace9e6c1fbe27267455a83e19db0b7d744a6c4cc2d0aa8d4051e"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ResultadoPresentacion.java",
+    "sha256": "4276c4f12d6714691c5b3c39f77654141642873f8eb486b19ec8eb384c41e27e"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Solicitud.java",
+    "sha256": "aae07baa46bac4c6b0d946e06ed8df6ae8873402d4f43c1ef047dbee3768f92c"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java",
+    "sha256": "2e1d8d7a77feb749e62fd533c3ae4917f0ae12d8d3b4c84bcface946dd11c8c9"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/DetalleSolicitud.java",
+    "sha256": "1745f4950184466db2404b34448f459e011e5349e0e3afe50528d6a65a8f0c60"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/EntradaSolicitud.java",
+    "sha256": "90a6daaec1dace74e8fa2651896dd0d5d5ce0fd369c68acb4e2ffb4dbefd48ab"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/FiltrosSolicitudes.java",
+    "sha256": "6d8c4a0846f2d94ef8207d4c5f79a6022618b9acc9176fe8d7351c8287f45a27"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ResumenSolicitud.java",
+    "sha256": "c986071aaedfbce3cbe92b880598e04c6c3e79e2dede10a712f4cf3ce328663d"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc.java",
+    "sha256": "90b92b15c31ebe1015281244b77c3e7e2a9f51c6317485b205c8114ad8ff1926"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/solicitudes/dominio/SolicitudesDominioTest.java",
+    "sha256": "e449d7d3807c33992fecdce69d743f7c66f0afe0c8956056fdf280e579c1058b"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/SolicitudesIT.java",
+    "sha256": "7b8d1e512cb9d936c5492e3c8a4c0711aae73273ff7f4b4602733d0e5edd5e2d"
+  },
+  {
+    "archivo": "backend/src/main/resources/db/migration/V4__solicitudes_conceptos_importes.sql",
+    "sha256": "edaacdef093739757cc25172d9e350729bdfceb7f9795fd21d227c547f0bcd50"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorSupervisores.java",
+    "sha256": "65cc529b0d0665a74307482096f1cad255d02365d801b580ddf7c36e51145040"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+    "sha256": "bc566c8019af3cc0c380c8797b845c0918b56ec99896590cab916ce8dd8310ee"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+    "sha256": "2b8ec733bccb75421509feaab19e2f57d20d0bd079f05b94397b3a0fd15fd0da"
+  },
+  {
+    "archivo": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+    "sha256": "177766060f35caf6f1dec973f102a2e5c8cadc01790b7e4a726e88981860ab1e"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+    "sha256": "c4a3ff6e36d41b553f1db2b277f4818c869f5275ccefb33ae7a0d73ec782b806"
+  },
+  {
+    "archivo": "backend/src/test/java/es/gestionsolicitudes/proveedores/integracion/ProveedoresIT.java",
+    "sha256": "4132d51f2664b25a6dd7077376faf5702c61a3346da96b1d2288d2bfec9d357a"
+  }
+]

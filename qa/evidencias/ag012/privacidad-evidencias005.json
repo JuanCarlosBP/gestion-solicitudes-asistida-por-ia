@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-10-15T00:41:11.5074889+02:00",
+  "archivos": 333,
+  "patrones": [
+    "JWT completo",
+    "Clave privada PEM",
+    "Hash bcrypt"
+  ],
+  "hallazgos": [],
+  "resultado": "PASS"
+}

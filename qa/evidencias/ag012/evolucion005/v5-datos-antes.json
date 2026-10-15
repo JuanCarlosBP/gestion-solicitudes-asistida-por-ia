@@ -1,0 +1,56 @@
+{
+  "fecha": "2026-10-14T22:23:34.754Z",
+  "modo": "antes",
+  "historial": [
+    {
+      "installed_rank": 1,
+      "version": "1",
+      "checksum": -60045458,
+      "success": true
+    },
+    {
+      "installed_rank": 2,
+      "version": "2",
+      "checksum": 1974314313,
+      "success": true
+    },
+    {
+      "installed_rank": 3,
+      "version": "3",
+      "checksum": -1445419552,
+      "success": true
+    },
+    {
+      "installed_rank": 4,
+      "version": "4",
+      "checksum": 1005696110,
+      "success": true
+    }
+  ],
+  "tablas": {
+    "usuarios": {
+      "filas": 13,
+      "huella": "2bfbf3f59521cbacafd454e3b57c8460"
+    },
+    "usuarios_roles": {
+      "filas": 22,
+      "huella": "30a6fb2f3c6f41b021825ed0605327ff"
+    },
+    "proveedores": {
+      "filas": 33,
+      "huella": "420b1e961a03105ef6054afbd713b09b"
+    },
+    "solicitudes": {
+      "filas": 22,
+      "huella": "c12f6ebbf649d29308f238c8e29d6522"
+    },
+    "conceptos_solicitud": {
+      "filas": 25,
+      "huella": "df981038bb5c8131b2c23b6debf5ba73"
+    },
+    "operaciones_idempotentes_solicitud": {
+      "filas": 9,
+      "huella": "7019dcaf9d1710eff2e0eb25343c42cc"
+    }
+  }
+}

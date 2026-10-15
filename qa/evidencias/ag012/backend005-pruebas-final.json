@@ -1,0 +1,335 @@
+[
+  {
+    "suite": "es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "usuarioDeshabilitadoRevocaSuSesionAlRenovar",
+      "usuarioAusenteYCorreoInvalidoVerificanHashFicticio",
+      "unaSesionRevocadaOCaducadaNoSeRenueva",
+      "secretoIncorrectoNoEmiteNiRevocaUnaFamiliaAjena",
+      "reutilizacionDevuelveVacioSinExcepcionYOrdenaRevocacionDeFamilia",
+      "rotacionCreaNuevoHashConservaCaducidadYReleeBajoBloqueo",
+      "logoutSoloRevocaConCredencialAutenticaYUsaBloqueoComun"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "firmaAlteradaClaveAjenaYAlgoritmoDistintoNoSeAceptan",
+      "rechazaPublicaConMismoModuloPeroExponenteIncompatible",
+      "sesionInactivaOBaseInaccesibleRechazanElToken",
+      "normalExigeClavesExternasYLocalTestGeneranRsaEfimera",
+      "emiteRs256ConClaimsMinimosYConvierteRoles",
+      "rechazaIssuerAudienceFechasClaimsAusentesYRolesAjenos",
+      "normalCargaPkcs8X509PorValorYPorRutaSinRegistrarClaves(Path)"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "aceptaLimitesUnicodeEspaciosYSinComposicionArbitraria",
+      "quintoFalloBloqueaQuinceMinutosYLosBloqueadosNoAmplianVentana",
+      "argon2idTieneCosteAprobadoSalAleatoriaYNoRecortaClaves",
+      "ventanaDeFallosCaducaExactamenteYElExitoPuedeRestablecerla",
+      "lasColeccionesYHashInternosNoSeExponenParaModificacion",
+      "secretosOpacosAleatoriosSeComparanSinConservarElValor",
+      "normalizaCorreoConLocaleRootYRechazaEntradasInvalidas"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.http.CookiesIdentidadTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "secureSoloSeRelajaEnPerfilLocalHttpYHostLoopback",
+      "cookieRefrescoRestringeAtributosYCaducidadYElBorradoEsExplicito"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest",
+    "pruebas": 24,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "filtrosRechazanParametrosInternosRepetidosYTamanosInvalidos",
+      "versionObsoletaSeCompruebaTambienSiElEstadoCoincide",
+      "fiscalInvalidoNoSeAcepta(String)[1]",
+      "fiscalInvalidoNoSeAcepta(String)[2]",
+      "fiscalInvalidoNoSeAcepta(String)[3]",
+      "fiscalInvalidoNoSeAcepta(String)[4]",
+      "fiscalInvalidoNoSeAcepta(String)[5]",
+      "fiscalInvalidoNoSeAcepta(String)[6]",
+      "normalizaNfkcRootEspaciosUnicodeYPuntuacionSinFusionarla",
+      "matrizYUnionDeRolesSonExplicitas",
+      "expansionUnicodeSeValidaDespuesDeNormalizarYLongitudesSonPuntosUnicode",
+      "paisDebeSerIsoMayusculo(String)[1]",
+      "paisDebeSerIsoMayusculo(String)[2]",
+      "paisDebeSerIsoMayusculo(String)[3]",
+      "paisDebeSerIsoMayusculo(String)[4]",
+      "paisDebeSerIsoMayusculo(String)[5]",
+      "versionHttpNoSeCoacciona(String)[1]",
+      "versionHttpNoSeCoacciona(String)[2]",
+      "versionHttpNoSeCoacciona(String)[3]",
+      "versionHttpNoSeCoacciona(String)[4]",
+      "versionHttpNoSeCoacciona(String)[5]",
+      "versionHttpNoSeCoacciona(String)[6]",
+      "versionHttpNoSeCoacciona(String)[7]",
+      "contactosOpcionalesYLímitesSeValidan"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.http.ErroresProveedorTest",
+    "pruebas": 4,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "falloAlAbrirTransaccionSeControlaSinDetalles",
+      "falloInesperadoDevuelve500Controlado",
+      "dependenciaInaccesibleDespuesDeAutenticarDevuelve503SinSql",
+      "rolDesconocidoSeDeniegaAntesDeInvocarAplicacion"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "informaFalloDeDependenciaSinDetallesInternos",
+      "informaDisponibilidadSoloSiLaDependenciaResponde"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.http.ControladorSaludTest",
+    "pruebas": 5,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "controlaUnFalloInesperado",
+      "noAbreCorsAUnOrigenAjeno",
+      "deniegaOperacionesYRutasNoPublicas",
+      "devuelve200ConElContratoMinimo",
+      "devuelve503SinInformacionInterna"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "traduceErrorDeConexionSinPropagarSuMensaje",
+      "limitaLaConsultaYLiberaLosRecursos",
+      "rechazaConsultaFallidaYLiberaConexion"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest",
+    "pruebas": 8,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "supervisorLeeFinalesAsignadasYUnionNoBorradoresAjenos",
+      "entradaJsonCerradaVersionYTipos",
+      "autorNiAdministradorNiSupervisorAjenoDeciden",
+      "soloPresentadaVersionVigenteEstadoAntesQueVersion",
+      "huellaNormalizadaInequivoca",
+      "comentarioOpcionalRecorteUnicodeYVacioNull",
+      "tiposNoPermitenCamposDeLaOtraDecision",
+      "limitesPorPuntosDeCodigoSinUtf16Incompleto"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "UnicodePuntosCodigoYRecorteExterior",
+      "versionesYUuidEstrictos",
+      "rechazaCeroNegativosEscalaPrecisionYProductoExcesivo",
+      "lineaPositivaPuedeRedondearCero",
+      "coleccionLimitadaPosicionesUnicasIdsUnicosYNoContiguas",
+      "postEstrictoNoAsignaCamposDelServidor",
+      "redondeoHalfUpPorLineaNoGlobal",
+      "limitesDecimalesAceptadosSinDesbordamiento",
+      "filtrosRechazanRangosOrdenFechasEInyeccion",
+      "permisosUnionYPropiedadEstado",
+      "ejemplosObligatoriosYTotalDeLineasRedondeadas",
+      "defensasDeColecciones",
+      "escalasNormalizadasDeRespuesta",
+      "rechazaTotalExcesivoAunqueLineasSeanValidas",
+      "filtrosCerradosSinDuplicados"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.integracion.IdentidadAccesoIT",
+    "pruebas": 13,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "bearerAusenteAlteradoCaducadoYUsuarioDeshabilitadoSeRechazan",
+      "csrfLoginYoContratoMinimoCookiesYNoCache",
+      "logoutAutenticaRefreshRevocaSesionCompletaBorraCookieYEsIdempotente",
+      "loginNoEnumeraCuentasIncorrectasDeshabilitadasNiBloqueadas",
+      "refreshRotaYReutilizacionConfirmaRevocacionAunqueDevuelva401",
+      "carreraRefreshLogoutSiempreTerminaConSesionRevocada",
+      "denegacionPorDefectoYMethodSecurityUsanRolesDeJwt",
+      "refreshCaducaAbsolutamenteSinAmpliarseYHashIncorrectoNoRevoca",
+      "usuariosRolesUnicidadRestriccionesYPermisosPostgres",
+      "losErroresSqlDeAplicacionNoIncluyenHashesDeFilas",
+      "intentosPersistenVentanaCaducaYUnExitoRestablece",
+      "dosRenovacionesConcurrentesEsperanElMismoBloqueoYRevocanElResultadoGanador",
+      "csrfSeExigeEnCadaPostInclusoConBearerValido"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.integracion.PerfilesIdentidadIT",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "localSinVariablesOConGruposVaciosNoCreaUsuarios",
+      "perfilNormalConClavesExternasNoAprovisionaNiPublicaSwagger",
+      "localCreaCuatroRolesIdempotentementeYRefreshSobreviveReinicio",
+      "perfilTestNoAprovisionaAunqueRecibaVariablesDemo",
+      "grupoParcialOClaveFueraDePoliticaFallaSinAprovisionarParcialmente",
+      "perfilNormalSinClavesNoArranca"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.integracion.BaseVerificableIT",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "unaMigracionInvalidaImpideElArranqueSinAlterarOtraBase",
+      "primerArranqueContratoPermisosYSegundoArranque",
+      "caidaRealDePostgresDevuelve503AcotadoSinDatosInternos"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.integracion.ProveedoresIT",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "busquedaLiteralAcentosAndPaginacionOrdenYFueraDeRango",
+      "bajaReactivacionRepeticionesVisibilidadYVersionObsoleta",
+      "contratoOpenapiDocumentaDtosCerradosVersionYFiltros",
+      "restriccionesYRolPostgresSinDeleteDdlNiBypassUnique",
+      "dosEdicionesSimultaneasMismaVersionSoloUnaGana",
+      "eventosSoloTrasCommitSeisResultadosSinDatosYRollbackReal",
+      "matrizHttpCompletaConUnionDenegacionCsrfY404",
+      "altaConsultaDTOFechasUnicodeYCamposPropios",
+      "duplicadosIncluyenInactivosNormalizacionYConservanPaisYPuntuacion",
+      "csrfSeReponeEnJarRealTrasCadaBearerParaEscriturasConsecutivas",
+      "dosAltasSimultaneasEsperanConexionRealYUnicaPersiste",
+      "altaInvalidaNoPersisteYNuncaReflejaEntrada",
+      "filtrosInvalidosYCamposEscrituraProtegidos",
+      "estadosConcurrentesVersionAnteriorNoSeConviertenEnNoOpExitoso",
+      "actualizacionDuplicadaRollbackYVersionObsoletaNoSobrescriben"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.integracion.AprobacionesIT",
+    "pruebas": 28,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "openApiEntradasCerradasResultadoMinimoYEstados",
+      "mismaClaveConcurrenteOperacionesIncompatibles",
+      "replay004TrasDecidirPermaneceExacto",
+      "eventosTecnicosSinComentarioMotivoNiClaveReutilizable",
+      "mismaClaveConcurrenteEntreRecursos",
+      "replayNormalizaAusenteNullVacioYTexto",
+      "usuarioDeshabilitado401YServicioDeniegaAntesDelReplay",
+      "claveCompartidaConPresentarEnAmbosSentidos",
+      "aprobarResultadoMinimoEventoYAgregadoInmutable",
+      "bandejaYFinalesAplicanAsignacionAntesConteo",
+      "eventoPrivilegiosFkUniqueTextosYVersiones",
+      "replayPersistidoDespuesDeReiniciarLaAplicacion",
+      "entradasExtraTiposVersionEIdempotencyKeyInvalidos",
+      "permisosCsrfAsignacionYPropiaMultirrol",
+      "claveIncompatibleOperacionCuerpoVersionYRecurso",
+      "retiradaRolConcurrenteAntesDecisionYReplayDeniega403",
+      "decisionMantieneRolBloqueadoHastaCommitYReplayPosteriorRevocado",
+      "rechazarMotivoVisibleSoloEnDetalleAutorizado",
+      "idempotenciaCheckDistinguePresentacionDecisionYFechas",
+      "nombreActorFotografiadoYProveedorInactivoNoImpideDecision",
+      "mismaClaveConcurrenteCompatibleReplayExactoParaAmbasDecisiones",
+      "comentarioYMotivoLimitesUnicodeHttp",
+      "migracionV4ConFilasYResultadoLegadoPreservados",
+      "rollbackTrasEventoAntesIdempotenciaYReintentoMismaClave",
+      "rollbackTrasEstadoAntesEventoYReintentoMismaClave",
+      "estadosFinalesYBorradorNoDecidiblesVersionPosteriorAlEstado",
+      "rolRetiradoInvalidaDecisionYReplayConJwtVigente",
+      "carrerasAprobarAprobarRechazarRechazarYAprobarRechazar"
+    ]
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.integracion.SolicitudesIT",
+    "pruebas": 31,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "casos": [
+      "idempotenciaIncompatiblePorVersionYPorRecursoNoConcedeAcceso",
+      "presentacionExigeReferenciasConceptosYTotalMayorCero",
+      "proveedorVivoEnBorradorInactivoOcultoYRevalidado",
+      "altaYEdicionRechazanAsignacionMasivaTiposYCamposDesconocidos",
+      "bajaProveedorConfirmadaAntesDePresentarSeRevalidaBajoBloqueo",
+      "selectorAcotadoActualSinSecretosNiActor",
+      "dosGuardadosConcurrentesSoloUnoActualiza",
+      "eventosMinimosTrasCommitYRechazosSinContenidoSensible",
+      "contratoOpenApiEntradasCerradasRespuestasYParametros",
+      "privilegiosMinimosRestriccionesYFuncionConSearchPathFijo",
+      "reemplazoAtomicoConceptosImportesYFechasCrecientes",
+      "permisosHttpCsrfYNoVisibilidad404",
+      "idsAjenosDuplicadosPosicionesYMasDe100NoMutan",
+      "supervisorActualInhabilitadoSinRolPropioYOtroRolRechazados",
+      "filtrosInvalidosDuplicadosYUnknownSon400",
+      "mismaClaveConcurrenteEntreRecursosSerializaSinDeadlock",
+      "versionObsoletaNoPisaYPresentadaInmutable",
+      "presentarSnapshotResultadoExactoYReplayPersistido",
+      "filtrosLiteralesAcentosFechasYOrdenesEstables",
+      "listadoVisibilidadAntesConteoYUnionMultirrol",
+      "rollbackPresentacionAntesDePersistirResultadoNoConsumeClave",
+      "dosClavesConcurrentesSoloUnaPresentacion",
+      "presentacionBloqueaProveedorHastaConfirmarSnapshot",
+      "numeracionConcurrenteUnicaYAgotamiento503Controlado",
+      "bajaSupervisorConcurrenteSeRevalida",
+      "cabeceraIdempotenciaYVersionRequeridasEstrictas",
+      "rollbackTrasActualizarCabeceraYBorrarLineas",
+      "guardarYPresentarConcurrentesSeOrdenanSinPerderCambios",
+      "mismaClaveConcurrenteDevuelveDosResultadosIdenticos",
+      "crearDetalleNumeroServidorFechasUnicodeYContrato",
+      "retiradaRolConcurrenteSeRevalida"
+    ]
+  }
+]

@@ -122,3 +122,28 @@ Pruebas y revisión independientes constan en validación 003. Persisten riesgos
 XSS durante sesión, disponibilidad PostgreSQL, abuso global sin rate limit general,
 protección HTTPS pública y retención operativa por definir. La paginación limitada
 no es prueba de carga ni garantía contra agotamiento. Sin OWASP/ASVS completo.
+
+## Controles acotados de solicitudes — AG-012
+
+SCI-09/13 aplican permisos por acción, propietario y estado. Roles combinan
+únicamente permisos explícitos; un administrador no escribe solicitudes ajenas.
+Supervisor lee solo asignadas presentadas. SQL aplica visibilidad antes del conteo;
+404 oculta recursos no visibles. Selector devuelve únicamente ID/nombre habilitado.
+Bearer/CSRF/default deny/no-store continúan vigentes en todas las rutas nuevas.
+
+SCI-04/05/08/10/11: DTO cerrado y validación de escala/precisión, BigDecimal y
+límites antes de persistir; transacción de agregado, versión y estado en UPDATE,
+snapshot de proveedor y validación de supervisor bajo bloqueo. Idempotencia
+por usuario/clave con huella SHA256 y resultado mínimo original evita efectos
+duplicados incluso tras reinicio. Expiración/purga no habilitadas en004.
+
+Privilegios: función SECURITY DEFINER mínima con search_path fijo y PUBLIC sin
+EXECUTE para bloquear rol supervisor sin permiso general de mutación. DELETE
+solo en conceptos para reemplazar colección, nunca solicitudes/idempotencia.
+Eventos de éxito tras commit, rechazados/duplicados con resultado controlado;
+solo IDs/acción/resultado/petición y hash de clave. Sin cuerpo, conceptos,
+fiscalidad completa, tokens ni claves reutilizables. Nginx no registra URLs.
+
+La [validación004](../../especificaciones/004-solicitudes-conceptos-importes/validacion.md)
+registra evidencia real y limitaciones. No sustituye retención legal007/008,
+historial funcional007, controles transversales006 ni auditorías OWASP/WCAG completas.

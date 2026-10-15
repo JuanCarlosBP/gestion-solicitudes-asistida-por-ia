@@ -1,0 +1,21 @@
+{
+  "fechaMadrid": "2026-10-15T00:09:52.380+02:00",
+  "limiteMadrid": "2026-10-15T09:34:02+02:00",
+  "minutosRestantes": 564,
+  "verificacion004": "SCI-01–14 PASS local; revisión sin hallazgos abiertos",
+  "backend": 144,
+  "angular": 275,
+  "e2e": 11,
+  "api": [
+    119,
+    88,
+    78
+  ],
+  "teclado": {
+    "pasos": 62,
+    "ocultos": 0
+  },
+  "integridad": "PASS",
+  "continuacion": "Implementación005 autorizada por condición cumplida",
+  "origen": "Orden humana AG-012, D-005-01–08; no sustituye aceptación humana"
+}

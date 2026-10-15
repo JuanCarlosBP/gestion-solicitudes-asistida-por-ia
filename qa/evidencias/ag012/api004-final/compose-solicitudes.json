@@ -1,0 +1,485 @@
+{
+  "fecha": "2026-10-14T21:57:01.955Z",
+  "baseUrl": "http://127.0.0.1:18080",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AJENO",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio MULTIPLE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado exige identidad",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector exige identidad",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "ADMINISTRADOR sin SOLICITANTE no crea",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "AUDITOR sin SOLICITANTE no crea",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "SUPERVISOR sin SOLICITANTE no crea",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Creación con Bearer sin CSRF denegada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: autor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: numero",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: estado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: importeTotal",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: version",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo protegido rechazado al crear: creadoEn",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Longitud de asunto inválida 0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Longitud de asunto inválida 2",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Longitud de asunto inválida 161",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Álamo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador mínimo completo y sin líneas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Número y autor del servidor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Detalle privado no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear y consultar devuelven mismo agregado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador invisible SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador invisible AJENO",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Lectura global ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Lectura global no concede edición ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Lectura global AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Lectura global no concede edición AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Ajeno no edita recurso invisible",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "No existe borrado de solicitudes",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Total suma líneas redondeadas 21.32",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tres ejemplos monetarios obligatorios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Guardar incrementa versión y conserva identidad",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Guardar versión obsoleta409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea inválida controlada: caso 38",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea inválida controlada: caso 39",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea inválida controlada: caso 40",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea inválida controlada: caso 41",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea inválida controlada: caso 42",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Más de100 líneas rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Posiciones duplicadas rechazadas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Total manipulado rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Importe de línea manipulado rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Intentos inválidos conservan versión/colección",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Segunda",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Línea de segundo agregado creada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Concepto de otra solicitud rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reemplazo vacío retira colección sin huérfanas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector incluye supervisor habilitado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector devuelve solo ID y nombre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector excluye deshabilitado consultado por su propio nombre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector acotado100",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector excluye al propio actor multirrol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor ficticio exclusivo creado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Referencias guardadas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Supervisor asignado no ve borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor desactivado antes de presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor inactivo bloquea presentación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inactividad conserva borrador y referencia sin filtrar catálogo oculto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor reactivado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Supervisor inválido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Supervisor sin habilitación/rol rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Supervisor inválido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Supervisor sin habilitación/rol rechazado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Multirrol propia",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Multirrol no se asigna a sí mismo para presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentación exige Idempotency-Key",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clave inválida400",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentación con Bearer sin CSRF403",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentación válida atómica",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay devuelve exactamente resultado persistido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma clave con versión distinta409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma clave en otra solicitud409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Fotografía y asignación confirmadas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada inmutable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada visible SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada visible SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada visible AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada visible ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Otro solicitante no accede a presentada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Catálogo cambia después de presentación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Fotografía no cambia al editar catálogo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro número exacto y total visible",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado acotado sin colección ni descripción",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conteo no revela solicitud ajena",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro autor requiere visibilidad global",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtros AND, rol global y mayúsculas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Asunto conserva acentos significativos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Porcentaje literal en asunto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido size=0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido size=101",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido page=-1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido sort=autor,asc",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido sort=numero,sql",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido estado=APROBADA",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido fechaDesde=2026-12-31&fechaHasta=2026-01-01",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido page=0&page=1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inválido desconocido=1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Paginación conserva totales",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Página fuera de rango vacía con total",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Carrera edición",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Dos guardados HTTP: un éxito y un conflicto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Carrera presentación true",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Preparación carrera true",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentaciones concurrentes misma clave: mismo resultado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera presenta una sola vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Crear borrador Carrera presentación false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Preparación carrera false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentaciones concurrentes claves distintas: solo una gana",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera presenta una sola vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Idempotencia sobrevive reinicio backend/Flyway",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Logs sin asunto/conceptos/fiscal ni clave idempotente reutilizable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Eventos correlacionan solicitud sin cuerpo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Eventos contienen identificador de petición",
+      "resultado": "PASS"
+    }
+  ],
+  "etapa": "persistencia y privacidad",
+  "limites": "Datos ficticios únicos conservados. HTTP real sobre Compose/PostgreSQL; carreras sincronizadas y rollback forzado se comprueban además en IT. No acredita100000 registros ni OWASP completo."
+}

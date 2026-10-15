@@ -9,6 +9,21 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+AG-012 ejecuta004 por autorización humana integral, con SDD y ADR0005 aprobados.
+La corrección heredada de proveedores pasa enfocada y regresión001–003;
+[adenda003](especificaciones/003-proveedores/validacion-ag012.md) conserva el fallo remoto.
+004 verificada localmente:144 pruebas backend,275 Angular,11 E2E y controles
+Compose/API/auditorías. SCI-01–14 y revisión sin hallazgos abiertos; aceptación
+e integración pendientes. La puerta005 se cumplió con564 minutos restantes.
+005 implementada:180 pruebas backend,346 Angular,14 E2E y425 controles API PASS;
+V5 conserva V1–V4 y datos existentes. AP-01–10 verificados localmente, con revisión
+independiente sin hallazgos abiertos; aceptación e integración pendientes.
+Tras cumplir la puerta de continuación se creó únicamente el
+[borrador006](especificaciones/006-concurrencia-idempotencia/especificacion.md),
+pendiente de aprobación humana, sin plan, tareas, validación ni código.
+Estado detallado en [informe AG-012](docs/trazabilidad/AG-012-informe.md).
+
+
 AG-011 implementa [003 — Proveedores](especificaciones/003-proveedores/especificacion.md)
 por autorización humana integral: catálogo, permisos, baja/reactivación y versión
 optimista. Especificación, plan, tareas y ADR-0004 aprobados. Pasan 98 pruebas backend,

@@ -1,0 +1,26 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="0" time="7.849985">
+<testsuite name="base.spec.ts" timestamp="2026-10-14T21:38:02.299Z" hostname="" tests="5" failures="0" skipped="0" time="2.371" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.573">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.271">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.202">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="1.298">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.027">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-14T21:38:02.299Z" hostname="" tests="3" failures="0" skipped="0" time="1.12" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.564">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.33">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.226">
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-14T21:38:02.299Z" hostname="" tests="1" failures="0" skipped="0" time="3.692" errors="0">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="3.692">
+</testcase>
+</testsuite>
+</testsuites>

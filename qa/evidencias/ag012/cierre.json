@@ -1,0 +1,41 @@
+{
+  "inicioMadrid": "2026-10-14T23:34:02+02:00",
+  "limiteMadrid": "2026-10-15T09:34:02+02:00",
+  "cierreMadrid": "2026-10-15T00:41:12.2596247+02:00",
+  "duracion": "01:07:10",
+  "duracionMinutos": 67.17,
+  "estado004": "SCI01–14 verificados localmente",
+  "estado005": "AP01–10 verificados localmente",
+  "estado006": "Únicamente especificacion.md borrador pendiente de aprobación humana",
+  "pruebas": {
+    "e2e": 14,
+    "backend": 180,
+    "api": 425,
+    "angular": 346
+  },
+  "documentacion": {
+    "patrones": 0,
+    "enlaces": 523,
+    "rotos": 0
+  },
+  "privacidadEvidencias": {
+    "hallazgos": 0,
+    "archivos": 333
+  },
+  "integridad": {
+    "prefijoCsvConservado": true,
+    "v4YSnapshot004Intactos": true,
+    "historicosContrastados": 63,
+    "resultado": "PASS",
+    "protegidos": 496
+  },
+  "compose": "Tres servicios detenidos; volumen conservado",
+  "gitEjecutado": false,
+  "aceptacionIntegracion": "Pendientes de la persona responsable",
+  "pendientes": [
+    "CI remota tras push humano",
+    "Revisión/aceptación/integración humanas",
+    "Decisiones del borrador006",
+    "Carga, auditorías integrales y operación pública posteriores"
+  ]
+}

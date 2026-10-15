@@ -1,0 +1,6 @@
+{
+  "tests": 130.0,
+  "fallos": 0.0,
+  "comando": "npm test -- --reporters=junit --output-file=../qa/evidencias/ag012/frontend-regresion.xml",
+  "observacion": "Sin cambios de código tras fallo de resolución Vite en sandbox; ejecución autorizada con permisos locales"
+}

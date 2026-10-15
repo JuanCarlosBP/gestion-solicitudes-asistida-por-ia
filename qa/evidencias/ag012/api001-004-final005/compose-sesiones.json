@@ -1,0 +1,360 @@
+{
+  "fecha": "2026-10-14T22:34:10.644Z",
+  "baseUrl": "http://127.0.0.1:18080",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "criterio": "CSRF materializado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contrato mínimo de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario sin datos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tipo y duración de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rol persistido SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Atributos cookie loopback local",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh ausente de JSON",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Claims JWT mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT sin datos innecesarios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad real SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad sin datos de sesión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre 204 y borrado cookie",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clear-Site-Data limitado a caché",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT rechazado después del cierre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CSRF materializado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contrato mínimo de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario sin datos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tipo y duración de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rol persistido SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Atributos cookie loopback local",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh ausente de JSON",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Claims JWT mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT sin datos innecesarios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad real SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad sin datos de sesión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre 204 y borrado cookie",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clear-Site-Data limitado a caché",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT rechazado después del cierre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CSRF materializado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contrato mínimo de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario sin datos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tipo y duración de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rol persistido AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Atributos cookie loopback local",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh ausente de JSON",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Claims JWT mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT sin datos innecesarios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad real AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad sin datos de sesión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre 204 y borrado cookie",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clear-Site-Data limitado a caché",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT rechazado después del cierre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CSRF materializado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contrato mínimo de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario sin datos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tipo y duración de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rol persistido ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Atributos cookie loopback local",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh ausente de JSON",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Claims JWT mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT sin datos innecesarios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad real ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Identidad sin datos de sesión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre 204 y borrado cookie",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cierre no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clear-Site-Data limitado a caché",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT rechazado después del cierre",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CSRF materializado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contrato mínimo de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario sin datos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tipo y duración de acceso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rol persistido SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Atributos cookie loopback local",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh ausente de JSON",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Claims JWT mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT sin datos innecesarios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reinicio invalida JWT de clave efímera anterior",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh persistido sobrevive al reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rotación tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT nuevo válido tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Usuario idempotente tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reutilización rechazada y cookie borrada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reutilización invalida JWT de familia",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reutilización invalida refresh reemplazante",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login sin CSRF rechazado",
+      "resultado": "PASS"
+    }
+  ],
+  "limites": "Cuentas ficticias de .env.example. HTTP loopback. Tokens solo en memoria del proceso. Reinicia exclusivamente backend; no borra datos."
+}

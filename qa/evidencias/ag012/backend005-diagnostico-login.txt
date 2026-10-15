@@ -1,0 +1,24 @@
+Diagnóstico de acceso durante QA005 — solo lectura de producto
+Fecha: 2026-10-15, Europe/Madrid.
+
+Observado en fuentes:
+- qa/verificar-aprobaciones-compose.mjs creaba SUPERVISOR_AJENO con now() de PostgreSQL.
+- ServicioAutenticacion.ahora() trunca el reloj a segundos.
+- El primer UPDATE del login, guardarIntentos, escribe ese instante en actualizado_en.
+- V2 impone fechas_usuario: actualizado_en >= creado_en.
+- El UPDATE precede a crear sesión/token y al log IDENTIDAD_SESION_INICIADA.
+- ErroresControlados captura excepciones inesperadas con 500 ERROR_INTERNO sin log.
+- EmisorJwt se ejecuta después del log de éxito, por lo que no explica esa ausencia.
+- IdentidadAccesoIT utiliza INICIO entero y crea las cuentas en ese instante; no ejercita este desfase de precisión.
+
+Evidencia confirmada por el coordinador:
+- Cuenta ficticia 852cef63-1dcb-4031-903d-27fd0bae1495.
+- creado_en = 2026-10-14T22:25:11.035473Z.
+- PostgreSQL registró 23514 fechas_usuario a las 22:25:11.584Z, sin reproducir DETAIL.
+- El login intentaba actualizado_en = 22:25:11.000Z, anterior a creado_en.
+
+Conclusión:
+El fixture con fracción explica de forma determinista el 500 inicial y su desaparición al pasar el segundo. No requiere una carrera ni un límite de siete sesiones. Los 200 login/cierre posteriores sobre la cuenta antigua no comprobaban esta condición y se conservan como diagnóstico insuficiente.
+
+Acción coordinada:
+El coordinador corrigió ambos creadores de fixtures a segundos y añadió una aserción previa. Mantener identidad sin cambios fue decisión expresa del coordinador. Este agente no ejecutó reproducciones de login ni modificó código de identidad. La verificación QA final de los fixtures corresponde al coordinador.

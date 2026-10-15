@@ -1,0 +1,17 @@
+{
+  "fechaMadrid": "2026-10-15T00:30:26.8786422+02:00",
+  "defecto": "E2E005-Foco",
+  "correccion": 1,
+  "archivo": "frontend/e2e/aprobaciones.spec.ts",
+  "entrada": "qa/evidencias/ag012/e2e005-intento01.log: suite14,11PASS3FAIL; dosfallos de aprobaciones en recorrido Tab y unfallo OpenAPI ajeno.",
+  "causa": "El test movía foco a H1 inmediatamente después de Volver a revisar, antes del afterNextRender que devuelve foco al textarea. La captura fallida muestra Revisar decisión enfocado al esperarse Rechazar solicitud.",
+  "cambio": "Esperar textarea enfocado antes de comenzar recorrido, después enfocar/verificar H1; conservar orden exacto de cuatro controles mediante Tab, confirmación/volver y elementFromPoint a360/768/1440.",
+  "comprobado": [
+    "tsc e2e salida0",
+    "eslint e2e/aprobaciones.spec.ts salida0",
+    "prettier check PASS"
+  ],
+  "pendiente": "Reejecución real por coordinador. No se ejecutó navegador ni Compose en este relevo.",
+  "produccion": "Sin cambios; main-DW2S3G7C.js y346 pruebasAngular conservados.",
+  "sha256": "5682a09618417294ff96de6da71881a4bea37116f4ec4ac0a11538f07978ef31"
+}

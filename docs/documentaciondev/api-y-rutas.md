@@ -113,3 +113,72 @@ Angular: /proveedores, /proveedores/nuevo, /proveedores/:id y
 conflicto con opción de recargar. No publicar URLs completas de búsquedas fiscales
 en logs ni evidencias. Swagger documenta operaciones y Bearer; las escrituras
 siguen exigiendo CSRF. Los controles de UI no sustituyen autorización REST.
+
+## Solicitudes — contrato AG-012
+
+Bearer obligatorio; CSRF en POST/PUT; respuestas privadas no-store. DTO cerrados,
+decimales JSON como cadenas, importes escala2; versión esperada en cada escritura.
+
+| Método/ruta | Entrada y resultado |
+|---|---|
+| POST /api/solicitudes | SOLICITANTE, {asunto};201/Location y borrador mínimo. |
+| GET /api/solicitudes/{id} | Detalle visible con conceptos ordenados;404 inexistente/no visible. |
+| GET /api/solicitudes | Página de resúmenes sin descripción/colección, filtros acotados. |
+| PUT /api/solicitudes/{id} | Autor con SOLICITANTE y BORRADOR; cabecera/colección completas y version;200 recalculado. |
+| POST /api/solicitudes/{id}/presentar | Autor, {version}, Idempotency-Key UUID;200 resultado mínimo persistido. |
+| GET /api/identidad/supervisores | Autenticado; página de id/nombreVisible, habilitados SUPERVISOR distintos del actor. |
+
+Contrato preciso y nulabilidad en [plan004](../../especificaciones/004-solicitudes-conceptos-importes/plan.md).
+Filtros: numero exacto, asunto contiene literal sin distinguir mayúsculas y con
+acentos significativos, estado/proveedor/supervisor, autor solo lectura global,
+fechaDesde/fechaHasta díasUTC inclusivos sobre creadoEn. page0/size20 máximo100;
+sort actualizadoEn,desc, campos cerrados numero/creadoEn/actualizadoEn/importeTotal,
+desempate id asc. Visibilidad antes de count. Selector nombre máximo128 y mismo
+límite de página. Parámetros desconocidos/duplicados400.
+
+SOLICITANTE lee propias y escribe borradores propios; SUPERVISOR lee asignadas
+presentadas; AUDITOR/ADMINISTRADOR leen todas. Roles suman permisos explícitos;
+administrador solo crea/edita como solicitante si también tiene SOLICITANTE.
+Presentada no se edita. Proveedor visible es snapshot tras presentar; estado activo
+null en snapshot. Borrador mantiene referencia a proveedor que quede inactivo,
+pero no muestra catálogo inactivo a quien003 no permita consultarlo.
+
+400 SOLICITUD_INVALIDA;401/403 generales;404 SOLICITUD_NO_ENCONTRADA;
+409 VERSION_OBSOLETA, SOLICITUD_NO_EDITABLE, PROVEEDOR_INACTIVO,
+SUPERVISOR_INVALIDO, CLAVE_IDEMPOTENCIA_REUTILIZADA;500/503 controlados.
+Repetición con misma clave/usuario/operación/solicitud/versión devuelve resultado
+original; distinta petición409. La clave nunca sustituye autorización.
+
+Angular: /solicitudes, /solicitudes/nueva, /solicitudes/:id y /solicitudes/:id/editar.
+Estimación decimal antes de guardar y total confirmado después; presentar requiere
+confirmación, referencias válidas,1–100 conceptos y total positivo. Ejemplos:
+1×10.0000=10.00;2.500×4.1250=10.31;3×0.3350=1.01; suma21.32EUR.
+
+## Decisiones — ampliación005 de AG-012
+
+Contrato aprobado en [plan005](../../especificaciones/005-aprobaciones/plan.md),
+con implementación y pruebas locales superadas. POST `/api/solicitudes/{id}/aprobar`
+recibe versión y comentario opcional/null hasta500 puntos Unicode. POST
+`/api/solicitudes/{id}/rechazar` recibe versión y motivo de10–1000 puntos Unicode.
+Ambos exigen Bearer, CSRF e Idempotency-Key UUID; cuerpo cerrado y no-store.
+
+Solo SUPERVISOR asignado distinto del autor decide; rol/habilitación se revalidan
+antes de replay. Resultado200 mínimo: id,numero,estado,version,actualizadoEn,
+decididoEn. Estados finales APROBADA/RECHAZADA.409 SOLICITUD_NO_DECIDIBLE para
+borrador/final, VERSION_OBSOLETA para presentada con versión distinta y
+CLAVE_IDEMPOTENCIA_REUTILIZADA si cambia la petición.401/403/404 conservan las
+reglas de identidad/permiso/visibilidad; sin rolSUPERVISOR se deniega403 antes del
+recurso, mientras un supervisor sin visibilidad recibe404.
+
+El resumen añade decididoEn nullable, sin comentario/motivo. El detalle añade
+decision nullable con tipo APROBAR/RECHAZAR, actor{id,nombreVisible}, comentario,
+motivo y decididoEn. BORRADOR/PRESENTADA no tienen decisión. Los lectores
+autorizados ven el texto; el supervisor conserva lectura de finales asignadas.
+El replay004 después de decidir mantiene su resultado original PRESENTADA.
+
+Angular incorpora `/aprobaciones`, accesible aSUPERVISOR, con filtros forzados
+de asignación propia y estadoPRESENTADA incluso para roles globales. El detalle
+de solicitudes contiene confirmación/formularios y resultado; no hay reasignación
+ni consulta de historial avanzado. OpenAPI declara éxitos y errores con esquema
+explícito; las siete operaciones de solicitudes y las16 rutas totales se comprueban.
+Resultados en [validación005](../../especificaciones/005-aprobaciones/validacion.md).

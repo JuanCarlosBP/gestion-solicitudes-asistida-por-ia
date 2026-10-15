@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-14T21:46:51.6112405+00:00",
+  "origen": "https://osv-vulnerabilities.storage.googleapis.com/Maven/all.zip",
+  "sha256": "6DF61848CE40744419122F1C56C13221E92D461890DD38998F6BD0CF90937E44",
+  "bytes": 10404884,
+  "envioInventario": false,
+  "herramienta": "OSV-Scanner 2.7.0"
+}

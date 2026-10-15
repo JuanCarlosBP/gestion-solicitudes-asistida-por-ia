@@ -1,0 +1,90 @@
+{
+  "incremento": "004-solicitudes-conceptos-importes",
+  "ejecucion": "AG-012",
+  "fechaMadrid": "2026-10-15T00:05:29.0484018+02:00",
+  "estado": "Implementado; verificación Angular local275 PASS; correcciónR004-UI03 pendiente de prueba real del coordinador.",
+  "esperado": "Cuatro rutas, permisos, listado/filtros/páginas, editor agregado, cálculo exacto estimado, referencias, conflicto y confirmación idempotente.",
+  "observado": "Modelos/HTTP cerrados; los importes y estado finales proceden del servidor; GET posterior a resultado mínimo de presentación; captura de entrada conservada en409.",
+  "ejecutado": [
+    {
+      "resultado": "PASS",
+      "comando": "npm run typecheck",
+      "evidencia": "frontend-typecheck-revision.log"
+    },
+    {
+      "resultado": "PASS",
+      "comando": "npm run lint",
+      "evidencia": "frontend-lint-revision.log"
+    },
+    {
+      "resultado": "PASS",
+      "comando": "npm run format:check",
+      "evidencia": "frontend-formato-correccion2.log"
+    },
+    {
+      "resultado": "PASS:271pruebas/17archivos;130anteriores+141nuevas",
+      "comando": "npm test",
+      "evidencia": "frontend-tests-revision-ui01-ui02.log"
+    },
+    {
+      "resultado": "PASS sin advertencias;399,09kB;main-EHPKAEWT.js",
+      "comando": "npm run build",
+      "evidencia": "frontend-build-revision.log"
+    },
+    {
+      "comando": "tsc --noEmit -p tsconfig.e2e.json",
+      "evidencia": "frontend-e2e-csrf-typecheck.log",
+      "resultado": "PASS, salida0 tras corrección CSRF"
+    },
+    {
+      "comando": "eslint e2e/solicitudes.spec.ts --max-warnings=0",
+      "evidencia": "frontend-e2e-csrf-lint.log",
+      "resultado": "PASS, salida0"
+    },
+    {
+      "comando": "prettier --check e2e/solicitudes.spec.ts",
+      "evidencia": "frontend-e2e-csrf-formato.log",
+      "resultado": "PASS"
+    },
+    {
+      "resultado": "PASS:275 pruebas,18 archivos;145 nuevas+130 anteriores",
+      "evidencia": "frontend-ui03-regresion.log",
+      "comando": "npm test"
+    },
+    {
+      "resultado": "PASS",
+      "evidencia": "frontend-ui03-typecheck.log",
+      "comando": "npm run typecheck"
+    },
+    {
+      "resultado": "PASS",
+      "evidencia": "frontend-ui03-lint.log",
+      "comando": "npm run lint"
+    },
+    {
+      "resultado": "PASS",
+      "evidencia": "frontend-ui03-formato.log",
+      "comando": "npm run format:check"
+    },
+    {
+      "resultado": "PASS sin advertencias;main-D2EWUAKY.js;400,31kB total",
+      "evidencia": "frontend-ui03-build.log",
+      "comando": "npm run build"
+    }
+  ],
+  "correcciones": [
+    "Dos fallos iniciales de fixtures de tests: stub identidad incompleto y ciclo de render recarga; una corrección por defecto,139PASSenfocadas.",
+    "CSS común7,74kB advertencia: distribuido por responsabilidad sin alterar presupuestos; build final sin advertencias.",
+    "Formato Prettier cambió una cadenaRxJS al segundo pase; primer cambio no lo estabilizó, segunda corrección con variable intermedia pasó formato completo; diagnóstico conservado.",
+    "R004-UI01: al añadir se reindexa colección para posiciones únicas conservandoUUIDs; unitariaPASS; E2Ereal preparado.",
+    "R004-UI02: Enter en búsqueda cancela submit implícito y consulta selector; unitariaPASS; E2Ereal preparado.",
+    "E2E real intento01: 8 PASS y 3 FAIL de suite; dos fallos nuevos403 por CSRF obsoleto en helper de pruebas. Primera corrección: cookie CSRF vigente antes de cada escritura directa, sin modificar aplicación ni controles. Swagger corresponde al coordinador. Reejecución real pendiente.",
+    "R004-UI03 primera corrección: directiva de foco mide barra sticky real y despeja el control enfocado con margen de16px y desplazamiento instantáneo. Ignora móvil estático y controles propios de barra. Evidencia real inicial del coordinador: foco-barra004-inicial.json. Añadida comprobación E2E de todos los Tab hasta última acción a768/1440; verificación real sobre nuevo main pendiente."
+  ],
+  "pendiente": [
+    "E2E13pasos+E2Eposicionesnoconsecutivas sobreCompose final; requiereE2E_AJENO_CORREO ficticio.",
+    "Capturas editor/lista/detalle360/768/1440 y revisión visual real.",
+    "Aceptación e integración humanas; sin operacionesGit."
+  ],
+  "restricciones": "Sin dependencias, cambios de configuración, Git, Compose ni escrituras fuera de asignación. Históricos intactos por alcance."
+}

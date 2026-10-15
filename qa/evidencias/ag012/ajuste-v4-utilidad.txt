@@ -1,0 +1,50 @@
+import java.nio.file.*;
+import java.sql.*;
+import java.util.*;
+import org.flywaydb.core.Flyway;
+
+/** Ajuste no destructivo de V4 candidata, aplicada solo a QA durante AG012. */
+public class RepararV4Local {
+    public static void main(String[] args) throws Exception {
+        String clave = System.getenv("MIGRACION_CLAVE");
+        String url = "jdbc:postgresql://postgres:5432/gestion?logServerErrorDetail=false";
+        String migracion = Files.readString(Path.of("/migraciones/V4__solicitudes_conceptos_importes.sql"));
+        if (!migracion.contains("proveedor_tipo IS NOT NULL"))
+            throw new IllegalStateException("La corrección V4 no está preparada.");
+        try (Connection c = DriverManager.getConnection(url, "gestion_migracion", clave)) {
+            c.setAutoCommit(false);
+            var antes = estado(c);
+            // Reemplaza exclusivamente la restricción de fotografía, sin tocar filas.
+            try (Statement s = c.createStatement()) {
+                s.execute("ALTER TABLE gestion.solicitudes DROP CONSTRAINT solicitud_presentacion");
+                s.execute("""
+                    ALTER TABLE gestion.solicitudes ADD CONSTRAINT solicitud_presentacion CHECK (
+                      (estado = 'BORRADOR' AND presentado_en IS NULL AND proveedor_denominacion IS NULL AND proveedor_pais_fiscal IS NULL AND proveedor_identificador_fiscal IS NULL AND proveedor_tipo IS NULL)
+                      OR (estado = 'PRESENTADA' AND presentado_en IS NOT NULL AND proveedor_id IS NOT NULL AND supervisor_id IS NOT NULL AND supervisor_id <> autor_id AND total > 0 AND proveedor_denominacion IS NOT NULL AND proveedor_pais_fiscal IS NOT NULL AND proveedor_identificador_fiscal IS NOT NULL AND proveedor_tipo IS NOT NULL AND proveedor_tipo IN ('PERSONA_JURIDICA','PROFESIONAL')))
+                    """);
+            }
+            if (!antes.equals(estado(c))) throw new IllegalStateException("Cambió el estado de datos antes de confirmar.");
+            c.commit();
+            var resultado = Flyway.configure().dataSource(url, "gestion_migracion", clave)
+                .schemas("gestion").defaultSchema("gestion")
+                .locations("filesystem:/migraciones").load().repair();
+            c.commit();
+            if (!antes.equals(estado(c))) throw new IllegalStateException("Cambió el estado de datos o historia V1–V3.");
+            Flyway.configure().dataSource(url, "gestion_migracion", clave).schemas("gestion")
+                .defaultSchema("gestion").locations("filesystem:/migraciones").load().validate();
+            System.out.println("PASS: restricción V4 reforzada, filas y checksums V1–V3 conservados; reparación Flyway y validación correctas.");
+        }
+    }
+    static List<String> estado(Connection c) throws Exception {
+        List<String> estado = new ArrayList<>();
+        try (Statement s = c.createStatement(); ResultSet r = s.executeQuery("SELECT version || ':' || checksum FROM gestion.flyway_schema_history WHERE version IN ('1','2','3') ORDER BY installed_rank")) {
+            while (r.next()) estado.add(r.getString(1));
+        }
+        for (String tabla : List.of("usuarios","proveedores","solicitudes","conceptos_solicitud","operaciones_idempotentes_solicitud")) {
+            try (Statement s = c.createStatement(); ResultSet r = s.executeQuery("SELECT count(*), md5(COALESCE(string_agg(md5(t::text), '' ORDER BY t::text),'')) FROM gestion."+tabla+" t")) {
+                r.next(); estado.add(tabla+":"+r.getLong(1)+":"+r.getString(2));
+            }
+        }
+        return estado;
+    }
+}
