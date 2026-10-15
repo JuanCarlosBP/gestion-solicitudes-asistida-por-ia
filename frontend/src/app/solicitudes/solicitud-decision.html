@@ -1,0 +1,106 @@
+<section class="panel decision-panel" aria-labelledby="titulo-decision">
+  <p class="ceja">Supervisión asignada</p>
+  <h2 id="titulo-decision">Decidir esta solicitud</h2>
+  <p class="ayuda">
+    La aprobación o el rechazo son definitivos. Revisa los conceptos y el total antes de decidir.
+  </p>
+  @if (error()) {
+    <div #alerta class="aviso" role="alert" tabindex="-1">
+      <p>{{ error() }}</p>
+      <div class="acciones">
+        @if (incierta()) {
+          <button type="button" [disabled]="guardando()" (click)="decidir()">
+            Reintentar la misma decisión
+          </button>
+        }
+        <button type="button" class="secundario" [disabled]="guardando()" (click)="recargar()">
+          Recargar estado actual
+        </button>
+      </div>
+    </div>
+  }
+  @if (confirmada()) {
+    <p role="status">Decisión registrada. Pendiente de consultar el detalle actualizado.</p>
+  } @else {
+    <div class="acciones opciones-decision">
+      <button
+        type="button"
+        [disabled]="guardando() || conflicto() || incierta()"
+        (click)="elegir('APROBAR')"
+      >
+        Aprobar solicitud</button
+      ><button
+        type="button"
+        class="secundario rechazo"
+        [disabled]="guardando() || conflicto() || incierta()"
+        (click)="elegir('RECHAZAR')"
+      >
+        Rechazar solicitud
+      </button>
+    </div>
+    @if (tipo()) {
+      <form
+        (submit)="revisar($event)"
+        novalidate
+        aria-label="Decisión del supervisor"
+        [attr.aria-busy]="guardando()"
+      >
+        <div class="campo">
+          <label for="texto-decision">{{
+            tipo() === 'APROBAR' ? 'Comentario de aprobación (opcional)' : 'Motivo de rechazo *'
+          }}</label>
+          <textarea
+            #campo
+            id="texto-decision"
+            rows="4"
+            [value]="texto()"
+            (input)="cambiarTexto(campo.value)"
+            [readOnly]="confirmar() || incierta() || conflicto()"
+            [disabled]="guardando()"
+            [attr.aria-invalid]="!!errorCampo()"
+            aria-describedby="decision-ayuda decision-error"
+          ></textarea>
+          <small id="decision-ayuda" class="ayuda">{{
+            tipo() === 'APROBAR'
+              ? 'Hasta 500 caracteres. Será visible para las personas autorizadas a consultar la solicitud.'
+              : 'De 10 a 1.000 caracteres. El motivo será visible para las personas autorizadas a consultar la solicitud.'
+          }}</small>
+          <small id="decision-error" class="error-campo">{{ errorCampo() }}</small>
+        </div>
+        @if (!confirmar() && !incierta()) {
+          <button type="submit" [disabled]="guardando() || conflicto()">Revisar decisión</button>
+        }
+      </form>
+    }
+    @if (confirmar() && !incierta() && !conflicto()) {
+      <div class="confirmar-decision" aria-labelledby="resumen-decision">
+        <h3 #resumen tabindex="-1" id="resumen-decision">
+          {{ tipo() === 'APROBAR' ? 'Confirmar aprobación' : 'Confirmar rechazo' }}
+        </h3>
+        <p>
+          Vas a {{ tipo() === 'APROBAR' ? 'aprobar' : 'rechazar' }} {{ solicitud().numero }}. Esta
+          decisión no se puede cambiar después.
+        </p>
+        <blockquote>{{ textoNormalizado() || 'Sin comentario adicional.' }}</blockquote>
+        <div class="acciones">
+          <button
+            type="button"
+            [class.rechazo]="tipo() === 'RECHAZAR'"
+            [disabled]="guardando()"
+            (click)="decidir()"
+          >
+            {{
+              guardando()
+                ? 'Registrando decisión…'
+                : tipo() === 'APROBAR'
+                  ? 'Confirmar aprobación'
+                  : 'Confirmar rechazo'
+            }}</button
+          ><button type="button" class="secundario" [disabled]="guardando()" (click)="volver()">
+            Volver a revisar
+          </button>
+        </div>
+      </div>
+    }
+  }
+</section>

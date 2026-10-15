@@ -1,24 +1,74 @@
-html {
+:root {
   color-scheme: light;
+  --color-fondo: #f3f6fa;
+  --color-panel: #ffffff;
+  --color-texto: #192e43;
+  --color-tenue: #536579;
+  --color-primario: #135b63;
+  --color-primario-hover: #0b454d;
+  --color-suave: #eaf4f3;
+  --color-borde: #d5dee8;
+  --color-borde-control: #76899c;
+  --color-foco: #a7490c;
+  --color-error: #8c361d;
+  --color-aviso: #fff4e8;
+  --color-exito: #15593e;
+  --radio: 1rem;
+  --radio-control: 0.5rem;
+  --sombra: 0 5px 22px #19344c08;
+  --espacio-1: 0.5rem;
+  --espacio-2: 1rem;
+  --espacio-3: 1.5rem;
+  --espacio-4: 2rem;
+  --fuente: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
-  background: #f5f8f9;
-  color: #173844;
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
   line-height: 1.5;
 }
 a {
-  color: #12566a;
+  color: var(--color-primario);
+  text-underline-offset: 0.2em;
 }
 :focus-visible {
-  outline: 3px solid #b65313;
+  outline: 3px solid var(--color-foco);
   outline-offset: 4px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button:enabled,
+a {
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+h1 {
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,244 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+h1 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin: 0.45rem 0 0.6rem;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1.1rem;
+}
+h3 {
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+p {
+  overflow-wrap: anywhere;
+}
+.ceja {
+  color: var(--color-primario);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.73rem;
+  font-weight: 750;
+  margin: 0;
+}
+.subtitulo {
+  color: var(--color-tenue);
+  margin: 0;
+}
+.encabezado,
+.seccion-titulo,
+.acciones,
+.paginacion,
+.metadatos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.encabezado {
+  justify-content: space-between;
+  margin: 1rem 0 2rem;
+}
+.seccion-titulo {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.seccion-titulo h2 {
+  margin: 0;
+}
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+  margin: 1rem 0;
+  box-shadow: var(--sombra);
+}
+.filtros,
+.referencias {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.filtros {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+.campo,
+.selector-referencia {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.campo + .campo {
+  margin-top: 0.8rem;
+}
+.filtros .campo {
+  margin-top: 0;
+}
+label {
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--color-texto);
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde-control);
+  border-radius: var(--radio-control);
+}
+textarea {
+  resize: vertical;
+}
+button,
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-primario);
+  border-radius: var(--radio-control);
+  background: var(--color-primario);
+  color: white;
+  font-weight: 650;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+button:hover:enabled,
+.boton:hover {
+  background: var(--color-primario-hover);
+}
+.secundario {
+  color: var(--color-primario);
+  background: var(--color-panel);
+  border-color: var(--color-borde-control);
+}
+.secundario:hover:enabled,
+.boton.secundario:hover {
+  background: var(--color-suave);
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background: var(--color-fondo);
+}
+.acciones {
+  grid-column: 1 / -1;
+}
+.ayuda {
+  display: block;
+  color: var(--color-tenue);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0.25rem 0;
+}
+.aviso,
+.exito {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radio-control);
+  background: var(--color-aviso);
+  border-left: 4px solid var(--color-error);
+  margin: 1rem 0;
+}
+.aviso p:first-child {
+  margin-top: 0;
+}
+.aviso button {
+  margin: 0.3rem 0.5rem 0.3rem 0;
+}
+.exito {
+  color: var(--color-exito);
+  border-color: var(--color-exito);
+  background: var(--color-suave);
+}
+.error-campo {
+  color: var(--color-error);
+  font-size: 0.8rem;
+  display: block;
+}
+.error-campo:empty {
+  display: none;
+}
+[aria-invalid='true'] {
+  border: 2px solid var(--color-error);
+}
+.estado,
+.contador {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 0.3rem 0.75rem;
+  background: #edf0f7;
+  color: #3d5277;
+  white-space: nowrap;
+}
+.estado.presentada {
+  color: var(--color-exito);
+  background: #e6f4ec;
+}
+.estado.aprobada {
+  color: #124c35;
+  background: #dcefe3;
+}
+.estado.rechazada {
+  color: #8c361d;
+  background: #fff0e8;
+}
+.numero {
+  color: var(--color-tenue);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.paginacion {
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+}
+.vacio {
+  text-align: center;
+  padding: 2rem;
+}
+.compacto {
+  padding: 1rem;
+}
+.volver {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.85rem;
+}
+.solo-lectores,
+.etiqueta-movil {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.solo-movil {
+  display: none;
+}

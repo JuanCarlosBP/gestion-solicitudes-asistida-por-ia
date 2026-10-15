@@ -1,0 +1,63 @@
+.tabla-conceptos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+.tabla-conceptos th {
+  text-align: left;
+  font-weight: 650;
+}
+.tabla-conceptos thead {
+  color: var(--color-tenue);
+  background: var(--color-fondo);
+  font-size: 0.75rem;
+}
+.tabla-conceptos th,
+.tabla-conceptos td {
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid var(--color-borde);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.tabla-conceptos input,
+.tabla-conceptos select,
+.tabla-conceptos textarea {
+  padding: 0.6rem 0.45rem;
+  font-size: 0.85rem;
+}
+.importe-linea {
+  font-variant-numeric: tabular-nums;
+}
+.numero-linea {
+  color: var(--color-tenue);
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .lectura,
+  .lectura tbody,
+  .lectura tr,
+  .lectura th,
+  .lectura td {
+    display: block;
+    width: 100%;
+  }
+  .lectura thead {
+    display: none;
+  }
+  .lectura tr {
+    border-bottom: 1px solid var(--color-borde);
+    padding: 0.5rem 0;
+  }
+  .lectura th,
+  .lectura td {
+    border: 0;
+  }
+  .lectura td::before {
+    content: attr(data-etiqueta);
+    color: var(--color-tenue);
+    display: inline-block;
+    min-width: 8rem;
+    margin-right: 0.5rem;
+  }
+}

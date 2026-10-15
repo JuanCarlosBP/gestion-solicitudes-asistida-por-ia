@@ -71,17 +71,39 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
     '/api/autenticacion/csrf',
     '/api/autenticacion/iniciar-sesion',
     '/api/autenticacion/renovar',
+    '/api/identidad/supervisores',
     '/api/identidad/yo',
     '/api/proveedores',
     '/api/proveedores/{id}',
     '/api/proveedores/{id}/desactivar',
     '/api/proveedores/{id}/reactivar',
     '/api/salud',
+    '/api/solicitudes',
+    '/api/solicitudes/{id}',
+    '/api/solicitudes/{id}/aprobar',
+    '/api/solicitudes/{id}/presentar',
+    '/api/solicitudes/{id}/rechazar',
   ]);
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('200');
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('503');
   expect(contrato.paths['/api/proveedores'].post.responses).toHaveProperty('201');
   expect(contrato.paths['/api/proveedores/{id}'].put.responses).toHaveProperty('409');
+  expect(contrato.paths['/api/solicitudes'].post.responses).toHaveProperty('201');
+  expect(contrato.paths['/api/solicitudes/{id}'].put.responses).toHaveProperty('409');
+  expect(contrato.paths['/api/solicitudes/{id}/presentar'].post.parameters).toEqual(
+    expect.arrayContaining([expect.objectContaining({ name: 'Idempotency-Key', required: true })]),
+  );
+  for (const accion of ['aprobar', 'rechazar']) {
+    const operacion = contrato.paths[`/api/solicitudes/{id}/${accion}`].post;
+    expect(operacion.parameters).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ name: 'Idempotency-Key', required: true }),
+      ]),
+    );
+    for (const estado of ['200', '400', '401', '403', '404', '409']) {
+      expect(operacion.responses).toHaveProperty(estado);
+    }
+  }
   await page.goto('/swagger-ui/index.html');
   await page.locator('.opblock-summary').filter({ hasText: '/api/salud' }).click();
   await page.getByRole('button', { name: 'Try it out' }).click();

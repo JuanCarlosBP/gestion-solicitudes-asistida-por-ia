@@ -1,0 +1,73 @@
+.editor {
+  table-layout: fixed;
+}
+.editor th:first-child {
+  width: 26%;
+}
+.editor th:nth-child(2),
+.editor th:nth-child(4) {
+  width: 15%;
+}
+.editor th:nth-child(3) {
+  width: 13%;
+}
+.editor th:last-child {
+  width: 17%;
+}
+.acciones-linea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.acciones-linea button {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+}
+.acciones-linea .icono-boton {
+  width: 2.75rem;
+}
+@media (max-width: 850px) {
+  .editor,
+  .editor tbody,
+  .editor tr,
+  .editor td {
+    display: block;
+    width: 100%;
+  }
+  .editor thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .editor tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-control);
+    margin: 1rem 0;
+    padding: 0.5rem;
+  }
+  .editor td {
+    border: 0;
+  }
+  .editor .descripcion-linea {
+    grid-column: 1 / -1;
+  }
+  .etiqueta-movil {
+    position: static;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    overflow: visible;
+    white-space: normal;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .solo-movil {
+    display: block;
+    color: var(--color-tenue);
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,154 @@
+<div class="seccion-titulo">
+  <div>
+    <h2>Conceptos</h2>
+    <p class="ayuda" id="conceptos-ayuda">
+      Hasta 100 líneas. Usa punto decimal: cantidad con hasta 3 decimales y precio con hasta 4.
+    </p>
+  </div>
+  <span class="contador">{{ conceptos().length }} / 100</span>
+</div>
+@if (errores()['conceptos']) {
+  <p class="error-campo">{{ errores()['conceptos'] }}</p>
+}
+@if (!conceptos().length) {
+  <div class="vacio compacto">
+    <p>Aún no hay conceptos.</p>
+    <p class="ayuda">Puedes guardar el borrador y completarlos después.</p>
+  </div>
+} @else {
+  <table class="tabla-conceptos editor" aria-describedby="conceptos-ayuda">
+    <caption class="solo-lectores">
+      Editor de conceptos de la solicitud
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Concepto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Unidad</th>
+        <th scope="col">Precio unitario (€)</th>
+        <th scope="col">Estimación (€)</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (linea of conceptos(); track $index; let i = $index) {
+        <tr>
+          <td class="descripcion-linea">
+            <label class="etiqueta-movil" [for]="'concepto-' + i + '-descripcion'"
+              >Descripción del concepto {{ i + 1 }}</label
+            >
+            <textarea
+              #descripcion
+              [id]="'concepto-' + i + '-descripcion'"
+              rows="2"
+              [value]="linea.descripcion"
+              [disabled]="deshabilitado()"
+              (input)="editar(i, 'descripcion', descripcion.value)"
+              [attr.aria-invalid]="!!error(i, 'descripcion')"
+              [attr.aria-describedby]="'concepto-' + i + '-descripcion-error'"
+            ></textarea>
+            <small [id]="'concepto-' + i + '-descripcion-error'" class="error-campo">{{
+              error(i, 'descripcion')
+            }}</small>
+          </td>
+          <td>
+            <label class="etiqueta-movil" [for]="'concepto-' + i + '-cantidad'"
+              >Cantidad del concepto {{ i + 1 }}</label
+            >
+            <input
+              #cantidad
+              [id]="'concepto-' + i + '-cantidad'"
+              inputmode="decimal"
+              [value]="linea.cantidad"
+              [disabled]="deshabilitado()"
+              (input)="editar(i, 'cantidad', cantidad.value)"
+              [attr.aria-invalid]="!!error(i, 'cantidad')"
+              [attr.aria-describedby]="'concepto-' + i + '-cantidad-error'"
+            />
+            <small [id]="'concepto-' + i + '-cantidad-error'" class="error-campo">{{
+              error(i, 'cantidad')
+            }}</small>
+          </td>
+          <td>
+            <label class="etiqueta-movil" [for]="'concepto-' + i + '-unidad'"
+              >Unidad del concepto {{ i + 1 }}</label
+            >
+            <select
+              #unidad
+              [id]="'concepto-' + i + '-unidad'"
+              [value]="linea.unidad"
+              [disabled]="deshabilitado()"
+              (change)="editar(i, 'unidad', unidad.value)"
+            >
+              @for (valor of unidades; track valor) {
+                <option [value]="valor">{{ nombresUnidad[valor] }}</option>
+              }
+            </select>
+          </td>
+          <td>
+            <label class="etiqueta-movil" [for]="'concepto-' + i + '-precio'"
+              >Precio unitario del concepto {{ i + 1 }}</label
+            >
+            <input
+              #precio
+              [id]="'concepto-' + i + '-precio'"
+              inputmode="decimal"
+              [value]="linea.precioUnitario"
+              [disabled]="deshabilitado()"
+              (input)="editar(i, 'precioUnitario', precio.value)"
+              [attr.aria-invalid]="!!error(i, 'precioUnitario')"
+              [attr.aria-describedby]="'concepto-' + i + '-precio-error'"
+            />
+            <small [id]="'concepto-' + i + '-precio-error'" class="error-campo">{{
+              error(i, 'precioUnitario')
+            }}</small>
+          </td>
+          <td class="importe-linea">
+            <span class="solo-movil">Estimación</span
+            ><strong>{{ importe(linea) === null ? '—' : euros(importe(linea)!) }}</strong
+            ><small class="error-campo">{{ error(i, 'importe') }}</small>
+          </td>
+          <td>
+            <div class="acciones-linea">
+              <button
+                type="button"
+                class="secundario icono-boton"
+                [attr.aria-label]="'Subir concepto ' + (i + 1)"
+                [disabled]="deshabilitado() || i === 0"
+                (click)="mover(i, -1)"
+              >
+                ↑
+              </button>
+              <button
+                type="button"
+                class="secundario icono-boton"
+                [attr.aria-label]="'Bajar concepto ' + (i + 1)"
+                [disabled]="deshabilitado() || i === conceptos().length - 1"
+                (click)="mover(i, 1)"
+              >
+                ↓
+              </button>
+              <button
+                type="button"
+                class="secundario"
+                [attr.aria-label]="'Quitar concepto ' + (i + 1)"
+                [disabled]="deshabilitado()"
+                (click)="quitar(i)"
+              >
+                Quitar
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+<button
+  type="button"
+  class="secundario"
+  [disabled]="deshabilitado() || conceptos().length >= 100"
+  (click)="agregar()"
+>
+  Añadir concepto
+</button>

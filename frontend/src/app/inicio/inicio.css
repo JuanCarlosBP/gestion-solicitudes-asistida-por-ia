@@ -13,12 +13,12 @@ h1 {
 }
 .introduccion {
   font-size: 1.1rem;
-  color: #526773;
+  color: var(--color-tenue);
   margin: 1rem 0 2.5rem;
 }
 .tarjeta {
   background: #fff;
-  border: 1px solid #d7e3e5;
+  border: 1px solid var(--color-borde);
   border-radius: 1rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   max-width: 43rem;
@@ -56,13 +56,13 @@ h2 {
   color: #a02a28;
 }
 .detalle {
-  color: #526773;
+  color: var(--color-tenue);
   line-height: 1.6;
   margin-bottom: 1.75rem;
 }
 button {
-  border: 1px solid #184d55;
-  background: #184d55;
+  border: 1px solid var(--color-primario);
+  background: var(--color-primario);
   color: white;
   border-radius: 0.45rem;
   padding: 0.85rem 1.1rem;
@@ -71,16 +71,16 @@ button {
   cursor: pointer;
 }
 button:hover:enabled {
-  background: #103e45;
+  background: var(--color-primario-hover);
 }
 button:disabled {
   background: #e1e8eb;
-  color: #526773;
+  color: var(--color-tenue);
   border-color: #c8d5d9;
   cursor: wait;
 }
 .nota {
-  color: #536671;
+  color: var(--color-tenue);
   font-size: 0.9rem;
   max-width: 43rem;
   line-height: 1.6;

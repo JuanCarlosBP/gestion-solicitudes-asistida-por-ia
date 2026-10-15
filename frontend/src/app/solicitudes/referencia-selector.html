@@ -1,0 +1,80 @@
+<div class="selector-referencia" [attr.aria-busy]="buscando()">
+  <label [for]="tipo() + '-buscar'">Buscar {{ tipo() }} por nombre</label>
+  <div class="busqueda-referencia">
+    <input
+      #busqueda
+      [id]="tipo() + '-buscar'"
+      type="search"
+      [value]="nombre()"
+      (keydown.enter)="buscarConTeclado($event, busqueda.value)"
+      [disabled]="deshabilitado() || buscando()"
+    />
+    <button
+      type="button"
+      class="secundario"
+      (click)="buscar(busqueda.value)"
+      [disabled]="deshabilitado() || buscando()"
+    >
+      Buscar {{ tipo() }}
+    </button>
+  </div>
+  <label [for]="tipo() + '-seleccion'">{{
+    tipo() === 'proveedor' ? 'Proveedor' : 'Supervisor'
+  }}</label>
+  <select
+    #seleccion
+    [id]="tipo() + '-seleccion'"
+    [disabled]="deshabilitado() || buscando()"
+    (change)="seleccionar(seleccion.value)"
+    [attr.aria-describedby]="tipo() + '-ayuda'"
+  >
+    <option value="" [selected]="valor() === null">Sin {{ tipo() }}</option>
+    @if (fueraDePagina()) {
+      <option [value]="valor()" selected>
+        {{ nombreSeleccionado() || nombreActual() || 'Referencia guardada no disponible' }}
+      </option>
+    }
+    @for (opcion of pagina()?.elementos; track opcion.id) {
+      <option [value]="opcion.id" [selected]="valor() === opcion.id">{{ opcion.nombre }}</option>
+    }
+  </select>
+  <p class="ayuda" [id]="tipo() + '-ayuda'">
+    {{
+      tipo() === 'proveedor'
+        ? 'Solo proveedores activos. Opcional mientras sea borrador.'
+        : 'Supervisores habilitados distintos del autor. Opcional en borrador.'
+    }}
+  </p>
+  @if (error()) {
+    <p class="error-campo" role="alert">{{ error() }}</p>
+  }
+  @if (buscando()) {
+    <p role="status">Buscando {{ tipo() }}…</p>
+  }
+  @if (pagina(); as resultado) {
+    <div class="paginacion compacta">
+      <span
+        >{{ resultado.totalElementos }} resultados · página {{ resultado.pagina + 1 }} de
+        {{ resultado.totalPaginas || 1 }}</span
+      >
+      <button
+        type="button"
+        class="secundario"
+        [attr.aria-label]="'Página anterior de ' + tipo()"
+        [disabled]="deshabilitado() || buscando() || resultado.pagina === 0"
+        (click)="buscar(nombre(), resultado.pagina - 1)"
+      >
+        Anterior
+      </button>
+      <button
+        type="button"
+        class="secundario"
+        [attr.aria-label]="'Página siguiente de ' + tipo()"
+        [disabled]="deshabilitado() || buscando() || resultado.pagina + 1 >= resultado.totalPaginas"
+        (click)="buscar(nombre(), resultado.pagina + 1)"
+      >
+        Siguiente
+      </button>
+    </div>
+  }
+</div>
