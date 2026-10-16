@@ -1,0 +1,8 @@
+
+> gestion-solicitudes-frontend@0.0.1 typecheck
+> tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.spec.json && tsc --noEmit -p tsconfig.e2e.json
+
+e2e/operaciones.spec.ts(106,53): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+e2e/operaciones.spec.ts(258,70): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+e2e/operaciones.spec.ts(264,60): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+e2e/operaciones.spec.ts(409,68): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.

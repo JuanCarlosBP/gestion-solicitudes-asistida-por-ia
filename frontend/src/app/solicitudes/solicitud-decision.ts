@@ -55,7 +55,6 @@ interface IntentoDecision {
   version: number;
   tipo: TipoDecision;
   texto: string;
-  clave: string;
 }
 
 @Component({
@@ -148,15 +147,14 @@ export class SolicitudDecision {
       version: actual.version,
       tipo: this.tipo()!,
       texto: this.textoNormalizado(),
-      clave: crypto.randomUUID(),
     };
     const intento = this.intento;
     this.guardando.set(true);
     this.error.set('');
     const peticion =
       intento.tipo === 'APROBAR'
-        ? this.api.aprobar(intento.id, intento.version, intento.texto || null, intento.clave)
-        : this.api.rechazar(intento.id, intento.version, intento.texto, intento.clave);
+        ? this.api.aprobar(intento.id, intento.version, intento.texto || null)
+        : this.api.rechazar(intento.id, intento.version, intento.texto);
     peticion
       .pipe(
         switchMap(() => {
@@ -180,7 +178,13 @@ export class SolicitudDecision {
             );
           } else {
             const status = (error as { status?: number } | null)?.status;
-            this.incierta.set(status === undefined || status === 0 || status >= 500);
+            this.incierta.set(
+              status === undefined ||
+                status === 0 ||
+                status >= 500 ||
+                (error as { error?: { error?: string } } | null)?.error?.error ===
+                  'OPERACION_EN_PROGRESO',
+            );
             this.conflicto.set(esConflictoSolicitud(error));
             this.error.set(
               this.incierta()

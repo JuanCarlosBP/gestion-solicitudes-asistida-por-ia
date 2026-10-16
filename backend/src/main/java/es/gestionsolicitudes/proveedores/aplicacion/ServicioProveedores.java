@@ -1,5 +1,7 @@
 package es.gestionsolicitudes.proveedores.aplicacion;
 
+import es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones;
+import es.gestionsolicitudes.operaciones.dominio.*;
 import es.gestionsolicitudes.proveedores.dominio.*;
 import java.time.Clock;
 import java.time.Instant;
@@ -21,17 +23,54 @@ public class ServicioProveedores {
     private final Clock reloj;
     private final TransactionTemplate escritura;
     private final TransactionTemplate lectura;
+    private final ServicioOperaciones operaciones;
 
     public ServicioProveedores(
             RepositorioProveedores repositorio,
             Clock reloj,
-            PlatformTransactionManager transacciones) {
+            PlatformTransactionManager transacciones,
+            ServicioOperaciones operaciones) {
         this.repositorio = repositorio;
         this.reloj = reloj;
+        this.operaciones = operaciones;
         escritura = new TransactionTemplate(transacciones);
         lectura = new TransactionTemplate(transacciones);
         lectura.setReadOnly(true);
         lectura.setIsolationLevel(TransactionDefinition.ISOLATION_REPEATABLE_READ);
+    }
+
+    public Proveedor crearIdempotente(ActorProveedor actor, DatosProveedor datos, UUID clave) {
+        actor.exigirEscritura();
+        var peticion =
+                PeticionOperacion.de(
+                        TipoOperacion.CREAR_PROVEEDOR,
+                        actor.id(),
+                        clave,
+                        null,
+                        null,
+                        datos.tipo().name(),
+                        datos.denominacion(),
+                        datos.paisFiscal(),
+                        datos.fiscalNormalizado(),
+                        datos.correoContacto(),
+                        datos.telefonoContacto());
+        return operaciones.ejecutar(peticion, Proveedor.class, () -> crear(actor, datos));
+    }
+
+    public Proveedor cambiarEstadoIdempotente(
+            ActorProveedor actor, UUID id, long version, boolean activo, UUID clave) {
+        actor.exigirEscritura();
+        var peticion =
+                PeticionOperacion.de(
+                        activo
+                                ? TipoOperacion.REACTIVAR_PROVEEDOR
+                                : TipoOperacion.DESACTIVAR_PROVEEDOR,
+                        actor.id(),
+                        clave,
+                        id,
+                        version);
+        return operaciones.ejecutar(
+                peticion, Proveedor.class, () -> cambiarEstado(actor, id, version, activo));
     }
 
     public Proveedor crear(ActorProveedor actor, DatosProveedor datos) {

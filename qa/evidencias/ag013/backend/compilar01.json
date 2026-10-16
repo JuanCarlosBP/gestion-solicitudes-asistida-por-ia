@@ -1,0 +1,1 @@
+{"salida":0,"inicio":"2026-10-15T12:34:17.2698562+02:00","fin":"2026-10-15T12:34:25.3893544+02:00","argumentos":["spotless:apply","test-compile","-DskipTests"],"segundos":8.1177643,"nombre":"compilar01"}

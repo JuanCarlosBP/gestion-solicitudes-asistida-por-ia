@@ -4,6 +4,9 @@ import { TestBed } from '@angular/core/testing';
 import { borradorPrueba, paginaPrueba, solicitudPrueba, supervisorPrueba } from './datos-prueba';
 import { filtrosSolicitudesIniciales } from './solicitud-modelo';
 import { SolicitudesApi } from './solicitudes-api';
+import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
+
+beforeEach(prepararOperacionesPrueba);
 
 describe('Contrato HTTP SCI-01–11', () => {
   beforeEach(() =>
@@ -56,12 +59,14 @@ describe('Contrato HTTP SCI-01–11', () => {
     const peticion = TestBed.inject(HttpTestingController).expectOne('/api/solicitudes');
     expect(peticion.request.method).toBe('POST');
     expect(peticion.request.body).toEqual({ asunto: 'Asunto nuevo' });
+    expect(peticion.request.headers.get('Idempotency-Key')).toMatch(/^[0-9a-f-]{36}$/);
     peticion.flush(solicitudPrueba);
   });
   it('PUT elimina campos autoritativos de agregado y conceptos', () => {
     TestBed.inject(SolicitudesApi).guardar(solicitudPrueba.id, solicitudPrueba).subscribe();
     const peticion = TestBed.inject(HttpTestingController).expectOne(url);
     expect(peticion.request.method).toBe('PUT');
+    expect(peticion.request.headers.has('Idempotency-Key')).toBe(false);
     expect(peticion.request.body).toEqual(borradorPrueba());
     peticion.flush(solicitudPrueba);
   });

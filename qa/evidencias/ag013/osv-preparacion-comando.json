@@ -1,0 +1,1 @@
+{"segundos":2.9551656,"programa":"pwsh","salida":0,"inicio":"2026-10-15T12:33:05.4439123+02:00","log":"C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\qa\\evidencias\\ag013\\osv-preparacion.txt","argumentos":["-NoProfile","-File","qa/preparar-auditoria.ps1"],"nombre":"osv-preparacion","fin":"2026-10-15T12:33:08.4011184+02:00","directorio":"."}

@@ -1,0 +1,6 @@
+{
+  "fecha": "2026-10-15T13:12:28.2813885+02:00",
+  "cantidad": 111,
+  "algoritmo": "SHA256",
+  "origen": "rg frontend excluyendo node_modules, .angular, dist, test-results; sin Git"
+}

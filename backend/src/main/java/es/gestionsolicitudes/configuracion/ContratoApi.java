@@ -17,9 +17,9 @@ public class ContratoApi {
                 .info(
                         new Info()
                                 .title("Gestión de Solicitudes — API")
-                                .version("0.0.5")
+                                .version("0.0.6")
                                 .description(
-                                        "Identidad, proveedores, solicitudes e importes EUR; aprobación y rechazo por supervisor asignado. Access token Bearer en memoria; refresh solo en cookie HttpOnly. Mutaciones requieren X-XSRF-TOKEN. Borradores atómicos, versión optimista, presentación y decisiones idempotentes, fotografía del proveedor y evento mínimo de decisión. Documentación pública solo en local/test."))
+                                        "Identidad, proveedores, solicitudes e importes EUR; decisiones por supervisor asignado. Bearer y X-XSRF-TOKEN en mutaciones. Idempotency-Key UUID obligatorio en siete POST de negocio; PUT conserva versión optimista. Replay original autorizado, espera máxima de tres segundos y recuperación GET de operación propia con permisos vigentes. Fotografía del proveedor y evento mínimo de decisión. Documentación pública solo en local/test."))
                 .components(
                         new Components()
                                 .addSecuritySchemes(

@@ -1,0 +1,32 @@
+{
+  "consulta": "2026-10-15",
+  "repositorio": "JuanCarlosBP/gestion-solicitudes-asistida-por-ia",
+  "soloLectura": true,
+  "prs": [
+    3,
+    4
+  ],
+  "runs": [
+    38718798024,
+    38718789285
+  ],
+  "diagnosticos": [
+    {
+      "pr": 3,
+      "lineas": [
+        "2026-10-15T10:16:45.3813294Z 453 enlaces; 2 destinos ausentes; 0 ubicaciones con patrones de secretos.",
+        "2026-10-15T10:16:45.3815068Z especificaciones/003-proveedores/validacion-ag012.md: destino ausente ../../qa/evidencias/ag012/primer-fallo-remoto.txt",
+        "2026-10-15T10:16:45.3817177Z especificaciones/003-proveedores/validacion.md: destino ausente ../../qa/evidencias/ag011/backend-verify-final.log",
+        "2026-10-15T10:16:45.3863445Z ##[error]Process completed with exit code 1."
+      ]
+    },
+    {
+      "pr": 4,
+      "lineas": [
+        "2026-10-15T10:17:18.3457652Z 523 enlaces; 1 destinos ausentes; 0 ubicaciones con patrones de secretos.",
+        "2026-10-15T10:17:18.3458953Z especificaciones/003-proveedores/validacion.md: destino ausente ../../qa/evidencias/ag011/backend-verify-final.log",
+        "2026-10-15T10:17:18.3503270Z ##[error]Process completed with exit code 1."
+      ]
+    }
+  ]
+}

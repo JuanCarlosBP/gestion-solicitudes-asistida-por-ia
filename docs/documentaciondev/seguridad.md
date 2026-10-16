@@ -147,3 +147,19 @@ fiscalidad completa, tokens ni claves reutilizables. Nginx no registra URLs.
 La [validación004](../../especificaciones/004-solicitudes-conceptos-importes/validacion.md)
 registra evidencia real y limitaciones. No sustituye retención legal007/008,
 historial funcional007, controles transversales006 ni auditorías OWASP/WCAG completas.
+
+## Concurrencia y recuperación006 — AG-013
+
+D006 aplica permisos actuales desde PostgreSQL antes de replay/GET, además de
+identidad/CSRF/visibilidad. Clave UUID no es credencial; respuesta mínima de consulta
+sin fiscal/contactos/textos ni snapshot. Los errores no exponen SQL/stack/huellas.
+Retirar rol impide replay aunque JWT anterior siga firmado; dependencia caída503.
+
+SHA256 canónico identifica entrada normalizada, no sustituye autorización ni cifra
+datos. Snapshot original conserva solo lo necesario para contrato público. Registro
+inmutable de éxitos, sin errores cacheados ni purga. El mapa de progreso no guarda
+cuerpos. Angular solo descriptor4campos; namespace opaco por cuenta no es control
+servidor. Timeout/404/error conservan intento; Web Locks evita reclamaciones rivales.
+
+La evidencia de CI01–10 en [validación006](../../especificaciones/006-concurrencia-idempotencia/validacion.md)
+distingue ejecutado y pendiente; no acredita cobertura integral OWASP/ASVS/WCAG.

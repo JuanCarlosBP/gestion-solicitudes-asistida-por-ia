@@ -1,0 +1,23 @@
+{
+  "volumenEliminado": false,
+  "servicios": [
+    {
+      "Service": "backend",
+      "State": "exited",
+      "Image": "gestion-solicitudes-001-backend"
+    },
+    {
+      "Service": "frontend",
+      "State": "exited",
+      "Image": "gestion-solicitudes-001-frontend"
+    },
+    {
+      "Service": "postgres",
+      "State": "exited",
+      "Image": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    }
+  ],
+  "resultado": "PASS",
+  "fecha": "2026-10-15T13:15:37.8352679+02:00",
+  "volumenConservado": "gestion-solicitudes-001_datos-postgres"
+}

@@ -1,0 +1,28 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/operaciones/*.spec.ts --include=src/app/proveedores/proveedores-paginas.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                         | Names                                    |  Raw size
+spec-app-proveedores-proveedores-paginas.js | spec-app-proveedores-proveedores-paginas | 421.22 kB | 
+spec-app-operaciones-operaciones-seguras.js | spec-app-operaciones-operaciones-seguras |  26.50 kB | 
+chunk-4TF3K4CQ.js                           | -                                        |  15.85 kB | 
+chunk-RSTWSNOR.js                           | -                                        |   4.75 kB | 
+styles.css                                  | styles                                   |   1.47 kB | 
+init-testbed.js                             | init-testbed                             |   1.21 kB | 
+vitest-mock-patch.js                        | vitest-mock-patch                        | 974 bytes | 
+
+                                            | Initial total                            | 471.97 kB
+
+Application bundle generation complete. [2.055 seconds] - 2026-10-15T10:46:43.023Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  98 passed (98)
+   Start at  12:46:43
+   Duration  1.85s (transform 312ms, setup 662ms, import 389ms, tests 574ms, environment 1.39s)
+

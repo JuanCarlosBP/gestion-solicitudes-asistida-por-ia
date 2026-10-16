@@ -36,6 +36,8 @@ import {
 } from './solicitud-modelo';
 import { SolicitudesApi } from './solicitudes-api';
 import { PermisosSolicitudes } from './solicitudes-permisos';
+import { DescriptorOperacion } from '../operaciones/operacion-modelo';
+import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
 
 const vacio = (): BorradorSolicitud => ({
   asunto: '',
@@ -54,6 +56,8 @@ const vacio = (): BorradorSolicitud => ({
 })
 export class SolicitudFormulario implements OnInit {
   private readonly api = inject(SolicitudesApi);
+  private readonly operaciones = inject(OperacionesSeguras);
+  private readonly intencionAlta = signal<DescriptorOperacion | undefined>(undefined);
   private readonly ruta = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly destruccion = inject(DestroyRef);
@@ -68,6 +72,9 @@ export class SolicitudFormulario implements OnInit {
   readonly cargando = signal(true);
   readonly guardando = signal(false);
   readonly conflicto = signal(false);
+  readonly resultadoAlta = computed(
+    () => this.operaciones.resultadoConfirmado(this.intencionAlta())?.id ?? null,
+  );
   readonly error = signal('');
   readonly errores = signal<Record<string, string>>({});
   readonly estimacion = computed(() => totalEstimado(this.datos().conceptos));
@@ -89,6 +96,7 @@ export class SolicitudFormulario implements OnInit {
           this.error.set('');
           this.errores.set({});
           this.conflicto.set(false);
+          this.intencionAlta.set(undefined);
           const consulta: Observable<DetalleSolicitud | null> = id
             ? this.api.consultar(id)
             : of(null);
@@ -148,7 +156,14 @@ export class SolicitudFormulario implements OnInit {
   }
   guardar(evento: Event): void {
     evento.preventDefault();
-    if (this.cargando() || this.guardando() || this.conflicto() || !this.editable()) return;
+    if (
+      this.cargando() ||
+      this.guardando() ||
+      this.conflicto() ||
+      this.resultadoAlta() ||
+      !this.editable()
+    )
+      return;
     const datos: BorradorSolicitud = {
       ...this.datos(),
       asunto: this.datos().asunto.trim(),
@@ -171,7 +186,7 @@ export class SolicitudFormulario implements OnInit {
     const actual = this.solicitud();
     const peticion = actual
       ? this.api.guardar(actual.id, { ...datos, version: actual.version })
-      : this.api.crear(datos.asunto);
+      : this.api.crear(datos.asunto, this.intencionAlta);
     peticion
       .pipe(
         takeUntilDestroyed(this.destruccion),
@@ -191,7 +206,7 @@ export class SolicitudFormulario implements OnInit {
       });
   }
   recargar(): void {
-    if (!this.guardando()) this.refrescar.next();
+    if (!this.guardando() && this.id()) this.refrescar.next();
   }
   private enfocar(): void {
     afterNextRender(() => (this.error() ? this.alerta() : this.titulo())?.nativeElement.focus(), {

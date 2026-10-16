@@ -1,0 +1,52 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="7.581320000000001">
+<testsuite name="operaciones.spec.ts" timestamp="2026-10-15T10:58:43.204Z" hostname="" tests="1" failures="1" skipped="0" time="7.027" errors="0">
+<testcase name="CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña" classname="operaciones.spec.ts" time="7.027">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\attachments\diagnostico-progreso-ac42e957ddbbc8638efca8a457ef6a95a31b3159.json]]
+
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-1.png]]
+
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-2.png]]
+
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  operaciones.spec.ts:473:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "EN_PROGRESO"
+    Received: ""
+
+    Call Log:
+    - Timeout 2000ms exceeded while waiting on the predicate
+
+      571 |         { timeout: 2000, intervals: [50, 100] },
+      572 |       )
+    > 573 |       .toBe('EN_PROGRESO');
+          |        ^
+      574 |     await expect(
+      575 |       panel(segunda).getByRole('button', {
+      576 |         name: 'Consultar resultado: Desactivación de proveedor',
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\operaciones.spec.ts:573:8
+
+    attachment #1: diagnostico-progreso (application/json) ─────────────────────────────────────────
+    ..\..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico-02\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\attachments\diagnostico-progreso-ac42e957ddbbc8638efca8a457ef6a95a31b3159.json
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico-02\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico-02\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag013\frontend\e2e-progreso-diagnostico-02\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

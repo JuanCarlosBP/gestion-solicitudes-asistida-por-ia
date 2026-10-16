@@ -1,6 +1,10 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
+import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
+
+beforeEach(prepararOperacionesPrueba);
 import { provideRouter, Router } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
 import { of } from 'rxjs';
@@ -385,7 +389,7 @@ describe('Páginas, permisos y navegación de proveedores', () => {
     expect((html.querySelector('#denominacion') as HTMLInputElement).value).toBe('Proveedor nuevo');
   });
 
-  it('alta válida navega al detalle conservando filtros sin persistir almacenamiento web', async () => {
+  it('alta válida conserva filtros y solo persiste descriptor mínimo hasta confirmar', async () => {
     const persistir = vi.spyOn(Storage.prototype, 'setItem');
     const vista = await RouterTestingHarness.create('/proveedores/nuevo?denominacion=Filtro');
     const navegar = vi.spyOn(TestBed.inject(Router), 'navigate').mockResolvedValue(true);
@@ -397,10 +401,88 @@ describe('Páginas, permisos y navegación de proveedores', () => {
     expect(navegar).toHaveBeenCalledWith(['/proveedores', proveedor.id], {
       queryParamsHandling: 'preserve',
     });
-    expect(persistir).not.toHaveBeenCalled();
+    expect(persistir).toHaveBeenCalledOnce();
+    expect(JSON.parse(persistir.mock.calls[0][1])).toEqual({
+      clave: peticion.request.headers.get('Idempotency-Key'),
+      operacion: 'CREAR_PROVEEDOR',
+      fecha: expect.any(Number),
+    });
+    expect(localStorage.length).toBe(0);
     persistir.mockRestore();
   });
+  it('recuperación confirmada seguida de POST tardío y detalle fallido bloquea otra alta', async () => {
+    const vista = await RouterTestingHarness.create('/proveedores/nuevo');
+    completar(vista);
+    const post = TestBed.inject(HttpTestingController).expectOne('/api/proveedores');
+    const operaciones = TestBed.inject(OperacionesSeguras);
+    const descriptor = operaciones.operaciones()[0].descriptor;
+    operaciones.recuperar(descriptor);
+    TestBed.inject(HttpTestingController)
+      .expectOne(`/api/operaciones-idempotentes/${descriptor.clave}`)
+      .flush({
+        estado: 'COMPLETADA',
+        operacion: 'CREAR_PROVEEDOR',
+        recursoId: proveedor.id,
+        resultado: { estadoHttp: 201, id: proveedor.id, version: 0, estado: 'ACTIVO' },
+      });
+    post.error(new ProgressEvent('error'));
+    TestBed.inject(HttpTestingController)
+      .expectOne(urlDetalle)
+      .flush({ error: 'DEPENDENCIA_NO_DISPONIBLE' }, { status: 503, statusText: 'Error' });
+    await estable(vista);
+    expect(texto(vista)).toContain('La operación ya está confirmada');
+    expect(
+      vista.routeNativeElement!.querySelector<HTMLButtonElement>('button[type=submit]')?.disabled,
+    ).toBe(true);
+    completar(vista);
+    TestBed.inject(HttpTestingController).expectNone('/api/proveedores');
+    expect(localStorage.length).toBe(0);
+    expect(operaciones.operaciones()[0].estado).toBe('COMPLETADA');
+    expect(operaciones.ruta(operaciones.operaciones()[0])).toEqual(['/proveedores', proveedor.id]);
+  });
 
+  it.each(['manual', 'otra-pestana'])(
+    'alta con error previo y recuperación %s bloquea la misma intención aunque cambie fiscal',
+    async (modo) => {
+      const vista = await RouterTestingHarness.create('/proveedores/nuevo');
+      completar(vista);
+      const http = TestBed.inject(HttpTestingController);
+      const post = http.expectOne('/api/proveedores');
+      const operaciones = TestBed.inject(OperacionesSeguras);
+      const descriptor = operaciones.operaciones()[0].descriptor;
+      post.error(new ProgressEvent('error'));
+      await estable(vista);
+      if (modo === 'manual') operaciones.recuperar(descriptor);
+      else {
+        const claveStorage = localStorage.key(0)!;
+        localStorage.removeItem(claveStorage);
+        window.dispatchEvent(new StorageEvent('storage', { key: claveStorage }));
+      }
+      http.expectOne(`/api/operaciones-idempotentes/${descriptor.clave}`).flush({
+        estado: 'COMPLETADA',
+        operacion: 'CREAR_PROVEEDOR',
+        recursoId: proveedor.id,
+        resultado: { estadoHttp: 201, id: proveedor.id, version: 0, estado: 'ACTIVO' },
+      });
+      await estable(vista);
+      const componente = vista.routeDebugElement!.componentInstance as ProveedorFormulario;
+      componente.recargar();
+      await estable(vista);
+      expect(
+        vista.routeNativeElement!.querySelector<HTMLButtonElement>('button[type=submit]')?.disabled,
+      ).toBe(true);
+      (vista.routeNativeElement!.querySelector('#identificadorFiscal') as HTMLInputElement).value =
+        'OTRO-FISCAL-FICTICIO';
+      vista
+        .routeNativeElement!.querySelector('form')!
+        .dispatchEvent(new Event('submit', { cancelable: true }));
+      http.expectNone('/api/proveedores');
+      expect(
+        vista.routeNativeElement!.querySelector('a.resultado-alta')?.getAttribute('href'),
+      ).toBe(`/proveedores/${proveedor.id}`);
+      expect(localStorage.length).toBe(0);
+    },
+  );
   it('edición conserva entrada al conflicto y recarga antes de usar versión vigente', async () => {
     const vista = await RouterTestingHarness.create(`/proveedores/${proveedor.id}/editar`);
     TestBed.inject(HttpTestingController).expectOne(urlDetalle).flush(proveedor);

@@ -1,0 +1,47 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/solicitudes/solicitudes-paginas.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                         | Names                                    |  Raw size
+spec-app-solicitudes-solicitudes-paginas.js | spec-app-solicitudes-solicitudes-paginas | 438.89 kB | 
+chunk-RSTWSNOR.js                           | -                                        |   4.75 kB | 
+styles.css                                  | styles                                   |   1.47 kB | 
+init-testbed.js                             | init-testbed                             |   1.21 kB | 
+vitest-mock-patch.js                        | vitest-mock-patch                        | 974 bytes | 
+
+                                            | Initial total                            | 447.30 kB
+
+Application bundle generation complete. [1.924 seconds] - 2026-10-15T10:50:28.675Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts (38 tests | 1 failed) 551ms
+     × alta confirmada recuperada no ofrece descartar y crear otra al fallar detalle 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts > Solicitudes: páginas, rutas y permisos SCI-01–12 > alta confirmada recuperada no ofrece descartar y crear otra al fallar detalle
+AssertionError: expected 'Volver a solicitudesGestión · Solicit…' not to contain 'Descartar cambios y recargar'
+
+Expected: "Descartar cambios y recargar"
+Received: "Volver a solicitudesGestión · SolicitudesNueva solicitud Empieza con un asunto. Podrás completar el resto después. BorradorLa operación ya está confirmada. Abre el resultado desde Operaciones seguras para consultar el detalle.Recargar descarta los cambios locales y recupera los datos guardados. Descartar cambios y recargar Datos de la solicitudAsunto *De 3 a 160 caracteres. Crear borradorCancelar y volver"
+
+ ❯ src/app/solicitudes/solicitudes-paginas.spec.ts:276:30
+    274|     await estable(vista);
+    275|     expect(texto(vista)).toContain('La operación ya está confirmada');
+    276|     expect(texto(vista)).not.toContain('Descartar cambios y recargar');
+       |                              ^
+    277|     const componente = vista.routeDebugElement!.componentInstance as S…
+    278|     componente.recargar();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 37 passed (38)
+   Start at  12:50:28
+   Duration  1.79s (transform 158ms, setup 294ms, import 186ms, tests 551ms, environment 617ms)
+

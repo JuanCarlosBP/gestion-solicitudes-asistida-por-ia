@@ -1,0 +1,88 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --reporters=default --reporters=junit --output-file=../qa/evidencias/ag013/frontend/unitarias-intencion-final.xml
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+chunk-VDBQFF4Z.js                            | -                                         | 197.28 kB | 
+chunk-DRGM6QFZ.js                            | -                                         |  68.78 kB | 
+chunk-UHM3HEVL.js                            | -                                         |  45.71 kB | 
+chunk-MZGYFS6G.js                            | -                                         |  29.93 kB | 
+spec-app-proveedores-proveedores-paginas.js  | spec-app-proveedores-proveedores-paginas  |  23.27 kB | 
+spec-app-solicitudes-solicitudes-paginas.js  | spec-app-solicitudes-solicitudes-paginas  |  23.01 kB | 
+spec-app-solicitudes-aprobaciones.js         | spec-app-solicitudes-aprobaciones         |  20.65 kB | 
+spec-app-operaciones-operaciones-seguras.js  | spec-app-operaciones-operaciones-seguras  |  20.34 kB | 
+chunk-2PH6AFBP.js                            | -                                         |  14.92 kB | 
+spec-app-app.js                              | spec-app-app                              |  12.86 kB | 
+chunk-3XEGGSRF.js                            | -                                         |  12.54 kB | 
+chunk-B5P3CR2F.js                            | -                                         |  10.79 kB | 
+chunk-VKMDZW7L.js                            | -                                         |  10.46 kB | 
+chunk-LQPAF5PF.js                            | -                                         |  10.30 kB | 
+spec-app-solicitudes-solicitudes-editores.js | spec-app-solicitudes-solicitudes-editores |   8.05 kB | 
+spec-app-solicitudes-solicitud-calculos.js   | spec-app-solicitudes-solicitud-calculos   |   7.89 kB | 
+spec-app-identidad-sesion-interceptor.js     | spec-app-identidad-sesion-interceptor     |   7.57 kB | 
+chunk-YZYDBFWH.js                            | -                                         |   6.59 kB | 
+spec-app-identidad-autenticacion.js          | spec-app-identidad-autenticacion          |   6.56 kB | 
+chunk-WOS4LMQQ.js                            | -                                         |   5.45 kB | 
+spec-app-proveedores-proveedores-api.js      | spec-app-proveedores-proveedores-api      |   5.37 kB | 
+spec-app-solicitudes-solicitudes-api.js      | spec-app-solicitudes-solicitudes-api      |   5.37 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+chunk-ZMF674ZR.js                            | -                                         |   4.22 kB | 
+spec-app-identidad-mi-cuenta.js              | spec-app-identidad-mi-cuenta              |   3.87 kB | 
+spec-app-app.routes.js                       | spec-app-app.routes                       |   3.76 kB | 
+spec-app-identidad-acceso.js                 | spec-app-identidad-acceso                 |   3.61 kB | 
+chunk-6MMWZKPE.js                            | -                                         |   3.48 kB | 
+spec-app-solicitudes-foco-visible.js         | spec-app-solicitudes-foco-visible         |   3.45 kB | 
+spec-app-proveedores-proveedor-validacion.js | spec-app-proveedores-proveedor-validacion |   2.92 kB | 
+chunk-DH3JMKOI.js                            | -                                         |   2.87 kB | 
+chunk-JSY2MG7V.js                            | -                                         |   2.63 kB | 
+chunk-W3RB43HL.js                            | -                                         |   2.42 kB | 
+spec-app-inicio-inicio.js                    | spec-app-inicio-inicio                    |   2.40 kB | 
+chunk-EBKMLM7D.js                            | -                                         |   2.12 kB | 
+spec-app-inicio-salud-api.js                 | spec-app-inicio-salud-api                 |   1.96 kB | 
+spec-app-identidad-sesion-guard.js           | spec-app-identidad-sesion-guard           |   1.53 kB | 
+chunk-YCQTGEDS.js                            | -                                         |   1.48 kB | 
+styles.css                                   | styles                                    |   1.47 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+spec-app-identidad-sesion-store.js           | spec-app-identidad-sesion-store           |   1.19 kB | 
+chunk-K32UC3AB.js                            | -                                         |   1.18 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+chunk-KE5WNRSO.js                            | -                                         | 799 bytes | 
+chunk-Z5TOCO3O.js                            | -                                         | 538 bytes | 
+chunk-2PECFU4L.js                            | -                                         | 436 bytes | 
+
+                                             | Initial total                             | 608.98 kB
+
+Application bundle generation complete. [1.916 seconds] - 2026-10-15T11:08:21.542Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/salud-api.spec.ts (4 tests) 26ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedor-validacion.spec.ts (18 tests) 7ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-guard.spec.ts (2 tests) 23ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-api.spec.ts (14 tests) 54ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-store.spec.ts (2 tests) 2ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-api.spec.ts (14 tests) 111ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/sesion-interceptor.spec.ts (18 tests) 54ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitud-calculos.spec.ts (81 tests) 11ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/autenticacion.spec.ts (12 tests) 107ms
+ ✓ |gestion-solicitudes-frontend| src/app/inicio/inicio.spec.ts (3 tests) 177ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.spec.ts (1 test) 74ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/mi-cuenta.spec.ts (4 tests) 211ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/foco-visible.spec.ts (4 tests) 144ms
+ ✓ |gestion-solicitudes-frontend| src/app/identidad/acceso.spec.ts (4 tests) 131ms
+ ✓ |gestion-solicitudes-frontend| src/app/app.routes.spec.ts (6 tests) 135ms
+ ✓ |gestion-solicitudes-frontend| src/app/operaciones/operaciones-seguras.spec.ts (58 tests) 178ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-editores.spec.ts (9 tests) 382ms
+ ✓ |gestion-solicitudes-frontend| src/app/proveedores/proveedores-paginas.spec.ts (45 tests) 502ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-paginas.spec.ts (40 tests) 652ms
+ ✓ |gestion-solicitudes-frontend| src/app/solicitudes/aprobaciones.spec.ts (71 tests) 651ms
+
+ Test Files  20 passed (20)
+      Tests  410 passed (410)
+   Start at  13:08:21
+   Duration  3.32s (transform 868ms, setup 12.33s, import 2.18s, tests 3.63s, environment 32.21s)
+
+JUNIT report written to C:/Users/carli/gestion-solicitudes-asistida-por-ia/qa/evidencias/ag013/frontend/unitarias-intencion-final.xml

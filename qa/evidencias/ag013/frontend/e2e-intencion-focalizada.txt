@@ -1,0 +1,13 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test operaciones.spec.ts --grep formulario
+
+
+Running 2 tests using 1 worker
+
+(node:40832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\operaciones.spec.ts:145:7 › CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva (1.8s)
+  ok 2 e2e\operaciones.spec.ts:145:7 › CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva (1.7s)
+
+  2 passed (4.2s)

@@ -1,5 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { IntencionOperacion, OperacionesSeguras } from '../operaciones/operaciones-seguras';
+import { ResultadoOperacion } from '../operaciones/operacion-modelo';
 import {
   BorradorSolicitud,
   DetalleSolicitud,
@@ -14,6 +17,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class SolicitudesApi {
   private readonly http = inject(HttpClient);
+  private readonly operaciones = inject(OperacionesSeguras);
   private readonly base = '/api/solicitudes';
 
   listar(filtros: FiltrosSolicitudes) {
@@ -28,8 +32,20 @@ export class SolicitudesApi {
       timeout: 10000,
     });
   }
-  crear(asunto: string) {
-    return this.http.post<DetalleSolicitud>(this.base, { asunto }, { timeout: 10000 });
+  crear(asunto: string, intencion?: IntencionOperacion) {
+    return this.operaciones.ejecutar(
+      'CREAR_BORRADOR',
+      undefined,
+      (clave) =>
+        this.http.post<DetalleSolicitud>(
+          this.base,
+          { asunto },
+          { timeout: 10000, headers: { 'Idempotency-Key': clave } },
+        ),
+      undefined,
+      (resultado) => this.consultar(resultado.id),
+      intencion,
+    );
   }
   guardar(id: string, datos: BorradorSolicitud) {
     const { asunto, descripcion, proveedorId, supervisorId, version } = datos;
@@ -56,14 +72,21 @@ export class SolicitudesApi {
       { timeout: 10000 },
     );
   }
-  presentar(id: string, version: number, clave: string) {
-    return this.http.post<ResultadoPresentacion>(
-      `${this.base}/${encodeURIComponent(id)}/presentar`,
-      { version },
-      {
-        headers: { 'Idempotency-Key': clave },
-        timeout: 10000,
-      },
+  presentar(id: string, version: number, clave?: string) {
+    return this.operaciones.ejecutar<ResultadoPresentacion | ResultadoOperacion>(
+      'PRESENTAR',
+      id,
+      (claveIntento) =>
+        this.http.post<ResultadoPresentacion>(
+          `${this.base}/${encodeURIComponent(id)}/presentar`,
+          { version },
+          {
+            headers: { 'Idempotency-Key': claveIntento },
+            timeout: 10000,
+          },
+        ),
+      clave,
+      (resultado) => of(resultado),
     );
   }
   supervisores(nombre = '', page = 0) {
@@ -74,24 +97,38 @@ export class SolicitudesApi {
       timeout: 10000,
     });
   }
-  aprobar(id: string, version: number, comentario: string | null, clave: string) {
-    return this.http.post<ResultadoDecision>(
-      `${this.base}/${encodeURIComponent(id)}/aprobar`,
-      { version, comentario },
-      {
-        headers: { 'Idempotency-Key': clave },
-        timeout: 10000,
-      },
+  aprobar(id: string, version: number, comentario: string | null, clave?: string) {
+    return this.operaciones.ejecutar<ResultadoDecision | ResultadoOperacion>(
+      'APROBAR',
+      id,
+      (claveIntento) =>
+        this.http.post<ResultadoDecision>(
+          `${this.base}/${encodeURIComponent(id)}/aprobar`,
+          { version, comentario },
+          {
+            headers: { 'Idempotency-Key': claveIntento },
+            timeout: 10000,
+          },
+        ),
+      clave,
+      (resultado) => of(resultado),
     );
   }
-  rechazar(id: string, version: number, motivo: string, clave: string) {
-    return this.http.post<ResultadoDecision>(
-      `${this.base}/${encodeURIComponent(id)}/rechazar`,
-      { version, motivo },
-      {
-        headers: { 'Idempotency-Key': clave },
-        timeout: 10000,
-      },
+  rechazar(id: string, version: number, motivo: string, clave?: string) {
+    return this.operaciones.ejecutar<ResultadoDecision | ResultadoOperacion>(
+      'RECHAZAR',
+      id,
+      (claveIntento) =>
+        this.http.post<ResultadoDecision>(
+          `${this.base}/${encodeURIComponent(id)}/rechazar`,
+          { version, motivo },
+          {
+            headers: { 'Idempotency-Key': claveIntento },
+            timeout: 10000,
+          },
+        ),
+      clave,
+      (resultado) => of(resultado),
     );
   }
 }

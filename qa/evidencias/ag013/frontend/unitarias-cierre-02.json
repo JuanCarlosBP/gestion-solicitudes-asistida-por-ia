@@ -1,0 +1,1 @@
+{"segundos":7.0629053,"comando":"npm","argumentos":["test","--","--reporters=default","--reporters=junit","--output-file=../qa/evidencias/ag013/frontend/unitarias-cierre-02.xml"],"inicio":"2026-10-15T12:54:46.3168426+02:00","salida":0,"fin":"2026-10-15T12:54:53.3820765+02:00"}

@@ -1,0 +1,1 @@
+{"salida":255,"fin":"2026-10-15T13:01:14.8663859+02:00","segundos":0.0716208,"inicio":"2026-10-15T13:01:14.7930638+02:00","comando":"npm","argumentos":["run","test:e2e","--","base.spec.ts","operaciones.spec.ts","--grep","Swagger|CI-07/09"]}

@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="4.162273">
+<testsuite name="operaciones.spec.ts" timestamp="2026-10-15T11:10:20.838Z" hostname="" tests="2" failures="0" skipped="0" time="3.567" errors="0">
+<testcase name="CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.841">
+</testcase>
+<testcase name="CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.726">
+</testcase>
+</testsuite>
+</testsuites>

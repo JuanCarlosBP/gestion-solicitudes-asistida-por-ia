@@ -9,6 +9,23 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ErroresControlados {
     public record ErrorPublico(String error) {}
 
+    @ExceptionHandler(es.gestionsolicitudes.operaciones.dominio.ErrorOperacion.class)
+    public org.springframework.http.ResponseEntity<ErrorPublico> tratarOperacion(
+            es.gestionsolicitudes.operaciones.dominio.ErrorOperacion error) {
+        int estado =
+                switch (error.codigo()) {
+                    case SOLICITUD_INVALIDA -> 400;
+                    case ACCESO_NO_PERMITIDO -> 403;
+                    case OPERACION_NO_ENCONTRADA -> 404;
+                    default -> 409;
+                };
+        var respuesta = org.springframework.http.ResponseEntity.status(estado);
+        if (error.codigo()
+                == es.gestionsolicitudes.operaciones.dominio.ErrorOperacion.Codigo
+                        .OPERACION_EN_PROGRESO) respuesta.header("Retry-After", "1");
+        return respuesta.body(new ErrorPublico(error.codigo().name()));
+    }
+
     @ExceptionHandler(es.gestionsolicitudes.solicitudes.dominio.ErrorSolicitud.class)
     public org.springframework.http.ResponseEntity<ErrorPublico> tratarSolicitud(
             es.gestionsolicitudes.solicitudes.dominio.ErrorSolicitud error) {

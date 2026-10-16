@@ -1,0 +1,1 @@
+OSV-Scanner 2.7.0 verificado; base pública local preparada para --offline.

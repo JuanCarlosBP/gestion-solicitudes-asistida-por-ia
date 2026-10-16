@@ -51,7 +51,10 @@ public class ValidadorJwt implements OAuth2TokenValidator<Jwt> {
             return repositorio.sesionActiva(sesion, usuario, ahora)
                     ? OAuth2TokenValidatorResult.success()
                     : rechazo();
-        } catch (IllegalArgumentException | DataAccessException error) {
+        } catch (DataAccessException error) {
+            return OAuth2TokenValidatorResult.failure(
+                    new OAuth2Error("dependency_unavailable", "DEPENDENCIA_NO_DISPONIBLE", null));
+        } catch (IllegalArgumentException error) {
             return rechazo();
         }
     }

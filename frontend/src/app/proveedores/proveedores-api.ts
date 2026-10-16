@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { IntencionOperacion, OperacionesSeguras } from '../operaciones/operaciones-seguras';
 import {
   DatosProveedor,
   FiltrosProveedores,
@@ -10,6 +11,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class ProveedoresApi {
   private readonly http = inject(HttpClient);
+  private readonly operaciones = inject(OperacionesSeguras);
   private readonly base = '/api/proveedores';
 
   listar(filtros: FiltrosProveedores) {
@@ -24,8 +26,19 @@ export class ProveedoresApi {
     return this.http.get<Proveedor>(`${this.base}/${encodeURIComponent(id)}`, { timeout: 10000 });
   }
 
-  crear(datos: DatosProveedor) {
-    return this.http.post<Proveedor>(this.base, this.editables(datos), { timeout: 10000 });
+  crear(datos: DatosProveedor, intencion?: IntencionOperacion) {
+    return this.operaciones.ejecutar(
+      'CREAR_PROVEEDOR',
+      undefined,
+      (clave) =>
+        this.http.post<Proveedor>(this.base, this.editables(datos), {
+          timeout: 10000,
+          headers: { 'Idempotency-Key': clave },
+        }),
+      undefined,
+      (resultado) => this.consultar(resultado.id),
+      intencion,
+    );
   }
 
   modificar(id: string, datos: DatosProveedor, version: number) {
@@ -41,10 +54,17 @@ export class ProveedoresApi {
 
   cambiarEstado(proveedor: Proveedor) {
     const accion = proveedor.activo ? 'desactivar' : 'reactivar';
-    return this.http.post<Proveedor>(
-      `${this.base}/${encodeURIComponent(proveedor.id)}/${accion}`,
-      { version: proveedor.version },
-      { timeout: 10000 },
+    return this.operaciones.ejecutar(
+      proveedor.activo ? 'DESACTIVAR_PROVEEDOR' : 'REACTIVAR_PROVEEDOR',
+      proveedor.id,
+      (clave) =>
+        this.http.post<Proveedor>(
+          `${this.base}/${encodeURIComponent(proveedor.id)}/${accion}`,
+          { version: proveedor.version },
+          { timeout: 10000, headers: { 'Idempotency-Key': clave } },
+        ),
+      undefined,
+      (resultado) => this.consultar(resultado.id),
     );
   }
 

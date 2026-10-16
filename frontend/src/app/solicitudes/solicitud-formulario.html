@@ -21,10 +21,18 @@
 @if (cargando()) {
   <p class="panel" role="status">Cargando borrador…</p>
 }
-@if (error()) {
+@if (resultadoAlta()) {
+  <div class="aviso" role="status">
+    <p>Esta alta ya está confirmada. Abre el resultado para consultar la solicitud creada.</p>
+    <a class="resultado-alta" [routerLink]="['/solicitudes', resultadoAlta()]"
+      >Abrir solicitud creada</a
+    >
+  </div>
+}
+@if (error() && (!resultadoAlta() || conflicto())) {
   <div #alerta class="aviso" role="alert" tabindex="-1">
     <p>{{ error() }}</p>
-    @if (conflicto()) {
+    @if (conflicto() && id()) {
       <p>Recargar descarta los cambios locales y recupera los datos guardados.</p>
       <button class="secundario" type="button" (click)="recargar()">
         Descartar cambios y recargar
@@ -130,7 +138,7 @@
         </div>
       }
       <div class="acciones">
-        <button type="submit" [disabled]="guardando() || conflicto()">
+        <button type="submit" [disabled]="guardando() || conflicto() || !!resultadoAlta()">
           {{ guardando() ? 'Guardando…' : id() ? 'Guardar borrador' : 'Crear borrador' }}</button
         ><a
           class="boton secundario"

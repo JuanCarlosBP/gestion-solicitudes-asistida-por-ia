@@ -73,6 +73,7 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
     '/api/autenticacion/renovar',
     '/api/identidad/supervisores',
     '/api/identidad/yo',
+    '/api/operaciones-idempotentes/{clave}',
     '/api/proveedores',
     '/api/proveedores/{id}',
     '/api/proveedores/{id}/desactivar',
@@ -85,6 +86,10 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
     '/api/solicitudes/{id}/rechazar',
   ]);
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('200');
+  for (const estado of ['200', '400', '401', '404', '503'])
+    expect(contrato.paths['/api/operaciones-idempotentes/{clave}'].get.responses).toHaveProperty(
+      estado,
+    );
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('503');
   expect(contrato.paths['/api/proveedores'].post.responses).toHaveProperty('201');
   expect(contrato.paths['/api/proveedores/{id}'].put.responses).toHaveProperty('409');

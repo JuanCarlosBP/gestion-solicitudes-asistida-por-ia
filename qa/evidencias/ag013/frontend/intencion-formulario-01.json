@@ -1,0 +1,1 @@
+{"inicio":"2026-10-15T13:07:15.9213380+02:00","comando":"npm","salida":0,"segundos":5.4355823,"argumentos":["test","--","--include=src/app/operaciones/operaciones-seguras.spec.ts","--include=src/app/proveedores/proveedores-paginas.spec.ts","--include=src/app/solicitudes/solicitudes-paginas.spec.ts"],"fin":"2026-10-15T13:07:21.3592894+02:00"}

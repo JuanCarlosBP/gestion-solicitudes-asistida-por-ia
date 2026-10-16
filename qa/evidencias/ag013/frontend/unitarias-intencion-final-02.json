@@ -1,0 +1,1 @@
+{"fin":"2026-10-15T13:09:12.2048456+02:00","argumentos":["test","--","--reporters=default","--reporters=junit","--output-file=../qa/evidencias/ag013/frontend/unitarias-intencion-final-02.xml"],"segundos":6.9132088,"comando":"npm","inicio":"2026-10-15T13:09:05.2889953+02:00","salida":0}

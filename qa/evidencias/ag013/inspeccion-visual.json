@@ -1,0 +1,25 @@
+{
+  "resultado": "PASS en el alcance observado",
+  "observado": [
+    "Mensajes de confirmación y enlaces al resultado legibles a 360/768/1440 px",
+    "Botones de alta confirmada deshabilitados pese a cambiar asunto o fiscal",
+    "Sin desbordamientos ni superposición de controles en las tres capturas"
+  ],
+  "fecha": "2026-10-15T13:14:58.5300436+02:00",
+  "revisor": "Coordinador, inspección visual del candidato final",
+  "limite": "Inspección acotada, no certificación WCAG.",
+  "capturas": [
+    {
+      "ruta": "qa/evidencias/ag013/frontend/capturas/frontend006-alta-solicitud-manual-confirmada-360.png",
+      "sha256": "6341098112B8C1C981EB6655D7892B3EBC922A8BA23D6EA4BDBCA2CFA11226D3"
+    },
+    {
+      "ruta": "qa/evidencias/ag013/frontend/capturas/frontend006-alta-solicitud-otra-pestana-confirmada-768.png",
+      "sha256": "EEBBB6F17C5598C21FC2A8C6FB02FF1B4D7CD5B5D95FADD5AA1CDC5F668347C0"
+    },
+    {
+      "ruta": "qa/evidencias/ag013/frontend/capturas/frontend006-alta-proveedor-otra-pestana-confirmada-1440.png",
+      "sha256": "98CCC7477C91A5D194AA8054FCD1F229C608262A4FAC7918FC8FB85078739298"
+    }
+  ]
+}

@@ -23,19 +23,7 @@ public interface RepositorioSolicitudes {
 
     Pagina<Solicitud> listar(ActorSolicitud actor, ConsultaSolicitudes consulta);
 
-    void bloquearClave(UUID usuario, UUID clave);
-
-    record Operacion(
-            String tipo,
-            String huella,
-            ResultadoPresentacion presentacion,
-            ResultadoDecision decision) {}
-
-    Optional<Operacion> operacion(UUID usuario, UUID clave);
-
     void presentar(Solicitud solicitud, Solicitud.Proveedor proveedor, Instant ahora);
-
-    void registrar(UUID usuario, UUID clave, String huella, ResultadoPresentacion resultado);
 
     void decidir(
             Solicitud solicitud,
@@ -43,12 +31,4 @@ public interface RepositorioSolicitudes {
             Solicitud.Persona actor,
             Instant ahora,
             UUID peticion);
-
-    void registrarDecision(
-            UUID usuario,
-            UUID clave,
-            String huella,
-            DatosDecision.Tipo tipo,
-            ResultadoDecision resultado,
-            Solicitud anterior);
 }

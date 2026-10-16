@@ -182,3 +182,23 @@ de solicitudes contiene confirmación/formularios y resultado; no hay reasignaci
 ni consulta de historial avanzado. OpenAPI declara éxitos y errores con esquema
 explícito; las siete operaciones de solicitudes y las16 rutas totales se comprueban.
 Resultados en [validación005](../../especificaciones/005-aprobaciones/validacion.md).
+
+## Contrato transversal006 — AG-013
+
+Las siete POST de alta proveedor, baja/reactivación, alta borrador, presentación,
+aprobación y rechazo exigen Idempotency-Key UUID. PUT conserva versión optimista
+sin obligación nueva. Se mantienen DTO, códigos201/200 y Location anteriores.
+Usuario+clave compatible devuelve resultado original; incompatible409
+CLAVE_IDEMPOTENCIA_REUTILIZADA. Espera por clave máximo3s;409 OPERACION_EN_PROGRESO
+con Retry-After:1. Backend consulta permisos vigentes antes de replay.
+
+GET /api/operaciones-idempotentes/{clave}, autenticado y no-store, solo mismo actor:
+200 EN_PROGRESO con operación/recurso opcional;200 COMPLETADA con operación,
+recursoId y resultado{estadoHttp,id,version,estado,numero opcional}. Proveedor usa
+ACTIVO/INACTIVO; solicitud conserva estado original. Sin fiscal/contacto/textos,
+huella ni snapshot interno.400UUID inválido;401sin identidad;404inexistente/no visible;
+503DEPENDENCIA_NO_DISPONIBLE si PG impide conocer resultado, incluido filtro real.
+
+Angular conserva descriptor mínimo24h y consulta al restaurar sesión.404 o timeout
+no generan nueva clave. Criterios y resultados en
+[validación006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).

@@ -1,0 +1,1 @@
+{"segundos":27.3539701,"inicio":"2026-10-15T12:38:00.4571240+02:00","argumentos":["spotless:apply","verify","-Dtest=OperacionesDominioTest","-Dit.test=BaseVerificableIT"],"salida":1,"nombre":"migracion02","fin":"2026-10-15T12:38:27.8134636+02:00"}

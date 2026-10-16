@@ -1,6 +1,7 @@
 package es.gestionsolicitudes.proveedores.http;
 
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.operaciones.dominio.HuellaOperacion;
 import es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores;
 import es.gestionsolicitudes.proveedores.dominio.*;
 import io.swagger.v3.oas.annotations.*;
@@ -26,7 +27,15 @@ import tools.jackson.databind.JsonNode;
     @ApiResponse(responseCode = "401", description = "NO_AUTENTICADO"),
     @ApiResponse(responseCode = "403", description = "ACCESO_NO_PERMITIDO"),
     @ApiResponse(responseCode = "404", description = "PROVEEDOR_NO_ENCONTRADO"),
-    @ApiResponse(responseCode = "409", description = "PROVEEDOR_DUPLICADO o VERSION_OBSOLETA"),
+    @ApiResponse(
+            responseCode = "409",
+            description =
+                    "PROVEEDOR_DUPLICADO, VERSION_OBSOLETA, CLAVE_IDEMPOTENCIA_REUTILIZADA u OPERACION_EN_PROGRESO",
+            headers =
+                    @Header(
+                            name = "Retry-After",
+                            description = "1 solo para OPERACION_EN_PROGRESO",
+                            schema = @Schema(type = "integer"))),
     @ApiResponse(responseCode = "500", description = "ERROR_INTERNO"),
     @ApiResponse(responseCode = "503", description = "DEPENDENCIA_NO_DISPONIBLE")
 })
@@ -61,8 +70,16 @@ public class ControladorProveedores {
                             description = "URI del proveedor",
                             schema = @Schema(type = "string")))
     public ResponseEntity<ProveedorPublico> crear(
-            @AuthenticationPrincipal Jwt token, @RequestBody JsonNode entrada) {
-        var proveedor = servicio.crear(actor(token), EntradaProveedor.datos(entrada, false));
+            @AuthenticationPrincipal Jwt token,
+            @RequestBody JsonNode entrada,
+            @Parameter(required = true, schema = @Schema(type = "string", format = "uuid"))
+                    @RequestHeader(value = "Idempotency-Key", required = false)
+                    String clave) {
+        var proveedor =
+                servicio.crearIdempotente(
+                        actor(token),
+                        EntradaProveedor.datos(entrada, false),
+                        HuellaOperacion.uuid(clave));
         return ResponseEntity.created(URI.create("/api/proveedores/" + proveedor.id()))
                 .body(ProveedorPublico.de(proveedor));
     }
@@ -177,8 +194,11 @@ public class ControladorProveedores {
     public ProveedorPublico desactivar(
             @AuthenticationPrincipal Jwt token,
             @PathVariable String id,
-            @RequestBody JsonNode entrada) {
-        return estado(token, id, entrada, false);
+            @RequestBody JsonNode entrada,
+            @Parameter(required = true, schema = @Schema(type = "string", format = "uuid"))
+                    @RequestHeader(value = "Idempotency-Key", required = false)
+                    String clave) {
+        return estado(token, id, entrada, false, clave);
     }
 
     @PostMapping("/{id}/reactivar")
@@ -199,14 +219,22 @@ public class ControladorProveedores {
     public ProveedorPublico reactivar(
             @AuthenticationPrincipal Jwt token,
             @PathVariable String id,
-            @RequestBody JsonNode entrada) {
-        return estado(token, id, entrada, true);
+            @RequestBody JsonNode entrada,
+            @Parameter(required = true, schema = @Schema(type = "string", format = "uuid"))
+                    @RequestHeader(value = "Idempotency-Key", required = false)
+                    String clave) {
+        return estado(token, id, entrada, true, clave);
     }
 
-    private ProveedorPublico estado(Jwt token, String id, JsonNode entrada, boolean activo) {
+    private ProveedorPublico estado(
+            Jwt token, String id, JsonNode entrada, boolean activo, String clave) {
         return ProveedorPublico.de(
-                servicio.cambiarEstado(
-                        actor(token), uuid(id), EntradaProveedor.version(entrada, true), activo));
+                servicio.cambiarEstadoIdempotente(
+                        actor(token),
+                        uuid(id),
+                        EntradaProveedor.version(entrada, true),
+                        activo,
+                        HuellaOperacion.uuid(clave)));
     }
 
     private static ActorProveedor actor(Jwt token) {

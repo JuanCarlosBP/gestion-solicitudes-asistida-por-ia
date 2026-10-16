@@ -1,52 +1,49 @@
 # MEMORY.md — Gestión de Solicitudes
 
-Memoria vigente; entrada AG-012 conservada en qa/evidencias/ag012/memoria-entrada.txt.
-Historia en informes y validaciones; esta memoria no sustituye sus evidencias.
+Memoria vigente AG-013; entrada anterior conservada en qa/evidencias/ag013/memoria-entrada.txt.
+Historia AG-003–AG-012, REV-001, ADR-0001–0006 y SDD001–005 intactos.
 
 ## Decisiones vigentes
 
-- La persona responsable conserva Git, aceptación, integración y publicación.
-- AG-012 aprueba expresamente D-004-01–11, SDD e implementación004.
-- D-005-01–08 aprobadas; continuación condicionada a004 verificada y margen120min.
-- Con60–119min solo SDD005; menos60min no005;006 solo borrador tras005 verificada+45min.
-- Rama comunicada feature/004-solicitudes-conceptos-importes, sin comprobar con Git.
-- Sin Git, datos reales, cambios mayores ni modificaciones de históricos.
-- AG003–AG011, REV001, ADR0001–0004 y validaciones anteriores protegidos.
+- AG-013 aprueba D-006-01–10, SDD006, ADR0007 e implementación.
+- Siete POST exigen UUID; PUT conserva versión sin nueva clave obligatoria.
+- Usuario+clave global, SHA-256 canónica2 y lectura legacy1 sin reescribir hashes.
+- Efecto/resultado/evento atómicos; identidad, permisos actuales, visibilidad y CSRF.
+- Espera interna 3 s; 409 OPERACION_EN_PROGRESO/Retry-After1; rollback reintentable.
+- GET recupera mínimo; descriptor cliente de hasta cuatro campos, TTL24h, sin cuerpos.
+- Formularios conservan UUID efectiva en memoria tras confirmar; una nueva navegación
+  permite otra intención. Conflictos definitivos no se convierten en éxito.
+- V6 amplía tabla existente; V1–V5 y replays004/005 conservados. Sin purga automática.
+- EN_PROGRESO corresponde a una instancia; réplicas y retención jurídica posteriores.
+- Web Locks necesario para iniciar; sin él se permite recuperar y se informa.
+- Sin versiones mayores, dependencias nuevas, Redis, colas ni datos reales.
 
-## AG-012 cerrada
+## Resultado local AG-013
 
-- Inicio2026-10-14 23:34:02+02:00; límite2026-10-15 09:34:02+02:00 Europe/Madrid.
-- Cierre2026-10-15 00:41:12+02:00; duración01:07:10, dentro del límite.
-- Precondición construcción PASS a23:35:28,1.43min; herramientas y Docker disponibles.
-- PR3/Actions consultadas solo lectura: backend/frontend PASS; Compose E2E003 FAIL.
-- Fallo remoto esperaba1/recibió2; reproducción local1/6 con filtros vacíos.
-- Corrección prueba única: UUID, espera preparación/foco, filtros aislados y URL exacta.
-- Enfocada1/1 y E2E001–003 9/9 PASS, sin reintentos; buscador sin cambios.
-- Regresión backend98/98 verify/Spotless/SpotBugs; Angular130/130 y controles PASS.
-- Sandbox Docker/loopback/Vite necesitó ejecución local autorizada; fallos conservados.
-- Adenda003 nueva registra corrección; validaciónAG011 intacta.
-- SDD004 y ADR0005 aprobados por orden humana y redactados antes de implementar.
-- Backend/frontend004 implementados; revisión independiente sin hallazgos abiertos.
-- Backend144, Angular275 y E2E11 PASS; API004119, sesiones88 y proveedores78 PASS.
-- Docker limpio, Compose persistencia/503/200, auditorías y actionlint PASS.
-- UI03 foco oculto corregido: Tab62/0 frente a24; capturas360/768/1440 revisadas.
-- V4 candidata local alineada sin borrar filas; datos/V1–V3 preservados y FlywayPASS.
-- 496 huellas iniciales+63 históricas coinciden; prefijoCSV intacto; sin Git.
-- Revisor independiente solo lectura por instrucción; sin aislamiento técnico acreditado.
-- Evidencias nuevas qa/evidencias/ag012 y temporales; huellas iniciales capturadas.
+- Inicio2026-10-15T12:20:55+02:00; límite22:20:55+02:00 Europe/Madrid.
+- Precondición PASS en9,01min; JDK21 instalado corrigió selección inicial JAVA_HOME17.
+- Backend211PASS (99unit/112IT), SpotlessPASS, SpotBugs0.
+- Angular411PASS; tipos/lint/formato/buildPASS; E2E23PASS, cero reintentos.
+- API492PASS: sesiones88/proveedores78/solicitudes119/aprobaciones140/concurrencia67.
+- V5→V6 real conserva siete tablas/todascolumnas/checksums; tres replayslegacy trasreinicio.
+- Docker sin caché;126clases/recursos/bundles idénticos a salidas locales verificadas.
+- Compose final persistencia/503/200/navegadorPASS; tres servicios detenidos y volumen conservado.
+- npm0avisos; OSVMaven132componentes/0avisos; dependencias idénticas a entrada.
+-1075protegidos sin alteraciones; prefijo CSV histórico conservado.
+- CI-01–10 verificados localmente; revisión independiente sin hallazgos abiertos.
+- AG-013 cerrada13:27:21+02:00; duración01:06:26; evidencia cierre.json en AG013.
+  No aceptación ni integración de006.
+- PR3/4 consultadas en lectura: fallo documental heredado reproducido y corregido
+  mediante excepción .gitignore al logAG011 existente; CI remota nueva pendiente.
+- Desviación: git status --short leído antes de conocer prohibición adjunta;
+  salida vacía, sin cambios. No hubo más comandos ni escrituras Git.
 
 ## Estado y siguiente paso
 
-- SCI-01–14 verificados; cierre004/snapshot de228 fuentes conservado.
-- Puerta005 a2026-10-15 00:09:52+02:00:564min restantes; implementación autorizada.
-- SDD005/ADR0006 redactados antes de código; AP01–10 verificados localmente.
-- Backend180/Angular346/E2E14/API425 PASS; V5 conserva seis tablas y V1–V4.
-- LoginQA por precisión temporal, foco E2E y OpenAPI corregidos y regresados.
-- Builds finales, Compose persistencia/503/200 y revisión independiente PASS.
-- Docs/integridad PASS; sin hallazgos abiertos. Puerta00600:39:11+02,534min.
-- 006 únicamente especificación borrador pendiente de aprobación; sin otros artefactos.
-- No declarar004/005 aceptadas/integradas; CI remota pendiente de push humano.
-- Compose detenido; volumen y datos ficticios conservados.
-- Criterios/contratos y resultados en especificaciones004/005 y sus validaciones.
-- Informe vivo docs/trazabilidad/AG-012-informe.md; validación004 consolidada.
-- Siguiente paso humano: revisar entrega, Git/CI remota, aceptación e integración.
+- El encargo informa aceptación formal de gobierno/001/002;003–005 verificados localmente.
+- Informe docs/trazabilidad/AG-013-informe.md y validación006 contienen resultados/límites.
+- Puerta007 cumplida13:23:37+02:00,537,298min restantes tras006 verificada.
+-007-historial-auditoria contiene solo especificación borrador; pendiente aclaración
+  y aprobación humana. Sin plan, tareas, ADR, migración ni código007.
+- Persona responsable revisa, selecciona cambios, hace Git/CI remota y decide aceptación/integración.
+- Rama comunicada feature/006-concurrencia-idempotencia, sin verificarla con Git.

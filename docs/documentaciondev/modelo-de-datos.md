@@ -130,3 +130,23 @@ conservando filas y huellaPRESENTAR de004. Checks relacionan operación, estado 
 fechas. El resultado público depende de la operación y siempre es el original.
 Transición, evento y resultado comparten transacción. No hay purga nueva ni
 historial avanzado; retención y generalización siguen pendientes.
+
+## EvoluciónV6 — AG-013
+
+V6 amplía operaciones_idempotentes_solicitud sin renombrarla ni recalcular hashes.
+PK(usuario_id,clave) global; version_huella1legacy/2canónica, recurso_id común,
+proveedor_idFK, estado_http y resultado_json tipado para altas/estados nuevos.
+Las columnas heredadas conservan valores y restricciones por rama de operación;
+las altas admiten versión0 sin permitirla en presentación/decisión. Índice nuevo
+por recurso_id, además de PK e índice solicitud existente.
+
+resultado_json contiene exclusivamente variables necesarias para replay del DTO
+original; presentación/decisión mantienen columnas anteriores. gestion_app sigue
+SELECT/INSERT sinUPDATE/DELETE de resultados. roles_para_operacion(UUID) consulta
+habilitación/roles con FOR SHARE, SECURITY DEFINER, search_path fijo y PUBLIC
+revocado; no concede escritura general de roles. Efecto/evento/resultado atómicos.
+
+Sin purga automática. Crecimiento por éxito con clave nueva, incluidos no-op;
+medir pg_total_relation_size de la tabla con índices. Archivo/tombstone y plazo
+jurídico pendientes007/008. TTL cliente24h no borra servidor. Compatibilidad real
+V5→V6 y resultados en [validación006](../../especificaciones/006-concurrencia-idempotencia/validacion.md).

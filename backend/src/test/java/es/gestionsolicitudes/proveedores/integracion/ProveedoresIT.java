@@ -134,7 +134,7 @@ class ProveedoresIT {
                                         "spring.main.banner-mode",
                                         "off"))
                         .run("--server.port=0");
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(5);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
         assertThat(
                         administrador.queryForObject(
                                 "SELECT count(*) FROM gestion.usuarios WHERE id=?",
@@ -1017,6 +1017,7 @@ class ProveedoresIT {
                                 cuerpo == null
                                         ? HttpRequest.BodyPublishers.noBody()
                                         : HttpRequest.BodyPublishers.ofString(cuerpo));
+        if (metodo.equals("POST")) peticion.header("Idempotency-Key", UUID.randomUUID().toString());
         if (jar.containsKey("XSRF-TOKEN")) {
             peticion.header("Cookie", "XSRF-TOKEN=" + jar.get("XSRF-TOKEN"));
             if (cabeceraCsrf) peticion.header("X-XSRF-TOKEN", jar.get("XSRF-TOKEN"));
@@ -1082,6 +1083,8 @@ class ProveedoresIT {
                                 cuerpo == null
                                         ? HttpRequest.BodyPublishers.noBody()
                                         : HttpRequest.BodyPublishers.ofString(cuerpo));
+        if (metodo.equals("POST") && ruta.startsWith("/api/proveedores"))
+            peticion.header("Idempotency-Key", UUID.randomUUID().toString());
         if (rol != null) peticion.header("Authorization", "Bearer " + tokens.get(rol));
         if (conCsrf) peticion.header("Cookie", "XSRF-TOKEN=" + csrf).header("X-XSRF-TOKEN", csrf);
         return cliente.send(peticion.build(), HttpResponse.BodyHandlers.ofString());

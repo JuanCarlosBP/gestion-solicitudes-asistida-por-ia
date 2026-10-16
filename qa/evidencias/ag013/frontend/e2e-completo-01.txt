@@ -1,0 +1,104 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test
+
+
+Running 21 tests using 1 worker
+
+(node:9116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 e2e\aprobaciones.spec.ts:192:5 › AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales (3.9s)
+  ok  2 e2e\aprobaciones.spec.ts:341:5 › AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible (4.0s)
+  ok  3 e2e\aprobaciones.spec.ts:484:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora (989ms)
+  ok  4 e2e\base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real (371ms)
+  ok  5 e2e\base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación (245ms)
+  ok  6 e2e\base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil (170ms)
+  x   7 e2e\base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real (486ms)
+(node:14400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 e2e\base.spec.ts:114:5 › cabeceras, mínimo contrato y denegación por el backend (33ms)
+  ok  9 e2e\identidad.spec.ts:15:5 › acceso, identidad, restauración, cierre y guard con backend real (608ms)
+  ok 10 e2e\identidad.spec.ts:93:5 › formulario por teclado, error genérico, foco y validación nativa (344ms)
+  ok 11 e2e\identidad.spec.ts:124:5 › CSRF obligatorio, restauración anónima y recursos públicos disponibles (231ms)
+  ok 12 e2e\operaciones.spec.ts:60:5 › CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta (1.3s)
+  ok 13 e2e\operaciones.spec.ts:138:5 › CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar (1.4s)
+  ok 14 e2e\operaciones.spec.ts:177:5 › CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable (2.2s)
+  ok 15 e2e\operaciones.spec.ts:281:5 › CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave (682ms)
+  ok 16 e2e\operaciones.spec.ts:350:5 › CI-05/07: permiso revocado antes de recuperar y replay no concede acceso (2.3s)
+  ok 17 e2e\operaciones.spec.ts:429:5 › CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable (4.7s)
+  x  18 e2e\operaciones.spec.ts:471:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña (7.1s)
+(node:29960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 19 e2e\proveedores.spec.ts:39:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales (4.0s)
+  ok 20 e2e\solicitudes.spec.ts:107:5 › SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales (4.4s)
+  ok 21 e2e\solicitudes.spec.ts:421:5 › SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga (656ms)
+
+
+  1) e2e\base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real ──────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+    @@ -3,10 +3,11 @@
+        "/api/autenticacion/csrf",
+        "/api/autenticacion/iniciar-sesion",
+        "/api/autenticacion/renovar",
+        "/api/identidad/supervisores",
+        "/api/identidad/yo",
+    +   "/api/operaciones-idempotentes/{clave}",
+        "/api/proveedores",
+        "/api/proveedores/{id}",
+        "/api/proveedores/{id}/desactivar",
+        "/api/proveedores/{id}/reactivar",
+        "/api/salud",
+
+      67 |   const contrato = await respuesta.json();
+      68 |   expect(contrato.openapi).toMatch(/^3\.1\./);
+    > 69 |   expect(Object.keys(contrato.paths).sort()).toEqual([
+         |                                              ^
+      70 |     '/api/autenticacion/cerrar-sesion',
+      71 |     '/api/autenticacion/csrf',
+      72 |     '/api/autenticacion/iniciar-sesion',
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\base.spec.ts:69:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag013\frontend\e2e-completo-01\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\qa\evidencias\ag013\frontend\e2e-completo-01\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\error-context.md
+
+  2) e2e\operaciones.spec.ts:471:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "EN_PROGRESO"
+    Received: ""
+
+    Call Log:
+    - Timeout 2000ms exceeded while waiting on the predicate
+
+      551 |         { timeout: 2000, intervals: [50, 100] },
+      552 |       )
+    > 553 |       .toBe('EN_PROGRESO');
+          |        ^
+      554 |     await expect(
+      555 |       panel(segunda).getByRole('button', {
+      556 |         name: 'Consultar resultado: Desactivación de proveedor',
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\operaciones.spec.ts:553:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag013\frontend\e2e-completo-01\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag013\frontend\e2e-completo-01\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\qa\evidencias\ag013\frontend\e2e-completo-01\operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\error-context.md
+
+  2 failed
+    e2e\base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real ───────────
+    e2e\operaciones.spec.ts:471:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña 
+  19 passed (41.7s)

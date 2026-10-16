@@ -1,0 +1,162 @@
+[
+  {
+    "suite": "es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest",
+    "pruebas": 7,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 1.088,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest",
+    "pruebas": 7,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.936,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest",
+    "pruebas": 7,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.296,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.http.CookiesIdentidadTest",
+    "pruebas": 2,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.036,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest",
+    "pruebas": 6,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.226,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest",
+    "pruebas": 9,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.024,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest",
+    "pruebas": 24,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.087,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.http.ErroresProveedorTest",
+    "pruebas": 4,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 2.507,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest",
+    "pruebas": 2,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.003,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.http.ControladorSaludTest",
+    "pruebas": 5,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.471,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest",
+    "pruebas": 3,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.274,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest",
+    "pruebas": 8,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.026,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest",
+    "pruebas": 15,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 0.031,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.integracion.IdentidadAccesoIT",
+    "pruebas": 13,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 8.82,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.identidad.integracion.PerfilesIdentidadIT",
+    "pruebas": 6,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 6.901,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.integracion.BaseVerificableIT",
+    "pruebas": 3,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 10.621,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.operaciones.integracion.OperacionesIT",
+    "pruebas": 16,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 15.877,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.proveedores.integracion.ProveedoresIT",
+    "pruebas": 15,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 3.777,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.integracion.AprobacionesIT",
+    "pruebas": 28,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 12.907,
+    "fallos": 0
+  },
+  {
+    "suite": "es.gestionsolicitudes.solicitudes.integracion.SolicitudesIT",
+    "pruebas": 31,
+    "omitidas": 0,
+    "errores": 0,
+    "segundos": 7.462,
+    "fallos": 0
+  }
+]

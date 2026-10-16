@@ -9,6 +9,19 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+AG-013 autoriza e implementa [006](especificaciones/006-concurrencia-idempotencia/especificacion.md):
+idempotencia transversal, espera acotada y recuperación Angular. SDD y ADR0007
+aprobados por encargo humano; CI-01–10 verificados localmente, con revisión sin
+hallazgos abiertos. Estado verificable en
+[informe AG-013](docs/trazabilidad/AG-013-informe.md) y
+[validación006](especificaciones/006-concurrencia-idempotencia/validacion.md).
+Aceptación e integración de006 pendientes. El encargo comunica aceptación formal
+de gobierno/001/002. Los párrafos siguientes conservan la evolución anterior;
+la autorización AG-013 sustituye el límite de borrador006 de AG-012.
+Tras verificar006 se creó únicamente la
+[especificación borrador007](especificaciones/007-historial-auditoria/especificacion.md),
+pendiente de aprobación humana.
+
 AG-012 ejecuta004 por autorización humana integral, con SDD y ADR0005 aprobados.
 La corrección heredada de proveedores pasa enfocada y regresión001–003;
 [adenda003](especificaciones/003-proveedores/validacion-ag012.md) conserva el fallo remoto.
@@ -19,8 +32,7 @@ e integración pendientes. La puerta005 se cumplió con564 minutos restantes.
 V5 conserva V1–V4 y datos existentes. AP-01–10 verificados localmente, con revisión
 independiente sin hallazgos abiertos; aceptación e integración pendientes.
 Tras cumplir la puerta de continuación se creó únicamente el
-[borrador006](especificaciones/006-concurrencia-idempotencia/especificacion.md),
-pendiente de aprobación humana, sin plan, tareas, validación ni código.
+[borrador006, ahora aprobado por AG-013](especificaciones/006-concurrencia-idempotencia/especificacion.md).
 Estado detallado en [informe AG-012](docs/trazabilidad/AG-012-informe.md).
 
 
@@ -109,8 +121,12 @@ CRUD significa crear, consultar, modificar y eliminar.
 Un endpoint es una dirección de la API para una operación concreta.
 
 Están implementadas la base técnica001, la identidad002 (acceso, cuenta, sesiones
-y roles) y el catálogo003 con baja/reactivación y versión. Solicitudes, conceptos,
-importes, aprobaciones e historial funcional siguen previstos.
+y roles), el catálogo003, las solicitudes con conceptos e importes004, las
+aprobaciones005 y la concurrencia e idempotencia transversal006. Incluyen versiones
+optimistas, recuperación de operaciones, registro de presentación y evento mínimo
+de decisión.
+El historial funcional ampliado tiene una especificación borrador pendiente de aprobación;
+la demo pública también continúa prevista.
 No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
 La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
 

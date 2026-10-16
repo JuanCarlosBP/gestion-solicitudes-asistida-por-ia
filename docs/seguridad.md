@@ -274,3 +274,14 @@ los logs técnicos omiten comentarios, motivos, cuerpos, tokens y claves reutili
 Las pruebas ejecutadas y sus límites se registran en
 [validación 005](../especificaciones/005-aprobaciones/validacion.md). La existencia
 de este apartado no acredita por sí sola un control superado.
+
+## Aplicación transversal006 — AG-013
+
+La autorización se revalida en PostgreSQL antes de replay y recuperación; una
+clave conocida o roles antiguos del JWT no conceden permiso. Las siete POST
+mantienen CSRF. Éxito/efecto/evento atómicos; errores no memorizados. Espera acotada
+de3s, sin mantener conexiones para duplicados locales. El cliente solo persiste
+descriptor mínimo24h; ninguna credencial ni cuerpo. La retención del servidor
+no tiene purga automática por D00607; plazo jurídico/archivo pendientes007/008.
+Requisitos y comprobaciones en [006](../especificaciones/006-concurrencia-idempotencia/validacion.md),
+sin afirmar cobertura integral de seguridad ni rendimiento productivo.

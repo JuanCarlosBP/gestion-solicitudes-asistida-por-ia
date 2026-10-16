@@ -1,0 +1,23 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default) @ gestion-solicitudes ---
+[INFO] Spotless.Java is keeping 85 files clean - 0 needs changes to be clean, 30 were already clean, 55 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gestion-solicitudes ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 5 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 68 source files with javac [debug parameters release 21] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.501 s
+[INFO] Finished at: 2026-10-15T12:22:52+02:00
+[INFO] ------------------------------------------------------------------------

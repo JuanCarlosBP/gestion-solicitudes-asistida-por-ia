@@ -1,0 +1,19 @@
+{
+  "revisor": "Coordinador, inspección visual de PNG",
+  "capturas": [
+    "frontend/capturas/frontend006-proveedor-pendiente-360.png",
+    "frontend/capturas/frontend006-borrador-recarga-768.png",
+    "frontend/capturas/frontend006-borrador-reapertura-1440.png"
+  ],
+  "limites": [
+    "La barra de acciones fija del detalle es heredada y se superpone al contenido de la captura de página completa; la inspección no sustituye pruebas de scroll/foco",
+    "No es certificación WCAG ni evaluación de todos los estados"
+  ],
+  "observado": [
+    "Panel de operación pendiente legible a 360 px con controles dentro del ancho",
+    "Confirmación y enlace Abrir resultado visibles a 768 y 1440 px",
+    "Texto de recuperación sin credenciales ni cuerpos técnicos; datos de fixtures ficticios"
+  ],
+  "resultado": "PASS en el alcance observado",
+  "fecha": "2026-10-15T12:57:09.1391649+02:00"
+}

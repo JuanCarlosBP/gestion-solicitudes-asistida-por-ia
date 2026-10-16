@@ -1,0 +1,1 @@
+PASS: V5→V6, siete tablas y todas sus columnas heredadas; 139264 bytes de registro e índices.

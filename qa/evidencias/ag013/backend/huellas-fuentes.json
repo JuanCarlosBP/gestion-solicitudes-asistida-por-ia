@@ -1,0 +1,450 @@
+[
+  {
+    "sha256": "ED2E8B86B46AC74F42A0FDFEB08F83204FA4957CD16C6ED3CE98F4F49AB61409",
+    "ruta": "backend/Dockerfile"
+  },
+  {
+    "sha256": "CAE96CEF89EBEA3531221F4AE17C23CF8EDF67D00EAE8306D4186AE1BBED4D02",
+    "ruta": "backend/mvnw"
+  },
+  {
+    "sha256": "46EEDB8419BD14FE70D5BB2916D7B6F51806E51B39D5B76A42610384CA929C1C",
+    "ruta": "backend/mvnw.cmd"
+  },
+  {
+    "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7",
+    "ruta": "backend/pom.xml"
+  },
+  {
+    "sha256": "940F7C5E667B9EDA6D43F6078A0C8459D9E5F3E853435FEF7D00D04B4BB290BE",
+    "ruta": "backend/spotbugs-exclusiones.xml"
+  },
+  {
+    "sha256": "54DD095F6E858BDDA3214F8412D2D73DC2316C1A72F489D05C58922DFCBDCBC9",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java"
+  },
+  {
+    "sha256": "B79DCC1ED3F46002C29834FD0017F66428CD193EA7A835EBD7B1AF8F46946C5A",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java"
+  },
+  {
+    "sha256": "C6B987DE3BD0BEA8DC4DF5D00988071B9F563068C3DCB0E9E3923FBF4E3E76EE",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java"
+  },
+  {
+    "sha256": "175A4F446F178E5FAC16657D45331D25736A666E6E07AC8CCE721D0A349EAE24",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java"
+  },
+  {
+    "sha256": "8463B49DBF0B8EC89291C08CB53969F4F2155AB7620446F6F1E348B3BC3CD30E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.java"
+  },
+  {
+    "sha256": "CB5E7EDD61FFFFB715AABD399D80CF362D00860B5A9BA7DA161BF9DFB88726C8",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/Contrasenas.java"
+  },
+  {
+    "sha256": "D833396EE30052849E684B7157484158064B8E90402086F2345E8C347408BCFF",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.java"
+  },
+  {
+    "sha256": "E488E9E70D16DAF7C8DEBE8FAECB89A964A7F304205B836247082C3CF3703DE3",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.java"
+  },
+  {
+    "sha256": "E39B9DDFB3BB451ABA45703CE17FC2A2B047534CC47F142D8A22C9F6B8AFBB81",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.java"
+  },
+  {
+    "sha256": "B85CBC7AB03E37658F530E56F6177983F014AE3727F496E5CC2FD76B3FD5C3DE",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.java"
+  },
+  {
+    "sha256": "B7E17F33B2FF64AA605315A6323625BAA6F1EBA2F2548706047D254779D70FC4",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.java"
+  },
+  {
+    "sha256": "117D4483BB2A6C2C29AC163CCC5F9A3EDFBE93C369A3B54E6FEA263C1D8BF108",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ClavesRsa.java"
+  },
+  {
+    "sha256": "8344DB7E30CCBB93FC63DCF903FAF0308E35526C2E0E309EA40CFA5BE0A77E00",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.java"
+  },
+  {
+    "sha256": "EF33346BA8BB71137B54D008E178611D1C94AAF1E9D469369A7A338B1B2E27CB",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.java"
+  },
+  {
+    "sha256": "F292BEA76F3031B906C171BFAFE9DE4339D14B86FDD8E99D49503A83F14CBEC6",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java"
+  },
+  {
+    "sha256": "0421EEAA594A555B4D028FBA52B4A34321CBBF27A19625F8DAA969D43CE78896",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Correo.java"
+  },
+  {
+    "sha256": "3E60F8D2EE616828FB6B61419FB341A71F024CA71E54938E1064E9130F9D182C",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/IntentosAcceso.java"
+  },
+  {
+    "sha256": "BFCB1C27A8F7A91C61FD90D80524DA70B17DFD170F2265D1957AEA48E93BFA60",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Rol.java"
+  },
+  {
+    "sha256": "97D1AA9B07A2E8E22610C9FA54E3D3210AE81EAD72749E9118B23D1EF09BABA7",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/SesionAcceso.java"
+  },
+  {
+    "sha256": "3BF220E73A1A3853B7C1CA7CD6DF538EAE75ADBA06806BB2CF32033639FDB536",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/TokenRefresco.java"
+  },
+  {
+    "sha256": "A8FD43EA4196C327DCC7EBCAF696AD98EB99E1070A29F422F8130E92468F81A0",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Usuario.java"
+  },
+  {
+    "sha256": "50DCE39B8AE2D28A9C9BE77D9909BD79A67D3A5FCAE12ACCF42E112684B8E1F4",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/UsuarioPublico.java"
+  },
+  {
+    "sha256": "75DAC5644971CF89DA9EE62C698BFCFAED5597ECA46018C93F8E032E735D75A0",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java"
+  },
+  {
+    "sha256": "D1C3A2484A34BB0313952BC02A09FD4FE16E16A91C1FB35D6D3455AAB68FD96E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java"
+  },
+  {
+    "sha256": "65CC529B0D0665A74307482096F1CAD255D02365D801B580DDF7C36E51145040",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorSupervisores.java"
+  },
+  {
+    "sha256": "B394CFB9DCEF14DFE9B2990532DF72AACA56B2892ABF39D2E8582B963B7BDDC9",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/CookiesIdentidad.java"
+  },
+  {
+    "sha256": "379C49B88C1FB8DF8F58C82888A868546214D54FB696ECF9BBAF2B4B8AA0E632",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java"
+  },
+  {
+    "sha256": "EE6D0D3BDCA67CF550D80FEEC7C7B1152B2E37F3B3A93F84FF7DD95B09824345",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.java"
+  },
+  {
+    "sha256": "2EA28E52A346322452311EE97C6313C6CE2A03D81D945C143FDA4F30C3BF4C80",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/AutorizacionOperaciones.java"
+  },
+  {
+    "sha256": "369B23E5A5293F111CB6A36DF7B0042E0384EAADDB5BC8715310254DB36F4C84",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones.java"
+  },
+  {
+    "sha256": "4A35CC47851E631A46CD79E1597D9BF0261E0D34AE60A1DEB995448769C07156",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones.java"
+  },
+  {
+    "sha256": "30F651E51D2B5DD604E6EF3136FA9F2EE9457184F32B9F5369C7CE84C5D3EBC8",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/ErrorOperacion.java"
+  },
+  {
+    "sha256": "CFE1B96FDC0F22FEFD64B8CD70B9A41A42F53C24F441FA8DFC50950CA73FEF8E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/EstadoOperacion.java"
+  },
+  {
+    "sha256": "067C209E924F58ABA909C229C41A1B950959F1D4C3B7645748B1903AB4661DD4",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/HuellaOperacion.java"
+  },
+  {
+    "sha256": "0389C66FEBC0AB6C0968373DFC9CDEC6FAFFE09493EF923A19175C266965F900",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/PeticionOperacion.java"
+  },
+  {
+    "sha256": "ECDBA0971630BA6C97431E009B090B29F109BF44B3EAD061024CF6E2B1A4849E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/dominio/TipoOperacion.java"
+  },
+  {
+    "sha256": "BB944FC3BF1D031123A4A4DE812A15D28C7028CF9093CCE5A7895F85A983CFAD",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/http/ControladorOperaciones.java"
+  },
+  {
+    "sha256": "4645F28307B2CAA4B3F4B45B77EBFF114920C27BCBDC0C6DB5E8D43A23DE5F33",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc.java"
+  },
+  {
+    "sha256": "94B13B403DFB10BF7213174695041D02FACA3E0B0C9C66CAB71CAA8A2CC5A8BE",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/RepositorioProveedores.java"
+  },
+  {
+    "sha256": "8BA2BD0F0AC87F81CED713F84CF0104568AF96F81E00DD681DE3072D3020B34A",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.java"
+  },
+  {
+    "sha256": "847EDE23D78934F78103EFB3B43D6C64D36D70AAAC7DC862CC9A6145DFD00176",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ActorProveedor.java"
+  },
+  {
+    "sha256": "F58EFA6539268281EDD069FD6BD443E75B77FBF5CC14C8210B3B682A439A7FB9",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores.java"
+  },
+  {
+    "sha256": "44341B97267CD2EBC93743D6761C29460D34F9828D84732CDD71FF2FFC6E3FC3",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/DatosProveedor.java"
+  },
+  {
+    "sha256": "9A0261C67DFE7BE5CCA51DB2D0A118AEC38F2EBA583D7A94753936280F6DAD9D",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ErrorProveedor.java"
+  },
+  {
+    "sha256": "989056257184F9CE39E65747A61175C5C38E8B1D053749CE7CEA19E841E9D16B",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/PaginaProveedores.java"
+  },
+  {
+    "sha256": "DD155784A12D23E9DC4CE0533FEAADEED869D9F6D3EB4B9BA5E6BDEF1C06A3AC",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/Proveedor.java"
+  },
+  {
+    "sha256": "57DE329D4AE6BFCBE3FABBEC6E4B5D7B21D182346F55C581294EAC5B8EEF8130",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/TipoProveedor.java"
+  },
+  {
+    "sha256": "8E0CBE3D4976901C38A245C632160413506F97C79CA0B6130BEC00BF37800FA8",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "sha256": "3A559D5775169129D86A525440185085F36A2FE087844926DEE4BC164FD4FEB9",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/EntradaProveedor.java"
+  },
+  {
+    "sha256": "D9701C54DD26C542797305C51D49750F216B737A7A9F80C2F917DD57B91AF288",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/FiltrosProveedores.java"
+  },
+  {
+    "sha256": "D177926B2D807DD1E936FD33662AC0D08A9319D8AFC74F51A0816E912CB9786F",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ProveedorPublico.java"
+  },
+  {
+    "sha256": "606FC6606D87A8A325B821B0C794CFA3D62D11D3DEDD50910E0E6205452FFAF8",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc.java"
+  },
+  {
+    "sha256": "BF179A37E19DD8795EA0BC41B744A230A96E2039F78B30952F1CFAD760A935BD",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java"
+  },
+  {
+    "sha256": "88A34A835D3410219FC90DBBAAD804F35DDE2DA1DCBC46FE1E0CA820D429534D",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java"
+  },
+  {
+    "sha256": "0BBB21AE877166B4CA76CD8F8DB1A7457839F054C404453323A16441629FFA0D",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java"
+  },
+  {
+    "sha256": "4EFB26E3DEE680AC5CC5EA03273D26234503D44648EA056C1534BA801419BFBD",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java"
+  },
+  {
+    "sha256": "EEF2FFE1133421D46019D2E6250072C2A053874F749AEA69D40E0E23BF91A772",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java"
+  },
+  {
+    "sha256": "0AA89BFC24274091FE089DE09CAC6F54D5534E7A9E130050ECBBAC4189EE3E7B",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java"
+  },
+  {
+    "sha256": "D081FC81C96EAFAD7C783BA1C751B1F0438561FA87EDE2502C017C7D84ED36C6",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/RepositorioSolicitudes.java"
+  },
+  {
+    "sha256": "D9A29609C8B9AE69591D0DEF65C5072C2A0604EAF138A3CF1734C2259CF1DBA3",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.java"
+  },
+  {
+    "sha256": "52CB84E8F96D7E588674932CC2B2AA9B8D0DF2EA61FEBA9D7412915FAF89B94D",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ActorSolicitud.java"
+  },
+  {
+    "sha256": "8871E9D201F9AEF88B759B7768DA6F93BEDC81178ABA55456C91F6DBC9897888",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Concepto.java"
+  },
+  {
+    "sha256": "03DCA1E512B1E8CAF2FD4881D3C58C02C5B736FCE7EE2DE1A93CD6E6A1FDBCB1",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes.java"
+  },
+  {
+    "sha256": "EDE6DC4718F57779D60EE9F099E2B7E975409128193772C8C98F1DB01B98DA24",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/DatosBorrador.java"
+  },
+  {
+    "sha256": "F7FFDD2DC7D79F53445DF07C99CBD8D387E18BED22C7CDC281803F7E1C35F6B8",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/DatosDecision.java"
+  },
+  {
+    "sha256": "EFF9E841CE54860115616291E3FA27AB714CC98C4E5FBD273E35E1CD337E90CF",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/DecisionSolicitud.java"
+  },
+  {
+    "sha256": "A0C3A25591CB8A1EB728D5037FC36D5230DC4D74F67E72A25ADAF34DCB1839E2",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud.java"
+  },
+  {
+    "sha256": "01DEC3D17043ACE9E6C1FBE27267455A83E19DB0B7D744A6C4CC2D0AA8D4051E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Pagina.java"
+  },
+  {
+    "sha256": "B72D1A0C6B121FD45EA88D6EA350825514EBD3DD7C0744CE1DDBF078867B70E1",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ResultadoDecision.java"
+  },
+  {
+    "sha256": "4276C4F12D6714691C5B3C39F77654141642873F8EB486B19EC8EB384C41E27E",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/ResultadoPresentacion.java"
+  },
+  {
+    "sha256": "3D4050212DD8721B4B9FF737F2FAC1C1E3DE67D1241DBB8415152975ACD21040",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/dominio/Solicitud.java"
+  },
+  {
+    "sha256": "6846D816022EF466CDD308AFD51277862DE6264E1F4695BC5410D5218400D4FE",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "sha256": "538194FBAB7A2C57D380002821868AE711B4A9E63C2CB14A9711F535A24C1889",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/DetalleSolicitud.java"
+  },
+  {
+    "sha256": "AADF42EF3A41CFF19A760C0AAA7D4FF29C56EE6F554D107F83B4D6A9879416EA",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/EntradaDecision.java"
+  },
+  {
+    "sha256": "90A6DAAEC1DACE74E8FA2651896DD0D5D5CE0FD369C68ACB4E2FFB4DBEFD48AB",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/EntradaSolicitud.java"
+  },
+  {
+    "sha256": "6D8C4A0846F2D94EF8207D4C5F79A6022618B9ACC9176FE8D7351C8287F45A27",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/FiltrosSolicitudes.java"
+  },
+  {
+    "sha256": "B00AD42313351C4816FE3125C92327FEF6B36063A8521F5F7B473174FBEA535F",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ResumenSolicitud.java"
+  },
+  {
+    "sha256": "9D5DA999BC7131C958742D1D1F57070931AEB247847E1F6673E9549D42A52056",
+    "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc.java"
+  },
+  {
+    "sha256": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F",
+    "ruta": "backend/src/main/resources/application.yaml"
+  },
+  {
+    "sha256": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2",
+    "ruta": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql"
+  },
+  {
+    "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3",
+    "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql"
+  },
+  {
+    "sha256": "2082F182E01E5923BECE5BCF34F3C214C3AD4957FBB388DDDBD04FD3C519E8FD",
+    "ruta": "backend/src/main/resources/db/migration/V3__proveedores.sql"
+  },
+  {
+    "sha256": "EDAACDEF093739757CC25172D9E350729BDFCEB7F9795FD21D227C547F0BCD50",
+    "ruta": "backend/src/main/resources/db/migration/V4__solicitudes_conceptos_importes.sql"
+  },
+  {
+    "sha256": "9F79968E2504E0B1A8C24FCCF2CACCDBDFF2DC87DBB7F1BF6442379397AD27FE",
+    "ruta": "backend/src/main/resources/db/migration/V5__aprobaciones_y_evento_minimo.sql"
+  },
+  {
+    "sha256": "8CDB4B35515B6E3E5AABF310266CBCBAF9C623CF201EA45DC0702BFC8707959B",
+    "ruta": "backend/src/main/resources/db/migration/V6__idempotencia_transversal.sql"
+  },
+  {
+    "sha256": "085908D04416DB2809C9EBE0575089DB5F462EC07DAF0B3CED382C12CEB6CCFB",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacionTest.java"
+  },
+  {
+    "sha256": "DFF488191DAEC6670AA187C8FF016BF6277C930D0D3B6D4536E1AF7485F3D934",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/configuracion/JwtYClavesTest.java"
+  },
+  {
+    "sha256": "3F2D0FCB21D4561364531B7C43A24FB9D064459E0187DF21560AA965D1E99880",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/dominio/IdentidadDominioTest.java"
+  },
+  {
+    "sha256": "FBD7E57D72B3998AC80FF97C374F6E6EC768D8A8EF7795E249A31B5E5DDF2D06",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/http/CookiesIdentidadTest.java"
+  },
+  {
+    "sha256": "E9DE835AE987C7B7F5E65457D5A84F1EB8C1AA4B1D39940B17ABC0FAEA7E3771",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java"
+  },
+  {
+    "sha256": "F61DBC5E0D0DBCAB9E97F36A89AC68EDD046E1FB5BBF6258EB1F962715F41B22",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/PerfilesIdentidadIT.java"
+  },
+  {
+    "sha256": "92913D5225A22B5F11ACE79AB632B33950E80965A6C0FC4EECE7395CCE21AC42",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java"
+  },
+  {
+    "sha256": "D17780CCDFB88FCCDD8C78581BFD1CEC8155650875E107B168D974682FC90035",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/aplicacion/ServicioOperacionesTest.java"
+  },
+  {
+    "sha256": "7D73B7383631477E43C3489A9F3415700D821EB0A709CA8D2681FA39313BE127",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/dominio/OperacionesDominioTest.java"
+  },
+  {
+    "sha256": "68F6E628463E4D8F7818B7FC3E976384A4B32D9DCA8F92FC39BE6315B048AA77",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/integracion/OperacionesIT.java"
+  },
+  {
+    "sha256": "B8A8CB4F06B707FA5DA4228F6CAFE3B9804ACBC24CC2324F5D52F43CC29153D7",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/dominio/ProveedorDominioTest.java"
+  },
+  {
+    "sha256": "5BD8F4142D39FF8BB0458792983CCA1E29458613261602D8AC049624342851C2",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/http/ErroresProveedorTest.java"
+  },
+  {
+    "sha256": "F048039E58361771464466CB28E87EAAA287DE90CCC36141F783FA29054E35FC",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/integracion/ProveedoresIT.java"
+  },
+  {
+    "sha256": "6BFE58CCA213A3B679A5768F3DA7A8ED3908BE449B1E0E673DF1A7A814CBD855",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/aplicacion/ServicioSaludTest.java"
+  },
+  {
+    "sha256": "79C5C1CF0161922D5EF2D6A7ACD391B5F9FDAA98058A537096D029A0A2325EDF",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java"
+  },
+  {
+    "sha256": "C44690BCF1389ED3E1C5F91EE08537C98D128FF8145342B5919DD9EB14EE1C2D",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgresTest.java"
+  },
+  {
+    "sha256": "E6D96011AA451A01F8957DE7983A3AB641196EFE6232A225FC7B36AC013E171B",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/dominio/AprobacionesDominioTest.java"
+  },
+  {
+    "sha256": "59AF93E5625E106ACA45436B78031E71FC2291C9293EA2C0E04A41DB6EB4296A",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/dominio/SolicitudesDominioTest.java"
+  },
+  {
+    "sha256": "D88E25D3AF040197301F4123BDC3E7EC3FAD3119B0F30E268242EF1F4DA514A4",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/AprobacionesIT.java"
+  },
+  {
+    "sha256": "4D1CEBBAC2B96B2402EB560B1D2AB7EEAF8EE73F5BE560BB0EFD04D6C3F9405E",
+    "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/SolicitudesIT.java"
+  },
+  {
+    "sha256": "ADB96B6A3EC68563BEE777303F64C79257DA8A53B606FB77FFE837B7A5B6F786",
+    "ruta": "backend/src/test/resources/db/invalida/V999__fallo_intencionado.sql"
+  },
+  {
+    "sha256": "C933E9661A90BB006A6E858B921134720B66BDC393921C405CFBC41B63F1BEAA",
+    "ruta": "backend/src/test/resources/postgres-inicial.sql"
+  }
+]

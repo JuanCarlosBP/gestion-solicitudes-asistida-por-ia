@@ -1,0 +1,581 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:apply (default-cli) @ gestion-solicitudes ---
+[INFO] clean file: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\test\java\es\gestionsolicitudes\operaciones\dominio\OperacionesDominioTest.java
+[INFO] Spotless.Java is keeping 96 files clean - 1 were changed to be clean, 0 were already clean, 95 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default) @ gestion-solicitudes ---
+[INFO] Spotless.Java is keeping 96 files clean - 0 needs changes to be clean, 0 were already clean, 96 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gestion-solicitudes ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 6 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gestion-solicitudes ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gestion-solicitudes ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s -- in es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ gestion-solicitudes ---
+[INFO] Building jar: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ gestion-solicitudes ---
+[INFO] Replacing main artifact C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\gestion-solicitudes-0.0.1.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.integracion.BaseVerificableIT
+12:38:08.670 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+12:38:08.674 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+12:38:08.705 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+12:38:08.876 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+12:38:09.192 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+12:38:09.193 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+12:38:09.208 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.1.3
+  API Version: 1.52
+  Operating System: Docker Desktop
+  Total Memory: 31775 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+12:38:09.302 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+12:38:09.385 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+12:38:09.492 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: b98b4303c9845e59c3a90ec8c8279800c45fc86732e667d219d6a50a9a9ab910
+12:38:09.796 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.4933946S
+12:38:09.803 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+12:38:09.803 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+12:38:09.804 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+12:38:09.836 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+12:38:09.873 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 8a4c4fd9ebc1abb9a3e7a74d0df988c4c264410eabc6ebf07ec5c5b547d0bc84
+12:38:10.803 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.9678729S
+12:38:10.804 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:62376/gestion?loggerLevel=OFF)
+12:38:10.812 [main] INFO org.testcontainers.ext.ScriptUtils -- Executing database script from postgres-inicial.sql
+12:38:10.938 [main] INFO org.testcontainers.ext.ScriptUtils -- Executed database script from postgres-inicial.sql in 126 ms.
+2026-10-15T12:38:11.337+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 70584 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:38:11.338+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:38:12.995+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:38:13.004+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:38:13.005+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:38:13.089+02:00  INFO 70584 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1722 ms
+2026-10-15T12:38:14.515+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:62376/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:38:14.550+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "gestion"."flyway_schema_history" does not exist yet
+2026-10-15T12:38:14.554+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.017s)
+2026-10-15T12:38:14.563+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "gestion"."flyway_schema_history" ...
+2026-10-15T12:38:14.606+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": << Empty Schema >>
+2026-10-15T12:38:14.616+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "1 - preparar esquema tecnico"
+2026-10-15T12:38:14.647+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "2 - identidad y acceso"
+2026-10-15T12:38:14.679+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "3 - proveedores"
+2026-10-15T12:38:14.702+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "4 - solicitudes conceptos importes"
+2026-10-15T12:38:14.734+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "5 - aprobaciones y evento minimo"
+2026-10-15T12:38:14.758+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "6 - idempotencia transversal"
+2026-10-15T12:38:14.776+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "999 - fallo intencionado"
+2026-10-15T12:38:14.788+02:00 ERROR 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migration of schema "gestion" to version "999 - fallo intencionado" failed! Changes successfully rolled back.
+2026-10-15T12:38:14.793+02:00  WARN 70584 --- [gestion-solicitudes] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V999__fallo_intencionado.sql
+-----------------------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ERROR: syntax error at or near "ESTA"
+  Position: 94
+Location   : db/invalida/V999__fallo_intencionado.sql (C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\test-classes\db\invalida\V999__fallo_intencionado.sql)
+Line       : 2
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+2026-10-15T12:38:14.798+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-15T12:38:14.806+02:00  INFO 70584 --- [gestion-solicitudes] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-15T12:38:14.816+02:00 ERROR 70584 --- [gestion-solicitudes] [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Failed to execute script V999__fallo_intencionado.sql
+-----------------------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ERROR: syntax error at or near "ESTA"
+  Position: 94
+Location   : db/invalida/V999__fallo_intencionado.sql (C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\test-classes\db\invalida\V999__fallo_intencionado.sql)
+Line       : 2
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.8.jar:4.0.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.8.jar:4.0.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.8.jar:4.0.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.8.jar:4.0.8]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:154) ~[spring-boot-4.0.8.jar:4.0.8]
+	at es.gestionsolicitudes.integracion.BaseVerificableIT.arrancar(BaseVerificableIT.java:63) ~[test-classes/:na]
+	at es.gestionsolicitudes.integracion.BaseVerificableIT.lambda$unaMigracionInvalidaImpideElArranqueSinAlterarOtraBase$4(BaseVerificableIT.java:177) ~[test-classes/:na]
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:66) ~[assertj-core-3.27.7.jar:na]
+	at org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:908) ~[assertj-core-3.27.7.jar:na]
+	at org.assertj.core.api.Assertions.catchThrowable(Assertions.java:1476) ~[assertj-core-3.27.7.jar:na]
+	at org.assertj.core.api.Assertions.assertThatThrownBy(Assertions.java:1319) ~[assertj-core-3.27.7.jar:na]
+	at es.gestionsolicitudes.integracion.BaseVerificableIT.unaMigracionInvalidaImpideElArranqueSinAlterarOtraBase(BaseVerificableIT.java:174) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+Caused by: org.flywaydb.core.internal.exception.FlywayMigrateException: Failed to execute script V999__fallo_intencionado.sql
+-----------------------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ERROR: syntax error at or near "ESTA"
+  Position: 94
+Location   : db/invalida/V999__fallo_intencionado.sql (C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\test-classes\db\invalida\V999__fallo_intencionado.sql)
+Line       : 2
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:399) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:283) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:282) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:77) ~[flyway-database-postgresql-11.14.1.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.lambda$execute$0(PostgreSQLAdvisoryLockTemplate.java:60) ~[flyway-database-postgresql-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:59) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:60) ~[flyway-database-postgresql-11.14.1.jar:na]
+	at org.flywaydb.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:105) ~[flyway-database-postgresql-11.14.1.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:164) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:153) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:104) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.lambda$migrate$3(Flyway.java:245) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:240) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.8.jar:4.0.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.9.jar:7.0.9]
+	... 104 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Failed to execute script V999__fallo_intencionado.sql
+-----------------------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ERROR: syntax error at or near "ESTA"
+  Position: 94
+Location   : db/invalida/V999__fallo_intencionado.sql (C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target\test-classes\db\invalida\V999__fallo_intencionado.sql)
+Line       : 2
+Statement  : Run Flyway with -X option to see the actual statement causing the problem
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:255) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:216) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:136) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:75) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:66) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:31) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:65) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:391) ~[flyway-core-11.14.1.jar:na]
+	... 123 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "ESTA"
+  Position: 94
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:215) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:88) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:211) ~[flyway-core-11.14.1.jar:na]
+	... 129 common frames omitted
+
+2026-10-15T12:38:14.848+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 70584 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:38:14.848+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:38:15.044+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:38:15.045+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:38:15.045+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:38:15.105+02:00  INFO 70584 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 256 ms
+2026-10-15T12:38:15.352+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:62376/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:38:15.368+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.008s)
+2026-10-15T12:38:15.384+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:38:15.386+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:38:15.426+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62383 (http) with context path '/'
+2026-10-15T12:38:15.430+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.6 seconds (process running for 7.35)
+2026-10-15T12:38:15.431+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:38:15.431+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:38:15.478+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:38:15.480+02:00  INFO 70584 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-15T12:38:15.868+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+2026-10-15T12:38:15.931+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: f1584e6c8aa23acb7688f29af28c9a7febc3199d66021a67f81b7f55a0cb83ba
+2026-10-15T12:38:16.851+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.9832324S
+2026-10-15T12:38:16.853+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container is started (JDBC URL: jdbc:postgresql://localhost:62389/gestion?loggerLevel=OFF)
+2026-10-15T12:38:16.854+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executing database script from postgres-inicial.sql
+2026-10-15T12:38:16.883+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executed database script from postgres-inicial.sql in 28 ms.
+2026-10-15T12:38:16.898+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 70584 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:38:16.898+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:38:17.049+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:38:17.050+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:38:17.050+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:38:17.095+02:00  INFO 70584 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 196 ms
+2026-10-15T12:38:17.308+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:62389/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:38:17.320+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "gestion"."flyway_schema_history" does not exist yet
+2026-10-15T12:38:17.321+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.005s)
+2026-10-15T12:38:17.327+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "gestion"."flyway_schema_history" ...
+2026-10-15T12:38:17.346+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": << Empty Schema >>
+2026-10-15T12:38:17.349+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "1 - preparar esquema tecnico"
+2026-10-15T12:38:17.362+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "2 - identidad y acceso"
+2026-10-15T12:38:17.387+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "3 - proveedores"
+2026-10-15T12:38:17.406+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "4 - solicitudes conceptos importes"
+2026-10-15T12:38:17.434+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "5 - aprobaciones y evento minimo"
+2026-10-15T12:38:17.453+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "6 - idempotencia transversal"
+2026-10-15T12:38:17.469+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 6 migrations to schema "gestion", now at version v6 (execution time 00:00.065s)
+2026-10-15T12:38:17.482+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62393 (http) with context path '/'
+2026-10-15T12:38:17.483+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.599 seconds (process running for 9.404)
+2026-10-15T12:38:17.484+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:38:17.485+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:38:17.534+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-3-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:38:17.534+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:38:17.535+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-15T12:38:18.101+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-3-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 408 ms
+2026-10-15T12:38:18.221+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:38:18.222+02:00  INFO 70584 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-15T12:38:18.242+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 70584 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:38:18.242+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:38:18.397+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:38:18.398+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:38:18.398+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:38:18.454+02:00  INFO 70584 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 211 ms
+2026-10-15T12:38:18.672+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:62389/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:38:18.686+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:38:18.700+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:38:18.701+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:38:18.715+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62404 (http) with context path '/'
+2026-10-15T12:38:18.717+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.487 seconds (process running for 10.638)
+2026-10-15T12:38:18.717+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:38:18.718+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:38:18.773+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.007s)
+2026-10-15T12:38:18.786+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": 6
+2026-10-15T12:38:18.786+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Schema "gestion" is up to date. No migration necessary.
+2026-10-15T12:38:18.791+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-4-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:38:18.791+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:38:18.791+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-15T12:38:18.809+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:38:18.810+02:00  INFO 70584 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-15T12:38:19.180+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+2026-10-15T12:38:19.246+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: e0376888d8cad4f437899cc11f0da0c4d4cadb53d35942183f60870459d83614
+2026-10-15T12:38:20.115+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.9346961S
+2026-10-15T12:38:20.115+02:00  INFO 70584 --- [gestion-solicitudes] [           main] t.p.11-bookworm@sha256:364557...         : Container is started (JDBC URL: jdbc:postgresql://localhost:62415/gestion?loggerLevel=OFF)
+2026-10-15T12:38:20.116+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executing database script from postgres-inicial.sql
+2026-10-15T12:38:20.144+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.testcontainers.ext.ScriptUtils       : Executed database script from postgres-inicial.sql in 27 ms.
+2026-10-15T12:38:20.157+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v3.5.6 using Java 21.0.12.1 with PID 70584 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-15T12:38:20.157+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : The following 1 profile is active: "test"
+2026-10-15T12:38:20.278+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-15T12:38:20.279+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-15T12:38:20.279+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.25]
+2026-10-15T12:38:20.331+02:00  INFO 70584 --- [gestion-solicitudes] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 173 ms
+2026-10-15T12:38:20.495+02:00  INFO 70584 --- [gestion-solicitudes] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:62415/gestion?loggerLevel=OFF (PostgreSQL 17.11)
+2026-10-15T12:38:20.511+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "gestion"."flyway_schema_history" does not exist yet
+2026-10-15T12:38:20.511+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.006s)
+2026-10-15T12:38:20.518+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "gestion"."flyway_schema_history" ...
+2026-10-15T12:38:20.538+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "gestion": << Empty Schema >>
+2026-10-15T12:38:20.541+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "1 - preparar esquema tecnico"
+2026-10-15T12:38:20.555+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "2 - identidad y acceso"
+2026-10-15T12:38:20.581+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "3 - proveedores"
+2026-10-15T12:38:20.599+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "4 - solicitudes conceptos importes"
+2026-10-15T12:38:20.627+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "5 - aprobaciones y evento minimo"
+2026-10-15T12:38:20.650+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "gestion" to version "6 - idempotencia transversal"
+2026-10-15T12:38:20.667+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 6 migrations to schema "gestion", now at version v6 (execution time 00:00.068s)
+2026-10-15T12:38:20.680+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62420 (http) with context path '/'
+2026-10-15T12:38:20.681+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.536 seconds (process running for 12.602)
+2026-10-15T12:38:20.681+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-15T12:38:20.681+02:00  WARN 70584 --- [gestion-solicitudes] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-15T12:38:20.684+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-5-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-15T12:38:20.684+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-15T12:38:20.684+02:00  INFO 70584 --- [gestion-solicitudes] [1-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-15T12:38:21.034+02:00  WARN 70584 --- [gestion-solicitudes] [1-auto-5-exec-2] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-3 - Connection org.postgresql.jdbc.PgConnection@9cd8626 marked as broken because of SQLSTATE(08006), ErrorCode(0)
+
+org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:474) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:140) ~[postgresql-42.7.13.jar:42.7.13]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at es.gestionsolicitudes.salud.persistencia.ComprobacionPostgres.disponible(ComprobacionPostgres.java:21) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.9.jar:7.0.9]
+	at es.gestionsolicitudes.salud.persistencia.ComprobacionPostgres$$SpringCGLIB$$0.disponible(<generated>) ~[classes/:na]
+	at es.gestionsolicitudes.salud.aplicacion.ServicioSalud.comprobar(ServicioSalud.java:14) ~[classes/:na]
+	at es.gestionsolicitudes.salud.http.ControladorSalud.consultar(ControladorSalud.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.25.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.25.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.authentication.AuthenticationFilter.doFilterInternal(AuthenticationFilter.java:194) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:174) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.oauth2.server.resource.web.OAuth2ProtectedResourceMetadataFilter.doFilterInternal(OAuth2ProtectedResourceMetadataFilter.java:97) ~[spring-security-oauth2-resource-server-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.7.jar:7.0.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2201) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.25.jar:11.0.25]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.SocketException: Se ha anulado una conexi�n establecida por el software en su equipo host.
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:47) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:274) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099) ~[na:na]
+	at org.postgresql.core.VisibleBufferedInputStream.readMore(VisibleBufferedInputStream.java:192) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:159) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.ensureBytes(VisibleBufferedInputStream.java:144) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.VisibleBufferedInputStream.read(VisibleBufferedInputStream.java:76) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.PGStream.receiveChar(PGStream.java:480) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2383) ~[postgresql-42.7.13.jar:42.7.13]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446) ~[postgresql-42.7.13.jar:42.7.13]
+	... 111 common frames omitted
+
+2026-10-15T12:38:21.041+02:00  INFO 70584 --- [gestion-solicitudes] [           main] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-15T12:38:21.042+02:00  INFO 70584 --- [gestion-solicitudes] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.51 s -- in es.gestionsolicitudes.integracion.BaseVerificableIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ gestion-solicitudes ---
+[INFO] 
+[INFO] >>> spotbugs:4.10.5.0:check (default) > :spotbugs @ gestion-solicitudes >>>
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:spotbugs (spotbugs) @ gestion-solicitudes ---
+[INFO] Done SpotBugs Analysis....
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.10.5.0:check (default) < :spotbugs @ gestion-solicitudes <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.10.5.0:check (default) @ gestion-solicitudes ---
+[INFO] BugInstance size is 3
+[INFO] Error size is 0
+[INFO] Total bugs: 3
+[ERROR] Medium: new es.gestionsolicitudes.operaciones.aplicacion.AutorizacionOperaciones(RepositorioOperaciones, RepositorioSolicitudes, RepositorioProveedores) may expose internal representation by storing an externally mutable object into AutorizacionOperaciones.proveedores [es.gestionsolicitudes.operaciones.aplicacion.AutorizacionOperaciones] At AutorizacionOperaciones.java:[line 23] EI_EXPOSE_REP2
+[ERROR] Medium: Do not catch NullPointerException like in es.gestionsolicitudes.operaciones.dominio.HuellaOperacion.uuid(String) [es.gestionsolicitudes.operaciones.dominio.HuellaOperacion] At HuellaOperacion.java:[line 59] DCN_NULLPOINTER_EXCEPTION
+[ERROR] Medium: new es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores(RepositorioProveedores, Clock, PlatformTransactionManager, ServicioOperaciones) may expose internal representation by storing an externally mutable object into ServicioProveedores.repositorio [es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores] At ServicioProveedores.java:[line 33] EI_EXPOSE_REP2
+[INFO] 
+
+
+To see bug detail using the Spotbugs GUI, use the following command "mvn spotbugs:gui"
+
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.689 s
+[INFO] Finished at: 2026-10-15T12:38:27+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.spotbugs:spotbugs-maven-plugin:4.10.5.0:check (default) on project gestion-solicitudes: failed with 3 bugs and 0 errors -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -161,6 +161,8 @@ export function mensajeErrorSolicitud(error: unknown): string {
   const fallo = error as { status?: number; error?: { error?: string } } | null;
   if (fallo?.status === 409) {
     switch (fallo.error?.error) {
+      case 'OPERACION_YA_COMPLETADA':
+        return 'La operación ya está confirmada. Abre el resultado desde Operaciones seguras para consultar el detalle.';
       case 'VERSION_OBSOLETA':
         return 'La solicitud ha cambiado en otra sesión. Tus cambios siguen aquí; recarga la versión actual antes de continuar.';
       case 'SOLICITUD_NO_EDITABLE':
@@ -172,7 +174,7 @@ export function mensajeErrorSolicitud(error: unknown): string {
       case 'SUPERVISOR_INVALIDO':
         return 'El supervisor ya no está disponible. Selecciona otro supervisor antes de presentar.';
       case 'CLAVE_IDEMPOTENCIA_REUTILIZADA':
-        return 'Esta confirmación no corresponde a la operación actual. Recarga la solicitud antes de continuar.';
+        return 'Esta entrada es distinta de la operación confirmada. No se ha aplicado. Consulta el resultado antes de continuar.';
     }
   }
   if (fallo?.status === 404) return 'La solicitud no existe o no está disponible para tu cuenta.';
@@ -182,14 +184,19 @@ export function mensajeErrorSolicitud(error: unknown): string {
   return 'No se ha podido completar la operación. Inténtalo de nuevo.';
 }
 export function esConflictoSolicitud(error: unknown): boolean {
-  const fallo = error as { status?: number; error?: { error?: string } } | null;
+  const fallo = error as {
+    status?: number;
+    error?: { error?: string; operacionConfirmada?: boolean };
+  } | null;
   return (
-    fallo?.status === 409 &&
-    [
-      'VERSION_OBSOLETA',
-      'SOLICITUD_NO_EDITABLE',
-      'SOLICITUD_NO_DECIDIBLE',
-      'CLAVE_IDEMPOTENCIA_REUTILIZADA',
-    ].includes(fallo.error?.error ?? '')
+    fallo?.error?.operacionConfirmada === true ||
+    (fallo?.status === 409 &&
+      [
+        'VERSION_OBSOLETA',
+        'SOLICITUD_NO_EDITABLE',
+        'SOLICITUD_NO_DECIDIBLE',
+        'CLAVE_IDEMPOTENCIA_REUTILIZADA',
+        'OPERACION_YA_COMPLETADA',
+      ].includes(fallo.error?.error ?? ''))
   );
 }

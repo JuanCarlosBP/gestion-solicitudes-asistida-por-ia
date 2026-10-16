@@ -28,6 +28,8 @@ function comprobar(condicion, criterio) {
 
 async function pedir(ruta, { sesion, metodo = 'GET', cuerpo, xsrf = true } = {}) {
   const headers = {};
+  // 006 exige una identidad de intento también para altas y cambios de estado.
+  if (metodo === 'POST' && /^\/api\/proveedores(?:\/|$)/.test(ruta)) headers['Idempotency-Key'] = randomUUID();
   if (sesion?.cookies.size) headers.Cookie = [...sesion.cookies].map(([k, v]) => `${k}=${v}`).join('; ');
   if (sesion?.acceso) headers.Authorization = `Bearer ${sesion.acceso}`;
   if (metodo !== 'GET' && xsrf && sesion?.cookies.has('XSRF-TOKEN')) {

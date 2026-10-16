@@ -1,0 +1,35 @@
+<testsuites id="" name="" tests="12" failures="0" skipped="0" errors="0" time="22.159809">
+<testsuite name="base.spec.ts" timestamp="2026-10-15T11:01:30.179Z" hostname="" tests="5" failures="0" skipped="0" time="2.156" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.368">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.295">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.2">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="1.269">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.024">
+</testcase>
+</testsuite>
+<testsuite name="operaciones.spec.ts" timestamp="2026-10-15T11:01:30.179Z" hostname="" tests="7" failures="0" skipped="0" time="19.353" errors="0">
+<testcase name="CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta" classname="operaciones.spec.ts" time="1.177">
+</testcase>
+<testcase name="CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar" classname="operaciones.spec.ts" time="1.226">
+</testcase>
+<testcase name="CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable" classname="operaciones.spec.ts" time="2.055">
+</testcase>
+<testcase name="CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave" classname="operaciones.spec.ts" time="0.691">
+</testcase>
+<testcase name="CI-05/07: permiso revocado antes de recuperar y replay no concede acceso" classname="operaciones.spec.ts" time="2.266">
+</testcase>
+<testcase name="CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable" classname="operaciones.spec.ts" time="4.575">
+</testcase>
+<testcase name="CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña" classname="operaciones.spec.ts" time="7.363">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\attachments\diagnostico-progreso-4e683d7e9396dc963711e90e2fd70bb1a5ae8544.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

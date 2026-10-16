@@ -1,0 +1,1 @@
+{"fin":"2026-10-15T12:46:45.2532527+02:00","inicio":"2026-10-15T12:46:39.6462470+02:00","argumentos":["test","--","--include=src/app/operaciones/*.spec.ts","--include=src/app/proveedores/proveedores-paginas.spec.ts"],"segundos":5.6043903,"comando":"npm","salida":0}

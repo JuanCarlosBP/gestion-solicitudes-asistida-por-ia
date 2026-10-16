@@ -1,0 +1,32 @@
+param([Parameter(Mandatory)][string]$Nombre,[Parameter(Mandatory)][string]$Programa,[string[]]$Argumentos=@(),[string]$Directorio='.')
+$ErrorActionPreference='Stop'
+$raizProyecto=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+$evidencia=Join-Path $raizProyecto 'qa/evidencias/ag013'
+$env:JAVA_HOME='C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot'
+$env:MAVEN_USER_HOME=Join-Path $raizProyecto 'tmp/maven-user'
+$env:npm_config_cache=Join-Path $raizProyecto 'tmp/npm-cache'
+$env:NG_CLI_ANALYTICS='false'
+$env:PLAYWRIGHT_BROWSERS_PATH=Join-Path $raizProyecto 'tmp/playwright'
+$env:TEMP=Join-Path $raizProyecto ('tmp/ag013/temporales-'+$Nombre)
+$env:TMP=$env:TEMP
+if(-not $env:QA_EVIDENCE_DIR){$env:QA_EVIDENCE_DIR=$evidencia}
+New-Item -ItemType Directory -Path $env:TEMP -Force | Out-Null
+$salida=Join-Path $evidencia ($Nombre+'.txt')
+$inicio=[DateTimeOffset]::Now
+$reloj=[Diagnostics.Stopwatch]::StartNew()
+$registro=Join-Path $evidencia ($Nombre+'-comando.json')
+Set-Location -LiteralPath (Join-Path $raizProyecto $Directorio)
+try {
+    & $Programa @Argumentos *> $salida
+    $codigo=if($null -eq $LASTEXITCODE){0}else{$LASTEXITCODE}
+} catch {
+    $_.ToString() | Add-Content -LiteralPath $salida -Encoding utf8
+    $codigo=1
+}
+$reloj.Stop()
+@{nombre=$Nombre;programa=$Programa;argumentos=$Argumentos;directorio=$Directorio;inicio=$inicio.ToString('o');fin=[DateTimeOffset]::Now.ToString('o');segundos=$reloj.Elapsed.TotalSeconds;salida=$codigo;log=$salida} | ConvertTo-Json -Compress -Depth 4 | Set-Content -LiteralPath $registro -Encoding utf8NoBOM
+Get-Content -LiteralPath $salida -Tail 18
+Write-Output "RESULTADO $Nombre : salida=$codigo; segundos=$($reloj.Elapsed.TotalSeconds); log=$salida"
+exit $codigo
+
+

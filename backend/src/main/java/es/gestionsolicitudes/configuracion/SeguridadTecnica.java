@@ -89,7 +89,8 @@ public class SeguridadTecnica {
                             reglas.requestMatchers(
                                             HttpMethod.GET,
                                             "/api/identidad/yo",
-                                            "/api/identidad/supervisores")
+                                            "/api/identidad/supervisores",
+                                            "/api/operaciones-idempotentes/*")
                                     .authenticated()
                                     .anyRequest()
                                     .denyAll();
@@ -105,7 +106,7 @@ public class SeguridadTecnica {
                                 recurso.jwt(jwt -> jwt.jwtAuthenticationConverter(conversorJwt()))
                                         .authenticationEntryPoint(
                                                 (peticion, respuesta, error) ->
-                                                        error(respuesta, 401, "NO_AUTENTICADO"))
+                                                        errorAutenticacion(respuesta, error))
                                         .accessDeniedHandler(
                                                 (peticion, respuesta, error) ->
                                                         error(
@@ -140,7 +141,7 @@ public class SeguridadTecnica {
                         errores ->
                                 errores.authenticationEntryPoint(
                                                 (peticion, respuesta, error) ->
-                                                        error(respuesta, 401, "NO_AUTENTICADO"))
+                                                        errorAutenticacion(respuesta, error))
                                         .accessDeniedHandler(
                                                 (peticion, respuesta, error) ->
                                                         error(
@@ -180,5 +181,21 @@ public class SeguridadTecnica {
         respuesta.setContentType("application/json");
         respuesta.setCharacterEncoding("UTF-8");
         respuesta.getWriter().write("{\"error\":\"" + codigo + "\"}");
+    }
+
+    private static void errorAutenticacion(HttpServletResponse respuesta, Exception error)
+            throws IOException {
+        for (Throwable causa = error; causa != null; causa = causa.getCause()) {
+            if (causa
+                            instanceof
+                            org.springframework.security.oauth2.jwt.JwtValidationException
+                                    validacion
+                    && validacion.getErrors().stream()
+                            .anyMatch(e -> "dependency_unavailable".equals(e.getErrorCode()))) {
+                error(respuesta, 503, "DEPENDENCIA_NO_DISPONIBLE");
+                return;
+            }
+        }
+        error(respuesta, 401, "NO_AUTENTICADO");
     }
 }

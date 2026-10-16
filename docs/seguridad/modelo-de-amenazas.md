@@ -436,3 +436,20 @@ Las evidencias de QA son ficticias y no se publican tokens ni cuerpos de sesión
 
 Resultados reales, fallos y pendientes en
 [validación 005](../../especificaciones/005-aprobaciones/validacion.md).
+
+## Concurrencia transversal — AG-013
+
+La [validación 006](../../especificaciones/006-concurrencia-idempotencia/validacion.md)
+identifica las comprobaciones ejecutadas y pendientes de cada control.
+
+| Amenaza | Control acotado | Riesgo restante |
+|---|---|---|
+| AM-02/03 | CI-05: identidad, roles vigentes, visibilidad y CSRF preceden al replay; recuperación ajena o revocada oculta con 404. | Conocer una clave no concede acceso; la gestión de usuarios sigue fuera de alcance. |
+| AM-11/12/13 | CI-02/03/04/07: versión, huella canónica, resultado original y una clave por intento entre pestañas. | El descriptor caduca a las 24 horas; no se borra la protección del servidor. |
+| AM-17/18 | CI-05/07/08: recuperación mínima, descriptor sin cuerpo ni credenciales, snapshots tipados para replay. | Retención jurídica y archivo/tombstone se decidirán en 007/008. |
+| AM-19 | CI-09: espera interna acotada a tres segundos; duplicados locales no retienen conexiones. | Veinte peticiones locales no acreditan capacidad productiva ni un SLA de extremo a extremo. |
+| AM-21/22/23 | CI-06/08/09: efecto y resultado atómicos, rollback, V6 conservadora, reinicio y 503 seguro. | EN_PROGRESO depende de la instancia actual; varias réplicas requieren diseño y pruebas adicionales. |
+
+La revisión de carreras incluye respuestas tardías y preservación de conflictos:
+una confirmación recuperada no debe habilitar otra alta ni convertir una entrada
+incompatible en éxito. No se declara mitigada una amenaza global por esta cobertura.

@@ -1,0 +1,1 @@
+{"argumentos":["spotless:apply","verify","-Dtest=OperacionesDominioTest","-Dit.test=OperacionesIT,ProveedoresIT"],"nombre":"operaciones01","segundos":39.4363624,"salida":0,"inicio":"2026-10-15T12:43:50.1245212+02:00","fin":"2026-10-15T12:44:29.5638450+02:00"}

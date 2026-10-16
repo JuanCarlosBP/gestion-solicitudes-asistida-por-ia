@@ -1,6 +1,7 @@
 import { APIRequestContext, expect, Page, request, test } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
 import { join } from 'node:path';
+import { verificarAlmacenamientoOperaciones } from './operaciones-ayudas';
 
 type RolDemo = 'ADMINISTRADOR' | 'SOLICITANTE' | 'SUPERVISOR' | 'AUDITOR';
 const baseURL = process.env['BASE_URL'] ?? 'http://127.0.0.1:18080';
@@ -142,7 +143,10 @@ test('SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales', 
   });
   try {
     const altaProveedor = await admin.api.post('/api/proveedores', {
-      headers: await cabecerasEscritura(admin.api, admin.headers),
+      headers: await cabecerasEscritura(admin.api, {
+        ...admin.headers,
+        'Idempotency-Key': randomUUID(),
+      }),
       data: {
         tipo: 'PROFESIONAL',
         denominacion: `Proveedor E2E ${marca}`,
@@ -294,7 +298,9 @@ test('SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales', 
       };
       resultadoPresentacion = (await enviada.json()) as Record<string, unknown>;
       await expect(page.locator('.estado')).toHaveText('Presentada');
-      await expect(page.getByRole('status')).toContainText('Solicitud presentada.');
+      await expect(page.locator('app-solicitud-detalle').getByRole('status')).toContainText(
+        'Solicitud presentada.',
+      );
       await expect(page.getByRole('link', { name: 'Editar borrador', exact: true })).toHaveCount(0);
       await expect(
         page.getByText('Datos del proveedor conservados al presentar la solicitud.'),
@@ -396,9 +402,7 @@ test('SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales', 
         'true',
       );
       await captura(page, 'alta-error', 360);
-      expect(
-        await page.evaluate(() => localStorage.length === 0 && sessionStorage.length === 0),
-      ).toBe(true);
+      await verificarAlmacenamientoOperaciones(page);
       expect(escrituras).toBeGreaterThanOrEqual(5);
       expect(escriturasSinProteccion).toBe(0);
       await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -421,7 +425,10 @@ test('SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarg
   try {
     const asunto = `Posiciones ficticias ${randomUUID()}`;
     const alta = await sesion.api.post('/api/solicitudes', {
-      headers: await cabecerasEscritura(sesion.api, sesion.headers),
+      headers: await cabecerasEscritura(sesion.api, {
+        ...sesion.headers,
+        'Idempotency-Key': randomUUID(),
+      }),
       data: { asunto },
     });
     expect(alta.status()).toBe(201);

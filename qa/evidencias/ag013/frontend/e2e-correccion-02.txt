@@ -1,0 +1,23 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test base.spec.ts operaciones.spec.ts
+
+
+Running 12 tests using 1 worker
+
+(node:66312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 e2e\base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real (368ms)
+  ok  2 e2e\base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación (295ms)
+  ok  3 e2e\base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil (200ms)
+  ok  4 e2e\base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real (1.3s)
+  ok  5 e2e\base.spec.ts:119:5 › cabeceras, mínimo contrato y denegación por el backend (24ms)
+  ok  6 e2e\operaciones.spec.ts:62:5 › CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta (1.2s)
+  ok  7 e2e\operaciones.spec.ts:140:5 › CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar (1.2s)
+  ok  8 e2e\operaciones.spec.ts:179:5 › CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable (2.1s)
+  ok  9 e2e\operaciones.spec.ts:283:5 › CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave (691ms)
+  ok 10 e2e\operaciones.spec.ts:352:5 › CI-05/07: permiso revocado antes de recuperar y replay no concede acceso (2.3s)
+  ok 11 e2e\operaciones.spec.ts:431:5 › CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable (4.6s)
+  ok 12 e2e\operaciones.spec.ts:473:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña (7.4s)
+
+  12 passed (22.2s)

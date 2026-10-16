@@ -21,7 +21,7 @@
        análisis para todos los demás campos, métodos y clases. -->
   <Match>
     <Class name="es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores"/>
-    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.proveedores.aplicacion.RepositorioProveedores,java.time.Clock,org.springframework.transaction.PlatformTransactionManager"/>
+    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.proveedores.aplicacion.RepositorioProveedores,java.time.Clock,org.springframework.transaction.PlatformTransactionManager,es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones"/>
     <Field name="repositorio"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>

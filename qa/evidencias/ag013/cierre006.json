@@ -1,0 +1,19 @@
+{
+  "inicio": "2026-10-15T12:20:55.0000000+02:00",
+  "cierre": "2026-10-15T13:23:17.9145718+02:00",
+  "zona": "Europe/Madrid",
+  "duracionSegundos": 3742.915,
+  "criterios": "CI-01 a CI-10 verificados localmente",
+  "revision": "Sin hallazgos abiertos; dictamen independiente confirmado",
+  "aceptacion": false,
+  "integracion": false,
+  "pruebas": {
+    "backend": 211,
+    "angular": 411,
+    "api": 492,
+    "e2e": 23
+  },
+  "escrituraGit": false,
+  "desviacionGit": "git status --short inicial de solo lectura; sin comandos posteriores",
+  "pendientes": "Cierre de sesión AG013 y posible borrador007 tras comprobar margen"
+}

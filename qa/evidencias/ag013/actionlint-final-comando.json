@@ -1,0 +1,1 @@
+{"inicio":"2026-10-15T12:54:37.9617929+02:00","segundos":0.134098,"log":"C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\qa\\evidencias\\ag013\\actionlint-final.txt","argumentos":[".github/workflows/ci.yml"],"nombre":"actionlint-final","salida":0,"fin":"2026-10-15T12:54:38.0982685+02:00","directorio":".","programa":"./tmp/herramientas/actionlint/actionlint.exe"}

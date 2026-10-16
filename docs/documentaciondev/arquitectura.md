@@ -185,3 +185,25 @@ conserva clave/cuerpo ante resultado incierto. Si el POST termina y falla la lec
 bloquea otra decisión hasta recuperar el detalle. Contrato y alternativas en
 [ADR-0006](../decisiones/ADR-0006-aprobaciones-y-evento-minimo.md); resultados en
 [validación 005](../../especificaciones/005-aprobaciones/validacion.md).
+
+## Operaciones transversales006 — AG-013
+
+Paquete operaciones separa dominio/aplicación/JDBC/HTTP y centraliza huella,
+coordinación, éxito persistido y recuperación. Módulos conservan reglas de negocio.
+PostgreSQL serializa usuario+clave y confirma resultado con efecto/evento; mapa
+mínimo efímero informa progreso en una instancia y libera esperantes tras finalizar.
+Duplicados no retienen conexiones mientras esperan; plazo3s y error recuperable.
+Réplicas futuras requieren revisar visibilidad del progreso; no se acreditan aquí.
+
+Angular integra OperacionesSeguras y panel accesible. Descriptor4campos24h con
+ámbito opaco hash de usuario en nombre de almacenamiento; contenido sin cuerpos
+ni credenciales. Web Locks coordina reclamación entre pestañas. Navegador sin esa
+capacidad puede recuperar pero no iniciar nuevas mutaciones protegidas. Una clave
+conocida no otorga permisos; el servidor revalida siempre. Diseño/retención en
+[ADR0007](../decisiones/ADR-0007-concurrencia-idempotencia-transversal.md).
+
+Cada formulario de alta conserva en memoria la UUID efectivamente reclamada.
+Confirmar después de un error bloquea el formulario antiguo aunque se limpie el
+descriptor o cambie la tarjeta del panel. Una navegación interna a una nueva alta
+crea otra intención; no se añaden cuerpos ni campos al almacenamiento persistido.
+Los conflictos definitivos de una entrada distinta conservan su semántica.

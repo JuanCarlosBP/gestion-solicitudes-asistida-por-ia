@@ -42,7 +42,12 @@ import tools.jackson.databind.JsonNode;
     @ApiResponse(
             responseCode = "409",
             description =
-                    "VERSION_OBSOLETA, SOLICITUD_NO_EDITABLE, SOLICITUD_NO_DECIDIBLE, PROVEEDOR_INACTIVO, SUPERVISOR_INVALIDO o CLAVE_IDEMPOTENCIA_REUTILIZADA",
+                    "VERSION_OBSOLETA, SOLICITUD_NO_EDITABLE, SOLICITUD_NO_DECIDIBLE, PROVEEDOR_INACTIVO, SUPERVISOR_INVALIDO, CLAVE_IDEMPOTENCIA_REUTILIZADA u OPERACION_EN_PROGRESO",
+            headers =
+                    @Header(
+                            name = "Retry-After",
+                            description = "1 solo para OPERACION_EN_PROGRESO",
+                            schema = @Schema(type = "integer")),
             content = @Content(schema = @Schema(implementation = ErrorPublico.class))),
     @ApiResponse(
             responseCode = "500",
@@ -80,9 +85,17 @@ public class ControladorSolicitudes {
             content = @Content(schema = @Schema(implementation = DetalleSolicitud.class)),
             headers = @Header(name = "Location", schema = @Schema(type = "string")))
     public ResponseEntity<DetalleSolicitud> crear(
-            @AuthenticationPrincipal Jwt token, @RequestBody JsonNode entrada) {
+            @AuthenticationPrincipal Jwt token,
+            @RequestBody JsonNode entrada,
+            @Parameter(required = true, schema = @Schema(type = "string", format = "uuid"))
+                    @RequestHeader(value = "Idempotency-Key", required = false)
+                    String clave) {
         var creado =
-                servicio.crear(actor(token), EntradaSolicitud.asunto(entrada), UUID.randomUUID());
+                servicio.crearIdempotente(
+                        actor(token),
+                        EntradaSolicitud.asunto(entrada),
+                        EntradaSolicitud.uuid(clave),
+                        UUID.randomUUID());
         return ResponseEntity.created(URI.create("/api/solicitudes/" + creado.id()))
                 .body(DetalleSolicitud.de(creado));
     }
