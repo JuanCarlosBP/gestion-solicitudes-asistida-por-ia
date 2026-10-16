@@ -1,0 +1,232 @@
+[
+  {
+    "ruta": "SECURITY.md",
+    "bytes": 2898,
+    "sha256": "729A84194F0FF79D20101709D602838471A31F26A9204488D44A1C712CCF118D"
+  },
+  {
+    "ruta": "README.md",
+    "bytes": 6914,
+    "sha256": "2559D818065B8081CEE7A237AD9BEEE2182F347C639F1DE355334386D8070B5C"
+  },
+  {
+    "ruta": "MEMORY.md",
+    "bytes": 6640,
+    "sha256": "C31A0F6257D2051225E414D445DF8F79A167458002AE5E3762F3C0B80820D039"
+  },
+  {
+    "ruta": "frontend\\package.json",
+    "bytes": 905,
+    "sha256": "B183F3C76F343974E4703BFB7A68586B8D3108FFE609B80B9988F308E8BC5147"
+  },
+  {
+    "ruta": "frontend\\package-lock.json",
+    "bytes": 353664,
+    "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F"
+  },
+  {
+    "ruta": "frontend\\.npmrc",
+    "bytes": 90,
+    "sha256": "E5D8F4340708A6F899E2A794BC3E947520F78156C6E648B725C68A192EFD6BDB"
+  },
+  {
+    "ruta": "especificaciones\\README.md",
+    "bytes": 2491,
+    "sha256": "3B5F07BA8C8F4822268FE27AB9DF6EC51C146CC1F20989BC526CA3295BF4B7B5"
+  },
+  {
+    "ruta": "especificaciones\\001-base-verificable\\validacion.md",
+    "bytes": 9127,
+    "sha256": "8501E55657EBE937C669DAF49350305CBA5F458CE543171BDDBBA4FDC1173D71"
+  },
+  {
+    "ruta": "especificaciones\\001-base-verificable\\tareas.md",
+    "bytes": 8222,
+    "sha256": "BD738EB537EE52A172D8A2448BBC4F5538C97350C8C5AEE943A9B1AAE8667BED"
+  },
+  {
+    "ruta": "especificaciones\\001-base-verificable\\plan.md",
+    "bytes": 11433,
+    "sha256": "3311B165EF1692FBE16AB153A12B56BF9908BE6DD88E64E7CE64C821002F47CA"
+  },
+  {
+    "ruta": "especificaciones\\001-base-verificable\\especificacion.md",
+    "bytes": 7561,
+    "sha256": "68C70D2CE794E436C61B80822FDA817EB298954F2D9287ABD5E79415F35AE552"
+  },
+  {
+    "ruta": "docs\\vision-y-alcance.md",
+    "bytes": 6975,
+    "sha256": "60F8B0FA679E563C1EBE84E1BF72484F772EC1955AEF8764CED7BCEB84E34C2E"
+  },
+  {
+    "ruta": "docs\\trazabilidad\\ejecuciones-agentes.csv",
+    "bytes": 29468,
+    "sha256": "B190219385F781D82EEABE0748FE5782B3D78C08B8E435D75C54A1573CCCBD1F"
+  },
+  {
+    "ruta": "docs\\trazabilidad\\cambios.md",
+    "bytes": 5647,
+    "sha256": "B266F0DBC66C0AAA7DED51883C5F069B949F5F2154F634B6FEB9CB9E5036391A"
+  },
+  {
+    "ruta": "docs\\seguridad.md",
+    "bytes": 13030,
+    "sha256": "99458389DBFF67EA90A964CC907E9F546C23357666D93A0FF0A1B888E969BFD1"
+  },
+  {
+    "ruta": "docs\\seguridad\\modelo-de-amenazas.md",
+    "bytes": 10762,
+    "sha256": "DC9CE3DF65C067C16D03CB67F331D1D4535A022663B78E0D200E8323596F7C2F"
+  },
+  {
+    "ruta": "docs\\seguridad\\cobertura-owasp.md",
+    "bytes": 14989,
+    "sha256": "97EFC4F8D078B9F3E7A048F96AFA8251977014C7C9801BFDAC64EE760EF8D8D1"
+  },
+  {
+    "ruta": "docs\\README.md",
+    "bytes": 7077,
+    "sha256": "784ADCDBB6E066CEFA89E1BCF51B0D5953C5656E8456881E15E2A59585AE5A2E"
+  },
+  {
+    "ruta": "docs\\politicas\\documentacion.md",
+    "bytes": 7955,
+    "sha256": "2E19F17ED36171F2DBA8A5529CF503AADFA51FB891EC2CB03BD740A1D67CB07A"
+  },
+  {
+    "ruta": "docs\\politicas\\calidad.md",
+    "bytes": 9084,
+    "sha256": "3B9A6DE629A2A7B0373DEC928AD19A7C3B08A599A012CB0AF140730A9E4D8DD9"
+  },
+  {
+    "ruta": "docs\\metodologia\\sdd.md",
+    "bytes": 8170,
+    "sha256": "A77770A4D763AA1B23D6930E81C797516A8F0BD0EB1CD255F259884D0E90BFC6"
+  },
+  {
+    "ruta": "docs\\metodologia\\prompts\\sesion-nocturna-01.md",
+    "bytes": 9740,
+    "sha256": "844718607DC5F1A16D2C1277C1C71F7FCA848C8059E7B6068847485EBC6605C6"
+  },
+  {
+    "ruta": "docs\\metodologia\\prompts\\README.md",
+    "bytes": 2408,
+    "sha256": "51A6AFC84785086DCB0DD044E821743BFBCC23799842FA2935D00ECAC923CCB2"
+  },
+  {
+    "ruta": "docs\\fuentes.md",
+    "bytes": 6529,
+    "sha256": "C96490795A3EDB3E2970D52E88C9221CE2AC5981D2C6EDFAA2BA8A0429096ED0"
+  },
+  {
+    "ruta": ".gitattributes",
+    "bytes": 348,
+    "sha256": "8E975022496192424523F8D38785E9920AA6C29B189B4ACB91DB68EAF9CB5240"
+  },
+  {
+    "ruta": "docs\\constitucion.md",
+    "bytes": 6338,
+    "sha256": "CEAAA9A97323911B76165DBE15EC9315B071489326BA977F802DBB9F1069E75A"
+  },
+  {
+    "ruta": "CONTRIBUTING.md",
+    "bytes": 4641,
+    "sha256": "0817C636C968D6F9C783E378699A3FD276D4F7C62DF0D20AE2A59705CB26FF0A"
+  },
+  {
+    "ruta": "docs\\metodologia\\eficiencia-agentes.md",
+    "bytes": 4511,
+    "sha256": "10C5ECA7E0B60D2A1AFFEC5A106EF46332CC97A99FA87FE899A1F8B005E0B1C6"
+  },
+  {
+    "ruta": "docs\\metodologia\\contexto.md",
+    "bytes": 5447,
+    "sha256": "B6AF40DE7D08BEB3E530B9078A60BA065C311C449446BB3780446DABEB0D46CF"
+  },
+  {
+    "ruta": ".gitignore",
+    "bytes": 683,
+    "sha256": "256B2C7C5FCCC4AB2F8231AEF58CBB77D86A2AC54E30AFC91F03598800E16C65"
+  },
+  {
+    "ruta": "docs\\mapa-del-proyecto.md",
+    "bytes": 7302,
+    "sha256": "89B7F26A2F78EC9CB639281CF183A111D83F6F1CCE8D84B6B0EE085258719347"
+  },
+  {
+    "ruta": "docs\\metodologia\\mcp.md",
+    "bytes": 6066,
+    "sha256": "63EF6AF7BAC2199C986081C30BC2014B8D5AAE51B282AAEC2936D91145AA573E"
+  },
+  {
+    "ruta": "docs\\metodologia\\orquestacion.md",
+    "bytes": 10099,
+    "sha256": "9DBA1A6D64408DDAB77634765525AE4196C5FAFE78687921F8D2E3C96F7B4641"
+  },
+  {
+    "ruta": ".editorconfig",
+    "bytes": 481,
+    "sha256": "36FFBE383F85A58641C827A3C0D9E8BC3F42AD7DD252CC4922BB4D68EF0AD2B8"
+  },
+  {
+    "ruta": "AGENTS.md",
+    "bytes": 4321,
+    "sha256": "483ACE71BC2E6932D79D19486DCF2142D05BB3FBC6F92328DF161CA0A472F5E6"
+  },
+  {
+    "ruta": "docs\\metodologia\\plantillas\\relevo.md",
+    "bytes": 3206,
+    "sha256": "A707E205704FB113AF21AC3EF9C857752851A417B85AE16E10CFDF6C91B2E0E2"
+  },
+  {
+    "ruta": "docs\\decisiones\\ADR-0001-dependencia-transitiva-rolldown-angular-21.md",
+    "bytes": 4590,
+    "sha256": "53348083394943C55A83E734F6FAC69A990751E7EFA89D801AD79FB3037D3D0F"
+  },
+  {
+    "ruta": "docs\\documentaciondev\\versiones.md",
+    "bytes": 24260,
+    "sha256": "A1A9CCC8AC9984F2F05CE00E96D51F7AB7884E975D5DD51F6B819B73BBDCDE32"
+  },
+  {
+    "ruta": ".codex\\config.toml",
+    "bytes": 496,
+    "sha256": "D354ABD87CD40F5DCA29433D4FF03216BF5D2D7D8A7E76398BE9B9EB36D0484F"
+  },
+  {
+    "ruta": ".codex\\agents\\revisor.toml",
+    "bytes": 937,
+    "sha256": "4DE41B1A36BAE1698D7AF37DD3B335293114EA0337B59C3284BC7FA34CC2FE1D"
+  },
+  {
+    "ruta": ".codex\\agents\\planificador.toml",
+    "bytes": 841,
+    "sha256": "90938D92A218643CE54ECACEC275573007981528A24A2B758EBFD7C0DFE6264B"
+  },
+  {
+    "ruta": ".codex\\agents\\implementador.toml",
+    "bytes": 993,
+    "sha256": "10276B7A1278B12003AD5BFC045E9E038702483A6784AC6F812543D7DEE1BE60"
+  },
+  {
+    "ruta": ".agents\\skills\\verificacion-qa\\SKILL.md",
+    "bytes": 2439,
+    "sha256": "DFA36C391F05B36BB4070A7E21448773E541589AC6912370C1540ED078DC9EBB"
+  },
+  {
+    "ruta": ".agents\\skills\\revision-seguridad\\SKILL.md",
+    "bytes": 2391,
+    "sha256": "37C074A44CBFD1BF187C2E57F6084A81F121D9884C07DF5333F23BCE8DE933FD"
+  },
+  {
+    "ruta": ".agents\\skills\\sdd\\SKILL.md",
+    "bytes": 2305,
+    "sha256": "0C76405EE5571E229F5A611E3C548B496F29CE616D477DC94D10E7216ED2F1FC"
+  },
+  {
+    "ruta": ".agents\\skills\\mantenimiento-documental\\SKILL.md",
+    "bytes": 2500,
+    "sha256": "27C595A1CAB129F0ED670FCE82DE20283B46DE937BCF8745CC047765050449EA"
+  }
+]

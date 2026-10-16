@@ -97,3 +97,17 @@ No se copian manuales completos ni se incorporan apuntes privados.
 Al reutilizar contenido o componentes se respetará su licencia.
 Las fuentes nuevas se registrarán cuando apoyen una decisión concreta.
 Las pruebas del proyecto seguirán siendo la evidencia de su comportamiento.
+
+## Excepción aprobada Angular/Rolldown — AG-005
+
+Consultas reales del 2026-10-13 mediante `npm view`, con registro
+`https://registry.npmjs.org/` y sin operaciones Git:
+
+- [@angular/build 21.2.26](https://registry.npmjs.org/@angular%2Fbuild/21.2.26): versión, `dependencies.rolldown` e integridad publicadas.
+- [rolldown 1.0.0-rc.4](https://registry.npmjs.org/rolldown/1.0.0-rc.4): versión, licencia MIT, repositorio e integridad publicadas.
+- [Repositorio oficial Rolldown](https://github.com/rolldown/rolldown): origen declarado por npm, directorio `packages/rolldown`; no se clonó ni se ejecutó Git.
+
+Estas consultas respaldan [ADR-0001](decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md),
+aprobado expresamente por la persona responsable. La excepción no procede
+solo de la recomendación de una fuente externa. El [informe de versiones](documentaciondev/versiones.md)
+registra valores y distinguirá comprobación de metadatos, instalación y pruebas.

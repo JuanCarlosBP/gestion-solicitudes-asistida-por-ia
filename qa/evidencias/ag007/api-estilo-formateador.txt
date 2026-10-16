@@ -1,0 +1,20 @@
+Compiled from "JavaFormatterOptions.java"
+public final class com.google.googlejavaformat.java.JavaFormatterOptions$Style extends java.lang.Record {
+  public static final com.google.googlejavaformat.java.JavaFormatterOptions$Style GOOGLE;
+  public static final com.google.googlejavaformat.java.JavaFormatterOptions$Style AOSP;
+  public com.google.googlejavaformat.java.JavaFormatterOptions$Style(int, int, boolean, com.google.googlejavaformat.java.JavaFormatterOptions$ImportOrder);
+  public int tabWidth();
+  public java.lang.String indentString(int);
+  public int visualLength(java.lang.CharSequence);
+  public int visualLength(java.lang.CharSequence, int, int);
+  public boolean isAosp();
+  public static com.google.googlejavaformat.java.JavaFormatterOptions$Style$Builder builder();
+  public com.google.googlejavaformat.java.JavaFormatterOptions$Style$Builder toBuilder();
+  public final java.lang.String toString();
+  public final int hashCode();
+  public final boolean equals(java.lang.Object);
+  public int indentationMultiplier();
+  public int maxLineLength();
+  public boolean useTabs();
+  public com.google.googlejavaformat.java.JavaFormatterOptions$ImportOrder importOrder();
+}

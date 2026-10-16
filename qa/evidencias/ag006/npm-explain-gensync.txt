@@ -1,0 +1,21 @@
+gensync@1.0.0-beta.2 dev
+node_modules/gensync
+  gensync@"^1.0.0-beta.2" from @babel/core@7.29.7
+  node_modules/@babel/core
+    @babel/core@"7.29.7" from @angular/build@21.2.26
+    node_modules/@angular/build
+      dev @angular/build@"21.2.26" from the root project
+    @babel/core@"7.29.7" from @angular/compiler-cli@21.2.25
+    node_modules/@angular/compiler-cli
+      dev @angular/compiler-cli@"21.2.25" from the root project
+      peer @angular/compiler-cli@"^21.0.0" from @angular/build@21.2.26
+      node_modules/@angular/build
+        dev @angular/build@"21.2.26" from the root project
+    peer @babel/core@"^7.0.0" from @babel/helper-module-transforms@7.29.7
+    node_modules/@babel/helper-module-transforms
+      @babel/helper-module-transforms@"^7.29.7" from @babel/core@7.29.7
+    @babel/core@"^7.23.9" from istanbul-lib-instrument@6.0.3
+    node_modules/istanbul-lib-instrument
+      istanbul-lib-instrument@"6.0.3" from @angular/build@21.2.26
+      node_modules/@angular/build
+        dev @angular/build@"21.2.26" from the root project

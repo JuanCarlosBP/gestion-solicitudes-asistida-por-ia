@@ -1,0 +1,62 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test
+
+
+Running 5 tests using 1 worker
+
+(node:67288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real (402ms)
+  ok 2 e2e\base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación (244ms)
+  x  3 e2e\base.spec.ts:39:5 › teclado, foco, idioma y ancho móvil (5.2s)
+(node:34896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 e2e\base.spec.ts:56:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real (819ms)
+  ok 5 e2e\base.spec.ts:71:5 › cabeceras, mínimo contrato y denegación por el backend (30ms)
+
+
+  1) e2e\base.spec.ts:39:5 › teclado, foco, idioma y ancho móvil ───────────────────────────────────
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Volver a comprobar' })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Volver a comprobar' }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Volver a comprobar' })
+        - locator resolved to <button disabled type="button" _ngcontent-ng-c119644871=""> Volver a comprobar </button>
+        13 × unexpected value "inactive"
+           - locator resolved to <button type="button" _ngcontent-ng-c119644871=""> Volver a comprobar </button>
+        - unexpected value "inactive"
+
+
+      47 |   await expect(page.locator('main')).toBeFocused();
+      48 |   await page.keyboard.press('Tab');
+    > 49 |   await expect(page.getByRole('button', { name: 'Volver a comprobar' })).toBeFocused();
+         |                                                                          ^
+      50 |   await page.keyboard.press('Enter');
+      51 |   await expect(page.getByRole('status')).toContainText('Sistema disponible');
+      52 |   const desbordamiento = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\base.spec.ts:49:74
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\base-teclado-foco-idioma-y-ancho-móvil\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\base-teclado-foco-idioma-y-ancho-móvil\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\base-teclado-foco-idioma-y-ancho-móvil\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\base-teclado-foco-idioma-y-ancho-móvil\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\base.spec.ts:39:5 › teclado, foco, idioma y ancho móvil ────────────────────────────────────
+  4 passed (7.7s)

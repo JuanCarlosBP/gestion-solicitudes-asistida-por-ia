@@ -1,0 +1,11 @@
+{
+  "spotless": "3.10.4",
+  "googleJavaFormat": "1.36.1",
+  "java21": true,
+  "fecha": "2026-10-13T11:46:20.9367471+02:00",
+  "ciRemota": "Pendiente de push humano",
+  "origenVersiones": "backend/pom.xml compartido con el workflow, sin otra fijación en CI",
+  "actionlint": "Reutilizado PASS AG-006; también PASS AG-007; workflow idéntico",
+  "workflowSinCambios": true,
+  "comando": true
+}

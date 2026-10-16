@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-ZI5PMCJY.js    | main          | 231.30 kB |                62.94 kB
+styles-T6TP5HFB.css | styles        | 244 bytes |               244 bytes
+
+                    | Initial total | 231.55 kB |                63.18 kB
+
+Application bundle generation complete. [1.353 seconds] - 2026-10-13T08:53:16.063Z
+
+Output location: C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\dist\gestion-solicitudes-frontend
+

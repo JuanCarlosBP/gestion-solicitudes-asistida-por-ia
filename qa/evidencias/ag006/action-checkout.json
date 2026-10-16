@@ -1,0 +1,6 @@
+{
+  "accion": "checkout",
+  "version": "v7.0.1",
+  "fuente": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+  "cuerpo": "## What's Changed\r\n* skip running unsafe pr check if input is default by @aiqiaoy in https://github.com/actions/checkout/pull/2518\r\n* trim only ascii whitespace for branch by @aiqiaoy in https://github.com/actions/checkout/pull/2521\r\n* escape values passed to --unset by @aiqiaoy in https://github.com/actions/checkout/pull/2530\r\n* Various dependency updates \r\n\r\n**Full Changelog**: https://github.com/actions/checkout/compare/v7...v7.0.1"
+}

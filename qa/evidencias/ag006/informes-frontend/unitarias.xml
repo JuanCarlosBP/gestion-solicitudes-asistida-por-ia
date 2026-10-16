@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="11" failures="0" errors="0" time="0.2493562">
+    <testsuite name="src/app/app.routes.spec.ts" timestamp="2026-10-13T08:53:12.841Z" hostname="JCBP_Trabajo" tests="3" failures="0" errors="0" skipped="0" time="0.0808644">
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; redirige la raíz a inicio" time="0.0652116">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; abre inicio directamente" time="0.0079278">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; controla rutas desconocidas sin consultar la API" time="0.006866">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/app.spec.ts" timestamp="2026-10-13T08:53:12.844Z" hostname="JCBP_Trabajo" tests="1" failures="0" errors="0" skipped="0" time="0.0549151">
+        <testcase classname="src/app/app.spec.ts" name="Estructura accesible &gt; ofrece navegación y salto al contenido principal" time="0.0541079">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/inicio/inicio.spec.ts" timestamp="2026-10-13T08:53:12.845Z" hostname="JCBP_Trabajo" tests="3" failures="0" errors="0" skipped="0" time="0.0963496">
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; distingue carga y disponibilidad con mensajes accesibles" time="0.0583677">
+        </testcase>
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; muestra un error controlado y permite volver a comprobar" time="0.0218707">
+        </testcase>
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; trata un estado no disponible aunque llegue con HTTP 200" time="0.0151862">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/inicio/salud-api.spec.ts" timestamp="2026-10-13T08:53:12.845Z" hostname="JCBP_Trabajo" tests="4" failures="0" errors="0" skipped="0" time="0.0172271">
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; consulta la ruta del mismo origen y devuelve el estado" time="0.0100026">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; propaga HTTP 503 al tratamiento de error" time="0.0017907">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; rechaza una respuesta con contrato incorrecto" time="0.0011567">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; limita la espera de una conexión sin respuesta" time="0.0033719">
+        </testcase>
+    </testsuite>
+</testsuites>

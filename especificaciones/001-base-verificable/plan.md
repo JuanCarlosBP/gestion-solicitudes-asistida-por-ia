@@ -25,7 +25,8 @@ Las [tareas](tareas.md) concretan dependencias y evidencias.
 
 ## 3. Versiones y selección acotada
 
-Estas son líneas aprobadas, no dependencias instaladas ni versiones exactas fijadas.
+Estas son líneas aprobadas. AG-006 fijó versiones y dependencias cuya selección,
+resultados e historia se conservan en el documento de versiones.
 Spring Boot 4.0.x, Angular 21.x y PostgreSQL 17.x son líneas soportadas y elegidas
 de forma deliberadamente conservadora. No se afirma que sean las versiones mayores
 más recientes. T001 comprobará su mantenimiento y compatibilidad al fijar los parches.
@@ -35,7 +36,7 @@ más recientes. T001 comprobará su mantenimiento y compatibilidad al fijar los 
 | JDK | Java 21, distribución OpenJDK mantenida. | Registrar proveedor, parche y licencia; misma versión de Java en local y CI. |
 | Spring Boot | 4.0.x | Elegir parche estable mantenido y usar su gestión de dependencias. |
 | Maven | 3.9.x mediante Wrapper. | Fijar distribución y suma SHA-256 de origen oficial. |
-| Angular y CLI | 21.x compatibles entre sí. | Fijar versiones exactas y lockfile; sin versiones preliminares. |
+| Angular y CLI | 21.x compatibles entre sí; constructor 21.2.26. | Directas estables y exactas; lockfile y transitivas evaluadas según ADR-0002. |
 | Node.js | 24.x | Parche mantenido compatible con Angular; registrar también npm. |
 | TypeScript | 5.9.x | Confirmar la tabla oficial de compatibilidad de Angular 21. |
 | RxJS | 7.x compatible con Angular 21. | Usar versión exacta compatible y lockfile. |
@@ -53,8 +54,22 @@ versiones exactas y comprobación de disponibilidad.
 Si una línea no está mantenida, existe incompatibilidad o una vulnerabilidad
 relevante sin solución,
 se detiene antes de generar código y se solicita otra decisión.
-No se usan versiones preliminares, `latest`, snapshots ni cambios de versión mayor
-por comodidad. Se mantienen las líneas mayores aprobadas.
+Las dependencias directas elegidas por el proyecto serán estables; no se
+elegirán manualmente versiones preliminares ni se utilizarán `latest`, snapshots
+o cambios de versión mayor por comodidad. Se mantienen las líneas aprobadas.
+AG-006 aprueba [ADR-0002](../../docs/decisiones/ADR-0002-politica-dependencias-transitivas.md).
+Las directas serán estables y exactas; las transitivas se evalúan por origen,
+integridad, cadena, uso indirecto, instalación reproducible, auditoría y QA.
+Una etiqueta prerelease transitiva no bloquea por sí sola: se detiene la tarea
+solo ante un riesgo o incompatibilidad reales conforme al ADR.
+[ADR-0001](../../docs/decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md)
+conserva la decisión histórica sobre Rolldown. Se autoriza también Gensync
+transitivo de Babel conforme a ADR-0002, sin añadirlo ni importarlo directamente.
+No se permiten `overrides`, `resolutions` ni instalación forzada.
+Se conservan el constructor Angular 21.2.26, Node 24.13.0, TypeScript 5.9
+compatible y el resto de líneas seleccionadas, salvo incompatibilidad real
+comprobada. Permanecen obligatorias la integridad, procedencia, auditoría,
+build, pruebas y reproducción con `npm ci`; la excepción no los reduce.
 
 ## 4. Organización técnica
 
@@ -128,11 +143,12 @@ No se modificará Docker global ni se borrarán volúmenes ajenos.
 | BV-09 | Validación del workflow y comandos equivalentes locales; remoto pendiente de push humano. |
 | BV-10 | Repetición de instrucciones y matriz final de evidencia. |
 
-Los comandos se fijarán al crear cada herramienta y se documentarán tras probarlos.
+Los comandos creados y comprobados se documentan en la guía de entorno.
 Para backend se prevé `mvnw.cmd verify` y su equivalente Linux `./mvnw verify`.
 Para frontend se prevén scripts npm de build, pruebas sin vigilancia, tipos y lint.
-Estos comandos pertenecen al diseño aprobado y están pendientes de ejecución;
-no son instrucciones ya verificadas.
+AG-006 conserva su fallo histórico de formato. AG-008 completó Spotless y verify
+íntegro; AG-009 repitió los controles locales afectados y Compose en 18080/18081.
+Los resultados actuales y sus límites se registran en validación y en el informe AG-009.
 No se saltarán pruebas de integración porque Docker no esté disponible.
 
 ## 9. CI y evidencias
@@ -142,9 +158,12 @@ Ejecutará integración con PostgreSQL y guardará informes cuando falle.
 Usará permisos mínimos, versiones fijadas y ningún secreto del producto.
 No publicará imágenes ni desplegará servicios.
 
-La ejecución nocturna validará estructura y comandos que pueda ejecutar localmente.
-No ejecutará Git ni podrá acreditar por ello una ejecución remota nueva.
-Esa comprobación quedará pendiente para después del push humano.
+La persona responsable publicó la rama y la PR borrador #1. La primera CI se
+ejecutó (38388926539 y 38389011007): frontend PASS, backend FAIL por la versión
+de setup-java y Compose FAIL por COPY public. REV-001 registró R-01 a R-04.
+AG-009 corrige esas causas, aísla las salidas QA y actualiza el estado documental.
+El workflow usa pull_request y push solo a main; conserva los controles existentes.
+AG-009 no ejecuta Git. Una segunda CI sigue pendiente del siguiente push humano.
 La base no se declarará totalmente aceptada mientras falte una evidencia obligatoria.
 
 ## 10. Documentación a producir durante la ejecución
@@ -152,7 +171,8 @@ La base no se declarará totalmente aceptada mientras falte una evidencia obliga
 Se crearán instrucciones reales de entorno, arquitectura inicial y versiones.
 Los destinos propuestos son `docs/documentaciondev/entorno.md`,
 `docs/documentaciondev/arquitectura.md` y `docs/documentaciondev/versiones.md`.
-Los archivos no existen todavía y no se enlazan como disponibles.
+Los archivos existen tras AG-006; entorno, arquitectura y versiones se enlazan
+desde el índice documental. Su estado y limitaciones no sustituyen la aceptación.
 Los comandos incluirán ubicación, efecto, resultado y límites.
 
 Se actualizarán README, índice y MEMORY con el estado real.
@@ -172,3 +192,10 @@ La persona responsable debe aprobar los recursos de ejecución necesarios.
 Las elecciones anteriores están aprobadas. Un cambio importante exige volver
 a la decisión afectada y obtener la aprobación correspondiente.
 Dos correcciones fallidas del mismo problema obligan a detenerlo y escalar.
+
+AG-006 aplica directamente el nivel 3 secuencial con un único escritor.
+Reutiliza el preflight de AG-003–AG-005 y comprueba solo continuidad esencial.
+Inicio 2026-10-13 10:16:08 +02:00; límite nuevo 20:16:08 +02:00.
+Un bloqueo de tarea permite continuar las independientes según ADR-0002.
+Rama declarada por la persona responsable: `feature/001-base-verificable`.
+No se comprueba ni modifica mediante Git: toda operación Git está prohibida.

@@ -1,8 +1,12 @@
 # Configuración local aprobada como valor predeterminado.
 # La interfaz puede aplicar permisos efectivos distintos en cada sesión.
 # La ejecución debe registrar el sandbox y la aprobación realmente observados.
+
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
+
+[windows]
+sandbox = "elevated"
 
 [features]
 multi_agent = true

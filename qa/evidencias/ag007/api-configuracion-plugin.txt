@@ -1,0 +1,5 @@
+Compiled from "GoogleJavaFormat.java"
+public class com.diffplug.spotless.maven.java.GoogleJavaFormat implements com.diffplug.spotless.maven.FormatterStepFactory {
+  public com.diffplug.spotless.maven.java.GoogleJavaFormat();
+  public com.diffplug.spotless.FormatterStep newFormatterStep(com.diffplug.spotless.maven.FormatterStepConfig);
+}

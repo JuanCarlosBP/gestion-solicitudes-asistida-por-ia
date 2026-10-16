@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test
+
+
+Running 5 tests using 1 worker
+
+(node:5892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real (385ms)
+  ok 2 e2e\base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación (225ms)
+  ok 3 e2e\base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil (168ms)
+  ok 4 e2e\base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real (785ms)
+  ok 5 e2e\base.spec.ts:79:5 › cabeceras, mínimo contrato y denegación por el backend (39ms)
+
+  5 passed (2.1s)

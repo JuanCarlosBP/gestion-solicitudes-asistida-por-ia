@@ -1,0 +1,4 @@
+{"comando":".\\mvnw.cmd spotless:check","inicio":"2026-10-13T11:16:57.1205633+02:00","javaHome":"C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.12.101-hotspot","salida":1,"fin":"2026-10-13T11:17:00.1166877+02:00"}
+{"comando":".\\mvnw.cmd spotless:apply","fin":"2026-10-13T11:17:18.7488896+02:00","salida":1,"inicio":"2026-10-13T11:17:15.7210019+02:00"}
+{"fin":"2026-10-13T11:17:31.5765774+02:00","inicio":"2026-10-13T11:17:28.5170647+02:00","comando":".\\mvnw.cmd -e -X spotless:check","salida":1}
+{"salida":0,"comando":"tmp/herramientas/actionlint/actionlint.exe -color","fin":"2026-10-13T11:19:22.5027780+02:00"}

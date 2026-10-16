@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default-cli) @ gestion-solicitudes ---
+[INFO] Spotless.Java is keeping 14 files clean - 0 needs changes to be clean, 0 were already clean, 14 were skipped because caching determined they were already clean
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.858 s
+[INFO] Finished at: 2026-10-13T11:42:14+02:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,32 @@
+{
+  "archivoTemporalEliminado": true,
+  "controles": [
+    {
+      "resultado": "PASS",
+      "baseUrl": "http://127.0.0.1:18083",
+      "control": "Parámetro sobre entorno y archivo"
+    },
+    {
+      "resultado": "PASS",
+      "baseUrl": "http://127.0.0.1:18082",
+      "control": "Entorno sobre archivo"
+    },
+    {
+      "resultado": "PASS",
+      "baseUrl": "http://127.0.0.1:18081",
+      "control": "Archivo con comillas y comentario"
+    },
+    {
+      "resultado": "PASS",
+      "baseUrl": "http://127.0.0.1:18080",
+      "control": "Predeterminado sin variable"
+    },
+    {
+      "resultado": "PASS",
+      "baseUrl": null,
+      "control": "Puerto inválido rechazado"
+    }
+  ],
+  "fecha": "2026-10-13T14:54:43.6607589+02:00",
+  "alcance": "Prueba enfocada de precedencia con Docker interceptado; integración real acreditada por puerto-18080 y puerto-18081."
+}

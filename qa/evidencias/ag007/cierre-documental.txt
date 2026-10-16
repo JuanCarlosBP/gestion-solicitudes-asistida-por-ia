@@ -1,0 +1,5 @@
+Control documental inicial: detectó los dos enlaces al manifiesto y al control de
+integridad antes de que el propio verificador generara esas salidas. La salida
+inicial fallida se conserva en entrega-integridad-inicial.json. Se repite después
+de existir los dos artefactos, sin cambiar fuentes ni el diagnóstico de Spotless.
+La primera actualización de hora falló por conversión automática de fecha JSON de PowerShell; se conserva tipo String y se interpreta el inicio con formato explícito. No afectó a fuentes ni al prefijo CSV.

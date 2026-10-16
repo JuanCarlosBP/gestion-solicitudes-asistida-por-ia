@@ -1,0 +1,22 @@
+{
+  "inicio": "2026-10-13T10:16:08.0000000+02:00",
+  "cierre": "2026-10-13T11:10:32.2218561+02:00",
+  "duracion": "00:54:24",
+  "segundos": 3264.0,
+  "limite": "2026-10-13T20:16:08.0000000+02:00",
+  "zona": "Europe/Madrid",
+  "estado": "BASE LOCAL OPERATIVA; ACEPTACIÓN PENDIENTE",
+  "tareas": {
+    "T001": "Comprobada localmente; versiones e inventario fijados",
+    "T002": "Implementada y probada; verify integral pendiente por T006",
+    "T003": "3 integraciones PostgreSQL PASS",
+    "T004": "11 pruebas Angular, tipos, lint, formato y build PASS",
+    "T005": "Compose y navegador PASS; detenido conservando volumen",
+    "T006": "PARCIAL: formato bloqueado tras dos correcciones; CI remota pendiente",
+    "T007": "Documentación consolidada con límites; revisión humana pendiente",
+    "T008": "Revisión secuencial no independiente; aceptación pendiente"
+  },
+  "gitEjecutado": false,
+  "borradoresPosteriores": [],
+  "revisionIndependiente": false
+}

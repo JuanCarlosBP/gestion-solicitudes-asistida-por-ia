@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-13T09:54:03.8266476+00:00",
+  "fase": "Consolidación documental posterior a revisión",
+  "incidencia": "ConvertFrom-Json convirtió automáticamente inicio a DateTime; intentar Parse sobre su representación regional falló y dejó duración inconsistente en cierre.json.",
+  "impacto": "Solo metadatos de cierre y texto de duración de fila AG-008. No afectó POM, Java, pruebas ni históricos.",
+  "correccion": "Recrear el cierre desde el inicio ISO conocido con ErrorActionPreference Stop, recalcular duración y comprobar consistencia JSON. Un intento de corrección."
+}

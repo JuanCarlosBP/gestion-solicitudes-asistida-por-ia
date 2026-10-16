@@ -1,0 +1,24 @@
+{
+  "destructivo": false,
+  "controles": [
+    {
+      "resultado": "PASS",
+      "despues": "1:-60045458:2026-10-13 08:41:14.03714",
+      "antes": "1:-60045458:2026-10-13 08:41:14.03714",
+      "control": "Persistencia tras stop/start"
+    },
+    {
+      "cuerpo": "{\"estado\":\"NO_DISPONIBLE\"}",
+      "resultado": "PASS",
+      "milisegundos": 2014,
+      "http": 503,
+      "control": "Caída real de PostgreSQL"
+    },
+    {
+      "resultado": "PASS",
+      "http": 200,
+      "control": "Recuperación de PostgreSQL"
+    }
+  ],
+  "fecha": "2026-10-13T11:45:34.9871786+02:00"
+}

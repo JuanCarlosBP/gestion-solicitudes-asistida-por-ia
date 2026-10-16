@@ -1,0 +1,20 @@
+[
+  {
+    "ruta": "backend/target/gestion-solicitudes-0.0.1.jar",
+    "sha256": "66F67B985AF87481D346BED79DC6B7EF2AC4E96752975C6963FA77461E0399FA",
+    "bytes": 34611775,
+    "incluidoEnCommit": false
+  },
+  {
+    "ruta": "tmp/m2/com/google/googlejavaformat/google-java-format/1.36.1/google-java-format-1.36.1.jar",
+    "sha256": "57F9B550A662DCBBDF344073E3F5812B837A0E6E430548D8A0A3C9090CADA65D",
+    "bytes": 321361,
+    "incluidoEnCommit": false
+  },
+  {
+    "ruta": "tmp/m2/com/diffplug/spotless/spotless-maven-plugin/3.10.4/spotless-maven-plugin-3.10.4.jar",
+    "sha256": "607543D56BA22D10D27AA72CC6BE746E2CDF73E2F43DCEF24A85A9782551A877",
+    "bytes": 158370,
+    "incluidoEnCommit": false
+  }
+]

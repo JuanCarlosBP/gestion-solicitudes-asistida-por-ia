@@ -1,0 +1,11 @@
+<a class="saltar" href="#contenido" (click)="contenido.focus(); $event.preventDefault()"
+  >Saltar al contenido</a
+>
+<header class="cabecera">
+  <a routerLink="/inicio" class="marca" aria-label="Gestión de Solicitudes, inicio"
+    ><span class="simbolo" aria-hidden="true">GS</span><span>Gestión de Solicitudes</span></a
+  >
+  <span class="entorno">Entorno local</span>
+</header>
+<main #contenido id="contenido" tabindex="-1"><router-outlet /></main>
+<footer>Base técnica · Incremento 001</footer>

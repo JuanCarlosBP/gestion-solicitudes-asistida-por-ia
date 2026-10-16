@@ -1,0 +1,182 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.15kB 0.0s done
+#1 DONE 0.0s
+
+#2 [backend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.17kB done
+#2 DONE 0.0s
+
+#3 [frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 683B done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#4 DONE 0.0s
+
+#5 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#5 DONE 0.0s
+
+#6 [frontend internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#6 DONE 0.0s
+
+#7 [frontend internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#7 DONE 0.0s
+
+#8 [backend internal] load .dockerignore
+#8 transferring context: 59B done
+#8 DONE 0.0s
+
+#9 [frontend internal] load .dockerignore
+#9 transferring context: 104B done
+#9 DONE 0.0s
+
+#10 [backend stage-1 1/4] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#10 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c 0.0s done
+#10 DONE 0.0s
+
+#11 [backend construccion 1/8] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#11 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87 0.0s done
+#11 DONE 0.0s
+
+#12 [frontend construccion 1/8] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#12 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#12 DONE 0.0s
+
+#13 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#13 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#13 DONE 0.0s
+
+#14 [backend internal] load build context
+#14 transferring context: 3.12kB done
+#14 DONE 0.0s
+
+#15 [backend construccion 2/8] RUN apt-get update && apt-get install -y --no-install-recommends unzip=6.0-28ubuntu4.1 && rm -rf /var/lib/apt/lists/*
+#15 CACHED
+
+#16 [backend stage-1 3/4] RUN groupadd --gid 10001 aplicacion && useradd --uid 10001 --gid 10001 --no-create-home aplicacion
+#16 CACHED
+
+#17 [backend stage-1 2/4] WORKDIR /aplicacion
+#17 CACHED
+
+#18 [backend construccion 6/8] RUN chmod +x mvnw
+#18 CACHED
+
+#19 [backend construccion 8/8] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#19 CACHED
+
+#20 [backend construccion 4/8] COPY .mvn .mvn
+#20 CACHED
+
+#21 [backend construccion 5/8] COPY mvnw pom.xml spotbugs-exclusiones.xml ./
+#21 CACHED
+
+#22 [backend construccion 7/8] COPY src src
+#22 CACHED
+
+#23 [backend construccion 3/8] WORKDIR /construccion/backend
+#23 CACHED
+
+#24 [backend stage-1 4/4] COPY --from=construccion --chown=10001:10001 /construccion/backend/target/gestion-solicitudes-0.0.1.jar aplicacion.jar
+#24 CACHED
+
+#25 [frontend internal] load build context
+#25 transferring context: 3.30kB done
+#25 DONE 0.0s
+
+#26 [frontend construccion 2/8] WORKDIR /construccion
+#26 CACHED
+
+#27 [frontend construccion 3/8] COPY package.json package-lock.json .npmrc ./
+#27 DONE 0.0s
+
+#28 [backend] exporting to image
+#28 exporting layers done
+#28 exporting manifest sha256:4f048434280d534439b3c0c36c62053a5cfffbacdfd7c0a684ed85e38185b4de done
+#28 exporting config sha256:fc1b5b0c0bcacfd6e32270a03beb63de49ca0452c23b76d631ea52a0a08ff360 done
+#28 exporting attestation manifest sha256:0d240f9c53fe2306e430c53a836f1aeb1b3463ec8be74978c4ef512ed4cb179a 0.0s done
+#28 exporting manifest list sha256:3469c58d1e1c2c57f7c448652d6a37a4eb770989a500bfd1b1164c1a19c92d28 done
+#28 naming to docker.io/library/gestion-solicitudes-001-backend:latest done
+#28 unpacking to docker.io/library/gestion-solicitudes-001-backend:latest done
+#28 DONE 0.1s
+
+#29 [backend] resolving provenance for metadata file
+#29 DONE 0.0s
+
+#30 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#30 4.377 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#30 6.140 
+#30 6.140 added 588 packages in 6s
+#30 6.142 npm notice
+#30 6.142 npm notice New minor version of npm available! 11.6.2 -> 11.21.0
+#30 6.142 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.0
+#30 6.142 npm notice To update run: npm install -g npm@11.21.0
+#30 6.142 npm notice
+#30 DONE 6.5s
+
+#31 [frontend construccion 5/8] COPY angular.json tsconfig*.json ./
+#31 DONE 0.1s
+
+#32 [frontend construccion 6/8] COPY src src
+#32 DONE 0.0s
+
+#33 [frontend construccion 7/8] COPY public public
+#33 DONE 0.0s
+
+#34 [frontend construccion 8/8] RUN npm run build
+#34 0.227 
+#34 0.227 > gestion-solicitudes-frontend@0.0.1 build
+#34 0.227 > ng build
+#34 0.227 
+#34 0.542 ❯ Building...
+#34 2.421 ✔ Building...
+#34 2.422 Initial chunk files | Names         |  Raw size | Estimated transfer size
+#34 2.422 main-ZI5PMCJY.js    | main          | 231.30 kB |                62.94 kB
+#34 2.422 styles-T6TP5HFB.css | styles        | 244 bytes |               244 bytes
+#34 2.422 
+#34 2.422                     | Initial total | 231.55 kB |                63.18 kB
+#34 2.422 
+#34 2.422 Application bundle generation complete. [1.879 seconds] - 2026-10-13T08:45:40.615Z
+#34 2.422 
+#34 2.425 Output location: /construccion/dist/gestion-solicitudes-frontend
+#34 2.425 
+#34 DONE 2.6s
+
+#35 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#35 CACHED
+
+#36 [frontend stage-1 3/3] COPY --from=construccion /construccion/dist/gestion-solicitudes-frontend/browser /usr/share/nginx/html
+#36 DONE 0.2s
+
+#37 [frontend] exporting to image
+#37 exporting layers 0.0s done
+#37 exporting manifest sha256:f30f28f500277bffa03f7f44b99dd5ff4f2f254a6ed578ffce34f86fc1826eba done
+#37 exporting config sha256:819a3a74c045896957bc8fc495e2ce0c48f022ced07a3e738b422e1eacdaed36 done
+#37 exporting attestation manifest sha256:a7adcf071ea4cf5837b55d862d8b0a8b303f06d4b41309f41d040117d4706e66 0.0s done
+#37 exporting manifest list sha256:aae8f18fd5fce9c40da42fa22a80fa9ad5aebf34210f1cfe20b6f72d25786126 done
+#37 naming to docker.io/library/gestion-solicitudes-001-frontend:latest
+#37 naming to docker.io/library/gestion-solicitudes-001-frontend:latest done
+#37 unpacking to docker.io/library/gestion-solicitudes-001-frontend:latest 0.0s done
+#37 DONE 0.1s
+
+#38 [frontend] resolving provenance for metadata file
+#38 DONE 0.0s
+ gestion-solicitudes-001-backend  Built
+ gestion-solicitudes-001-frontend  Built
+ Container gestion-solicitudes-001-postgres-1  Running
+ Container gestion-solicitudes-001-backend-1  Recreate
+ Container gestion-solicitudes-001-backend-1  Recreated
+ Container gestion-solicitudes-001-frontend-1  Recreate
+ Container gestion-solicitudes-001-frontend-1  Recreated
+ Container gestion-solicitudes-001-postgres-1  Waiting
+ Container gestion-solicitudes-001-postgres-1  Healthy
+ Container gestion-solicitudes-001-backend-1  Starting
+ Container gestion-solicitudes-001-backend-1  Started
+ Container gestion-solicitudes-001-frontend-1  Starting
+ Container gestion-solicitudes-001-frontend-1  Started
+ Container gestion-solicitudes-001-backend-1  Waiting
+ Container gestion-solicitudes-001-frontend-1  Waiting
+ Container gestion-solicitudes-001-postgres-1  Waiting
+ Container gestion-solicitudes-001-postgres-1  Healthy
+ Container gestion-solicitudes-001-frontend-1  Healthy
+ Container gestion-solicitudes-001-backend-1  Healthy

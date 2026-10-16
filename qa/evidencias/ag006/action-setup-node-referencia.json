@@ -1,0 +1,8 @@
+{
+  "accion": "setup-node",
+  "version": "v7.1.0",
+  "referencias": [
+    "949feb2413d6458794dcd2491c4babbbce0c15c1"
+  ],
+  "fuente": "https://github.com/actions/setup-node/releases/tag/v7.1.0"
+}

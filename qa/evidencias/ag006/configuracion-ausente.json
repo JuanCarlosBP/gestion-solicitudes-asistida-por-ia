@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-13T10:53:21.2727520+02:00",
+  "salida": 1,
+  "falloEsperado": true,
+  "mencionaVariableRequerida": true,
+  "entorno": "Imagen local sin variables DB ni red"
+}

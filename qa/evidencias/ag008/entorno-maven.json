@@ -1,0 +1,22 @@
+[
+  {
+    "name": "os.name",
+    "value": "Windows 11"
+  },
+  {
+    "name": "java.home",
+    "value": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.12.101-hotspot"
+  },
+  {
+    "name": "java.runtime.version",
+    "value": "21.0.12.1+1-LTS"
+  },
+  {
+    "name": "java.version",
+    "value": "21.0.12.1"
+  },
+  {
+    "name": "java.vendor",
+    "value": "Eclipse Adoptium"
+  }
+]

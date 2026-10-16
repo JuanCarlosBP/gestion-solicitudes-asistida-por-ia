@@ -1,0 +1,17 @@
+{
+  "ejecucion": "AG-008",
+  "inicio": "2026-10-13T11:39:31.0000000+02:00",
+  "cierre": "2026-10-13T11:54:03.9998884+02:00",
+  "fuenteHora": "Inicio clock.curr_time 2026-10-13 09:39:31 UTC. Cierre DateTimeOffset.UtcNow convertido a Europe/Madrid (+02:00), tras controles locales y corrección documental.",
+  "zona": "Europe/Madrid",
+  "duracion": "00:14:32.9998884",
+  "duracionSegundos": 872.9998884,
+  "limite": "2026-10-13T12:24:31+02:00",
+  "dentroDe45Minutos": true,
+  "resultado": "Propuesta de verificación local de 001; aceptación pendiente",
+  "operacionesGit": 0,
+  "revisionIndependiente": false,
+  "ciRemota": "Pendiente de push humano",
+  "serviciosDetenidos": true,
+  "volumenConservado": true
+}

@@ -1,0 +1,80 @@
+import assert from 'node:assert/strict';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, mkdtempSync, copyFileSync } from 'node:fs';
+import { resolve, relative } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { createRequire } from 'node:module';import { prepararDirectorioEvidencias, raizProyecto } from '../../qa/rutas-evidencia.mjs';
+const evidencia=resolve(raizProyecto,'qa/evidencias/ag009');
+const controles=[];
+function comprobar(nombre, ejecutar){ ejecutar(); controles.push({nombre,resultado:'PASS'}); }
+const require=createRequire(resolve(raizProyecto,'frontend/package.json'));
+const YAML=require('js-yaml');
+const ci=YAML.load(readFileSync(resolve(raizProyecto,'.github/workflows/ci.yml'),'utf8'),{json:false});
+comprobar('YAML, Java y ausencia de push duplicado en ramas PR',()=>{
+ assert.deepEqual(ci.on.push.branches,['main']);
+ assert.ok(Object.hasOwn(ci.on,'pull_request'));
+ assert.equal(ci.jobs.backend.steps.find(x=>x.uses?.startsWith('actions/setup-java@')).with['java-version'],'21.0.12.1');
+ assert.deepEqual(ci.permissions,{contents:'read'});
+});
+comprobar('Artefactos del run y auditoría condicionada a prerrequisitos',()=>{
+ for(const nombre of ['backend','compose']){
+  const job=ci.jobs[nombre];
+  assert.equal(job.env.QA_EVIDENCE_DIR,'${{ github.workspace }}/tmp/evidencias/'+nombre);
+  const preparar=job.steps.find(x=>x.name==='Preparar evidencias exclusivas del job');
+  assert.match(preparar.run,/test "\$QA_EVIDENCE_DIR" = "\$GITHUB_WORKSPACE\/tmp\/evidencias\//);
+  assert.match(preparar.run,/rm -rf -- "\$QA_EVIDENCE_DIR"/);
+  assert.match(preparar.run,/mkdir -p -- "\$QA_EVIDENCE_DIR"/);
+  const subida=job.steps.find(x=>x.uses?.startsWith('actions/upload-artifact@'));
+  assert.doesNotMatch(subida.with.path,/qa\/evidencias\/ag00[3-8]/);
+  assert.match(subida.with.path,/\$\{\{ env.QA_EVIDENCE_DIR \}\}/);
+ }
+ for(const nombre of ['Inventario de dependencias Maven','Preparar base pública de vulnerabilidades','Auditoría Maven sin enviar inventarios']){
+  const paso=ci.jobs.backend.steps.find(x=>x.name===nombre);
+  assert.ok(paso);
+  assert.ok(!paso.if || paso.if==='${{ success() }}');
+ }
+});
+const previo=process.env.QA_EVIDENCE_DIR;
+delete process.env.QA_EVIDENCE_DIR;
+comprobar('Destino por defecto temporal',()=>assert.equal(prepararDirectorioEvidencias(),resolve(raizProyecto,'tmp/evidencias/local')));
+if(previo===undefined)delete process.env.QA_EVIDENCE_DIR;else process.env.QA_EVIDENCE_DIR=previo;
+comprobar('Protección de históricos con rutas directas y normalizadas',()=>{
+ for(let i=3;i<=8;i++)for(const p of [`qa/evidencias/ag00${i}`,`qa/evidencias/ag00${i}/nueva`,`tmp/../qa/evidencias/ag00${i}`])assert.throws(()=>prepararDirectorioEvidencias(p),/protegido/);
+ assert.throws(()=>prepararDirectorioEvidencias('../fuera'),/dentro del proyecto/);
+ assert.throws(()=>prepararDirectorioEvidencias('.git/evidencias'),/protegido/);
+});
+comprobar('Cada utilidad Node rechaza escribir en AG-006 antes de ejecutarse',()=>{
+ for(const script of ['auditar-maven.mjs','verificar-estado-navegador.mjs','verificar-entrega.mjs','verificar-documentacion.mjs']){
+  const p=spawnSync(process.execPath,[resolve(raizProyecto,'qa',script),'disponible'],{cwd:raizProyecto,encoding:'utf8',env:{...process.env,QA_EVIDENCE_DIR:'qa/evidencias/ag006'}});
+  assert.notEqual(p.status,0,script);
+  assert.match(p.stderr,/destino QA está protegido|baseline es de solo lectura/,script);
+ }
+});
+comprobar('Compose rechaza salida histórica antes de operar Docker',()=>{
+ const p=spawnSync('pwsh',['-NoProfile','-File','qa/verificar-compose.ps1','-DirectorioEvidencias','qa/evidencias/ag008'],{cwd:raizProyecto,encoding:'utf8'});
+ assert.notEqual(p.status,0);
+ assert.match(p.stderr,/protegido|rechazado/);
+});
+comprobar('Verificador legado: destino predeterminado, baseline explícita y error de baseline',()=>{
+ const env={...process.env};delete env.QA_EVIDENCE_DIR;delete env.QA_BASELINE_DIR;
+ const p=spawnSync(process.execPath,['qa/verificar-entrega.mjs'],{cwd:raizProyecto,encoding:'utf8',env});
+ assert.equal(p.status,0,p.stdout+p.stderr);
+ assert.ok(existsSync(resolve(raizProyecto,'tmp/evidencias/local/entrega-integridad.json')));
+ const base=resolve(raizProyecto,'tmp/ag009/baseline-copiada');mkdirSync(base,{recursive:true});
+ copyFileSync(resolve(raizProyecto,'qa/evidencias/ag006/inventario-inicial.json'),resolve(base,'inventario-inicial.json'));
+ for(const destino of [base,resolve(base,'salida-no-creada')]){
+  const bloqueado=spawnSync(process.execPath,['qa/verificar-entrega.mjs'],{cwd:raizProyecto,encoding:'utf8',env:{...env,QA_BASELINE_DIR:base,QA_EVIDENCE_DIR:destino}});
+  assert.notEqual(bloqueado.status,0);
+  assert.match(bloqueado.stderr,/baseline es de solo lectura/);
+  assert.ok(!existsSync(resolve(destino,'entrega-integridad.json')));
+ }
+ assert.ok(!existsSync(resolve(base,'salida-no-creada')));
+ const salida=resolve(evidencia,'verificador-baseline');
+ const q=spawnSync(process.execPath,['qa/verificar-entrega.mjs'],{cwd:raizProyecto,encoding:'utf8',env:{...env,QA_BASELINE_DIR:base,QA_EVIDENCE_DIR:salida}});
+ assert.equal(q.status,0,q.stdout+q.stderr);
+ assert.equal(JSON.parse(readFileSync(resolve(salida,'entrega-integridad.json'),'utf8')).resultado,'PASS');
+ const r=spawnSync(process.execPath,['qa/verificar-entrega.mjs'],{cwd:raizProyecto,encoding:'utf8',env:{...env,QA_BASELINE_DIR:'tmp/ag009/baseline-inexistente',QA_EVIDENCE_DIR:'tmp/ag009/salida-baseline-ausente'}});
+ assert.notEqual(r.status,0);
+ assert.ok(!existsSync(resolve(raizProyecto,'tmp/ag009/salida-baseline-ausente/entrega-integridad.json')));
+});
+writeFileSync(resolve(evidencia,'utilidades-y-workflow.json'),JSON.stringify({fecha:new Date().toISOString(),controles,limite:'Análisis estructural y procesos locales; no ejecución GitHub Actions.'},null,2)+'\n');
+console.log(JSON.stringify(controles,null,2));

@@ -1,0 +1,53 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default) @ gestion-solicitudes ---
+[INFO] Spotless check skipped
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ gestion-solicitudes ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ gestion-solicitudes ---
+[INFO] skip non existing resourceDirectory C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ gestion-solicitudes ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ gestion-solicitudes ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running es.gestionsolicitudes.salud.http.ControladorSaludTest
+10:31:17.609 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.gestionsolicitudes.salud.http.ControladorSaludTest]: ControladorSaludTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:31:17.754 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.salud.http.ControladorSaludTest
+10:31:17.756 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [es.gestionsolicitudes.salud.http.ControladorSaludTest]: ControladorSaludTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:31:17.765 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration es.gestionsolicitudes.GestionSolicitudesApplication for test class es.gestionsolicitudes.salud.http.ControladorSaludTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-13T10:31:18.159+02:00  INFO 10996 --- [gestion-solicitudes] [           main] e.g.salud.http.ControladorSaludTest      : Starting ControladorSaludTest using Java 21.0.12.1 with PID 10996 (started by carli in C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend)
+2026-10-13T10:31:18.161+02:00  INFO 10996 --- [gestion-solicitudes] [           main] e.g.salud.http.ControladorSaludTest      : No active profile set, falling back to 1 default profile: "default"
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\m2\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release

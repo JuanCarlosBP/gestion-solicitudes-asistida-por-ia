@@ -1,0 +1,76 @@
+import assert from 'node:assert/strict';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { resolve, relative } from 'node:path';
+import { createHash } from 'node:crypto';
+const raiz=resolve(import.meta.dirname,'../..');
+const salida=resolve(raiz,'qa/evidencias/ag009');
+const hash=(datos)=>createHash('sha256').update(datos).digest('hex').toUpperCase();
+const leer=(ruta)=>readFileSync(resolve(raiz,ruta));
+const json=(ruta)=>JSON.parse(leer(ruta).toString('utf8').replace(/^\uFEFF/,''));
+const guardar=(nombre,datos)=>writeFileSync(resolve(salida,nombre),JSON.stringify(datos,null,2)+'\n');
+const inicial=json('qa/evidencias/ag009/inventario-inicial.json');
+const anteriores=new Map(inicial.map(x=>[x.ruta,x]));
+const historicos=json('qa/evidencias/ag009/historicos-antes.json');
+const omitidos=new Set(['.git','tmp','node_modules','target','dist','.angular','test-results','playwright-report']);
+function inventario(directorio=raiz){
+ const archivos=[];
+ for(const entrada of readdirSync(directorio,{withFileTypes:true})){
+  if(omitidos.has(entrada.name)||entrada.name==='.env')continue;
+  assert.ok(!entrada.isSymbolicLink(),'Enlace inesperado: '+entrada.name);
+  const ruta=resolve(directorio,entrada.name);
+  if(entrada.isDirectory()){archivos.push(...inventario(ruta));continue;}
+  const contenido=readFileSync(ruta);
+  archivos.push({ruta:relative(raiz,ruta).replaceAll('\\','/'),bytes:contenido.length,sha256:hash(contenido)});
+ }
+ return archivos.sort((a,b)=>a.ruta.localeCompare(b.ruta));
+}
+const protegidos=(ruta)=>/^qa\/evidencias\/ag00[3-8]\//.test(ruta)||/^docs\/trazabilidad\/AG-00[6-8]-informe\.md$/.test(ruta)||ruta==='docs/trazabilidad/memoria-hasta-ag005.md'||/^docs\/decisiones\/ADR-000[12]-/.test(ruta);
+const posteriores=inventario().filter(x=>protegidos(x.ruta));
+const comparar=(items)=>items.map(x=>`${x.ruta}\t${x.bytes}\t${x.sha256}`).sort().join('\n');
+assert.equal(comparar(posteriores),comparar(historicos),'Historia modificada, añadida o eliminada');
+guardar('historicos-despues.json',posteriores);
+const prefijos=['docs/trazabilidad/ejecuciones-agentes.csv','especificaciones/001-base-verificable/validacion.md'].map(ruta=>{
+ const anterior=anteriores.get(ruta);
+ const observado=hash(leer(ruta).subarray(0,anterior.bytes));
+ assert.equal(observado,anterior.sha256,'Prefijo alterado: '+ruta);
+ return {ruta,bytes:anterior.bytes,esperado:anterior.sha256,observado,resultado:'PASS'};
+});
+const fuentesModificadas=new Set(['.github/workflows/ci.yml','frontend/Dockerfile','qa/auditar-maven.mjs','qa/verificar-compose.ps1','qa/verificar-estado-navegador.mjs','qa/verificar-entrega.mjs','qa/verificar-documentacion.mjs','README.md','docs/README.md','docs/documentaciondev/entorno.md','docs/documentaciondev/arquitectura.md','especificaciones/001-base-verificable/plan.md','especificaciones/001-base-verificable/validacion.md','MEMORY.md','docs/trazabilidad/ejecuciones-agentes.csv']);
+const fuentesCreadas=new Set(['qa/rutas-evidencia.mjs','docs/trazabilidad/AG-009-informe.md','docs/trazabilidad/REV-001-revision-independiente-01.md']);
+const actual=inventario();
+const delta=actual.filter(x=>anteriores.get(x.ruta)?.sha256!==x.sha256).map(x=>({...x,estado:anteriores.has(x.ruta)?'MODIFICADO':'CREADO'}));
+const eliminados=inicial.filter(x=>!existsSync(resolve(raiz,x.ruta))).map(x=>x.ruta);
+const inesperados=delta.filter(x=>x.estado==='MODIFICADO'?!fuentesModificadas.has(x.ruta):!fuentesCreadas.has(x.ruta)&&!x.ruta.startsWith('qa/evidencias/ag009/'));
+assert.deepEqual(eliminados,[],'Archivo inicial eliminado');
+assert.deepEqual(inesperados,[],'Archivos fuera del alcance');
+const intactos=['backend/pom.xml','frontend/package.json','frontend/package-lock.json','frontend/angular.json','frontend/playwright.config.ts','infraestructura/compose.yaml','infraestructura/.env.example','docs/documentaciondev/versiones.md','especificaciones/001-base-verificable/especificacion.md','especificaciones/001-base-verificable/tareas.md'].map(ruta=>{
+ const observado=hash(leer(ruta));assert.equal(observado,anteriores.get(ruta).sha256,ruta);
+ return {ruta,sha256:observado,resultado:'SIN_CAMBIOS'};
+});
+const workflow=leer('.github/workflows/ci.yml').toString();
+assert.doesNotMatch(workflow,/qa\/evidencias\/ag00[3-8]/);
+assert.doesNotMatch(leer('frontend/Dockerfile').toString(),/COPY\s+public\s+public/);
+assert.ok(!existsSync(resolve(raiz,'frontend/public')));
+const puertos=['qa/verificar-compose.ps1','qa/verificar-estado-navegador.mjs'].flatMap(ruta=>leer(ruta).toString().split(/\r?\n/).flatMap((linea,i)=>linea.includes('18080')?[{ruta,linea:i+1,contenido:linea}]:[]));
+assert.equal(puertos.length,2);
+assert.ok(puertos.every(x=>/IsNullOrWhiteSpace|process\.env\.BASE_URL \|\|/.test(x.contenido)));
+const csv=leer('docs/trazabilidad/ejecuciones-agentes.csv').toString();
+assert.equal(csv.split(/\r?\n/).filter(x=>/^"?AG-009"?,/.test(x)).length,1);
+const activos=['README.md','docs/README.md','docs/documentaciondev/entorno.md','docs/documentaciondev/arquitectura.md','especificaciones/001-base-verificable/plan.md','MEMORY.md'];
+const frasesObsoletas=activos.flatMap(ruta=>leer(ruta).toString().split(/\r?\n/).flatMap((linea,i)=>/(actualmente bloqueado por Spotless|verify íntegro sigue fallando|control de formato Maven bloquea|T006\/formato bloqueado|Resultado actual del comando obligatorio:\*\* falla)/i.test(linea)?[{ruta,linea:i+1}]:[]));
+assert.deepEqual(frasesObsoletas,[]);
+const ejemplo=leer('infraestructura/.env.example').toString().replace(/\r\n/g,'\n').trim();
+const entorno=leer('infraestructura/.env').toString().replace(/\r\n/g,'\n').trim();
+assert.equal(entorno,ejemplo,'La configuración local no coincide con el ejemplo ficticio');
+const revision=leer('docs/trazabilidad/REV-001-revision-independiente-01.md');
+const ancla=json('qa/evidencias/ag009/revision-tecnica.json');
+assert.equal(hash(revision),ancla.sha256Rev001,'REV-001 alterada tras su registro');
+guardar('control-final.json',{fecha:new Date().toISOString(),resultado:'PASS',historicos:{antes:historicos.length,despues:posteriores.length,sinCambios:true,huellaCanonicaAntes:hash(comparar(historicos)),huellaCanonicaDespues:hash(comparar(posteriores))},prefijos,intactos,fuentes:delta.filter(x=>!x.ruta.startsWith('qa/evidencias/ag009/')),eliminados,inesperados,frasesObsoletas,puerto18080SoloPredeterminado:puertos,configuracionLocalIgualEjemploFicticio:true,publicExiste:false,filasAg009:1,limites:['No se consulta Git ni el remoto.','Inventario omite cachés/salidas de herramientas declaradas y configuración local.','La búsqueda de secretos se registra por separado y es acotada.']});
+if(process.argv.includes('--manifiesto')){
+ const excluirPropios=new Set(['qa/evidencias/ag009/entrega-manifiesto.json','qa/evidencias/ag009/entrega-integridad.json']);
+ const completo=inventario().filter(x=>!excluirPropios.has(x.ruta)).map(x=>({...x,estado:!anteriores.has(x.ruta)?'CREADO':x.sha256===anteriores.get(x.ruta).sha256?'SIN_CAMBIOS':'MODIFICADO'}));
+ guardar('entrega-manifiesto.json',completo);
+ guardar('entrega-integridad.json',{fecha:new Date().toISOString(),resultado:'PASS',baseline:'Inventario inicial AG-009',archivos:completo.length,sha256Manifiesto:hash(leer('qa/evidencias/ag009/entrega-manifiesto.json')),historicos:historicos.length,prefijos,exclusiones:[...omitidos,'.env',...excluirPropios],operacionesGit:0});
+ for(const archivo of completo)assert.equal(hash(leer(archivo.ruta)),archivo.sha256,archivo.ruta);
+}
+console.log(JSON.stringify({resultado:'PASS',historicos:historicos.length,fuentesModificadas:delta.filter(x=>x.estado==='MODIFICADO').length,fuentesCreadas:delta.filter(x=>x.estado==='CREADO'&&!x.ruta.startsWith('qa/evidencias/ag009/')).length,inesperados:0,eliminados:0}));

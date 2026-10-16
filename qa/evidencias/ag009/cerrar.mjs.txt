@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { resolve, relative } from 'node:path';
+import { createHash } from 'node:crypto';
+const raiz=resolve(import.meta.dirname,'../..');
+const evidencia=resolve(raiz,'qa/evidencias/ag009');
+const leer=(p)=>readFileSync(resolve(raiz,p));
+const json=(p)=>JSON.parse(leer(p).toString().replace(/^\uFEFF/,''));
+const guardar=(p,x)=>writeFileSync(resolve(evidencia,p),JSON.stringify(x,null,2)+'\n');
+const final=process.argv.includes('--final');
+const inicio=json('qa/evidencias/ag009/inicio.json').inicio;
+const fin=process.env.AG009_CIERRE;
+assert.ok(fin&&Number.isFinite(Date.parse(fin)));
+const duracionSegundos=Math.round((Date.parse(fin)-Date.parse(inicio))/1000);
+if(final){
+ const doc=json('qa/evidencias/ag009/documentacion-control.json');
+ assert.deepEqual(doc.errores,[]);assert.deepEqual(doc.ubicacionesPatronesSecretos,[]);
+ assert.equal(json('qa/evidencias/ag009/control-final.json').resultado,'PASS');
+}
+guardar('cierre.json',{ejecucion:'AG-009',inicio,fin,zona:'Europe/Madrid',duracionSegundos,limiteOrientativo:'2026-10-13T15:57:45+02:00',estado:final?'CORRECCIONES Y QA LOCAL PASS; SEGUNDA CI Y ACEPTACION PENDIENTES':'CIERRE EN PREPARACION; CONTROL DOCUMENTAL FINAL PENDIENTE',operacionesGit:0,primeraCi:{runs:['38388926539','38389011007'],frontend:'PASS',backend:'FAIL setup-java',compose:'FAIL COPY public',fuente:'Encargo humano'},segundaCi:'Pendiente del siguiente push humano',aceptacion:'Pendiente de la persona responsable',integracion:'No realizada',historicosSinCambios:187,servicios:'Tres detenidos; volumen conservado',revision:'Otro agente revisó correcciones técnicas; cierre documental revisado por sesión principal'});
+const csvRuta='docs/trazabilidad/ejecuciones-agentes.csv';
+const antes=json('qa/evidencias/ag009/inventario-inicial.json').find(x=>x.ruta===csvRuta);
+const prefijo=leer(csvRuta).subarray(0,antes.bytes);
+assert.equal(createHash('sha256').update(prefijo).digest('hex').toUpperCase(),antes.sha256);
+const campos=['AG-009',inicio,final?fin:'','Coordinador y escritor único; planificador y revisor delegados de solo lectura','Corrección primera CI de PR #1 y R-01 a R-04','Autorización humana AG-009; runs 38388926539 y 38389011007: frontend PASS, backend FAIL setup-java, Compose FAIL public; sin funciones ni cambios de arquitectura','CI, Dockerfile frontend, QA, estado documental, REV-001 e informe/evidencias AG-009; manifiesto propio','Verify sin skip y 13 backend; 11 Angular; tipos/lint/formato/build; Docker sin cache; Compose 18080 y 18081 con 5 E2E cada uno; actionlint/YAML; QA, hashes y documentación',final?`CORRECCIONES Y QA LOCAL PASS; 187 históricos intactos; ninguna operación Git; duración ${duracionSegundos} segundos`:'CIERRE DOCUMENTAL EN PREPARACION; ninguna operación Git','Segunda CI tras siguiente push humano; revisión de artefactos, aceptación e integración por responsable','docs/trazabilidad/AG-009-informe.md; docs/trazabilidad/REV-001-revision-independiente-01.md; qa/evidencias/ag009/cierre.json; entrega-manifiesto.json; manifiesto-commits.json'];
+const fila=campos.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')+'\r\n';
+writeFileSync(resolve(raiz,csvRuta),Buffer.concat([prefijo,Buffer.from(prefijo.at(-1)===10?fila:'\r\n'+fila)]));
+function listar(directorio){return readdirSync(directorio,{withFileTypes:true}).flatMap(x=>x.isDirectory()?listar(resolve(directorio,x.name)):[relative(raiz,resolve(directorio,x.name)).replaceAll('\\','/')]);}
+const archivosEvidencia=new Set(listar(evidencia));
+for(const nombre of ['manifiesto-commits.json','entrega-manifiesto.json','entrega-integridad.json','documentacion-control.json'])archivosEvidencia.add('qa/evidencias/ag009/'+nombre);
+const grupos=[{mensaje:'fix(ci): corregir reproducibilidad y aislamiento de evidencias de 001',archivos:['.github/workflows/ci.yml','frontend/Dockerfile','qa/rutas-evidencia.mjs','qa/auditar-maven.mjs','qa/verificar-compose.ps1','qa/verificar-estado-navegador.mjs','qa/verificar-entrega.mjs','qa/verificar-documentacion.mjs']},{mensaje:'docs(001): registrar primera CI y respuesta a REV-001',archivos:['README.md','MEMORY.md','docs/README.md','docs/documentaciondev/entorno.md','docs/documentaciondev/arquitectura.md','especificaciones/001-base-verificable/plan.md','especificaciones/001-base-verificable/validacion.md','docs/trazabilidad/ejecuciones-agentes.csv','docs/trazabilidad/REV-001-revision-independiente-01.md','docs/trazabilidad/AG-009-informe.md',...archivosEvidencia].sort()}];
+guardar('manifiesto-commits.json',{fecha:fin,estado:'Propuesta para revisión humana; ningún commit ejecutado',grupos,exclusiones:['tmp/','backend/target/','frontend/node_modules/','frontend/dist/','frontend/.angular/','frontend/test-results/','infraestructura/.env'],directoriosVaciosEliminados:['frontend/public'],archivosFuenteEliminados:[],operacionesGit:0});
+console.log(JSON.stringify({inicio,fin,duracionSegundos,final,grupos:grupos.map(x=>({mensaje:x.mensaje,archivos:x.archivos.length}))}));

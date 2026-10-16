@@ -1,0 +1,6 @@
+{
+  "accion": "upload-artifact",
+  "version": "v7.0.2",
+  "fuente": "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
+  "cuerpo": "## What's Changed\r\n- Improves artifact download retries when the service returns HTTP 429 (rate limiting), including honoring valid Retry-After headers.\r\n- Updates @actions/artifact to v6.3.1.\r\n\r\n\r\n## New Contributors\r\n* @tunc-d made their first contribution in https://github.com/actions/upload-artifact/pull/821\r\n\r\n**Full Changelog**: https://github.com/actions/upload-artifact/compare/v7.0.1...v7.0.2"
+}

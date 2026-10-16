@@ -1,0 +1,296 @@
+{
+  "fecha": "2026-10-13T08:20:20.759Z",
+  "paquetes": 689,
+  "preliminares": 16,
+  "inventario": [
+    {
+      "nombre": "@rolldown/binding-android-arm64",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-android-arm64",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-android-arm64@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-darwin-arm64",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-darwin-arm64",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-darwin-arm64@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-darwin-x64",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-darwin-x64",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-darwin-x64@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-freebsd-x64",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-freebsd-x64",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-freebsd-x64@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-linux-arm-gnueabihf",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-linux-arm-gnueabihf@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-linux-arm64-gnu",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-linux-arm64-gnu",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-linux-arm64-gnu@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-linux-arm64-musl",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-linux-arm64-musl",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-linux-arm64-musl@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-linux-x64-gnu",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-linux-x64-gnu@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-linux-x64-musl",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-linux-x64-musl",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-linux-x64-musl@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-openharmony-arm64",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-openharmony-arm64",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-openharmony-arm64@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-wasm32-wasi",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-wasm32-wasi",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-wasm32-wasi@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-win32-arm64-msvc",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-win32-arm64-msvc",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-win32-arm64-msvc@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/binding-win32-x64-msvc",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/binding-win32-x64-msvc@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "@rolldown/pluginutils",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/@rolldown/pluginutils",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4",
+          "@rolldown/pluginutils@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "gensync",
+      "version": "1.0.0-beta.2",
+      "ruta": "node_modules/gensync",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "@babel/core@7.29.7",
+          "gensync@1.0.0-beta.2"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    },
+    {
+      "nombre": "rolldown",
+      "version": "1.0.0-rc.4",
+      "ruta": "node_modules/rolldown",
+      "directa": false,
+      "clasificacion": "TRANSITIVA_CONTROLADA",
+      "cadenas": [
+        [
+          "@angular/build@21.2.26",
+          "rolldown@1.0.0-rc.4"
+        ]
+      ],
+      "origen": "https://registry.npmjs.org/",
+      "integridad": true,
+      "licencia": "MIT",
+      "motivos": []
+    }
+  ],
+  "errores": [],
+  "controlesExternos": "La clasificación estática requiere npm ci, auditorías, build y pruebas para su aceptación final conforme a ADR-0002."
+}

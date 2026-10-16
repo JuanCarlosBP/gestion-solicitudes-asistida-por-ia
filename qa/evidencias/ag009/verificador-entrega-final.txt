@@ -1,0 +1,2 @@
+Baseline de solo lectura: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag006; salidas de entrega: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag009\verificador-entrega-final
+{"resultado":"PASS","resumen":{"CREADO":354,"MODIFICADO":12,"SIN_CAMBIOS":34},"eliminados":[],"inesperados":[],"filasAg006":1}

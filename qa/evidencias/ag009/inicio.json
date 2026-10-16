@@ -1,0 +1,25 @@
+{
+  "pr": 1,
+  "limiteOrientativo": "2026-10-13T15:57:45+02:00",
+  "ejecucion": "AG-009",
+  "operacionesGit": 0,
+  "runs": [
+    "38388926539",
+    "38389011007"
+  ],
+  "resultadoInicial": {
+    "backend": "FAIL setup-java SemVer",
+    "compose": "FAIL COPY public",
+    "frontend": "PASS"
+  },
+  "plan": [
+    "Inventariar y proteger historia",
+    "Corregir CI/Docker/QA dentro del alcance",
+    "Verificar scripts, backend, frontend y Docker sin cache",
+    "Validar Compose 18080 y 18081 y conservar volumen",
+    "Conciliar documentos, comprobar integridad y entregar manifiesto"
+  ],
+  "fuenteRemota": "Datos facilitados por la persona responsable; sin consultas Git",
+  "inicio": "2026-10-13T14:42:45+02:00",
+  "ramaDeclarada": "feature/001-base-verificable"
+}

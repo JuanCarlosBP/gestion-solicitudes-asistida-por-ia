@@ -1,0 +1,30 @@
+[
+  {
+    "nombre": "YAML, Java y ausencia de push duplicado en ramas PR",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Artefactos del run y auditoría condicionada a prerrequisitos",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Destino por defecto temporal",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Protección de históricos con rutas directas y normalizadas",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Cada utilidad Node rechaza escribir en AG-006 antes de ejecutarse",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Compose rechaza salida histórica antes de operar Docker",
+    "resultado": "PASS"
+  },
+  {
+    "nombre": "Verificador legado: destino predeterminado, baseline explícita y error de baseline",
+    "resultado": "PASS"
+  }
+]

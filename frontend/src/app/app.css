@@ -1,0 +1,58 @@
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem clamp(1rem, 5vw, 4rem);
+  border-bottom: 1px solid #dce4e8;
+  background: #fff;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #173844;
+  font-weight: 700;
+  text-decoration: none;
+}
+.simbolo {
+  background: #184d55;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 0.65rem;
+  font-size: 0.9rem;
+}
+.entorno {
+  color: #435b66;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 7vw, 5rem) 1.5rem;
+}
+footer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #536671;
+  font-size: 0.85rem;
+}
+.saltar {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  background: white;
+  padding: 1rem;
+  z-index: 2;
+}
+.saltar:focus {
+  top: 1rem;
+}
+@media (max-width: 420px) {
+  .cabecera {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

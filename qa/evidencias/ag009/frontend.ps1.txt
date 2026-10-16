@@ -1,0 +1,15 @@
+$ErrorActionPreference='Stop'
+$raizProyecto=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+Set-Location -LiteralPath (Join-Path $raizProyecto 'frontend')
+foreach($comprobacion in @('typecheck','lint','format:check','test','build')){
+    $log=Join-Path $raizProyecto ('qa/evidencias/ag009/frontend-'+$comprobacion.Replace(':','-')+'.txt')
+    if($comprobacion -eq 'test'){
+        & npm.cmd test -- --reporters=junit --output-file=../qa/evidencias/ag009/frontend-unitarias.xml *> $log
+    }else{
+        & npm.cmd run $comprobacion *> $log
+    }
+    $codigo=$LASTEXITCODE
+    Get-Content -LiteralPath $log -Tail 10
+    Write-Output "CONTROL $comprobacion : salida=$codigo"
+    if($codigo -ne 0){exit $codigo}
+}

@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-13T09:03:14.316Z",
+  "esperado": "Sistema disponible",
+  "observado": "✓ Sistema disponible\n\nLa aplicación y su base de datos responden correctamente.",
+  "resultado": "PASS",
+  "origen": "PostgreSQL real de Compose, sin interceptar HTTP"
+}

@@ -1,0 +1,26 @@
+{
+  "ejecucion": "AG-009",
+  "inicio": "2026-10-13T14:42:45+02:00",
+  "fin": "2026-10-13T15:05:16.3882209+02:00",
+  "zona": "Europe/Madrid",
+  "duracionSegundos": 1351,
+  "limiteOrientativo": "2026-10-13T15:57:45+02:00",
+  "estado": "CORRECCIONES Y QA LOCAL PASS; SEGUNDA CI Y ACEPTACION PENDIENTES",
+  "operacionesGit": 0,
+  "primeraCi": {
+    "runs": [
+      "38388926539",
+      "38389011007"
+    ],
+    "frontend": "PASS",
+    "backend": "FAIL setup-java",
+    "compose": "FAIL COPY public",
+    "fuente": "Encargo humano"
+  },
+  "segundaCi": "Pendiente del siguiente push humano",
+  "aceptacion": "Pendiente de la persona responsable",
+  "integracion": "No realizada",
+  "historicosSinCambios": 187,
+  "servicios": "Tres detenidos; volumen conservado",
+  "revision": "Otro agente revisó correcciones técnicas; cierre documental revisado por sesión principal"
+}

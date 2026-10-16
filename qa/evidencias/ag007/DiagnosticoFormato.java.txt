@@ -1,0 +1,16 @@
+import java.nio.file.*;
+import com.diffplug.spotless.glue.java.GoogleJavaFormatFormatterFunc;
+
+class DiagnosticoFormato {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Java: " + System.getProperty("java.version"));
+            var formato = new GoogleJavaFormatFormatterFunc("1.37.0", "AOSP", false, true, true);
+            var texto = Files.readString(Path.of(args[0]));
+            System.out.println("Formato calculado sin escribir archivos: " + formato.apply(texto).length());
+        } catch (Throwable fallo) {
+            fallo.printStackTrace();
+            System.exit(1);
+        }
+    }
+}

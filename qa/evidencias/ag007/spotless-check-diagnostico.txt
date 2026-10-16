@@ -1,0 +1,317 @@
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\maven-user\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0
+Java version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot
+Default locale: es_ES, platform encoding: UTF-8
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\maven-user\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\carli\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\maven-user\wrapper\dists\apache-maven-3.9.16\0daed3be3ebd1c706f0e69e8b07c6b73f5cc4ea3dfce72a8d0ec2e849ca2ddb0\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\carli\.m2\toolchains.xml
+[DEBUG] Using local repository at C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\..\tmp\m2
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\..\tmp\m2
+[INFO] Scanning for projects...
+[DEBUG] Creating adapter using nameMapper 'gaecv' and factory 'rwlock-local'
+[DEBUG] Extension realms for project es.gestionsolicitudes:gestion-solicitudes:jar:0.0.1: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-starter-parent:pom:4.0.8: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.springframework.boot:spring-boot-dependencies:pom:4.0.8: (none)
+[DEBUG] Looking up lifecycle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Resolving plugin prefix spotless from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Resolved plugin prefix spotless to com.diffplug.spotless:spotless-maven-plugin from repository null
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: es.gestionsolicitudes:gestion-solicitudes:jar:0.0.1
+[DEBUG] Tasks:   [spotless:check]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Resolving plugin prefix spotless from [org.apache.maven.plugins, org.codehaus.mojo]
+[DEBUG] Resolved plugin prefix spotless to com.diffplug.spotless:spotless-maven-plugin from repository null
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       es.gestionsolicitudes:gestion-solicitudes:0.0.1
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): []
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          com.diffplug.spotless:spotless-maven-plugin:3.10.4:check (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <baseDir default-value="${project.basedir}"/>
+  <buildDir default-value="${project.build.directory}"/>
+  <checkSkip default-value="false">${spotless.check.skip}</checkSkip>
+  <encoding default-value="UTF-8"/>
+  <filePatterns>${spotlessFiles}</filePatterns>
+  <goal default-value="${mojoExecution.goal}"/>
+  <java>
+    <googleJavaFormat>
+      <version>1.37.0</version>
+      <style>AOSP</style>
+    </googleJavaFormat>
+  </java>
+  <lineEndings default-value="GIT_ATTRIBUTES_FAST_ALLSAME"/>
+  <m2eEnableForIncrementalBuild default-value="false"/>
+  <m2eIncrementalBuildMessageSeverity default-value="WARNING"/>
+  <mavenSession default-value="${session}"/>
+  <project default-value="${project}"/>
+  <repositories default-value="${project.remotePluginRepositories}"/>
+  <repositorySystemSession default-value="${repositorySystemSession}"/>
+  <setLicenseHeaderYearsFromGitHistory>${spotlessSetLicenseHeaderYearsFromGitHistory}</setLicenseHeaderYearsFromGitHistory>
+  <skip default-value="false">${spotless.skip}</skip>
+</configuration>
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] --- spotless:3.10.4:check (default-cli) @ gestion-solicitudes ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=1088000, ConflictMarker.markTime=80600, ConflictMarker.nodeCount=48, ConflictIdSorter.graphTime=809200, ConflictIdSorter.topsortTime=421400, ConflictIdSorter.conflictIdCount=28, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=5124500, ConflictResolver.conflictItemCount=43, DfDependencyCollector.collectTime=142892500, DfDependencyCollector.transformTime=10065100}
+[DEBUG] com.diffplug.spotless:spotless-maven-plugin:jar:3.10.4
+[DEBUG]    com.diffplug.spotless:spotless-lib:jar:4.10.4:runtime
+[DEBUG]    com.diffplug.spotless:spotless-lib-extra:jar:4.10.4:runtime
+[DEBUG]       com.googlecode.concurrent-trees:concurrent-trees:jar:2.6.1:runtime
+[DEBUG]       dev.equo.ide:solstice:jar:1.8.2:runtime
+[DEBUG]          com.diffplug.durian:durian-swt.os:jar:4.3.0:runtime
+[DEBUG]          org.tukaani:xz:jar:1.9:runtime
+[DEBUG]          com.squareup.okhttp3:okhttp:jar:4.12.0:runtime
+[DEBUG]             com.squareup.okio:okio:jar:3.6.0:runtime
+[DEBUG]                com.squareup.okio:okio-jvm:jar:3.6.0:runtime
+[DEBUG]                   org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10:runtime
+[DEBUG]             org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.8.21:runtime
+[DEBUG]                org.jetbrains.kotlin:kotlin-stdlib:jar:1.8.21:runtime
+[DEBUG]                   org.jetbrains:annotations:jar:13.0:runtime
+[DEBUG]                org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.8.21:runtime
+[DEBUG]       org.eclipse.platform:org.eclipse.osgi:jar:3.24.300:runtime
+[DEBUG]    com.diffplug.durian:durian-core:jar:1.2.0:runtime
+[DEBUG]    com.diffplug.durian:durian-io:jar:1.2.0:runtime
+[DEBUG]    com.diffplug.durian:durian-collect:jar:1.2.0:runtime
+[DEBUG]    org.codehaus.plexus:plexus-resources:jar:1.4.0:runtime
+[DEBUG]       org.codehaus.plexus:plexus-xml:jar:3.1.0:runtime
+[DEBUG]       javax.inject:javax.inject:jar:1:runtime
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:4.1.0:runtime
+[DEBUG]    org.eclipse.jgit:org.eclipse.jgit:jar:7.8.0.202609011348-r:runtime
+[DEBUG]       com.googlecode.javaewah:JavaEWAH:jar:1.2.3:runtime
+[DEBUG]       commons-codec:commons-codec:jar:1.22.1:runtime
+[DEBUG]    org.sonatype.plexus:plexus-build-api:jar:0.0.7:runtime
+[DEBUG] Created new class realm plugin>com.diffplug.spotless:spotless-maven-plugin:3.10.4
+[DEBUG] Importing foreign packages into class realm plugin>com.diffplug.spotless:spotless-maven-plugin:3.10.4
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>com.diffplug.spotless:spotless-maven-plugin:3.10.4
+[DEBUG]   Included: com.diffplug.spotless:spotless-maven-plugin:jar:3.10.4
+[DEBUG]   Included: com.diffplug.spotless:spotless-lib:jar:4.10.4
+[DEBUG]   Included: com.diffplug.spotless:spotless-lib-extra:jar:4.10.4
+[DEBUG]   Included: com.googlecode.concurrent-trees:concurrent-trees:jar:2.6.1
+[DEBUG]   Included: dev.equo.ide:solstice:jar:1.8.2
+[DEBUG]   Included: com.diffplug.durian:durian-swt.os:jar:4.3.0
+[DEBUG]   Included: org.tukaani:xz:jar:1.9
+[DEBUG]   Included: com.squareup.okhttp3:okhttp:jar:4.12.0
+[DEBUG]   Included: com.squareup.okio:okio:jar:3.6.0
+[DEBUG]   Included: com.squareup.okio:okio-jvm:jar:3.6.0
+[DEBUG]   Included: org.jetbrains.kotlin:kotlin-stdlib-common:jar:1.9.10
+[DEBUG]   Included: org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.8.21
+[DEBUG]   Included: org.jetbrains.kotlin:kotlin-stdlib:jar:1.8.21
+[DEBUG]   Included: org.jetbrains:annotations:jar:13.0
+[DEBUG]   Included: org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.8.21
+[DEBUG]   Included: org.eclipse.platform:org.eclipse.osgi:jar:3.24.300
+[DEBUG]   Included: com.diffplug.durian:durian-core:jar:1.2.0
+[DEBUG]   Included: com.diffplug.durian:durian-io:jar:1.2.0
+[DEBUG]   Included: com.diffplug.durian:durian-collect:jar:1.2.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-resources:jar:1.4.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-xml:jar:3.1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:4.1.0
+[DEBUG]   Included: org.eclipse.jgit:org.eclipse.jgit:jar:7.8.0.202609011348-r
+[DEBUG]   Included: com.googlecode.javaewah:JavaEWAH:jar:1.2.3
+[DEBUG]   Included: commons-codec:commons-codec:jar:1.22.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG] Loading mojo com.diffplug.spotless:spotless-maven-plugin:3.10.4:check from plugin realm ClassRealm[plugin>com.diffplug.spotless:spotless-maven-plugin:3.10.4, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e]
+[DEBUG] Configuring mojo execution 'com.diffplug.spotless:spotless-maven-plugin:3.10.4:check:default-cli' with basic configurator -->
+[DEBUG]   (f) baseDir = C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend
+[DEBUG]   (f) buildDir = C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\target
+[DEBUG]   (f) checkSkip = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) goal = check
+[DEBUG]   (f) version = 1.37.0
+[DEBUG]   (f) style = AOSP
+[DEBUG]   (s) googleJavaFormat = com.diffplug.spotless.maven.java.GoogleJavaFormat@67514bdd
+[DEBUG]   (f) java = com.diffplug.spotless.maven.java.Java@3b920bdc
+[DEBUG]   (f) lineEndings = GIT_ATTRIBUTES_FAST_ALLSAME
+[DEBUG]   (f) m2eEnableForIncrementalBuild = false
+[DEBUG]   (f) m2eIncrementalBuildMessageSeverity = WARNING
+[DEBUG]   (f) mavenSession = org.apache.maven.execution.MavenSession@8bd86c8
+[DEBUG]   (f) project = MavenProject: es.gestionsolicitudes:gestion-solicitudes:0.0.1 @ C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\pom.xml
+[DEBUG]   (f) repositories = [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG]   (f) repositorySystemSession = org.eclipse.aether.DefaultRepositorySystemSession@78830d9a
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] register org.eclipse.jgit.util.FS$FileStoreAttributes$$Lambda/0x000001fa14254460@4b31a708 with shutdown hook
+[DEBUG] file=null, size changed from -1 to 0 bytes
+[DEBUG] file=null, size changed from -1 to 0 bytes
+[DEBUG] file=C:\Users\carli\gestion-solicitudes-asistida-por-ia\.git\config, create new FileSnapshot: lastRead=2026-10-13 11:17:31.374360600, lastModified=2026-10-13 02:27:39.432313300, size=541, fileKey=java.lang.Object@4a901445
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=29300, ConflictMarker.markTime=19400, ConflictMarker.nodeCount=11, ConflictIdSorter.graphTime=7700, ConflictIdSorter.topsortTime=7200, ConflictIdSorter.conflictIdCount=9, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=373800, ConflictResolver.conflictItemCount=10, DfDependencyCollector.collectTime=36756800, DfDependencyCollector.transformTime=457000}
+[DEBUG] Resolved artifact: com.google.googlejavaformat:google-java-format:jar:1.37.0 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: com.google.guava:guava:jar:33.6.0-jre < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: com.google.guava:failureaccess:jar:1.0.3 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: org.jspecify:jspecify:jar:1.0.0 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: com.google.errorprone:error_prone_annotations:jar:2.47.0 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: com.google.j2objc:j2objc-annotations:jar:3.1 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: org.commonmark:commonmark:jar:0.29.0 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Resolved artifact: org.commonmark:commonmark-ext-gfm-tables:jar:0.29.0 < central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Allocating an additional FeatureClassLoader for key=com.diffplug.spotless.JarState@16a5eb6d Cache.size was 0
+[INFO] Spotless.Java is keeping 14 files clean - 14 needs changes to be clean, 0 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.961 s
+[INFO] Finished at: 2026-10-13T11:17:31+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:3.10.4:check (default-cli) on project gestion-solicitudes: Unable to format file C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\main\java\es\gestionsolicitudes\configuracion\ContratoApi.java
+[ERROR] Step 'google-java-format' found problem in 'ContratoApi.java':
+[ERROR] ContratoApi.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:3.10.4:check (default-cli) on project gestion-solicitudes: Unable to format file C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\main\java\es\gestionsolicitudes\configuracion\ContratoApi.java
+Step 'google-java-format' found problem in 'ContratoApi.java':
+ContratoApi.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:333)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:919)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:285)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:207)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:362)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+Caused by: org.apache.maven.plugin.MojoExecutionException: Unable to format file C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\main\java\es\gestionsolicitudes\configuracion\ContratoApi.java
+Step 'google-java-format' found problem in 'ContratoApi.java':
+ContratoApi.java:LINE_UNDEFINED google-java-format(java.lang.reflect.InvocationTargetException) java.lang.reflect.InvocationTargetException (...)
+    at com.diffplug.spotless.maven.SpotlessCheckMojo.process (SpotlessCheckMojo.java:135)
+    at com.diffplug.spotless.maven.AbstractSpotlessMojo.execute (AbstractSpotlessMojo.java:288)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:919)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:285)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:207)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:362)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gaecv, file-gav, file-hgaecv, file-hgav, file-static, gaecv, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory
+[DEBUG] Cleanup org.eclipse.jgit.util.FS$FileStoreAttributes$$Lambda/0x000001fa14254460@4b31a708 during JVM shutdown

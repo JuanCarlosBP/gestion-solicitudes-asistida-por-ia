@@ -1,0 +1,29 @@
+
+> gestion-solicitudes-frontend@0.0.1 format
+> prettier --write src *.json *.mjs .prettierrc
+
+src/app/app.config.ts 40ms
+src/app/app.css 19ms
+src/app/app.html 18ms
+src/app/app.routes.spec.ts 10ms
+src/app/app.routes.ts 2ms (unchanged)
+src/app/app.spec.ts 3ms (unchanged)
+src/app/app.ts 2ms
+src/app/inicio/inicio.css 4ms
+src/app/inicio/inicio.html 23ms
+src/app/inicio/inicio.spec.ts 7ms
+src/app/inicio/inicio.ts 5ms
+src/app/inicio/salud-api.spec.ts 4ms
+src/app/inicio/salud-api.ts 3ms
+src/app/navegacion/no-encontrada.ts 3ms
+src/index.html 1ms
+src/main.ts 1ms
+src/styles.css 2ms
+angular.json 11ms
+package.json 1ms (unchanged)
+proxy.conf.json 1ms
+tsconfig.app.json 2ms
+tsconfig.json 1ms
+tsconfig.spec.json 1ms
+eslint.config.mjs 3ms
+.prettierrc 3ms

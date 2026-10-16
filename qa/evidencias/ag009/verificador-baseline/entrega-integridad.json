@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-10-13T12:57:03.884Z",
+  "baseline": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\ag009\\baseline-copiada",
+  "directorioEvidencias": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\qa\\evidencias\\ag009\\verificador-baseline",
+  "alcance": "Controles históricos del inventario inicial AG-006; no sustituye la revisión del delta ni las huellas históricas de una ejecución posterior.",
+  "controles": [
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "tipo": "prefijo histórico",
+      "bytes": 29468,
+      "esperado": "B190219385F781D82EEABE0748FE5782B3D78C08B8E435D75C54A1573CCCBD1F",
+      "observado": "B190219385F781D82EEABE0748FE5782B3D78C08B8E435D75C54A1573CCCBD1F"
+    },
+    {
+      "ruta": "docs/documentaciondev/versiones.md",
+      "tipo": "prefijo histórico",
+      "bytes": 24260,
+      "esperado": "A1A9CCC8AC9984F2F05CE00E96D51F7AB7884E975D5DD51F6B819B73BBDCDE32",
+      "observado": "A1A9CCC8AC9984F2F05CE00E96D51F7AB7884E975D5DD51F6B819B73BBDCDE32"
+    },
+    {
+      "ruta": "docs/decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md",
+      "tipo": "prefijo histórico",
+      "bytes": 4590,
+      "esperado": "53348083394943C55A83E734F6FAC69A990751E7EFA89D801AD79FB3037D3D0F",
+      "observado": "53348083394943C55A83E734F6FAC69A990751E7EFA89D801AD79FB3037D3D0F"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "tipo": "prefijo histórico",
+      "bytes": 9127,
+      "esperado": "8501E55657EBE937C669DAF49350305CBA5F458CE543171BDDBBA4FDC1173D71",
+      "observado": "8501E55657EBE937C669DAF49350305CBA5F458CE543171BDDBBA4FDC1173D71"
+    },
+    {
+      "ruta": "docs/trazabilidad/memoria-hasta-ag005.md",
+      "tipo": "archivo íntegro",
+      "bytes": 6640,
+      "esperado": "C31A0F6257D2051225E414D445DF8F79A167458002AE5E3762F3C0B80820D039",
+      "observado": "C31A0F6257D2051225E414D445DF8F79A167458002AE5E3762F3C0B80820D039"
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "tipo": "archivo íntegro",
+      "bytes": 353664,
+      "esperado": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+      "observado": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F"
+    }
+  ],
+  "filasAg006": 1,
+  "eliminados": [],
+  "inesperados": [],
+  "resumen": {
+    "CREADO": 345,
+    "MODIFICADO": 12,
+    "SIN_CAMBIOS": 34
+  },
+  "exclusiones": [
+    ".git",
+    "node_modules",
+    "tmp",
+    "target",
+    "dist",
+    ".angular",
+    "test-results",
+    "playwright-report",
+    ".env",
+    "qa/evidencias/ag009/verificador-baseline/entrega-manifiesto.json",
+    "qa/evidencias/ag009/verificador-baseline/entrega-integridad.json"
+  ],
+  "resultado": "PASS"
+}

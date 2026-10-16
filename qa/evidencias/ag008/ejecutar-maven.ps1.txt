@@ -1,0 +1,16 @@
+param([Parameter(Mandatory)][string]$Nombre, [Parameter(Mandatory)][string[]]$Objetivos)
+$ErrorActionPreference = 'Stop'
+$raizAg008 = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
+$env:JAVA_HOME = 'C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot'
+$env:MAVEN_USER_HOME = Join-Path $raizAg008 'tmp/maven-user'
+$env:TEMP = Join-Path $raizAg008 'tmp/pruebas-backend'
+$env:TMP = $env:TEMP
+Set-Location (Join-Path $raizAg008 'backend')
+$inicio = [DateTimeOffset]::Now
+$reloj = [Diagnostics.Stopwatch]::StartNew()
+& .\mvnw.cmd @Objetivos *> (Join-Path $raizAg008 "qa/evidencias/ag008/$Nombre.txt")
+$codigo = $LASTEXITCODE
+$reloj.Stop()
+[ordered]@{comando='.\mvnw.cmd ' + ($Objetivos -join ' ');inicio=$inicio.ToString('o');fin=[DateTimeOffset]::Now.ToString('o');duracionSegundos=$reloj.Elapsed.TotalSeconds;salida=$codigo;javaHome=$env:JAVA_HOME;log="qa/evidencias/ag008/$Nombre.txt"} | ConvertTo-Json -Compress | Add-Content (Join-Path $raizAg008 'qa/evidencias/ag008/comandos.jsonl')
+Get-Content (Join-Path $raizAg008 "qa/evidencias/ag008/$Nombre.txt") -Tail 28
+exit $codigo

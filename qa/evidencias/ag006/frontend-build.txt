@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-3YFAZDRA.js    | main          | 230.94 kB |                62.82 kB
+styles-T6TP5HFB.css | styles        | 244 bytes |               244 bytes
+
+                    | Initial total | 231.19 kB |                63.06 kB
+
+Application bundle generation complete. [6.912 seconds] - 2026-10-13T08:30:45.736Z
+
+Output location: C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\dist\gestion-solicitudes-frontend
+

@@ -1,0 +1,11 @@
+# Diagnóstico ejecutado en AG-007. Ejecutar desde la raíz; solo calcula, no escribe Java.
+# Guardar DiagnosticoFormato.java.txt como tmp/ag007/DiagnosticoFormato.java.
+# Usa exclusivamente los artefactos ya resueltos en el diagnóstico Maven.
+$dependencias = Select-String qa/evidencias/ag007/spotless-check-diagnostico.txt -Pattern 'Resolved artifact: ([^ ]+)' | ForEach-Object {
+    $c = $_.Matches[0].Groups[1].Value.Split(':')
+    Join-Path (Get-Location) ('tmp/m2/' + $c[0].Replace('.', '/') + '/' + $c[1] + '/' + $c[3] + '/' + $c[1] + '-' + $c[3] + '.jar')
+}
+$classpath = (@((Join-Path (Get-Location) 'tmp/m2/com/diffplug/spotless/spotless-lib/4.10.4/spotless-lib-4.10.4.jar')) + $dependencias) -join ';'
+$exports = @(Get-Content backend/.mvn/jvm.config)
+& 'C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot\bin\java.exe' @exports -cp $classpath tmp/ag007/DiagnosticoFormato.java backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java
+# Resultado observado: salida 1; NoSuchMethodError en Style.valueOf(String).

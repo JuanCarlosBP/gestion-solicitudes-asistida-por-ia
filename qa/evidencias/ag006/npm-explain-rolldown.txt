@@ -1,0 +1,5 @@
+rolldown@1.0.0-rc.4 dev
+node_modules/rolldown
+  rolldown@"1.0.0-rc.4" from @angular/build@21.2.26
+  node_modules/@angular/build
+    dev @angular/build@"21.2.26" from the root project

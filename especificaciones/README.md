@@ -13,12 +13,19 @@ El proceso está en [SDD](../docs/metodologia/sdd.md).
 |---|---|---|
 | 001 — Base verificable | [Especificación](001-base-verificable/especificacion.md) | Aprobada. |
 | 001 — Base verificable | [Plan](001-base-verificable/plan.md) | Aprobado; DT-01 a DT-08 aprobadas. |
-| 001 — Base verificable | [Tareas](001-base-verificable/tareas.md) | Documento aprobado; tareas pendientes de ejecución. |
+| 001 — Base verificable | [Tareas](001-base-verificable/tareas.md) | Ejecutadas en AG-006; T006 y aceptación T008 bloqueadas por formato Maven. |
+| 001 — Base verificable | [Validación](001-base-verificable/validacion.md) | Aplicación local y pruebas reales; aceptación integral y CI remota pendientes. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
-Esta consolidación documental no inicia su ejecución ni acredita pruebas.
-Todavía no existe `validacion.md`: se creará con comprobaciones reales.
+AG-004 superó el preflight y comenzó T001; la excepción humana aprobada de
+[ADR-0001](../docs/decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md)
+se incorporó al plan antes de reanudar AG-005. La resolución del lockfile detectó
+gensync preliminar no autorizado y se detuvo antes de instalar o generar código
+funcional. AG-006 aprobó [ADR-0002](../docs/decisiones/ADR-0002-politica-dependencias-transitivas.md)
+y ejecutó la base local con pruebas. [Versiones](../docs/documentaciondev/versiones.md)
+conserva la historia y los parches de seguridad; validación distingue controles
+superados, el bloqueo de formato y el pendiente remoto.
 
 ## Incrementos posteriores previstos
 

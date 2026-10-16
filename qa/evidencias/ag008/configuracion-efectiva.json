@@ -1,0 +1,14 @@
+{
+  "spotless": "3.10.4",
+  "formatter": "1.36.1",
+  "style": "AOSP",
+  "ejecuciones": "<executions xmlns=\"http://maven.apache.org/POM/4.0.0\"><execution><phase>validate</phase><goals><goal>check</goal></goals><configuration><java><googleJavaFormat><version>1.36.1</version><style>AOSP</style></googleJavaFormat></java></configuration></execution></executions>",
+  "java": "21",
+  "referencias1370": 0,
+  "skipSpotless": 0,
+  "exclusionesExplicitas": 0,
+  "fuentesMain": 10,
+  "fuentesTest": 4,
+  "sha256PomEfectivo": "FBD0AF856E387130E85F83CBC0F419A21E3C98D050FD734F3BCC365A22DC5B05",
+  "configuracion": "<plugin xmlns=\"http://maven.apache.org/POM/4.0.0\"><groupId>com.diffplug.spotless</groupId><artifactId>spotless-maven-plugin</artifactId><version>3.10.4</version><executions><execution><phase>validate</phase><goals><goal>check</goal></goals><configuration><java><googleJavaFormat><version>1.36.1</version><style>AOSP</style></googleJavaFormat></java></configuration></execution></executions><configuration><java><googleJavaFormat><version>1.36.1</version><style>AOSP</style></googleJavaFormat></java></configuration></plugin>"
+}

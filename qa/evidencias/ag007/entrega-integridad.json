@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-10-13T09:23:29.909Z",
+  "errores": [],
+  "enlaces": 282,
+  "enlacesAusentes": [],
+  "ubicacionesPatronesSecretos": [],
+  "conservacion": [
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 30524,
+      "esperado": "ADBD42CB95FA90784C54BD3A3A7C56F3A479ED9FAE1048F89250FD23F190A63C",
+      "observado": "ADBD42CB95FA90784C54BD3A3A7C56F3A479ED9FAE1048F89250FD23F190A63C",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "especificaciones/001-base-verificable/validacion.md",
+      "bytes": 15396,
+      "esperado": "30017F53F086764382E313EFA2A72B580DD2F2301A8112C4B9CDBAF13931F6D0",
+      "observado": "30017F53F086764382E313EFA2A72B580DD2F2301A8112C4B9CDBAF13931F6D0",
+      "resultado": "PASS"
+    },
+    {
+      "ruta": "MEMORY.md preservado en memoria-anterior.txt",
+      "resultado": "PASS"
+    }
+  ],
+  "filasAg007": 1,
+  "resumen": {
+    "CREADO": 21,
+    "MODIFICADO": 3,
+    "SIN_CAMBIOS": 224
+  },
+  "limite": "Revisión de patrones acotada; no garantiza ausencia de todo secreto. Excluye cachés, builds, .env local y las dos salidas propias.",
+  "resultado": "PASS"
+}

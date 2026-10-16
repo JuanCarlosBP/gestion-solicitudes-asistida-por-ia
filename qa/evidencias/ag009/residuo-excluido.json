@@ -1,0 +1,7 @@
+{
+  "sha256": "4F3EEF121C476403678DBF18B86F496988D47997A0778060C5EFA2B5D78B6924",
+  "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/2026-10-13T10-31-16_665-jvmRun1.dumpstream",
+  "copiaRetirada": true,
+  "motivo": "Residuo anterior a AG-009 copiado accidentalmente desde backend/target; retirado de la nueva evidencia. No se elimina el original ni historia AG anterior.",
+  "fecha": "2026-10-13T14:56:12.7097299+02:00"
+}

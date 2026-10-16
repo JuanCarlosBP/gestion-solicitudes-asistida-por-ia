@@ -1,0 +1,72 @@
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { resolve, relative, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
+const raiz = process.cwd();
+const evidencia = 'qa/evidencias/ag008/';
+const inicial = JSON.parse(readFileSync(evidencia + 'inventario-inicial.json', 'utf8'));
+const anteriores = new Map(inicial.map(a => [a.ruta, a]));
+const hash = b => createHash('sha256').update(b).digest('hex').toUpperCase();
+const omitidos = new Set(['.git', 'tmp', 'node_modules', 'target', 'dist', '.angular', 'test-results', 'playwright-report']);
+const propias = new Set([evidencia + 'entrega-manifiesto.json', evidencia + 'entrega-integridad.json']);
+const java = JSON.parse(readFileSync(evidencia + 'java-comparacion.json', 'utf8'));
+const permitidos = new Set(['backend/pom.xml','docs/documentaciondev/versiones.md','docs/trazabilidad/ejecuciones-agentes.csv','especificaciones/001-base-verificable/validacion.md','MEMORY.md', ...java.archivos.filter(a => !a.contenidoIdentico).map(a => a.ruta)]);
+const archivos = [];
+function recorrer(dir) {
+  for (const entrada of readdirSync(dir, {withFileTypes:true})) {
+    if (omitidos.has(entrada.name) || entrada.name === '.env') continue;
+    const absoluto = resolve(dir, entrada.name), ruta = relative(raiz, absoluto).replaceAll('\\','/');
+    if (entrada.isDirectory()) { recorrer(absoluto); continue; }
+    if (propias.has(ruta)) continue;
+    const bytes = readFileSync(absoluto), sha256 = hash(bytes), previo = anteriores.get(ruta);
+    const estado = !previo ? 'CREADO' : previo.sha256 === sha256 ? 'SIN_CAMBIOS' : 'MODIFICADO';
+    archivos.push({ruta,bytes:bytes.length,sha256,estado,propuestoAg008:estado !== 'SIN_CAMBIOS'});
+  }
+}
+recorrer(raiz);
+archivos.sort((a,b) => a.ruta.localeCompare(b.ruta));
+const inesperados = archivos.filter(a => a.estado === 'MODIFICADO' && !permitidos.has(a.ruta) || a.estado === 'CREADO' && a.ruta !== 'docs/trazabilidad/AG-008-informe.md' && !a.ruta.startsWith(evidencia)).map(a => a.ruta);
+const eliminados = inicial.filter(a => !existsSync(a.ruta)).map(a => a.ruta);
+const prefijos = ['docs/trazabilidad/ejecuciones-agentes.csv','docs/documentaciondev/versiones.md','especificaciones/001-base-verificable/validacion.md'].map(ruta => {
+  const antes = anteriores.get(ruta);
+  const observado = hash(readFileSync(ruta).subarray(0, antes.bytes));
+  return {ruta,bytes:antes.bytes,esperado:antes.sha256,observado,resultado:observado === antes.sha256 ? 'PASS':'FAIL'};
+});
+const errores = [];
+if (hash(readFileSync(evidencia + 'memoria-anterior.txt')) !== anteriores.get('MEMORY.md').sha256) errores.push('Memoria anterior no coincide');
+if (hash(Buffer.from(readFileSync('backend/pom.xml','utf8').replace('<version>1.36.1</version>','<version>1.37.0</version>'))) !== anteriores.get('backend/pom.xml').sha256) errores.push('POM tiene cambios adicionales');
+const csv = readFileSync('docs/trazabilidad/ejecuciones-agentes.csv','utf8');
+const filasAg008 = csv.split(/\r?\n/).filter(l => /^"?AG-008"?,/.test(l)).length;
+const javaSinCambiosPosteriores = java.archivos.every(a => hash(readFileSync(a.ruta)) === a.despues);
+if (!javaSinCambiosPosteriores) errores.push('Cambios Java posteriores a comparación');
+const historicos = archivos.filter(a => /^qa\/evidencias\/ag00[67]\//.test(a.ruta) || /^docs\/decisiones\/ADR-000[12]/.test(a.ruta) || /^docs\/trazabilidad\/(AG-00[67]-informe|memoria-hasta-ag005)/.test(a.ruta));
+if (historicos.some(a => a.estado !== 'SIN_CAMBIOS')) errores.push('Histórico modificado');
+const documentos = ['docs/trazabilidad/AG-008-informe.md','docs/documentaciondev/versiones.md','especificaciones/001-base-verificable/validacion.md','MEMORY.md'].filter(existsSync);
+let enlaces = 0;
+const enlacesAusentes = [], espaciosFinales = [];
+for (const ruta of documentos) {
+  const texto = readFileSync(ruta,'utf8');
+  for (const enlace of texto.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)) {
+    const destino = enlace[1].replace(/^<|>$/g,'').split('#')[0];
+    if (!destino || /^(?:https?:|mailto:|app:|codex:)/.test(destino)) continue;
+    enlaces++;
+    if (!existsSync(resolve(dirname(ruta),decodeURIComponent(destino)))) enlacesAusentes.push({ruta,destino});
+  }
+  // En documentos históricos solo se controla el texto añadido en AG-008.
+  const previo = anteriores.get(ruta);
+  const nuevo = previo && ruta !== 'MEMORY.md' ? readFileSync(ruta).subarray(previo.bytes).toString('utf8') : texto;
+  if (/[ \t]+\r?$/m.test(nuevo)) espaciosFinales.push(ruta);
+}
+const patrones = [/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,/\bAKIA[0-9A-Z]{16}\b/,/\bgh[pousr]_[A-Za-z0-9]{30,}\b/,/\bgithub_pat_[A-Za-z0-9_]{50,}\b/,/\beyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]{10,}/];
+const ubicacionesPatronesSecretos = [];
+for (const a of archivos.filter(a => a.estado !== 'SIN_CAMBIOS')) {
+  if (/\.(?:png|zip|jar|exe|ico)$/.test(a.ruta) || a.bytes > 2_000_000 || a.ruta.endsWith('verificar-entrega.mjs.txt')) continue;
+  const texto = readFileSync(a.ruta,'utf8');
+  if (patrones.some(p => p.test(texto))) ubicacionesPatronesSecretos.push(a.ruta);
+}
+const resultado = !errores.length && !inesperados.length && !eliminados.length && prefijos.every(p=>p.resultado==='PASS') && filasAg008===1 && !enlacesAusentes.length && !espaciosFinales.length && !ubicacionesPatronesSecretos.length ? 'PASS' : 'FAIL';
+const control = {fecha:new Date().toISOString(),resultado,errores,inesperados,eliminados,prefijos,filasAg008,javaSinCambiosPosteriores,historicosIntactos:historicos.length,enlaces,enlacesAusentes,espaciosFinales,ubicacionesPatronesSecretos,resumen:Object.fromEntries(['CREADO','MODIFICADO','SIN_CAMBIOS'].map(e=>[e,archivos.filter(a=>a.estado===e).length])),limite:'Patrones acotados, no garantía absoluta de ausencia de secretos. Solo se propone el delta autorizado de AG-008; preserva la historia y no representa estado Git.'};
+const manifiesto = {ejecucion:'AG-008',fecha:control.fecha,operacionesGit:0,exclusiones:[...omitidos,'.env','cachés npm/Maven','logs/resultados temporales fuera de qa/evidencias/ag008'],agrupaciones:[{mensaje:'build: alinear google-java-format 1.36.1 con Spotless 3.10.4',rutas:['backend/pom.xml',...java.archivos.filter(a=>!a.contenidoIdentico).map(a=>a.ruta)]},{mensaje:'docs: registrar verificación local de 001 y evidencias AG-008',rutas:['docs/trazabilidad/AG-008-informe.md','docs/documentaciondev/versiones.md','docs/trazabilidad/ejecuciones-agentes.csv','especificaciones/001-base-verificable/validacion.md','MEMORY.md',evidencia]}],salidasPropiasSinAutohuella:[...propias],limpiezaTemporal:{ruta:'tmp/ag007/DiagnosticoFormato.java',estado:'ELIMINADO',propuestoAg008:false,evidencia:evidencia+'limpieza.json'},archivos};
+writeFileSync(evidencia+'entrega-manifiesto.json',JSON.stringify(manifiesto,null,2)+'\n');
+writeFileSync(evidencia+'entrega-integridad.json',JSON.stringify(control,null,2)+'\n');
+console.log(JSON.stringify(control));
+process.exitCode = resultado === 'PASS' ? 0 : 1;

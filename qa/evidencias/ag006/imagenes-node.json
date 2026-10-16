@@ -1,0 +1,10 @@
+[
+  {
+    "name": "24.13.0-bookworm",
+    "digest": "sha256:1de022d8459f896fff2e7b865823699dc7a8d5567507e8b87b14a7442e07f206"
+  },
+  {
+    "name": "24.13.0-bookworm-slim",
+    "digest": "sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f"
+  }
+]

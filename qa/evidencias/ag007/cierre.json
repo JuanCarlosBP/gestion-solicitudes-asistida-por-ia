@@ -1,0 +1,24 @@
+{
+  "cambiosConfiguracion": 0,
+  "actionlint": "PASS",
+  "duracion": "00:07:29",
+  "inicio": "2026-10-13T11:16:00.0000000+02:00",
+  "limite": "2026-10-13T12:01:00.0000000+02:00",
+  "revisionIndependiente": false,
+  "lecturaIndirectaGit": "Spotless/JGit consultó .git/config para GIT_ATTRIBUTES_FAST_ALLSAME",
+  "spotlessApply": "FAIL",
+  "archivosJavaModificados": 0,
+  "comandosGitEjecutados": false,
+  "estado": "BLOQUEADO: incompatibilidad binaria del adaptador Spotless con google-java-format; cambio de versiones fuera del alcance",
+  "verify": "NO EJECUTADO: prerrequisito fallido",
+  "spotlessCheck": "FAIL",
+  "zona": "Europe/Madrid",
+  "cierre": "2026-10-13T11:23:29.5361254+02:00",
+  "pendientes": [
+    "Autorización de alineación de versiones",
+    "Verify sin omisiones y regresión aplicable",
+    "CI remota tras push humano",
+    "Revisión independiente",
+    "Aceptación humana e integración en main"
+  ]
+}

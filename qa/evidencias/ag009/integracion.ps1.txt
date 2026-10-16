@@ -1,0 +1,58 @@
+$ErrorActionPreference='Stop'
+$raizProyecto=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
+Set-Location -LiteralPath $raizProyecto
+$evidencia=Join-Path $raizProyecto 'qa/evidencias/ag009'
+$archivoAlternativo=Join-Path $raizProyecto 'tmp/ag009/puerto-alternativo.env'
+$ejemplo=Get-Content -LiteralPath 'infraestructura/.env.example' -Raw
+$ejemplo.Replace('FRONTEND_PUERTO=18080','FRONTEND_PUERTO=18081') | Set-Content -LiteralPath $archivoAlternativo -Encoding utf8NoBOM
+function Compose([string[]]$Operacion){
+    & docker compose --env-file $script:archivoEntorno -f infraestructura/compose.yaml @Operacion
+    if($LASTEXITCODE -ne 0){throw "Compose falló: $($Operacion[0])"}
+}
+try {
+    foreach($puerto in @(18080,18081)){
+        $script:archivoEntorno=if($puerto -eq 18080){'infraestructura/.env'}else{$archivoAlternativo}
+        $env:FRONTEND_PUERTO=$null
+        $destino=Join-Path $evidencia "puerto-$puerto"
+        New-Item -ItemType Directory -Path $destino -Force | Out-Null
+        $env:QA_EVIDENCE_DIR=$destino
+        try {
+            Compose @('config','--quiet')
+            Compose @('up','-d','--build','--wait','--wait-timeout','120')
+            & ./qa/verificar-compose.ps1 -ArchivoEntorno $archivoEntorno -DirectorioEvidencias $destino *> (Join-Path $destino 'qa-compose.txt')
+            Get-Content -LiteralPath (Join-Path $destino 'qa-compose.txt') -Tail 10
+            $env:BASE_URL="http://127.0.0.1:$puerto"
+            $http=foreach($ruta in @('/api/salud','/v3/api-docs','/swagger-ui/index.html','/inicio')){
+                $respuesta=Invoke-WebRequest -Uri ($env:BASE_URL+$ruta) -TimeoutSec 10 -SkipHttpErrorCheck
+                if($respuesta.StatusCode -ne 200){throw "HTTP no disponible: $ruta"}
+                @{ruta=$ruta;http=[int]$respuesta.StatusCode;baseUrl=$env:BASE_URL;fecha=[DateTimeOffset]::Now.ToString('o')}
+            }
+            $http | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath (Join-Path $destino 'http-integrado.json') -Encoding utf8NoBOM
+            Push-Location frontend
+            try {
+                & npm.cmd run test:e2e -- --output="../tmp/ag009/playwright-$puerto" *> (Join-Path $destino 'e2e.txt')
+                if($LASTEXITCODE -ne 0){throw "E2E falló en $puerto"}
+                Copy-Item -LiteralPath 'test-results/e2e.xml' -Destination (Join-Path $destino 'e2e.xml')
+            } finally {Pop-Location}
+            Get-Content -LiteralPath (Join-Path $destino 'e2e.txt') -Tail 8
+            $servicios=& docker compose --env-file $archivoEntorno -f infraestructura/compose.yaml ps --format json
+            if($LASTEXITCODE -ne 0){throw 'No se pudo consultar estado Compose'}
+            $servicios | Set-Content -LiteralPath (Join-Path $destino 'servicios.jsonl') -Encoding utf8NoBOM
+        } finally {
+            Compose @('stop')
+            $estados=& docker compose --env-file $archivoEntorno -f infraestructura/compose.yaml ps -a --format json | ForEach-Object {$_ | ConvertFrom-Json}
+            if($LASTEXITCODE -ne 0){throw 'No se pudo comprobar parada'}
+            $volumen=& docker volume inspect gestion-solicitudes-001_datos-postgres --format '{{.Name}}'
+            if($LASTEXITCODE -ne 0){throw 'No se pudo confirmar volumen'}
+            $detenidos=@($estados).Count -eq 3 -and @($estados | Where-Object State -ne 'exited').Count -eq 0
+            @{fecha=[DateTimeOffset]::Now.ToString('o');servicios=@($estados | Select-Object Service,State,ExitCode);detenidos=$detenidos;volumenConservado=($volumen -eq 'gestion-solicitudes-001_datos-postgres')} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $destino 'cierre-compose.json') -Encoding utf8NoBOM
+            if(-not $detenidos){throw 'Hay servicios no detenidos'}
+        }
+        Write-Output "PASS: Compose, QA, HTTP, E2E y parada en puerto $puerto"
+    }
+} finally {
+    $comprobada=[IO.Path]::GetFullPath($archivoAlternativo)
+    if($comprobada -ne (Join-Path $raizProyecto 'tmp\ag009\puerto-alternativo.env')){throw 'Ruta temporal inesperada'}
+    if(Test-Path -LiteralPath $comprobada){Remove-Item -LiteralPath $comprobada}
+    @{archivo='tmp/ag009/puerto-alternativo.env';eliminado=(-not(Test-Path -LiteralPath $comprobada));soloFicticio=$true} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $evidencia 'limpieza-configuracion.json') -Encoding utf8NoBOM
+}

@@ -1,0 +1,234 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.15kB 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 683B done
+#2 DONE 0.0s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.05kB 0.0s done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#4 DONE 1.2s
+
+#5 [frontend internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#5 DONE 1.2s
+
+#6 [frontend internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#6 DONE 1.2s
+
+#7 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#7 DONE 1.2s
+
+#8 [backend internal] load .dockerignore
+#8 transferring context: 59B done
+#8 DONE 0.0s
+
+#9 [frontend internal] load .dockerignore
+#9 transferring context: 104B done
+#9 DONE 0.0s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#10 ...
+
+#11 [backend internal] load build context
+#11 transferring context: 43.58kB 0.0s done
+#11 DONE 0.1s
+
+#12 [frontend internal] load build context
+#12 transferring context: 376.51kB 0.0s done
+#12 DONE 0.1s
+
+#13 [backend construccion 1/7] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#13 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87 0.0s done
+#13 DONE 0.2s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 sha256:400f8ac367e08b80a973dd6507cd77efe80abee04a43cb186d3b280efce0d701 1.40kB / 1.40kB 0.1s done
+#10 sha256:4744f23449327e28ef387a554ad4ed7f86dd2d14760c4f7e64f38df260a9e934 402B / 402B 0.1s done
+#10 sha256:39a24e95a1e95d265f5ebb8acf6f079bee536da1db394704af88c79d77829d02 1.21kB / 1.21kB 0.1s done
+#10 ...
+
+#14 [backend stage-1 1/4] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#14 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c 0.0s done
+#14 sha256:02e0e048361058af7411fe47569c4d90b68a917dba037514c3831b7bf7029c7b 2.46kB / 2.46kB 0.1s done
+#14 sha256:7c48d168a51b541814c6814256cd298e11114f5f088e4511cffb4f6b3622d1b6 53.10MB / 53.10MB 3.2s done
+#14 sha256:5165dac19553999758e23bf9247e5bac05f0d26ee503d13bf70c1e8873eb8d37 159B / 159B 0.2s done
+#14 sha256:49b14164d4d96e593cb68db980906b691931cdcde6f60b918280317c89e55462 19.38MB / 19.38MB 1.3s done
+#14 sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 29.76MB / 29.76MB 2.0s done
+#14 extracting sha256:a60ef8ec184edb5ed91f5983f00261359fb2fe20f603e8d488b9477d32fcad70 0.4s done
+#14 extracting sha256:49b14164d4d96e593cb68db980906b691931cdcde6f60b918280317c89e55462 0.3s done
+#14 extracting sha256:7c48d168a51b541814c6814256cd298e11114f5f088e4511cffb4f6b3622d1b6 0.4s done
+#14 extracting sha256:5165dac19553999758e23bf9247e5bac05f0d26ee503d13bf70c1e8873eb8d37 done
+#14 extracting sha256:02e0e048361058af7411fe47569c4d90b68a917dba037514c3831b7bf7029c7b done
+#14 DONE 3.8s
+
+#15 [backend stage-1 2/4] WORKDIR /aplicacion
+#15 DONE 0.1s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 sha256:63ef372743100d4ca27fb42120a80234702b6cd17bb17ed60414f13830750075 955B / 955B 0.1s done
+#10 sha256:f176d5d8a1c1692adfcbeb30b6dee0597b5a79858760996d17442ae0f77a3288 627B / 627B 0.1s done
+#10 ...
+
+#16 [backend stage-1 3/4] RUN groupadd --gid 10001 aplicacion && useradd --uid 10001 --gid 10001 --no-create-home aplicacion
+#16 DONE 0.3s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 0B / 33.11MB 0.2s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 2.10MB / 33.11MB 0.3s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 4.19MB / 33.11MB 0.5s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 6.29MB / 33.11MB 0.6s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 8.39MB / 33.11MB 0.8s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 11.53MB / 33.11MB 0.9s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 14.68MB / 33.11MB 1.1s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 0B / 29.78MB 0.2s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 16.78MB / 33.11MB 1.2s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 2.10MB / 29.78MB 0.3s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 18.87MB / 33.11MB 1.4s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 20.97MB / 33.11MB 1.5s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 6.29MB / 29.78MB 0.6s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 24.12MB / 33.11MB 1.7s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 26.21MB / 33.11MB 1.8s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 11.53MB / 29.78MB 0.9s
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 28.31MB / 33.11MB 2.0s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 13.63MB / 29.78MB 1.1s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 15.73MB / 29.78MB 1.2s
+#10 ...
+
+#17 [frontend construccion 1/8] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#17 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#17 sha256:d90d46d619398a297e98644390dda53d92954af45066f87aea04e2da844a6754 449B / 449B 0.1s done
+#17 sha256:1a5fa97547841412bf8527a6d445748d9acfd51ee2e73ad7e76d4ede9efe6e9f 1.71MB / 1.71MB 0.2s done
+#17 sha256:8db14bf7760b9640d38dc96c1b21823eaa6dcb81316334b592ab21417c36f671 49.11MB / 49.11MB 3.1s done
+#17 sha256:e48f83d0e30eecff4260e3620f371c7f05122e743f4fe3f4168cd7f091948996 3.31kB / 3.31kB 0.1s done
+#17 sha256:4831516dd0cb86845f5f902cb9b9d25b5c853152c337eb57e4737a9b7e2a2eb9 28.23MB / 28.23MB 1.9s done
+#17 extracting sha256:4831516dd0cb86845f5f902cb9b9d25b5c853152c337eb57e4737a9b7e2a2eb9 0.4s done
+#17 extracting sha256:e48f83d0e30eecff4260e3620f371c7f05122e743f4fe3f4168cd7f091948996 0.0s done
+#17 extracting sha256:8db14bf7760b9640d38dc96c1b21823eaa6dcb81316334b592ab21417c36f671 0.6s done
+#17 extracting sha256:1a5fa97547841412bf8527a6d445748d9acfd51ee2e73ad7e76d4ede9efe6e9f 0.0s done
+#17 extracting sha256:d90d46d619398a297e98644390dda53d92954af45066f87aea04e2da844a6754 0.0s done
+#17 DONE 6.3s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 31.46MB / 33.11MB 2.3s
+#10 ...
+
+#18 [frontend construccion 2/8] WORKDIR /construccion
+#18 DONE 0.1s
+
+#19 [frontend construccion 3/8] COPY package.json package-lock.json .npmrc ./
+#19 DONE 0.0s
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 33.11MB / 33.11MB 2.3s done
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 17.83MB / 29.78MB 1.4s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 22.02MB / 29.78MB 1.7s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 24.12MB / 29.78MB 1.8s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 26.21MB / 29.78MB 2.0s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 29.36MB / 29.78MB 2.1s
+#10 sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 29.78MB / 29.78MB 2.1s done
+#10 extracting sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976
+#10 extracting sha256:5435b2dcdf5cb7faa0d5b1d4d54be2c72a776fab9a605336f5067d6e9ecb5976 0.4s done
+#10 DONE 7.5s
+
+#13 [backend construccion 1/7] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#13 sha256:ab0753bfa4f1a7af00cc2acca04a6ef15ab39b5b5f182052d379bb3980dfc1d2 2.46kB / 2.46kB 0.2s done
+#13 sha256:dc6abd946a0778c24a3d28c86aa3ecec2fbb7f1f681a12f2411c7664d5652812 157B / 157B 0.1s done
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 107.00MB / 158.12MB 6.8s
+#13 sha256:8b068c321b37c6e50e8ca50209806303ebbb676b492a08070ba9d79a0f7df6f8 25.36MB / 25.36MB 1.5s done
+#13 extracting sha256:8b068c321b37c6e50e8ca50209806303ebbb676b492a08070ba9d79a0f7df6f8 0.3s done
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 116.39MB / 158.12MB 7.2s
+#13 ...
+
+#10 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#10 extracting sha256:6a7080264fc92b82ada28a5cfe718c54e11afc65e4fab9c068e489d029ae9075 0.4s done
+#10 extracting sha256:f176d5d8a1c1692adfcbeb30b6dee0597b5a79858760996d17442ae0f77a3288 0.0s done
+#10 extracting sha256:63ef372743100d4ca27fb42120a80234702b6cd17bb17ed60414f13830750075 done
+#10 extracting sha256:4744f23449327e28ef387a554ad4ed7f86dd2d14760c4f7e64f38df260a9e934 0.0s done
+#10 extracting sha256:39a24e95a1e95d265f5ebb8acf6f079bee536da1db394704af88c79d77829d02 0.0s done
+#10 extracting sha256:400f8ac367e08b80a973dd6507cd77efe80abee04a43cb186d3b280efce0d701 0.0s done
+#10 DONE 8.0s
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 ...
+
+#21 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#21 DONE 0.1s
+
+#13 [backend construccion 1/7] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 125.83MB / 158.12MB 7.8s
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 136.31MB / 158.12MB 8.4s
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 145.75MB / 158.12MB 8.9s
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 155.19MB / 158.12MB 9.5s
+#13 sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 158.12MB / 158.12MB 9.7s done
+#13 extracting sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2
+#13 extracting sha256:61d5a0d738f6fd8344abcdcf7c1b734d9adbf8d5161b30b80fbf9533b8ab0bb2 0.8s done
+#13 DONE 11.1s
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 ...
+
+#13 [backend construccion 1/7] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#13 extracting sha256:dc6abd946a0778c24a3d28c86aa3ecec2fbb7f1f681a12f2411c7664d5652812 done
+#13 extracting sha256:ab0753bfa4f1a7af00cc2acca04a6ef15ab39b5b5f182052d379bb3980dfc1d2 0.0s done
+#13 DONE 11.2s
+
+#22 [backend construccion 2/7] WORKDIR /construccion/backend
+#22 DONE 0.2s
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 ...
+
+#23 [backend construccion 3/7] COPY .mvn .mvn
+#23 DONE 0.0s
+
+#24 [backend construccion 4/7] COPY mvnw pom.xml spotbugs-exclusiones.xml ./
+#24 DONE 0.0s
+
+#25 [backend construccion 5/7] RUN chmod +x mvnw
+#25 DONE 0.2s
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 ...
+
+#26 [backend construccion 6/7] COPY src src
+#26 DONE 0.1s
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 5.176 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#20 ...
+
+#27 [backend construccion 7/7] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#27 0.886 Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised.
+#27 0.886 If you updated your Maven version, you need to update the specified distributionSha256Sum property.
+#27 ERROR: process "/bin/sh -c ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage" did not complete successfully: exit code: 1
+
+#20 [frontend construccion 4/8] RUN npm ci --no-audit --no-fund
+#20 CANCELED
+------
+ > [backend construccion 7/7] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage:
+0.886 Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised.
+0.886 If you updated your Maven version, you need to update the specified distributionSha256Sum property.
+------
+Dockerfile:10
+
+--------------------
+
+   8 |     # Los tests y los controles obligatorios se ejecutan en QA y CI antes de aceptar.
+
+   9 |     # compiler/package se invocan directamente para separar el artefacto del QA de Docker.
+
+  10 | >>> RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+
+  11 |     
+
+  12 |     FROM eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+
+--------------------
+
+target backend: failed to solve: process "/bin/sh -c ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage" did not complete successfully: exit code: 1
+
