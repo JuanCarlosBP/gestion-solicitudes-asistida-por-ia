@@ -14,4 +14,15 @@
     <Method name="&lt;init&gt;" params="javax.sql.DataSource"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
+  <!-- El puerto es un colaborador de persistencia administrado por Spring, no
+       datos mutables recibidos del cliente. Debe compartir el DataSource y la
+       transacción; no existe copia defensiva válida de un repositorio JDBC.
+       El campo es final, privado y no tiene getter ni setter. Se conserva el
+       análisis para todos los demás campos, métodos y clases. -->
+  <Match>
+    <Class name="es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores"/>
+    <Method name="&lt;init&gt;" params="es.gestionsolicitudes.proveedores.aplicacion.RepositorioProveedores,java.time.Clock,org.springframework.transaction.PlatformTransactionManager"/>
+    <Field name="repositorio"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
 </FindBugsFilter>

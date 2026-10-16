@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-14T00:03:24.622Z",
+  "baseUrl": "http://127.0.0.1:18080",
+  "resultado": "FAIL",
+  "controles": [],
+  "error": "Fallo de infraestructura o respuesta inesperada en QA proveedores; sin volcar datos.",
+  "limites": "Solo datos ficticios identificados QA-AG011, conservados sin borrar. Reinicia backend. Concurrencia HTTP real sobre Compose/PostgreSQL; no acredita carga a 50.000. Tokens/cuerpos/logs solo en memoria."
+}

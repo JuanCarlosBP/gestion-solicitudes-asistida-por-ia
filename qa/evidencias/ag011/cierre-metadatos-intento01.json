@@ -1,0 +1,50 @@
+{
+  "causa": "PowerShell ConvertFrom-Json convirtió la fecha ISO en DateTime y Parse posterior usó formato local incompatible; error no terminante dejó duración cero y segundos null. Sin impacto en fuentes o pruebas.",
+  "observado": {
+    "zona": "Europe/Madrid",
+    "inicio": "2026-10-14T01:29:00+02:00",
+    "limite": "2026-10-14T11:29:00+02:00",
+    "cierre": "2026-10-14T02:21:08+02:00",
+    "duracion": "00:00:00",
+    "segundos": null,
+    "limiteRespetado": true,
+    "resultado003": "VERIFICADA LOCALMENTE",
+    "requisitos": "PR-01 a PR-12 PASS local",
+    "aceptada": false,
+    "integrada": false,
+    "gitEjecutado": false,
+    "ciRemota": "Pendiente de push humano",
+    "pruebas": {
+      "backend": 98,
+      "angular": 130,
+      "e2e": 9,
+      "pasosProveedores": 12,
+      "apiProveedores": 78,
+      "sesiones": 88
+    },
+    "revision": "Independiente, sin hallazgos accionables abiertos",
+    "preservacion": {
+      "archivosProtegidos": 420,
+      "prefijoCsvConservado": true,
+      "alcance": "Desde captura inicial; sin inspección Git"
+    },
+    "contenedores": "Detenidos; volumen conservado; backend143 por SIGTERM de docker compose stop",
+    "borrador004": {
+      "creado": true,
+      "soloEspecificacion": true,
+      "estado": "Borrador pendiente de aprobación humana",
+      "minutosRestantesAlHabilitar": 550.49,
+      "revisionDocumental": "Sin hallazgos"
+    },
+    "limitaciones": [
+      "Sin benchmark de50.000",
+      "Accesibilidad básica, no WCAG completa",
+      "Sin validación fiscal jurídica universal",
+      "Retención/eliminación legal pendientes",
+      "OWASP no completo",
+      "Auditorías acotadas y búsqueda de secretos no universal"
+    ],
+    "siguientePaso": "Revisión humana, Git/push y CI; aceptación e integración no ejecutadas. Detener sesión tras entrega."
+  },
+  "correccion": "Usar lectura JSON y cálculo ISO en Node, validar antes de escribir y contrastar metadatos después."
+}

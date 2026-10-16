@@ -1,11 +1,11 @@
-# Modelo técnico de identidad
+# Modelo de datos: identidad y proveedores
 
-**Estado:** Migración V2 implementada en AG-010; resultados en
+**Estado:** V2 de identidad y V3 de proveedores implementadas; resultados en [validación 003](../../especificaciones/003-proveedores/validacion.md) y
 [validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
 
 Esquema PostgreSQL `gestion`. V1 permanece intacta; V2 añade exclusivamente
 identidad y sesiones. `flyway_schema_history` conserva la historia de migraciones
-y no está disponible para `gestion_app`. No hay tablas funcionales de proveedores,
+y no está disponible para `gestion_app`. V3 incorpora proveedores. No hay tablas de
 solicitudes, conceptos, importes, aprobaciones ni historial de negocio.
 
 ## Tablas
@@ -55,3 +55,32 @@ roles no equivale a ejecutar migraciones en un proceso aislado.
 PostgreSQL real/Testcontainers comprueba restricciones, mínimo privilegio,
 base nueva, persistencia, segundo arranque, rollback y concurrencia.
 No se sustituye por una base de datos en memoria.
+
+## Catálogo V3 — AG-011
+
+Tabla gestion.proveedores: UUID id, tipo varchar cerrado, denominacion varchar(160),
+pais_fiscal varchar(2), identificador_fiscal e identificador_fiscal_normalizado varchar(64),
+correo_contacto varchar(254) y telefono_contacto varchar(32) opcionales,
+activo boolean, version bigint y creado_en/actualizado_en timestamptz.
+
+UUID, activo=true, version=0 y fechas los genera backend. El país debe ser ISO válido
+y almacenarse en mayúsculas; la aplicación valida el catálogo ISO. Restricciones
+SQL cierran tipos/longitudes/país/versión/fechas. Unique país/normalizado incluye
+inactivos y protege altas concurrentes. Normalización sin checksum ni afirmación
+legal universal. No hay tablas de solicitudes, importes ni historial funcional.
+
+Baja/reactivación cambian activo; no eliminan fila. Modificación/estado exige
+id/version en SQL; conflicto 409 no sobrescribe. Repetición vigente conserva
+versión/fecha. Campos originales se presentan sin exponer el normalizado interno.
+Índices por activo, denominación, país y fechas/orden con id; no garantizan acelerar
+contiene ni acreditan un benchmark de 50.000 registros.
+
+V3 concede SELECT/INSERT/UPDATE a gestion_app, sin DELETE ni DDL. Respeta roles
+de migración/aplicación existentes. Se exige comprobar base nueva, evolución
+V1/V2→V3, segundo arranque, unicidad, dos altas/ediciones simultáneas, páginas,
+privilegios y persistencia. Resultados en validación 003, sin cambiar historia 001/002.
+Retención y eliminación jurídica final se decidirán posteriormente.
+
+El varchar(2) con CHECK exacto evita padding de char(2), sin ampliar país fiscal.
+El índice compuesto activo/país cubre el filtro habitual; país con ambos estados
+puede requerir recorrido. No se promete latencia sin una medición de volumen.

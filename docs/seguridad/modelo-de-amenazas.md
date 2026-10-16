@@ -390,3 +390,21 @@ El modelo se revisará cuando:
 
 No se borrará una amenaza anterior sin explicar
 por qué ha dejado de afectar al sistema.
+
+## Controles del catálogo — AG-011
+
+La especificación 003 y ADR-0004 concretan estos riesgos; resultados reales en
+[validación 003](../../especificaciones/003-proveedores/validacion.md).
+
+| Amenaza | Control previsto por PR | Riesgo restante |
+|---|---|---|
+| AM-02/03 | PR-08/11: visibilidad activos/inactivos, permisos por rol, DTO cerrado y autoridad backend. | Permisos de solicitudes/aprobaciones futuros fuera de alcance. |
+| AM-04/05 | PR-03/11: SQL parametrizado, orden cerrado, LIKE literal, interpolación Angular. | Cada entrada nueva exige sus propias pruebas. |
+| AM-06/07 | PR-08/11: CSRF con Bearer, mismo origen, CORS cerrado. | HTTPS público pendiente. |
+| AM-11/12/13 | PR-05/06/07/09: unique real, versión SQL y estado repetido sin efectos. | 006 ampliará concurrencia/idempotencia transversal. |
+| AM-17/18 | PR-11: eventos después de commit limitados a IDs/acción/resultado, sin fiscal/contacto. | Historial 007, retención y eliminación jurídica definitiva pendientes. |
+| AM-19 | PR-03: páginas máximo 100, filtros limitados y órdenes cerrados. | No hay benchmark de 50.000 ni protección global de carga. |
+| AM-21/22/23 | PR-07/09/12: transacciones, restricciones, fallo seguro, persistencia/reinicio. | Dependencia PostgreSQL; no equivale a restauración completa de desastres. |
+
+Proveedores son registros de catálogo, no cuentas. No existe ámbito multiempresa.
+Las evidencias de QA son ficticias y no se publican tokens ni cuerpos de sesión.

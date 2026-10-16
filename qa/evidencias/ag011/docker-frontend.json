@@ -1,0 +1,6 @@
+{
+  "fecha": "2026-10-14T01:42:15.8572612+02:00",
+  "exitCode": 1,
+  "comando": "docker compose build frontend",
+  "motivo": "Tras build sin caché, corrección verificada de retorno desde página fuera de resultados"
+}

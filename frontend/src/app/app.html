@@ -8,6 +8,11 @@
   <nav aria-label="Navegación principal">
     <a routerLink="/inicio" routerLinkActive="activo" ariaCurrentWhenActive="page">Inicio</a>
     @if (sesion.autenticado()) {
+      @if (proveedores.consultar()) {
+        <a routerLink="/proveedores" routerLinkActive="activo" ariaCurrentWhenActive="page"
+          >Proveedores</a
+        >
+      }
       <a routerLink="/mi-cuenta" routerLinkActive="activo" ariaCurrentWhenActive="page"
         >Mi cuenta</a
       >
@@ -18,4 +23,4 @@
   <span class="entorno">Entorno local</span>
 </header>
 <main #contenido id="contenido" tabindex="-1"><router-outlet /></main>
-<footer>Gestión de Solicitudes · Identidad y acceso</footer>
+<footer>Gestión de Solicitudes · Proveedores</footer>

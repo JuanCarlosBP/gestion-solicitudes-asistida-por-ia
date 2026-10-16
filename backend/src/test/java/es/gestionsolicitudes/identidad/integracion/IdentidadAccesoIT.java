@@ -672,7 +672,8 @@ class IdentidadAccesoIT {
     void denegacionPorDefectoYMethodSecurityUsanRolesDeJwt() throws Exception {
         var acceso = servicio.iniciar(CORREO, CLAVE).orElseThrow();
         error(get("/api/proveedores", null), 401, "NO_AUTENTICADO");
-        error(get("/api/proveedores", acceso.accessToken()), 403, "ACCESO_NO_PERMITIDO");
+        assertThat(get("/api/proveedores", acceso.accessToken()).statusCode()).isEqualTo(200);
+        error(get("/api/ruta-no-autorizada", acceso.accessToken()), 403, "ACCESO_NO_PERMITIDO");
         var token = contexto.getBean(JwtDecoder.class).decode(acceso.accessToken());
         var autenticacion =
                 es.gestionsolicitudes.configuracion.SeguridadTecnica.conversorJwt().convert(token);

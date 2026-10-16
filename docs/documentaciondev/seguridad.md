@@ -1,6 +1,6 @@
-# Seguridad técnica de identidad
+# Seguridad técnica de identidad y proveedores
 
-**Estado:** Controles implementados y verificados localmente en AG-010, con límites explícitos.
+**Estado:** Controles de identidad AG-010 y catálogo AG-011, con resultados y límites explícitos en sus validaciones.
 La [política](../seguridad.md) sigue vigente. Resultados y límites se registran
 en [validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
 
@@ -67,7 +67,7 @@ reintento. Logout y el estado de sesión impiden restauraciones tardías.
 Tokens ausentes de localStorage/sessionStorage, URL y registros.
 
 Default deny: únicamente salud, autenticación y documentación local expresamente
-permitidas; `/yo` exige Bearer. 401 distingue falta de autenticación de 403 por
+permitidas; `/yo` y las rutas aprobadas de proveedores exigen Bearer. 401 distingue falta de autenticación de 403 por
 permiso o CSRF. Method security se prueba sin añadir endpoints al producto.
 Cache-Control: no-store, Pragma: no-cache y borrado explícito de refresh; logout
 añade Clear-Site-Data limitado a caché. CSP y demás cabeceras de 001 se mantienen.
@@ -94,3 +94,31 @@ Auditorías de dependencias y búsquedas acotadas no garantizan ausencia de todo
 defecto, vulnerabilidad desconocida o secreto. No se declara una categoría OWASP
 completa cubierta por 002. Véanse [ADR-0003](../decisiones/ADR-0003-identidad-jwt-y-sesiones.md)
 y [modelo de amenazas](../seguridad/modelo-de-amenazas.md).
+
+## Controles acotados de proveedores — AG-011
+
+PR-08 aplica autorización backend y unión explícita de roles. SOLICITANTE y
+SUPERVISOR solo activos; AUDITOR añade inactivos; ADMINISTRADOR escribe. Recurso
+no visible es 404; false/todos en listado requiere permiso. Las reglas HTTP de Spring Security y
+servicio de aplicación comprueban acceso. CSRF sigue activo con Bearer.
+
+PR-07/09 protegen integridad mediante UNIQUE de país/fiscal normalizado incluyendo
+inactivos y UPDATE por id/version. No-op de estado se decide atómicamente con
+versión vigente; obsoleta devuelve 409. Sin DELETE para aplicación. La normalización
+Unicode no acredita validez jurídica ni checksum fiscal; no se eliminan signos.
+
+PR-11: DTO cerrado, tipos y longitudes, ISO, sort cerrado, consultas parametrizadas
+y comodines literales; sin mass assignment de id/activo/fechas. Angular interpola
+texto de catálogo sin ejecutarlo. Errores solo códigos y respuestas privadas sin
+caché compartida. Fiscal/contacto no aparecen en eventos ni cuerpos de errores.
+
+Eventos de crear/modificar/desactivar/reactivar tras commit; duplicado/conflicto
+con resultado controlado. Máximo acción/usuario/proveedor/resultado e id petición
+si existe. No sustituyen historial 007. Contacto solo para gestión; retención y
+eliminación jurídica definitiva pendientes. Consultas fiscales en query params
+requieren no registrar URLs completas; Nginx mantiene access_log desactivado.
+
+Pruebas y revisión independientes constan en validación 003. Persisten riesgos
+XSS durante sesión, disponibilidad PostgreSQL, abuso global sin rate limit general,
+protección HTTPS pública y retención operativa por definir. La paginación limitada
+no es prueba de carga ni garantía contra agotamiento. Sin OWASP/ASVS completo.

@@ -1,0 +1,6 @@
+{
+  "comando": "docker compose build --no-cache frontend",
+  "motivo": "Regenerar capas tras fallo Docker parent snapshot ausente; conserva primer fallo y no borra cachés ni volúmenes",
+  "exitCode": 0,
+  "fecha": "2026-10-14T01:42:43.6066224+02:00"
+}

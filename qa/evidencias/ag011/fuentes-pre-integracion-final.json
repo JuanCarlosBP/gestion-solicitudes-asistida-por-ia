@@ -1,0 +1,429 @@
+{
+  "fecha": "2026-10-14T02:06:25.0316269+02:00",
+  "archivos": [
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/GestionSolicitudesApplication.java",
+      "sha256": "175A4F446F178E5FAC16657D45331D25736A666E6E07AC8CCE721D0A349EAE24"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+      "sha256": "B6D10366B6690C181CA467C9154712142C143015C30786409AD4B120D8C3A42C"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+      "sha256": "C693DB154BD3C7B735FB11F8A70A02AD5E8BC4CD987EC5B9B5BCFE99BBDCB8CA"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+      "sha256": "9D6B8F1CC3F887767F0EDCC1C26B22D4704FBB6018A0E616F1E16BD3F0EA995B"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.java",
+      "sha256": "8463B49DBF0B8EC89291C08CB53969F4F2155AB7620446F6F1E348B3BC3CD30E"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/Contrasenas.java",
+      "sha256": "CB5E7EDD61FFFFB715AABD399D80CF362D00860B5A9BA7DA161BF9DFB88726C8"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.java",
+      "sha256": "D833396EE30052849E684B7157484158064B8E90402086F2345E8C347408BCFF"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.java",
+      "sha256": "E488E9E70D16DAF7C8DEBE8FAECB89A964A7F304205B836247082C3CF3703DE3"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.java",
+      "sha256": "E39B9DDFB3BB451ABA45703CE17FC2A2B047534CC47F142D8A22C9F6B8AFBB81"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.java",
+      "sha256": "B85CBC7AB03E37658F530E56F6177983F014AE3727F496E5CC2FD76B3FD5C3DE"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.java",
+      "sha256": "B7E17F33B2FF64AA605315A6323625BAA6F1EBA2F2548706047D254779D70FC4"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ClavesRsa.java",
+      "sha256": "117D4483BB2A6C2C29AC163CCC5F9A3EDFBE93C369A3B54E6FEA263C1D8BF108"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.java",
+      "sha256": "8344DB7E30CCBB93FC63DCF903FAF0308E35526C2E0E309EA40CFA5BE0A77E00"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.java",
+      "sha256": "EF33346BA8BB71137B54D008E178611D1C94AAF1E9D469369A7A338B1B2E27CB"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java",
+      "sha256": "FAF6987DF4A7B423761AFDF04C26A8C18DD18257084C4A63DDA4A45D03F4A76A"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Correo.java",
+      "sha256": "0421EEAA594A555B4D028FBA52B4A34321CBBF27A19625F8DAA969D43CE78896"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/IntentosAcceso.java",
+      "sha256": "3E60F8D2EE616828FB6B61419FB341A71F024CA71E54938E1064E9130F9D182C"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Rol.java",
+      "sha256": "BFCB1C27A8F7A91C61FD90D80524DA70B17DFD170F2265D1957AEA48E93BFA60"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/SesionAcceso.java",
+      "sha256": "97D1AA9B07A2E8E22610C9FA54E3D3210AE81EAD72749E9118B23D1EF09BABA7"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/TokenRefresco.java",
+      "sha256": "3BF220E73A1A3853B7C1CA7CD6DF538EAE75ADBA06806BB2CF32033639FDB536"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Usuario.java",
+      "sha256": "A8FD43EA4196C327DCC7EBCAF696AD98EB99E1070A29F422F8130E92468F81A0"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/UsuarioPublico.java",
+      "sha256": "50DCE39B8AE2D28A9C9BE77D9909BD79A67D3A5FCAE12ACCF42E112684B8E1F4"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java",
+      "sha256": "75DAC5644971CF89DA9EE62C698BFCFAED5597ECA46018C93F8E032E735D75A0"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java",
+      "sha256": "D1C3A2484A34BB0313952BC02A09FD4FE16E16A91C1FB35D6D3455AAB68FD96E"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/CookiesIdentidad.java",
+      "sha256": "B394CFB9DCEF14DFE9B2990532DF72AACA56B2892ABF39D2E8582B963B7BDDC9"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java",
+      "sha256": "379C49B88C1FB8DF8F58C82888A868546214D54FB696ECF9BBAF2B4B8AA0E632"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.java",
+      "sha256": "EE6D0D3BDCA67CF550D80FEEC7C7B1152B2E37F3B3A93F84FF7DD95B09824345"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/RepositorioProveedores.java",
+      "sha256": "94B13B403DFB10BF7213174695041D02FACA3E0B0C9C66CAB71CAA8A2CC5A8BE"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.java",
+      "sha256": "487EB417D864933B1E3E18F0C76F3688778D4AB8943B8C643BEF9E2AF7651499"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ActorProveedor.java",
+      "sha256": "847EDE23D78934F78103EFB3B43D6C64D36D70AAAC7DC862CC9A6145DFD00176"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores.java",
+      "sha256": "F58EFA6539268281EDD069FD6BD443E75B77FBF5CC14C8210B3B682A439A7FB9"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/DatosProveedor.java",
+      "sha256": "44341B97267CD2EBC93743D6761C29460D34F9828D84732CDD71FF2FFC6E3FC3"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/ErrorProveedor.java",
+      "sha256": "9A0261C67DFE7BE5CCA51DB2D0A118AEC38F2EBA583D7A94753936280F6DAD9D"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/PaginaProveedores.java",
+      "sha256": "989056257184F9CE39E65747A61175C5C38E8B1D053749CE7CEA19E841E9D16B"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/Proveedor.java",
+      "sha256": "DD155784A12D23E9DC4CE0533FEAADEED869D9F6D3EB4B9BA5E6BDEF1C06A3AC"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/dominio/TipoProveedor.java",
+      "sha256": "57DE329D4AE6BFCBE3FABBEC6E4B5D7B21D182346F55C581294EAC5B8EEF8130"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java",
+      "sha256": "7C0EEFF607B0DE4366250924031CF116B069C57CD54A40C8DE08451D29697E63"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/EntradaProveedor.java",
+      "sha256": "3A559D5775169129D86A525440185085F36A2FE087844926DEE4BC164FD4FEB9"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/FiltrosProveedores.java",
+      "sha256": "D9701C54DD26C542797305C51D49750F216B737A7A9F80C2F917DD57B91AF288"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ProveedorPublico.java",
+      "sha256": "D177926B2D807DD1E936FD33662AC0D08A9319D8AFC74F51A0816E912CB9786F"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc.java",
+      "sha256": "606FC6606D87A8A325B821B0C794CFA3D62D11D3DEDD50910E0E6205452FFAF8"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.java",
+      "sha256": "BF179A37E19DD8795EA0BC41B744A230A96E2039F78B30952F1CFAD760A935BD"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/EstadoSalud.java",
+      "sha256": "88A34A835D3410219FC90DBBAAD804F35DDE2DA1DCBC46FE1E0CA820D429534D"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/aplicacion/ServicioSalud.java",
+      "sha256": "0BBB21AE877166B4CA76CD8F8DB1A7457839F054C404453323A16441629FFA0D"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java",
+      "sha256": "4EFB26E3DEE680AC5CC5EA03273D26234503D44648EA056C1534BA801419BFBD"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/http/RespuestaSalud.java",
+      "sha256": "EEF2FFE1133421D46019D2E6250072C2A053874F749AEA69D40E0E23BF91A772"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.java",
+      "sha256": "0AA89BFC24274091FE089DE09CAC6F54D5534E7A9E130050ECBBAC4189EE3E7B"
+    },
+    {
+      "ruta": "backend/src/main/resources/application.yaml",
+      "sha256": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql",
+      "sha256": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql",
+      "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V3__proveedores.sql",
+      "sha256": "2082F182E01E5923BECE5BCF34F3C214C3AD4957FBB388DDDBD04FD3C519E8FD"
+    },
+    {
+      "ruta": "frontend/src/index.html",
+      "sha256": "6A28C322B70310773221D735F852E544E0740CB77ADAB653493012981989CF40"
+    },
+    {
+      "ruta": "frontend/src/main.ts",
+      "sha256": "ECC610FB7D56C95A01A8AA6C274A63210D45B2944DD6B9A88B2C8F70B6351037"
+    },
+    {
+      "ruta": "frontend/src/styles.css",
+      "sha256": "5723A2736CC602B9C6792557B3DC6211C18E2D2F809EE7985F1382E2AAB23CD5"
+    },
+    {
+      "ruta": "frontend/src/app/app.config.ts",
+      "sha256": "8F70B9965253FAEAC032EA7056722DA96065B4FA1E33FD998CC3DC309056CBED"
+    },
+    {
+      "ruta": "frontend/src/app/app.css",
+      "sha256": "D701E5C778E10B5EF65346ECC83E719091C8876ACBD2886EE7A6A93420DF7A0F"
+    },
+    {
+      "ruta": "frontend/src/app/app.html",
+      "sha256": "AEC9F9F049CD1B13ED537F937D3818E2A3B8BF7FE3DC4016140F1E0B950AA44C"
+    },
+    {
+      "ruta": "frontend/src/app/app.routes.spec.ts",
+      "sha256": "7BFA4290737E212D87B357E55AC15C8EA9778E0C2BFDDA6DEF69AC0D213F12E6"
+    },
+    {
+      "ruta": "frontend/src/app/app.routes.ts",
+      "sha256": "DC44766246BB8B9F818240162DE7A86AD7F32509EDCDAEAE2045682833B7916D"
+    },
+    {
+      "ruta": "frontend/src/app/app.spec.ts",
+      "sha256": "2A54073F3BEA75A3B131746D197E6C417C616ED9D6980FC6169902D206091141"
+    },
+    {
+      "ruta": "frontend/src/app/app.ts",
+      "sha256": "30D444CA1FB0B7108E7E473FEA0FD8AE333819B7BEFFEB8C9638301A740720F4"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.html",
+      "sha256": "91527BE24A59CFC942367E16D87C96C94632AAFA29CD2AE0BF1B4535408C290C"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.spec.ts",
+      "sha256": "A5524C454B91E3B77F2CE102F296235D74874F3B7F12DC3ACA0C7C24203835D4"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.ts",
+      "sha256": "1D1CF213AD51559F8880A58DFD5EF7EF2C3F98820AC690EB5DA03D92AA2D0C8E"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/autenticacion.spec.ts",
+      "sha256": "CE4F920AF1581B363FD3FFE0219F21226AECB31012A88A3053679B5C145C6D71"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/autenticacion.ts",
+      "sha256": "291D926D33EA9408EEECE2F8C0C11BE4720E411D308A864E66A8CE644BC708AE"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/datos-prueba.ts",
+      "sha256": "799BBEA1C7E54DAE09605F5C78E541A0793298D57FBA880EAA8BD98135824052"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/identidad-modelo.ts",
+      "sha256": "5F4094CD879215DC22B0C5FB15E0F17CB6703D811CAE936C2AC7DC4EF025D6DD"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/identidad.css",
+      "sha256": "118EAAD36554DEA9A9B1E9983DD0040DB074A05EC9339729B20FCF470C4C88C9"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.html",
+      "sha256": "EEC732E37460E82CD388A227A69EF6BBADEC5EA9754C95BCC34212E8EA88A358"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.spec.ts",
+      "sha256": "44D50E9B2F45CEE7BC80430C8117D3F2435F866B47782D2DC3D4755B92495ACF"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/mi-cuenta.ts",
+      "sha256": "AE95B29E75BB3FE2E8CBCC7FD0422CC97429F2C9338173B44FC3B11F533B8751"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-guard.spec.ts",
+      "sha256": "3E8ACBB499B5FD1A6F5535EDFF4705F9300441FA9F1633C7D59C1A6F6D5927E8"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-guard.ts",
+      "sha256": "E03E68FE46EBCFE45AC644990003BE4336044C4CF5EE7D168DEDBCD9DCFE1864"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-interceptor.spec.ts",
+      "sha256": "ABF60FDE4515D7D5569FE6EE92009C45695AA7B27C003A6430DC91FC0295C646"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-interceptor.ts",
+      "sha256": "24227EAF86426AE856002D1B5265BEADBFC2EBEBB0CB17C6266B9C0B5D4F13E1"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-store.spec.ts",
+      "sha256": "D3FFC300E0697190098E4C56E0D920806AE9DDB7FD06F797F8FF8000F3B82546"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/sesion-store.ts",
+      "sha256": "105A26894DA5EFE90E0C4892006FD021A2BEBC3B61B7AB6E74D3D073B6223903"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.css",
+      "sha256": "4FDB38D228226E0795F02693A05874AD00A84590C409AA12EC628880372B15CA"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.html",
+      "sha256": "1F8ED714BDDA02FB0DC8989789ABC5F4CE7D40864D4E183D5BE36D1387F11AAB"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.spec.ts",
+      "sha256": "34A74FAD7A47670FD63795AA48B949D1BC6596F5E4B493A04742A225435DCCE3"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.ts",
+      "sha256": "01C8739EC8F711AC0FD47F1B83E5DF30CB47EB09D0110D8E528D31811DC401BF"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/salud-api.spec.ts",
+      "sha256": "C47E04D48C47C5900BD7262FFD962487D9B3986147189C51F343564DD21ED19C"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/salud-api.ts",
+      "sha256": "AD2857F5D7D2C6FC1B76BA3911A6010D273FC55521920D3F60F00602BF4249A9"
+    },
+    {
+      "ruta": "frontend/src/app/navegacion/no-encontrada.ts",
+      "sha256": "AE1EAA0E066CE10F52EFC6D1A309041257E6150DE2706730A004F364ADF95588"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-detalle.html",
+      "sha256": "9238B029D340E4030CC2825E33A8442800A9BE0BCD5228B9D8F4B4676E523774"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-detalle.ts",
+      "sha256": "2C914C9BAF23CDA3C883B32B38F41B8C655048FF136DCEAFD31BC9ED02C784BB"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-formulario.html",
+      "sha256": "7A17522BC8EE313B7D29315E0F7598CB6A7B23AAB1FC39783EC2271AC525A1CB"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-formulario.ts",
+      "sha256": "7D61244F21F809EFD7BE0B02DD1D4C78B22DFF08C20DB71BABC8215BBEFCA648"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-modelo.ts",
+      "sha256": "660A72458938BBAF3F324C3ED8823C01007CB5658080B43042AEC6AC1A69849F"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-validacion.spec.ts",
+      "sha256": "A78F0EAB630C3E67AF46BDA5407B27AF6B7EBA39F3F94094DC6457CF523F917E"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-api.spec.ts",
+      "sha256": "5CE13A3AE36EC8F71F726A009CFB48DDC5B9330C806DFA41C914ECCB6CDD4FE7"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-api.ts",
+      "sha256": "C5E62DF6D39D85F51355A756AA0E6CA4CE4AF5FEE2D896DC1E29A8C01FA7AF5B"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-lista.html",
+      "sha256": "D6798313EF623812BEF391F9CEB4BCDC1FD607F2F0CCC83DA6568612E2E59AC6"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-lista.ts",
+      "sha256": "1D3068B4A08CF3892F1253E5FA6DC2D630C2C5F9E5722AA5D0F24450D5C2EE91"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-paginas.spec.ts",
+      "sha256": "7CBC6FC868F32B839D14377DB609820D3AE6CAD16529D11BF92BC6A35C3B436A"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-permisos.ts",
+      "sha256": "E2CA0A9F144A7C7D8DF3AE05F79CA18A2AE266F3B6B30EBEEC677905FB4E02C7"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores.css",
+      "sha256": "D337585315969841025E9EFCEC176778E4823F3BD1353053C376D99ED785E479"
+    },
+    {
+      "ruta": "backend/pom.xml",
+      "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7"
+    },
+    {
+      "ruta": "backend/Dockerfile",
+      "sha256": "ED2E8B86B46AC74F42A0FDFEB08F83204FA4957CD16C6ED3CE98F4F49AB61409"
+    },
+    {
+      "ruta": "backend/spotbugs-exclusiones.xml",
+      "sha256": "087838855F4A2EF75B37D727E42672EE42339DA299961DEFFD317612FB408BAC"
+    },
+    {
+      "ruta": "frontend/package.json",
+      "sha256": "E9A71302D587FE917A9E05B23B209CE8F36595CFF8F2E5822FE1275D301E1690"
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F"
+    },
+    {
+      "ruta": "frontend/Dockerfile",
+      "sha256": "8102329BD1EF779DE62EFDEA1547A02DA52E25EF1F7A1E4F5C622CE19BCBA82D"
+    },
+    {
+      "ruta": "frontend/nginx.conf",
+      "sha256": "DD72AE72FF0CCC21C54A9665474968ED17F146BC95517C4FFA8C08B2D3B70170"
+    },
+    {
+      "ruta": "infraestructura/compose.yaml",
+      "sha256": "4C471767FB8A314EDBF52CB888DA0F26BFBF3544CFFE6FC0F5FDE3879A61A195"
+    }
+  ]
+}

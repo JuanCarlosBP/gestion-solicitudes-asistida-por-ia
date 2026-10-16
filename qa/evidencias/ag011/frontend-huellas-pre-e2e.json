@@ -1,0 +1,77 @@
+{
+  "fechaUtc": "2026-10-14T00:11:08.1692266Z",
+  "archivos": [
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\app.ts",
+      "Hash": "30D444CA1FB0B7108E7E473FEA0FD8AE333819B7BEFFEB8C9638301A740720F4"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\app.html",
+      "Hash": "AEC9F9F049CD1B13ED537F937D3818E2A3B8BF7FE3DC4016140F1E0B950AA44C"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\app.routes.ts",
+      "Hash": "DC44766246BB8B9F818240162DE7A86AD7F32509EDCDAEAE2045682833B7916D"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\e2e\\base.spec.ts",
+      "Hash": "3B0DD5CD2B8BA3090DC412102F368EF46AEAA20728E0860CAAE6EE27913121D3"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\e2e\\proveedores.spec.ts",
+      "Hash": "E52667959E878667709D4F3C984CCFC8243DD790681BC6B1CDB90D0C0B91413D"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-detalle.html",
+      "Hash": "9238B029D340E4030CC2825E33A8442800A9BE0BCD5228B9D8F4B4676E523774"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-detalle.ts",
+      "Hash": "2C914C9BAF23CDA3C883B32B38F41B8C655048FF136DCEAFD31BC9ED02C784BB"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-formulario.html",
+      "Hash": "7A17522BC8EE313B7D29315E0F7598CB6A7B23AAB1FC39783EC2271AC525A1CB"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-formulario.ts",
+      "Hash": "7D61244F21F809EFD7BE0B02DD1D4C78B22DFF08C20DB71BABC8215BBEFCA648"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-modelo.ts",
+      "Hash": "660A72458938BBAF3F324C3ED8823C01007CB5658080B43042AEC6AC1A69849F"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedor-validacion.spec.ts",
+      "Hash": "A78F0EAB630C3E67AF46BDA5407B27AF6B7EBA39F3F94094DC6457CF523F917E"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-api.spec.ts",
+      "Hash": "5CE13A3AE36EC8F71F726A009CFB48DDC5B9330C806DFA41C914ECCB6CDD4FE7"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-api.ts",
+      "Hash": "C5E62DF6D39D85F51355A756AA0E6CA4CE4AF5FEE2D896DC1E29A8C01FA7AF5B"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-lista.html",
+      "Hash": "48E9ADDCF2D1129340354B0E305015994397BA06AF80BEE08BDFBB1ABC211F0D"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-lista.ts",
+      "Hash": "DFCB524D8035F20DA85D9AEC6847218C565703631320BFE2AF00D5CC4D9A9C24"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-paginas.spec.ts",
+      "Hash": "13F8EEEF79980C416735019A93D96440EA2D55550B83284FE8E0C0E6E2B0B400"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores-permisos.ts",
+      "Hash": "E2CA0A9F144A7C7D8DF3AE05F79CA18A2AE266F3B6B30EBEEC677905FB4E02C7"
+    },
+    {
+      "Path": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\frontend\\src\\app\\proveedores\\proveedores.css",
+      "Hash": "BF61E8F87CE09F5AF0DF50D92B919A2846016C89A106411AF286C3E42957F3A9"
+    }
+  ]
+}

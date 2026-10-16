@@ -1,0 +1,151 @@
+<section aria-labelledby="titulo-proveedores">
+  <div class="encabezado">
+    <div>
+      <p class="ceja">Catálogo</p>
+      <h1 #titulo id="titulo-proveedores" tabindex="-1">Proveedores</h1>
+    </div>
+    @if (permisos.escribir()) {
+      <a class="boton" routerLink="/proveedores/nuevo" queryParamsHandling="preserve"
+        >Nuevo proveedor</a
+      >
+    }
+  </div>
+  <form
+    #formulario
+    class="panel"
+    (submit)="buscar($event, formulario)"
+    aria-label="Filtros de proveedores"
+    [attr.aria-busy]="cargando()"
+  >
+    <fieldset class="filtros" [disabled]="cargando()" aria-label="Buscar en el catálogo">
+      <div class="campo">
+        <label for="buscar-denominacion">Denominación contiene</label
+        ><input
+          id="buscar-denominacion"
+          name="denominacion"
+          maxlength="256"
+          [value]="filtros().denominacion"
+        />
+      </div>
+      <div class="campo">
+        <label for="buscar-fiscal">Identificador fiscal exacto</label
+        ><input
+          id="buscar-fiscal"
+          name="identificadorFiscal"
+          minlength="3"
+          maxlength="128"
+          [value]="filtros().identificadorFiscal"
+        />
+      </div>
+      <div class="campo">
+        <label for="buscar-tipo">Tipo</label
+        ><select id="buscar-tipo" name="tipo" [value]="filtros().tipo">
+          <option value="">Todos los tipos</option>
+          <option value="PERSONA_JURIDICA">Persona jurídica</option>
+          <option value="PROFESIONAL">Profesional</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="buscar-pais">País fiscal (ISO, dos letras)</label
+        ><input
+          id="buscar-pais"
+          name="paisFiscal"
+          maxlength="2"
+          pattern="[A-Z]{2}"
+          placeholder="ES"
+          [value]="filtros().paisFiscal"
+        />
+      </div>
+      <div class="campo">
+        <label for="buscar-estado">Estado</label
+        ><select id="buscar-estado" name="activo" [value]="filtros().activo">
+          <option value="true">Activos</option>
+          @if (permisos.verInactivos()) {
+            <option value="false">Inactivos</option>
+            <option value="todos">Todos los estados</option>
+          }
+        </select>
+      </div>
+      <div class="campo">
+        <label for="buscar-orden">Orden</label
+        ><select id="buscar-orden" name="sort" [value]="filtros().sort">
+          <option value="denominacion,asc">Denominación: A–Z</option>
+          <option value="denominacion,desc">Denominación: Z–A</option>
+          <option value="creadoEn,desc">Creación: más recientes</option>
+          <option value="creadoEn,asc">Creación: más antiguos</option>
+          <option value="actualizadoEn,desc">Actualización: más recientes</option>
+          <option value="actualizadoEn,asc">Actualización: más antiguos</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="buscar-tamano">Resultados por página (1–100)</label
+        ><input
+          id="buscar-tamano"
+          type="number"
+          name="size"
+          min="1"
+          max="100"
+          required
+          [value]="filtros().size"
+        />
+      </div>
+      <div class="acciones">
+        <button type="submit">Buscar</button
+        ><button type="button" class="secundario" (click)="restablecer()">
+          Restablecer filtros
+        </button>
+      </div>
+    </fieldset>
+  </form>
+  <p #alerta role="alert" tabindex="-1" [hidden]="!error()" class="aviso">{{ error() }}</p>
+  @if (error()) {
+    <button type="button" (click)="recargar()">Reintentar</button>
+  }
+  <div [attr.aria-busy]="cargando()" aria-live="polite">
+    @if (cargando()) {
+      <p role="status">Cargando proveedores…</p>
+    }
+    @if (pagina(); as datos) {
+      <p role="status">{{ datos.totalElementos }} proveedores encontrados.</p>
+      @if (datos.elementos.length === 0) {
+        <p class="panel">No hay proveedores para estos filtros o esta página.</p>
+      } @else {
+        <ul class="proveedores">
+          @for (proveedor of datos.elementos; track proveedor.id) {
+            <li class="panel">
+              <div>
+                <a [routerLink]="['/proveedores', proveedor.id]" [queryParams]="filtros()">{{
+                  proveedor.denominacion
+                }}</a>
+                <p>{{ proveedor.paisFiscal }} · {{ proveedor.identificadorFiscal }}</p>
+                <p>
+                  {{ proveedor.tipo === 'PERSONA_JURIDICA' ? 'Persona jurídica' : 'Profesional' }}
+                </p>
+              </div>
+              <span class="estado">{{ proveedor.activo ? 'Activo' : 'Inactivo' }}</span>
+            </li>
+          }
+        </ul>
+      }
+      <nav class="paginacion" aria-label="Paginación de proveedores">
+        <button
+          type="button"
+          class="secundario"
+          [disabled]="datos.pagina === 0"
+          (click)="cambiarPagina(datos.pagina - 1)"
+        >
+          Anterior
+        </button>
+        <span>Página {{ datos.pagina + 1 }} · {{ datos.totalPaginas }} páginas en total</span>
+        <button
+          type="button"
+          class="secundario"
+          [disabled]="datos.pagina + 1 >= datos.totalPaginas"
+          (click)="cambiarPagina(datos.pagina + 1)"
+        >
+          Siguiente
+        </button>
+      </nav>
+    }
+  </div>
+</section>

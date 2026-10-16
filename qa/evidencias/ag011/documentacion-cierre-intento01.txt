@@ -1,0 +1,3 @@
+Evidencias documentales: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag011
+451 enlaces; 1 destinos ausentes; 0 ubicaciones con patrones de secretos.
+docs\trazabilidad\AG-011-informe.md: destino ausente ../../qa/evidencias/ag011/condicion-borrador 004.json

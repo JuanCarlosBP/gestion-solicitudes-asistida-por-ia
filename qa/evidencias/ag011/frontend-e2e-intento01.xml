@@ -1,0 +1,194 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="8" time="2.588642">
+<testsuite name="base.spec.ts" timestamp="2026-10-14T00:07:58.596Z" hostname="" tests="5" failures="0" skipped="0" time="0.038" errors="4">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|base-inicio-recarga-raíz-y-ruta-desconocida-con-API-real\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\base-inicio-recarga-raíz-y-ruta-desconocida-con-API-real\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|base-carga-y-error-visible-ffd2c-ón-interna-con-recuperación\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación ──────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\base-carga-y-error-visible-ffd2c-ón-interna-con-recuperación\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|base-teclado-foco-idioma-y-ancho-móvil\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil ──────────────────────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\base-teclado-foco-idioma-y-ancho-móvil\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.034">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-14T00:07:58.596Z" hostname="" tests="3" failures="0" skipped="0" time="0.005" errors="3">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|identidad-acceso-identidad-bc20e-re-y-guard-con-backend-real\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  identidad.spec.ts:15:5 › acceso, identidad, restauración, cierre y guard con backend real ────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\identidad-acceso-identidad-bc20e-re-y-guard-con-backend-real\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|identidad-formulario-por-t-1d038-co-foco-y-validación-nativa\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  identidad.spec.ts:93:5 › formulario por teclado, error genérico, foco y validación nativa ────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\identidad-formulario-por-t-1d038-co-foco-y-validación-nativa\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.004">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|identidad-CSRF-obligatorio-683bc-cursos-públicos-disponibles\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  identidad.spec.ts:124:5 › CSRF obligatorio, restauración anónima y recursos públicos disponibles ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\identidad-CSRF-obligatorio-683bc-cursos-públicos-disponibles\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-14T00:07:58.596Z" hostname="" tests="1" failures="0" skipped="0" time="0.001" errors="1">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="0.001">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\error-context.md]]
+]]>
+</system-out>
+<error message="browserType.launch: Executable doesn&apos;t exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe" type="Error">
+<![CDATA[  proveedores.spec.ts:37:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\carli\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>

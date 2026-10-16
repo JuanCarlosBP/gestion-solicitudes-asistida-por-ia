@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-10-14T00:20:40.657Z",
+  "resultados": [
+    {
+      "criterio": "Destino protegido qa/evidencias/ag003",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Destino protegido qa/evidencias/ag009",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Destino protegido qa/evidencias/ag010",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Destino protegido ../fuera",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Destino protegido .git/evidencias",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sintaxis qa/verificar-proveedores-compose.mjs",
+      "exitCode": 0,
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sintaxis qa/verificar-entrega-ag011.mjs",
+      "exitCode": 0,
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sintaxis qa/verificar-sesiones-compose.mjs",
+      "exitCode": 0,
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sintaxis qa/rutas-evidencia.mjs",
+      "exitCode": 0,
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI incluye QA proveedores y E2E completos",
+      "resultado": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.13kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 664B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 104B done
+#5 DONE 0.0s
+
+#6 [construccion 1/7] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#6 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#6 DONE 0.0s
+
+#7 [stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#7 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 25.28kB done
+#8 DONE 0.0s
+
+#9 [construccion 2/7] WORKDIR /construccion
+#9 CACHED
+
+#10 [construccion 3/7] COPY package.json package-lock.json .npmrc ./
+#10 CACHED
+
+#11 [construccion 4/7] RUN npm ci --no-audit --no-fund
+#11 CACHED
+
+#12 [construccion 5/7] COPY angular.json tsconfig*.json ./
+#12 CACHED
+
+#13 [construccion 6/7] COPY src src
+#13 DONE 0.0s
+
+#14 [construccion 7/7] RUN npm run build
+#14 0.217 
+#14 0.217 > gestion-solicitudes-frontend@0.0.1 build
+#14 0.217 > ng build
+#14 0.217 
+#14 0.527 ❯ Building...
+#14 2.865 ✔ Building...
+#14 2.866 Initial chunk files | Names         |  Raw size | Estimated transfer size
+#14 2.866 main-VGJ6YBER.js    | main          | 309.50 kB |                81.27 kB
+#14 2.866 styles-T6TP5HFB.css | styles        | 244 bytes |               244 bytes
+#14 2.866 
+#14 2.866                     | Initial total | 309.74 kB |                81.51 kB
+#14 2.866 
+#14 2.866 Application bundle generation complete. [2.302 seconds] - 2026-10-13T23:42:15.249Z
+#14 2.866 
+#14 2.866 Output location: /construccion/dist/gestion-solicitudes-frontend
+#14 2.866 
+#14 DONE 3.0s
+
+#15 [stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#15 CACHED
+
+#16 [stage-1 3/3] COPY --from=construccion /construccion/dist/gestion-solicitudes-frontend/browser /usr/share/nginx/html
+#16 DONE 0.1s
+
+#17 exporting to image
+#17 exporting layers 0.1s done
+#17 exporting manifest sha256:a43e2d40fb56402b1ae1634157648ed16e335665aed5bdf122cda573394363e0 0.0s done
+#17 exporting config sha256:89aeb6d42ddcbce6eb00cadd58510d4593d8a786c962962d3affe1f782dba334 done
+#17 exporting attestation manifest sha256:3d3a38d1c6965ec8e28c05a30b4b7f5fc130865e548822fd5d845da4247c01dc 0.0s done
+#17 exporting manifest list sha256:39d6f80f3c474d3cf6155a24c26826fc9ae2dbfa301c2d6d8891b6bf22c85a53 done
+#17 naming to docker.io/library/gestion-solicitudes-001-frontend:latest done
+#17 unpacking to docker.io/library/gestion-solicitudes-001-frontend:latest done
+#17 ERROR: failed to prepare extraction snapshot "extract-603691300-ivJU sha256:e59dd3cf07a8c056263b9a6d39d6052afe8f35f7d27dea814cf8f34a3806e8e0": parent snapshot sha256:078a433ae9d23f2503dc409c606d033f9e877947970b6f365b2996e7a5555da6 does not exist: not found
+------
+ > exporting to image:
+------
+failed to solve: failed to prepare extraction snapshot "extract-603691300-ivJU sha256:e59dd3cf07a8c056263b9a6d39d6052afe8f35f7d27dea814cf8f34a3806e8e0": parent snapshot sha256:078a433ae9d23f2503dc409c606d033f9e877947970b6f365b2996e7a5555da6 does not exist: not found
+

@@ -1,0 +1,10 @@
+{
+  "fecha": "2026-10-14T00:20:15.031Z",
+  "archivos": 763,
+  "enlaces": 451,
+  "errores": [
+    "docs\\trazabilidad\\AG-011-informe.md: destino ausente ../../qa/evidencias/ag011/condicion-borrador 004.json"
+  ],
+  "ubicacionesPatronesSecretos": [],
+  "limite": "Búsqueda acotada; no garantiza ausencia de todo secreto. No imprime valores encontrados."
+}

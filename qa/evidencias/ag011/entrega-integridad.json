@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-14T00:21:52.854Z",
+  "historicosComprobados": 420,
+  "alterados": [],
+  "prefijoCsvBytes": 35844,
+  "prefijoCsvConservado": true,
+  "salidasAutogeneradas": [
+    "qa/evidencias/ag011/entrega-manifiesto.json",
+    "qa/evidencias/ag011/entrega-integridad.json",
+    "qa/evidencias/ag011/fuentes-finales.json",
+    "qa/evidencias/ag011/manifiesto-commits.json"
+  ],
+  "resultado": "PASS"
+}

@@ -1,0 +1,85 @@
+<testsuites id="" name="" tests="9" failures="1" skipped="0" errors="0" time="11.132198">
+<testsuite name="base.spec.ts" timestamp="2026-10-14T00:08:20.145Z" hostname="" tests="5" failures="0" skipped="0" time="1.466" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.386">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.239">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.165">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="0.656">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.02">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-14T00:08:20.145Z" hostname="" tests="3" failures="0" skipped="0" time="1.045" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.541">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.285">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.219">
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-14T00:08:20.145Z" hostname="" tests="1" failures="1" skipped="0" time="8.094" errors="0">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="8.094">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-1.png]]
+
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-3.png]]
+
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-4.png]]
+
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-2.png]]
+
+[[ATTACHMENT|proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toHaveValue(expected) failed" type="expect.toHaveValue">
+<![CDATA[  proveedores.spec.ts:37:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales › 10 Búsqueda combinada, orden y páginas con datos reales 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByLabel('Identificador fiscal exacto', { exact: true })
+    Expected: "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀mv7cq6v7"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('Identificador fiscal exacto', { exact: true }) with timeout 5000ms
+      - waiting for getByLabel('Identificador fiscal exacto', { exact: true })
+        14 × locator resolved to <input minlength="3" maxlength="128" id="buscar-fiscal" name="identificadorFiscal" _ngcontent-ng-c2132503749=""/>
+           - unexpected value ""
+
+
+      219 |     await page.getByLabel('Denominación contiene', { exact: true }).fill('😀'.repeat(65));
+      220 |     await page.getByLabel('Identificador fiscal exacto', { exact: true }).fill(fiscalUnicode);
+    > 221 |     await expect(page.getByLabel('Identificador fiscal exacto', { exact: true })).toHaveValue(
+          |                                                                                   ^
+      222 |       fiscalUnicode,
+      223 |     );
+      224 |     await page.getByLabel('Tipo', { exact: true }).selectOption('PROFESIONAL');
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\proveedores.spec.ts:221:83
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\proveedores.spec.ts:212:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales\error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

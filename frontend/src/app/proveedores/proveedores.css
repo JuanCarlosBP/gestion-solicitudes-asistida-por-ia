@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+h1 {
+  margin: 0.4rem 0 1.5rem;
+  overflow-wrap: anywhere;
+}
+.ceja {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.encabezado,
+.acciones,
+.paginacion {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.encabezado {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.panel {
+  background: white;
+  border: 1px solid #cbd9dc;
+  border-radius: 0.7rem;
+  padding: 1.3rem;
+  margin: 1rem 0;
+}
+.filtros,
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.35rem;
+}
+fieldset.filtros {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+input,
+select,
+button,
+.boton {
+  font: inherit;
+  border-radius: 0.35rem;
+  min-height: 2.75rem;
+}
+input,
+select {
+  color: #173844;
+  background: white;
+  border: 1px solid #667e87;
+  padding: 0.6rem;
+  width: 100%;
+}
+button,
+.boton {
+  border: 1px solid #184d55;
+  background: #184d55;
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.secundario {
+  background: white;
+  color: #184d55;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+.acciones {
+  grid-column: 1 / -1;
+}
+.aviso {
+  border-left: 4px solid #994613;
+  background: #fff1e4;
+  padding: 1rem;
+}
+.proveedores {
+  list-style: none;
+  padding: 0;
+}
+.proveedores li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.proveedores a {
+  font-weight: 650;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+.proveedores p {
+  margin: 0.3rem 0;
+  overflow-wrap: anywhere;
+}
+.estado {
+  font-weight: 650;
+  white-space: nowrap;
+}
+dt {
+  font-weight: 650;
+  margin-top: 1rem;
+}
+dd {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+}
+small {
+  color: #883e0d;
+}
+[aria-invalid='true'] {
+  border: 2px solid #994613;
+}
+@media (max-width: 600px) {
+  .filtros,
+  .formulario {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .proveedores li {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .paginacion {
+    align-items: flex-start;
+  }
+}

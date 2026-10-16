@@ -24,3 +24,4 @@
 *.woff binary
 *.woff2 binary
 *.ttf binary
+qa/evidencias/ag011/backend-verify-final.log -text

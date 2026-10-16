@@ -1,0 +1,1682 @@
+[
+  {
+    "ruta": ".agents/skills/mantenimiento-documental/SKILL.md",
+    "sha256": "27C595A1CAB129F0ED670FCE82DE20283B46DE937BCF8745CC047765050449EA"
+  },
+  {
+    "ruta": ".agents/skills/revision-seguridad/SKILL.md",
+    "sha256": "37C074A44CBFD1BF187C2E57F6084A81F121D9884C07DF5333F23BCE8DE933FD"
+  },
+  {
+    "ruta": ".agents/skills/sdd/SKILL.md",
+    "sha256": "0C76405EE5571E229F5A611E3C548B496F29CE616D477DC94D10E7216ED2F1FC"
+  },
+  {
+    "ruta": ".agents/skills/verificacion-qa/SKILL.md",
+    "sha256": "DFA36C391F05B36BB4070A7E21448773E541589AC6912370C1540ED078DC9EBB"
+  },
+  {
+    "ruta": ".codex/agents/implementador.toml",
+    "sha256": "10276B7A1278B12003AD5BFC045E9E038702483A6784AC6F812543D7DEE1BE60"
+  },
+  {
+    "ruta": ".codex/agents/planificador.toml",
+    "sha256": "90938D92A218643CE54ECACEC275573007981528A24A2B758EBFD7C0DFE6264B"
+  },
+  {
+    "ruta": ".codex/agents/revisor.toml",
+    "sha256": "4DE41B1A36BAE1698D7AF37DD3B335293114EA0337B59C3284BC7FA34CC2FE1D"
+  },
+  {
+    "ruta": ".codex/config.toml",
+    "sha256": "D354ABD87CD40F5DCA29433D4FF03216BF5D2D7D8A7E76398BE9B9EB36D0484F"
+  },
+  {
+    "ruta": "backend/src/main/resources/db/migration/V1__preparar_esquema_tecnico.sql",
+    "sha256": "7853D9A29E2DC6AA24DC9740C0390F49F1C46B7C00D7394BB0D31C94943CF7B2"
+  },
+  {
+    "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql",
+    "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3"
+  },
+  {
+    "ruta": "docs/decisiones/ADR-0001-dependencia-transitiva-rolldown-angular-21.md",
+    "sha256": "FE58AF98BBE2406182DFD927BFD8D6737FE86FEDE128D0C55D6060C14361AB51"
+  },
+  {
+    "ruta": "docs/decisiones/ADR-0002-politica-dependencias-transitivas.md",
+    "sha256": "8BC9AF120E4C78250AF7B2EBC3B6982E1C3682FEC02FAC3F055E7002032A7B3F"
+  },
+  {
+    "ruta": "docs/decisiones/ADR-0003-identidad-jwt-y-sesiones.md",
+    "sha256": "C83D037757FEB8CB38D7AD050DBFBF6E19DB2EF1FB9BE2B7AA57DFE9BB3853A0"
+  },
+  {
+    "ruta": "docs/trazabilidad/AG-006-informe.md",
+    "sha256": "BA6354EE0B9FD98E882B08171DCB96BEA50BC23D9FBCD1B29CC18BD5D43FFA02"
+  },
+  {
+    "ruta": "docs/trazabilidad/AG-007-informe.md",
+    "sha256": "B737EFE0209C70EE8C69BBF09427362ABD33675257AB3BC1626982BAD2857708"
+  },
+  {
+    "ruta": "docs/trazabilidad/AG-008-informe.md",
+    "sha256": "A3C1B72AD6F87F789511EFFCA7B4D93A49B88172BAC5205D6DC4431BE67DB11E"
+  },
+  {
+    "ruta": "docs/trazabilidad/AG-009-informe.md",
+    "sha256": "3491C1C5A07555374443DC879E943A0D8B67CA70922A7000372737C62468CA23"
+  },
+  {
+    "ruta": "docs/trazabilidad/AG-010-informe.md",
+    "sha256": "8F36EDD137E608816C503FC6A02CE11FD75BAE31A65793EAD885C1AFE55D6BFE"
+  },
+  {
+    "ruta": "docs/trazabilidad/REV-001-revision-independiente-01.md",
+    "sha256": "6778ED8923D21D0D707F46F397F8CDF55E12BC6EB1707AA37B07EAE38399FBBE"
+  },
+  {
+    "ruta": "especificaciones/001-base-verificable/especificacion.md",
+    "sha256": "AFD62D03025692C9F9B0CE8FB289063B766D1387D6EA331992283ABC08A6724E"
+  },
+  {
+    "ruta": "especificaciones/001-base-verificable/plan.md",
+    "sha256": "73DCB6F5BACBC2FEF85145CB9B457C2D29E782FC7BF45C59AF41321D14503443"
+  },
+  {
+    "ruta": "especificaciones/001-base-verificable/tareas.md",
+    "sha256": "7F56B00426D3881B02AC251B6E376D93155356CDE3A0A99F40B0C0A52856FC87"
+  },
+  {
+    "ruta": "especificaciones/001-base-verificable/validacion.md",
+    "sha256": "D89F4DDA9219802460C5DB870CA81FEFF84FADC66513294D2595F5EF58C598E9"
+  },
+  {
+    "ruta": "especificaciones/002-identidad-acceso/especificacion.md",
+    "sha256": "AEC9BEB7227630F1EFF9D99DBB8D40426706006D50429346C22DBF186E333C85"
+  },
+  {
+    "ruta": "especificaciones/002-identidad-acceso/plan.md",
+    "sha256": "8BCFF6434B6F45C975FCBEB6CE2855848A065EA0E33C538C36505C212E12BC8F"
+  },
+  {
+    "ruta": "especificaciones/002-identidad-acceso/tareas.md",
+    "sha256": "420A9DA78D075A506E54C53F907FB844A1FAD2E19D0B4972FD5554C2A1C042B1"
+  },
+  {
+    "ruta": "especificaciones/002-identidad-acceso/validacion.md",
+    "sha256": "C5720245F2083E4E34147ECAC2222D2DA304BE4B5BD19DA25365FB9C44DFF8E7"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-checkout-referencia.json",
+    "sha256": "35FD48A5FDA290F3B3EECF8D7D22DBCF7A4B8DE34CD1AD43E9E57094ABA43C14"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-checkout.json",
+    "sha256": "C7C67FAA9B75F8A3EB40265E91230DAA3DF3522192DDF1BF1A5F181F42B76105"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-setup-java-referencia.json",
+    "sha256": "E425893BB05673C2D0D9BA67BB50A70CDF99AF3DADD46AC3B308F8F9B4385F79"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-setup-java.json",
+    "sha256": "63AAA0BE54C16FBA22DDFE18B7A5ADADD11F8FAC04F1A170C3F26CECFD6F621B"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-setup-node-referencia.json",
+    "sha256": "D1FDDDBCEE4F9AC6D37DE1E5B7AC5DFE673B3403BA33F489B065920C5BA1D0F9"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-setup-node.json",
+    "sha256": "64E8C292FDA928C4AF25BBF6A6649106DCEB5979452F06E60743EC3C185B9D6C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-upload-artifact-referencia.json",
+    "sha256": "F960A66F02852DBEC616BA46B7127E1B5B83C990A8BB34290E6089F6A8081FA0"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/action-upload-artifact.json",
+    "sha256": "F9C075DB0BF5397022D76EA23F3E10CCF4AA47B542F00FC8D815E0DFA578AE82"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/actionlint-final.txt",
+    "sha256": "AD46615FE9BE81C4EAC44405BFBCE538B25C92AC42B6BF22AB1DE6EF0DD02CB6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/actionlint-fuente.json",
+    "sha256": "CB6BA0A1F36D3CEA070CF036E77FF7A27AF777484D8BBDCCB6CC296510CC1E38"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-analisis-dependencias.txt",
+    "sha256": "D5DEC95609BCA53DB44ECAB7754DFB2A96A75354FFB20220C1F308FE3C56FC3F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-configuracion-ausente.txt",
+    "sha256": "3E20387ABCD17330537025E31B014CE4562ACFE436B18DC0AA53DD002449EF0D"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-http-corregido.txt",
+    "sha256": "20DFAEAEB55C595E4E830D85E2E182B789449D0DB358F849A9C8FF197F8E9B7C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-integracion-imagen.txt",
+    "sha256": "DB9109D4B91FE13E5E28A6E4C8D119FE53574D64204A9FF7510DC09BF52666A6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-integracion.txt",
+    "sha256": "1EDFB1EBBCFFE7C2AB2AF92D3AC70D8BF04974AF3FA32134AE5202B825415C33"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-pruebas-escaladas.txt",
+    "sha256": "DE1D3BA320D364A27FF3571A1039D17211DE9B96B405A002A31C2192435F962F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-regresion-seguridad.txt",
+    "sha256": "C6D1B05A20EFED6C72E6D878F4716F5869CB7F2293E4823CFA4FAE5393052719"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-unitarias-inicial.txt",
+    "sha256": "591EBCDD3B4B2F0F0C640476EA47DD706349E36ED865E3852031A4AE769E8BD9"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-unitarias-java21.txt",
+    "sha256": "13342DDF4009CA5E5D3DF3D160DFB7612EFB563F1B48CFEF4322B3EF3BDB9385"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-unitarias-sin-formato.txt",
+    "sha256": "3C8C562CD190F304BA4157AC31E7E8263100F80CC3FBBC6679145D0EB652F7E9"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-unitarias.txt",
+    "sha256": "12074CF5539B487FF0A317007D6DC98C1DA3463891B2203F048CF71A14168BED"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/backend-verify-final-obligatorio.txt",
+    "sha256": "B225E32ED8297CF6271F9DD41FA0B4B5F631D5CB2219A7E39A3F8D1A81B385B6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/cierre.json",
+    "sha256": "1E429DCDAD0457A287C19A4DE5B1DBFF45027F3D407793D5D0A286B8DEF71689"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-arranque-unzip.txt",
+    "sha256": "B38C2890B4762BC17D92923FCBF8D9227FF4E91179905BE8CA831086B1CD4D49"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-arranque.txt",
+    "sha256": "B44DCE1236A77DFF30ACFF74744882FB602423F0FC8AC0F26F33B5B23366D394"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-cierre.json",
+    "sha256": "21B30C7C2878E7D27BAEB1C3C7457D9B63031B27024E9560BDFD699FC46B64F5"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-frontend-foco.txt",
+    "sha256": "3A94950602D0531C538E3FC97C93187727076CC5449620645B3BD3226E7DF1B6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-parada-final.txt",
+    "sha256": "AA2A4C46B1A9FD832B1EE000074EFF3139FBC5BEBF0E6A38201B0DC85A06C3B6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-parches-seguridad.txt",
+    "sha256": "0248A54FAAAD8803C37594076EC1144DF48823C5AF07D89B4183887BEC00C365"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-persistencia-caida.json",
+    "sha256": "6E819A8F11C0ECFC0285EDD41C2E24EAB5CA2BAB420C669676E83FC91DE2BBF4"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-qa-corregido.txt",
+    "sha256": "A488D4CB5A0229C1BFFF74799447AD4735946471F07DC2465031EFE36F478041"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-qa-revision.txt",
+    "sha256": "1D6C1B7B57C52F8E9724FAAADF610FF0ABDB6B401782376C2FDF590F6B7770AC"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-qa.txt",
+    "sha256": "787525B47769F419EB8F78E75B976755961468F9C4366DD26207BDD0B36A005D"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-salud.json",
+    "sha256": "D89CAABAE924625A0E6DAEBCF2E819762614F05C2DC9338FAD0BA3AC642ADF6F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/compose-servicios.json",
+    "sha256": "B9E2853398FD8E170FEF94A7C9808CC016E1F0F89A57C3F440A575E878A09833"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/configuracion-ausente.json",
+    "sha256": "9EB2728CA8B9969353C4FC2CA5209F798161B6D3F9695154CAA97F75BA2B2C3F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/dependencias-preliminares.json",
+    "sha256": "EC0E4C80E3901B199D77F3200B7CFBFA777B05317468913D327BFBB81A357D9E"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/documentacion-control.json",
+    "sha256": "44D95C3CF8AAF9D1555AC96B90ABE093540D8EA937044C49F1E4F187CC7E4352"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/e2e-final.txt",
+    "sha256": "7200FE635D68622EFB05561D263E045BEFB25496B891E3F050BE194309B246D0"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/e2e-foco-corregido.txt",
+    "sha256": "70696D57ABAAF9C57322791F770414BA198A51253AF31620065FE61F2D5DD109"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/e2e.txt",
+    "sha256": "B53CCE7776CD86A74AF57111B9B8208425D184D990BDF3BAB26343ED26E76BCF"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/entrega-integridad.json",
+    "sha256": "A64967A3AC7EE89D164224873D75C812873E529BE25830E330F6C170E0E30346"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/entrega-manifiesto.json",
+    "sha256": "E8F1FBB5DBD45BFD4942068C5BABEF92A13FB5B3817FE85EFF6011968967C16C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-build-final.txt",
+    "sha256": "3428E0ACD3EEC48AC36418BD6E7EC3A2E16425AC50DE568AEC4FC83684AB9AF1"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-build.txt",
+    "sha256": "B99CDF1C88E2C528766A528DD4D54FED9D585E5F34753F33DAF8C3FE5BB793FB"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-formato-e2e.txt",
+    "sha256": "4D9B059EB5016C23A68A4932F921A0D4248100B0B46829F2B645006360F3BE1A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-formato-final.txt",
+    "sha256": "3CEB47F2E7CA0733C1DA31AC0D1D5805FA7E1752D7768E1F7D3CDAE4583FE99F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-formato.txt",
+    "sha256": "638F0E8423FB68966299DED8DF568A4D8A4C994C34F1BD2D8E8687B28E0D8803"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-lint-e2e.txt",
+    "sha256": "6E0EC5AAABA10D666497A86FCB7ECAC7854F23C9D0A089FBD56E6E53277E2C6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-lint.txt",
+    "sha256": "6EED85F6077B8C0DFFCCFAA35FA99BF33C7B4F2DAC420A15F1154889AD727D93"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-pruebas-escaladas.txt",
+    "sha256": "DA9B8CDAE73B89D877BFA20C6A469EA189B39D5340E43E67BE3E351E7D8D70A8"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-pruebas-final.txt",
+    "sha256": "6C3135FA9C5C645677B42F3A4653D05A9300C3394BC667AB3499E7C1178F5CF7"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-pruebas-temporal-local.txt",
+    "sha256": "56B33B3B66FAF67DAAA06159211F1A9A0536DBB88F572D166D82C277020F0217"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-pruebas.txt",
+    "sha256": "A5DAF189CB93A2C1006D02FAC657B77CD7AD9BDA505CEC45B7FDD4EA9D232476"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-tipos-e2e.txt",
+    "sha256": "73747CDCC2BC2F66D8315EBA9251779FD35D81A8A0A8481333B7A659A22D6879"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/frontend-tipos.txt",
+    "sha256": "1D810FC1C5AB337D5BA6DF567C504AF5AE3E0D86607D29F9992A9B7CFEB103A1"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/google-format-diagnostico-exports.txt",
+    "sha256": "66C0660E3FFAEDC5823B45B91C1D58F276ADE600EC4EF81101E6254AA595AF47"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/google-format-diagnostico.txt",
+    "sha256": "DF6A7E8FD32B49EA7B93A9ADBE643C632915A96AC8AB5842BBE0600AD74B5B97"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/hitos.jsonl",
+    "sha256": "B741C4181625E8A5DA16798558D843AB8AE1274455249022124003F4D9B4CCF8"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/imagenes-nginx.json",
+    "sha256": "719B194A0C35A0A6C1A8A7C17C594E1E6F1A0BA84EA06DFC370020498819D568"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/imagenes-node.json",
+    "sha256": "A6AD1931E091058C97B9B4B2EE1DECF1C7F921D6FDD53BDF2617D5258BA043A4"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/imagenes-postgres.json",
+    "sha256": "DE874F1D86C3182B7C838F07F3F16884370559A71F201D9DDC36BDA542B8B72B"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/imagenes-temurin.json",
+    "sha256": "9258D73EE6B8CD86776DC64CA7E75F96BAB7769F52230B60F2C3EF08937C881A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/incidencias.md",
+    "sha256": "233A5A6F1863286A0A807C8811623E4D6DBEDD3AB40D2C306B1D61D7030FC9A4"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/failsafe-reports/es.gestionsolicitudes.integracion.BaseVerificableIT.txt",
+    "sha256": "6FC5D748F3DE12F1856CD24B67AAF019BE23B25010CE9E0CCB78136839AD06CA"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/failsafe-reports/failsafe-summary.xml",
+    "sha256": "CFB078A42C0BD2A73021F0A8CC9CD9FBCFF6812C585395C273F00AF15BC0D41B"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/failsafe-reports/TEST-es.gestionsolicitudes.integracion.BaseVerificableIT.xml",
+    "sha256": "1CF31AB6E58AEDE34C0BF88592CDB34CA0BF5FB2DCDBF737F82B6D9BFCA34030"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/spotbugsXml.xml",
+    "sha256": "FF165FC04018185C0682662763A75E004F57507EAA078A9734AC640F046A57DF"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/2026-10-13T10-31-16_665-jvmRun1.dumpstream",
+    "sha256": "4F3EEF121C476403678DBF18B86F496988D47997A0778060C5EFA2B5D78B6924"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.txt",
+    "sha256": "A3E1C8B7C803771EB7BBBE7FB5FB914A3D5EB32221AE59EF0A122CBEFDDE599A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/es.gestionsolicitudes.salud.http.ControladorSaludTest.txt",
+    "sha256": "B76915DA1E8BB2CA27E138177F677B35CE027D85F41B98C1B4D8852CA26DF0A1"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.txt",
+    "sha256": "4021563770A04527537F98B4A6687BBB1D2D5D935F3482D6FFB05832BF662F2A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+    "sha256": "3FC8BECA1D79B4AA3FD99BDB09170CEAC50B6B084B04A5E4BFD06F6C99E55E4F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+    "sha256": "6A3BEE30B1350CCF32765722B37E7FF00AF16C8470F2F9CC6B84D82F4B3AA752"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+    "sha256": "BC1475458854A672289B1BA0A8C2491801EE57CFBA0A896B7EDE884B29CDFC1A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-frontend/e2e.xml",
+    "sha256": "E792B8BC4CD9B02DF67548E2814F9C9C7B50ACF99157E74D49E12D91C5740DF6"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/informes-frontend/unitarias.xml",
+    "sha256": "29144A78A73E55E4695E604EC713EA2AE829D552E61C58DD9DF0890B12F3A965"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/inicio-disponible.png",
+    "sha256": "87B0DE0F3F7E39BC16E75F7C8D26D5BF99EE6C17227C2A433BA37D30A270A399"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/inicio-error.png",
+    "sha256": "335C3CF191DD0322873ACEB1013104AF0960EC43B82F367C8FAD3BFF4D873C80"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/inventario-inicial.json",
+    "sha256": "885107BDDDF5FEB4DA828ED624D226C6C454E4954799330D1DF3AE90BDC62712"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-inicial.cdx.json",
+    "sha256": "CB16B37325BADEE6FFF9D5712473D7A2D2917D81906EF25CCAB5BE34CC192B20"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-descarga-offline.txt",
+    "sha256": "F9D01F30FF49D77A73E642C828F5B898A5F836ECB762FDCDC9821CFC591EF895"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-ejecucion.txt",
+    "sha256": "2B18128006D17D1CABA8FB9CA00B9366C17C7B5039D074C6F19C9B1CC69C1E68"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-final-ejecucion.txt",
+    "sha256": "63BB50AAE26BFB8D357B893B6F10B398989AA39219F7AEE8648E20F113780BA9"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-inicial.json",
+    "sha256": "61E26B5D7B37AD7B456C69C735F9A37B44837033D850739726C444F353FAC37A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-preparador-final.txt",
+    "sha256": "FE70AE51A2972AEBD022F90D50AEFA597179FEF0766C81B4E8C165E9436F1557"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv-resumen.json",
+    "sha256": "AE075D3DE3E0105CA260CB5CE70DC767F019C6E68A90777C231B5D14F3A7075F"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-osv.json",
+    "sha256": "8B95D6A9EC67A4D07E1E5888D81AF4020B35AE49A016B69377C70E51C4C6938C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-wrapper-corregido.txt",
+    "sha256": "044F17F1052E7AFE8E91A8838B56B779D77C4B2C6A9D228B362D635E69F6C746"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven-wrapper.txt",
+    "sha256": "43B14F6084F4A1A584CA47CEE977F537790CA9729CD6E7398588E200D96B8CB3"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/maven.cdx.json",
+    "sha256": "8A2D9B25AC76A3A38507622A2F3DCA212DE5B7593FAC585AAD101D4948ADB0D3"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/navegador-disponible.json",
+    "sha256": "E0BF9D9379BD58A6698BF685045E24D1EC9C0730D03F7C1F928749A5BABC3A31"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/navegador-error.json",
+    "sha256": "4BC30DA4EEFAEB92647EC40C78CCE7A4C2B349B5D0480BA2681123872F1CBFFF"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-audit-completo-final.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-audit-completo.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-audit-produccion-final.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-audit-produccion.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-ci-corregido.txt",
+    "sha256": "37B23A8819A934741C49669F0B504C77923099C1F123374E01CC8F6794C682A3"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-ci.txt",
+    "sha256": "1ED41B7D0A578A85A81AF76E33B9B480C510238932CA8FDFB5F80FF4F2FAAAC7"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-explain-gensync.txt",
+    "sha256": "648A241CF00A2C4D3FD8F61FB91C79EB8FDEEACA77304B596E0E070F2CEB3F9C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-explain-rolldown.txt",
+    "sha256": "9894D6D4F4F8C812E1E0F86D4E406C5EB7F84DED3CA24FCCDE79F2D344AC128A"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/npm-ls.json",
+    "sha256": "103F856EDAE483E52E341A8F6EA89199EB8FBC8B96C503D860572EDE11A5603C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/osv-base-huella.txt",
+    "sha256": "52F7C8910BC8EF3151E9A47870424E10A5EBE91B869449D53D153102B20DA33C"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/osv-scanner-fuente.json",
+    "sha256": "895C091CFCCA66FBB43C769357FD40509119D8CDAACD86A2B2145F1E646EA263"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/playwright-instalacion.txt",
+    "sha256": "74086C8D63E19562B0405FA15D9C581C9DCF23D8032401FBEF2B8B857F68FD83"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/preparador-auditoria.txt",
+    "sha256": "DBD4006B74CD3D2DD17BB47AC401EC5BB3503D3F2C300A241542BFFC7533A3E3"
+  },
+  {
+    "ruta": "qa/evidencias/ag006/spotless-diagnostico.txt",
+    "sha256": "BBBC4AA749A55FCBC4138B49A3149D254785D6617F3FC8ED3E7E632BAC7AD206"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/actionlint.txt",
+    "sha256": "FA02E5167AA41FE1AB2A2823645DF8032201147B8B4DFDCB2ED93E73863313C1"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/api-configuracion-plugin.txt",
+    "sha256": "1660DB10AF8ACFE86E2D372B41DA2EAB176AED189A2DF1062C7586AD7BE5FF90"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/api-estilo-formateador.txt",
+    "sha256": "0DBE06477039317CB028DF201BF6688D8FC331977C874E85C5576C2CA21B59EB"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/causa-formateador.txt",
+    "sha256": "92934BB81BC11B9249FC3B1A0E84D9163AEAF9C404371A75600B70C8CFB525EA"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/cierre-documental.txt",
+    "sha256": "0E35A59AF8C088D6EF3A20467D05A0B2A6017EA5DD2806DBCF7F5C679A0D0845"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/cierre.json",
+    "sha256": "43F2D9290EF27F9A260CBFAB73324C2DB84EBA628A2B8E06428860AB245C1FF1"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/comandos.jsonl",
+    "sha256": "B483378F68A2026AEC2F991B1C9D7F973F99D6B3C0D7CA97D439A070507115A3"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/DiagnosticoFormato.java.txt",
+    "sha256": "DFB4CB7883AE5712CE2D601A053FD9CEB306C0C1B453E374084B2272F0605C45"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/entrega-integridad-inicial.json",
+    "sha256": "86BF880588B2234D689D41FD23FBB7C3B74757748E5AFFAD7C4FDFBE20E3617F"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/entrega-integridad.json",
+    "sha256": "A90A2CC8B609BB8B25209A6147FEAD25C4E07FB327B4C0C8FF3751A161C0986A"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/entrega-manifiesto.json",
+    "sha256": "E4C885D6D6419380C72FE5DE0A345D142976490DAC9811352DC213EC358318EC"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/google-format-glue-bytecode.txt",
+    "sha256": "8E2C1D284A4DA68128DEDD946CAABAF633F967768180624EC569A0DBA3EB2CA4"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/google-format-state-bytecode.txt",
+    "sha256": "5486F3DDDF2A6218329E0B9E26B2963144B7FCC40173BE5775809B88A0A1BDB1"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/google-format-step-bytecode.txt",
+    "sha256": "76227ACD32A60AC1BC3ED31F25BFB2152A1D3208266849B08A37D1AD696E8895"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/inventario-inicial.json",
+    "sha256": "35A7B484A25F555108ED4ED210A7E98125784F942BAE22251C2DCE47863FC274"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/java-antes.json",
+    "sha256": "401B708238609EDEE75C4AD4026DE8936C0E0D3F3D1E613CCF111428F00FA084"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/java-comparacion.json",
+    "sha256": "C5E2F5079A4B66320720F14E8807DA62E442E82D43C29226B2AD8F4CE431D752"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/memoria-anterior.txt",
+    "sha256": "39C60D827491E3C412B803CFC4428B6B36AC126C3AE6A2F88B378C63C3B95835"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/reproducir-causa.ps1.txt",
+    "sha256": "0E6690B0BB1609AB7494A367DCE71FF4076415277C116C8C5E126A2336A02BBB"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/spotless-apply-inicial.txt",
+    "sha256": "FCA02ED90C79E1E21D42A69F30597E9FAB4CF25AC10EF9FDABCD2ED4D59EA6D1"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/spotless-check-diagnostico.txt",
+    "sha256": "A0F26FE4BAA674C7F048A703D81C718DF29B63021ED932DC27D7D517211A4FC0"
+  },
+  {
+    "ruta": "qa/evidencias/ag007/spotless-check-inicial.txt",
+    "sha256": "D0A1E1485D655FBDAEE7B42B3BDD506CE6C380AA6A8D55EC0F760ED426682FBE"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/artefactos-verificados.json",
+    "sha256": "D901A2EC2E8DA42D75F6C9CC5B3B4E1B64DEA99F09D10ABCFAD848B13EA8D578"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/backend-verify.txt",
+    "sha256": "548952B1CE6EAE3E2E2FF234480845F1BD6D47C9C6289B5976696708ED31142F"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/ci-local.json",
+    "sha256": "389A72C07A2AA139A82D8A055FC494CAC2CCD753F4B36A82078688BFC4DFE8E4"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/cierre.json",
+    "sha256": "C6661154B57C997BEA13A66D69D59D20975F3C312BD392E4FAEB80700E39B3DE"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/comandos.jsonl",
+    "sha256": "831A3C25B5F7B5F37B0C350EE8EC084E4591C49312E21FEF3ADC48FCAC0C23A0"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/comparar-java.mjs.txt",
+    "sha256": "06081BAFE05491B1929AF62D4E7413C57F9E8AA9E037D247798D2927B99D8292"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-build-arranque.txt",
+    "sha256": "71FB3A08ACD437CBBF00E214A4C507032D5025E604854488ECD3449FEA25AE71"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-cierre.json",
+    "sha256": "E23FA818C3B5524D5D6A7083FB00B4657E1EEB654308EA90C332A37CB8DB740C"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-parada.txt",
+    "sha256": "AA2A4C46B1A9FD832B1EE000074EFF3139FBC5BEBF0E6A38201B0DC85A06C3B6"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-persistencia-caida.json",
+    "sha256": "2D4EFDA003D5EB05830B26F79211C0237CBDC2F85A2B8901CC86BEFF24AD9402"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-regresion.txt",
+    "sha256": "1D6C1B7B57C52F8E9724FAAADF610FF0ABDB6B401782376C2FDF590F6B7770AC"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/compose-servicios.jsonl",
+    "sha256": "6C277E05B123390B3FA1C65B5C0996B62F700A4E716B74D6184D206494725019"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/configuracion-efectiva.json",
+    "sha256": "BF7B51DE4EF89D5218CE188F68F5114D0F2D97A41AA6AAB1EC91679559159F62"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/e2e.txt",
+    "sha256": "643A5C270295FAE0DAF8A170A0315B2561C1039826FB5941479A19D6CA162217"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/e2e.xml",
+    "sha256": "A0354C7377C21EA7EE4547C81835C4096D8B48BF49DEB07C6030EF16EED0FD0B"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/ejecutar-maven.ps1.txt",
+    "sha256": "73200DE50A26EEE9773FFDDF5363E4A7CF48459D23CCEC9D2E89BD4C2E2B7152"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/entorno-maven.json",
+    "sha256": "D076419E6735BEB8F59A5B64BD466AD8CA33677A04C7B79E585091735600CC5F"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/entrega-integridad.json",
+    "sha256": "04040B1480008CAFE8250C7D0D26F65E2194F313FAAF1C936CDAEC5594ECEB91"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/entrega-manifiesto.json",
+    "sha256": "44A6383C3DA2583D1E5D405C06EEAA4EB9C6DED5CA6B3F4B0346B4E21166562D"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/http-integrado.json",
+    "sha256": "C7155AE4F6AAC2805CCA4E31E831DE87DD9C084EC91C3BEF34A452E5053D814D"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/incidencia-cierre.json",
+    "sha256": "50D3D8A3A71D11DAA0E07544A36F7856E3757796F70890182FBAF6C4A7C909B4"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/failsafe-reports/es.gestionsolicitudes.integracion.BaseVerificableIT.txt",
+    "sha256": "98CA52510CE15250549B3B640AD6ECF8E774CAB32E9AC7B8BB72DB43BC4265A5"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/failsafe-reports/failsafe-summary.xml",
+    "sha256": "CFB078A42C0BD2A73021F0A8CC9CD9FBCFF6812C585395C273F00AF15BC0D41B"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/failsafe-reports/TEST-es.gestionsolicitudes.integracion.BaseVerificableIT.xml",
+    "sha256": "9EBEBF62EAB881F3BDCEE0B22FD4BC975CC7C4AEC8DDEBF9F26D11EBFF638DE4"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/spotbugsXml.xml",
+    "sha256": "ED57585A5A49803B7060D31C2B6CEB2EFB0A53F99876F5D0C4C057D4691D990D"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.txt",
+    "sha256": "DCF0AE5D6E613138E7B74B610809CBE18EEB64AEB4F0FCC5E81F5E1592BC4085"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/es.gestionsolicitudes.salud.http.ControladorSaludTest.txt",
+    "sha256": "A561FC338C3B8664A456C4E36E28193062581946866929C48E930E2DAB6A36DD"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.txt",
+    "sha256": "2B2A09B98EA886DEAEE970CD29FD66D5BB3BC28EE6A2161012DB016A5370AC90"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+    "sha256": "CA2190D383F613DD28D80D9D550ECE2C59F5B5B26B15390930C7E87AB5538C84"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+    "sha256": "EFDA769586BDDF2C13C1B9167DBF1EE6683DBF3E3AF42B4DF6D690AF363ADE46"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+    "sha256": "06992659A59AD4B4CF3887AB00555A270088057DEA8118FF889E32CE6DBA683C"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/inicio-disponible.png",
+    "sha256": "87B0DE0F3F7E39BC16E75F7C8D26D5BF99EE6C17227C2A433BA37D30A270A399"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/inicio-error.png",
+    "sha256": "335C3CF191DD0322873ACEB1013104AF0960EC43B82F367C8FAD3BFF4D873C80"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/inventario-inicial.json",
+    "sha256": "A4C272814B5018DD59E8822C63A7C2DBBD84C755D1E8266BF9B8983958200094"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/java-antes.json",
+    "sha256": "0AE523FD138B4479873A2D19B0A1F15AF7A11EEAFD67789F1185FB6E21632047"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/java-comparacion.json",
+    "sha256": "F92A2C6B48B37E35363DEE94553FD4169A1ACC3EB46006D2A8E9600DC0543933"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/java-diferencias.json",
+    "sha256": "B6C6D5761E8227312F8289800FA72BCEFEA22F758258750F1E2842CD552BD788"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/limpieza.json",
+    "sha256": "27A15503C1B08296427CE3983B490E9A505C2A325536692ED0349698E4A7C6F6"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/memoria-anterior.txt",
+    "sha256": "73C9F8B356575CA73C58F67E1ABC135E3FFAEE86C5B75318E9D7898C54930A48"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/navegador-disponible.json",
+    "sha256": "3793E93FED40BE064AED1251ABC587A7CB04783F8C662FF85487DC1B6A330417"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/navegador-error.json",
+    "sha256": "1BCD3E438F224C7DEC0292E5FD21D4273F856C2ECB635BB8F7B53EA83E740920"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/pom-efectivo-red.txt",
+    "sha256": "42A6B6459E2CDEAC4A38CC863AEB9DBFA95583F92E55D5928DCA6A88CFD8B5F6"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/pom-efectivo.txt",
+    "sha256": "91D51FB3CA3302F567A8770DC08A8D185CAF9E9F2335FF957E558ACCF8D63EB5"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/pruebas-backend.json",
+    "sha256": "FFA5B0E1B578FBB79CEAECA42200A19317D79F28D742CCF54CEB21E7BB90C437"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/regresion.ps1.txt",
+    "sha256": "EC5F1D191FF2C8062F8D2CA8169CCD3AF802028336F29770D672C1E8D3E88C4A"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/reutilizacion-huellas.json",
+    "sha256": "C757AA0C46299A893C3769417C911EA7CB6F735E6706F5BF73A74D3243B0AC63"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/revision-final.json",
+    "sha256": "B102160971A02CA72E60A68FA1E5B380E2CA3F369816346EAE847772C3775063"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/spotless-apply.txt",
+    "sha256": "96D06642465A1D9022C31A81134C6011C65C45B2B67D70FA66B8C15F785FE86D"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/spotless-check.txt",
+    "sha256": "F6744E3806BA7ED82BDDFD341279D40F09EA543F3F1AE2701DDA1DFF2C5DF13C"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/verificar-compose.ps1.txt",
+    "sha256": "37C8B0F98449CD120CBF5DE8694C8E4D4C1E6A272F4447F79C88DD71F84A2896"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/verificar-entrega.mjs.txt",
+    "sha256": "29E18CB733D2DAD82A2450A1A1BF1BCAF6C22BC66730F3A4F7A32B4C051FCA7F"
+  },
+  {
+    "ruta": "qa/evidencias/ag008/verificar-estado-navegador.mjs.txt",
+    "sha256": "8B1E9E3A0FC1260D4C3AFC112754A0B6224D94DF410E48D6038AC6748F4800DE"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/actionlint-comando.json",
+    "sha256": "212A5AA0B608CE5D7F3A7A3467CEB95546A611FC6E8B9D0414E8D6E98180E2D3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/actionlint.txt",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/auditoria-maven-comando.json",
+    "sha256": "1C77149B03B15B3903FA4F9917174FB8E57DA7CF59F62C43AD46D89DC4CC5BFB"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/auditoria-maven.txt",
+    "sha256": "117BD6BE5287AF6C89C7265850409FDF1CA153EF5992A24C9D6519A12AD17E41"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/backend-verify-comando.json",
+    "sha256": "CEEC74C252AAD73888C3E60A966DA52DE72C77E6E24B39BAAD9DA9326BDF2C80"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/backend-verify.txt",
+    "sha256": "2DDD325C18A39FC1FB4B0625AA5906FD1B23133EB79E67599957ADF0B36E6FA9"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/cerrar.mjs.txt",
+    "sha256": "75954C7D92B66A579BBC9FED4B5E986CBC6B233BB58CBB7283FB9C853D6424A3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/cierre.json",
+    "sha256": "E07E05CA4C22D3C635CCD76EF1B57E78905CAF6E95D9BA412E817E3E0252F652"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/control-final.json",
+    "sha256": "C19180C55023CF0710F24CAAE28609C5FF864B478F4614D2D2FF74101A44ADCA"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/control-final.mjs.txt",
+    "sha256": "FCB62994B53884E6717D7D9697BA2DED55136A1E66D94C797D9E9D48A900B2B3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/docker-frontend-sin-cache-comando.json",
+    "sha256": "2DE524A132B259E72643FD0483FFCC55DF80E73D14A6EBBBD812335D23C997C4"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/docker-frontend-sin-cache.txt",
+    "sha256": "ECE60F67B9DBA1891109C3485E9FDF952DE30C8A029FB8F7829EE82CC74A9DA3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/documentacion-control.json",
+    "sha256": "5E5B00829CACDC9CC5E0E1A740604F9E929D8BF8559D34D1B5F14EEDB91E220C"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/documentacion-final-comando.json",
+    "sha256": "ECD184FCB0FE691947FA58AAE60189EB93D555A5B8FC03F4B65D9B073F6C6E3B"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/documentacion-final.txt",
+    "sha256": "F1D139FC9CE054ED20F95BA3903A4AA389856CF020A93255C9AFD70ADA6F7219"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/ejecutar.ps1.txt",
+    "sha256": "8AE249B46F40C6F6A3FB5029419A062F0B9EAD5EC1514B1A1BEE974511096069"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/entrega-integridad.json",
+    "sha256": "1CAF90184535180D7E64C780C7837E62FAB24B7488C8CEF7A48BA562625C777A"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/entrega-manifiesto.json",
+    "sha256": "0F403E1B2FD0BE4852A03A5E5E0334F9F31D97923784F5E8544500234929A1D1"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/estado-docker-final.json",
+    "sha256": "C84A4BCCE11AFDCF371E4F1983ED0722B4CB90630080440A28806D37B96FD024"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-build.txt",
+    "sha256": "97C63905819A0B0B9C879AEDAA4758D9580D6E113D2C339ABF41CB82C8C77CBA"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-controles-comando.json",
+    "sha256": "8F6AE79C2CF35DB2B9F33C2AD639F4FF828390B2B39C7FC8C5EBE90B3DC13653"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-controles.txt",
+    "sha256": "3FBA920325F0AF0663E2B837F5DE0F1959C9D00BC338322A721985053D99C128"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-format-check.txt",
+    "sha256": "3CEB47F2E7CA0733C1DA31AC0D1D5805FA7E1752D7768E1F7D3CDAE4583FE99F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-lint.txt",
+    "sha256": "6E0EC5AAABA10D666497A86FCB7ECAC7854F23C9D0A089FBD56E6E53277E2C6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-test.txt",
+    "sha256": "8619A7B92B674248A822AD5B7EE52CA145A932EC7662EBDBC2EFCEFD3164B0C6"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-typecheck.txt",
+    "sha256": "73747CDCC2BC2F66D8315EBA9251779FD35D81A8A0A8481333B7A659A22D6879"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend-unitarias.xml",
+    "sha256": "36D057A5FFD28E31ABECE10814BDBD9A6D6EB54C85AFD63C3DDA60BD1D4B49F4"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/frontend.ps1.txt",
+    "sha256": "660105BA162EC5FB7986E5023A67E5992F83E7CEB9A0927E7E07C78B54886A54"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/historicos-antes.json",
+    "sha256": "7ACC54DDBC67CBE4F4D1D3F704CAE9E84E70B1BC59F146A284E9905E18323632"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/historicos-despues.json",
+    "sha256": "9323B405CD89CDC3AE2D18D728EDB41B4372D19F592157B66F9B64FF9D7C4BB9"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/failsafe-reports/es.gestionsolicitudes.integracion.BaseVerificableIT.txt",
+    "sha256": "87D584120153AD7C0AD58EDA1B66B549B0D3DAD06F9BF1D98AB29B7E3EB64250"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/failsafe-reports/failsafe-summary.xml",
+    "sha256": "CFB078A42C0BD2A73021F0A8CC9CD9FBCFF6812C585395C273F00AF15BC0D41B"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/failsafe-reports/TEST-es.gestionsolicitudes.integracion.BaseVerificableIT.xml",
+    "sha256": "FF748F0AA60FF7ECA016A0D4499234FEC7D67DA7C1D0F4CB3F3B603D8E9742E1"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/spotbugsXml.xml",
+    "sha256": "0FEFA8E557BD96685A6B2B61B6CD2C6BDDCA316A82A3D94657CE416ADBE49DCD"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.txt",
+    "sha256": "2893653FD031CD35743B211D63747CABD383447BDACF629F6F265B63E301EFF2"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/es.gestionsolicitudes.salud.http.ControladorSaludTest.txt",
+    "sha256": "B830BD3122C3361859E90C8E86DB0CBF5DFB1D9372087CCC69FD8F842A95739D"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.txt",
+    "sha256": "FE86DC04706D4AF6E9B5A8B828842E156A326B656A28BF4905D86A86ECA1B92E"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+    "sha256": "24CAA5332C25FBD9450C6AD6F7BC1AFAB451ED70C4C87E90CA7A42145F8E25D6"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+    "sha256": "5E603640BBEF61804972648E5CC542C907479717A96E66EDB496A841AFC74AE6"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/informes-backend/surefire-reports/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+    "sha256": "7A1346640FC658047D65C3B11F7879570DF9D272DAE4F7C994EB44678100E0A1"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/inicio.json",
+    "sha256": "D5D433F483CDC44979D13B266F9144A6803F3862D69368D835E2C3D072DCFC36"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/integracion-dos-puertos-comando.json",
+    "sha256": "088B9708AE0547D8259D95B98523724671B5FE6107F7AAF1EA2EC0E3FC10154F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/integracion-dos-puertos.txt",
+    "sha256": "76CBBE5D992FEB7F340521B5BB36638F0CB22D3935D26BF44B8BDB751CD28CDA"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/integracion.ps1.txt",
+    "sha256": "1DA3CAF1D778AECE57079D7634DD8DB64642E4F5CA0481A8C2FA219E22A0A900"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/inventario-inicial.json",
+    "sha256": "896B258754AF4240A692B181D05CAC00587F4E3B255860DD4F21A1AEC8576141"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/inventario-npm-comando.json",
+    "sha256": "DE6A8165B980A49A9BA96538B93B03A2EB0AFBE31CF916092B3FCD2473538466"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/inventario-npm.txt",
+    "sha256": "974979C3603785D1D398702179CFD99B11A0951E9194C0A51BD6AC0B6125A63A"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/inventario-transitivas.json",
+    "sha256": "006DBF5C41B2B9E5B51239DAA6EC29D53B225CAFBD2CF9137478802AF0699573"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/limpieza-configuracion.json",
+    "sha256": "D1651983B8327FADF2DEF523F908D6DF54F4044E5B8598305A7800611F4F79D4"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/manifiesto-commits.json",
+    "sha256": "2D0C4FED10C2E6C6128FB40B9E15010E8443F1BCB5ADCE6FA98A15541D3C85E7"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/maven-inventario-comando.json",
+    "sha256": "8A7BEF2639F62CE67828338E4AF00C8F819B9A26918EFC1727D82AC5C4911397"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/maven-inventario.txt",
+    "sha256": "7F517DBEB8B1B1371490B6CFEF782487DB7694076EE7C39A643662A6AAEE09A5"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/maven-osv.json",
+    "sha256": "2FA1E87706F9D0C3E99884AB777C5ACBC41A3129CAFAE2750725B7A5EEED9C0C"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/maven.cdx.json",
+    "sha256": "8A2D9B25AC76A3A38507622A2F3DCA212DE5B7593FAC585AAD101D4948ADB0D3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/memoria-anterior.txt",
+    "sha256": "0FE021E8884AF3AE1463DA00C561A929AAA9FC4AD0A57FE098C416B3049B3193"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/precedencia-puerto-comando.json",
+    "sha256": "712A124C31C07CFB677FB467B7580707DCD1F5A7AEEAF0A955C59CACE9ECF05B"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/precedencia-puerto-repeticion-comando.json",
+    "sha256": "C7441C1C6C4CFE66AC388354CF92296AB123642A50B801B01EFF5B4A5219EDC8"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/precedencia-puerto-repeticion.txt",
+    "sha256": "D9AFB763651C3E9E25356C31F525E7B36375B4DD1A41DFC1657D0B83BAF08CB8"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/precedencia-puerto.json",
+    "sha256": "A4F2CDD40CAA5FBCFE4D6B11C37CE8E407B1504E926464662EEDBBE5269BBC6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/precedencia-puerto.txt",
+    "sha256": "004A707D771880E6D6FDA14E2F2DCAE2C220A466ACA1E0B93D3F70AEFEC79450"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-precedencia-inicial.ps1.txt",
+    "sha256": "973EBBAA634FE5430DD199242CD602C21A0C2F3ABEECE7C00FBE63FE1DF1EDEE"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-precedencia-repeticion.ps1.txt",
+    "sha256": "D7568EB16B905B1659EAA569B41FAA76A31A14945DF60EE9BDEE54C0FDA1E3D5"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-precedencia.ps1.txt",
+    "sha256": "973EBBAA634FE5430DD199242CD602C21A0C2F3ABEECE7C00FBE63FE1DF1EDEE"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-utilidades-final.mjs.txt",
+    "sha256": "4A7122E22C783ADB1560819609939CE75BA0F7DEA6F9F883F241DA4FBD7AD6C1"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-utilidades-repeticion.mjs.txt",
+    "sha256": "845DDCD034BCDFF0041D3B8E4E2E8F51BC553C43FEDFA13104AB7165EB9ABBC3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/probar-utilidades.mjs.txt",
+    "sha256": "87A6DE3DB9D55BDFCC7615BC02A938E7083D56251D357EE3724D68CC2948A973"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/public-eliminado.json",
+    "sha256": "0B4075CAA2853EE8140570EAFC6A5B820570EB86E1E25567D215227BB4FD23C1"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/cierre-compose.json",
+    "sha256": "92902EAEA0FA51B4BB0D05CF640BA8A9FE29BD9FC8108A34856678BAFE42702F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/compose-persistencia-caida.json",
+    "sha256": "B6C847725406DDE8B6F7E225E24E9A9E3E389EB4F9D3F0A6BD8192AC496F7B61"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/e2e.txt",
+    "sha256": "6B66ADBEBC32576E7CA206EB8113DFA07CF1FED2540C3C08D5A0BC8EBC7FF438"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/e2e.xml",
+    "sha256": "ED12588FC147473CCF90D84CD98AB7469550C41B65A0D7409D7F759F92DD9883"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/http-integrado.json",
+    "sha256": "D62DADC6B385E14B5647D2EDEC5EBE44E2EE588DCD2B26DA384F1D18172098AE"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/inicio-disponible.png",
+    "sha256": "87B0DE0F3F7E39BC16E75F7C8D26D5BF99EE6C17227C2A433BA37D30A270A399"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/inicio-error.png",
+    "sha256": "335C3CF191DD0322873ACEB1013104AF0960EC43B82F367C8FAD3BFF4D873C80"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/navegador-disponible.json",
+    "sha256": "E6C322569938E69167D9B1689D39140D5C7243183E0C7D6DDB47609DFE456FD6"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/navegador-error.json",
+    "sha256": "ED6B00EB8264F91A53691DADC609E65C02C5D388FA6950ACAEA851A50D228B6F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/qa-compose.txt",
+    "sha256": "9C362AC5268D83666A2761C007BE72B9AE86F03D2E1A191F44E80A2FDE73DF6F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18080/servicios.jsonl",
+    "sha256": "DA4856D66A75978A87E3518992EE7DA1CA0B5F8C09F2A7610D7D9F6B8AF56F3E"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/cierre-compose.json",
+    "sha256": "A23B72D47EE333596C057EF7D20770FCF22413AD730A8230AC231751F9D73486"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/compose-persistencia-caida.json",
+    "sha256": "9EA463A9D12823CA59CF830643109B29081CC3E46F8E5EDCB135E127EE13974E"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/e2e.txt",
+    "sha256": "62A093E07E7246C21C0990D5EDDFC82D10E53377EB203ECEDB471128F0D10ADA"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/e2e.xml",
+    "sha256": "B167B685906EC0969B6D672A5BC1E1B1FD2900F5E3207D03595B8B07DE4AB689"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/http-integrado.json",
+    "sha256": "366BDB0911C1E1055A979E9885ADDB33256C567447D2E80781F81CACD85AC123"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/inicio-disponible.png",
+    "sha256": "87B0DE0F3F7E39BC16E75F7C8D26D5BF99EE6C17227C2A433BA37D30A270A399"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/inicio-error.png",
+    "sha256": "335C3CF191DD0322873ACEB1013104AF0960EC43B82F367C8FAD3BFF4D873C80"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/navegador-disponible.json",
+    "sha256": "E3EEC286056DC719FD2969B4742AEB9CB04624FE7601E90A2618626C53D6D819"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/navegador-error.json",
+    "sha256": "6F7FE3401ABEC633ADEB125F0A2C6AE9344626D684B4BA3587941F6226A125E0"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/qa-compose.txt",
+    "sha256": "6E6324B5D74267CBA860B5C504A1971BB2DB7EE80FA26DB871F28498756B60D3"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/puerto-18081/servicios.jsonl",
+    "sha256": "E3072A5A56E6A82DCF305746BE3555629055102432F1CC77CF742D2F60D18863"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/residuo-excluido.json",
+    "sha256": "B7F1274372B7BECAEE49FC48F01E8A8A3968E4F8B399064C4449914CA1F0AE86"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/resumen-pruebas.json",
+    "sha256": "D78B33C33FA781D7FC40ABA77EB0BFC180A97E41CDBC3D6FDA0186DD07C4F56F"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/revision-tecnica.json",
+    "sha256": "C10C9BF30952E283B3DCA22A18EF44A5EF558CCAA89D9A011E1069EBFE9CF111"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/sintaxis.json",
+    "sha256": "F471B8C7B3E1FCBB980D085C344A5100CBCCFB0255AD39E6CA7C39284FDB3BC2"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow-comando.json",
+    "sha256": "5B7CE7AC094C26413975B1362CF01CF7BA15DB31234042D0501149451999F321"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow-final-comando.json",
+    "sha256": "863D2B219414126DD3E3A097581C9AFF58C37DF58A321A637782F8D1043F369D"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow-final.txt",
+    "sha256": "F5F56DBC166635FBCBCBA4C25B70C80FF0F5A26C5F9765DCAD1A7AFEFBA53B34"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow-repeticion-comando.json",
+    "sha256": "B870E9CDD019737DCAF569847FC3205D8FCCCFCC18C25FB012FE33851FE61110"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow-repeticion.txt",
+    "sha256": "F5F56DBC166635FBCBCBA4C25B70C80FF0F5A26C5F9765DCAD1A7AFEFBA53B34"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow.json",
+    "sha256": "57B11A6D2801A421FD540F2D829E76BD07870C025D1CF08C562BCE5F59715194"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/utilidades-y-workflow.txt",
+    "sha256": "108F4D5D2ADFA427D2F1F3CD97DB1D2F99072584A2B5F9373D5C8ADE2296E7A0"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-baseline/entrega-integridad.json",
+    "sha256": "CB6D177A21678275756358829C83D8724CC6E21FCBB3133801B7ED0E7441D569"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-baseline/entrega-manifiesto.json",
+    "sha256": "58C1CAD2E3AC887E5CD07F1DCA65CD7FAFF58538F09F2C246F0AC1A2B58220FC"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-entrega-final-comando.json",
+    "sha256": "200ACE72C3E464CE8DB746EA3AFEA3553C9300CA3BAB1F9F6F61457E7FC16D59"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-entrega-final.txt",
+    "sha256": "88006E8EDA71C808B0C2CF30BECEEB06E6DF1D64D1CCCFA56FDB1D32D98C60A4"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-entrega-final/entrega-integridad.json",
+    "sha256": "8F5B862B415EBEFD1AC89139752F79AD60E739C17ACF8969DD6C327762C5AF6B"
+  },
+  {
+    "ruta": "qa/evidencias/ag009/verificador-entrega-final/entrega-manifiesto.json",
+    "sha256": "5C00C5790246A9D7128800DF90F9699B58E91F9C41DE8CDF06CE85511ED1203F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/actionlint-01.log",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/actionlint-02.log",
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/actionlint-final.json",
+    "sha256": "3D5E0FDD10C841EFC61BFEAE88A48A011CD8610CB7AFF521357DF48BCAAC400E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/angular-dependencias-control.json",
+    "sha256": "066A153B03C9A15441CAF264CD22ED0D3DD1B2A673A9A33FF23D0C9F991EC736"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/auditorias.md",
+    "sha256": "D6DBB4C34E90B54E4BEB1F62BF24828D1F6923A7A79D9A5098A00AA512FD35A3"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-compile-01.log",
+    "sha256": "FB237DA495C0ABBE7A4122F45AE6A7C21508C4565500FF6073BDF46D887CF0EA"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-compile-02.log",
+    "sha256": "B36748EAF5F984CD6243CA8CF711363E1230A6CBC71FB64FCFA369625DAFDBC7"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-fuentes-sha256.json",
+    "sha256": "7A23E8036B8705353C5FD96F85CCCDCC1AF7CA7E20304060180CFB17EF3BE13A"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-pruebas.json",
+    "sha256": "0C85EB9E706C7613624E82EBD3D704C905AA6799CCCFFDF6F5A4AB3096259BB1"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-resultados.md",
+    "sha256": "4B5A733BD47F0DF4E00AE1C8613EABD6BA27158C046A8FF7DEAA655053567A07"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-unitarias-01.log",
+    "sha256": "E2182E38DF08E161187A927D6FB80BFB9DB75B84AC660A4A48247D6C22C448F4"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-verify-01.log",
+    "sha256": "FEF3E1DF05A70B3E2FE04DD2FFFACF1C9E3CB0A62DE230C1F3167ADB3AA7E978"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-verify-02.log",
+    "sha256": "875849845C143C2107627EE9F5E858C7F4265D64101F0F8FAF930A9886D8F60B"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-verify-03.log",
+    "sha256": "7CB65BBC1A02BD9BC6A67675E6CC44C536748E0B5BEE3A87D4377E8E337AD25C"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-verify-04.log",
+    "sha256": "B1DF262C0735A43FB7EB10684F5FA1A0B221AF93C318588047F618483B6C26A5"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/backend-verify-05.log",
+    "sha256": "A8A51F56E191F90F5D7B112388F73E9FA373C05ADF5F4897DE7BD23F69AD0CAD"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/bouncycastle-metadatos.xml",
+    "sha256": "8412F4B98D83A9119301761E542A91881847A72D65BF644AD055F090733B1FB8"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/cierre.json",
+    "sha256": "23171968990D69356A8ADA3E0034E141967174BEBEC28351FB2989E60281230D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-arranque.log",
+    "sha256": "96F2A93B161CBE92946460F80E976499360295A0C2173E8F0792607F758F0844"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-cierre.json",
+    "sha256": "5584CFDF9B7CFC65FF0F4110AF10130EDD60DDE07AC0ADAAE01CE8FB34C676C4"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-configuracion-efectiva.json",
+    "sha256": "78BBAD8D70781B99E720B899146402A4C23C0F9DD1B82201DF03F6A5259FE369"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-parada.log",
+    "sha256": "AA2A4C46B1A9FD832B1EE000074EFF3139FBC5BEBF0E6A38201B0DC85A06C3B6"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-persistencia-caida.json",
+    "sha256": "27A080F9FE3C5972C09AA2AF16E6EC45FFB4B1A22D1152C180D517A710F220C5"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-regresion.log",
+    "sha256": "C21E3457A7E2E25849094F439EA6394D7A8B95617681F2E296C406A82DC4EB30"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-sesiones.json",
+    "sha256": "5C8A7429D40F1D6C72C946A716A31E38C521E5F08DB4E9CE79652612B7831F55"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-sesiones.log",
+    "sha256": "DF2947C70CA4E24C4243BA6AF412D5A8964271D5FD7A9BD4601442EA6D07615D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/compose-v2.40.3-checksums.txt",
+    "sha256": "DCC27A97D92A49B23A19BA75A160F6BB5DA3401B446885B537135357865B7D67"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/comprobar-compose-activo.mjs",
+    "sha256": "B4AA99D0DA0A68CD41D5FBF94F13BEFFDA5616DB3AAA508D60774C35DAEB8A43"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/comprobar-datos-sensibles.mjs",
+    "sha256": "ABA3A30A080050A0AFD30C5200F6FCA69CE003E00EBF282F653FBE938FF5EA13"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/controles-scripts-final.json",
+    "sha256": "592C6E08AFFAB010B6F510BC7179382478EBB1F00F268B228C13673A48EC2C40"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/controles-scripts.json",
+    "sha256": "68EBE8BB821A1DD375E4A0C2825E60035C75D8E102F5174471B771EA4ED76B8B"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/crear-manifiesto-commits.mjs",
+    "sha256": "4775E015568DC410D37CDD006CE3DC93583C7D5F915394AC393FEA6D5BE16852"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/crear-manifiesto.mjs",
+    "sha256": "7F8957D32E4B1ED824EE7F45B75E40E234DEBC81CA7FA144ABB774C0160582EE"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/csv-prefijo-inicial.json",
+    "sha256": "FF84D4278BE94AEE3FA1255C0883DA7FE4831ED49B0F41F3C97453AD455AAAA5"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/datos-sensibles-control.json",
+    "sha256": "7752FAB1FBF5A170A1A1E1C5556E08CBC528445CBC0346EF4039384A1484E632"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/dependencias-maven-01.txt",
+    "sha256": "A5F9D4969E6083C8425C8AD90ABD8BB5AEB7AE0E8617B93F2A07F1A229FF33E1"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/dependencias-maven.txt",
+    "sha256": "1C492E851ACAE6EEF71E25BD921D0DCB68344045E40CCB6C1FBFE942D2770792"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/docker-action-publica.yml",
+    "sha256": "49D6F13BD9BE60588FA2399132B316A9B50E56395821105EF86DEE586AEFC847"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/docker-backend-sin-cache.log",
+    "sha256": "BC0F279E349DBBCFBAD9BED533BF45660F29C4F1A0FE37E9EAD129A6FD6876A4"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/docker-frontend-sin-cache.log",
+    "sha256": "4E4CE97C3E2177AEDC2B680AE327DF72CE0517E1213688F7883EBC476B118443"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/documentacion-control-01.json",
+    "sha256": "9C398B035122D3A910F37A8DE600031DE352121132B8986B27726FCD536B074D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/documentacion-control.json",
+    "sha256": "B5C74836CADA3BB3BD2618043BE8348A67277811FB80D342187AC2F73E319A7F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/entrega-integridad.json",
+    "sha256": "F122C0DF623A7F71BC00188ADFD90C9CDF4ADEBAB16A495FA40CB3FF5559441C"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/entrega-manifiesto.json",
+    "sha256": "363B16114906F75DB38B3ADC51EF3C9806696903D2EF4F0A9F74EA6CAB182492"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-acceso-escritorio.png",
+    "sha256": "1C02E7B970ED39D0C3209AB67FB1BA0232A32E153F99AA949C716F2B51BB02F0"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-acceso-movil.png",
+    "sha256": "51DFEA35A75D12AB8590D1B93BA538A2FA5A1228BE939A89F8C6EFA20D26A5F3"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-build-01.txt",
+    "sha256": "E8A8BCD99D450E5017EED5ADC0B33B2335A934549CDC39783B268B73BCEEDDA2"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-build-03.txt",
+    "sha256": "FB4966F83FCB20BAB1923ED56E60CFFE60A8B56D30C29D87C774EEF7B5F28218"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-e2e-01.txt",
+    "sha256": "3FE6AE8047777AB78A43845CC94B0225ECFAECDA667B20F886E0FC7E195025F1"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-e2e-01.xml",
+    "sha256": "3B45EBD4F22C739FD0BD61A6D656D8BFB9453DA0C08F4DB2B026E75F73CDD4FB"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-format-check-01.txt",
+    "sha256": "3CEB47F2E7CA0733C1DA31AC0D1D5805FA7E1752D7768E1F7D3CDAE4583FE99F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-format-check-03.txt",
+    "sha256": "4B08C8E95B7F9652E59938967A5B832D54A2212413F190135FDA54BFF4C5D7A6"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-format-check-04.txt",
+    "sha256": "3CEB47F2E7CA0733C1DA31AC0D1D5805FA7E1752D7768E1F7D3CDAE4583FE99F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-format-check-e2e.txt",
+    "sha256": "3CEB47F2E7CA0733C1DA31AC0D1D5805FA7E1752D7768E1F7D3CDAE4583FE99F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-lint-01.txt",
+    "sha256": "6E0EC5AAABA10D666497A86FCB7ECAC7854F23C9D0A089FBD56E6E53277E2C6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-lint-03.txt",
+    "sha256": "6E0EC5AAABA10D666497A86FCB7ECAC7854F23C9D0A089FBD56E6E53277E2C6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-lint-e2e.txt",
+    "sha256": "6E0EC5AAABA10D666497A86FCB7ECAC7854F23C9D0A089FBD56E6E53277E2C6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-manifiesto.json",
+    "sha256": "13063848C714C7FD1E72B9597BF0B313E9DE6B98462E24ECAD0E4DCF9749739B"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-mi-cuenta-escritorio.png",
+    "sha256": "1B330CEA67AFC2F203453E3E7928F882A1E80590023D6B93312CF232413EF755"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-resultados.json",
+    "sha256": "F0F283E26BFF066C6AD51AA586F34746A73128F3539E0E004FF7B8A37D2455D3"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-test-01.txt",
+    "sha256": "79EA2CDD937ABEB5273BAF20B7D31233112E7E358334A2CD22804E6EE542849C"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-test-02.txt",
+    "sha256": "8037098DF12463993A290311DAB05BDB5EF46FC6D59202496EF2DA8380AD8F8A"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-test-03.txt",
+    "sha256": "D70E20D3824FCAF5504573A2879F333355B0E072DB56D95EB30B8F80A0A08357"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-typecheck-01.txt",
+    "sha256": "97E53A88C4BF2C17FBAAABC641391948D471E2B855502987514D70CC8023E583"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-typecheck-02.txt",
+    "sha256": "73747CDCC2BC2F66D8315EBA9251779FD35D81A8A0A8481333B7A659A22D6879"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-typecheck-03.txt",
+    "sha256": "73747CDCC2BC2F66D8315EBA9251779FD35D81A8A0A8481333B7A659A22D6879"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/frontend-typecheck-e2e.txt",
+    "sha256": "73747CDCC2BC2F66D8315EBA9251779FD35D81A8A0A8481333B7A659A22D6879"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/fuentes-verificadas.json",
+    "sha256": "9F299093542D1BC02993A6083EA4D858C28033C2CFC115CD8E7394140AD70D72"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/huellas-iniciales.json",
+    "sha256": "D5087DB9292A057BB6084309E22FFB6711ADB79CE39649EE471FDAEE9C4DD328"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/inicio-disponible.png",
+    "sha256": "FC20A6ACC18C945088DB35FDE6E4D60078E57C87267B5CD68CCDC0BC322CBAD8"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/inicio-error.png",
+    "sha256": "A7DAB8CFB79156BDA45A63612C87C99C0EDAE61700B46223CC914C844E7805F0"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/inicio.json",
+    "sha256": "450BD81C0F0B0CFD206259EBC867B793C28F3C876A7477F0F39A89A4A83F904D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/manifiesto-commits.json",
+    "sha256": "6EDD56AFC1220CADCCE6B940DA4E3799685FE5C6FA4DB325DA2A30BD9E1C3CAC"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-01.cdx.json",
+    "sha256": "8013F10641140518B6341E9A9FEFCA675072D3112E53676269C604A01CEC0CBD"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-auditoria-02.log",
+    "sha256": "559E78C79BAFFC9100A2922B9B0950BC176FD8FED127E757727EE8E408AD9912"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-auditoria.log",
+    "sha256": "2E023B99657EBD9B8756859C3ECC8F8912D03B7D3F7C111B5F5B4485E89AC1FF"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-hallazgos-iniciales.json",
+    "sha256": "D861D4589ACBB78EB5780E23F222C522DA50A7C67B8C026A798A1581FD3B8433"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-inventario-02.log",
+    "sha256": "A5EEA2CDC25875CEE6D0B3FE62D9917885F265FD29676B008E6EBDE0714D121C"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-inventario.log",
+    "sha256": "B8A0A92032B21DDAA1CC6A391D96805ACCA13EFDA9A31EA3921FD8E835A46AED"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-osv-01.json",
+    "sha256": "8427BB509FB46C74FBF983419C22F14A460360D18034688FAADB1A237174D8E2"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven-osv.json",
+    "sha256": "DFEC703CAD2A61ACDA80827C517941C66580C84797AA1EAA6B033E7C7AA4DCF5"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/maven.cdx.json",
+    "sha256": "A4A2B9E2034A5DB693D64E21618AD1CB6657B2F407A931877D6D783A841379E7"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/memoria-entrada.txt",
+    "sha256": "9122AC1AC78D8CB8430CE3DF465D241307A4FD4713F3DF647AD221BB7A713D5B"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/navegador-disponible.json",
+    "sha256": "6EBD7319702E397331718B574B016DC571C6E76E59F20EEF2A730DEC973F0C0D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/navegador-error.json",
+    "sha256": "130C6DDD7EAA439FF1425D0D9C1FC2B96FFA2370C59BB7614D4FB441DA00F0CF"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-audit-completo.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-audit-permiso.json",
+    "sha256": "A8AE41DB115E3C492030B91469548C3DFEDBC4FFB3A7207AC5B2430BDAE8DE5B"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-audit-produccion.json",
+    "sha256": "EE2166B184784360FE6D45F55C240817149FB1939F0AA44EAD634E65EF349551"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-audit-salidas.json",
+    "sha256": "53DB295AE5194929B659B56B0EB5EE6554E239C0B39EC6AE6C99B08A76E0FCAA"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-completo-osv.json",
+    "sha256": "1E82BB3B24B38471998C1CCC73E70EF28F30F40C2C7E339A5860DF7A6F2095AE"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-completo-osv.log",
+    "sha256": "5214F68010CDFA7D00FD27CCDD8093F2B0674F1C3C8E3A57040DA7B655418C43"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-completo.cdx.json",
+    "sha256": "D4AD1867D9F95A162E2A6611ABFBBE2825BDD7993F60F1D4913ED42C746A5F6E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-offline-resumen.json",
+    "sha256": "EA1762AD1DEE297E3546F3E20D5B5356C3C754E1680407C96C22F3EDD7EA345F"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-produccion-osv.json",
+    "sha256": "4984A27585622B2CC6724826DD83637423186694297101459F5443C0B7957A31"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-produccion-osv.log",
+    "sha256": "A02676D1F914145E34503FBC9BD3242C79DAD1E565FFC661D59DB7698FDA3FA0"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/npm-produccion.cdx.json",
+    "sha256": "433FB4573F83F86EFC3E22F1D5BA1BCD93CF454BF1982570A9E8E410672BB0FB"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/osv-maven-base.json",
+    "sha256": "EDAC5279DA10D25402C578FF210C0FDDA34239E41BAEE875C73427D858DC311D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/osv-npm-base.json",
+    "sha256": "3F800992C2D4B9D98F48CD1CA4F33A8E759463F3BBD56986990AB741B07D96C8"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/osv-preparacion.log",
+    "sha256": "DBD4006B74CD3D2DD17BB47AC401EC5BB3503D3F2C300A241542BFFC7533A3E3"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/precondicion-backend.log",
+    "sha256": "BDD718C1A282217D4E59AD2EE8962D8CD9A6DDAB12824E97148081718D09131D"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/precondicion-frontend-build.log",
+    "sha256": "656A3D3C925CB0161E3F514F49007799BA185C69319EB7BF1E4E458498A4E9BC"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/precondicion-npm-ci.log",
+    "sha256": "46F242B699D7CD37B7E70A2D07F15CDE1C4CE11CD037D111EDA5F4662C6EA26E"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/precondicion.json",
+    "sha256": "00F5DE3745FB3F0C18C5952F61C7F01DBFDCCF6FB62EA90EEF87A1EF210FCFD6"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/registrar-cierre.mjs",
+    "sha256": "BE546D43F43281C2C1D2DAE3DA288170D9A54BA0B3803CB0204F1C69460CDDEB"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/revision-independiente.md",
+    "sha256": "FE4655786C8385C372A7E2D492F98465CA0EDCCF444554794D119449482FC100"
+  },
+  {
+    "ruta": "qa/evidencias/ag010/verificacion-local.json",
+    "sha256": "A1147BD217197C67D78E27D37E9163F5E61F0D4C87562ED9893BA9246D032295"
+  }
+]

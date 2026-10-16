@@ -9,6 +9,29 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ErroresControlados {
     public record ErrorPublico(String error) {}
 
+    @ExceptionHandler(es.gestionsolicitudes.proveedores.dominio.ErrorProveedor.class)
+    public org.springframework.http.ResponseEntity<ErrorPublico> tratarProveedor(
+            es.gestionsolicitudes.proveedores.dominio.ErrorProveedor error) {
+        int estado =
+                switch (error.codigo()) {
+                    case SOLICITUD_INVALIDA -> 400;
+                    case ACCESO_NO_PERMITIDO -> 403;
+                    case PROVEEDOR_NO_ENCONTRADO -> 404;
+                    case PROVEEDOR_DUPLICADO, VERSION_OBSOLETA -> 409;
+                };
+        return org.springframework.http.ResponseEntity.status(estado)
+                .body(new ErrorPublico(error.codigo().name()));
+    }
+
+    @ExceptionHandler({
+        org.springframework.dao.DataAccessResourceFailureException.class,
+        org.springframework.transaction.CannotCreateTransactionException.class
+    })
+    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+    public ErrorPublico tratarDependencia() {
+        return new ErrorPublico("DEPENDENCIA_NO_DISPONIBLE");
+    }
+
     @ExceptionHandler(org.springframework.security.access.AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ErrorPublico tratarPermisoDenegado() {

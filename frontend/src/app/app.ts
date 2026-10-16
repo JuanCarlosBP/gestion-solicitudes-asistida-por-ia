@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SesionStore } from './identidad/sesion-store';
+import { PermisosProveedores } from './proveedores/proveedores-permisos';
 @Component({
   selector: 'app-root',
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
@@ -9,4 +10,5 @@ import { SesionStore } from './identidad/sesion-store';
 })
 export class App {
   readonly sesion = inject(SesionStore);
+  readonly proveedores = inject(PermisosProveedores);
 }

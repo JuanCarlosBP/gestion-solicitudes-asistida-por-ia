@@ -17,9 +17,9 @@ public class ContratoApi {
                 .info(
                         new Info()
                                 .title("Gestión de Solicitudes — API")
-                                .version("0.0.2")
+                                .version("0.0.3")
                                 .description(
-                                        "Identidad y acceso. Access token Bearer en memoria; refresh solo en cookie HttpOnly. Operaciones mutables requieren X-XSRF-TOKEN. Documentación pública solo en local/test."))
+                                        "Identidad, acceso y catálogo de proveedores. Access token Bearer en memoria; refresh solo en cookie HttpOnly. Operaciones mutables requieren X-XSRF-TOKEN. Proveedores con unicidad fiscal, baja lógica y versión optimista. Documentación pública solo en local/test."))
                 .components(
                         new Components()
                                 .addSecuritySchemes(

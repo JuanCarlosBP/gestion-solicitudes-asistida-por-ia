@@ -72,10 +72,16 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
     '/api/autenticacion/iniciar-sesion',
     '/api/autenticacion/renovar',
     '/api/identidad/yo',
+    '/api/proveedores',
+    '/api/proveedores/{id}',
+    '/api/proveedores/{id}/desactivar',
+    '/api/proveedores/{id}/reactivar',
     '/api/salud',
   ]);
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('200');
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('503');
+  expect(contrato.paths['/api/proveedores'].post.responses).toHaveProperty('201');
+  expect(contrato.paths['/api/proveedores/{id}'].put.responses).toHaveProperty('409');
   await page.goto('/swagger-ui/index.html');
   await page.locator('.opblock-summary').filter({ hasText: '/api/salud' }).click();
   await page.getByRole('button', { name: 'Try it out' }).click();

@@ -1,4 +1,4 @@
-name: Verificación de base e identidad
+name: Verificación de base, identidad y proveedores
 
 on:
   push:
@@ -162,7 +162,9 @@ jobs:
         run: ./qa/verificar-compose.ps1
       - name: Sesiones, reinicio, rotación y reutilización
         run: node qa/verificar-sesiones-compose.mjs
-      - name: Navegador 001 y 002, accesibilidad y Swagger
+      - name: Proveedores, permisos, concurrencia y persistencia
+        run: node qa/verificar-proveedores-compose.mjs
+      - name: Navegador 001, 002 y 003, accesibilidad y Swagger
         working-directory: frontend
         run: npm run test:e2e
       - name: Documentación y búsqueda acotada de secretos
@@ -175,6 +177,7 @@ jobs:
           tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
           "$RUNNER_TEMP/actionlint" .github/workflows/ci.yml
           node --check qa/verificar-sesiones-compose.mjs
+          node --check qa/verificar-proveedores-compose.mjs
       - name: Parada sin eliminar volúmenes
         if: ${{ always() }}
         run: docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop

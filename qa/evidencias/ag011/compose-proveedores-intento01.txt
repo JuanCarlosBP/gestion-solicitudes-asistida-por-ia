@@ -1,0 +1,2 @@
+FAIL: 17 controles de proveedores; evidencia sin credenciales en C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag011
+Criterio incumplido: Edición preserva identidad y creación e incrementa versión

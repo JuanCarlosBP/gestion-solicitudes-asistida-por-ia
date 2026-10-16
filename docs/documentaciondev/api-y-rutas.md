@@ -1,6 +1,6 @@
-# API y rutas de identidad
+# API y rutas de identidad y proveedores
 
-**Estado:** Contrato implementado en AG-010; comprobaciones en
+**Estado:** Contratos de identidad AG-010 y proveedores AG-011; comprobaciones respectivas en [validación 003](../../especificaciones/003-proveedores/validacion.md) y
 [validación 002](../../especificaciones/002-identidad-acceso/validacion.md).
 
 Frontend y API comparten origen a través de Nginx. Los cuerpos propios usan JSON
@@ -27,7 +27,7 @@ El JWT debe conservarse solo en memoria; nunca en URL, logs o almacenamiento web
 ## CSRF, errores y caché
 
 Obtener primero CSRF y enviar el valor de `XSRF-TOKEN` como `X-XSRF-TOKEN` en
-cada POST. La cookie XSRF puede leerla Angular; la cookie refresh es HttpOnly.
+cada POST/PUT. La cookie XSRF puede leerla Angular; la cookie refresh es HttpOnly.
 No enviar Bearer a las operaciones de autenticación: un JWT caducado no debe
 interferir con la renovación. Cada uso correcto del refresh lo sustituye.
 
@@ -38,7 +38,7 @@ interferir con la renovación. Cada uso correcto del refresh lo sustituye.
 | 403 | `{"error":"ACCESO_NO_PERMITIDO"}` | CSRF inválido o usuario autenticado sin permiso. |
 | 500 | `{"error":"ERROR_INTERNO"}` | Fallo inesperado controlado; sin detalle interno. |
 
-Toda API adicional se deniega por defecto. No existen endpoints artificiales
+Toda API no autorizada expresamente se deniega por defecto; AG-011 añade las operaciones de proveedores descritas abajo. No existen endpoints artificiales
 para probar roles: se usan componentes exclusivos de las pruebas.
 Autenticación e identidad envían `Cache-Control: no-store` y `Pragma: no-cache`.
 Cierre añade `Clear-Site-Data: "cache"`; no borra indiscriminadamente el origen.
@@ -64,3 +64,52 @@ la navegación; la API vuelve a validar el Bearer y la sesión en PostgreSQL.
 Ante 401 se comparte una única renovación entre peticiones concurrentes y cada
 petición solo se reintenta una vez. Logout espera operaciones de autenticación
 en vuelo y descarta resultados tardíos mediante el estado de sesión.
+
+## Catálogo de proveedores — contrato AG-011
+
+Bearer válido en todas las rutas siguientes y X-XSRF-TOKEN en POST/PUT.
+La validación del incremento conserva la evidencia real, sin alterar la de 002.
+
+| Método/ruta | Permiso/entrada | Resultado |
+|---|---|---|
+| POST /api/proveedores | ADMINISTRADOR; campos editables | 201, Location y proveedor activo/version=0. |
+| GET /api/proveedores/{id} | Cualquier rol aprobado; visibilidad según estado | 200 o 404. |
+| GET /api/proveedores | Cualquier rol; filtros/página | 200 página. |
+| PUT /api/proveedores/{id} | ADMINISTRADOR; editables y version | 200, versión incrementada. |
+| POST /api/proveedores/{id}/desactivar | ADMINISTRADOR; {version} | 200, baja lógica o repetición vigente sin cambios. |
+| POST /api/proveedores/{id}/reactivar | ADMINISTRADOR; {version} | 200, reactivación o repetición vigente sin cambios. |
+
+Editables: tipo (PERSONA_JURIDICA/PROFESIONAL), denominacion, paisFiscal,
+identificadorFiscal, correoContacto y telefonoContacto. Se rechazan extras e
+internos. DTO público añade id/activo/version/creadoEn/actualizadoEn; contactos
+opcionales null. No devuelve identificadorFiscalNormalizado. PUT no modifica
+activo/id/creadoEn. Límites completos en la especificación 003.
+
+Listado: page=0, size=20 (1–100), sort=denominacion,asc (campos denominacion,
+creadoEn/actualizadoEn; asc/desc; desempate id asc). Filtros AND denominacion
+(contiene literal hasta 128, mayúsculas indiferentes/acentos significativos),
+identificadorFiscal (exacto normalizado), tipo, paisFiscal, activo=true|false|todos.
+Predeterminado true; false/todos requieren AUDITOR o ADMINISTRADOR. Devuelve
+{elementos,pagina,tamano,totalElementos,totalPaginas}. Página vacía conserva total.
+
+SOLICITANTE/SUPERVISOR ven solo activos; AUDITOR lee ambos estados y no escribe;
+ADMINISTRADOR lee/escribe ambos. Unión de roles explícitos; ninguno elude reglas.
+404 oculta recursos inexistentes o no visibles. No existe DELETE.
+Errores seguros {error:CODIGO}: 400 SOLICITUD_INVALIDA; 401/403 como identidad;
+404 PROVEEDOR_NO_ENCONTRADO; 409 PROVEEDOR_DUPLICADO o VERSION_OBSOLETA;
+500 ERROR_INTERNO y503 DEPENDENCIA_NO_DISPONIBLE, sin detalles internos.
+Respuestas privadas no-store. La autenticación Bearer rota la cookie CSRF;
+el servidor materializa su reemplazo en la misma respuesta. El cliente debe
+respetar Set-Cookie y usar el valor vigente en cada escritura.
+
+La versión conocida protege PUT y ambos cambios de estado, incluso cuando el
+estado deseado ya coincide. Con versión vigente, repetir estado conserva versión
+y fecha. La identidad fiscal incluye inactivos. Normalización NFKC, recorte,
+Locale.ROOT mayúsculas y colapso de espacio Unicode sin quitar puntuación;
+validar longitud antes/después, sin checksum jurídico universal.
+
+Angular: /proveedores, /proveedores/nuevo, /proveedores/:id y
+/proveedores/:id/editar. Filtros en query params, navegación directa/recarga y
+conflicto con opción de recargar. No publicar URLs completas de búsquedas fiscales
+en logs ni evidencias. Swagger documenta operaciones y Bearer; las escrituras
+siguen exigiendo CSRF. Los controles de UI no sustituyen autorización REST.

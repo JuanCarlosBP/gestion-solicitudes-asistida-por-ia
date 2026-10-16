@@ -1,0 +1,61 @@
+<section aria-labelledby="titulo-detalle">
+  <a routerLink="/proveedores" queryParamsHandling="preserve">Volver a proveedores</a>
+  <h1 #titulo id="titulo-detalle" tabindex="-1">
+    {{ proveedor()?.denominacion ?? 'Detalle de proveedor' }}
+  </h1>
+  <p #alerta class="aviso" role="alert" tabindex="-1" [hidden]="!error()">{{ error() }}</p>
+  @if (error()) {
+    <button type="button" [disabled]="guardando()" (click)="recargar()">Recargar datos</button>
+  }
+  @if (cargando()) {
+    <p role="status">Cargando proveedor…</p>
+  }
+  <p role="status">{{ aviso() }}</p>
+  @if (proveedor(); as datos) {
+    <div class="panel" [attr.aria-busy]="guardando()">
+      <p class="estado">{{ datos.activo ? 'Activo' : 'Inactivo' }}</p>
+      <dl>
+        <dt>Tipo</dt>
+        <dd>{{ datos.tipo === 'PERSONA_JURIDICA' ? 'Persona jurídica' : 'Profesional' }}</dd>
+        <dt>País fiscal</dt>
+        <dd>{{ datos.paisFiscal }}</dd>
+        <dt>Identificador fiscal</dt>
+        <dd>{{ datos.identificadorFiscal }}</dd>
+        <dt>Correo de contacto</dt>
+        <dd>{{ datos.correoContacto ?? 'Sin indicar' }}</dd>
+        <dt>Teléfono de contacto</dt>
+        <dd>{{ datos.telefonoContacto ?? 'Sin indicar' }}</dd>
+        <dt>Creación</dt>
+        <dd>{{ datos.creadoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+        <dt>Última actualización</dt>
+        <dd>{{ datos.actualizadoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+      </dl>
+      @if (permisos.escribir()) {
+        <div class="acciones">
+          @if (!guardando() && !conflicto()) {
+            <a
+              class="boton"
+              [routerLink]="['/proveedores', datos.id, 'editar']"
+              queryParamsHandling="preserve"
+              >Editar proveedor</a
+            >
+          }
+          <button
+            type="button"
+            class="secundario"
+            [disabled]="guardando() || conflicto()"
+            (click)="cambiarEstado()"
+          >
+            {{
+              guardando()
+                ? 'Guardando…'
+                : datos.activo
+                  ? 'Desactivar proveedor'
+                  : 'Reactivar proveedor'
+            }}
+          </button>
+        </div>
+      }
+    </div>
+  }
+</section>

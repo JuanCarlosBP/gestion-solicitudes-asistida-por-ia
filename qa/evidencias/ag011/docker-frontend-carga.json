@@ -1,0 +1,6 @@
+{
+  "fecha": "2026-10-14T02:11:08.6055402+02:00",
+  "exitCode": 0,
+  "motivo": "Corrección de carrera de foco/carga; 130 pruebas Angular y checks PASS; bundle main-UBBPHK6T.js",
+  "comando": "docker compose build --no-cache frontend"
+}
