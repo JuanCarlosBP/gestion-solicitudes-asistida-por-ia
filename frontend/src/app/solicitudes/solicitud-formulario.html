@@ -1,0 +1,144 @@
+<a
+  class="volver"
+  [routerLink]="id() ? ['/solicitudes', id()] : ['/solicitudes']"
+  queryParamsHandling="preserve"
+  >{{ id() ? 'Volver al detalle' : 'Volver a solicitudes' }}</a
+>
+<div class="encabezado">
+  <div>
+    <p class="ceja">{{ solicitud()?.numero || 'Gestión · Solicitudes' }}</p>
+    <h1 #titulo tabindex="-1">{{ id() ? 'Editar borrador' : 'Nueva solicitud' }}</h1>
+    <p class="subtitulo">
+      {{
+        id()
+          ? 'Completa los datos y los conceptos antes de presentar.'
+          : 'Empieza con un asunto. Podrás completar el resto después.'
+      }}
+    </p>
+  </div>
+  <span class="estado">Borrador</span>
+</div>
+@if (cargando()) {
+  <p class="panel" role="status">Cargando borrador…</p>
+}
+@if (error()) {
+  <div #alerta class="aviso" role="alert" tabindex="-1">
+    <p>{{ error() }}</p>
+    @if (conflicto()) {
+      <p>Recargar descarta los cambios locales y recupera los datos guardados.</p>
+      <button class="secundario" type="button" (click)="recargar()">
+        Descartar cambios y recargar
+      </button>
+    }
+    @if (!cargando() && id() && !solicitud()) {
+      <button class="secundario" type="button" (click)="recargar()">Reintentar consulta</button>
+    }
+  </div>
+}
+@if (!cargando() && editable()) {
+  <form
+    appFocoVisible
+    (submit)="guardar($event)"
+    novalidate
+    aria-label="Borrador de solicitud"
+    [attr.aria-busy]="guardando()"
+  >
+    <section class="panel" aria-labelledby="titulo-cabecera">
+      <h2 id="titulo-cabecera">Datos de la solicitud</h2>
+      <div class="campo">
+        <label for="asunto">Asunto *</label
+        ><input
+          #asunto
+          id="asunto"
+          name="asunto"
+          [value]="datos().asunto"
+          (input)="cambiar('asunto', asunto.value)"
+          [disabled]="guardando()"
+          [attr.aria-invalid]="!!errores()['asunto']"
+          aria-describedby="asunto-ayuda asunto-error"
+        /><small id="asunto-ayuda" class="ayuda">De 3 a 160 caracteres.</small
+        ><small id="asunto-error" class="error-campo">{{ errores()['asunto'] }}</small>
+      </div>
+      @if (id()) {
+        <div class="campo">
+          <label for="descripcion">Descripción</label
+          ><textarea
+            #descripcion
+            id="descripcion"
+            name="descripcion"
+            rows="4"
+            [value]="datos().descripcion || ''"
+            (input)="cambiar('descripcion', descripcion.value)"
+            [disabled]="guardando()"
+            [attr.aria-invalid]="!!errores()['descripcion']"
+            aria-describedby="descripcion-ayuda descripcion-error"
+          ></textarea
+          ><small id="descripcion-ayuda" class="ayuda">Opcional. Hasta 2.000 caracteres.</small
+          ><small id="descripcion-error" class="error-campo">{{ errores()['descripcion'] }}</small>
+        </div>
+      }
+    </section>
+    @if (id()) {
+      <section class="panel" aria-labelledby="titulo-referencias">
+        <h2 id="titulo-referencias">Proveedor y supervisión</h2>
+        <p class="ayuda">Ambos son necesarios al presentar. La asignación se conserva después.</p>
+        @if (
+          solicitud()?.proveedorId &&
+          (!solicitud()?.proveedor || solicitud()?.proveedor?.activo === false)
+        ) {
+          <p class="aviso">
+            El proveedor guardado está inactivo o no está disponible. El borrador se conserva;
+            selecciona otro proveedor activo para presentar.
+          </p>
+        }
+        <div class="referencias">
+          <app-referencia-selector
+            tipo="proveedor"
+            [valor]="datos().proveedorId"
+            [nombreActual]="solicitud()?.proveedor?.denominacion || ''"
+            [deshabilitado]="guardando()"
+            (cambio)="cambiar('proveedorId', $event)"
+          /><app-referencia-selector
+            tipo="supervisor"
+            [valor]="datos().supervisorId"
+            [nombreActual]="solicitud()?.supervisor?.nombreVisible || ''"
+            [deshabilitado]="guardando()"
+            (cambio)="cambiar('supervisorId', $event)"
+          />
+        </div>
+      </section>
+      <section class="panel conceptos-panel">
+        <app-conceptos-editor
+          [conceptos]="datos().conceptos"
+          [errores]="errores()"
+          [deshabilitado]="guardando()"
+          (cambio)="conceptos($event)"
+        />
+      </section>
+    }
+    <div class="barra-resumen">
+      @if (id()) {
+        <div>
+          <span class="ayuda">Total estimado · EUR</span
+          ><strong class="importe-estimado">{{
+            estimacion() === null ? 'Revisa los importes' : euros(estimacion()!)
+          }}</strong
+          ><span class="ayuda"
+            >Último total confirmado: {{ euros(solicitud()!.importeTotal) }}. El servidor recalcula
+            al guardar.</span
+          >
+        </div>
+      }
+      <div class="acciones">
+        <button type="submit" [disabled]="guardando() || conflicto()">
+          {{ guardando() ? 'Guardando…' : id() ? 'Guardar borrador' : 'Crear borrador' }}</button
+        ><a
+          class="boton secundario"
+          [routerLink]="id() ? ['/solicitudes', id()] : ['/solicitudes']"
+          queryParamsHandling="preserve"
+          >Cancelar y volver</a
+        >
+      </div>
+    </div>
+  </form>
+}

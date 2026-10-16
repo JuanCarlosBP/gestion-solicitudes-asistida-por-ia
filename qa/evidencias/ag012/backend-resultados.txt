@@ -1,0 +1,70 @@
+AG-012 / Backend 004 / Entrega al coordinador
+Final de verificación: 2026-10-14 23:56:33 +02:00, Europe/Madrid.
+Fuentes: especificación, plan, tareas 004, ADR-0005 y encargo integral AG-012.
+Skill aplicada: .agents/skills/verificacion-qa/SKILL.md.
+Escritor: implementador backend. Sin Git, Compose compartido ni históricos.
+
+ESPERADO
+SCI-01–11/13: API segura, cálculo exacto, operaciones atómicas, visibilidad SQL,
+fotografía del proveedor, supervisor vigente, versión y replay autorizado.
+SCI-14: migración, regresión 001–004, Spotless y SpotBugs.
+
+EJECUTADO Y OBSERVADO
+Java 21.0.12.1; Maven Wrapper y caché del workspace; PostgreSQL 17.11 aislado.
+Comando: mvnw.cmd -B spotless:apply verify dependency:list
+  -DoutputFile=target/dependencias.txt -DappendOutput=false
+Evidencia: backend-verify-final-02.log, exit 0, BUILD SUCCESS, duración 01:02 min.
+144 pruebas PASS: 76 unitarias + 68 de integración. Sin fallos, errores u omisiones.
+98 previas + 46 nuevas de 004 (15 dominio + 31 HTTP/PostgreSQL).
+Spotless PASS. SpotBugs: 0 bugs y 0 errores; sin nuevas exclusiones.
+backend-pruebas-final.json conserva las 15 suites y los nombres de los casos.
+backend-archivos-final.json conserva SHA-256 de los 25 archivos modificados.
+backend-dependencias.txt copia dependency:list. POM y dependencias sin cambios.
+
+COBERTURA OBSERVADA
+- Alta 201/Location; autor, número, año de Madrid, fechas y versión del servidor.
+- Ejemplos 10.00/10.31/1.01, total 21.32; HALF_UP por línea; límites y excesos.
+- Decimales como texto, JSON estricto, Unicode y longitudes por puntos de código.
+- Reemplazo de cabecera y 0–100 líneas, UUID propios, posiciones únicas y FK.
+- Permisos HTTP, CSRF, propietario, estado, unión de roles y 404 no visible.
+- Filtros literales, acentos, fechas UTC, AND, orden estable y conteo visible.
+- Referencia viva de proveedor, inactivos ocultos y fotografía inmutable.
+- Supervisor habilitado, con rol vigente y distinto del autor; selector acotado.
+- Repetición idempotente exacta, incompatibilidad entre versiones y recursos;
+  resultado original persistido incluso al avanzar la versión actual.
+- Rollback real tras UPDATE de cabecera y DELETE de líneas, y tras transición
+  antes de persistir resultado: triggers fallidos solo en PostgreSQL desechable.
+  Las transacciones fallidas no emiten eventos de éxito.
+- Nueve carreras sincronizadas con bloqueos observados en pg_stat_activity:
+  dos guardados, dos claves, misma clave, misma clave entre recursos, guardar
+  contra presentar, baja previa de proveedor, protección del snapshot durante
+  presentación, baja de supervisor y retirada de rol.
+- Numeración concurrente: 12 altas únicas; agotamiento controlado con 503.
+- Evolución V3 a V4 con fila preservada, base vacía V1–V4 y segundo arranque.
+- Sin DELETE de solicitudes/idempotencia ni UPDATE de roles; FK y checks.
+  Función SECURITY DEFINER mínima: search_path fijo, PUBLIC revocado, 3 campos.
+- OpenAPI: 14 rutas, entradas cerradas, nombres sin colisión con 003,
+  parámetros, Idempotency-Key y resultado mínimo.
+- Eventos sin cuerpos, tokens, claves reutilizables ni datos fiscales completos.
+
+FALLOS Y CORRECCIONES CONSERVADOS
+- backend-compile-01.log: Timestamp ambiguo y Schema.maxItems inexistente.
+  Primera corrección de Timestamp: imports concretos. El segundo intento todavía
+  detectó maxItems, que aún no se había corregido. Su primera corrección usó
+  ArraySchema; backend-compile-03.log PASS. Eran defectos distintos.
+- Revisión R004-DB01: CHECK SQL permitía tipo NULL por lógica trivalente.
+  Primera corrección: IS NOT NULL; prueba SQL negativa PASS. V4 sin más cambios.
+- Nombres únicos de esquemas OpenAPI para evitar colisiones con 003.
+- backend-verify-01.log: 144 pruebas PASS y cuatro avisos SpotBugs.
+  Primera corrección de cada defecto: contrastar importe persistido con cálculo,
+  comprobar null explícitamente y copiar la colección con List.copyOf.
+  backend-spotbugs-02.log y backend-verify-final.log PASS, sin exclusiones nuevas.
+- Unicode: recorte NBSP/NEL y rechazo de UTF-16 incompleto, coherente con 003.
+  backend-verify-final-02.log PASS, con comprobación unitaria y HTTP 400.
+No hubo reintentos ciegos ni dos correcciones fallidas del mismo defecto.
+
+PENDIENTE Y SIGUIENTE PASO
+Coordinador: Angular, Compose, E2E, CI, auditorías, documentación y revisión.
+No se declara aceptación ni integración de 004. CI remota tras push humano.
+Carga de 100.000 y auditorías WCAG/OWASP completas no ejecutadas aquí.
+No se inició 005 en este encargo de backend 004.

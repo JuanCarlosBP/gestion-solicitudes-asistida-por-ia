@@ -661,3 +661,37 @@ de resultados ejecutados. Estas filas no cambian a verificado ningún estado glo
 
 No se añaden identificadores ASVS sin comprobar texto/aplicabilidad ni se declara
 cobertura completa de OWASP. Retención/eliminación definitiva requieren decisión futura.
+
+## Controles parciales de solicitudes — AG-012
+
+La [validación004](../../especificaciones/004-solicitudes-conceptos-importes/validacion.md)
+es fuente de resultados, sin declarar ninguna categoría íntegramente verificada.
+
+| Categoría | Control SCI y evidencia exigida |
+|---|---|
+| A01 Acceso | SCI09/13: acción/recurso/estado, visibilidad SQL, CSRF y roles; REST negativo y uniones. |
+| A02 Configuración | SCI13/14: privilegios mínimos, función de bloqueo acotada, no-store y errores seguros; PostgreSQL real. |
+| A03 Cadena | SCI14: versiones conservadas, auditorías actuales, ActionsSHA y fuentes de imagen comprobadas. |
+| A05 Inyección | SCI03/13: parámetros/listas cerradas/DTO estricto y salida segura; pruebas de filtros, extras y contenido. |
+| A06 Diseño | SCI04–11: agregado atómico, BigDecimal, estados/version/idempotencia y snapshot; dominio/rollback/carreras. |
+| A09 Registro | SCI13: eventos después de commit y rechazo mínimos; logs sin datos sensibles y clave mediante hash. |
+| A10 Excepciones | SCI08/10/11/14: rollback, concurrencia, caída/recuperación y persistencia de replay. |
+
+Retención jurídica, historial completo, operación pública, carga y evaluación
+ASVS/WCAG completas siguen pendientes; no se inventan identificadores ASVS.
+
+## Controles parciales de aprobaciones — incremento 005
+
+| Categoría | Control AP y evidencia exigida |
+|---|---|
+| A01 Acceso | AP-03/07: supervisor asignado vigente, no autor, ningún privilegio implícito de administrador; negativos HTTP y bandeja multirrol. |
+| A02 Configuración | AP-09: V5 con privilegios SELECT/INSERT del evento y migraciones previas intactas; PostgreSQL real. |
+| A03 Cadena | AP-10: dependencias conservadas, auditorías y CI por SHA; la ejecución remota requiere push humano. |
+| A05 Inyección | AP-02/08: DTO, parámetros y texto escapado; límites y contenido literal. |
+| A06 Diseño | AP-01/04/05/06: estados finales, versión, idempotencia y evento único; carreras reales. |
+| A09 Registro | AP-09: un evento mínimo por decisión, éxito técnico después del commit y ausencia de motivos/comentarios en logs. |
+| A10 Excepciones | AP-06/09/10: rollback atómico, replay tras reinicio y regresión 001–004. |
+
+La [validación 005](../../especificaciones/005-aprobaciones/validacion.md) distingue
+resultados ejecutados de pendientes. Esta cobertura es parcial y no constituye
+certificación de seguridad ni auditoría integral de ASVS.

@@ -8,7 +8,18 @@ import { ProveedoresLista } from './proveedores/proveedores-lista';
 import { ProveedorDetalle } from './proveedores/proveedor-detalle';
 import { ProveedorFormulario } from './proveedores/proveedor-formulario';
 import { proveedoresGuard } from './proveedores/proveedores-permisos';
+import { SolicitudesLista } from './solicitudes/solicitudes-lista';
+import { SolicitudFormulario } from './solicitudes/solicitud-formulario';
+import { SolicitudDetalle } from './solicitudes/solicitud-detalle';
+import { solicitudesGuard } from './solicitudes/solicitudes-permisos';
 export const routes: Routes = [
+  {
+    path: 'aprobaciones',
+    component: SolicitudesLista,
+    canActivate: [solicitudesGuard],
+    data: { bandeja: true, supervision: true },
+    title: 'Aprobaciones · Gestión de Solicitudes',
+  },
   { path: '', pathMatch: 'full', redirectTo: 'inicio' },
   { path: 'inicio', component: Inicio, title: 'Inicio · Gestión de Solicitudes' },
   { path: 'acceso', component: AccesoPagina, title: 'Acceso · Gestión de Solicitudes' },
@@ -43,6 +54,32 @@ export const routes: Routes = [
     component: ProveedorDetalle,
     canActivate: [proveedoresGuard],
     title: 'Proveedor · Gestión de Solicitudes',
+  },
+  {
+    path: 'solicitudes',
+    component: SolicitudesLista,
+    canActivate: [solicitudesGuard],
+    title: 'Solicitudes · Gestión de Solicitudes',
+  },
+  {
+    path: 'solicitudes/nueva',
+    component: SolicitudFormulario,
+    canActivate: [solicitudesGuard],
+    data: { escritura: true },
+    title: 'Nueva solicitud · Gestión de Solicitudes',
+  },
+  {
+    path: 'solicitudes/:id/editar',
+    component: SolicitudFormulario,
+    canActivate: [solicitudesGuard],
+    data: { escritura: true },
+    title: 'Editar borrador · Gestión de Solicitudes',
+  },
+  {
+    path: 'solicitudes/:id',
+    component: SolicitudDetalle,
+    canActivate: [solicitudesGuard],
+    title: 'Solicitud · Gestión de Solicitudes',
   },
   { path: '**', component: NoEncontrada, title: 'Página no encontrada · Gestión de Solicitudes' },
 ];

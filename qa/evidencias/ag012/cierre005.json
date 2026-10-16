@@ -1,0 +1,15 @@
+{
+  "fechaMadrid": "2026-10-15T00:39:10.4755467+02:00",
+  "estado": "AP01–10 verificados localmente; no aceptación ni integración",
+  "backend": 180,
+  "angular": 346,
+  "e2e": 14,
+  "api": [
+    140,
+    119,
+    88,
+    78
+  ],
+  "revision": "sin hallazgos abiertos",
+  "gitEjecutado": false
+}

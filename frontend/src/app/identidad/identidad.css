@@ -2,7 +2,7 @@
   max-width: 38rem;
 }
 .contexto {
-  color: #435b66;
+  color: var(--color-tenue);
   font-size: 0.9rem;
 }
 h1 {
@@ -23,7 +23,7 @@ input {
   padding: 0.8rem;
   font: inherit;
   color: inherit;
-  border: 1px solid #536671;
+  border: 1px solid var(--color-tenue);
   border-radius: 0.3rem;
   background: #fff;
   margin-bottom: 0.6rem;
@@ -32,7 +32,7 @@ button {
   padding: 0.8rem 1rem;
   border: 0;
   border-radius: 0.3rem;
-  background: #184d55;
+  background: var(--color-primario);
   color: #fff;
   font: inherit;
   font-weight: 600;
@@ -61,4 +61,17 @@ ul {
 section > a {
   display: inline-block;
   margin: 1rem;
+}
+
+.panel {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+input,
+button {
+  border-radius: var(--radio-control);
+  min-height: 2.75rem;
 }

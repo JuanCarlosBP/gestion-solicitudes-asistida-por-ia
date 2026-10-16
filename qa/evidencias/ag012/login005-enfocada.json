@@ -1,0 +1,1605 @@
+{
+  "fecha": "2026-10-14T22:27:38.715Z",
+  "controles": [
+    {
+      "iteracion": 1,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 2,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 3,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 4,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 5,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 6,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 7,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 8,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 9,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 10,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 11,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 12,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 13,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 14,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 15,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 16,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 17,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 18,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 19,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 20,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 21,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 22,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 23,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 24,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 25,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 26,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 27,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 28,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 29,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 30,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 31,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 32,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 33,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 34,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 35,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 36,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 37,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 38,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 39,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 40,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 41,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 42,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 43,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 44,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 45,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 46,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 47,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 48,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 49,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 50,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 51,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 52,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 53,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 54,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 55,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 56,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 57,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 58,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 59,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 60,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 61,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 62,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 63,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 64,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 65,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 66,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 67,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 68,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 69,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 70,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 71,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 72,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 73,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 74,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 75,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 76,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 77,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 78,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 79,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 80,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 81,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 82,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 83,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 84,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 85,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 86,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 87,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 88,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 89,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 90,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 91,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 92,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 93,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 94,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 95,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 96,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 97,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 98,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 99,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 100,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 101,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 102,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 103,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 104,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 105,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 106,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 107,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 108,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 109,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 110,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 111,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 112,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 113,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 114,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 115,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 116,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 117,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 118,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 119,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 120,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 121,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 122,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 123,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 124,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 125,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 126,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 127,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 128,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 129,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 130,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 131,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 132,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 133,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 134,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 135,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 136,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 137,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 138,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 139,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 140,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 141,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 142,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 143,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 144,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 145,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 146,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 147,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 148,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 149,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 150,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 151,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 152,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 153,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 154,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 155,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 156,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 157,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 158,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 159,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 160,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 161,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 162,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 163,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 164,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 165,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 166,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 167,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 168,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 169,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 170,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 171,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 172,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 173,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 174,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 175,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 176,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 177,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 178,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 179,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 180,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 181,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 182,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 183,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 184,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 185,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 186,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 187,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 188,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 189,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 190,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 191,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 192,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 193,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 194,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 195,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 196,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 197,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 198,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 199,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    },
+    {
+      "iteracion": 200,
+      "csrfEstado": 204,
+      "csrfLongitud": 36,
+      "loginEstado": 200,
+      "error": null,
+      "cierre": 204
+    }
+  ]
+}

@@ -23,7 +23,16 @@ El proceso está en [SDD](../docs/metodologia/sdd.md).
 | 003 — Proveedores | [Plan](003-proveedores/plan.md) | Aprobado por decisión humana AG-011. |
 | 003 — Proveedores | [Tareas](003-proveedores/tareas.md) | Aprobadas por decisión humana AG-011; implementación y pruebas ejecutadas. |
 | 003 — Proveedores | [Validación](003-proveedores/validacion.md) | Verificada localmente en AG-011; aceptación e integración pendientes. |
-| 004 — Solicitudes, conceptos e importes | [Especificación](004-solicitudes-conceptos-importes/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas ni implementación. |
+| 003 — Adenda AG-012 | [Corrección y regresión](003-proveedores/validacion-ag012.md) | E2E heredado corregido y regresión001–003 local; histórico AG-011 conservado. |
+| 004 — Solicitudes, conceptos e importes | [Especificación](004-solicitudes-conceptos-importes/especificacion.md) | Aprobada por decisión humana AG-012. |
+| 004 — Solicitudes, conceptos e importes | [Plan](004-solicitudes-conceptos-importes/plan.md) | Aprobado por decisión humana AG-012. |
+| 004 — Solicitudes, conceptos e importes | [Tareas](004-solicitudes-conceptos-importes/tareas.md) | Aprobadas y ejecutadas en AG-012. |
+| 004 — Solicitudes, conceptos e importes | [Validación](004-solicitudes-conceptos-importes/validacion.md) | Verificada localmente, sin aceptación ni integración. |
+| 005 — Aprobaciones | [Especificación](005-aprobaciones/especificacion.md) | Aprobada por decisión humana AG-012; puerta cumplida. |
+| 005 — Aprobaciones | [Plan](005-aprobaciones/plan.md) | Aprobado por decisión humana AG-012. |
+| 005 — Aprobaciones | [Tareas](005-aprobaciones/tareas.md) | Aprobadas y ejecutadas en AG-012. |
+| 005 — Aprobaciones | [Validación](005-aprobaciones/validacion.md) | AP-01–10 verificados localmente, sin aceptación ni integración. |
+| 006 — Concurrencia e idempotencia | [Especificación](006-concurrencia-idempotencia/especificacion.md) | Borrador pendiente de aprobación humana; sin otros artefactos ni implementación006. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
@@ -53,11 +62,14 @@ está aprobado para redactar únicamente borradores de especificación para:
 - 007-historial-auditoria;
 - 008-demo-y-operacion.
 
-003 ya dispone del paquete SDD aprobado. AG-011 creó solo la especificación
-borrador 004 después de verificar 003 localmente y comprobar más de 45 minutos
-de margen. Las carpetas 005–008 todavía no se han creado.
-No se prepararán sus planes ni tareas sin aprobación posterior.
-Su orden no resuelve por sí solo las dudas de cada funcionalidad.
+AG-012 aprueba D-004-01–11 y su paquete SDD, sustituyendo el borrador de AG-011.
+D-005-01–08 también están aprobadas por el encargo, pero la continuación exige004
+completamente verificada y al menos120 minutos de margen (60–119 solo SDD005).
+006 solo puede ser borrador tras005 verificada y al menos45 minutos.
+La puerta005 se cumplió a2026-10-15 00:09:52+02:00, con564 minutos restantes.
+Su SDD se redactó antes del código. Tras verificar005, la puerta006 se cumplió
+a2026-10-15 00:39:11+02:00 con534 minutos restantes. Se creó únicamente su
+especificación borrador;006–008 siguen sin implementación.
 
 ## Estados y evidencias
 

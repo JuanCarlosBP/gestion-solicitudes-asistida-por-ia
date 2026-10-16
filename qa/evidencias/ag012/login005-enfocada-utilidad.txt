@@ -1,0 +1,24 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+const u=JSON.parse(readFileSync('qa/evidencias/ag012/api005-intento01/usuarios-aprobaciones.json','utf8')).supervisorAjeno;
+const controles=[];
+for(let i=0;i<200;i++){
+  const cookies=new Map();
+  const aplicar=(r)=>{for(const cookie of r.headers.getSetCookie()){
+    const par=cookie.split(';')[0],j=par.indexOf('='),nombre=par.slice(0,j),valor=par.slice(j+1);
+    if(!valor||/max-age=0(?:;|$)/i.test(cookie))cookies.delete(nombre);else cookies.set(nombre,valor);
+  }};
+  const csrf=await fetch('http://127.0.0.1:18080/api/autenticacion/csrf'); aplicar(csrf);
+  const token=cookies.get('XSRF-TOKEN');
+  const respuesta=await fetch('http://127.0.0.1:18080/api/autenticacion/iniciar-sesion',{method:'POST',headers:{
+    'Content-Type':'application/json',Cookie:[...cookies].map(([k,v])=>`${k}=${v}`).join('; '),
+    'X-XSRF-TOKEN':decodeURIComponent(token)},body:JSON.stringify({correo:u.correo,contrasena:'Ejemplo local solicitante 2026'})});
+  const contenido=await respuesta.json();aplicar(respuesta);
+  controles.push({iteracion:i+1,csrfEstado:csrf.status,csrfLongitud:token?.length,loginEstado:respuesta.status,
+    error:respuesta.status===200?null:contenido.error});
+  if(respuesta.status!==200) break;
+  const cerrar=await fetch('http://127.0.0.1:18080/api/autenticacion/cerrar-sesion',{method:'POST',headers:{
+    Cookie:[...cookies].map(([k,v])=>`${k}=${v}`).join('; '),'X-XSRF-TOKEN':decodeURIComponent(cookies.get('XSRF-TOKEN'))}});
+  controles.at(-1).cierre=cerrar.status;
+}
+writeFileSync('qa/evidencias/ag012/login005-enfocada.json',JSON.stringify({fecha:new Date().toISOString(),controles},null,2)+'\n');
+console.log(JSON.stringify({iteraciones:controles.length,fallos:controles.filter(r=>r.loginEstado!==200)}));

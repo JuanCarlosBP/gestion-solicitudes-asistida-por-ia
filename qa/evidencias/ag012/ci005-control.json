@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-10-15T00:40:28.6129496+02:00",
+  "controles": [
+    {
+      "control": "actionlint",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/verificar-sesiones-compose.mjs",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/verificar-proveedores-compose.mjs",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/verificar-solicitudes-compose.mjs",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/verificar-aprobaciones-compose.mjs",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/preparar-usuarios-solicitudes.mjs",
+      "codigo": 0
+    },
+    {
+      "control": "node --check qa/verificar-evolucion-v5.mjs",
+      "codigo": 0
+    }
+  ],
+  "resultado": "PASS"
+}

@@ -1,0 +1,172 @@
+<div class="encabezado">
+  <div>
+    <p class="ceja">Gestión · Solicitudes</p>
+    <h1 #titulo tabindex="-1">{{ bandeja ? 'Aprobaciones' : 'Solicitudes' }}</h1>
+    <p class="subtitulo">
+      {{
+        bandeja
+          ? 'Solicitudes presentadas que esperan tu decisión como supervisor asignado.'
+          : 'Consulta el estado y los importes de tus solicitudes.'
+      }}
+    </p>
+  </div>
+  @if (permisos.crear() && !bandeja) {
+    <a class="boton" routerLink="/solicitudes/nueva" queryParamsHandling="preserve"
+      >Nueva solicitud</a
+    >
+  }
+</div>
+<form
+  #formulario
+  class="panel"
+  aria-label="Filtros de solicitudes"
+  [attr.aria-busy]="cargando()"
+  (submit)="buscar($event, formulario)"
+>
+  <div class="seccion-titulo">
+    <h2>Buscar solicitudes</h2>
+    <span class="ayuda">Los filtros se combinan</span>
+  </div>
+  <fieldset class="filtros" [disabled]="cargando()">
+    <legend class="solo-lectores">Filtros del listado</legend>
+    <div class="campo">
+      <label for="numero">Número exacto</label
+      ><input id="numero" name="numero" [value]="filtros().numero" placeholder="SOL-2026-000001" />
+    </div>
+    <div class="campo">
+      <label for="asunto-filtro">Asunto contiene</label
+      ><input id="asunto-filtro" name="asunto" [value]="filtros().asunto" />
+    </div>
+    @if (!bandeja) {
+      <div class="campo">
+        <label for="estado">Estado</label
+        ><select id="estado" name="estado" [value]="filtros().estado">
+          <option value="">Todos los estados</option>
+          <option value="BORRADOR">Borrador</option>
+          <option value="PRESENTADA">Presentada</option>
+          <option value="APROBADA">Aprobada</option>
+          <option value="RECHAZADA">Rechazada</option>
+        </select>
+      </div>
+    }
+    <div class="campo">
+      <label for="proveedor-filtro">Proveedor (UUID)</label
+      ><input id="proveedor-filtro" name="proveedor" [value]="filtros().proveedor" />
+    </div>
+    @if (!bandeja) {
+      <div class="campo">
+        <label for="supervisor-filtro">Supervisor (UUID)</label
+        ><input id="supervisor-filtro" name="supervisor" [value]="filtros().supervisor" />
+      </div>
+    }
+    @if (permisos.global()) {
+      <div class="campo">
+        <label for="autor-filtro">Autor (UUID)</label
+        ><input id="autor-filtro" name="autor" [value]="filtros().autor" />
+      </div>
+    }
+    <div class="campo">
+      <label for="fechaDesde">Creada desde (UTC)</label
+      ><input id="fechaDesde" name="fechaDesde" type="date" [value]="filtros().fechaDesde" />
+    </div>
+    <div class="campo">
+      <label for="fechaHasta">Creada hasta (UTC)</label
+      ><input id="fechaHasta" name="fechaHasta" type="date" [value]="filtros().fechaHasta" />
+    </div>
+    <div class="campo">
+      <label for="sort">Orden</label
+      ><select id="sort" name="sort" [value]="filtros().sort">
+        <option value="actualizadoEn,desc">Actualización: más reciente</option>
+        <option value="actualizadoEn,asc">Actualización: más antigua</option>
+        <option value="numero,asc">Número: ascendente</option>
+        <option value="numero,desc">Número: descendente</option>
+        <option value="creadoEn,desc">Creación: más reciente</option>
+        <option value="creadoEn,asc">Creación: más antigua</option>
+        <option value="importeTotal,desc">Importe: mayor primero</option>
+        <option value="importeTotal,asc">Importe: menor primero</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="size">Resultados por página (1–100)</label
+      ><input id="size" name="size" type="number" min="1" max="100" [value]="filtros().size" />
+    </div>
+    <div class="acciones">
+      <button type="submit">Buscar</button
+      ><button class="secundario" type="button" (click)="restablecer()">Restablecer filtros</button>
+    </div>
+  </fieldset>
+</form>
+@if (cargando()) {
+  <p class="panel" role="status">Cargando solicitudes…</p>
+}
+@if (error()) {
+  <div #alerta tabindex="-1" role="alert" class="aviso">
+    <p>{{ error() }}</p>
+    <button type="button" class="secundario" (click)="recargar()">Reintentar consulta</button
+    ><button type="button" class="secundario" (click)="restablecer()">Restablecer filtros</button>
+  </div>
+}
+@if (pagina(); as resultado) {
+  <p role="status" class="resultado-consulta">
+    {{ resultado.totalElementos }} solicitudes encontradas.
+  </p>
+  @if (!resultado.elementos.length) {
+    <div class="panel vacio">
+      <h2>No hay solicitudes para estos filtros o esta página.</h2>
+      <p>Prueba con menos filtros o vuelve a la primera página.</p>
+      <button type="button" class="secundario" (click)="cambiarPagina(0)">
+        Ir a la primera página
+      </button>
+    </div>
+  }
+  <ul class="solicitudes">
+    @for (solicitud of resultado.elementos; track solicitud.id) {
+      <li class="panel solicitud-tarjeta">
+        <div class="contenido-tarjeta">
+          <div class="metadatos">
+            <span class="numero">{{ solicitud.numero }}</span
+            ><span
+              class="estado"
+              [class.presentada]="solicitud.estado === 'PRESENTADA'"
+              [class.aprobada]="solicitud.estado === 'APROBADA'"
+              [class.rechazada]="solicitud.estado === 'RECHAZADA'"
+              >{{ nombresEstado[solicitud.estado] }}</span
+            >
+          </div>
+          <h2>
+            <a [routerLink]="['/solicitudes', solicitud.id]" queryParamsHandling="preserve">{{
+              solicitud.asunto
+            }}</a>
+          </h2>
+          <p>{{ solicitud.proveedor?.denominacion || 'Sin proveedor disponible' }}</p>
+          <p class="ayuda">
+            {{ solicitud.autor.nombreVisible }} · Actualizada
+            {{ solicitud.actualizadoEn | date: 'dd/MM/yyyy HH:mm' }}
+          </p>
+        </div>
+        <div class="total-tarjeta">
+          <span class="ayuda">Total confirmado</span
+          ><strong>{{ euros(solicitud.importeTotal) }}</strong>
+        </div>
+      </li>
+    }
+  </ul>
+  <nav class="paginacion" aria-label="Páginas de solicitudes">
+    <button
+      type="button"
+      class="secundario"
+      [disabled]="resultado.pagina === 0 || cargando()"
+      (click)="cambiarPagina(resultado.pagina - 1)"
+    >
+      Anterior</button
+    ><span>Página {{ resultado.pagina + 1 }} de {{ resultado.totalPaginas || 1 }}</span
+    ><button
+      type="button"
+      class="secundario"
+      [disabled]="resultado.pagina + 1 >= resultado.totalPaginas || cargando()"
+      (click)="cambiarPagina(resultado.pagina + 1)"
+    >
+      Siguiente
+    </button>
+  </nav>
+}

@@ -1,0 +1,10 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="9.137121">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-14T22:30:48.524Z" hostname="" tests="3" failures="0" skipped="0" time="8.552" errors="0">
+<testcase name="AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales" classname="aprobaciones.spec.ts" time="3.753">
+</testcase>
+<testcase name="AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible" classname="aprobaciones.spec.ts" time="3.843">
+</testcase>
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="0.956">
+</testcase>
+</testsuite>
+</testsuites>

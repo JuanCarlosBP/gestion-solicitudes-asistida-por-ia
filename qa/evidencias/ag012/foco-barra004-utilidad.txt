@@ -1,0 +1,39 @@
+import { chromium } from '../../frontend/node_modules/@playwright/test/index.mjs';
+import { writeFileSync } from 'node:fs';
+const browser = await chromium.launch({headless:true});
+const page = await browser.newPage({baseURL:'http://127.0.0.1:18080'});
+const registros=[];
+try {
+  await page.goto('/acceso');
+  await page.getByLabel('Correo electrónico',{exact:true}).fill('solicitante@demo.invalid');
+  await page.getByLabel('Contraseña',{exact:true}).fill('Ejemplo local solicitante 2026');
+  await page.getByRole('button',{name:'Iniciar sesión',exact:true}).click();
+  await page.waitForURL('**/mi-cuenta');
+  await page.goto('/solicitudes?asunto=Posiciones%20ficticias');
+  await page.getByRole('link',{name:/Posiciones ficticias/}).first().click();
+  await page.getByRole('link',{name:'Editar borrador',exact:true}).click();
+  const ruta=page.url();
+  for (const ancho of [768,1440]) {
+    await page.setViewportSize({width:ancho,height:900});
+    await page.goto(ruta);
+    await page.getByRole('heading',{name:'Editar borrador',exact:true}).waitFor();
+    await page.getByRole('heading',{name:'Editar borrador',exact:true}).focus();
+    for(let paso=0;paso<70;paso++){
+      await page.keyboard.press('Tab');
+      const dato=await page.evaluate(()=>{
+        const e=document.activeElement,r=e.getBoundingClientRect(),b=document.querySelector('.barra-resumen'),br=b.getBoundingClientRect();
+        const x=r.x+r.width/2,y=r.y+r.height/2,superior=document.elementFromPoint(x,y);
+        return {etiqueta:e.getAttribute('aria-label')||e.id||e.textContent.trim().slice(0,60),tipo:e.tagName,
+          centroVisible:!!superior&&(e===superior||e.contains(superior)),
+          barra: {top:br.top,bottom:br.bottom},rect:{top:r.top,bottom:r.bottom},
+          fin:e.textContent.trim()==='Cancelar y volver'};
+      });
+      registros.push({ancho,paso,...dato});
+      if(dato.fin)break;
+    }
+  }
+  const fallos=registros.filter(r=>!r.centroVisible);
+  writeFileSync(process.env.QA_FOCO_SALIDA ?? 'qa/evidencias/ag012/foco-barra004-inicial.json',JSON.stringify({fecha:new Date().toISOString(),registros,fallos},null,2)+'\n');
+  console.log(JSON.stringify({controles:registros.length,fallos},null,2));
+  process.exitCode=fallos.length?1:0;
+}finally{await browser.close();}

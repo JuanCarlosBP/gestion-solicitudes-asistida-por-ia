@@ -1,0 +1,24 @@
+{
+  "imagenes": [
+    {
+      "imagen": "sha256:18a9ac00ffc17b809fc2e1fd5fac19ea1c13b105d57e2388dbab099bdf96da07",
+      "contenedor": "d46d64ae493db3469f2c44e34fa27052f17923f7c11c440e11a0ada0076db8ed",
+      "servicio": "backend"
+    },
+    {
+      "imagen": "sha256:9e1a1dd608b4e6d9ff9c5da13f30c37b8485c4244527acbedd3f31b6d5684179",
+      "contenedor": "aaa32fd3203f2979c83f09234787795e53ef3b4623a24e34d6aefb230e3035da",
+      "servicio": "frontend"
+    },
+    {
+      "imagen": "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "contenedor": "d09d1e15f7261236f4f5dd0f939a062758b9aef1bdc33a802b33bd7dce531c88",
+      "servicio": "postgres"
+    }
+  ],
+  "fuentesBackend": "backend-archivos-final.json",
+  "fecha": "2026-10-15T00:06:43.5206435+02:00",
+  "buildBackend": "docker-backend-final004-02.log",
+  "buildFrontend": "docker-frontend-final004-ui03.log",
+  "fuentesFrontend": "frontend-huellas.csv"
+}

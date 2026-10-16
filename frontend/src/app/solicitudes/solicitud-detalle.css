@@ -1,0 +1,57 @@
+.detalle-distribucion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  gap: 1.5rem;
+}
+.datos-detalle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 0;
+}
+dt {
+  font-size: 0.8rem;
+  color: var(--color-tenue);
+}
+dd {
+  margin: 0.25rem 0 0;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+.descripcion-texto {
+  white-space: pre-wrap;
+}
+.resumen-total {
+  align-self: start;
+  background: var(--color-suave);
+  border-color: #bcd8d5;
+}
+.importe-total {
+  display: block;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-top: 1rem;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.resumen-total hr {
+  border: 0;
+  border-top: 1px solid #bcd8d5;
+  margin: 1.25rem 0;
+}
+.confirmacion {
+  border: 2px solid var(--color-primario);
+}
+@media (max-width: 1000px) {
+  .detalle-distribucion {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .resumen-total {
+    margin-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .datos-detalle {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

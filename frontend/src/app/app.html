@@ -8,6 +8,16 @@
   <nav aria-label="Navegación principal">
     <a routerLink="/inicio" routerLinkActive="activo" ariaCurrentWhenActive="page">Inicio</a>
     @if (sesion.autenticado()) {
+      @if (solicitudes.supervisar()) {
+        <a routerLink="/aprobaciones" routerLinkActive="activo" ariaCurrentWhenActive="page"
+          >Aprobaciones</a
+        >
+      }
+      @if (solicitudes.consultar()) {
+        <a routerLink="/solicitudes" routerLinkActive="activo" ariaCurrentWhenActive="page"
+          >Solicitudes</a
+        >
+      }
       @if (proveedores.consultar()) {
         <a routerLink="/proveedores" routerLinkActive="activo" ariaCurrentWhenActive="page"
           >Proveedores</a
@@ -23,4 +33,4 @@
   <span class="entorno">Entorno local</span>
 </header>
 <main #contenido id="contenido" tabindex="-1"><router-outlet /></main>
-<footer>Gestión de Solicitudes · Proveedores</footer>
+<footer>Gestión de Solicitudes · Espacio de trabajo</footer>

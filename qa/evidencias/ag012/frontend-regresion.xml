@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="130" failures="0" errors="0" time="1.2797694">
+    <testsuite name="src/app/app.routes.spec.ts" timestamp="2026-10-14T21:40:42.565Z" hostname="JCBP_Trabajo" tests="6" failures="0" errors="0" skipped="0" time="0.1301689">
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; redirige la raíz a inicio" time="0.0787127">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; abre inicio directamente" time="0.0082753">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; controla rutas desconocidas sin consultar la API" time="0.007758">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; abre acceso directamente con formulario etiquetado" time="0.0114119">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; mi-cuenta aplica restauración y guard con sesión=true" time="0.0147385">
+        </testcase>
+        <testcase classname="src/app/app.routes.spec.ts" name="Navegación &gt; mi-cuenta aplica restauración y guard con sesión=false" time="0.0082053">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/app.spec.ts" timestamp="2026-10-14T21:40:42.570Z" hostname="JCBP_Trabajo" tests="1" failures="0" errors="0" skipped="0" time="0.0788759">
+        <testcase classname="src/app/app.spec.ts" name="Estructura accesible &gt; ofrece navegación y salto al contenido principal" time="0.0780779">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/acceso.spec.ts" timestamp="2026-10-14T21:40:42.570Z" hostname="JCBP_Trabajo" tests="4" failures="0" errors="0" skipped="0" time="0.1223321">
+        <testcase classname="src/app/identidad/acceso.spec.ts" name="Formulario de acceso accesible &gt; etiqueta campos, usa autocomplete y no persiste datos ni envía duplicados" time="0.0913043">
+        </testcase>
+        <testcase classname="src/app/identidad/acceso.spec.ts" name="Formulario de acceso accesible &gt; fallo 401 muestra el mismo mensaje genérico con foco" time="0.0166998">
+        </testcase>
+        <testcase classname="src/app/identidad/acceso.spec.ts" name="Formulario de acceso accesible &gt; fallo 403 muestra el mismo mensaje genérico con foco" time="0.0070001">
+        </testcase>
+        <testcase classname="src/app/identidad/acceso.spec.ts" name="Formulario de acceso accesible &gt; fallo 503 muestra el mismo mensaje genérico con foco" time="0.0061859">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/autenticacion.spec.ts" timestamp="2026-10-14T21:40:42.571Z" hostname="JCBP_Trabajo" tests="12" failures="0" errors="0" skipped="0" time="0.0537232">
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; materializa CSRF antes del login y mantiene espacios de contraseña" time="0.020309">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; comparte restauración entre inicializador y guard y la completa una sola vez" time="0.0043595">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; restauración fallida 401 permite arrancar como anónimo" time="0.0029988">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; restauración fallida 403 permite arrancar como anónimo" time="0.0030822">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; restauración fallida 503 permite arrancar como anónimo" time="0.0028758">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; tolera fallo de CSRF durante el arranque sin intentar renovar" time="0.002934">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; comparte renovación y termina aunque se cancele un consumidor" time="0.0025479">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; libera renovación fallida para permitir una operación posterior" time="0.0038707">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; serializa login tras renovación anterior para no sobrescribir la cookie nueva" time="0.0032555">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; logout espera renovacion tardío y no resucita la sesión" time="0.0030684">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; logout espera login tardío y no resucita la sesión" time="0.001943">
+        </testcase>
+        <testcase classname="src/app/identidad/autenticacion.spec.ts" name="Autenticación y restauración &gt; limpia memoria aunque el servidor no confirme logout y permite reintentar" time="0.001356">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/mi-cuenta.spec.ts" timestamp="2026-10-14T21:40:42.572Z" hostname="JCBP_Trabajo" tests="4" failures="0" errors="0" skipped="0" time="0.1526329">
+        <testcase classname="src/app/identidad/mi-cuenta.spec.ts" name="Cuenta propia &gt; consulta identidad del backend, muestra todos los roles y cierra sesión" time="0.0819024">
+        </testcase>
+        <testcase classname="src/app/identidad/mi-cuenta.spec.ts" name="Cuenta propia &gt; explica fallo de consulta sin detalles y permite reintentar" time="0.0391647">
+        </testcase>
+        <testcase classname="src/app/identidad/mi-cuenta.spec.ts" name="Cuenta propia &gt; no afirma cierre confirmado cuando falla la red" time="0.016545">
+        </testcase>
+        <testcase classname="src/app/identidad/mi-cuenta.spec.ts" name="Cuenta propia &gt; una identidad tardía no vuelve a mostrarse después de iniciar el cierre" time="0.0138644">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/sesion-guard.spec.ts" timestamp="2026-10-14T21:40:42.573Z" hostname="JCBP_Trabajo" tests="2" failures="0" errors="0" skipped="0" time="0.0229239">
+        <testcase classname="src/app/identidad/sesion-guard.spec.ts" name="Guard funcional &gt; espera restauración y decide acceso autenticado=true" time="0.018311">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-guard.spec.ts" name="Guard funcional &gt; espera restauración y decide acceso autenticado=false" time="0.0035709">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/sesion-interceptor.spec.ts" timestamp="2026-10-14T21:40:42.573Z" hostname="JCBP_Trabajo" tests="18" failures="0" errors="0" skipped="0" time="0.0591857">
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a /api/autenticacion/renovar" time="0.0147544">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a /api/autenticacion/iniciar-sesion" time="0.0035109">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a /api/autenticacion/cerrar-sesion" time="0.0023646">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a /api/autenticacion/csrf" time="0.0024982">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a https://ajeno.invalid/api/identidad/yo" time="0.0025952">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a //ajeno.invalid/api/identidad/yo" time="0.0022985">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no añade Bearer a /recursos" time="0.0020679">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; añade Bearer únicamente a la API propia incluso en URL absoluta" time="0.0019669">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; comparte una renovación entre 401 concurrentes y reintenta ambas" time="0.0077713">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; reutiliza el acceso renovado para un 401 tardío, sin otra rotación" time="0.0027852">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; un segundo 401 pierde sesión y no provoca bucle" time="0.003933">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; fallo de refresh 401 limpia y redirige una vez a acceso" time="0.0021311">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; fallo de refresh 403 limpia y redirige una vez a acceso" time="0.0027084">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; fallo de refresh 503 limpia y redirige una vez a acceso" time="0.0016124">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no renueva ni pierde sesión por 403" time="0.0010488">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no renueva ni pierde sesión por 503" time="0.0009307">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; no renueva ante 401 anónimo ni de autenticación" time="0.001364">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-interceptor.spec.ts" name="Interceptor de sesión &gt; 401 de una sesión anterior no renueva tras logout" time="0.0015776">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/identidad/sesion-store.spec.ts" timestamp="2026-10-14T21:40:42.575Z" hostname="JCBP_Trabajo" tests="2" failures="0" errors="0" skipped="0" time="0.0050489">
+        <testcase classname="src/app/identidad/sesion-store.spec.ts" name="Sesión en memoria &gt; parte anónima, publica usuario y elimina el acceso al limpiar" time="0.0027244">
+        </testcase>
+        <testcase classname="src/app/identidad/sesion-store.spec.ts" name="Sesión en memoria &gt; rechaza respuestas de una época anterior sin persistir tokens" time="0.001159">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/inicio/inicio.spec.ts" timestamp="2026-10-14T21:40:42.576Z" hostname="JCBP_Trabajo" tests="3" failures="0" errors="0" skipped="0" time="0.1351105">
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; distingue carga y disponibilidad con mensajes accesibles" time="0.087204">
+        </testcase>
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; muestra un error controlado y permite volver a comprobar" time="0.0314499">
+        </testcase>
+        <testcase classname="src/app/inicio/inicio.spec.ts" name="Pantalla de inicio &gt; trata un estado no disponible aunque llegue con HTTP 200" time="0.0155313">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/inicio/salud-api.spec.ts" timestamp="2026-10-14T21:40:42.576Z" hostname="JCBP_Trabajo" tests="4" failures="0" errors="0" skipped="0" time="0.0231581">
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; consulta la ruta del mismo origen y devuelve el estado" time="0.0128549">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; propaga HTTP 503 al tratamiento de error" time="0.0030183">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; rechaza una respuesta con contrato incorrecto" time="0.0020623">
+        </testcase>
+        <testcase classname="src/app/inicio/salud-api.spec.ts" name="Contrato de salud &gt; limita la espera de una conexión sin respuesta" time="0.0039181">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/proveedores/proveedor-validacion.spec.ts" timestamp="2026-10-14T21:40:42.576Z" hostname="JCBP_Trabajo" tests="18" failures="0" errors="0" skipped="0" time="0.0056376">
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; admite Unicode, denominación de 160 caracteres, contactos vacíos y países no ES" time="0.0025293">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza denominacion inválido sin truncar" time="0.0003239">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza denominacion inválido sin truncar" time="0.0001423">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza paisFiscal inválido sin truncar" time="0.0001198">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza paisFiscal inválido sin truncar" time="0.0001209">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza identificadorFiscal inválido sin truncar" time="0.0000898">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza identificadorFiscal inválido sin truncar" time="0.0000817">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza identificadorFiscal inválido sin truncar" time="0.0000719">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza identificadorFiscal inválido sin truncar" time="0.0001045">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza correoContacto inválido sin truncar" time="0.0001529">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza correoContacto inválido sin truncar" time="0.0000736">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza telefonoContacto inválido sin truncar" time="0.0000735">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; rechaza tipo inválido sin truncar" time="0.0000511">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; admite contactos en límites y teléfono internacional sin patrón nacional" time="0.0001828">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; errores inesperados nunca reflejan entradas" time="0.000153">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; errores inesperados nunca reflejan entradas" time="0.0000575">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; errores inesperados nunca reflejan entradas" time="0.0000453">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedor-validacion.spec.ts" name="Validación y mensajes de proveedores &gt; distingue duplicado de concurrencia únicamente con status y código aprobados" time="0.0001479">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/proveedores/proveedores-api.spec.ts" timestamp="2026-10-14T21:40:42.578Z" hostname="JCBP_Trabajo" tests="14" failures="0" errors="0" skipped="0" time="0.0436686">
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; lista con parámetros exactos, literales Unicode y filtros combinados" time="0.0114759">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; omite filtros vacíos y fija valores predeterminados" time="0.0031001">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; consulta detalle y recibe el DTO público" time="0.0023298">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; crear envía solo editables y versión únicamente en PUT" time="0.006817">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; modificar envía solo editables y versión únicamente en PUT" time="0.0019686">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; estado activo=true envía POST con versión y sin campos editables" time="0.0012944">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; estado activo=false envía POST con versión y sin campos editables" time="0.001179">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 400 sin transformarlo en éxito" time="0.0025972">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 401 sin transformarlo en éxito" time="0.0020591">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 403 sin transformarlo en éxito" time="0.0029091">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 404 sin transformarlo en éxito" time="0.0019663">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 409 sin transformarlo en éxito" time="0.0015637">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 500 sin transformarlo en éxito" time="0.0015505">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-api.spec.ts" name="Contrato HTTP proveedores &gt; propaga fallo 503 sin transformarlo en éxito" time="0.001379">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/app/proveedores/proveedores-paginas.spec.ts" timestamp="2026-10-14T21:40:42.579Z" hostname="JCBP_Trabajo" tests="42" failures="0" errors="0" skipped="0" time="0.4473031">
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles SOLICITANTE: escritura=false, inactivos=false" time="0.0096297">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles SUPERVISOR: escritura=false, inactivos=false" time="0.0024025">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles AUDITOR: escritura=false, inactivos=true" time="0.0014237">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles ADMINISTRADOR: escritura=true, inactivos=true" time="0.0008813">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles SOLICITANTE,AUDITOR: escritura=false, inactivos=true" time="0.000881">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles AUDITOR,ADMINISTRADOR: escritura=true, inactivos=true" time="0.0008132">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; unión de roles : escritura=false, inactivos=false" time="0.000736">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rutas sin sesión redirigen a acceso sin consultar proveedores" time="0.0659979">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; escritura directa /proveedores/nuevo denegada al auditor" time="0.030666">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; escritura directa /proveedores/00000000-0000-4000-8000-000000000101/editar denegada al auditor" time="0.0129233">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; filtros esperan inicialización completa antes de permitir escritura y recuperan disponibilidad" time="0.0142871">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; listado muestra carga, resultados, filtros URL y enlace de detalle conservado" time="0.0239397">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; nuevo y cancelar conservan filtros, página y orden del listado" time="0.0270908">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; volver de página fuera de rango recupera página disponible con totalPaginas=0" time="0.0158979">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; volver de página fuera de rango recupera página disponible con totalPaginas=2" time="0.0111765">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; búsqueda admite Unicode suplementario hasta límites por caracteres, sin truncar UTF-16" time="0.0216083">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; búsqueda rechaza límite de caracteres en buscar-denominacion antes de navegar" time="0.0100272">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; búsqueda rechaza límite de caracteres en buscar-fiscal antes de navegar" time="0.0088242">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; formulario de filtros combina valores y reinicia página en URL" time="0.012877">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL page=-1 sin petición inválida" time="0.0065153">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL page=1.5 sin petición inválida" time="0.0066454">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL size=0 sin petición inválida" time="0.0065675">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL size=101 sin petición inválida" time="0.0065848">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL sort=id,asc sin petición inválida" time="0.0094189">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL tipo=OTRO sin petición inválida" time="0.0079466">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL paisFiscal=ZZ sin petición inválida" time="0.0089235">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL activo=otro sin petición inválida" time="0.0062686">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; rechaza filtro URL denominacion=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx sin petición inválida" time="0.0067561">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; SOLICITANTE no ofrece inactivos ni acepta filtro todos" time="0.0063387">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; SUPERVISOR no ofrece inactivos ni acepta filtro todos" time="0.0056686">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; listado cancela petición previa y recupera un error sin contenido interno" time="0.0090067">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; detalle público para SOLICITANTE con controles correctos" time="0.0093237">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; detalle público para SUPERVISOR con controles correctos" time="0.012708">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; detalle público para AUDITOR con controles correctos" time="0.0060325">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; detalle público para ADMINISTRADOR con controles correctos" time="0.0053173">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; 404 de detalle no revela proveedor y permite recarga" time="0.0041525">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; desactiva/reactiva, evita doble envío y conserva versión recibida" time="0.0108152">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; conflicto de estado exige recarga y no sobrescribe" time="0.0061047">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; alta tiene etiquetas, valida campos antes de enviar y conserva entrada al duplicar" time="0.0091931">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; alta válida navega al detalle conservando filtros sin persistir almacenamiento web" time="0.009865">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; edición conserva entrada al conflicto y recarga antes de usar versión vigente" time="0.0080835">
+        </testcase>
+        <testcase classname="src/app/proveedores/proveedores-paginas.spec.ts" name="Páginas, permisos y navegación de proveedores &gt; edición 404 no presenta formulario de alta ni permite escribir" time="0.005117">
+        </testcase>
+    </testsuite>
+</testsuites>

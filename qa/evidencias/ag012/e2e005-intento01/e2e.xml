@@ -1,0 +1,163 @@
+<testsuites id="" name="" tests="14" failures="3" skipped="0" errors="0" time="26.713625">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-14T22:28:25.390Z" hostname="" tests="3" failures="2" skipped="0" time="13.601" errors="0">
+<testcase name="AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales" classname="aprobaciones.spec.ts" time="6.157">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeFocused() failed" type="expect.toBeFocused">
+<![CDATA[  aprobaciones.spec.ts:187:5 › AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales › Validación, revisión y confirmación explícita con teclado 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Rechazar solicitud', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Rechazar solicitud', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Rechazar solicitud', exact: true })
+        14 × locator resolved to <button type="button" class="secundario rechazo" _ngcontent-ng-c2819222159=""> Rechazar solicitud </button>
+           - unexpected value "inactive"
+
+
+      146 |   ]) {
+      147 |     await page.keyboard.press('Tab');
+    > 148 |     await expect(control).toBeFocused();
+          |                           ^
+      149 |     await focoVisible(page);
+      150 |   }
+      151 |   await page.keyboard.press('Enter');
+        at tecladoDecision (C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:148:27)
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:240:9
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:220:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible" classname="aprobaciones.spec.ts" time="6.488">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-2.png]]
+
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeFocused() failed" type="expect.toBeFocused">
+<![CDATA[  aprobaciones.spec.ts:336:5 › AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible › Rechazo exige motivo válido y confirmación con teclado 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Aprobar solicitud', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Aprobar solicitud', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Aprobar solicitud', exact: true })
+        14 × locator resolved to <button type="button" _ngcontent-ng-c2819222159=""> Aprobar solicitud</button>
+           - unexpected value "inactive"
+
+
+      146 |   ]) {
+      147 |     await page.keyboard.press('Tab');
+    > 148 |     await expect(control).toBeFocused();
+          |                           ^
+      149 |     await focoVisible(page);
+      150 |   }
+      151 |   await page.keyboard.press('Enter');
+        at tecladoDecision (C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:148:27)
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:432:9
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:415:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="0.956">
+</testcase>
+</testsuite>
+<testsuite name="base.spec.ts" timestamp="2026-10-14T22:28:25.390Z" hostname="" tests="5" failures="1" skipped="0" time="1.252" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.34">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.242">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.2">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="0.442">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\qa\evidencias\ag012\e2e005-intento01\resultados\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toHaveProperty(path)" type="expect.toHaveProperty">
+<![CDATA[  base.spec.ts:64:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real ─────────────────
+
+    Error: expect(received).toHaveProperty(path)
+
+    Expected path: "200"
+    Received path: []
+
+    Received value: {"400": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ErrorPublico"}}}, "description": "SOLICITUD_INVALIDA"}, "401": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ResultadoDecision"}}}, "description": "NO_AUTENTICADO"}, "403": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ErrorPublico"}}}, "description": "ACCESO_NO_PERMITIDO o CSRF ausente"}, "404": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ResultadoDecision"}}}, "description": "SOLICITUD_NO_ENCONTRADA: inexistente o no visible"}, "409": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ResultadoDecision"}}}, "description": "VERSION_OBSOLETA, SOLICITUD_NO_EDITABLE, SOLICITUD_NO_DECIDIBLE, PROVEEDOR_INACTIVO, SUPERVISOR_INVALIDO o CLAVE_IDEMPOTENCIA_REUTILIZADA"}, "500": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ErrorPublico"}}}, "description": "ERROR_INTERNO"}, "503": {"content": {"*/*": {"schema": {"$ref": "#/components/schemas/ErrorPublico"}}}, "description": "DEPENDENCIA_NO_DISPONIBLE o NUMERACION_AGOTADA"}}
+
+      102 |     );
+      103 |     for (const estado of ['200', '400', '401', '403', '404', '409']) {
+    > 104 |       expect(operacion.responses).toHaveProperty(estado);
+          |                                   ^
+      105 |     }
+      106 |   }
+      107 |   await page.goto('/swagger-ui/index.html');
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\base.spec.ts:104:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag012\e2e005-intento01\resultados\base-Swagger-carga-OpenAPI-50da0-ta-la-consulta-técnica-real\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.028">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-14T22:28:25.390Z" hostname="" tests="3" failures="0" skipped="0" time="1.104" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.548">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.339">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.217">
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-14T22:28:25.390Z" hostname="" tests="1" failures="0" skipped="0" time="3.816" errors="0">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="3.816">
+</testcase>
+</testsuite>
+<testsuite name="solicitudes.spec.ts" timestamp="2026-10-14T22:28:25.390Z" hostname="" tests="2" failures="0" skipped="0" time="4.99" errors="0">
+<testcase name="SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales" classname="solicitudes.spec.ts" time="4.342">
+</testcase>
+<testcase name="SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga" classname="solicitudes.spec.ts" time="0.648">
+</testcase>
+</testsuite>
+</testsuites>

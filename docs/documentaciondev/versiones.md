@@ -1,8 +1,10 @@
 # Versiones vigentes e historial de investigación
 
-**Estado vigente AG-010:** dependencias finales verificadas localmente; BC 1.86,
-auditorías npm/Maven y verify PASS. CI remota y aceptación humanas pendientes.
-El apartado final «AG-010» recoge la ampliación de identidad.
+**Estado vigente AG-012:** se mantienen las versiones aprobadas, incluida BC 1.86;
+no se añaden dependencias para solicitudes ni se cambian versiones mayores.
+La validación004 y el informe AG-012 recogen las comprobaciones actuales.
+CI remota y aceptación humanas pendientes. El apartado «AG-010» conserva la
+investigación de identidad.
 Los bloques siguientes conservan sus estados históricos, incluido el bloqueo
 inicial de T001; esas cabeceras no describen el estado actual del proyecto.
 

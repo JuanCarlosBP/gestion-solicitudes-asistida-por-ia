@@ -1,0 +1,34 @@
+{
+  "fecha": "2026-10-15T00:29:07.7825131+02:00",
+  "archivos": [
+    {
+      "ruta": "backend/pom.xml",
+      "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7",
+      "igualA004": true
+    },
+    {
+      "ruta": "frontend/package.json",
+      "sha256": "E9A71302D587FE917A9E05B23B209CE8F36595CFF8F2E5822FE1275D301E1690",
+      "igualA004": true
+    },
+    {
+      "ruta": "frontend/package-lock.json",
+      "sha256": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+      "igualA004": true
+    },
+    {
+      "ruta": "backend/spotbugs-exclusiones.xml",
+      "sha256": "087838855F4A2EF75B37D727E42672EE42339DA299961DEFFD317612FB408BAC",
+      "igualA004": true
+    }
+  ],
+  "inventarioMavenIdentico": true,
+  "auditorias": [
+    "npm-audit-resumen.json",
+    "maven-osv.json",
+    "osv-fuente.json",
+    "dependencias-preliminares.log"
+  ],
+  "resultado": "PASS",
+  "nota": "Auditorías de esta misma sesión: npm completa/producción sin vulnerabilidades y OSV Maven132componentes sin hallazgos; inventarios idénticos en005."
+}

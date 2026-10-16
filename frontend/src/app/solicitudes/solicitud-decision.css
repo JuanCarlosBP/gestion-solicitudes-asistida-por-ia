@@ -1,0 +1,47 @@
+.decision-panel {
+  border-top: 3px solid var(--color-primario);
+}
+.decision-panel h2 {
+  margin-top: 0.5rem;
+}
+.opciones-decision {
+  margin: 1.25rem 0;
+}
+.rechazo {
+  border-color: var(--color-error);
+}
+.secundario.rechazo {
+  color: var(--color-error);
+}
+button.rechazo:not(.secundario) {
+  background: var(--color-error);
+  color: white;
+}
+form {
+  display: grid;
+  gap: 1rem;
+}
+form > button {
+  justify-self: start;
+}
+.confirmar-decision {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-borde);
+}
+blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--color-fondo);
+  border-left: 3px solid var(--color-borde-control);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+textarea[readonly] {
+  background: var(--color-fondo);
+}
+@media (max-width: 600px) {
+  .acciones > button {
+    width: 100%;
+  }
+}

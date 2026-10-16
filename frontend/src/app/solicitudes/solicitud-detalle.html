@@ -1,0 +1,218 @@
+<a class="volver" routerLink="/solicitudes" queryParamsHandling="preserve">Volver a solicitudes</a>
+@if (cargando()) {
+  <h1>Detalle de solicitud</h1>
+  <p class="panel" role="status">Cargando solicitud…</p>
+}
+@if (error()) {
+  <div #alerta class="aviso" role="alert" tabindex="-1">
+    <p>{{ error() }}</p>
+    <button type="button" class="secundario" [disabled]="presentando()" (click)="recargar()">
+      Recargar datos
+    </button>
+  </div>
+}
+@if (aviso()) {
+  <p class="exito" role="status">{{ aviso() }}</p>
+}
+@if (solicitud(); as actual) {
+  <div class="encabezado">
+    <div>
+      <p class="ceja">{{ actual.numero }}</p>
+      <h1 #titulo tabindex="-1">{{ actual.asunto }}</h1>
+      <p class="subtitulo">Creada por {{ actual.autor.nombreVisible }}</p>
+    </div>
+    <span
+      class="estado"
+      [class.presentada]="actual.estado === 'PRESENTADA'"
+      [class.aprobada]="actual.estado === 'APROBADA'"
+      [class.rechazada]="actual.estado === 'RECHAZADA'"
+      >{{ nombresEstado[actual.estado] }}</span
+    >
+  </div>
+  <div class="detalle-distribucion">
+    <div>
+      <section class="panel" aria-labelledby="titulo-datos">
+        <h2 id="titulo-datos">Datos de la solicitud</h2>
+        <p class="descripcion-texto">{{ actual.descripcion || 'Sin descripción adicional.' }}</p>
+        <dl class="datos-detalle">
+          <div>
+            <dt>Autor</dt>
+            <dd>{{ actual.autor.nombreVisible }}</dd>
+          </div>
+          <div>
+            <dt>Supervisor</dt>
+            <dd>{{ actual.supervisor?.nombreVisible || 'Sin supervisor' }}</dd>
+          </div>
+          <div>
+            <dt>Creada</dt>
+            <dd>{{ actual.creadoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+          </div>
+          <div>
+            <dt>Última actualización</dt>
+            <dd>{{ actual.actualizadoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+          </div>
+          @if (actual.presentadoEn) {
+            <div>
+              <dt>Presentada</dt>
+              <dd>{{ actual.presentadoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+            </div>
+          }
+          <div>
+            <dt>Versión</dt>
+            <dd>{{ actual.version }}</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="panel" aria-labelledby="titulo-proveedor">
+        <h2 id="titulo-proveedor">Proveedor</h2>
+        @if (actual.proveedor; as proveedor) {
+          <h3>{{ proveedor.denominacion }}</h3>
+          <dl class="datos-detalle">
+            <div>
+              <dt>Tipo</dt>
+              <dd>{{ proveedor.tipo === 'PROFESIONAL' ? 'Profesional' : 'Persona jurídica' }}</dd>
+            </div>
+            <div>
+              <dt>País fiscal</dt>
+              <dd>{{ proveedor.paisFiscal }}</dd>
+            </div>
+            <div>
+              <dt>Identificador fiscal</dt>
+              <dd>{{ proveedor.identificadorFiscal }}</dd>
+            </div>
+          </dl>
+          @if (proveedor.activo === false) {
+            <p class="aviso">Proveedor inactivo. Cambia el proveedor antes de presentar.</p>
+          }
+        } @else {
+          <p>
+            {{
+              actual.proveedorId
+                ? 'El proveedor guardado está inactivo o no está disponible para tu cuenta.'
+                : 'Sin proveedor seleccionado.'
+            }}
+          </p>
+        }
+        @if (actual.estado !== 'BORRADOR') {
+          <p class="ayuda">Datos del proveedor conservados al presentar la solicitud.</p>
+        }
+      </section>
+    </div>
+    <aside class="panel resumen-total" aria-label="Resumen de importes">
+      <p class="ceja">Total confirmado</p>
+      <strong class="importe-total">{{ euros(actual.importeTotal) }}</strong>
+      <p>{{ actual.conceptos.length }} conceptos · EUR</p>
+      <p class="ayuda">Calculado por el servidor, con redondeo por línea a dos decimales.</p>
+      <hr />
+      <p class="ayuda">
+        {{
+          actual.estado === 'BORRADOR'
+            ? 'El borrador se puede completar antes de presentar.'
+            : 'La cabecera y los conceptos están fijados desde la presentación.'
+        }}
+      </p>
+    </aside>
+  </div>
+  <section class="panel conceptos-panel" aria-labelledby="titulo-conceptos">
+    <h2 id="titulo-conceptos">Conceptos</h2>
+    @if (!actual.conceptos.length) {
+      <p class="vacio compacto">Este borrador todavía no tiene conceptos.</p>
+    } @else {
+      <table class="tabla-conceptos lectura">
+        <caption class="solo-lectores">
+          Conceptos e importes confirmados por el servidor
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Concepto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Unidad</th>
+            <th scope="col">Precio unitario (€)</th>
+            <th scope="col">Importe (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (linea of actual.conceptos; track linea.id) {
+            <tr>
+              <th scope="row">
+                <span class="numero-linea">{{ linea.posicion }}.</span> {{ linea.descripcion }}
+              </th>
+              <td data-etiqueta="Cantidad">{{ linea.cantidad }}</td>
+              <td data-etiqueta="Unidad">{{ nombresUnidad[linea.unidad] }}</td>
+              <td data-etiqueta="Precio unitario">{{ linea.precioUnitario }} €</td>
+              <td data-etiqueta="Importe" class="importe-linea">
+                <strong>{{ euros(linea.importeLinea) }}</strong>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </section>
+  @if (actual.decision; as decision) {
+    <section class="panel resultado-decision" aria-labelledby="titulo-resultado">
+      <p class="ceja">Decisión registrada</p>
+      <h2 id="titulo-resultado">
+        {{ decision.tipo === 'APROBAR' ? 'Solicitud aprobada' : 'Solicitud rechazada' }}
+      </h2>
+      <dl class="datos-detalle">
+        <div>
+          <dt>Supervisor que decidió</dt>
+          <dd>{{ decision.actor.nombreVisible }}</dd>
+        </div>
+        <div>
+          <dt>Fecha de decisión</dt>
+          <dd>{{ decision.decididoEn | date: 'dd/MM/yyyy HH:mm' }}</dd>
+        </div>
+      </dl>
+      @if (decision.tipo === 'APROBAR') {
+        <h3>Comentario de aprobación</h3>
+        <p class="descripcion-texto">{{ decision.comentario || 'Sin comentario adicional.' }}</p>
+      } @else {
+        <h3>Motivo de rechazo</h3>
+        <p class="descripcion-texto">{{ decision.motivo }}</p>
+      }
+    </section>
+  }
+  @if (permisos.decidir(actual)) {
+    <app-solicitud-decision [solicitud]="actual" (actualizada)="actualizarDecision($event)" />
+  }
+  @if (puedePresentar()) {
+    <div class="barra-resumen">
+      <div>
+        <strong>Completa y presenta tu solicitud</strong>
+        <p class="ayuda">Necesitas proveedor activo, supervisor y conceptos válidos.</p>
+      </div>
+      <div class="acciones">
+        <a
+          class="boton secundario"
+          [routerLink]="['/solicitudes', actual.id, 'editar']"
+          queryParamsHandling="preserve"
+          >Editar borrador</a
+        ><button type="button" [disabled]="presentando()" (click)="pedirConfirmacion()">
+          Presentar solicitud
+        </button>
+      </div>
+    </div>
+  }
+  @if (confirmar() && puedePresentar()) {
+    <section class="panel confirmacion" aria-labelledby="confirmar-titulo">
+      <h2 #confirmacion id="confirmar-titulo" tabindex="-1">Confirmar presentación</h2>
+      <p>
+        Vas a presentar {{ actual.numero }} por {{ euros(actual.importeTotal) }}. Después no podrás
+        editar la cabecera ni los conceptos.
+      </p>
+      <p>
+        El servidor comprobará el proveedor, el supervisor y todos los conceptos antes de
+        presentarla.
+      </p>
+      <div class="acciones">
+        <button type="button" [disabled]="presentando()" (click)="presentar()">
+          {{ presentando() ? 'Presentando…' : 'Confirmar y presentar' }}</button
+        ><button class="secundario" type="button" [disabled]="presentando()" (click)="cancelar()">
+          Seguir revisando
+        </button>
+      </div>
+    </section>
+  }
+}

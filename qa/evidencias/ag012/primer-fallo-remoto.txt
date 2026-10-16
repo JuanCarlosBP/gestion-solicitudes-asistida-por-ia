@@ -1,0 +1,43 @@
+Fuente: GitHub Actions, repositorio JuanCarlosBP/gestion-solicitudes-asistida-por-ia
+PR: https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia/pull/3
+Run: https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia/actions/runs/38633782500
+Job Compose: 116091692333. Backend y frontend: success. Compose: failure.
+Extracto literal obtenido mediante conector GitHub de solo lectura; se omiten pasos ajenos al fallo.
+2026-10-14T20:41:22.8000045Z 
+2026-10-14T20:41:22.8008979Z 
+2026-10-14T20:41:22.8016229Z   1) e2e/proveedores.spec.ts:37:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales › 10 Búsqueda combinada, orden y páginas con datos reales 
+2026-10-14T20:41:22.8016982Z 
+2026-10-14T20:41:22.8017207Z     Error: expect(locator).toHaveText(expected) failed
+2026-10-14T20:41:22.8017553Z 
+2026-10-14T20:41:22.8017714Z     Locator:  getByRole('status')
+2026-10-14T20:41:22.8018183Z     Expected: "1 proveedores encontrados."
+2026-10-14T20:41:22.8018595Z     Received: "2 proveedores encontrados."
+2026-10-14T20:41:22.8019170Z     Timeout:  5000ms
+2026-10-14T20:41:22.8019659Z 
+2026-10-14T20:41:22.8019916Z     Call log:
+2026-10-14T20:41:22.8020455Z       - Expect "toHaveText" getByRole('status') with timeout 5000ms
+2026-10-14T20:41:22.8021232Z       - waiting for getByRole('status')
+2026-10-14T20:41:22.8022144Z         - locator resolved to <p role="status" _ngcontent-ng-c2987427100="">5 proveedores encontrados.</p>
+2026-10-14T20:41:22.8023204Z         - unexpected value "5 proveedores encontrados."
+2026-10-14T20:41:22.8024281Z         13 × locator resolved to <p role="status" _ngcontent-ng-c2987427100="">2 proveedores encontrados.</p>
+2026-10-14T20:41:22.8025155Z            - unexpected value "2 proveedores encontrados."
+2026-10-14T20:41:22.8025424Z 
+2026-10-14T20:41:22.8025432Z 
+2026-10-14T20:41:22.8025780Z       227 |     await page.getByLabel('Orden', { exact: true }).selectOption('denominacion,asc');
+2026-10-14T20:41:22.8026456Z       228 |     await page.getByRole('button', { name: 'Buscar', exact: true }).click();
+2026-10-14T20:41:22.8027588Z     > 229 |     await expect(page.getByRole('status')).toHaveText('1 proveedores encontrados.');
+2026-10-14T20:41:22.8028190Z           |                                            ^
+2026-10-14T20:41:22.8029009Z       230 |     await expect(page.getByRole('link', { name: denominacionUnicode, exact: true })).toBeVisible();
+2026-10-14T20:41:22.8029880Z       231 |     await page.getByLabel('Denominación contiene', { exact: true }).fill(prefijo);
+2026-10-14T20:41:22.8030568Z       232 |     await page.getByLabel('Identificador fiscal exacto', { exact: true }).fill('');
+2026-10-14T20:41:22.8031483Z         at /home/runner/work/gestion-solicitudes-asistida-por-ia/gestion-solicitudes-asistida-por-ia/frontend/e2e/proveedores.spec.ts:229:44
+2026-10-14T20:41:22.8032907Z         at /home/runner/work/gestion-solicitudes-asistida-por-ia/gestion-solicitudes-asistida-por-ia/frontend/e2e/proveedores.spec.ts:212:3
+2026-10-14T20:41:22.8033443Z 
+2026-10-14T20:41:22.8033889Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-10-14T20:41:22.8034775Z     test-results/proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales/test-failed-1.png
+2026-10-14T20:41:22.8036051Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-10-14T20:41:22.8036635Z 
+2026-10-14T20:41:22.8037039Z     attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-10-14T20:41:22.8037753Z     test-results/proveedores-PR-10-doce-pas-78722-lar-API-y-PostgreSQL-reales/test-failed-2.png
+2026-10-14T20:41:22.8038586Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-10-14T20:41:22.8039037Z 

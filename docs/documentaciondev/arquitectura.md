@@ -7,7 +7,7 @@
 
 El backend es un monolito modular Spring Boot 4.0.8 con Java 21.
 001 aporta la comprobación técnica y 002 añade el módulo funcional `identidad`.
-003 añade el catálogo de proveedores por autorización AG-011. No hay CRUD de usuarios, solicitudes, importes ni aprobaciones; resultados de 003 en su validación.
+003 añade el catálogo de proveedores por autorización AG-011. AG-012 incorpora solicitudes, conceptos, importes y presentación; validación004 en curso. No hay CRUD de usuarios ni aprobaciones en004.
 
 ## Responsabilidades
 
@@ -92,7 +92,7 @@ Flyway usa `gestion_migracion`, propietario del esquema; la aplicación usa
 V1 conserva permisos iniciales. V2 añade usuarios, roles, usuarios_roles,
 sesiones_acceso y tokens_refresco con privilegios mínimos explícitos;
 [modelo de datos](modelo-de-datos.md) explica claves, restricciones y transacciones.
-V3 incorpora únicamente proveedores; siguen excluidos solicitudes, importes e historial funcional.
+V3 conserva proveedores; V4 incorpora solicitudes/conceptos e idempotencia local de presentación. Historial funcional completo sigue fuera de004.
 
 El proceso backend recibe ambas credenciales para ejecutar Flyway al arrancar.
 La separación de roles no equivale a aislamiento entre procesos de migración
@@ -144,3 +144,44 @@ acreditan acelerar contiene; 50.000 es volumen previsto, sin medición de carga.
 [ADR-0004](../decisiones/ADR-0004-catalogo-proveedores-y-concurrencia.md) explica
 alternativas y límites. La [validación 003](../../especificaciones/003-proveedores/validacion.md)
 distingue implementación, comprobaciones locales y pendientes humanos.
+
+## Solicitudes — AG-012
+
+004 añade paquete solicitudes con dominio, aplicación, persistencia JdbcTemplate
+y HTTP. Solicitud/conceptos forman un agregado, reemplazado atómicamente con
+versión y estado. BigDecimal calcula líneas HALF_UP y suma importes redondeados.
+JSON conserva decimales como texto. Proveedor pasa de referencia actual en
+borrador a fotografía inmutable al presentar; supervisor se fija en esa transición.
+
+Idempotencia local persistida y bloqueo transaccional por usuario/clave devuelven
+el resultado original sin duplicar efectos. SQL aplica visibilidad por unión de
+roles antes de contar. Consultas de detalle/listado coherentes con lectura repetible.
+Una función SQL mínima bloquea usuario/rol supervisor sin conceder actualización
+general de roles; ver [ADR0005](../decisiones/ADR-0005-solicitudes-importes-presentacion.md).
+
+Angular ofrece listado, detalle y editor con selectores, cálculo previo estimado,
+conflicto recuperable y confirmación de presentación. Tokens CSS compartidos y
+adaptación360/768/1440 se comprueban con navegador; resultados reales y pendientes
+en [validación004](../../especificaciones/004-solicitudes-conceptos-importes/validacion.md).
+Implementación no implica aceptación.005 y controles transversales posteriores
+conservan las puertas expresas de AG-012.
+
+## Decisiones de solicitudes — AG-012, incremento 005
+
+005 amplía el módulo solicitudes: el supervisor asignado puede aprobar o rechazar
+una presentada. La aplicación vuelve a comprobar usuario habilitado y rol vigente
+en PostgreSQL, incluidos los replays, y excluye al autor. El orden de bloqueo es
+clave de idempotencia, solicitud y autorización vigente; decisión, evento mínimo
+y resultado persistido se confirman en la misma transacción.
+
+V5 incorpora el evento único por solicitud y amplía el registro idempotente de V4.
+La presentación conserva su huella y resultado originales. Las lecturas admiten
+estados finales y proyectan la decisión, sin alterar conceptos ni fotografía del
+proveedor. No se introduce un motor genérico de flujos o historial avanzado.
+
+Angular añade `/aprobaciones`, cuya consulta fuerza supervisor actual y PRESENTADA,
+también para usuarios con visibilidad global. El detalle confirma la operación y
+conserva clave/cuerpo ante resultado incierto. Si el POST termina y falla la lectura,
+bloquea otra decisión hasta recuperar el detalle. Contrato y alternativas en
+[ADR-0006](../decisiones/ADR-0006-aprobaciones-y-evento-minimo.md); resultados en
+[validación 005](../../especificaciones/005-aprobaciones/validacion.md).

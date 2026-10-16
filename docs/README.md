@@ -118,12 +118,12 @@ la revisión no es independiente. No se probaron nuevamente capacidades opcional
 | [003: tareas](../especificaciones/003-proveedores/tareas.md) | Dependencias, escritores y criterios. | Aprobadas por decisión humana AG-011. |
 | [003: validación](../especificaciones/003-proveedores/validacion.md) | Resultados propios y pendientes PR. | Verificada localmente; aceptación e integración pendientes. |
 | [ADR-0004: proveedores](decisiones/ADR-0004-catalogo-proveedores-y-concurrencia.md) | Catálogo, identidad fiscal, baja/reactivación y versión. | Aprobado por decisión humana AG-011. |
-| [004: especificación](../especificaciones/004-solicitudes-conceptos-importes/especificacion.md) | Solicitudes/conceptos/importes: propuesta y once decisiones pendientes. | Borrador pendiente de aprobación humana; ninguna implementación 004. |
+| [004: especificación](../especificaciones/004-solicitudes-conceptos-importes/especificacion.md) | Solicitudes, conceptos e importes; once decisiones incorporadas. | Aprobada por decisión humana AG-012; verificada localmente, sin aceptación ni integración. |
 | [Entorno](documentaciondev/entorno.md) | Construcción, pruebas, arranque, parada y errores reales. | Comprobado con límites declarados; revisión humana pendiente. |
 | [Arquitectura](documentaciondev/arquitectura.md) | Responsabilidades, contrato, permisos y topología existentes. | Implementación descrita; revisión humana pendiente. |
-| [API y rutas](documentaciondev/api-y-rutas.md) | Contratos001/002/003, errores, CSRF y navegación. | Comprobados localmente; aceptación pendiente. |
-| [Modelo de datos](documentaciondev/modelo-de-datos.md) | V2/V3, restricciones, roles y transacciones. | Comprobado con PostgreSQL real en AG-011. |
-| [Seguridad técnica](documentaciondev/seguridad.md) | Identidad y catálogo: permisos, versión, eventos y límites. | Controles acotados verificados; sin declarar OWASP completo. |
+| [API y rutas](documentaciondev/api-y-rutas.md) | Contratos001–004, errores, CSRF y navegación. | Resultados en cada validación; aceptación pendiente. |
+| [Modelo de datos](documentaciondev/modelo-de-datos.md) | V2–V4, restricciones, roles y transacciones. | Comprobaciones PostgreSQL real en AG-011/012. |
+| [Seguridad técnica](documentaciondev/seguridad.md) | Identidad, catálogo y solicitudes: permisos, versión, eventos e idempotencia. | Controles acotados; sin declarar OWASP completo. |
 | [Sesión nocturna 01](metodologia/prompts/sesion-nocturna-01.md) | Encargo limitado a 001 y borradores posteriores. | Aprobado para lanzamiento humano tras preflight bloqueante, con fallback. |
 
 Los informes y evidencias AG-003–AG-008 conservan sus resultados y fechas.
@@ -136,3 +136,26 @@ su estado procede del encargo humano. AG-009 no ejecuta Git ni integra la PR.
 Para conocer el producto, lee presentación y visión.
 Para retomar trabajo, consulta MEMORY y las fuentes de la tarea.
 Para aprobar el siguiente paso, revisa el mapa, los pendientes y sus evidencias.
+
+## Ejecución vigente AG-012
+
+[Informe AG-012](trazabilidad/AG-012-informe.md): horarios, roles, incidencias y evidencias.
+[Adenda003](../especificaciones/003-proveedores/validacion-ag012.md): corrección heredada sin alterarAG011.
+[SDD004](../especificaciones/004-solicitudes-conceptos-importes/especificacion.md),
+[plan](../especificaciones/004-solicitudes-conceptos-importes/plan.md) y
+[tareas](../especificaciones/004-solicitudes-conceptos-importes/tareas.md) aprobados por orden humana.
+[ADR0005](decisiones/ADR-0005-solicitudes-importes-presentacion.md) fija agregado, cálculo y presentación.
+[Validación004](../especificaciones/004-solicitudes-conceptos-importes/validacion.md): SCI-01–14 verificados localmente; aceptación e integración pendientes.
+
+Continuación005 habilitada a2026-10-15 00:09:52+02:00 con564 minutos restantes.
+[Especificación005](../especificaciones/005-aprobaciones/especificacion.md),
+[plan](../especificaciones/005-aprobaciones/plan.md) y
+[tareas](../especificaciones/005-aprobaciones/tareas.md) aprobados por el encargo;
+[validación](../especificaciones/005-aprobaciones/validacion.md) local superada,
+AP-01–10; sin aceptación ni integración.
+[ADR0006](decisiones/ADR-0006-aprobaciones-y-evento-minimo.md) explica decisión,
+evento mínimo e idempotencia compartida conservando004.
+
+[Borrador006](../especificaciones/006-concurrencia-idempotencia/especificacion.md):
+único documento del incremento, pendiente de aprobación humana. Puerta cumplida
+tras verificar005, a00:39:11+02:00 con534 minutos restantes. Sin plan/tareas/código006.

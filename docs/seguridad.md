@@ -259,3 +259,18 @@ Tener esta política escrita no demuestra por sí solo que la aplicación sea se
 
 La seguridad tendrá que demostrarse con implementación, revisiones,
 pruebas y evidencias de la versión concreta.
+
+## Aplicación a las decisiones de solicitudes — AG-012
+
+005 concreta estas reglas sin excepciones: solo decide el supervisor asignado,
+habilitado y con rol vigente, nunca el autor. Ser administrador o combinar roles
+no elude esa condición. El backend revalida la autorización antes de devolver un
+resultado idempotente y mantiene CSRF, DTO cerrado, versión y estados finales.
+
+La decisión, su evento mínimo y el resultado idempotente se guardan atómicamente.
+El usuario de aplicación solo puede consultar e insertar eventos, no alterarlos
+ni borrarlos. Los textos son visibles únicamente mediante el detalle autorizado;
+los logs técnicos omiten comentarios, motivos, cuerpos, tokens y claves reutilizables.
+Las pruebas ejecutadas y sus límites se registran en
+[validación 005](../especificaciones/005-aprobaciones/validacion.md). La existencia
+de este apartado no acredita por sí sola un control superado.

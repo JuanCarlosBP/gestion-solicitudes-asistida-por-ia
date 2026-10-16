@@ -1,0 +1,11 @@
+{
+  "fechaMadrid": "2026-10-15T00:40:43.9280253+02:00",
+  "operacion": "docker compose stop",
+  "estados": [
+    "/gestion-solicitudes-001-backend-1 exited",
+    "/gestion-solicitudes-001-frontend-1 exited",
+    "/gestion-solicitudes-001-postgres-1 exited"
+  ],
+  "volumenEliminado": false,
+  "resultado": "PASS"
+}

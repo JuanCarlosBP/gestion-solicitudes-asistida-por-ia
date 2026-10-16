@@ -1,0 +1,32 @@
+Backend005 — corrección R005-API01
+Final: 2026-10-15T00:34:11+02:00 (Europe/Madrid).
+
+Cambios:
+- ControladorSolicitudes: éxito explícito para las siete operaciones (crear201, restantes200), DTO preciso y errores comunes ErrorPublico.
+- Listado conserva Pagina<ResumenSolicitud> mediante useReturnTypeSchema.
+- AprobacionesIT: matriz de siete operaciones que comprueba código de éxito, DTO, errores400/401/403/404/409/500/503 y sus esquemas; comprueba items ResumenSolicitud y campo único error.
+- No cambios de comportamiento, migraciones, dependencias, identidad ni permisos.
+
+Fallos y corrección:
+- backend005-enfocada-api01.log: primer intento FAIL1. Tipar errores comunes sin declarar todos los éxitos eliminaba ResultadoPresentacion del documento. La prueba anterior detectó el efecto lateral.
+- Se completaron los éxitos de todas las operaciones, con revisión estática previa y comprobación de disponibilidad de useReturnTypeSchema en Swagger2.2.47.
+- backend005-enfocada-api01-02.log: segundo intento PASS1/1 y SpotBugs0/0. No se redujeron aserciones; se ampliaron a las siete operaciones.
+
+Ejecutado:
+- mvnw.cmd -B spotless:apply (backend005-formato-api01.log): PASS.
+- mvnw.cmd -B verify -Dtest=SinPruebas -Dsurefire.failIfNoSpecifiedTests=false -Dit.test=AprobacionesIT#openApiEntradasCerradasResultadoMinimoYEstados: segundo intento PASS.
+- mvnw.cmd -B verify (backend005-verify-final-api01.log): BUILD SUCCESS, 1min09s.
+- Regresión001–005: 180 pruebas =84unitarias+96integración; 0fallos, 0errores, 0omitidas.
+- Spotless PASS; SpotBugs0hallazgos/0errores, sin exclusiones nuevas.
+- PostgreSQL real mediante Testcontainers aislados; Compose compartido no operado por este agente.
+
+Evidencia:
+- backend005-junit-api01:17XML completos de la regresión.
+- backend005-pruebas-final-api01.json: inventario de suites y casos.
+- backend005-spotbugs-final-api01.xml.
+- backend005-archivos-final-api01.json:23huellas de la entrega005, solo2 difieren de la entrega anterior.
+- Se conservan todos los logs, XML y huellas previos; no sobrescritos.
+- Dependencias sin cambios; la evidencia backend005-dependencias.txt sigue vigente.
+
+Estado:
+Fuente principal congelada. Pendiente la integración QA/Compose/E2E y revisión del coordinador sobre esta imagen final. La aceptación corresponde a la persona responsable.

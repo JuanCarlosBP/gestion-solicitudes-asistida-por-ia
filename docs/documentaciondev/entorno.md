@@ -284,3 +284,53 @@ CSV sin Git, y genera inventario de archivos y agrupaciones de commits sugeridas
 La CI añade API y navegador 003 a 001/002. Cada job conserva evidencias exclusivas,
 Actions por SHA, permisos mínimos e imágenes/versiones fijadas. CI remota queda
 pendiente del push humano; actionlint local no equivale a una CI remota ejecutada.
+
+## Solicitudes y comprobaciones AG-012
+
+AG-012 mantiene las versiones y usa únicamente el entorno ficticio
+`infraestructura/.env.example`. Las salidas nuevas se guardan en
+`qa/evidencias/ag012/` o temporales del workspace; el resolutor rechaza ahora
+AG-003–AG-011. No se ejecutan comandos Git. Las consultas públicas autorizadas
+envían solo metadatos; OSV Maven compara el inventario local sin conexión.
+
+Con Compose listo, ejecutar `node qa/verificar-solicitudes-compose.mjs` con
+`QA_ENTORNO=infraestructura/.env.example` y `QA_EVIDENCE_DIR` exclusivo. Comprueba
+API004, cálculos, visibilidad, referencias, conflictos, idempotencia y reinicio.
+El preparador crea usuarios ficticios únicos copiando internamente el hash del
+solicitante demo; no imprime hashes ni devuelve credenciales. El descriptor
+`usuarios-solicitudes.json` contiene solo UUID, correo ficticio y tipo de fixture.
+El E2E requiere `E2E_AJENO_CORREO` del descriptor y falla si falta esa precondición.
+Los registros QA permanecen en el volumen; no se elimina información para aislar
+pruebas. Los filtros de pruebas usan UUID completos.
+
+El backend nuevo incorpora V4. Durante AG-012 se corrigió una restricción de esa
+migración todavía no publicada después de aplicarla al volumen local ficticio.
+Con backend detenido, se alineó únicamente esa restricción y se ejecutó reparación
+oficial Flyway: conteos y huellas de datos, y checksums V1–V3, permanecieron iguales;
+la validación de las cuatro migraciones pasó. Evidencia:
+`qa/evidencias/ag012/ajuste-v4-local.log`. Este hecho documenta esa corrección
+local; no autoriza editar migraciones publicadas ni reparar otros entornos.
+
+La CI incluye API/E2E004, conserva Actions por SHA y un único disparo por PR.
+Los resultados consolidados están en la validación004 y el informe AG-012;
+la ejecución remota de estos cambios queda pendiente del push humano.
+
+## Aprobaciones y comprobaciones 005
+
+La continuación autorizada conserva el volumen ficticio y aplica únicamente V5
+después de congelar V4. `node qa/verificar-aprobaciones-compose.mjs`, con las mismas
+variables de entorno y un directorio de evidencia nuevo, verifica permisos,
+versiones, decisiones concurrentes, evento único, replay y autorización vigente.
+Puede retirar/restaurar temporalmente rol y habilitación de su propio usuario
+ficticio; no opera cuentas reales. Los cuerpos de sesión permanecen en memoria.
+
+Su descriptor `usuarios-aprobaciones.json` aporta `ajeno.correo` y
+`multiple.correo` para `E2E_AJENO_CORREO` y `E2E_MULTIPLE_CORREO`. Ambos son
+precondiciones obligatorias de los E2E. Las contraseñas ficticias se toman del
+ejemplo local, sin copiarlas al descriptor ni a las evidencias. La CI ejecuta
+API y navegador 001–005, con salidas por job y parada sin eliminar volúmenes.
+
+El cierre de 004 en `qa/evidencias/ag012/cierre004/` permanece inmutable; incluye
+fuentes comprimidas y SHA-256 para revisar por separado los incrementos. Los
+resultados de 005 se guardan con nombres y directorios propios. Véase
+[validación 005](../../especificaciones/005-aprobaciones/validacion.md).

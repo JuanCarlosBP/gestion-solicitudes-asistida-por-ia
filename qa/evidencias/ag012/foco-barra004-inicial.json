@@ -1,0 +1,1383 @@
+{
+  "fecha": "2026-10-14T22:02:55.666Z",
+  "registros": [
+    {
+      "ancho": 768,
+      "paso": 0,
+      "etiqueta": "asunto",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 391.40625,
+        "bottom": 435.40625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 1,
+      "etiqueta": "descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 510.375,
+        "bottom": 593.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 2,
+      "etiqueta": "proveedor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 779.15625,
+        "bottom": 823.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 3,
+      "etiqueta": "Buscar proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 779.15625,
+        "bottom": 823.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 4,
+      "etiqueta": "proveedor-seleccion",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 856.328125,
+        "bottom": 900.328125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 5,
+      "etiqueta": "Página siguiente de proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 428.109375,
+        "bottom": 472.109375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 6,
+      "etiqueta": "supervisor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 518.890625,
+        "bottom": 562.890625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 7,
+      "etiqueta": "Buscar supervisor",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 518.890625,
+        "bottom": 562.890625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 8,
+      "etiqueta": "supervisor-seleccion",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 604.0625,
+        "bottom": 648.0625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 9,
+      "etiqueta": "concepto-0-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 431.0625,
+        "bottom": 484.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 10,
+      "etiqueta": "concepto-0-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 539.421875,
+        "bottom": 583.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 11,
+      "etiqueta": "concepto-0-unidad",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 539.421875,
+        "bottom": 583.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 12,
+      "etiqueta": "concepto-0-precio",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 634.203125,
+        "bottom": 678.203125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 13,
+      "etiqueta": "Bajar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 703.796875,
+        "bottom": 747.796875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 14,
+      "etiqueta": "Quitar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 703.796875,
+        "bottom": 747.796875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 15,
+      "etiqueta": "concepto-1-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 832.578125,
+        "bottom": 885.765625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 16,
+      "etiqueta": "concepto-1-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 427.9375,
+        "bottom": 471.9375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 17,
+      "etiqueta": "concepto-1-unidad",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 427.9375,
+        "bottom": 471.9375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 18,
+      "etiqueta": "concepto-1-precio",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 522.71875,
+        "bottom": 566.71875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 19,
+      "etiqueta": "Subir concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 592.3125,
+        "bottom": 636.3125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 20,
+      "etiqueta": "Bajar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 592.3125,
+        "bottom": 636.3125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 21,
+      "etiqueta": "Quitar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 592.3125,
+        "bottom": 636.3125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 22,
+      "etiqueta": "concepto-2-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 721.09375,
+        "bottom": 774.28125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 23,
+      "etiqueta": "concepto-2-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 829.453125,
+        "bottom": 873.453125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 24,
+      "etiqueta": "concepto-2-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 829.453125,
+        "bottom": 873.453125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 25,
+      "etiqueta": "concepto-2-precio",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 428.234375,
+        "bottom": 472.234375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 26,
+      "etiqueta": "Subir concepto 3",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 497.828125,
+        "bottom": 541.828125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 27,
+      "etiqueta": "Quitar concepto 3",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 497.828125,
+        "bottom": 541.828125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 28,
+      "etiqueta": "Añadir concepto",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 583.625,
+        "bottom": 627.625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 29,
+      "etiqueta": "Guardar borrador",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 802.234375,
+        "bottom": 846.234375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 30,
+      "etiqueta": "Cancelar y volver",
+      "tipo": "A",
+      "centroVisible": true,
+      "barra": {
+        "top": 671.046875,
+        "bottom": 867.4375
+      },
+      "rect": {
+        "top": 802.046875,
+        "bottom": 846.4375
+      },
+      "fin": true
+    },
+    {
+      "ancho": 1440,
+      "paso": 0,
+      "etiqueta": "asunto",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 443.0625,
+        "bottom": 487.0625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 1,
+      "etiqueta": "descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 562.03125,
+        "bottom": 644.8125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 2,
+      "etiqueta": "proveedor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 845.15625,
+        "bottom": 889.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 3,
+      "etiqueta": "Buscar proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 845.15625,
+        "bottom": 889.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 4,
+      "etiqueta": "proveedor-seleccion",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 428.328125,
+        "bottom": 472.328125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 5,
+      "etiqueta": "Página siguiente de proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 522.109375,
+        "bottom": 566.109375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 6,
+      "etiqueta": "supervisor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 343.15625,
+        "bottom": 387.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 7,
+      "etiqueta": "Buscar supervisor",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 343.15625,
+        "bottom": 387.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 8,
+      "etiqueta": "supervisor-seleccion",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 428.328125,
+        "bottom": 472.328125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 9,
+      "etiqueta": "concepto-0-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 817.265625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 10,
+      "etiqueta": "concepto-0-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 11,
+      "etiqueta": "concepto-0-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 12,
+      "etiqueta": "concepto-0-precio",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 13,
+      "etiqueta": "Bajar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 14,
+      "etiqueta": "Quitar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 15,
+      "etiqueta": "concepto-1-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 901.4375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 16,
+      "etiqueta": "concepto-1-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 17,
+      "etiqueta": "concepto-1-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 18,
+      "etiqueta": "concepto-1-precio",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 19,
+      "etiqueta": "Subir concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 20,
+      "etiqueta": "Bajar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 21,
+      "etiqueta": "Quitar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 22,
+      "etiqueta": "concepto-2-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 483.609375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 23,
+      "etiqueta": "concepto-2-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 474.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 24,
+      "etiqueta": "concepto-2-unidad",
+      "tipo": "SELECT",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 474.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 25,
+      "etiqueta": "concepto-2-precio",
+      "tipo": "INPUT",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 474.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 26,
+      "etiqueta": "Subir concepto 3",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 474.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 27,
+      "etiqueta": "Quitar concepto 3",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 430.421875,
+        "bottom": 474.421875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 28,
+      "etiqueta": "Añadir concepto",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 521.796875,
+        "bottom": 565.796875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 29,
+      "etiqueta": "Guardar borrador",
+      "tipo": "BUTTON",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 662.375,
+        "bottom": 706.375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 30,
+      "etiqueta": "Cancelar y volver",
+      "tipo": "A",
+      "centroVisible": true,
+      "barra": {
+        "top": 616.390625,
+        "bottom": 752.390625
+      },
+      "rect": {
+        "top": 662.1875,
+        "bottom": 706.578125
+      },
+      "fin": true
+    }
+  ],
+  "fallos": [
+    {
+      "ancho": 768,
+      "paso": 2,
+      "etiqueta": "proveedor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 779.15625,
+        "bottom": 823.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 3,
+      "etiqueta": "Buscar proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 779.15625,
+        "bottom": 823.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 4,
+      "etiqueta": "proveedor-seleccion",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 856.328125,
+        "bottom": 900.328125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 13,
+      "etiqueta": "Bajar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 703.796875,
+        "bottom": 747.796875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 14,
+      "etiqueta": "Quitar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 703.796875,
+        "bottom": 747.796875
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 15,
+      "etiqueta": "concepto-1-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 832.578125,
+        "bottom": 885.765625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 22,
+      "etiqueta": "concepto-2-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 721.09375,
+        "bottom": 774.28125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 23,
+      "etiqueta": "concepto-2-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 829.453125,
+        "bottom": 873.453125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 768,
+      "paso": 24,
+      "etiqueta": "concepto-2-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 695.609375,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 829.453125,
+        "bottom": 873.453125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 2,
+      "etiqueta": "proveedor-buscar",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 845.15625,
+        "bottom": 889.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 3,
+      "etiqueta": "Buscar proveedor",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 845.15625,
+        "bottom": 889.15625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 9,
+      "etiqueta": "concepto-0-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 817.265625
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 10,
+      "etiqueta": "concepto-0-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 11,
+      "etiqueta": "concepto-0-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 12,
+      "etiqueta": "concepto-0-precio",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 13,
+      "etiqueta": "Bajar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 14,
+      "etiqueta": "Quitar concepto 1",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 764.078125,
+        "bottom": 808.078125
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 15,
+      "etiqueta": "concepto-1-descripcion",
+      "tipo": "TEXTAREA",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 901.4375
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 16,
+      "etiqueta": "concepto-1-cantidad",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 17,
+      "etiqueta": "concepto-1-unidad",
+      "tipo": "SELECT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 18,
+      "etiqueta": "concepto-1-precio",
+      "tipo": "INPUT",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 19,
+      "etiqueta": "Subir concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 20,
+      "etiqueta": "Bajar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    },
+    {
+      "ancho": 1440,
+      "paso": 21,
+      "etiqueta": "Quitar concepto 2",
+      "tipo": "BUTTON",
+      "centroVisible": false,
+      "barra": {
+        "top": 756,
+        "bottom": 892
+      },
+      "rect": {
+        "top": 848.25,
+        "bottom": 892.25
+      },
+      "fin": false
+    }
+  ]
+}

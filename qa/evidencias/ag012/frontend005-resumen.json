@@ -1,0 +1,107 @@
+{
+  "incremento": "005-aprobaciones",
+  "ejecucion": "AG-012",
+  "fechaMadrid": "2026-10-15T00:30:26.9133925+02:00",
+  "estado": "Producción congelada; primera corrección de sincronización del foco en E2E lista para reejecución real del coordinador.",
+  "esperado": "Bandeja forzada al supervisor PRESENTADA, cuatro estados, decisión asignado noautor, confirmación, recuperación e idempotencia, lectura final y visual responsiva.",
+  "observado": "Implementación y 346 pruebas Angular PASS (275 regresiones004 más71 nuevas005); tipo/lint/formato/build PASS. R005-UI01 corregido una vez con normalización Unicode compartida por validación, confirmación y petición.",
+  "archivosModificados": [
+    "frontend/src/app/app.html",
+    "frontend/src/app/app.routes.ts",
+    "frontend/src/app/solicitudes/datos-prueba.ts",
+    "frontend/src/app/solicitudes/solicitud-calculos.spec.ts",
+    "frontend/src/app/solicitudes/solicitud-detalle.html",
+    "frontend/src/app/solicitudes/solicitud-detalle.ts",
+    "frontend/src/app/solicitudes/solicitud-modelo.ts",
+    "frontend/src/app/solicitudes/solicitudes-api.ts",
+    "frontend/src/app/solicitudes/solicitudes-lista.html",
+    "frontend/src/app/solicitudes/solicitudes-lista.ts",
+    "frontend/src/app/solicitudes/solicitudes-permisos.ts",
+    "frontend/src/app/solicitudes/solicitudes.css"
+  ],
+  "archivosNuevos": [
+    "frontend/src/app/solicitudes/solicitud-decision.ts",
+    "frontend/src/app/solicitudes/solicitud-decision.html",
+    "frontend/src/app/solicitudes/solicitud-decision.css",
+    "frontend/src/app/solicitudes/aprobaciones.spec.ts",
+    "frontend/e2e/aprobaciones.spec.ts"
+  ],
+  "ejecutado": [
+    {
+      "evidencia": "frontend005-typecheck-final.log",
+      "resultado": "PASS",
+      "comando": "npm run typecheck"
+    },
+    {
+      "evidencia": "frontend005-lint-final.log",
+      "resultado": "PASS",
+      "comando": "npm run lint"
+    },
+    {
+      "evidencia": "frontend005-formato-final.log",
+      "resultado": "PASS global",
+      "comando": "npm run format:check"
+    },
+    {
+      "evidencia": "frontend005-regresion-final.log",
+      "resultado": "PASS:346 pruebas,19 archivos",
+      "comando": "npm test"
+    },
+    {
+      "evidencia": "frontend005-r005-ui01-pruebas.log",
+      "resultado": "PASS:71 pruebas,1 archivo, aserciones finales R005-UI01",
+      "comando": "npm test -- --include=src/app/solicitudes/aprobaciones.spec.ts"
+    },
+    {
+      "evidencia": "frontend005-build-final.log",
+      "resultado": "PASS sin advertencias:main-DW2S3G7C.js417,76kB;total418,93kB",
+      "comando": "npm run build"
+    },
+    {
+      "evidencia": "frontend005-e2e-listado.log",
+      "resultado": "14 pruebas descubiertas en5 archivos; solo listado, no ejecución",
+      "comando": "npm run test:e2e -- --list"
+    },
+    {
+      "comando": "tsc --noEmit -p tsconfig.e2e.json",
+      "resultado": "PASS",
+      "evidencia": "frontend005-e2e-foco-correccion01-tipos.log"
+    },
+    {
+      "comando": "eslint e2e/aprobaciones.spec.ts --max-warnings=0",
+      "resultado": "PASS",
+      "evidencia": "frontend005-e2e-foco-correccion01-lint.log"
+    },
+    {
+      "comando": "prettier --check e2e/aprobaciones.spec.ts",
+      "resultado": "PASS",
+      "evidencia": "frontend005-e2e-foco-correccion01-formato.log"
+    }
+  ],
+  "correcciones": [
+    "R005-UI01 primera corrección: recortar Unicode White_Space y U+001C–1F como backend; conservar BOM; rechazar NUL/UTF16 incompleto. Pruebas máximos comentario500 y motivo1000 con NEL y otros espacios; cuerpo/reintentos0/500/503 normalizados con misma clave. Pendiente cierre de revisor independiente.",
+    "E2E005-Foco primera corrección: esperar foco asíncrono textarea al volver a revisar antes de empezar Tab desdeH1; sin retirar controles, aserciones ni anchos. Evidencia frontend005-e2e-foco-correccion01.json. Reejecución real pendiente."
+  ],
+  "build": {
+    "archivo": "frontend/dist/gestion-solicitudes-frontend/browser/main-DW2S3G7C.js",
+    "sha256": "cce2ecc3ff4dfb575d9369e048943a7584f323cca3f5219ed50c82e726b9e613"
+  },
+  "e2e": {
+    "capturas": "Bandeja, confirmación aprobación/rechazo y resultados a360/768/1440; conflicto768",
+    "fixturesObligatorias": [
+      "E2E_AJENO_CORREO",
+      "E2E_MULTIPLE_CORREO"
+    ],
+    "archivo": "frontend/e2e/aprobaciones.spec.ts",
+    "ejecutado": true,
+    "proteccion": "CSRF vigente antes de cada escritura directa; no mocks de autorización, persistencia o concurrencia.",
+    "recorridos": 3,
+    "resultadoCoordinadorIntento01": "Suite14:11PASS3FAIL; aprobaciones1PASS2FAIL(foco); OpenAPI1FAIL reservado backend. Corrección foco pendiente de reejecución."
+  },
+  "pendiente": [
+    "Coordinador: build Compose005 y suite real14E2E con fixtures ficticios ajeno/multirrol.",
+    "Capturas y teclado reales360/768/1440 incluidos en E2E; revisión visual y cierre independiente.",
+    "Actualización documental/MEMORY corresponde al coordinador. Aceptación/integración humanas."
+  ],
+  "restricciones": "Sin Git, Compose, dependencias ni cambios ajenos. Evidencia004 conservada. Solicitudes.spec.ts sin cambios005."
+}

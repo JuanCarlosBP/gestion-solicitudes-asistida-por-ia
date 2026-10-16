@@ -72,7 +72,7 @@ Despliega una revisión validada y comprueba la demo desde Internet.
 Completa los manuales con pasos realmente comprobados.
 Cierra una entrega reproducible, con sus límites y evidencias.
 
-## Dónde estamos
+## Estado histórico de preparación P2
 
 | Referencia | Estado real |
 |---|---|
@@ -121,7 +121,7 @@ El [índice documental](README.md) contiene sus enlaces y estados.
 Las cuatro skills reales y los tres roles están enlazados en el índice.
 Sus aprobaciones documentales no acreditan ejecución ni permisos efectivos.
 
-## Siguiente paso
+## Siguiente paso histórico de preparación P2
 
 1. La persona responsable realiza la revisión Git de los cambios y comprueba el staging.
 2. Crea y publica los dos grupos de commit propuestos y comprueba el remoto.
@@ -142,3 +142,15 @@ La sesión podrá redactar futuras especificaciones, pero no aprobarlas.
 Al cerrar un paso se revisarán estado, enlaces y siguiente acción.
 No se enlazarán archivos futuros como si ya existieran.
 Las decisiones duraderas se guardarán en su documento principal.
+
+## Estado vigente AG-012
+
+La base001, identidad002 y proveedores003 están implementadas y verificadas localmente;
+existen código, pruebas, Docker, CI, OpenAPI y Swagger. Aceptación/integración y
+publicación no se deducen de esas verificaciones. Los apartados anteriores
+conservan el contexto histórico de preparación, no el estado operativo actual.
+AG-012 aprueba SDD004 y ejecuta solicitudes/conceptos/importes/presentación.
+La corrección heredada003 supera regresión;004 está verificada localmente (SCI-01–14).
+[Informe AG-012](trazabilidad/AG-012-informe.md) y [SDD](../especificaciones/README.md)
+son la entrada al trabajo vigente.005 solo podrá continuar tras004 verificada y
+comprobar el margen autorizado. No existe despliegue público validado.

@@ -406,5 +406,33 @@ La especificación 003 y ADR-0004 concretan estos riesgos; resultados reales en
 | AM-19 | PR-03: páginas máximo 100, filtros limitados y órdenes cerrados. | No hay benchmark de 50.000 ni protección global de carga. |
 | AM-21/22/23 | PR-07/09/12: transacciones, restricciones, fallo seguro, persistencia/reinicio. | Dependencia PostgreSQL; no equivale a restauración completa de desastres. |
 
+## Controles de solicitudes — AG-012
+
+Implementación004 y comprobaciones en su [validación](../../especificaciones/004-solicitudes-conceptos-importes/validacion.md).
+No se convierten amenazas globales a mitigadas por una prueba parcial.
+
+| Amenaza | Control acotado | Límite |
+|---|---|---|
+| AM-02/03 | SCI09/13: actor/recurso/estado, visibilidad previa aCOUNT, DTO cerrado y CSRF. | Angular orienta, backend decide; administración de usuarios no incorporada. |
+| AM-04/05 | SCI03/13: SQL parametrizado, orden cerrado, comodines literales e interpolación Angular. | No acredita todas las superficies futuras. |
+| AM-08/10 | SCI05/08: transición cerrada e importes BigDecimal del servidor, límites y fotografía. | Aprobación/rechazo fuera de004. |
+| AM-11/12/13 | SCI10/11: versión, bloqueos y resultado idempotente transaccional persistido. | Generalización006 posterior; sin purga automática. |
+| AM-17/18 | SCI13: eventos mínimos tras commit, hash de clave y sin cuerpos/credenciales. | Historial/retención/alertas posteriores. |
+| AM-21/22/23 | SCI04/08/14: rollback del agregado, referencias actuales y errores seguros; reinicio y persistencia. | Dependencia de PostgreSQL, sin recuperación de desastres completa. |
+
 Proveedores son registros de catálogo, no cuentas. No existe ámbito multiempresa.
 Las evidencias de QA son ficticias y no se publican tokens ni cuerpos de sesión.
+
+## Decisiones de solicitudes — incremento 005
+
+| Amenaza | Control acotado | Límite |
+|---|---|---|
+| AM-02/03 | AP-03/07: asignación, prohibición de autor y rol/habilitación vigentes incluso en replay; bandeja siempre acotada. | La gestión de usuarios sigue fuera del incremento. |
+| AM-04/05 | AP-02/08: DTO estricto, Unicode válido, longitudes y salida Angular como texto. | No acredita otras superficies de entrada. |
+| AM-08/10 | AP-01/04: solo PRESENTADA pasa a un estado final; datos presentados y asignación inmutables. | No se permite reabrir o delegar. |
+| AM-11/12/13 | AP-05/06: versión y bloqueo, una decisión/evento y replay persistido compatible. | Mecanismo local; generalización y retención futuras. |
+| AM-17/18 | AP-09: evento de negocio mínimo protegido y logs técnicos sin textos de decisión. | Historial avanzado, alertas y borrado jurídico pendientes. |
+| AM-21/22/23 | AP-06/09/10: rollback conjunto y evolución V4→V5 preservando datos. | No equivale a recuperación completa de desastres. |
+
+Resultados reales, fallos y pendientes en
+[validación 005](../../especificaciones/005-aprobaciones/validacion.md).

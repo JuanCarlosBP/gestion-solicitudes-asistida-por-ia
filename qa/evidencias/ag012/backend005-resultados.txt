@@ -1,0 +1,68 @@
+AG-012 / Backend 005 / Entrega al coordinador
+Final de verificación: 2026-10-15 00:24:17 +02:00, Europe/Madrid.
+Fuentes: especificación, plan, tareas 005 y ADR-0006 aprobados por AG-012.
+Skill aplicada: verificacion-qa; políticas de seguridad y calidad del proyecto.
+Sin Git, Compose compartido, cambios mayores ni nuevas dependencias.
+
+ESPERADO
+AP-01–07/09: solo supervisor asignado y vigente decide, nunca el autor;
+transición final, evento y resultado persistidos en una transacción; versión,
+idempotencia compartida con 004, textos y consultas autorizadas.
+AP-10: PostgreSQL real, regresión 001–005 y controles estáticos.
+
+EJECUTADO Y OBSERVADO
+Comando final: mvnw.cmd -B spotless:apply verify dependency:list
+  -DoutputFile=target/dependencias.txt -DappendOutput=false
+Java 21.0.12.1; Maven Wrapper y caché workspace; PostgreSQL 17.11 aislado.
+backend005-verify-final.log: exit 0, BUILD SUCCESS, duración 01:11 min.
+180 pruebas PASS: 84 unitarias + 96 integración; sin fallos, errores u omisiones.
+144 previas + 36 nuevas 005: 8 de dominio y 28 HTTP/PostgreSQL.
+Spotless PASS; SpotBugs 0 bugs y 0 errores, sin exclusiones nuevas.
+17 XML en backend005-junit y resumen de casos backend005-pruebas-final.json.
+SpotBugs: backend005-spotbugs-final.xml. Dependencias: backend005-dependencias.txt.
+Manifiesto: backend005-archivos-final.json, 23 archivos respecto al cierre004.
+V4 conserva SHA-256 del manifiesto004. V1–V4 no se editaron.
+
+COBERTURA NUEVA OBSERVADA
+- V5 desde V4 con filas de solicitud, conceptos y resultado idempotente legado.
+  Las filas y la huella PRESENTAR anterior quedan iguales; replay004 funciona.
+- Aprobar/rechazar: resultado mínimo exacto, evento único y versiones/fechas.
+- Comentario opcional hasta500 puntos de código; vacío normalizado a null.
+  Motivo obligatorio10–1000; Unicode, espacios exteriores y UTF-16 inválido.
+- Entrada cerrada, tipos/versión/clave válidos y CSRF; 401/403/404 controlados.
+- Administrador solo, supervisor ajeno, autor multirrol y autoasignación rechazados.
+- Revalidación del rol y habilitación actual antes de operación y antes de replay.
+- Estado antes de versión: final/BORRADOR no decidible; PRESENTADA obsoleta409.
+- Datos de cabecera, conceptos, importes, proveedor y presentadoEn inmutables.
+- Nombre visible del actor fotografiado; proveedor desactivado no impide decidir.
+- Lectura final por lectores autorizados; motivo solo en detalle; conteo visible.
+- Clave compartida PRESENTAR/APROBAR/RECHAZAR: incompatibilidad por operación,
+  recurso, versión o texto; normalización compatible produce replay exacto.
+- Replay004 después de decidir y replay005 después de reiniciar la aplicación.
+- Dos fallos deliberados en PostgreSQL prueban rollback: después de actualizar
+  estado antes del evento, y después del evento antes del resultado idempotente.
+  Ningún evento técnico de éxito en rollback; reintentar misma clave funciona.
+- Diez carreras sincronizadas mediante bloqueos reales observados en PostgreSQL:
+  aprobar/aprobar, rechazar/rechazar, aprobar/rechazar con claves distintas;
+  misma clave compatible para aprobar y para rechazar; misma clave incompatible;
+  misma clave entre recursos; retirada de rol antes de decisión y antes de replay;
+  decisión conserva bloqueo del rol hasta commit y luego replay queda revocado.
+- SELECT/INSERT del evento permitidos; UPDATE/DELETE/TRUNCATE/DDL denegados.
+  FK, solicitud única, textos, versiones y coherencia del resultado comprobados.
+- Logs técnicos sin comentarios, motivos, tokens ni claves reutilizables.
+- OpenAPI: 16 rutas; entradas cerradas y resultado005 sin alterar resultado004.
+
+FALLOS Y CORRECCIONES
+backend005-http-postgres-01.log: 15 casos, 14 PASS y 1 fallo del fixture Unicode.
+El emisor HTTP convertía un surrogate literal aislado en '?' válido al codificar
+UTF-8; se esperaba400 pero el cuerpo realmente enviado justificaba200.
+Primera corrección: enviar escapes JSON crudos para preservar el dato inválido.
+No se cambió código de producto para satisfacer esa aserción.
+backend005-enfocada-02.log: 8 dominio + 28 integración PASS; Spotless/SpotBugs PASS.
+Regresión completa posterior PASS. Ningún defecto acumuló dos correcciones fallidas.
+
+PENDIENTE Y SIGUIENTE PASO
+Coordinador: revisión independiente, build limpio y QA compartido, Angular/E2E,
+auditorías, documentación y validación global. Main congelado al entregar.
+No se declara 005 aceptada ni integrada. Git y CI remota corresponden a humano.
+No se implementó 006 ni historial avanzado 007.
