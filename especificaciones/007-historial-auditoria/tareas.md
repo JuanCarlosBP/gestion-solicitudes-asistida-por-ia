@@ -4,6 +4,12 @@
 Fuentes: [especificación](especificacion.md), [plan](plan.md).
 Los estados de verificación definitivos se registran en [validación](validacion.md).
 
+AG-015 autoriza el cierre correctivo de la regresión remota de aprobaciones.
+Su diagnóstico, corrección y regresión se registran en el
+[informe AG-015](../../docs/trazabilidad/AG-015-informe.md).
+La publicación, nueva CI y aceptación de007 siguen pendientes.
+Los resultados que siguen corresponden a la ejecución histórica AG-014.
+
 T007-01–10 ejecutadas: PostgreSQL real,247 pruebas backend,479 Angular,
 639 controles API,33 E2E sin reintentos,12 capturas y42 contrastes comprobados.
 T007-09 cuenta con revisión independiente sin hallazgos materiales abiertos;

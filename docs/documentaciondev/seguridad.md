@@ -66,6 +66,13 @@ sesión y el interceptor comparte refresh entre 401 concurrentes, con un solo
 reintento. Logout y el estado de sesión impiden restauraciones tardías.
 Tokens ausentes de localStorage/sessionStorage, URL y registros.
 
+La corrección [AG-015](../trazabilidad/AG-015-informe.md) mantiene XSRF estable
+al validar cada Bearer y al renovar la misma sesión. El controlador rota XSRF
+explícitamente en login correcto y logout, mediante el repositorio estándar.
+Si falta la cookie se materializa; cabecera ausente o distinta sigue dando403.
+Esto evita que respuestas GET concurrentes cambien la cookie compartida después
+de construir una cabecera Angular. Refresh conserva su rotación estricta.
+
 Default deny: únicamente salud, autenticación y documentación local expresamente
 permitidas; `/yo` y las rutas aprobadas de proveedores exigen Bearer. 401 distingue falta de autenticación de 403 por
 permiso o CSRF. Method security se prueba sin añadir endpoints al producto.

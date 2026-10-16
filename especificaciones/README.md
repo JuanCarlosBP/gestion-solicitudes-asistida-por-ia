@@ -12,6 +12,11 @@ formalmente;003–005 verificados localmente. Las referencias AG-009/010 de la t
 conservan el resultado documentado en aquellas ejecuciones.006 queda verificada
 localmente en AG-013; su aceptación e integración continúan pendientes.
 AG-014 verifica007 localmente y, tras su puerta, crea solo el borrador008.
+AG-015 corrige localmente la primera CI fallida de007; publicación y nueva CI
+siguen pendientes. [Informe correctivo](../docs/trazabilidad/AG-015-informe.md).
+008 tiene aprobación conceptual de la tercera opción (un VPS, Java y PostgreSQL,
+bases temporales separadas); prototipo y dimensionamiento después del cierre007.
+El archivo008 permanece como borrador histórico, sin cambios en esta reparación.
 
 ## Paquete existente
 
@@ -45,7 +50,7 @@ AG-014 verifica007 localmente y, tras su puerta, crea solo el borrador008.
 | 007 — Historial y auditoría | [Especificación](007-historial-auditoria/especificacion.md) | Aprobada por AG-014; SDD, ADR0008 e implementación realizados. |
 | 007 — Historial y auditoría | [Plan](007-historial-auditoria/plan.md) | Autorizado por AG-014 y ejecutado. |
 | 007 — Historial y auditoría | [Tareas](007-historial-auditoria/tareas.md) | Ejecutadas y verificadas localmente. |
-| 007 — Historial y auditoría | [Validación](007-historial-auditoria/validacion.md) | HA-01–10 verificados localmente; revisión sin hallazgos abiertos. CI remota, aceptación e integración pendientes. |
+| 007 — Historial y auditoría | [Validación](007-historial-auditoria/validacion.md) | Corrección AG-015 verificada localmente tras primera CI fallida; publicación, nueva CI, aceptación e integración pendientes. |
 | 008 — Demo, operación y entrega | [Especificación](008-demo-operacion-entrega/especificacion.md) | Solo borrador tras puerta AG-014; sin plan/tareas aprobados, código ni despliegue. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.

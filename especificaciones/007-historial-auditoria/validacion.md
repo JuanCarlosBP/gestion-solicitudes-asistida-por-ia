@@ -1,9 +1,36 @@
 # Validación — 007 Historial y auditoría
 
-**Estado:** HA-01–10 verificados localmente; revisión independiente sin hallazgos materiales abiertos.
+**Estado:** Corrección AG-015 verificada localmente; publicación y nueva CI pendientes.
 Autorización AG-014 y D-007-01–10. Sin aceptación, integración ni despliegue.
 Fuentes: [especificación](especificacion.md), [plan](plan.md), [tareas](tareas.md)
 e [informe AG-014](../../docs/trazabilidad/AG-014-informe.md).
+
+## Corrección vigente AG-015
+
+La primera CI de007 (run38814632990, job116696095705, revisión5e4024997215c23e24c3f648f0f53d8f68652e65)
+falló con32/33 E2E: la carrera AP-05/08 recibió[200,403] en vez de[200,409].
+Sus diez recorridos de historial pasaron. Documentación/secretos y sintaxis/actionlint
+quedaron omitidos remotamente. No se presentan como controles remotos superados.
+
+El [informe AG-015](../../docs/trazabilidad/AG-015-informe.md) demuestra localmente
+la carrera CSRF entre respuestas Bearer y conserva evidencia antes/después.
+La corrección mantiene comparación CSRF estricta, permisos y refresh; rota XSRF
+en login/logout reales y conserva su valor al validar el Bearer de la misma sesión.
+La prueba original no cambia: diez repeticiones PASS, datos aislados y retries0;
+Windows33/33 y Linux complementario24/24, incluidas las diez pruebas007.
+Backend249 (122unitarias+127IT), Angular479, tipos/lint/formato/build y API636 PASS.
+El primer E2E Windows31/33 y su incidente de aislamiento se conservan y explican.
+
+API636=492heredados+144historial usa el fixture sintético del workflow.
+AG-014639=492+147 cubre además datos anteriores migrados V6→V7;
+esa migración no se repitió en AG-015 ni se equipara a la variante sintética.
+La evidencia histórica sigue aplicándose a las migraciones y fuentes sin cambios,
+con comprobación de huellas. Linux complementario excluye operaciones.spec.ts
+(nueve casos, tres con acceso a Docker): se ejecutaron todos en la suite Windows33.
+
+La revisión final, controles documentales, preservación y manifiesto se enlazan en
+el informe AG-015. No se declara007 aceptado o integrado. El resto de este documento
+conserva los resultados históricos AG-014 y sus límites, no resultados de la CI actual.
 
 ## Trazabilidad
 

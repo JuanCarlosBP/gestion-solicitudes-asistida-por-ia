@@ -155,7 +155,7 @@ La corrección heredada003 supera regresión;004 está verificada localmente (SC
 son la entrada al trabajo vigente.005 solo podrá continuar tras004 verificada y
 comprobar el margen autorizado. No existe despliegue público validado.
 
-## Estado vigente AG-013
+## Estado histórico AG-013
 
 004/005 quedaron verificadas localmente en AG-012. AG-013 aprueba D-006-01–10,
 SDD/ADR0007 e implementación006, con regresión001–005 y preservación de históricos.
@@ -166,3 +166,12 @@ Aceptación e integración de006 corresponden a la persona responsable.
 La puerta007 se cumplió a13:23:37+02:00 con537,298min restantes; se creó únicamente
 su [especificación borrador](../especificaciones/007-historial-auditoria/especificacion.md),
 pendiente de aprobación humana.008 y despliegue público siguen fuera del encargo.
+
+## Estado vigente AG-015
+
+AG-014 autorizó e implementó007. Su primera CI falló en una carrera de aprobaciones.
+La [corrección AG-015](trazabilidad/AG-015-informe.md) está verificada localmente;
+publicación, nueva CI y aceptación007 corresponden a la persona responsable.
+008 tiene aprobación conceptual de la tercera opción: un VPS, Java y PostgreSQL,
+bases temporales separadas. Su prototipo y dimensionamiento serán posteriores al
+cierre007. No hay código008 ni despliegue en este encargo.

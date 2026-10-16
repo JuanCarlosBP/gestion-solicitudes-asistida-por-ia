@@ -9,6 +9,17 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+[AG-015](docs/trazabilidad/AG-015-informe.md) corrige la regresión de aprobaciones
+de la primera CI de007: respuestas Bearer concurrentes rotaban la cookie CSRF.
+La corrección conserva CSRF y permisos; pasan diez carreras originales consecutivas,
+33 E2E completos en Windows,24 complementarios en Linux,249 pruebas backend,
+479 Angular y636 controles API. Publicación, nueva CI y aceptación de007 pendientes.
+El informe registra también los intentos fallidos y el incidente de aislamiento QA.
+008 tiene aprobación conceptual de su tercera opción; prototipo y dimensionamiento
+quedan para después del cierre de007, sin implementación en AG-015.
+
+Los párrafos siguientes conservan los resultados históricos de cada ejecución.
+
 AG-014 autoriza [007 — Historial y auditoría](especificaciones/007-historial-auditoria/especificacion.md)
 y las decisiones D-007-01–10: eventos nuevos atómicos, consulta de decisiones V5,
 historial por recurso/global y resumen según permisos. Implementación realizada,
