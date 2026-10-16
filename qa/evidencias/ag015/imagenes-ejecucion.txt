@@ -1,0 +1,3 @@
+sha256:00a145c8fa5005d896b2525f46b38e128d225ce72a9eaf7b730558279dad679f|2026-10-15T22:53:17.966732518Z|["gestion-solicitudes-ag015-final-backend:latest"]
+sha256:ab3481ae0d6f04e6031f4b366638cf607033484005ddb833051d1eacaa4cd681|2026-10-15T20:12:37.695486279Z|["gestion-solicitudes-ag015-final-frontend:latest"]
+sha256:abdaf2ec20e42f83f9eec5f3ce5e82aceb65fa3b3cf696071cb1b007fe816a08|2026-10-15T22:52:22.367320797Z|["gestion-solicitudes-ag015-linux:qa"]

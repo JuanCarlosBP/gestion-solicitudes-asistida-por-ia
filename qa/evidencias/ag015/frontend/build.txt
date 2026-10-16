@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-WKPT366M.js    | main          | 459.11 kB |               105.92 kB
+styles-6GABB4AX.css | styles        |   1.19 kB |               499 bytes
+
+                    | Initial total | 460.30 kB |               106.42 kB
+
+Application bundle generation complete. [4.034 seconds] - 2026-10-15T22:54:56.286Z
+
+Output location: C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\dist\gestion-solicitudes-frontend
+

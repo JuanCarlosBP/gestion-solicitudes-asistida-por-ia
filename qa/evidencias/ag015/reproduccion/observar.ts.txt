@@ -1,0 +1,42 @@
+import { test } from '../../frontend/node_modules/@playwright/test/index.js';
+import { writeFileSync } from 'node:fs';
+const registros: Record<string, unknown>[] = [];
+const trabajos: Promise<unknown>[] = [];
+function guardar() {
+  writeFileSync(process.env['AG015_DIAGNOSTICO']!, JSON.stringify(registros.sort((a,b) => Number(a.orden)-Number(b.orden)), null, 2) + '\n');
+}
+const paginas = new Map();
+let actor: string | undefined;
+let secuencia = 0;
+test.beforeEach(async ({ context }) => {
+  context.on('request', (peticion) => {
+    if (!peticion.url().includes('/api/')) return;
+    const orden = ++secuencia;
+    const pagina = peticion.frame().page();
+    if (!paginas.has(pagina)) paginas.set(pagina, paginas.size + 1);
+    trabajos.push((async () => {
+      const h = await peticion.allHeaders();
+      const cookie = h['cookie']?.split('; ').find(c => c.startsWith('XSRF-TOKEN='))?.slice(11);
+      const token = h['authorization']?.split(' ')[1];
+      const identidad = token ? JSON.parse(Buffer.from(token.split('.')[1], 'base64url').toString()) : null;
+      if (identidad) actor ??= identidad.sub;
+      registros.push({ orden, evento: 'peticion', pagina: paginas.get(pagina), metodo: peticion.method(), ruta: new URL(peticion.url()).pathname.replace(/[0-9a-f]{8}-[0-9a-f-]{27,}/g, ':id'), cookiePresente: !!cookie, cabeceraPresente: !!h['x-xsrf-token'], csrfIguales: !!cookie && decodeURIComponent(cookie) === h['x-xsrf-token'], bearerPresente: !!token, mismoActor: identidad ? identidad.sub === actor : null, roles: identidad?.roles });
+      guardar();
+    })().catch(() => undefined));
+  });
+  context.on('response', (respuesta) => {
+    if (!respuesta.url().includes('/api/')) return;
+    const orden = ++secuencia;
+    trabajos.push((async () => {
+      const h = await respuesta.headersArray();
+      const cookies = h.filter(x => x.name.toLowerCase() === 'set-cookie').map(x => x.value.split('=')[0]);
+      let error = null;
+      if (respuesta.status() >= 400) { try { error = (await respuesta.json()).error; } catch {} }
+      registros.push({ orden, evento: 'respuesta', pagina: paginas.get(respuesta.request().frame().page()), ruta: new URL(respuesta.url()).pathname.replace(/[0-9a-f]{8}-[0-9a-f-]{27,}/g, ':id'), estado: respuesta.status(), cookiesEmitidas: cookies, error });
+      guardar();
+    })().catch(() => undefined));
+  });
+});
+test.afterEach(async () => {
+  guardar();
+});

@@ -1,0 +1,2 @@
+2026-10-15T22:48:34.583Z DEBUG 1 --- [gestion-solicitudes] [.0-8080-exec-10] o.s.security.web.csrf.CsrfFilter         : Invalid CSRF token found for http://127.0.0.1:18081/api/solicitudes/:id/aprobar
+2026-10-15T22:48:34.586Z DEBUG 1 --- [gestion-solicitudes] [0.0-8080-exec-1] o.s.security.web.csrf.CsrfFilter         : Invalid CSRF token found for http://127.0.0.1:18081/api/solicitudes/:id/rechazar

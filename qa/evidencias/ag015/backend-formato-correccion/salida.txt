@@ -1,0 +1,17 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+[INFO] Building Gesti�n de Solicitudes 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- spotless:3.10.4:apply (default-cli) @ gestion-solicitudes ---
+[INFO] clean file: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\main\java\es\gestionsolicitudes\configuracion\SeguridadTecnica.java
+[INFO] clean file: C:\Users\carli\gestion-solicitudes-asistida-por-ia\backend\src\main\java\es\gestionsolicitudes\identidad\http\ControladorAutenticacion.java
+[INFO] Spotless.Java is keeping 114 files clean - 2 were changed to be clean, 1 were already clean, 111 were skipped because caching determined they were already clean
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.247 s
+[INFO] Finished at: 2026-10-16T00:50:46+02:00
+[INFO] ------------------------------------------------------------------------

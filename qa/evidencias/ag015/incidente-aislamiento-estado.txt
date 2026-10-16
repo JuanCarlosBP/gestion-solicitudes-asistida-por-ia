@@ -1,0 +1,2 @@
+5f66d755ec7d00e07bd547fb6ff8c1168af7db611b8788636de49c430543cc1b /gestion-solicitudes-001-backend-1 inicio=2026-10-15T22:56:24.22665776Z fin=2026-10-15T22:56:31.170270356Z estado=exited salida=1
+d09d1e15f7261236f4f5dd0f939a062758b9aef1bdc33a802b33bd7dce531c88 /gestion-solicitudes-001-postgres-1 inicio=2026-10-15T20:00:37.876466974Z fin=2026-10-15T20:00:45.264265865Z estado=exited salida=0

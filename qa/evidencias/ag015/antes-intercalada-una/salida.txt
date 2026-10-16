@@ -1,0 +1,42 @@
+
+Running 1 test using 1 worker
+
+(node:41960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora (1.0s)
+
+
+  1) tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+        200,
+    -   409,
+    +   403,
+      ]
+
+      570 |     ]);
+      571 |     const respuestas = await Promise.all([primeraRespuesta, segundaRespuesta]);
+    > 572 |     expect(respuestas.map((r) => r.status()).sort()).toEqual([200, 409]);
+          |                                                      ^
+      573 |     const indiceGanador = respuestas[0].status() === 200 ? 0 : 1;
+      574 |     const ganadora = indiceGanador === 0 ? page : segunda;
+      575 |     const perdedora = indiceGanador === 0 ? segunda : page;
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag015\e2e\aprobaciones.spec.ts:572:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    qa\evidencias\ag015\antes-intercalada-una\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    qa\evidencias\ag015\antes-intercalada-una\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: qa\evidencias\ag015\antes-intercalada-una\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md
+
+  1 failed
+    tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 

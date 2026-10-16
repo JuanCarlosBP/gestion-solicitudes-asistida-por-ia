@@ -1,0 +1,115 @@
+{
+  "observado": "2026-10-15T23:08:45.647Z",
+  "alcance": "Fuentes editables cambiadas; CSV solo apéndice. No normaliza evidencia bruta ni históricos.",
+  "archivos": [
+    {
+      "ruta": "MEMORY.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "README.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/http/ErroresProveedorTest.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "docs/README.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "docs/documentaciondev/seguridad.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "docs/mapa-del-proyecto.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "docs/trazabilidad/AG-015-informe.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/tareas.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/validacion.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "especificaciones/README.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "qa/verificar-backend-ag015.ps1",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    },
+    {
+      "ruta": "qa/evidencias/ag015/reproduccion/README.md",
+      "finalNuevaLinea": true,
+      "espaciosFinales": false,
+      "lineasVaciasAlFinal": false
+    }
+  ],
+  "errores": []
+}

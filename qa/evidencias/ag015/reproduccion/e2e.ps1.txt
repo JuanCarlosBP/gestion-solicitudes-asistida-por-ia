@@ -1,0 +1,40 @@
+param([string]$Intento = 'antes-original', [switch]$Diagnostico, [switch]$Completa, [int]$Repeticiones = 1, [string]$Fixture = 'api-antes')
+$ErrorActionPreference = 'Stop'
+$raizAg015 = 'C:\Users\carli\gestion-solicitudes-asistida-por-ia'
+Set-Location -LiteralPath $raizAg015
+$env:BASE_URL = 'http://127.0.0.1:18081'
+$env:COMPOSE_PROJECT_NAME = if ($Fixture -eq 'api-final') { 'gestion-solicitudes-ag015-final' } else { 'gestion-solicitudes-ag015' }
+$env:QA_ENTORNO = 'infraestructura/.env.example'
+$env:FRONTEND_PUERTO = '18081'
+$idsAg015 = @(docker compose --env-file infraestructura/.env.example -f infraestructura/compose.yaml ps -q)
+if ($idsAg015.Count -ne 3) { throw 'Deben estar activos los tres contenedores QA propios.' }
+foreach ($idAg015 in $idsAg015) {
+  $proyectoAg015 = docker inspect --format '{{index .Config.Labels "com.docker.compose.project"}}' $idAg015
+  if ($proyectoAg015 -ne $env:COMPOSE_PROJECT_NAME) { throw 'Proyecto ajeno a AG-015.' }
+}
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $raizAg015 'tmp/playwright'
+$env:TEMP = Join-Path $raizAg015 'tmp/ag015/temporal'
+$env:TMP = $env:TEMP
+New-Item -ItemType Directory -Path $env:TEMP -Force | Out-Null
+$usuariosAg015 = Get-Content -LiteralPath "qa/evidencias/ag015/$Fixture/usuarios-aprobaciones.json" -Raw | ConvertFrom-Json
+$historialAg015 = Get-Content -LiteralPath "qa/evidencias/ag015/$Fixture/historial-fixture.json" -Raw | ConvertFrom-Json
+$env:E2E_AJENO_CORREO = $usuariosAg015.ajeno.correo
+$env:E2E_MULTIPLE_CORREO = $usuariosAg015.multiple.correo
+$env:E2E_HISTORIAL_ANTERIOR_ID = $historialAg015.historiaAnteriorId
+for ($numeroAg015 = 1; $numeroAg015 -le $Repeticiones; $numeroAg015++) {
+  $nombreAg015 = if ($Repeticiones -eq 1) { $Intento } else { "$Intento-$('{0:d2}' -f $numeroAg015)" }
+  $destinoAg015 = Join-Path $raizAg015 "qa/evidencias/ag015/$nombreAg015"
+  if (Test-Path -LiteralPath $destinoAg015) { throw 'La evidencia ya existe.' }
+  New-Item -ItemType Directory -Path $destinoAg015 | Out-Null
+  $env:E2E_RESULTS_DIR = Join-Path $destinoAg015 'resultados'
+  $env:E2E_SCREENSHOTS_DIR = Join-Path $destinoAg015 'capturas'
+  $env:AG015_DIAGNOSTICO = Join-Path $destinoAg015 'red-sanitizada.json'
+  $configAg015 = if ($Diagnostico) { 'tmp/ag015/playwright.config.ts' } else { 'frontend/playwright.config.ts' }
+  $argsAg015 = @('frontend/node_modules/@playwright/test/cli.js','test','--config',$configAg015)
+  if (-not $Completa) { $argsAg015 += @('--grep','AP-05/08') }
+  $inicioAg015 = (Get-Date).ToString('o')
+  & node @argsAg015 *> (Join-Path $destinoAg015 'salida.txt')
+  $codigoAg015 = $LASTEXITCODE
+  @{inicio=$inicioAg015;fin=(Get-Date).ToString('o');exitCode=$codigoAg015;retries=0;argumentos=$argsAg015;url=$env:BASE_URL;sistema='Windows'} | ConvertTo-Json | Set-Content (Join-Path $destinoAg015 'ejecucion.json')
+  Write-Output "$nombreAg015 exit=$codigoAg015"
+}

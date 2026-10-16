@@ -1,0 +1,29 @@
+import http from 'node:http';
+import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+const usuarios = JSON.parse(readFileSync('/evidencia/api-final/usuarios-aprobaciones.json'));
+const historial = JSON.parse(readFileSync('/evidencia/api-final/historial-fixture.json'));
+// Proxy local exclusivo de QA. Mantiene cabeceras y cuerpos reales sin registrarlos.
+const servidor = http.createServer((req, res) => {
+  const salida = http.request({hostname:'host.docker.internal',port:18081,path:req.url,method:req.method,headers:{...req.headers,host:'127.0.0.1:18081'}}, respuesta => {
+    res.writeHead(respuesta.statusCode,respuesta.headers);
+    respuesta.pipe(res);
+  });
+  salida.on('error', () => { res.writeHead(502); res.end(); });
+  req.pipe(salida);
+});
+await new Promise(resolve => servidor.listen(18080,'127.0.0.1',resolve));
+const destino='/evidencia/linux-complementaria';
+mkdirSync(destino);
+const inicio=new Date().toISOString();
+const args=['node_modules/@playwright/test/cli.js','test','aprobaciones.spec.ts','base.spec.ts','historial.spec.ts','identidad.spec.ts','proveedores.spec.ts','solicitudes.spec.ts'];
+const hijo=spawn('node',args,{cwd:'/qa/frontend',env:{...process.env,BASE_URL:'http://127.0.0.1:18080',E2E_AJENO_CORREO:usuarios.ajeno.correo,E2E_MULTIPLE_CORREO:usuarios.multiple.correo,E2E_HISTORIAL_ANTERIOR_ID:historial.historiaAnteriorId,E2E_RESULTS_DIR:destino+'/resultados',E2E_SCREENSHOTS_DIR:destino+'/capturas'},stdio:['ignore','pipe','pipe']});
+let salida='';
+hijo.stdout.on('data', datos => salida+=datos);
+hijo.stderr.on('data', datos => salida+=datos);
+const exitCode=await new Promise(resolve=>hijo.on('exit',resolve));
+writeFileSync(destino+'/salida.txt',salida);
+writeFileSync(destino+'/ejecucion.json',JSON.stringify({inicio,fin:new Date().toISOString(),sistema:'Linux en Docker local',node:process.version,retries:0,argumentos:args,exitCode},null,2)+'\n');
+servidor.close();
+console.log(JSON.stringify({exitCode}));
+process.exitCode=exitCode;

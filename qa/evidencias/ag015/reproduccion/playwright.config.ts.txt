@@ -1,0 +1,2 @@
+import { defineConfig } from '../../frontend/node_modules/@playwright/test/index.js';
+export default defineConfig({ testDir: './e2e', workers: 1, retries: 0, outputDir: process.env['E2E_RESULTS_DIR'], reporter: [['list'], ['junit', { outputFile: process.env['E2E_RESULTS_DIR'] + '/e2e.xml' }]], use: { baseURL: process.env['BASE_URL'], browserName: 'chromium', trace: 'off', screenshot: 'only-on-failure' } });

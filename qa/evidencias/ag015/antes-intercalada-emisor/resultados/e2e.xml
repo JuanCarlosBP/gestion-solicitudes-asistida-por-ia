@@ -1,0 +1,50 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="1.766038">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-15T22:48:07.526Z" hostname="" tests="1" failures="1" skipped="0" time="1.28" errors="0">
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="1.28">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png]]
+
+[[ATTACHMENT|aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-2.png]]
+
+[[ATTACHMENT|aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toEqual(expected) // deep equality" type="expect.toEqual">
+<![CDATA[  aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    -   200,
+    -   409,
+    +   403,
+    +   403,
+      ]
+
+      571 |     })));
+      572 |     const respuestas = await Promise.all([primeraRespuesta, segundaRespuesta]);
+    > 573 |     expect(respuestas.map((r) => r.status()).sort()).toEqual([200, 409]);
+          |                                                      ^
+      574 |     const indiceGanador = respuestas[0].status() === 200 ? 0 : 1;
+      575 |     const ganadora = indiceGanador === 0 ? page : segunda;
+      576 |     const perdedora = indiceGanador === 0 ? segunda : page;
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag015\e2e\aprobaciones.spec.ts:573:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\qa\evidencias\ag015\antes-intercalada-emisor\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\qa\evidencias\ag015\antes-intercalada-emisor\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\qa\evidencias\ag015\antes-intercalada-emisor\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

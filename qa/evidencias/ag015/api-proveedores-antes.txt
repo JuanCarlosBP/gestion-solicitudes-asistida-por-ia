@@ -1,0 +1,1 @@
+PASS: 78 controles de proveedores; evidencia sin credenciales en C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag015\api-antes

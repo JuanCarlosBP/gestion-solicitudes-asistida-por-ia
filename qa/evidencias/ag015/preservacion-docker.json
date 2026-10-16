@@ -1,0 +1,148 @@
+{
+  "observado": "2026-10-15T23:04:22.607Z",
+  "contenedoresPrevios": 30,
+  "contenedoresFinales": 52,
+  "contenedoresNuevos": [
+    {
+      "id": "253ff0a631c3a269b8feda732e864cd5216aca7afc1c020404f2d5632ff64cc0",
+      "nombre": "gestion-solicitudes-ag015-linux-e2e",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-linux:qa"
+    },
+    {
+      "id": "3602e4614879880a103d280ab9ac0c140cff981b08cac9fc90c5d57cae3d51ab",
+      "nombre": "gallant_jang",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "45078966fb8b625bad24f00d7fdd1d03a5a37d001ec60f3b7bfe0dd0a9bbb9d6",
+      "nombre": "vibrant_galileo",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "b18638f290172789e694f1aa4437bec8aaa2375b0077d8c8eb5bef82fb74f158",
+      "nombre": "vigilant_cray",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "4037a665b2d84c5cdeb08d30ca99b825ce70c5f1eb464f9d10d49ce473c3d9b7",
+      "nombre": "blissful_lehmann",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "dd38fb5ea1db1e10b813dfdc81e80d7b772810305f70f8d9ae3a147792d6c47e",
+      "nombre": "laughing_jemison",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "592180a28e3e9ed078123dfffeed58f1d1ae2da7e7214f738e8850433de881e6",
+      "nombre": "jolly_swartz",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "d86d89234862cc4d916837d9cf47d84cec4ba67d37d1fdfc4b300ed91444e8f8",
+      "nombre": "happy_margulis",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "6a19b6c0ac6b3b6d986aaeaed8bf7ca5425f5101070b776c23f6216b64ee2f4e",
+      "nombre": "loving_feistel",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "d14e803f0d338c590b67c401124b933b0fc00f7aa664dfb993ccdf3708bc0b44",
+      "nombre": "practical_wing",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "f79e0b2f4c82cdf87eefd17b93b34d570293b60fd4c4b7edab47f88e48f112ba",
+      "nombre": "nifty_bardeen",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "f1d4496945bd73563d568f5f08659b1aed67267291d0912d0345add1212c07ab",
+      "nombre": "gestion-solicitudes-ag015-final-frontend-1",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-final-frontend"
+    },
+    {
+      "id": "373d5dc34816e8f92d2418cd4214f13d47b0e0df7802b78fa93de10e3599c049",
+      "nombre": "gestion-solicitudes-ag015-final-backend-1",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-final-backend"
+    },
+    {
+      "id": "0fe5ef9044edf0be3f3d515464c25b339da7196a3a17d62a3f5d53ee70f609e4",
+      "nombre": "gestion-solicitudes-ag015-final-postgres-1",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "2c846edbacf8f088da6e8e313a7ebdf403d47c5ab5cb7fce384bb08a06bc8ad4",
+      "nombre": "optimistic_gauss",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "067634e39252139cf2a1379714a6b75c1b7cc09610c6bd49e21b6e3c15071414",
+      "nombre": "reverent_yalow",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "3ed77020ce2f387c5e1736a3bf088c8e509b9140d5bc752672e3b033ea5a8285",
+      "nombre": "boring_bohr",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    },
+    {
+      "id": "a0bde5e8c10eeb5e5dfa625019b5e6e4a46c0ea97f81592a1c73af7ca9e090b1",
+      "nombre": "gestion-solicitudes-ag015-backend-diagnostico02",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-backend"
+    },
+    {
+      "id": "8a3fed261fe578d1ec26a09e12897d1984c71eb00286f8449cb28df168d02001",
+      "nombre": "gestion-solicitudes-ag015-backend-diagnostico",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-backend"
+    },
+    {
+      "id": "2e383f0b2792e9a6dcf0e238fc779ecfde79fb627a39c80f03231bd8e4b86f16",
+      "nombre": "gestion-solicitudes-ag015-frontend-1",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-frontend"
+    },
+    {
+      "id": "8a2627ecbe68c90290198440cd7b0b38062e3cf19823985e3770692f5c521020",
+      "nombre": "gestion-solicitudes-ag015-backend-1",
+      "estado": "exited",
+      "imagen": "gestion-solicitudes-ag015-backend"
+    },
+    {
+      "id": "0e89b4ad51cea4c4baf0d783d962753c15895177dd5e9f047d404c839ac12c87",
+      "nombre": "gestion-solicitudes-ag015-postgres-1",
+      "estado": "exited",
+      "imagen": "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    }
+  ],
+  "contenedoresAusentes": [],
+  "activos": [],
+  "volumenesPrevios": 17,
+  "volumenesFinales": 32,
+  "volumenesAusentes": [],
+  "imagenesPrevias": 20,
+  "imagenesFinales": 26,
+  "imagenesAusentes": [],
+  "limite": "Presencia de recursos, no inmutabilidad de contenido. Backend previo gestion-solicitudes-001 reiniciado accidentalmente; logs/ciclo de vida afectados, BD detenida. Véase incidente-aislamiento-estado.txt."
+}

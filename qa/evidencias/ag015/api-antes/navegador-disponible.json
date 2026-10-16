@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-15T22:42:47.753Z",
+  "baseUrl": "http://127.0.0.1:18081",
+  "esperado": "Sistema disponible",
+  "observado": "✓ Sistema disponible\n\nLa aplicación y su base de datos responden correctamente.",
+  "resultado": "PASS",
+  "origen": "PostgreSQL real de Compose, sin interceptar HTTP"
+}

@@ -1,0 +1,18 @@
+{
+  "inicio": "2026-10-15T23:00:16.821Z",
+  "fin": "2026-10-15T23:00:49.939Z",
+  "sistema": "Linux en Docker local",
+  "node": "v24.13.0",
+  "retries": 0,
+  "argumentos": [
+    "node_modules/@playwright/test/cli.js",
+    "test",
+    "aprobaciones.spec.ts",
+    "base.spec.ts",
+    "historial.spec.ts",
+    "identidad.spec.ts",
+    "proveedores.spec.ts",
+    "solicitudes.spec.ts"
+  ],
+  "exitCode": 0
+}

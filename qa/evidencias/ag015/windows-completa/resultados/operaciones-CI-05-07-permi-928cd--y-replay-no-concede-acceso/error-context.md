@@ -1,0 +1,229 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: operaciones.spec.ts >> CI-05/07: permiso revocado antes de recuperar y replay no concede acceso
+- Location: frontend\e2e\operaciones.spec.ts:490:5
+
+# Error details
+
+```
+Error: Command failed: docker compose --env-file C:\Users\carli\gestion-solicitudes-asistida-por-ia\infraestructura\.env.example -f infraestructura/compose.yaml exec -T postgres psql -U administrador_local -d gestion -v ON_ERROR_STOP=1 -tAc SELECT count(*) FROM gestion.usuarios_roles WHERE usuario_id='a2e01545-52d4-4d0a-b76f-94a24d2a07b1' AND rol='SUPERVISOR'
+service "postgres" is not running
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f1e2]:
+  - link "Saltar al contenido" [ref=f1e3] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f1e4]:
+    - link "Gestión de Solicitudes, inicio" [ref=f1e5] [cursor=pointer]:
+      - /url: /inicio
+      - generic [aria-hidden] [ref=f1e6]: GS
+      - generic [ref=f1e7]: Gestión de Solicitudes
+    - navigation "Navegación principal" [ref=f1e8]:
+      - link "Inicio" [ref=f1e9] [cursor=pointer]:
+        - /url: /inicio
+      - link "Aprobaciones" [ref=f1e10] [cursor=pointer]:
+        - /url: /aprobaciones
+      - link "Solicitudes" [ref=f1e11] [cursor=pointer]:
+        - /url: /solicitudes
+      - link "Proveedores" [ref=f1e12] [cursor=pointer]:
+        - /url: /proveedores
+      - link "Mi cuenta" [ref=f1e13] [cursor=pointer]:
+        - /url: /mi-cuenta
+    - generic [ref=f1e14]: Entorno local
+  - main [ref=f1e15]:
+    - region "Operaciones seguras" [ref=f1e17]:
+      - article [ref=f1e18]:
+        - generic [ref=f1e19]:
+          - strong [ref=f1e20]: Aprobación de solicitud
+          - status [ref=f1e21]: Operación pendiente de confirmar. Consulta su resultado o reintenta la misma entrada; se conserva la clave.
+        - generic [ref=f1e22]:
+          - 'button "Consultar resultado: Aprobación de solicitud" [ref=f1e23] [cursor=pointer]': Consultar resultado
+          - link "Volver a la operación" [ref=f1e24] [cursor=pointer]:
+            - /url: /solicitudes/ca9b0611-84ec-48f0-bdda-50eccc895a26
+    - generic [ref=f1e25]:
+      - link "Volver a solicitudes" [ref=f1e26] [cursor=pointer]:
+        - /url: /solicitudes
+      - generic [ref=f1e27]:
+        - generic [ref=f1e28]:
+          - paragraph [ref=f1e29]: SOL-2026-000077
+          - heading "Revocación006 748a9b1c-5b93-40b6-80a2-a31375847f3b" [level=1] [ref=f1e30]
+          - paragraph [ref=f1e31]: Creada por Solicitante de demostración
+        - generic [ref=f1e32]: Presentada
+      - generic [ref=f1e33]:
+        - generic [ref=f1e34]:
+          - region [ref=f1e35]:
+            - heading "Datos de la solicitud" [level=2] [ref=f1e36]
+            - paragraph [ref=f1e37]: Sin descripción adicional.
+            - generic [ref=f1e38]:
+              - generic [ref=f1e39]:
+                - term [ref=f1e40]: Autor
+                - definition [ref=f1e41]: Solicitante de demostración
+              - generic [ref=f1e42]:
+                - term [ref=f1e43]: Supervisor
+                - definition [ref=f1e44]: Supervisor de demostración
+              - generic [ref=f1e45]:
+                - term [ref=f1e46]: Creada
+                - definition [ref=f1e47]: 16/10/2026 00:56
+              - generic [ref=f1e48]:
+                - term [ref=f1e49]: Última actualización
+                - definition [ref=f1e50]: 16/10/2026 00:56
+              - generic [ref=f1e51]:
+                - term [ref=f1e52]: Presentada
+                - definition [ref=f1e53]: 16/10/2026 00:56
+              - generic [ref=f1e54]:
+                - term [ref=f1e55]: Versión
+                - definition [ref=f1e56]: "2"
+          - region [ref=f1e57]:
+            - heading "Proveedor" [level=2] [ref=f1e58]
+            - heading "Proveedor006 75b3c39a-e520-4471-84c9-9b44046a2996" [level=3] [ref=f1e59]
+            - generic [ref=f1e60]:
+              - generic [ref=f1e61]:
+                - term [ref=f1e62]: Tipo
+                - definition [ref=f1e63]: Profesional
+              - generic [ref=f1e64]:
+                - term [ref=f1e65]: País fiscal
+                - definition [ref=f1e66]: ES
+              - generic [ref=f1e67]:
+                - term [ref=f1e68]: Identificador fiscal
+                - definition [ref=f1e69]: FICTICIO-f56d3758-d09a-4624-b877-06e839d8d7f2
+            - paragraph [ref=f1e70]: Datos del proveedor conservados al presentar la solicitud.
+        - complementary "Resumen de importes" [ref=f1e71]:
+          - paragraph [ref=f1e72]: Total confirmado
+          - strong [ref=f1e73]: 10,00 €
+          - paragraph [ref=f1e74]: 1 conceptos · EUR
+          - paragraph [ref=f1e75]: Calculado por el servidor, con redondeo por línea a dos decimales.
+          - separator [ref=f1e76]
+          - paragraph [ref=f1e77]: La cabecera y los conceptos están fijados desde la presentación.
+      - region [ref=f1e78]:
+        - heading "Conceptos" [level=2] [ref=f1e79]
+        - table [ref=f1e80]:
+          - caption [ref=f1e81]: Conceptos e importes confirmados por el servidor
+          - rowgroup [ref=f1e82]:
+            - row [ref=f1e83]:
+              - columnheader "Concepto" [ref=f1e84]
+              - columnheader "Cantidad" [ref=f1e85]
+              - columnheader "Unidad" [ref=f1e86]
+              - columnheader "Precio unitario (€)" [ref=f1e87]
+              - columnheader "Importe (€)" [ref=f1e88]
+          - rowgroup [ref=f1e89]:
+            - row [ref=f1e90]:
+              - rowheader "1. Servicio ficticio006" [ref=f1e91]
+              - cell "1.000" [ref=f1e92]
+              - cell "Servicio" [ref=f1e93]
+              - cell "10.0000 €" [ref=f1e94]
+              - cell [ref=f1e95]:
+                - strong [ref=f1e96]: 10,00 €
+      - region [ref=f1e98]:
+        - paragraph [ref=f1e99]: Supervisión asignada
+        - heading "Decidir esta solicitud" [level=2] [ref=f1e100]
+        - paragraph [ref=f1e101]: La aprobación o el rechazo son definitivos. Revisa los conceptos y el total antes de decidir.
+        - alert [active] [ref=f1e102]:
+          - paragraph [ref=f1e103]: No se ha podido confirmar el resultado. Reintenta la misma decisión o consulta el estado actual.
+          - generic [ref=f1e104]:
+            - button "Reintentar la misma decisión" [ref=f1e105] [cursor=pointer]
+            - button "Recargar estado actual" [ref=f1e106] [cursor=pointer]
+        - generic [ref=f1e107]:
+          - button "Aprobar solicitud" [disabled] [ref=f1e108]
+          - button "Rechazar solicitud" [disabled] [ref=f1e109]
+        - form "Decisión del supervisor" [ref=f1e110]:
+          - generic [ref=f1e111]:
+            - generic [ref=f1e112]: Comentario de aprobación (opcional)
+            - textbox "Comentario de aprobación (opcional)" [ref=f1e113]
+            - generic [ref=f1e114]: Hasta 500 caracteres. Será visible para las personas autorizadas a consultar la solicitud.
+      - region [ref=f1e116]:
+        - generic [ref=f1e117]:
+          - generic [ref=f1e118]:
+            - paragraph [ref=f1e119]: TRAZABILIDAD
+            - heading "Historial registrado" [level=2] [ref=f1e120]
+          - link "Abrir historial completo" [ref=f1e121] [cursor=pointer]:
+            - /url: /solicitudes/ca9b0611-84ec-48f0-bdda-50eccc895a26/historial?page=0&size=20
+        - paragraph [ref=f1e122]: Más recientes primero · Fechas mostradas en Europe/Madrid.
+        - form "Filtros del historial" [ref=f1e123]:
+          - generic [ref=f1e124]:
+            - generic [ref=f1e125]:
+              - generic [ref=f1e126]: Acción
+              - combobox "Acción" [ref=f1e127]:
+                - option "Todas" [selected]
+                - option "Proveedor creado"
+                - option "Proveedor modificado"
+                - option "Proveedor desactivado"
+                - option "Proveedor reactivado"
+                - option "Borrador creado"
+                - option "Borrador guardado"
+                - option "Solicitud presentada"
+                - option "Solicitud aprobada"
+                - option "Solicitud rechazada"
+            - generic [ref=f1e128]:
+              - generic [ref=f1e129]: Actor (UUID)
+              - textbox "Actor (UUID)" [ref=f1e130]
+            - generic [ref=f1e131]:
+              - generic [ref=f1e132]: Desde (ISO con zona)
+              - textbox "Desde (ISO con zona)" [ref=f1e133]:
+                - /placeholder: 2026-10-15T00:00:00+02:00
+            - generic [ref=f1e134]:
+              - generic [ref=f1e135]: Hasta (ISO con zona)
+              - textbox "Hasta (ISO con zona)" [ref=f1e136]:
+                - /placeholder: 2026-10-15T23:59:59+02:00
+            - generic [ref=f1e137]:
+              - generic [ref=f1e138]: Eventos por página
+              - combobox "Eventos por página" [ref=f1e139]:
+                - option "1"
+                - option "10"
+                - option "20" [selected]
+                - option "50"
+                - option "100"
+          - paragraph [ref=f1e140]: Fechas inclusivas. Indica Z para UTC o el desfase, por ejemplo +02:00.
+          - generic [ref=f1e141]:
+            - button "Aplicar filtros" [ref=f1e142] [cursor=pointer]
+            - button "Restablecer filtros" [ref=f1e143] [cursor=pointer]
+        - generic [ref=f1e144]:
+          - status [ref=f1e145]: 3 eventos encontrados
+          - list "Eventos del historial" [ref=f1e146]:
+            - listitem [ref=f1e147]:
+              - generic [ref=f1e148]:
+                - heading "Solicitud presentada" [level=3] [ref=f1e149]
+                - time [ref=f1e150]: 16/10/2026 00:56:22
+              - paragraph [ref=f1e151]: Solicitante de demostración
+              - paragraph [ref=f1e152]: Solicitud presentada
+              - generic [ref=f1e153]:
+                - generic [ref=f1e154]: BORRADOR → PRESENTADA
+                - generic [ref=f1e155]: Versión 1 → 2
+              - paragraph [ref=f1e156]: Evento de negocio
+            - listitem [ref=f1e157]:
+              - generic [ref=f1e158]:
+                - heading "Borrador guardado" [level=3] [ref=f1e159]
+                - time [ref=f1e160]: 16/10/2026 00:56:22
+              - paragraph [ref=f1e161]: Solicitante de demostración
+              - paragraph [ref=f1e162]: Borrador guardado
+              - generic [ref=f1e163]:
+                - generic [ref=f1e164]: BORRADOR → BORRADOR
+                - generic [ref=f1e165]: Versión 0 → 1
+              - paragraph [ref=f1e166]: Evento de negocio
+            - listitem [ref=f1e167]:
+              - generic [ref=f1e168]:
+                - heading "Borrador creado" [level=3] [ref=f1e169]
+                - time [ref=f1e170]: 16/10/2026 00:56:22
+              - paragraph [ref=f1e171]: Solicitante de demostración
+              - paragraph [ref=f1e172]: Borrador creado
+              - generic [ref=f1e173]:
+                - generic [ref=f1e174]: Sin estado anterior → BORRADOR
+                - generic [ref=f1e175]: Versión — → 0
+              - paragraph [ref=f1e176]: Evento de negocio
+          - navigation "Paginación del historial" [ref=f1e177]:
+            - button "Página anterior de eventos" [disabled] [ref=f1e178]
+            - generic [ref=f1e179]: Página 1 de 1
+            - button "Siguiente página de eventos" [disabled] [ref=f1e180]
+          - paragraph [ref=f1e181]: Si se registran eventos nuevos durante la consulta, las páginas pueden desplazarse. Recarga para actualizar.
+          - button "Actualizar historial" [ref=f1e182] [cursor=pointer]
+  - contentinfo [ref=f1e183]: Gestión de Solicitudes · Espacio de trabajo
+```

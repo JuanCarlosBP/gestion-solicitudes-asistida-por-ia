@@ -1,0 +1,17 @@
+{
+  "fin": "2026-10-16T00:52:22.9315788+02:00",
+  "conservacion": true,
+  "sistema": "Windows; PostgreSQL Linux en Docker",
+  "exitCode": 0,
+  "alcance": "regresion",
+  "inicio": "2026-10-16T00:52:04.6720807+02:00",
+  "argumentos": [
+    "-B",
+    "-ntp",
+    "test-compile",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=IdentidadAccesoIT#csrfPermaneceEstableEntreLecturasBearerConcurrentes+csrfRotaEnLoginYCierreRealesSinExponerloEnElCuerpo",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/ag015/backend-temporal"
+  ]
+}

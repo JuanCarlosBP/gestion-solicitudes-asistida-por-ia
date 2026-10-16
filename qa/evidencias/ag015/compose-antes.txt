@@ -1,0 +1,26 @@
+URL base: http://127.0.0.1:18081; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag015\api-antes; archivo de entorno: C:\Users\carli\gestion-solicitudes-asistida-por-ia\infraestructura\.env.example
+ Container gestion-solicitudes-ag015-postgres-1  Waiting
+ Container gestion-solicitudes-ag015-postgres-1  Healthy
+ Container gestion-solicitudes-ag015-frontend-1  Stopping
+ Container gestion-solicitudes-ag015-frontend-1  Stopped
+ Container gestion-solicitudes-ag015-backend-1  Stopping
+ Container gestion-solicitudes-ag015-backend-1  Stopped
+ Container gestion-solicitudes-ag015-postgres-1  Stopping
+ Container gestion-solicitudes-ag015-postgres-1  Stopped
+ Container gestion-solicitudes-ag015-postgres-1  Starting
+ Container gestion-solicitudes-ag015-postgres-1  Started
+ Container gestion-solicitudes-ag015-postgres-1  Waiting
+ Container gestion-solicitudes-ag015-postgres-1  Healthy
+ Container gestion-solicitudes-ag015-backend-1  Starting
+ Container gestion-solicitudes-ag015-backend-1  Started
+ Container gestion-solicitudes-ag015-frontend-1  Starting
+ Container gestion-solicitudes-ag015-frontend-1  Started
+ Container gestion-solicitudes-ag015-postgres-1  Stopping
+ Container gestion-solicitudes-ag015-postgres-1  Stopped
+Navegador: http://127.0.0.1:18081; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag015\api-antes
+ Container gestion-solicitudes-ag015-postgres-1  Starting
+ Container gestion-solicitudes-ag015-postgres-1  Started
+ Container gestion-solicitudes-ag015-postgres-1  Waiting
+ Container gestion-solicitudes-ag015-postgres-1  Healthy
+Navegador: http://127.0.0.1:18081; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag015\api-antes
+PASS: historial persistente, HTTP 503 real y recuperación 200. Navegador ejecutado: True. Evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag015\api-antes. Sin borrar volúmenes.
