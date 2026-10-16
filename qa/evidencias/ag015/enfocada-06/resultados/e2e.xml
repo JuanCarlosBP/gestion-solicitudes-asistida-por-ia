@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.522411">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-15T22:55:40.900Z" hostname="" tests="1" failures="0" skipped="0" time="1.069" errors="0">
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="1.069">
+</testcase>
+</testsuite>
+</testsuites>

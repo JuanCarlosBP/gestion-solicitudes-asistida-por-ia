@@ -1,0 +1,6 @@
+{
+  "salida": 0,
+  "comando": "pwsh -File qa/verificar-compose-conservado-ag014.ps1",
+  "fin": "2026-10-15T22:15:05.4299820+02:00",
+  "inicio": "2026-10-15T22:14:31.6890961+02:00"
+}

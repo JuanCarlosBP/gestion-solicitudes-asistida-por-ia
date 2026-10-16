@@ -1,0 +1,290 @@
+Compiled from "RyukResourceReaper.java"
+class org.testcontainers.utility.RyukResourceReaper extends org.testcontainers.utility.ResourceReaper {
+  private static final org.slf4j.Logger log;
+
+  private static final org.rnorth.ducttape.ratelimits.RateLimiter RYUK_ACK_RATE_LIMITER;
+
+  private final java.util.concurrent.atomic.AtomicBoolean started;
+
+  private final org.testcontainers.utility.RyukContainer ryukContainer;
+
+  org.testcontainers.utility.RyukResourceReaper();
+    Code:
+       0: aload_0
+       1: invokespecial #30                 // Method org/testcontainers/utility/ResourceReaper."<init>":()V
+       4: aload_0
+       5: new           #32                 // class java/util/concurrent/atomic/AtomicBoolean
+       8: dup
+       9: iconst_0
+      10: invokespecial #35                 // Method java/util/concurrent/atomic/AtomicBoolean."<init>":(Z)V
+      13: putfield      #37                 // Field started:Ljava/util/concurrent/atomic/AtomicBoolean;
+      16: aload_0
+      17: new           #39                 // class org/testcontainers/utility/RyukContainer
+      20: dup
+      21: invokespecial #40                 // Method org/testcontainers/utility/RyukContainer."<init>":()V
+      24: putfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+      27: return
+
+  public void init();
+    Code:
+       0: invokestatic  #51                 // Method org/testcontainers/utility/TestcontainersConfiguration.getInstance:()Lorg/testcontainers/utility/TestcontainersConfiguration;
+       3: invokevirtual #55                 // Method org/testcontainers/utility/TestcontainersConfiguration.environmentSupportsReuse:()Z
+       6: ifne          36
+       9: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+      12: ldc           #59                 // String Ryuk is enabled
+      14: invokeinterface #65,  2           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;)V
+      19: aload_0
+      20: invokespecial #68                 // Method maybeStart:()V
+      23: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+      26: ldc           #70                 // String Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+      28: invokeinterface #73,  2           // InterfaceMethod org/slf4j/Logger.info:(Ljava/lang/String;)V
+      33: goto          46
+      36: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+      39: ldc           #75                 // String Ryuk is enabled but will be started on demand
+      41: invokeinterface #65,  2           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;)V
+      46: return
+
+  public void registerLabelsFilterForCleanup(java.util.Map<java.lang.String, java.lang.String>);
+    Code:
+       0: aload_0
+       1: invokespecial #68                 // Method maybeStart:()V
+       4: aload_0
+       5: aload_1
+       6: invokespecial #80                 // Method org/testcontainers/utility/ResourceReaper.registerLabelsFilterForCleanup:(Ljava/util/Map;)V
+       9: return
+
+  public java.util.Map<java.lang.String, java.lang.String> getLabels();
+    Code:
+       0: aload_0
+       1: invokespecial #68                 // Method maybeStart:()V
+       4: aload_0
+       5: invokespecial #88                 // Method org/testcontainers/utility/ResourceReaper.getLabels:()Ljava/util/Map;
+       8: areturn
+
+  public com.github.dockerjava.api.command.CreateContainerCmd register(org.testcontainers.containers.GenericContainer<?>, com.github.dockerjava.api.command.CreateContainerCmd);
+    Code:
+       0: aload_1
+       1: aload_0
+       2: getfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+       5: if_acmpne     10
+       8: aload_2
+       9: areturn
+      10: aload_0
+      11: invokespecial #68                 // Method maybeStart:()V
+      14: aload_0
+      15: aload_1
+      16: aload_2
+      17: invokespecial #93                 // Method org/testcontainers/utility/ResourceReaper.register:(Lorg/testcontainers/containers/GenericContainer;Lcom/github/dockerjava/api/command/CreateContainerCmd;)Lcom/github/dockerjava/api/command/CreateContainerCmd;
+      20: areturn
+
+  private synchronized void maybeStart();
+    Code:
+       0: aload_0
+       1: getfield      #37                 // Field started:Ljava/util/concurrent/atomic/AtomicBoolean;
+       4: iconst_0
+       5: iconst_1
+       6: invokevirtual #104                // Method java/util/concurrent/atomic/AtomicBoolean.compareAndSet:(ZZ)Z
+       9: ifne          13
+      12: return
+      13: aload_0
+      14: getfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+      17: invokevirtual #107                // Method org/testcontainers/utility/RyukContainer.start:()V
+      20: new           #109                // class java/util/concurrent/CountDownLatch
+      23: dup
+      24: iconst_1
+      25: invokespecial #112                // Method java/util/concurrent/CountDownLatch."<init>":(I)V
+      28: astore_1
+      29: aload_0
+      30: getfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+      33: invokevirtual #116                // Method org/testcontainers/utility/RyukContainer.getHost:()Ljava/lang/String;
+      36: astore_2
+      37: aload_0
+      38: getfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+      41: invokevirtual #120                // Method org/testcontainers/utility/RyukContainer.getFirstMappedPort:()Ljava/lang/Integer;
+      44: astore_3
+      45: new           #122                // class java/lang/Thread
+      48: dup
+      49: getstatic     #128                // Field org/testcontainers/DockerClientFactory.TESTCONTAINERS_THREAD_GROUP:Ljava/lang/ThreadGroup;
+      52: aload_2
+      53: aload_3
+      54: aload_1
+      55: invokedynamic #145,  0            // InvokeDynamic #0:run:(Ljava/lang/String;Ljava/lang/Integer;Ljava/util/concurrent/CountDownLatch;)Ljava/lang/Runnable;
+      60: ldc           #147                // String testcontainers-ryuk
+      62: invokespecial #150                // Method java/lang/Thread."<init>":(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
+      65: astore        4
+      67: aload         4
+      69: iconst_1
+      70: invokevirtual #153                // Method java/lang/Thread.setDaemon:(Z)V
+      73: aload         4
+      75: invokevirtual #154                // Method java/lang/Thread.start:()V
+      78: aload_1
+      79: invokestatic  #51                 // Method org/testcontainers/utility/TestcontainersConfiguration.getInstance:()Lorg/testcontainers/utility/TestcontainersConfiguration;
+      82: invokevirtual #157                // Method org/testcontainers/utility/TestcontainersConfiguration.getRyukTimeout:()Ljava/lang/Integer;
+      85: invokevirtual #163                // Method java/lang/Integer.intValue:()I
+      88: i2l
+      89: getstatic     #169                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      92: invokevirtual #173                // Method java/util/concurrent/CountDownLatch.await:(JLjava/util/concurrent/TimeUnit;)Z
+      95: ifne          140
+      98: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+     101: ldc           #175                // String Timed out waiting for Ryuk container to start. Ryuk\'s logs:\n{}
+     103: aload_0
+     104: getfield      #42                 // Field ryukContainer:Lorg/testcontainers/utility/RyukContainer;
+     107: invokevirtual #178                // Method org/testcontainers/utility/RyukContainer.getLogs:()Ljava/lang/String;
+     110: invokeinterface #182,  3          // InterfaceMethod org/slf4j/Logger.error:(Ljava/lang/String;Ljava/lang/Object;)V
+     115: new           #184                // class java/lang/IllegalStateException
+     118: dup
+     119: ldc           #186                // String Could not connect to Ryuk at %s:%s
+     121: iconst_2
+     122: anewarray     #188                // class java/lang/Object
+     125: dup
+     126: iconst_0
+     127: aload_2
+     128: aastore
+     129: dup
+     130: iconst_1
+     131: aload_3
+     132: aastore
+     133: invokestatic  #194                // Method java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+     136: invokespecial #196                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+     139: athrow
+     140: goto          146
+     143: astore_1
+     144: aload_1
+     145: athrow
+     146: return
+    Exception table:
+       from    to  target type
+           0    12   143   Class java/lang/InterruptedException
+          13   140   143   Class java/lang/InterruptedException
+
+  private static void lambda$maybeStart$1(java.lang.String, java.lang.Integer, java.util.concurrent.CountDownLatch);
+    Code:
+       0: getstatic     #208                // Field RYUK_ACK_RATE_LIMITER:Lorg/rnorth/ducttape/ratelimits/RateLimiter;
+       3: aload_0
+       4: aload_1
+       5: aload_2
+       6: invokedynamic #213,  0            // InvokeDynamic #1:run:(Ljava/lang/String;Ljava/lang/Integer;Ljava/util/concurrent/CountDownLatch;)Ljava/lang/Runnable;
+      11: invokevirtual #219                // Method org/rnorth/ducttape/ratelimits/RateLimiter.doWhenReady:(Ljava/lang/Runnable;)V
+      14: goto          0
+
+  private static void lambda$maybeStart$0(java.lang.String, java.lang.Integer, java.util.concurrent.CountDownLatch);
+    Code:
+       0: iconst_0
+       1: istore_3
+       2: new           #225                // class java/net/Socket
+       5: dup
+       6: invokespecial #226                // Method java/net/Socket."<init>":()V
+       9: astore        4
+      11: aload         4
+      13: new           #228                // class java/net/InetSocketAddress
+      16: dup
+      17: aload_0
+      18: aload_1
+      19: invokevirtual #163                // Method java/lang/Integer.intValue:()I
+      22: invokespecial #231                // Method java/net/InetSocketAddress."<init>":(Ljava/lang/String;I)V
+      25: sipush        5000
+      28: invokevirtual #235                // Method java/net/Socket.connect:(Ljava/net/SocketAddress;I)V
+      31: new           #7                  // class org/testcontainers/utility/ResourceReaper$FilterRegistry
+      34: dup
+      35: aload         4
+      37: invokevirtual #239                // Method java/net/Socket.getInputStream:()Ljava/io/InputStream;
+      40: aload         4
+      42: invokevirtual #243                // Method java/net/Socket.getOutputStream:()Ljava/io/OutputStream;
+      45: invokespecial #246                // Method org/testcontainers/utility/ResourceReaper$FilterRegistry."<init>":(Ljava/io/InputStream;Ljava/io/OutputStream;)V
+      48: astore        5
+      50: getstatic     #250                // Field org/testcontainers/utility/ResourceReaper.DEATH_NOTE:Ljava/util/List;
+      53: dup
+      54: astore        6
+      56: monitorenter
+      57: getstatic     #250                // Field org/testcontainers/utility/ResourceReaper.DEATH_NOTE:Ljava/util/List;
+      60: invokeinterface #255,  1          // InterfaceMethod java/util/List.size:()I
+      65: iload_3
+      66: if_icmpgt     93
+      69: getstatic     #250                // Field org/testcontainers/utility/ResourceReaper.DEATH_NOTE:Ljava/util/List;
+      72: ldc2_w        #256                // long 1000l
+      75: invokevirtual #261                // Method java/lang/Object.wait:(J)V
+      78: goto          57
+      81: astore        7
+      83: new           #263                // class java/lang/RuntimeException
+      86: dup
+      87: aload         7
+      89: invokespecial #266                // Method java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+      92: athrow
+      93: getstatic     #250                // Field org/testcontainers/utility/ResourceReaper.DEATH_NOTE:Ljava/util/List;
+      96: iload_3
+      97: invokeinterface #270,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+     102: checkcast     #252                // class java/util/List
+     105: astore        7
+     107: aload         5
+     109: aload         7
+     111: invokevirtual #273                // Method org/testcontainers/utility/ResourceReaper$FilterRegistry.register:(Ljava/util/List;)Z
+     114: istore        8
+     116: iload         8
+     118: ifeq          142
+     121: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+     124: ldc_w         #275                // String Received \'ACK\' from Ryuk
+     127: invokeinterface #65,  2           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;)V
+     132: aload_2
+     133: invokevirtual #278                // Method java/util/concurrent/CountDownLatch.countDown:()V
+     136: iinc          3, 1
+     139: goto          153
+     142: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+     145: ldc_w         #280                // String Didn\'t receive \'ACK\' from Ryuk. Will retry to send filters.
+     148: invokeinterface #65,  2           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;)V
+     153: goto          57
+     156: astore        9
+     158: aload         6
+     160: monitorexit
+     161: aload         9
+     163: athrow
+     164: astore        5
+     166: aload         4
+     168: invokevirtual #283                // Method java/net/Socket.close:()V
+     171: goto          183
+     174: astore        6
+     176: aload         5
+     178: aload         6
+     180: invokevirtual #286                // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+     183: aload         5
+     185: athrow
+     186: astore        4
+     188: getstatic     #57                 // Field log:Lorg/slf4j/Logger;
+     191: ldc_w         #288                // String Can not connect to Ryuk at {}:{}
+     194: iconst_3
+     195: anewarray     #188                // class java/lang/Object
+     198: dup
+     199: iconst_0
+     200: aload_0
+     201: aastore
+     202: dup
+     203: iconst_1
+     204: aload_1
+     205: aastore
+     206: dup
+     207: iconst_2
+     208: aload         4
+     210: aastore
+     211: invokeinterface #292,  3          // InterfaceMethod org/slf4j/Logger.warn:(Ljava/lang/String;[Ljava/lang/Object;)V
+     216: return
+    Exception table:
+       from    to  target type
+          69    78    81   Class java/lang/InterruptedException
+          57   161   156   any
+          11   164   164   Class java/lang/Throwable
+         166   171   174   Class java/lang/Throwable
+           2   186   186   Class java/io/IOException
+
+  static {};
+    Code:
+       0: ldc           #2                  // class org/testcontainers/utility/RyukResourceReaper
+       2: invokestatic  #311                // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+       5: putstatic     #57                 // Field log:Lorg/slf4j/Logger;
+       8: invokestatic  #317                // Method org/rnorth/ducttape/ratelimits/RateLimiterBuilder.newBuilder:()Lorg/rnorth/ducttape/ratelimits/RateLimiterBuilder;
+      11: iconst_4
+      12: getstatic     #169                // Field java/util/concurrent/TimeUnit.SECONDS:Ljava/util/concurrent/TimeUnit;
+      15: invokevirtual #321                // Method org/rnorth/ducttape/ratelimits/RateLimiterBuilder.withRate:(ILjava/util/concurrent/TimeUnit;)Lorg/rnorth/ducttape/ratelimits/RateLimiterBuilder;
+      18: invokevirtual #324                // Method org/rnorth/ducttape/ratelimits/RateLimiterBuilder.withConstantThroughput:()Lorg/rnorth/ducttape/ratelimits/RateLimiterBuilder;
+      21: invokevirtual #328                // Method org/rnorth/ducttape/ratelimits/RateLimiterBuilder.build:()Lorg/rnorth/ducttape/ratelimits/RateLimiter;
+      24: putstatic     #208                // Field RYUK_ACK_RATE_LIMITER:Lorg/rnorth/ducttape/ratelimits/RateLimiter;
+      27: return
+}

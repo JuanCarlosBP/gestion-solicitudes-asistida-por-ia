@@ -9,6 +9,29 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+[AG-015](docs/trazabilidad/AG-015-informe.md) corrige la regresión de aprobaciones
+de la primera CI de007: respuestas Bearer concurrentes rotaban la cookie CSRF.
+La corrección conserva CSRF y permisos; pasan diez carreras originales consecutivas,
+33 E2E completos en Windows,24 complementarios en Linux,249 pruebas backend,
+479 Angular y636 controles API. Publicación, nueva CI y aceptación de007 pendientes.
+El informe registra también los intentos fallidos y el incidente de aislamiento QA.
+008 tiene aprobación conceptual de su tercera opción; prototipo y dimensionamiento
+quedan para después del cierre de007, sin implementación en AG-015.
+
+Los párrafos siguientes conservan los resultados históricos de cada ejecución.
+
+AG-014 autoriza [007 — Historial y auditoría](especificaciones/007-historial-auditoria/especificacion.md)
+y las decisiones D-007-01–10: eventos nuevos atómicos, consulta de decisiones V5,
+historial por recurso/global y resumen según permisos. Implementación realizada,
+verificada localmente; [validación007](especificaciones/007-historial-auditoria/validacion.md)
+es la fuente de resultados. La autorización sustituye el límite anterior de borrador007.
+El [informe AG-014](docs/trazabilidad/AG-014-informe.md) registra247 pruebas backend,
+479 Angular,639 controles API y33 E2E finales, migración y auditorías superadas,
+12 capturas y revisión independiente sin hallazgos abiertos.
+Aceptación, integración y despliegue permanecen pendientes de decisión humana.
+Tras la puerta autorizada se creó únicamente el
+[borrador008](especificaciones/008-demo-operacion-entrega/especificacion.md), sin implementación ni publicación.
+
 AG-013 autoriza e implementa [006](especificaciones/006-concurrencia-idempotencia/especificacion.md):
 idempotencia transversal, espera acotada y recuperación Angular. SDD y ADR0007
 aprobados por encargo humano; CI-01–10 verificados localmente, con revisión sin
@@ -19,8 +42,8 @@ Aceptación e integración de006 pendientes. El encargo comunica aceptación for
 de gobierno/001/002. Los párrafos siguientes conservan la evolución anterior;
 la autorización AG-013 sustituye el límite de borrador006 de AG-012.
 Tras verificar006 se creó únicamente la
-[especificación borrador007](especificaciones/007-historial-auditoria/especificacion.md),
-pendiente de aprobación humana.
+[especificación007](especificaciones/007-historial-auditoria/especificacion.md),
+aprobada posteriormente por AG-014.
 
 AG-012 ejecuta004 por autorización humana integral, con SDD y ADR0005 aprobados.
 La corrección heredada de proveedores pasa enfocada y regresión001–003;
@@ -125,8 +148,8 @@ y roles), el catálogo003, las solicitudes con conceptos e importes004, las
 aprobaciones005 y la concurrencia e idempotencia transversal006. Incluyen versiones
 optimistas, recuperación de operaciones, registro de presentación y evento mínimo
 de decisión.
-El historial funcional ampliado tiene una especificación borrador pendiente de aprobación;
-la demo pública también continúa prevista.
+El historial funcional ampliado007 está implementado y verificado localmente por AG-014;
+la demo pública continúa prevista.
 No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
 La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
 

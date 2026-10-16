@@ -1,0 +1,156 @@
+[
+  {
+    "archivo": "TEST-es.gestionsolicitudes.historial.integracion.HistorialIT.xml",
+    "pruebas": 13,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.integracion.IdentidadAccesoIT.xml",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.integracion.PerfilesIdentidadIT.xml",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.integracion.BaseVerificableIT.xml",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.operaciones.integracion.OperacionesIT.xml",
+    "pruebas": 16,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.proveedores.integracion.ProveedoresIT.xml",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.solicitudes.integracion.AprobacionesIT.xml",
+    "pruebas": 28,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.solicitudes.integracion.SolicitudesIT.xml",
+    "pruebas": 31,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.historial.http.FiltrosHistorialTest.xml",
+    "pruebas": 23,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest.xml",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest.xml",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest.xml",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.identidad.http.CookiesIdentidadTest.xml",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest.xml",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest.xml",
+    "pruebas": 9,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest.xml",
+    "pruebas": 24,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.proveedores.http.ErroresProveedorTest.xml",
+    "pruebas": 4,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+    "pruebas": 5,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest.xml",
+    "pruebas": 8,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  },
+  {
+    "archivo": "TEST-es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest.xml",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0
+  }
+]

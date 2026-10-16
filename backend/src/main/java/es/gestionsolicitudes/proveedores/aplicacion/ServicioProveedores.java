@@ -1,5 +1,7 @@
 package es.gestionsolicitudes.proveedores.aplicacion;
 
+import es.gestionsolicitudes.historial.aplicacion.RegistroHistorial;
+import es.gestionsolicitudes.historial.dominio.*;
 import es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones;
 import es.gestionsolicitudes.operaciones.dominio.*;
 import es.gestionsolicitudes.proveedores.dominio.*;
@@ -24,15 +26,18 @@ public class ServicioProveedores {
     private final TransactionTemplate escritura;
     private final TransactionTemplate lectura;
     private final ServicioOperaciones operaciones;
+    private final RegistroHistorial historial;
 
     public ServicioProveedores(
             RepositorioProveedores repositorio,
             Clock reloj,
             PlatformTransactionManager transacciones,
-            ServicioOperaciones operaciones) {
+            ServicioOperaciones operaciones,
+            RegistroHistorial historial) {
         this.repositorio = repositorio;
         this.reloj = reloj;
         this.operaciones = operaciones;
+        this.historial = historial;
         escritura = new TransactionTemplate(transacciones);
         lectura = new TransactionTemplate(transacciones);
         lectura.setReadOnly(true);
@@ -83,6 +88,18 @@ public class ServicioProveedores {
                                 reloj.instant().truncatedTo(java.time.temporal.ChronoUnit.MICROS);
                         Proveedor proveedor = new Proveedor(id, datos, true, 0, ahora, ahora);
                         repositorio.insertar(proveedor);
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.PROVEEDOR,
+                                        id,
+                                        AccionHistorial.PROVEEDOR_CREADO,
+                                        actor.id(),
+                                        null,
+                                        0,
+                                        null,
+                                        "ACTIVO",
+                                        ahora,
+                                        null));
                         trasCommit("CREAR", actor, id);
                         return proveedor;
                     });
@@ -123,6 +140,18 @@ public class ServicioProveedores {
                                                         new ErrorProveedor(
                                                                 ErrorProveedor.Codigo
                                                                         .VERSION_OBSOLETA));
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.PROVEEDOR,
+                                        id,
+                                        AccionHistorial.PROVEEDOR_MODIFICADO,
+                                        actor.id(),
+                                        anterior.version(),
+                                        cambiado.version(),
+                                        anterior.activo() ? "ACTIVO" : "INACTIVO",
+                                        cambiado.activo() ? "ACTIVO" : "INACTIVO",
+                                        cambiado.actualizadoEn(),
+                                        null));
                         trasCommit("MODIFICAR", actor, id);
                         return cambiado;
                     });
@@ -155,6 +184,20 @@ public class ServicioProveedores {
                                                         new ErrorProveedor(
                                                                 ErrorProveedor.Codigo
                                                                         .VERSION_OBSOLETA));
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.PROVEEDOR,
+                                        id,
+                                        activo
+                                                ? AccionHistorial.PROVEEDOR_REACTIVADO
+                                                : AccionHistorial.PROVEEDOR_DESACTIVADO,
+                                        actor.id(),
+                                        anterior.version(),
+                                        cambiado.version(),
+                                        anterior.activo() ? "ACTIVO" : "INACTIVO",
+                                        activo ? "ACTIVO" : "INACTIVO",
+                                        cambiado.actualizadoEn(),
+                                        null));
                         trasCommit(accion, actor, id);
                         return cambiado;
                     });

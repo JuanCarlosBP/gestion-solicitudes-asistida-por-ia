@@ -1,0 +1,86 @@
+{
+  "fechaUTC": "2026-10-15T20:11:12.891Z",
+  "terminado": true,
+  "muestras": [
+    {
+      "milisegundos": 0.3999999985098839,
+      "texto": "rgb(83, 101, 121)",
+      "fondo": "rgb(225, 232, 235)",
+      "contraste": 4.83366944907653,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 8.599999997764826,
+      "texto": "rgb(83, 101, 121)",
+      "fondo": "rgb(225, 232, 235)",
+      "contraste": 4.83366944907653,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 25.5,
+      "texto": "rgb(111, 126, 143)",
+      "fondo": "rgb(190, 205, 209)",
+      "contraste": 2.5396401143528697,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 42.5,
+      "texto": "rgb(163, 173, 184)",
+      "fondo": "rgb(125, 156, 161)",
+      "contraste": 1.2919129432614498,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 58.30000000074506,
+      "texto": "rgb(204, 210, 216)",
+      "fondo": "rgb(74, 117, 123)",
+      "contraste": 3.3427212656253977,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 75.69999999925494,
+      "texto": "rgb(230, 232, 235)",
+      "fondo": "rgb(42, 93, 100)",
+      "contraste": 6.0061881113675515,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 92.69999999925494,
+      "texto": "rgb(244, 246, 247)",
+      "fondo": "rgb(24, 79, 87)",
+      "contraste": 8.441495114254689,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 109.59999999776483,
+      "texto": "rgb(252, 252, 253)",
+      "fondo": "rgb(15, 72, 80)",
+      "contraste": 9.92761897288087,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 126.30000000074506,
+      "texto": "rgb(255, 255, 255)",
+      "fondo": "rgb(11, 69, 77)",
+      "contraste": 10.645618145104406,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 142.89999999850988,
+      "texto": "rgb(255, 255, 255)",
+      "fondo": "rgb(11, 69, 77)",
+      "contraste": 10.645618145104406,
+      "deshabilitado": false,
+      "animaciones": 0
+    }
+  ]
+}

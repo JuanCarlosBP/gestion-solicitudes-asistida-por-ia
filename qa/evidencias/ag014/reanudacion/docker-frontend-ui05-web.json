@@ -1,0 +1,12 @@
+{
+  "salud": 200,
+  "csp": [
+    "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'"
+  ],
+  "css": true,
+  "sinOnload": true,
+  "fecha": "2026-10-15T22:09:15.1666600+02:00",
+  "html": 200,
+  "bundle": true,
+  "sinMediaPrint": true
+}

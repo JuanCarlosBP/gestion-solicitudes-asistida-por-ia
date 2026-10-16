@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-10-15T21:59:24.3020154+02:00",
+  "httpPagina": 200,
+  "bundle": "main-HB3WKJUW.js",
+  "httpSalud": 200,
+  "cuerpoSalud": "{\"estado\":\"DISPONIBLE\"}",
+  "frontendsAnteriores": "ambos conservados detenidos",
+  "backendPostgres": "gestion-solicitudes-ag014 sin reemplazo"
+}

@@ -1,0 +1,16 @@
+{
+  "inicio": "2026-10-15T21:43:51+02:00",
+  "limite": "2026-10-16T04:05:00+02:00",
+  "origen": "Respuesta humana a solicitudes pendientes",
+  "autorizacionNpm": "Solo registro oficial npm e inventario necesario",
+  "reparacionDocker": "Usuario reinició WSL y abrió Docker Desktop; agente no retiró socket",
+  "primerIntento": "Sandbox: permission denied npipe dockerDesktopLinuxEngine",
+  "verificacionAutorizada": "docker info PASS servidor29.1.3; docker ps PASS sin activos; docker compose version PASS2.40.3",
+  "restricciones": [
+    "Sin Git",
+    "Sin eliminar sockets imágenes contenedores volúmenes",
+    "Sin factory reset",
+    "Conservar todas evidencias"
+  ],
+  "planPreservacion": "Nuevo proyecto Compose QA con copia de datos ficticiosV6; originales conservados; cierre Testcontainers conservador opt-in por implementar y revisar"
+}

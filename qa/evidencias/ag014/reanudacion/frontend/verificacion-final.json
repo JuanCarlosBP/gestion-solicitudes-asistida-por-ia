@@ -1,0 +1,42 @@
+{
+  "fechaUTC": "2026-10-15T20:15:37.2094103Z",
+  "angular": 479,
+  "archivosAngular": 23,
+  "e2e": 33,
+  "reintentos": 0,
+  "capturas": 12,
+  "muestrasContraste": 42,
+  "contrasteMinimo": 5.526858588998478,
+  "contrasteMaximo": 13.878038046697387,
+  "teclado": [
+    {
+      "anchoVentana": 360,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    },
+    {
+      "anchoVentana": 768,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    },
+    {
+      "anchoVentana": 1440,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    }
+  ],
+  "replay": {
+    "cookieJarAislada": true,
+    "csrfPresente": true,
+    "csrfCoincide": true,
+    "status": 201
+  },
+  "fuentesCoinciden": true,
+  "aceptacionHumana": "pendiente"
+}

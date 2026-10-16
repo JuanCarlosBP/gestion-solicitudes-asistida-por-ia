@@ -1,4 +1,6 @@
-<a class="volver" routerLink="/solicitudes" queryParamsHandling="preserve">Volver a solicitudes</a>
+<a class="volver" routerLink="/solicitudes" [queryParams]="parametrosListado()"
+  >Volver a solicitudes</a
+>
 @if (cargando()) {
   <h1>Detalle de solicitud</h1>
   <p class="panel" role="status">Cargando solicitud…</p>
@@ -215,4 +217,10 @@
       </div>
     </section>
   }
+  <app-historial-timeline
+    tipo="SOLICITUD"
+    [recursoId]="actual.id"
+    [revision]="actual.version"
+    [integrado]="true"
+  />
 }

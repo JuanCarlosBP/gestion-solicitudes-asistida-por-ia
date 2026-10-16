@@ -1,0 +1,244 @@
+{
+  "fecha": "2026-10-15T21:52:53.3180446+02:00",
+  "contenedores": [
+    "4b52579156b9b2f7dc7d3941f93a07217d8b7c2f5cc94447c64bbdcf86ab911b",
+    "a59fa294d60e03d0773849cb18423466400bd5d35e753c2d4b5e81c0e707e889",
+    "bf2ed5047d527b1da7bc84d06ddd3d5813c759ec5b1690f5a595571bb53f2d07",
+    "a4a163fff484f2c65a0d159e1df4c700a96884b58bd8adc292ce1b3018a8b69c",
+    "97b9cb8c8cb5c6f1c35ad67aada8d476955c6017a77344993c7c91f622fe78e9",
+    "688fb8d35f7512ec4b178df909bf294f4b0b1902014db643c42bbd703ffd4ca9",
+    "cdcdf75f220bb057d52ba52c48dc73efd54e0e8ca7c9c2de6f5151f89b34956e",
+    "c9295f6c847d00d8a181ce2ed1e10a81b5093b4a0945b8a21c77fad62e812a25",
+    "0cc380f2f26fb16b53950a6253b15562f3bd29b319907e65063b299692511779",
+    "0c611cfed67bd09282539a59f8b651b054808fb0aad8e9fa31ce2ebf1a296eca",
+    "fffb0b5ead55389f5a311ada477903e0c14b5fb24887f50a350305d6402cbb88",
+    "a59a1053c0932567569d6717dd317b4d6077b38c9658be2f60254ca397526842",
+    "2885b855145fde9f333f137c826b40a90521f8a39ee4553c48be74a902f0f0b2",
+    "3c78ab87a48773ae5a9614452751820b22b540e239f24ec8df3c95c52b239f9e",
+    "9c764430e01718bf758301fd76f4e56c0537f87b27ba8e610283f8bae21e3aa9",
+    "5f66d755ec7d00e07bd547fb6ff8c1168af7db611b8788636de49c430543cc1b",
+    "d09d1e15f7261236f4f5dd0f939a062758b9aef1bdc33a802b33bd7dce531c88",
+    "1c43f99c6d7d64a33c04a146dd690206ca069621e9b764868c6d704b83768eb4",
+    "02b62208f591741c0e64e84c4c4a26fc70ec671bc7e5d43f3dd149211742b176",
+    "6322d6c139cda5e4d90247b5dafb2924271868ebd806f7ca8661ffdf2bb7a899",
+    "0d10719df8ba1cd648f6f47cd205e0feb2aaee303ffe3733edcb58f6e0ccda6b",
+    "d07bca9b7ecdc7ccc3b63025a665ec993a9c3ff0e2140874ac085e09de6c09e8",
+    "8fcfcdd4b4a5b8f48aaf0b4871703df655202c35a42dcc5d1b8ab6f6d2715a27",
+    "30fd50b77d31a7d50a61f5e9ffb26a0b6ae02993392288694d6f3775fc8aef8b",
+    "b4d931777e0c446b4a3d74aa3ec521c3edac508a749a5cb53093c8bdbf1d581a"
+  ],
+  "volumenes": [
+    "0e607d82a1016dc6b8c95909938fbe4277c4aaba02592f2c96810496d443a7f6",
+    "01ba9012559ac4e25b418cacce2727b5cb3a5f9cecccee4cf85109569852c023",
+    "8b615d841046730ef94b45cc3608e44623b1d25d089e79493241b814a51bd38f",
+    "8fe313a15eefaac4a96fa241c87b52615d986a282d84d1fb50b6336076e9e1fc",
+    "9b2caa10aae903b4b1185ef17936e115b26be7674717e1c594480f000784676a",
+    "60e588ef7719652a53cf5d5a8e634ae25a9a538b77916fe14a5470d40a865cf3",
+    "7477e9af4b8594580480578ac6604a04581329490507e5afbc927ba434ee6d46",
+    "9917beb8b0bc5ec4ca1f5af150b36db3114a0619fc7d01ba9e1e45af05741f6b",
+    "a1ad271a6dd60d9a029682ba874a4fd3844ba9c831ead0a07220f946a9aa9eb9",
+    "biteacademy_postgres_data",
+    "cfab926ba0e8f3ae681728a1a6d166992dd0a939ce07749cb7782f96c1b946b9",
+    "d617de5d2377996831d73e897498c350492c66aab8248e25be60599812d9386c",
+    "f28faeda42881aae1eb607117ef7e77b48b5732a9a3ab07680cd2497ba0433c9",
+    "gestion-solicitudes-001_datos-postgres",
+    "gestion-solicitudes-ag014_datos-postgres",
+    "open-webui"
+  ],
+  "imagenes": [
+    "sha256:026172927d8ee988934ef84f52c84816e3a0e2e2e1f9b34ab0e2fde489fdc88f",
+    "sha256:0dcd216f296cace3321e911dfb143d3b13d680aead5b542881dc4c419cc1a676",
+    "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+    "sha256:373c10cb9ec5cbd682c10f9b3b352e926109d7e91e56bf1a2a821a35eca03e43",
+    "sha256:4523f89b5e7e0b7a5768a52ed17acf132f3ec6e27cf3155e53192998ba4dc98e",
+    "sha256:64e216a99d570e5a6380428f855945f16ec9511904f0ebce0946083c5ab13a4a",
+    "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "sha256:a7e54a09a76a6dd482238a14e5f7955edf9cf2cb9866bc864569e0ba11e69fbe",
+    "sha256:a9d2df00eaeaa86be20f6e2b4cfec3c8dd927442fc53105156e97ecce125adb1",
+    "sha256:b3968e348b48f1198cc6de6611d055dbad91cd561b7990c406c3fc28d7095b21",
+    "sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87",
+    "sha256:b63891058ebfb442f452080633a9400a2c8ebe090411b7148a2cace140e91c96",
+    "sha256:b8095f79a6a8ffad8f830bdacc9b5b0aef805689b31bca0b065cc2424d3cfaeb",
+    "sha256:d0887fcc7ba76759f7ad251190f59d313d9c8d4cd1cceb9b3873cbfdcee04454",
+    "sha256:d352471bfcd51ee8f89cc70020f67db87b4400c3c1697a1a5cfb2a0baea2b07f",
+    "sha256:ee64a64eaab618d88051c3ade8f6352d11531fcf79d9a4818b9b183d8c1d18ba"
+  ],
+  "qaConservados": [
+    {
+      "id": "4b52579156b9b2f7dc7d3941f93a07217d8b7c2f5cc94447c64bbdcf86ab911b",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "970997e3-738a-48f7-80b6-b191615833eb",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "c371f613605ead93364e5d97d6473388ed92a607",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "f28faeda42881aae1eb607117ef7e77b48b5732a9a3ab07680cd2497ba0433c9"
+      ]
+    },
+    {
+      "id": "a59fa294d60e03d0773849cb18423466400bd5d35e753c2d4b5e81c0e707e889",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "a614c286-0b93-4ae7-b31c-f6a02b148b83",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "cddcc2d639d9dbac46844769d9f69adc1a260501",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "9b2caa10aae903b4b1185ef17936e115b26be7674717e1c594480f000784676a"
+      ]
+    },
+    {
+      "id": "bf2ed5047d527b1da7bc84d06ddd3d5813c759ec5b1690f5a595571bb53f2d07",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "15c1c9cf-cc9d-4dcf-91bf-124a992c7abf",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "97338409b77352229865b3a88079a30601c9d4d6",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "8b615d841046730ef94b45cc3608e44623b1d25d089e79493241b814a51bd38f"
+      ]
+    },
+    {
+      "id": "a4a163fff484f2c65a0d159e1df4c700a96884b58bd8adc292ce1b3018a8b69c",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "58c5d118-2f51-488a-9a01-05657bcc709c",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "a8175a826386e133e1c6c174d85a00eb374aa92c",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "60e588ef7719652a53cf5d5a8e634ae25a9a538b77916fe14a5470d40a865cf3"
+      ]
+    },
+    {
+      "id": "97b9cb8c8cb5c6f1c35ad67aada8d476955c6017a77344993c7c91f622fe78e9",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "494c24cc-093e-44d5-bc6b-a1b45b6b77d8",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "422ae905511d620677b48a19c4edc153502177f9",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "a1ad271a6dd60d9a029682ba874a4fd3844ba9c831ead0a07220f946a9aa9eb9"
+      ]
+    },
+    {
+      "id": "688fb8d35f7512ec4b178df909bf294f4b0b1902014db643c42bbd703ffd4ca9",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "7f1fbb49-b3d1-4ea1-971c-22096b89c5a0",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "e7add9668986bb60dac2850667d115b75ae9b9b7",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "01ba9012559ac4e25b418cacce2727b5cb3a5f9cecccee4cf85109569852c023"
+      ]
+    },
+    {
+      "id": "cdcdf75f220bb057d52ba52c48dc73efd54e0e8ca7c9c2de6f5151f89b34956e",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "37375877-847e-4d9a-831f-67faa71eb60d",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "cf602849d0b9ba9ba4de05cfb4d2ec3a6b3f8350",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "0e607d82a1016dc6b8c95909938fbe4277c4aaba02592f2c96810496d443a7f6"
+      ]
+    },
+    {
+      "id": "c9295f6c847d00d8a181ce2ed1e10a81b5093b4a0945b8a21c77fad62e812a25",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "bdcb2b4d-5a21-4257-869c-eca4c093369f",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "36305c3c8d4b96405b2d2809c9195b5c83e2ce93",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "7477e9af4b8594580480578ac6604a04581329490507e5afbc927ba434ee6d46"
+      ]
+    },
+    {
+      "id": "0cc380f2f26fb16b53950a6253b15562f3bd29b319907e65063b299692511779",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "30045852-d04b-4db8-9a7c-907a4c303c1e",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "ab6ceac7f34fc62c98d300329494e1d731b590e6",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "8fe313a15eefaac4a96fa241c87b52615d986a282d84d1fb50b6336076e9e1fc"
+      ]
+    },
+    {
+      "id": "0c611cfed67bd09282539a59f8b651b054808fb0aad8e9fa31ce2ebf1a296eca",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "0c48e0be-b051-4eed-9e7c-954e86e47e2e",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "a491f1e2ab5457e497735b8aa3dee0f03cc0c08b",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "d617de5d2377996831d73e897498c350492c66aab8248e25be60599812d9386c"
+      ]
+    },
+    {
+      "id": "fffb0b5ead55389f5a311ada477903e0c14b5fb24887f50a350305d6402cbb88",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "435560fe-9997-4e20-810e-8da6c0a2d3d6",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "bff3f76ae778d30c42d6e55a09437b37938718de",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "cfab926ba0e8f3ae681728a1a6d166992dd0a939ce07749cb7782f96c1b946b9"
+      ]
+    }
+  ]
+}

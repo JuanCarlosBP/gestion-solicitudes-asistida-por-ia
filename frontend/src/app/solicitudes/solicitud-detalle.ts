@@ -24,10 +24,11 @@ import {
 import { SolicitudDecision } from './solicitud-decision';
 import { SolicitudesApi } from './solicitudes-api';
 import { PermisosSolicitudes } from './solicitudes-permisos';
+import { HistorialTimeline } from '../historial/historial-timeline';
 
 @Component({
   selector: 'app-solicitud-detalle',
-  imports: [RouterLink, DatePipe, SolicitudDecision],
+  imports: [RouterLink, DatePipe, SolicitudDecision, HistorialTimeline],
   templateUrl: './solicitud-detalle.html',
   styleUrls: [
     './solicitudes.css',
@@ -142,6 +143,14 @@ export class SolicitudDetalle implements OnInit {
   }
   recargar(): void {
     if (!this.presentando()) this.refrescar.next();
+  }
+  parametrosListado(): Record<string, string[]> {
+    const params = this.ruta.snapshot.queryParamMap;
+    return Object.fromEntries(
+      params.keys
+        .filter((key) => !key.startsWith('historial_'))
+        .map((key) => [key, params.getAll(key)]),
+    );
   }
   actualizarDecision(detalle: DetalleSolicitud): void {
     this.solicitud.set(detalle);

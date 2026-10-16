@@ -1,0 +1,10 @@
+{
+  "fechaConsulta": "2026-10-15",
+  "repositorio": "JuanCarlosBP/gestion-solicitudes-asistida-por-ia",
+  "metodo": "Conector GitHub, solo lectura; ningún comando Git",
+  "resultados": [
+    {"pr": 4, "head": "9aff14d5c9c5eb641d36d30edd4da4d7bb36a6df", "run": 38782417067, "estado": "completed", "conclusion": "success", "backend": "success", "frontend": "success", "compose": "success", "alcance": "001–005"},
+    {"pr": 5, "head": "a2156dda66221af0707bdb4ebbe7b45e20e9c648", "run": 38782440883, "estado": "completed", "conclusion": "success", "backend": "success", "frontend": "success", "compose": "success", "alcance": "001–006"}
+  ],
+  "limite": "No verifica cambios locales007. Su CI remota requiere push humano. PR abiertas en borrador; ninguna modificación, publicación o integración."
+}

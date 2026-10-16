@@ -8,6 +8,7 @@ import ch.qos.logback.core.read.ListAppender;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import es.gestionsolicitudes.proveedores.aplicacion.*;
 import es.gestionsolicitudes.proveedores.dominio.*;
 import java.net.URI;
@@ -66,7 +67,7 @@ class ProveedoresIT {
     @BeforeAll
     void arrancar() throws Exception {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withUsername("administrador_prueba")
@@ -134,7 +135,7 @@ class ProveedoresIT {
                                         "spring.main.banner-mode",
                                         "off"))
                         .run("--server.port=0");
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
         assertThat(
                         administrador.queryForObject(
                                 "SELECT count(*) FROM gestion.usuarios WHERE id=?",
@@ -193,7 +194,7 @@ class ProveedoresIT {
     @BeforeEach
     void limpiar() {
         administrador.execute(
-                "TRUNCATE gestion.decisiones_solicitud, gestion.proveedores, gestion.solicitudes, gestion.conceptos_solicitud, gestion.operaciones_idempotentes_solicitud");
+                "TRUNCATE gestion.eventos_historial,gestion.decisiones_solicitud, gestion.proveedores, gestion.solicitudes, gestion.conceptos_solicitud, gestion.operaciones_idempotentes_solicitud");
         eventos.list.clear();
     }
 

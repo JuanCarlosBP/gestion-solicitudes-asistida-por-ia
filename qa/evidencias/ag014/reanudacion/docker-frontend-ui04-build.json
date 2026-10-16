@@ -1,0 +1,7 @@
+{
+  "inicio": "2026-10-15T22:04:23.2307233+02:00",
+  "comando": "docker compose -p gestion-solicitudes-ag014-ui04 -f qa/compose-frontend-conservado.yaml build --no-cache frontend",
+  "salida": 0,
+  "buildxGitInfo": "false",
+  "fin": "2026-10-15T22:04:34.4760636+02:00"
+}

@@ -1,0 +1,269 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.20kB 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 664B done
+#2 DONE 0.0s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.17kB done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#4 ...
+
+#5 [frontend internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#5 DONE 0.7s
+
+#6 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#6 DONE 0.7s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#4 DONE 0.7s
+
+#7 [frontend internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#7 DONE 0.7s
+
+#8 [backend internal] load .dockerignore
+#8 transferring context: 59B done
+#8 DONE 0.0s
+
+#9 [frontend internal] load .dockerignore
+#9 transferring context: 104B done
+#9 DONE 0.0s
+
+#10 [backend construccion 1/8] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87
+#10 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jdk-noble@sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87 0.0s done
+#10 CACHED
+
+#11 [backend stage-1 1/4] FROM docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+#11 resolve docker.io/library/eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c 0.0s done
+#11 DONE 0.0s
+
+#12 [backend stage-1 2/4] WORKDIR /aplicacion
+#12 CACHED
+
+#13 [frontend stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#13 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#13 CACHED
+
+#14 [frontend construccion 1/7] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#14 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#14 DONE 0.0s
+
+#15 [frontend construccion 2/7] WORKDIR /construccion
+#15 CACHED
+
+#16 [frontend internal] load build context
+#16 transferring context: 344.86kB 0.0s done
+#16 DONE 0.0s
+
+#17 [backend internal] load build context
+#17 transferring context: 600.36kB 0.1s done
+#17 DONE 0.1s
+
+#18 [frontend stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#18 DONE 0.1s
+
+#19 [frontend construccion 3/7] COPY package.json package-lock.json .npmrc ./
+#19 DONE 0.1s
+
+#20 [backend stage-1 3/4] RUN groupadd --gid 10001 aplicacion && useradd --uid 10001 --gid 10001 --no-create-home aplicacion
+#20 DONE 0.4s
+
+#21 [frontend construccion 4/7] RUN npm ci --no-audit --no-fund
+#21 5.152 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#21 ...
+
+#22 [backend construccion 2/8] RUN apt-get update && apt-get install -y --no-install-recommends unzip=6.0-28ubuntu4.1 && rm -rf /var/lib/apt/lists/*
+#22 0.630 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#22 0.647 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#22 1.149 Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,409 kB]
+#22 1.284 Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#22 1.440 Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#22 1.597 Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1,808 kB]
+#22 1.692 Get:7 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+#22 1.695 Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2,122 kB]
+#22 1.953 Get:9 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,549 kB]
+#22 2.125 Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#22 3.458 Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#22 3.469 Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#22 3.473 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+#22 3.475 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2,168 kB]
+#22 3.546 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,729 kB]
+#22 3.701 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2,231 kB]
+#22 3.834 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#22 3.836 Get:18 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [669 B]
+#22 3.836 Get:19 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#22 4.068 Fetched 33.6 MB in 4s (9,056 kB/s)
+#22 4.068 Reading package lists...
+#22 4.648 Reading package lists...
+#22 5.175 Building dependency tree...
+#22 5.305 Reading state information...
+#22 5.426 Suggested packages:
+#22 5.426   zip
+#22 5.445 The following NEW packages will be installed:
+#22 5.445   unzip
+#22 5.683 0 upgraded, 1 newly installed, 0 to remove and 9 not upgraded.
+#22 5.683 Need to get 174 kB of archives.
+#22 5.683 After this operation, 384 kB of additional disk space will be used.
+#22 5.683 Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 unzip amd64 6.0-28ubuntu4.1 [174 kB]
+#22 6.255 debconf: delaying package configuration, since apt-utils is not installed
+#22 6.274 Fetched 174 kB in 1s (252 kB/s)
+#22 6.295 Selecting previously unselected package unzip.
+#22 6.295 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 6839 files and directories currently installed.)
+#22 6.328 Preparing to unpack .../unzip_6.0-28ubuntu4.1_amd64.deb ...
+#22 6.331 Unpacking unzip (6.0-28ubuntu4.1) ...
+#22 6.358 Setting up unzip (6.0-28ubuntu4.1) ...
+#22 DONE 6.6s
+
+#21 [frontend construccion 4/7] RUN npm ci --no-audit --no-fund
+#21 ...
+
+#23 [backend construccion 3/8] WORKDIR /construccion/backend
+#23 DONE 0.0s
+
+#24 [backend construccion 4/8] COPY .mvn .mvn
+#24 DONE 0.0s
+
+#25 [backend construccion 5/8] COPY mvnw pom.xml spotbugs-exclusiones.xml ./
+#25 DONE 0.0s
+
+#26 [backend construccion 6/8] RUN chmod +x mvnw
+#26 DONE 0.2s
+
+#21 [frontend construccion 4/7] RUN npm ci --no-audit --no-fund
+#21 ...
+
+#27 [backend construccion 7/8] COPY src src
+#27 DONE 0.1s
+
+#28 [backend construccion 8/8] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#28 ...
+
+#21 [frontend construccion 4/7] RUN npm ci --no-audit --no-fund
+#21 7.030 
+#21 7.030 added 588 packages in 6s
+#21 7.031 npm notice
+#21 7.031 npm notice New minor version of npm available! 11.6.2 -> 11.21.1
+#21 7.031 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.1
+#21 7.031 npm notice To update run: npm install -g npm@11.21.1
+#21 7.031 npm notice
+#21 DONE 7.1s
+
+#29 [frontend construccion 5/7] COPY angular.json tsconfig*.json ./
+#29 DONE 0.1s
+
+#30 [frontend construccion 6/7] COPY src src
+#30 DONE 0.0s
+
+#31 [frontend construccion 7/7] RUN npm run build
+#31 0.243 
+#31 0.243 > gestion-solicitudes-frontend@0.0.1 build
+#31 0.243 > ng build
+#31 0.243 
+#31 0.548 ❯ Building...
+#31 3.305 ✔ Building...
+#31 3.306 Initial chunk files | Names         |  Raw size | Estimated transfer size
+#31 3.306 main-B4WHBOKN.js    | main          | 458.11 kB |               105.70 kB
+#31 3.306 styles-UGMBM6JM.css | styles        |   1.18 kB |               498 bytes
+#31 3.306 
+#31 3.306                     | Initial total | 459.29 kB |               106.20 kB
+#31 3.306 
+#31 3.306 Application bundle generation complete. [2.756 seconds] - 2026-10-15T19:45:48.030Z
+#31 3.306 
+#31 3.307 Output location: /construccion/dist/gestion-solicitudes-frontend
+#31 3.307 
+#31 DONE 3.5s
+
+#28 [backend construccion 8/8] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#28 1.939 [INFO] Scanning for projects...
+#28 ...
+
+#32 [frontend stage-1 3/3] COPY --from=construccion /construccion/dist/gestion-solicitudes-frontend/browser /usr/share/nginx/html
+#32 DONE 0.1s
+
+#33 [frontend] exporting to image
+#33 exporting layers 0.1s done
+#33 exporting manifest sha256:4d35a884ba880fbfc111f9eca69a5bf8e60d75adbe76d557dbe5b6edb301183f done
+#33 exporting config sha256:414699de4fd2166e5f64ae03a3c5ff802bde722ca8f6f71b698d796975ab2709 done
+#33 exporting attestation manifest sha256:0cbcb8bf183098c36cce91b0e2910426be7c3578a90d73f6f190a6c630177130
+#33 exporting attestation manifest sha256:0cbcb8bf183098c36cce91b0e2910426be7c3578a90d73f6f190a6c630177130 0.0s done
+#33 exporting manifest list sha256:a7e54a09a76a6dd482238a14e5f7955edf9cf2cb9866bc864569e0ba11e69fbe done
+#33 naming to docker.io/library/gestion-solicitudes-ag014-frontend:latest done
+#33 unpacking to docker.io/library/gestion-solicitudes-ag014-frontend:latest 0.0s done
+#33 DONE 0.2s
+
+#34 [frontend] resolving provenance for metadata file
+#34 DONE 0.0s
+
+#28 [backend construccion 8/8] RUN ./mvnw -B -ntp resources:resources compiler:compile jar:jar spring-boot:repackage
+#28 5.303 [INFO] 
+#28 5.303 [INFO] -------------< es.gestionsolicitudes:gestion-solicitudes >--------------
+#28 5.303 [INFO] Building Gestión de Solicitudes 0.0.1
+#28 5.303 [INFO]   from pom.xml
+#28 5.303 [INFO] --------------------------------[ jar ]---------------------------------
+#28 14.53 [INFO] 
+#28 14.53 [INFO] --- resources:3.3.1:resources (default-cli) @ gestion-solicitudes ---
+#28 15.31 [INFO] Copying 1 resource from src/main/resources to target/classes
+#28 15.32 [INFO] Copying 7 resources from src/main/resources to target/classes
+#28 15.32 [INFO] 
+#28 15.32 [INFO] --- compiler:3.14.1:compile (default-cli) @ gestion-solicitudes ---
+#28 16.14 [INFO] Recompiling the module because of changed source code.
+#28 16.14 [INFO] Compiling 91 source files with javac [debug parameters release 21] to target/classes
+#28 17.32 [INFO] 
+#28 17.32 [INFO] --- jar:3.4.2:jar (default-cli) @ gestion-solicitudes ---
+#28 19.40 [INFO] Building jar: /construccion/backend/target/gestion-solicitudes-0.0.1.jar
+#28 19.44 [INFO] 
+#28 19.44 [INFO] --- spring-boot:4.0.8:repackage (default-cli) @ gestion-solicitudes ---
+#28 21.70 [INFO] Replacing main artifact /construccion/backend/target/gestion-solicitudes-0.0.1.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#28 21.70 [INFO] The original artifact has been renamed to /construccion/backend/target/gestion-solicitudes-0.0.1.jar.original
+#28 21.70 [INFO] ------------------------------------------------------------------------
+#28 21.70 [INFO] BUILD SUCCESS
+#28 21.70 [INFO] ------------------------------------------------------------------------
+#28 21.70 [INFO] Total time:  19.778 s
+#28 21.70 [INFO] Finished at: 2026-10-15T19:46:05Z
+#28 21.70 [INFO] ------------------------------------------------------------------------
+#28 DONE 21.8s
+
+#35 [backend stage-1 4/4] COPY --from=construccion --chown=10001:10001 /construccion/backend/target/gestion-solicitudes-0.0.1.jar aplicacion.jar
+#35 DONE 0.0s
+
+#36 [backend] exporting to image
+#36 exporting layers
+#36 exporting layers 0.7s done
+#36 exporting manifest sha256:4d480fdb30234448c57c522aa99e1adf2744d15d82ef67901b8e362f5f0f263c done
+#36 exporting config sha256:e0ddfc6e7507ba8d7541df1d221ab1f1c68fe2d72daa72f3ed434e39aecb9cc7 done
+#36 exporting attestation manifest sha256:a11f38d3753c59e2defb973e65e40f24485ee6bf8dff38a60e5714e9ed92a59a 0.0s done
+#36 exporting manifest list sha256:d352471bfcd51ee8f89cc70020f67db87b4400c3c1697a1a5cfb2a0baea2b07f done
+#36 naming to docker.io/library/gestion-solicitudes-ag014-backend:latest done
+#36 unpacking to docker.io/library/gestion-solicitudes-ag014-backend:latest
+#36 unpacking to docker.io/library/gestion-solicitudes-ag014-backend:latest 0.2s done
+#36 DONE 0.9s
+
+#37 [backend] resolving provenance for metadata file
+#37 DONE 0.0s
+ gestion-solicitudes-ag014-frontend  Built
+ gestion-solicitudes-ag014-backend  Built

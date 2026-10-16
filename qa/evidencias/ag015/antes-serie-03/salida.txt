@@ -1,0 +1,31 @@
+
+Running 1 test using 1 worker
+
+(node:41952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora (2.0m)
+
+
+  1) tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 
+
+    Test timeout of 120000ms exceeded while running "afterEach" hook.
+
+       at ..\observar.ts:35
+
+      33 |   });
+      34 | });
+    > 35 | test.afterEach(async () => {
+         |      ^
+      36 |   await Promise.allSettled(trabajos);
+      37 |   writeFileSync(process.env['AG015_DIAGNOSTICO']!, JSON.stringify(registros.sort((a,b) => Number(a.orden)-Number(b.orden)), null, 2) + '\n');
+      38 | });
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag015\observar.ts:35:6
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    qa\evidencias\ag015\antes-serie-03\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: qa\evidencias\ag015\antes-serie-03\resultados\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md
+
+  1 failed
+    tmp\ag015\e2e\aprobaciones.spec.ts:485:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 

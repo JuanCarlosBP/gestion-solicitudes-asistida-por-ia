@@ -5,8 +5,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
+import org.springframework.stereotype.Component;
 
 /** Delega la generación y comparación XSRF a Spring, con Secure restringido por petición. */
+@Component
 public class RepositorioCsrfPorEntorno implements CsrfTokenRepository {
     private final CookiesIdentidad cookies;
     private final CookieCsrfTokenRepository seguro = crear(true);
@@ -41,5 +43,11 @@ public class RepositorioCsrfPorEntorno implements CsrfTokenRepository {
     @Override
     public CsrfToken loadToken(HttpServletRequest peticion) {
         return seleccionar(peticion).loadToken(peticion);
+    }
+
+    /** Reemplaza XSRF en una frontera real de sesión, sin rotarlo por cada uso del Bearer. */
+    public void rotar(HttpServletRequest peticion, HttpServletResponse respuesta) {
+        var repositorio = seleccionar(peticion);
+        repositorio.saveToken(repositorio.generateToken(peticion), peticion, respuesta);
     }
 }

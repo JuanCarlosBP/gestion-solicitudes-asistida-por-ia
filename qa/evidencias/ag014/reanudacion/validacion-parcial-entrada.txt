@@ -1,0 +1,102 @@
+# Validación — 007 Historial y auditoría
+
+**Estado:** Implementación preparada; verificación local incompleta.
+**Autorización:** AG-014 y D-007-01–10. Sin aceptación, integración ni despliegue.
+Fuentes: [especificación](especificacion.md), [plan](plan.md), [tareas](tareas.md)
+e [informe AG014](../../docs/trazabilidad/AG-014-informe.md).
+
+## Entorno y trazabilidad
+
+Primer reloj observado 2026-10-15T20:09:15+02:00, después de lecturas iniciales.
+Límite conservador 2026-10-16T04:05:00+02:00, Europe/Madrid. El cierre conserva
+duración desde esa observación; no inventa la precisión anterior.
+[Cierre parcial](../../qa/evidencias/ag014/cierre.json): 2026-10-15T20:42:08+02:00,
+duración observada 00:32:53; no acredita verificación integrada.
+Rama leída en .git/HEAD: feature/007-historial-auditoria.
+Desviación: git status --short inicial antes de conocer la prohibición, salida vacía.
+Ningún comando Git posterior ni operación de escritura Git.
+
+[Entrada](../../qa/evidencias/ag014/entrada.json): 1777 archivos, 1454 protegidos.
+Reconocimiento 11 min 24 s desde reloj observado; compilaciones básicas PASS.
+Docker Desktop no pudo arrancar por socket temporal externo inaccesible.
+Reparación puntual y envío npm audit pendientes de respuesta humana.
+No se sustituyó PostgreSQL por base en memoria.
+
+## Resultados por criterio
+
+| ID | Ejecutado / observado | Pendiente |
+|---|---|---|
+| HA-01 | Revisión estática: V7 sin backfill, proyección de fuenteV5 y aviso anterior independiente de filtros; Angular probado. | Consultar recursos previos reales tras V6→V7. |
+| HA-02 | Inserciones dentro transacción, replay/no-op antes de callback/registro; código revisado. | Rollback real evento+efecto+resultado y ausencia de eventos falsos en PostgreSQL. |
+| HA-03 | Proyección mínimaV5 y claves prefijadas estables revisadas; Angular diferencia fuente. | Decisión antigua/nueva una sola vez, orden común y replay en BD real. |
+| HA-04 | Campos mínimos, resúmenes cerrados, Angular escapa textos; revisión y búsqueda documental acotada. | Privacidad de respuestas/logs/almacenamiento del sistema integrado. |
+| HA-05 | Lectura de roles actuales/visibilidad/unión multirrol revisada; testsUI de restricciones PASS. | NegativosHTTP, revocación, recursos ajenos y conteos reales. |
+| HA-06 | 23 pruebas backend de filtros y tests Angular PASS; precisión nanosegundos y offset corregidos. | Páginas/empates concurrentes/count y mediciones reales. |
+| HA-07 | Resumen SQL según visibilidad y UI con datos de prueba PASS. | Comparación de contadores y pendientes propios contra PostgreSQL por rol. |
+| HA-08 | 476 pruebas Angular, tipos/lint/formato/build PASS; estados/rutas/foco revisados. | E2E, teclado/contraste reales y capturas360/768/1440. |
+| HA-09 | 13 IT007 escritas/compiladas y migraciones previas intactas por huellas. | Ejecutar PostgreSQL real: migración, restricciones, privilegios, concurrencia, rollback y reinicio. |
+| HA-10 | Backend unitarias/análisis/paquete; Angular; auditoríasOSV; actionlint/documentación/huellas. | verify íntegro, Docker/Compose/API/E2E, npm audit, cierre de QA completa y CI007 remota. |
+
+Ningún HA se marca globalmente superado mediante revisión estática o pruebas con dobles.
+
+Pendiente específico HA-01/03/09: el E2E de decisión anterior exige
+`E2E_HISTORIAL_ANTERIOR_DECISION=true` y un recurso del volumen ficticioV6
+capturado antes de migrar. La variante sintética predeterminada de CI no acredita
+decisiones anteriores en navegador, aunque sus33E2E llegaran a pasar.
+
+## Evidencias ejecutadas
+
+- Backend: 122 unitarias, 0 fallos/errores/omitidas; 99 heredadas y 23 nuevas.
+  [Log final05](../../qa/evidencias/ag014/backend-unitarias-estatico-final-05.log).
+- Spotless y SpotBugs posterior: 0 avisos; tres falsos positivos de referencias
+  Spring se excluyeron de forma estricta y revisada. Repetición05 sobre128fuentes
+  sin cambios: [resumen](../../qa/evidencias/ag014/backend-resumen-final-05.json).
+- Empaquetado y OpenAPI compilado: [package](../../qa/evidencias/ag014/backend-package-04.log).
+  Esto no equivale a generar/verificar OpenAPI con la aplicación arrancada.
+- Angular: [476 pruebas](../../qa/evidencias/ag014/frontend-tests-completos-05.log),
+  [tipos](../../qa/evidencias/ag014/frontend-typecheck-05.log),
+  [lint](../../qa/evidencias/ag014/frontend-lint-05.log),
+  [formato](../../qa/evidencias/ag014/frontend-format-check-05.log),
+  [build](../../qa/evidencias/ag014/frontend-build-05.log).
+- [Inventario E2E](../../qa/evidencias/ag014/e2e-inventario.log):33tests/7archivos;
+  solo lista, sin ejecutar. Diez casos007 incluyen doce capturas previstas.
+- [OSV Maven](../../qa/evidencias/ag014/maven-osv-actualizado.log):132componentes,
+  salida0. [OSV npm](../../qa/evidencias/ag014/npm-osv-actualizado.log):7producción/
+  653completo, salida0. Bases públicas recién descargadas y huellas guardadas.
+- [Actionlint](../../qa/evidencias/ag014/actionlint-actual.log) salida0; sintaxis
+  de verificadores nuevos node --check salida0.
+- [Control documental final](../../qa/evidencias/ag014/documentacion-final/documentacion-control.json):
+  resultado y recuento registrados; no garantiza ausencia de todo secreto.
+- [Integridad](../../qa/evidencias/ag014/entrega-integridad.json) y
+  [manifiesto](../../qa/evidencias/ag014/entrega-manifiesto.json): comparaciónSHA256
+  sin Git. [Protección de destinos](../../qa/evidencias/ag014/proteccion-destinos.json) PASS.
+
+## Fallos conservados y revisión
+
+Maven inicial: caché/ruta de trabajo corregidas antes de compilePASS.
+Mockito autoattach Windows: fallo de pipe; javaagent ya cacheado permitió las122
+unitarias. No nuevas dependencias. SpotBugs inicial3avisos seguido de exclusiones
+estrictas de colaboradores Spring y0avisos. Formato Angular inicial detectó3
+specs, corregidas; comparación de fechas/offset corregida tras observación baja.
+Regresión final476PASS corresponde a fuentes corregidas.
+
+Revisor independiente: SDD inicial y código intermedio sin hallazgos altos/
+bloqueantes; observación baja de cliente corregida y cubierta por regresión.
+[Acta de cierre acotado](../../qa/evidencias/ag014/revision-cierre-parcial.md).
+La revisión de lectura no acredita aislamiento técnico ni aceptación humana.
+Falta revisión de evidencias PostgreSQL/Compose/E2E porque aún no existen.
+
+## Pendientes y reanudación
+
+[Detalle del bloqueo](../../qa/evidencias/ag014/bloqueos-entorno.json):
+Docker no disponible; no se ejecutó reparación manual del socket externo.
+La revisión automática rechazó npm audit por envío de nombres/versiones a
+registry.npmjs.org sin autorización explícita; OSV local es alternativa distinta.
+
+Pendientes: mvnw verify íntegro,13IT007/regresiónPG001–006, V6→V7 preservadora,
+Docker sin caché, Compose200/503/Swagger/persistencia, API/regresión,33E2E y
+capturas/contraste/teclado, tamaño/latencia observados. Sin datos reales, sin
+purga, sinSLA. No se crea008 porque no cumple la puerta.
+
+[CI heredada](../../qa/evidencias/ag014/ci-remota-consulta.json) PR4/PR5 está verde
+para commits001–006. CI007 espera push humano; no es verificación de cambios locales.

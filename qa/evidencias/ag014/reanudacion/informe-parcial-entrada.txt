@@ -1,0 +1,165 @@
+# Informe AG-014 — Historial y auditoría007
+
+**Estado:** Implementación preparada; verificación local incompleta por entorno.
+**Autorización:** [encargo humano](../../qa/evidencias/ag014/encargo-humano.txt), D-007-01–10.
+No se declara007 aceptada, integrada ni desplegada.
+
+## Horario y alcance
+
+Primer reloj observado2026-10-15T20:09:15+02:00, Europe/Madrid, después de las
+lecturas iniciales. Límite conservador2026-10-16T04:05:00+02:00, anterior a ocho
+horas desde esa observación. Cierre parcial 2026-10-15T20:42:08+02:00; duración observada
+00:32:53. [Registro de cierre](../../qa/evidencias/ag014/cierre.json).
+No se inventa precisión de las lecturas previas; controles documentales finales
+inmediatamente posteriores al registro de cierre.
+Reconocimiento cerrado a20:20:39+02:00,11min24s desde el reloj observado,
+con construcción básicaPASS y Docker bloqueado; no se repitió regresión completa
+antes de implementar. Trabajo exclusivamente en workspace; herramientas instaladas
+y adjunto del usuario se leyeron como entradas. No se reparó manualmente el socket externo.
+
+Rama feature/007-historial-auditoria confirmada leyendo .git/HEAD.
+**Desviación:** git status --short se ejecutó antes de leer la prohibición adjunta,
+con salida vacía. No hubo comandos Git posteriores, staging, commits, cambios de
+rama, push, PR, integración ni despliegue. Leer .git/HEAD y consultar GitHub no
+ejecutó comandos Git. Las PR existentes solo se consultaron para conocer CI.
+
+## Coordinación y entregables
+
+Planificador en lectura; implementadores backend y frontend con archivos
+exclusivos; revisor independiente en lectura. Máximo tres subagentes concurrentes.
+La restricción de lectura es de instrucciones, no un aislamiento técnico probado.
+Coordinador: SDD/ADR, QA, CI, documentos, evidencia y manifiestos.
+
+[Especificación007](../../especificaciones/007-historial-auditoria/especificacion.md)
+aprobada por AG014; [plan](../../especificaciones/007-historial-auditoria/plan.md),
+[tareas](../../especificaciones/007-historial-auditoria/tareas.md),
+[validación](../../especificaciones/007-historial-auditoria/validacion.md) y
+[ADR0008](../decisiones/ADR-0008-historial-de-negocio-y-consulta.md) concretan ejecución.
+Se resolvieron Q01–06 del borrador; retención definitiva sigue diferida, sin purga.
+La autorización humana sustituye la antigua exclusión de auditoría global.
+
+Backend: V7__historial_de_negocio.sql, módulo historial, inserción transaccional
+en siete acciones existentes, consulta parametrizada con roles actuales,
+proyecciónV5, resumen y OpenAPI. Sin nuevas dependencias ni cambiosV1–V6.
+La V7 está escrita y compilada como recurso; **no aplicada/verificada en BD en AG014**.
+
+Angular: timeline reutilizable integrado/directo, global autorizado, filtros/
+paginaciónURL, estados y resumen real conectado aAPI, conservando salud. Rutas
+/historial, /solicitudes/:id/historial, /proveedores/:id/historial.
+No funciones de editar/borrar eventos ni nuevas dependencias visuales.
+
+## Fuentes y contrato
+
+V7 registra PROVEEDOR_CREADO/MODIFICADO/DESACTIVADO/REACTIVADO,
+BORRADOR_CREADO/GUARDADO y SOLICITUD_PRESENTADA. Decisiones APROBADA/RECHAZADA
+proceden únicamente deV5. Sin backfill, sin duplicar decisiones, sin eventos por
+replay/lectura/no-op. PUT exitoso conserva contrato heredado y registra guardado.
+
+GET /api/solicitudes/{id}/historial, /api/proveedores/{id}/historial,
+/api/historial y /api/resumen; identidad/roles vigentes. Conteos después de
+visibilidad, unión multirrol y supervisor sin borradores ajenos. Historial proveedor
+y global reservados a auditor/admin.404 recurso oculto/inexistente;403 global
+sinrol;401 sin identidad; filtros inválidos400. Página20, máximo100,
+desplazamiento100000, filtros cerradosUUID/ISO y orden fecha/clave prefijadaDESC.
+Offset entre peticiones no promete snapshot concurrente.
+
+Minimización: no textos privados, fiscal/contactos, conceptos/descripción, secretos,
+cuerposHTTP, hashes o claves idempotentes. DetalleV5 autorizado conserva comentario/
+motivo original. La protección SELECT/INSERT no impide alterar por administradorBD.
+
+## Matriz HA
+
+| ID | Trabajo y comprobación realizada | Estado y pendiente |
+|---|---|---|
+| HA-01 | Sin backfill en V7; aviso por ausencia creación antes de filtros; revisión estática y Angular. | Parcial. Recurso previo real y migración pendientesPG. |
+| HA-02 | Inserción dentro transacción y no-op previo; pruebas de rollback preparadas. | Parcial. No se ha demostrado rollback real de evento/efecto/resultado. |
+| HA-03 | UNION mínimaV5, IDs prefijados y ninguna acción decisión admitidaV7. | Parcial. Decisiones previas/nuevas, replay y orden común pendientesPG/E2E. |
+| HA-04 | DTO/proyección mínimos, textos escapados; revisión y controles documentales. | Parcial. HTTP/BD/logs reales007 pendientes. |
+| HA-05 | Roles actuales, unión de permisos y404; unitarias UI/revisión. | Parcial. Negativos de recurso, revocación y multirrol pendientesPG. |
+| HA-06 |23 pruebas de filtros backend; tests Angular, parámetros/orden/count revisados. | Parcial. Paginación/empates/carga concurrente/latencia reales pendientes. |
+| HA-07 | AgregaciónSQL visible y resumenAngular probado con dobles. | Parcial. Comparación contra datos reales ficticios dePG por perfil pendiente. |
+| HA-08 |476 Angular; tipos/lint/formato/buildPASS; rutas/estados/foco semántico revisados. | Parcial. Teclado/contraste/responsive en navegador y capturas360/768/1440 pendientes. |
+| HA-09 |13 IT007 escritos y compilados, adaptación de integraciones heredadas. | Pendiente ejecución PostgreSQL/Testcontainers, migración, carreras y reinicio. |
+| HA-10 |122 unitarias, SpotBugs0, buildAngular, OSV local, actionlint/enlaces/huellas; CI adaptada. | Parcial. verify íntegro, Docker/Compose/API/E2E, npm audit, revisión de evidencia completa y CI007 pendientes. |
+
+## Comprobaciones ejecutadas
+
+| Comprobación | Observado y evidencia AG014 |
+|---|---|
+| Construcción básica | Backend y AngularPASS; precondicion-backend-final.log/precondicion-frontend.log. |
+| Backend unitarias |122PASS,0fallos,0errores,0omitidas:99 heredadas+23 nuevas; backend-unitarias-estatico-final-05.log y14reportesXML finales. |
+| Formato/análisis/empaquetado | SpotlessPASS, SpotBugs0 sobre fuentes finales (05); package04PASS con pruebas omitidas. No sustituye verify completo. |
+| Angular |476PASS/23archivos; frontend-tests-completos-05.log. Tipos/lint/formato/build frontend-*-05.logPASS. |
+| Inventario E2E |33tests/7archivos,10nuevos; e2e-inventario.log. Solo listado, no ejecución. |
+| OSV npm |7producción/653completo, salida0; bases públicas completas actualizadas sin enviar inventario. |
+| OSV Maven |132componentes, salida0; auditorias-actualizadas/maven-osv.json. |
+| npm audit |No completado: DNS en aislamiento; revisión automática rechazó envío externo pendiente permiso. |
+| Actionlint y sintaxisQA |PASS; actionlint-actual.log y comprobacionesnode --check. |
+| Documentación |[Control final](../../qa/evidencias/ag014/documentacion-final/documentacion-control.json): enlaces y búsqueda acotada de secretos; no garantía absoluta. |
+| Históricos |1454protegidos; resultado final y conservación del prefijoCSV en entrega-integridad.json. |
+| CI remota heredada |PR4/run38782417067 y PR5/run38782440883: success backend/frontend/Compose; solo sus commits001–006 publicados. |
+
+La base OSV descargada y sus huellas constan en osv-bases-descargadas.json.
+No se envió inventario a npm después del rechazo automático. OSV no se presenta
+como npm audit ni como auditoría completa del sistema operativo.
+
+## Incidencias y límites
+
+Maven inicial intentó caché fuera del workspace; corregido con entorno local y
+ejecución desde backend. Mockito autoattach falló por pipeWindows; javaagent del
+Mockito ya instalado permitió122 unitarias. Sin cambiar dependencias.
+SpotBugs detectó tres EI_EXPOSE_REP2: firma de constructor ya excluida cambió y
+dos nuevos colaboradores Spring compartidos. Exclusiones por clase/constructor/
+campo/patrón, revisadas independientemente; análisis posterior0avisos.
+Observación baja de revisión Angular sobre nanosegundos/límiteoffset corregida;
+regresión476PASS posterior. Los fallos se conservan en logs previos.
+
+[Revisión independiente acotada](../../qa/evidencias/ag014/revision-cierre-parcial.md):
+sin defectos altos/bloqueantes identificados en el código leído, sin acreditar
+las pruebas integradas pendientes. Repetición backend05:122PASS, SpotlessPASS,
+SpotBugs0 y128huellas sin cambios; el contratoOpenAPI generado requiere arranque.
+
+Docker Desktop falla antes de disponer de motor: socket temporal
+C:/Users/carli/AppData/Local/Docker/run/dockerInference inaccesible.
+Ese archivo está fuera del workspace permitido. Se solicitó autorización para
+retirar únicamente el socket vacío y reiniciar conservando imágenes/volúmenes.
+El reinicio normal porCLI tampoco respondió; consultas colgadas canceladas.
+No se borró archivo externo, no se restableció fábrica ni se tocaron volúmenes.
+[Registro de bloqueos](../../qa/evidencias/ag014/bloqueos-entorno.json).
+
+No se ejecutaron IT PostgreSQL, mvnw verify completo, migraciónV6→V7, Docker
+sin caché, Compose200/503, APIs007/regresión ni33E2E. No hay capturas nuevas ni
+medición real de carga/crecimiento007. Los verificadores están preparados;
+las pruebas escritas no constituyen evidencia de resultado. Retención jurídica,
+SLA, carga productiva, WCAG/OWASP completos y operación pública siguen fuera.
+
+La revisión independiente identifica un pendiente de cobertura HA-01/03/09:
+la decisión anterior en navegador se comprueba solo con
+`E2E_HISTORIAL_ANTERIOR_DECISION=true`. El fixture artificial de CI y sus33E2E
+predeterminados no acreditan conservación de decisiones V5 anteriores en navegador.
+La reanudación local exige un recurso con decisión procedente del volumen ficticio
+V6, snapshot previo, `E2E_HISTORIAL_ANTERIOR_ID` y dicha condición activada.
+No se marcarán esos criterios superados sin esa evidencia.
+
+## Archivos y propuesta de commits humanos
+
+[Manifiesto de entrega](../../qa/evidencias/ag014/entrega-manifiesto.json)
+lista archivos creados/modificados/eliminados por comparaciónSHA256 de entrada;
+no es diffGit. [Fuentes](../../qa/evidencias/ag014/fuentes-finales.json) identifica
+lo inspeccionable y [integridad](../../qa/evidencias/ag014/entrega-integridad.json)
+verifica históricos. Dependencias y V1–V6 permanecen sin cambios.
+
+[Manifiesto de commits](../../qa/evidencias/ag014/manifiesto-commits.json), solo propuesta:
+docs SDD/ADR007; feat backendV7/consulta; feat Angular historial/resumen;
+test QA/CI; docs evidenciaAG014. La persona responsable selecciona, revisa y ejecutaGit.
+
+## Siguiente paso
+
+Resolver autorizaciones pendientes y disponibilidadDocker; ejecutar13IT enfocadas,
+verify completo y regresiones, construir imágenes finales sin caché, migración
+preservadora y Compose/API/33E2E, revisar12capturas y contraste/teclado,
+medir tamaño/latencia y revisar evidencias finales. Respetar plazo04:05Europe/Madrid;
+si se retoma después, se necesita un nuevo encargo temporal.
+
+No se crea008:007 no está totalmente verificada. CI007 pendiente del push humano;
+aceptación, integración y despliegue requieren su decisión.

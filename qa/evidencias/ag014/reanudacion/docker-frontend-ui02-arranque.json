@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-10-15T21:57:07.0316413+02:00",
+  "httpPagina": 200,
+  "bundle": "main-AAKA5GZD.js",
+  "httpSalud": 200,
+  "cuerpoSalud": "{\"estado\":\"DISPONIBLE\"}",
+  "frontendAnterior": "conservado detenido",
+  "backendPostgres": "gestion-solicitudes-ag014 sin reemplazo"
+}

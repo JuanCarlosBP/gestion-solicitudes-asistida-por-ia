@@ -1,0 +1,68 @@
+import {readFileSync,writeFileSync,readdirSync,existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const base='qa/evidencias/ag015/';
+const sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
+const json=p=>JSON.parse(readFileSync(p,'utf8').replace(/^\uFEFF/,''));
+const save=(p,v)=>writeFileSync(base+p,JSON.stringify(v,null,2)+'\n');
+const omit=new Set(['.git','node_modules','target','dist','.angular','tmp','temp','test-results','playwright-report','.data','coverage']);
+function walk(dir='.') {
+  return readdirSync(dir,{withFileTypes:true}).flatMap(i=>{
+    if(omit.has(i.name)||i.isSymbolicLink()||i.name==='.env'||(i.name.startsWith('.env.')&&i.name!=='.env.example')) return [];
+    const p=(dir==='.'?'':dir+'/')+i.name;
+    return i.isDirectory()?walk(p):[p];
+  });
+}
+const entrada=json(base+'entrada-huellas.json').archivos;
+const mapa=new Map(entrada.map(f=>[f.ruta,f]));
+const permitidos=new Set([
+  'backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java',
+  'backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java',
+  'backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java',
+  'backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java',
+  'backend/src/test/java/es/gestionsolicitudes/proveedores/http/ErroresProveedorTest.java',
+  'backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java',
+  'qa/verificar-backend-ag015.ps1','MEMORY.md','README.md','docs/README.md',
+  'docs/mapa-del-proyecto.md','docs/documentaciondev/seguridad.md',
+  'docs/trazabilidad/AG-015-informe.md','docs/trazabilidad/ejecuciones-agentes.csv',
+  'especificaciones/README.md','especificaciones/007-historial-auditoria/tareas.md',
+  'especificaciones/007-historial-auditoria/validacion.md',
+]);
+let todos=walk();
+const cambios=()=>todos.filter(p=>!mapa.has(p)||sha(p)!==mapa.get(p).sha256).sort();
+const ausentes=entrada.filter(f=>!existsSync(f.ruta)).map(f=>f.ruta);
+const protegidos=entrada.filter(f=>/^qa\/evidencias\/ag(?:00[3-9]|01[0-4])(?:\/|$)/i.test(f.ruta)||/^docs\/trazabilidad\/AG-0(?:0[3-9]|1[0-4])/.test(f.ruta)||/\/db\/migration\/V[1-7]__/.test(f.ruta)||f.ruta.startsWith('especificaciones/008-'));
+const alterados=protegidos.filter(f=>!existsSync(f.ruta)||sha(f.ruta)!==f.sha256).map(f=>f.ruta);
+const csv='docs/trazabilidad/ejecuciones-agentes.csv';
+const csvAntes=readFileSync('tmp/ag015/entrada/'+csv),csvAhora=readFileSync(csv);
+const noPrevistos=cambios().filter(p=>!p.startsWith(base)&&!permitidos.has(p));
+save('preservacion-fuentes.json',{observado:new Date().toISOString(),entrada:entrada.length,protegidos:protegidos.length,protegidosAlterados:alterados,archivosAusentes:ausentes,cambiosNoPrevistos:noPrevistos,csvPrefijoHistoricoIntegro:csvAhora.subarray(0,csvAntes.length).equals(csvAntes),comparacion:'Bytes SHA-256 frente a entrada; sin comandos Git.'});
+const editables=cambios().filter(p=>!p.startsWith(base)&&/\.(?:java|ps1|md|csv)$/.test(p)).concat(base+'reproduccion/README.md');
+const formato=editables.map(ruta=>{
+  let t=readFileSync(ruta,'utf8');
+  if(ruta===csv) t=csvAhora.subarray(csvAntes.length).toString('utf8');
+  return {ruta,finalNuevaLinea:/\r?\n$/.test(t),espaciosFinales:/[\t ]+\r?$/m.test(t),lineasVaciasAlFinal:/(?:\r?\n){2}$/.test(t)};
+});
+save('formato-fuentes.json',{observado:new Date().toISOString(),alcance:'Fuentes editables cambiadas; CSV solo apéndice. No normaliza evidencia bruta ni históricos.',archivos:formato,errores:formato.filter(f=>!f.finalNuevaLinea||f.espaciosFinales||f.lineasVaciasAlFinal)});
+const hallazgos=[];
+for(const p of todos.filter(p=>p.startsWith(base)&&!p.endsWith('.png'))) {
+  const t=readFileSync(p,'utf8');
+  if(/eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}/.test(t)||/(?:REFRESH-TOKEN|XSRF-TOKEN)=[A-Za-z0-9_%\-]{16,}/.test(t)) hallazgos.push(p);
+}
+save('secretos-complementario.json',{observado:new Date().toISOString(),alcance:'Nueva evidencia AG-015, búsqueda acotada de JWT y valores largos de cookies; no garantía integral.',ubicaciones:hallazgos});
+if(ausentes.length||alterados.length||noPrevistos.length||!csvAhora.subarray(0,csvAntes.length).equals(csvAntes)||formato.some(f=>!f.finalNuevaLinea||f.espaciosFinales||f.lineasVaciasAlFinal)||hallazgos.length) {
+  console.log(JSON.stringify({ausentes,alterados,noPrevistos,formato:formato.filter(f=>!f.finalNuevaLinea||f.espaciosFinales||f.lineasVaciasAlFinal),ubicaciones:hallazgos}));
+  process.exitCode=1;
+} else {
+  const manifiesto=base+'manifiesto-commits.json',integridad=base+'entrega-integridad.json',sello=base+'SHA256SUMS.txt';
+  todos=walk();
+  const rutas=[...new Set([...cambios(),manifiesto,integridad,sello])].sort();
+  const grupos=[
+    {mensajeSugerido:'fix: estabilizar CSRF entre peticiones Bearer y conservar rotación en acceso y cierre',archivos:rutas.filter(p=>p.startsWith('backend/'))},
+    {mensajeSugerido:'test: acreditar regresión AG-015 y conservar intentos y recursos QA',archivos:rutas.filter(p=>p.startsWith('qa/'))},
+    {mensajeSugerido:'docs: registrar corrección local de 007 e incidencias pendientes de publicación',archivos:rutas.filter(p=>!p.startsWith('backend/')&&!p.startsWith('qa/'))},
+  ];
+  writeFileSync(manifiesto,JSON.stringify({comparacion:'2573 huellas de entrada; rutas únicas, sin Git; no contiene tmp ni salidas de build.',grupos},null,2)+'\n');
+  save('entrega-integridad.json',{observado:new Date().toISOString(),totalArchivos:rutas.length,exclusionesDeAutorreferencia:[integridad,sello],archivos:rutas.filter(p=>p!==integridad&&p!==sello).map(ruta=>({ruta,estado:mapa.has(ruta)?'modificado':'nuevo',bytes:readFileSync(ruta).length,sha256:sha(ruta)}))});
+  writeFileSync(sello,`${sha(integridad)}  ${integridad}\n${sha(manifiesto)}  ${manifiesto}\n`);
+  console.log(JSON.stringify({archivos:rutas.length,modificados:rutas.filter(p=>mapa.has(p)).length,nuevos:rutas.filter(p=>!mapa.has(p)).length,protegidos:protegidos.length,sello:sha(sello)}));
+}

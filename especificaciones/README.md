@@ -11,6 +11,12 @@ Estado vigente comunicado por el encargo AG-013: gobierno/001/002 aceptados
 formalmente;003–005 verificados localmente. Las referencias AG-009/010 de la tabla
 conservan el resultado documentado en aquellas ejecuciones.006 queda verificada
 localmente en AG-013; su aceptación e integración continúan pendientes.
+AG-014 verifica007 localmente y, tras su puerta, crea solo el borrador008.
+AG-015 corrige localmente la primera CI fallida de007; publicación y nueva CI
+siguen pendientes. [Informe correctivo](../docs/trazabilidad/AG-015-informe.md).
+008 tiene aprobación conceptual de la tercera opción (un VPS, Java y PostgreSQL,
+bases temporales separadas); prototipo y dimensionamiento después del cierre007.
+El archivo008 permanece como borrador histórico, sin cambios en esta reparación.
 
 ## Paquete existente
 
@@ -41,7 +47,11 @@ localmente en AG-013; su aceptación e integración continúan pendientes.
 | 006 — Concurrencia e idempotencia | [Plan](006-concurrencia-idempotencia/plan.md) | Aprobado por decisión humana AG-013. |
 | 006 — Concurrencia e idempotencia | [Tareas](006-concurrencia-idempotencia/tareas.md) | Aprobadas y ejecutadas en AG-013. |
 | 006 — Concurrencia e idempotencia | [Validación](006-concurrencia-idempotencia/validacion.md) | CI-01–10 verificados localmente, revisión sin hallazgos abiertos; aceptación e integración pendientes. |
-| 007 — Historial y auditoría | [Especificación](007-historial-auditoria/especificacion.md) | Borrador pendiente de aprobación humana; sin plan, tareas, ADR, migración ni código007. |
+| 007 — Historial y auditoría | [Especificación](007-historial-auditoria/especificacion.md) | Aprobada por AG-014; SDD, ADR0008 e implementación realizados. |
+| 007 — Historial y auditoría | [Plan](007-historial-auditoria/plan.md) | Autorizado por AG-014 y ejecutado. |
+| 007 — Historial y auditoría | [Tareas](007-historial-auditoria/tareas.md) | Ejecutadas y verificadas localmente. |
+| 007 — Historial y auditoría | [Validación](007-historial-auditoria/validacion.md) | Corrección AG-015 verificada localmente tras primera CI fallida; publicación, nueva CI, aceptación e integración pendientes. |
+| 008 — Demo, operación y entrega | [Especificación](008-demo-operacion-entrega/especificacion.md) | Solo borrador tras puerta AG-014; sin plan/tareas aprobados, código ni despliegue. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.
@@ -85,6 +95,15 @@ La [puerta007](../qa/evidencias/ag013/puerta007.json) se cumplió a13:23:37+02:0
 con537,298min restantes. Se creó únicamente la especificación borrador007.
 
 ## Estados y evidencias
+
+AG-014 sustituye el límite anterior de borrador007: D-007-01–10 y ejecución
+autorizadas, con [plan007](007-historial-auditoria/plan.md),
+[tareas](007-historial-auditoria/tareas.md) y
+[validación](007-historial-auditoria/validacion.md). La continuación008 requiere007
+completamente verificada localmente, revisión sin bloqueantes y90 minutos restantes;
+solo autoriza borrador documental, nunca código ni despliegue.
+La [puerta008](../qa/evidencias/ag014/reanudacion/puerta008.json) se cumplió
+a22:17:38+02:00 con347,351 minutos restantes; se creó únicamente la especificación.
 
 Los requisitos tendrán IDs estables y criterios observables.
 Las tareas conservarán la relación con esos IDs.

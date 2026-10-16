@@ -1,0 +1,21 @@
+{
+  "resultado": "PASS",
+  "resultados": [
+    {
+      "id": "ag003",
+      "rechazado": true
+    },
+    {
+      "id": "ag009",
+      "rechazado": true
+    },
+    {
+      "id": "ag010",
+      "rechazado": true
+    },
+    {
+      "id": "ag013",
+      "rechazado": true
+    }
+  ]
+}

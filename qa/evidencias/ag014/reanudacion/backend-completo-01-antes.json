@@ -1,0 +1,64 @@
+{
+  "fecha": "2026-10-15T21:51:18.2726704+02:00",
+  "contenedores": [
+    "fffb0b5ead55389f5a311ada477903e0c14b5fb24887f50a350305d6402cbb88",
+    "a59a1053c0932567569d6717dd317b4d6077b38c9658be2f60254ca397526842",
+    "2885b855145fde9f333f137c826b40a90521f8a39ee4553c48be74a902f0f0b2",
+    "3c78ab87a48773ae5a9614452751820b22b540e239f24ec8df3c95c52b239f9e",
+    "9c764430e01718bf758301fd76f4e56c0537f87b27ba8e610283f8bae21e3aa9",
+    "5f66d755ec7d00e07bd547fb6ff8c1168af7db611b8788636de49c430543cc1b",
+    "d09d1e15f7261236f4f5dd0f939a062758b9aef1bdc33a802b33bd7dce531c88",
+    "1c43f99c6d7d64a33c04a146dd690206ca069621e9b764868c6d704b83768eb4",
+    "02b62208f591741c0e64e84c4c4a26fc70ec671bc7e5d43f3dd149211742b176",
+    "6322d6c139cda5e4d90247b5dafb2924271868ebd806f7ca8661ffdf2bb7a899",
+    "0d10719df8ba1cd648f6f47cd205e0feb2aaee303ffe3733edcb58f6e0ccda6b",
+    "d07bca9b7ecdc7ccc3b63025a665ec993a9c3ff0e2140874ac085e09de6c09e8",
+    "8fcfcdd4b4a5b8f48aaf0b4871703df655202c35a42dcc5d1b8ab6f6d2715a27",
+    "30fd50b77d31a7d50a61f5e9ffb26a0b6ae02993392288694d6f3775fc8aef8b",
+    "b4d931777e0c446b4a3d74aa3ec521c3edac508a749a5cb53093c8bdbf1d581a"
+  ],
+  "volumenes": [
+    "9917beb8b0bc5ec4ca1f5af150b36db3114a0619fc7d01ba9e1e45af05741f6b",
+    "biteacademy_postgres_data",
+    "cfab926ba0e8f3ae681728a1a6d166992dd0a939ce07749cb7782f96c1b946b9",
+    "gestion-solicitudes-001_datos-postgres",
+    "gestion-solicitudes-ag014_datos-postgres",
+    "open-webui"
+  ],
+  "imagenes": [
+    "sha256:026172927d8ee988934ef84f52c84816e3a0e2e2e1f9b34ab0e2fde489fdc88f",
+    "sha256:0dcd216f296cace3321e911dfb143d3b13d680aead5b542881dc4c419cc1a676",
+    "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+    "sha256:373c10cb9ec5cbd682c10f9b3b352e926109d7e91e56bf1a2a821a35eca03e43",
+    "sha256:4523f89b5e7e0b7a5768a52ed17acf132f3ec6e27cf3155e53192998ba4dc98e",
+    "sha256:64e216a99d570e5a6380428f855945f16ec9511904f0ebce0946083c5ab13a4a",
+    "sha256:7c1a8a9a47c780ed0f983770a662f80deb115d95cce3e2daa3d12115b8cd28f0",
+    "sha256:a7e54a09a76a6dd482238a14e5f7955edf9cf2cb9866bc864569e0ba11e69fbe",
+    "sha256:a9d2df00eaeaa86be20f6e2b4cfec3c8dd927442fc53105156e97ecce125adb1",
+    "sha256:b3968e348b48f1198cc6de6611d055dbad91cd561b7990c406c3fc28d7095b21",
+    "sha256:b468c3fc688b14450571494f588bd939378e7fd542ed5a73f8efc13f17872a87",
+    "sha256:b63891058ebfb442f452080633a9400a2c8ebe090411b7148a2cace140e91c96",
+    "sha256:b8095f79a6a8ffad8f830bdacc9b5b0aef805689b31bca0b065cc2424d3cfaeb",
+    "sha256:d0887fcc7ba76759f7ad251190f59d313d9c8d4cd1cceb9b3873cbfdcee04454",
+    "sha256:d352471bfcd51ee8f89cc70020f67db87b4400c3c1697a1a5cfb2a0baea2b07f",
+    "sha256:ee64a64eaab618d88051c3ade8f6352d11531fcf79d9a4818b9b183d8c1d18ba"
+  ],
+  "qaConservados": [
+    {
+      "id": "fffb0b5ead55389f5a311ada477903e0c14b5fb24887f50a350305d6402cbb88",
+      "estado": "exited",
+      "etiquetas": {
+        "gestion.qa.conservar": "true",
+        "gestion.qa.instancia": "435560fe-9997-4e20-810e-8da6c0a2d3d6",
+        "org.testcontainers": "true",
+        "org.testcontainers.copied_files.hash": "1",
+        "org.testcontainers.hash": "bff3f76ae778d30c42d6e55a09437b37938718de",
+        "org.testcontainers.lang": "java",
+        "org.testcontainers.version": "2.0.5"
+      },
+      "volumenes": [
+        "cfab926ba0e8f3ae681728a1a6d166992dd0a939ce07749cb7782f96c1b946b9"
+      ]
+    }
+  ]
+}

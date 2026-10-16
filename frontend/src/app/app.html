@@ -23,6 +23,11 @@
           >Proveedores</a
         >
       }
+      @if (historial.global()) {
+        <a routerLink="/historial" routerLinkActive="activo" ariaCurrentWhenActive="page"
+          >Historial</a
+        >
+      }
       <a routerLink="/mi-cuenta" routerLinkActive="activo" ariaCurrentWhenActive="page"
         >Mi cuenta</a
       >

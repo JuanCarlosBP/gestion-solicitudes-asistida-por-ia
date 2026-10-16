@@ -1,0 +1,17 @@
+{
+  "exitCode": 1,
+  "argumentos": [
+    "-B",
+    "-ntp",
+    "test-compile",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=IdentidadAccesoIT#csrfPermaneceEstableEntreLecturasBearerConcurrentes+csrfRotaEnLoginYCierreRealesSinExponerloEnElCuerpo",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/ag015/backend-temporal"
+  ],
+  "inicio": "2026-10-16T00:50:00.4907477+02:00",
+  "conservacion": true,
+  "fin": "2026-10-16T00:50:14.8779462+02:00",
+  "sistema": "Windows; PostgreSQL Linux en Docker",
+  "alcance": "regresion"
+}

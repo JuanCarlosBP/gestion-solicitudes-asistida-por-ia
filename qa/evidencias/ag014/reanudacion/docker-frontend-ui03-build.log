@@ -1,0 +1,92 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 667B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 664B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#3 DONE 0.8s
+
+#4 [internal] load metadata for docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#4 DONE 0.8s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 104B done
+#5 DONE 0.0s
+
+#6 [construccion 1/7] FROM docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f
+#6 resolve docker.io/library/node:24.13.0-bookworm-slim@sha256:4660b1ca8b28d6d1906fd644abe34b2ed81d15434d26d845ef0aced307cf4b6f 0.0s done
+#6 DONE 0.0s
+
+#7 [stage-1 1/3] FROM docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc
+#7 resolve docker.io/library/nginx:1.28.3-trixie@sha256:146adea4768b83c607d0bdfa4188464e3da6e0a3ad4475db1d1d8f64f27c29cc 0.0s done
+#7 CACHED
+
+#8 [construccion 2/7] WORKDIR /construccion
+#8 CACHED
+
+#9 [internal] load build context
+#9 transferring context: 35.22kB done
+#9 DONE 0.0s
+
+#10 [stage-1 2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#10 DONE 0.0s
+
+#11 [construccion 3/7] COPY package.json package-lock.json .npmrc ./
+#11 DONE 0.0s
+
+#12 [construccion 4/7] RUN npm ci --no-audit --no-fund
+#12 4.724 npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#12 6.419 
+#12 6.419 added 588 packages in 6s
+#12 6.420 npm notice
+#12 6.420 npm notice New minor version of npm available! 11.6.2 -> 11.21.1
+#12 6.420 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.1
+#12 6.420 npm notice To update run: npm install -g npm@11.21.1
+#12 6.420 npm notice
+#12 DONE 6.7s
+
+#13 [construccion 5/7] COPY angular.json tsconfig*.json ./
+#13 DONE 0.2s
+
+#14 [construccion 6/7] COPY src src
+#14 DONE 0.0s
+
+#15 [construccion 7/7] RUN npm run build
+#15 0.269 
+#15 0.269 > gestion-solicitudes-frontend@0.0.1 build
+#15 0.269 > ng build
+#15 0.269 
+#15 0.580 ❯ Building...
+#15 3.291 ✔ Building...
+#15 3.291 Initial chunk files | Names         |  Raw size | Estimated transfer size
+#15 3.291 main-HB3WKJUW.js    | main          | 459.06 kB |               105.92 kB
+#15 3.291 styles-UGMBM6JM.css | styles        |   1.18 kB |               498 bytes
+#15 3.291 
+#15 3.291                     | Initial total | 460.24 kB |               106.42 kB
+#15 3.291 
+#15 3.291 Application bundle generation complete. [2.710 seconds] - 2026-10-15T19:59:21.769Z
+#15 3.291 
+#15 3.293 Output location: /construccion/dist/gestion-solicitudes-frontend
+#15 3.293 
+#15 DONE 3.5s
+
+#16 [stage-1 3/3] COPY --from=construccion /construccion/dist/gestion-solicitudes-frontend/browser /usr/share/nginx/html
+#16 DONE 0.1s
+
+#17 exporting to image
+#17 exporting layers 0.1s done
+#17 exporting manifest sha256:f6a3852b9af42aa72affa693d0eb531a546b0336057aa102a51acef578d596de 0.0s done
+#17 exporting config sha256:4f5a4a019a71813a583a5cf7fd826bd6d8528893f542f23b4ee41c45975b092a done
+#17 exporting attestation manifest sha256:c0b4ba2b96b710b9d33c4faf3bc47ffe4dc340f69e6ff9fe459f3c4538de1137 0.0s done
+#17 exporting manifest list sha256:d8cbdd8915f5530bdbf9799a8ce68482ff07a8614024d7ebb849e4e15a9ce009
+#17 exporting manifest list sha256:d8cbdd8915f5530bdbf9799a8ce68482ff07a8614024d7ebb849e4e15a9ce009 done
+#17 naming to docker.io/library/gestion-solicitudes-ag014-frontend:correccion-02 done
+#17 unpacking to docker.io/library/gestion-solicitudes-ag014-frontend:correccion-02 0.0s done
+#17 DONE 0.2s
+
+#18 resolving provenance for metadata file
+#18 DONE 0.0s
+ gestion-solicitudes-ag014-frontend:correccion-02  Built

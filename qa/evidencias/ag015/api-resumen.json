@@ -1,0 +1,42 @@
+{
+  "controles": 636,
+  "api": [
+    {
+      "nombre": "sesiones",
+      "ruta": "qa/evidencias/ag015/api-final/compose-sesiones.json",
+      "controles": 88,
+      "fallidos": 0
+    },
+    {
+      "nombre": "proveedores",
+      "ruta": "qa/evidencias/ag015/api-final/compose-proveedores.json",
+      "controles": 78,
+      "fallidos": 0
+    },
+    {
+      "nombre": "solicitudes",
+      "ruta": "qa/evidencias/ag015/api-final/compose-solicitudes.json",
+      "controles": 119,
+      "fallidos": 0
+    },
+    {
+      "nombre": "aprobaciones",
+      "ruta": "qa/evidencias/ag015/api-final/compose-aprobaciones.json",
+      "controles": 140,
+      "fallidos": 0
+    },
+    {
+      "nombre": "concurrencia",
+      "ruta": "qa/evidencias/ag015/api-final/compose-concurrencia.json",
+      "controles": 67,
+      "fallidos": 0
+    },
+    {
+      "nombre": "historial",
+      "ruta": "qa/evidencias/ag015/api-final/historial-api.json",
+      "controles": 144,
+      "fallidos": 0
+    }
+  ],
+  "fixture": "Sintético del workflow; E2E_HISTORIAL_ANTERIOR_DECISION no activada. No repite V6→V7 de AG-014."
+}

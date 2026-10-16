@@ -25,3 +25,9 @@
 *.woff2 binary
 *.ttf binary
 qa/evidencias/ag011/backend-verify-final.log -text
+
+# Evidencias AG-014: conservar bytes, no reformatear capturas.
+qa/evidencias/ag014/** -text -whitespace
+
+# Evidencias AG-015: conservar bytes, no reformatear capturas.
+qa/evidencias/ag015/** -text -whitespace

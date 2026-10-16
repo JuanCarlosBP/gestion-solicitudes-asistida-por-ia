@@ -1,0 +1,25 @@
+$ErrorActionPreference = 'Stop'
+$raizAg015 = 'C:\Users\carli\gestion-solicitudes-asistida-por-ia'
+Set-Location -LiteralPath $raizAg015
+$env:COMPOSE_PROJECT_NAME = 'gestion-solicitudes-ag015-final'
+$env:FRONTEND_PUERTO = '18081'
+$env:BASE_URL = 'http://127.0.0.1:18081'
+$env:QA_ENTORNO = 'infraestructura/.env.example'
+$env:QA_EVIDENCE_DIR = Join-Path $raizAg015 'qa/evidencias/ag015/api-final'
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $raizAg015 'tmp/playwright'
+New-Item -ItemType Directory -Path $env:QA_EVIDENCE_DIR -Force | Out-Null
+$idsAg015 = docker compose --env-file infraestructura/.env.example -f infraestructura/compose.yaml ps -q
+foreach ($idAg015 in $idsAg015) {
+  $etiquetaAg015 = docker inspect --format '{{index .Config.Labels "com.docker.compose.project"}}' $idAg015
+  if ($etiquetaAg015 -ne 'gestion-solicitudes-ag015-final') { throw 'Recurso ajeno a AG-015.' }
+}
+& ./qa/verificar-compose.ps1 -ArchivoEntorno infraestructura/.env.example -DirectorioEvidencias $env:QA_EVIDENCE_DIR -PuertoFrontend 18081 *> qa/evidencias/ag015/compose-final.txt
+if ($LASTEXITCODE -ne 0) { throw 'Falló verificación Compose' }
+foreach ($nombreAg015 in @('sesiones','proveedores','solicitudes','aprobaciones','concurrencia','historial')) {
+  $inicioAg015 = (Get-Date).ToString('o')
+  & node "qa/verificar-$nombreAg015-compose.mjs" *> "qa/evidencias/ag015/api-$nombreAg015-final.txt"
+  $codigoAg015 = $LASTEXITCODE
+  @{ inicio=$inicioAg015;fin=(Get-Date).ToString('o');exitCode=$codigoAg015;proyecto=$env:COMPOSE_PROJECT_NAME;url=$env:BASE_URL } | ConvertTo-Json | Set-Content "qa/evidencias/ag015/api-$nombreAg015-final-ejecucion.json"
+  Write-Output "$nombreAg015 exit=$codigoAg015"
+  if ($codigoAg015 -ne 0) { throw "Falló $nombreAg015" }
+}

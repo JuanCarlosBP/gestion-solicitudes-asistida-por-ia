@@ -1,0 +1,112 @@
+{
+  "actionlint": 0,
+  "fecha": "2026-10-16T00:55:20.4710285+02:00",
+  "powershell": [
+    {
+      "errores": 0,
+      "ruta": "preparar-auditoria.ps1"
+    },
+    {
+      "errores": 0,
+      "ruta": "verificar-backend-ag015.ps1"
+    },
+    {
+      "errores": 0,
+      "ruta": "verificar-compose-conservado-ag014.ps1"
+    },
+    {
+      "errores": 0,
+      "ruta": "verificar-compose.ps1"
+    }
+  ],
+  "node": [
+    {
+      "exitCode": 0,
+      "ruta": "auditar-maven.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "auditar-npm-offline.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "preparar-ag014.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "preparar-usuarios-solicitudes.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "rutas-evidencia.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-aprobaciones-compose.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-concurrencia-compose.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-dependencias-preliminares.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-documentacion.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-entrega-ag011.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-entrega-ag012.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-entrega-ag013.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-entrega-ag014.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-entrega.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-estado-navegador.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-evolucion-v5.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-evolucion-v6.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-evolucion-v7.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-historial-compose.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-proveedores-compose.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-sesiones-compose.mjs"
+    },
+    {
+      "exitCode": 0,
+      "ruta": "verificar-solicitudes-compose.mjs"
+    }
+  ]
+}

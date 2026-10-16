@@ -207,3 +207,18 @@ Confirmar después de un error bloquea el formulario antiguo aunque se limpie el
 descriptor o cambie la tarjeta del panel. Una navegación interna a una nueva alta
 crea otra intención; no se añaden cuerpos ni campos al almacenamiento persistido.
 Los conflictos definitivos de una entrada distinta conservan su semántica.
+
+## Historial empresarial007 — AG-014
+
+El módulo historial separa dominio, aplicación, JdbcTemplate y HTTP; no incorpora
+infraestructura nueva. Los servicios de proveedores/solicitudes insertan el hecho
+antes del commit de negocio. Sus logs técnicos afterCommit permanecen separados.
+El repositorio proyecta V7 y decisionesV5 sin duplicarlas ni seleccionar sus textos.
+La lectura repetible mantiene coherentes identidad vigente, permisos, página y
+conteo; el resumen agrega solicitudes visibles sin cargar conceptos ni N+1.
+
+Angular incorpora cliente/modelo/timeline, rutas autorizadas y resumen real.
+Filtro/página se conservan en URL, con estados diferenciados y aviso de cobertura
+histórica. No hay funciones de edición/borrado del historial.
+Contrato/alternativas en [ADR0008](../decisiones/ADR-0008-historial-de-negocio-y-consulta.md);
+pruebas y límites en [validación007](../../especificaciones/007-historial-auditoria/validacion.md).

@@ -7,6 +7,7 @@ import es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacion;
 import es.gestionsolicitudes.identidad.configuracion.AprovisionamientoLocal;
 import es.gestionsolicitudes.identidad.configuracion.ClavesRsa;
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -36,7 +37,7 @@ class PerfilesIdentidadIT {
     @BeforeAll
     void prepararBase() {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withCommand(

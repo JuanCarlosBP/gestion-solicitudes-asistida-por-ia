@@ -9,6 +9,7 @@ import ch.qos.logback.core.read.ListAppender;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores;
 import es.gestionsolicitudes.proveedores.dominio.*;
 import es.gestionsolicitudes.solicitudes.aplicacion.*;
@@ -68,7 +69,7 @@ class SolicitudesIT {
     @BeforeAll
     void arrancar() throws Exception {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withUsername("administrador_prueba")
@@ -132,7 +133,7 @@ class SolicitudesIT {
                                         "spring.main.banner-mode",
                                         "off"))
                         .run("--server.port=0");
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
         assertThat(
                         administrador.queryForObject(
                                 "SELECT count(*) FROM gestion.proveedores WHERE id=?",
@@ -194,7 +195,7 @@ class SolicitudesIT {
     @BeforeEach
     void limpiar() {
         administrador.execute(
-                "TRUNCATE gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
+                "TRUNCATE gestion.eventos_historial,gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
         administrador.execute("ALTER SEQUENCE gestion.numero_solicitud_seq RESTART WITH 1");
         administrador.execute("UPDATE gestion.usuarios SET habilitado=true");
         actores.forEach(

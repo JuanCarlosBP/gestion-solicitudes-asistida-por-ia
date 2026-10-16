@@ -1,0 +1,7 @@
+{
+  "http": 200,
+  "observacion": "Sonda de salud correcta con acceso al puerto local. La consulta previa sin escalación fue bloqueada por sandbox; /api/estado no era la ruta de salud.",
+  "ruta": "/api/salud",
+  "fecha": "2026-10-15T22:05:13.8110652+02:00",
+  "cuerpo": "{\"estado\":\"DISPONIBLE\"}"
+}

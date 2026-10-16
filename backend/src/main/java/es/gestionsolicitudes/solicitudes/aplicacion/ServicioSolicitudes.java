@@ -1,5 +1,7 @@
 package es.gestionsolicitudes.solicitudes.aplicacion;
 
+import es.gestionsolicitudes.historial.aplicacion.RegistroHistorial;
+import es.gestionsolicitudes.historial.dominio.*;
 import es.gestionsolicitudes.operaciones.aplicacion.ServicioOperaciones;
 import es.gestionsolicitudes.operaciones.dominio.*;
 import es.gestionsolicitudes.solicitudes.dominio.*;
@@ -23,15 +25,18 @@ public class ServicioSolicitudes {
     private final TransactionTemplate escritura;
     private final TransactionTemplate lectura;
     private final ServicioOperaciones operaciones;
+    private final RegistroHistorial historial;
 
     public ServicioSolicitudes(
             RepositorioSolicitudes repositorio,
             Clock reloj,
             PlatformTransactionManager transacciones,
-            ServicioOperaciones operaciones) {
+            ServicioOperaciones operaciones,
+            RegistroHistorial historial) {
         this.repositorio = repositorio;
         this.reloj = reloj;
         this.operaciones = operaciones;
+        this.historial = historial;
         escritura = new TransactionTemplate(transacciones);
         lectura = new TransactionTemplate(transacciones);
         lectura.setReadOnly(true);
@@ -65,6 +70,18 @@ public class ServicioSolicitudes {
                                         ahora.atZone(ZoneId.of("Europe/Madrid")).getYear(),
                                         numero);
                         repositorio.crear(id, publico, actor.id(), limpio, ahora);
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.SOLICITUD,
+                                        id,
+                                        AccionHistorial.BORRADOR_CREADO,
+                                        actor.id(),
+                                        null,
+                                        0,
+                                        null,
+                                        "BORRADOR",
+                                        ahora,
+                                        peticion));
                         trasCommit("CREAR_BORRADOR", actor, id, "CORRECTO", peticion, null);
                         return existente(id, false).para(actor);
                     });
@@ -123,7 +140,20 @@ public class ServicioSolicitudes {
                                 && (datos.supervisorId().equals(actor.id())
                                         || !repositorio.supervisor(datos.supervisorId(), false)))
                             throw new ErrorSolicitud(ErrorSolicitud.Codigo.SUPERVISOR_INVALIDO);
-                        repositorio.guardar(id, version, datos, siguiente(anterior));
+                        Instant ahora = siguiente(anterior);
+                        repositorio.guardar(id, version, datos, ahora);
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.SOLICITUD,
+                                        id,
+                                        AccionHistorial.BORRADOR_GUARDADO,
+                                        actor.id(),
+                                        version,
+                                        version + 1,
+                                        "BORRADOR",
+                                        "BORRADOR",
+                                        ahora,
+                                        peticion));
                         trasCommit("GUARDAR_BORRADOR", actor, id, "CORRECTO", peticion, null);
                         return existente(id, false).para(actor);
                     });
@@ -174,7 +204,20 @@ public class ServicioSolicitudes {
                                         Set.of());
                         if (recalculados.total().compareTo(anterior.importeTotal()) != 0)
                             throw ErrorSolicitud.invalida();
-                        repositorio.presentar(anterior, proveedor, siguiente(anterior));
+                        Instant ahora = siguiente(anterior);
+                        repositorio.presentar(anterior, proveedor, ahora);
+                        historial.registrar(
+                                new CambioHistorial(
+                                        TipoRecurso.SOLICITUD,
+                                        id,
+                                        AccionHistorial.SOLICITUD_PRESENTADA,
+                                        actor.id(),
+                                        version,
+                                        version + 1,
+                                        "BORRADOR",
+                                        "PRESENTADA",
+                                        ahora,
+                                        peticion));
                         var resultado = ResultadoPresentacion.de(existente(id, false));
                         trasCommit("PRESENTAR", actor, id, "CORRECTO", peticion, clave);
                         return resultado;

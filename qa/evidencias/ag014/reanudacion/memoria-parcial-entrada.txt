@@ -1,0 +1,48 @@
+# MEMORY.md — Gestión de Solicitudes
+
+Estado: AG-014, entrega parcial; 007 implementada y aún sin verificación integrada.
+Entrada AG013 conservada en qa/evidencias/ag014/memoria-entrada.txt.
+
+## Decisiones vigentes
+
+- AG-014 aprueba D-007-01–10; SDD007 y ADR0008 concretan el alcance.
+- V7 registra siete cambios de proveedor/solicitud en la misma transacción.
+- APROBADA/RECHAZADA se proyectan solo desde decisiones_solicitud V5.
+- Sin backfill, purga ni plazo jurídico inventado; aviso de historia anterior.
+- App SELECT/INSERT; administración BD puede alterar. Sin garantía criptográfica.
+- Proyección mínima sin datos privados, textosV5, secretos o claves idempotentes.
+- Roles actuales y unión multirrol; supervisor no ve borradores ajenos.
+- Global/proveedor solo auditor/admin;404 para recurso oculto/inexistente.
+- GET historial por recurso/global y resumen; page0,size20max100,offset<=100000.
+- V1–V6, contratos001–006 y evidencias AG003–013 permanecen protegidos.
+
+## Entrega parcial AG-014
+
+- Primer reloj:2026-10-15T20:09:15+02:00; lecturas iniciales anteriores.
+- Cierre parcial:2026-10-15T20:42:08+02:00; duración observada 00:32:53.
+- Límite conservador:2026-10-16T04:05:00+02:00, Europe/Madrid.
+- Rama feature/007-historial-auditoria confirmada leyendo .git/HEAD.
+- Desviación: git status --short inicial antes de leer prohibición; salida vacía.
+  Ningún comando Git posterior ni escriturasGit; Git/aceptación son humanos.
+- Delegación por archivos; revisión solo lectura por instrucciones, no aislamiento.
+- Backend:122 unitarias PASS, Spotless PASS, SpotBugs0, package PASS.
+- Angular:476 pruebas PASS; tipos/lint/formato/build PASS.
+- OSV local actualizado:132Maven,7npm producción/653total,0avisos listados.
+- Actionlint/sintaxis QA PASS; controles finales en entrega-integridad.json y
+  documentacion-final/documentacion-control.json;1454 archivos protegidos.
+- Revisión acotada sin defectos altos/bloqueantes; observación Angular corregida.
+- 13IT nuevas y33E2E preparados, NO ejecutados; sin capturas nuevas.
+- Docker falla por socket externo dockerInference; reparación puntual pendiente
+  de autorización solicitada. Sin cambios externos de socket ni volúmenes.
+- npm audit rechazado por revisión automática; permiso de envío nombres/versiones
+  a registry.npmjs.org solicitado. OSV local no sustituye npm audit.
+- CI heredada PR4/PR5 verde para001–006; no acredita007 local. No se creó008.
+
+## Reanudación
+
+- Resolver autorizaciones pendientes; completar PostgreSQL/verify/migración/Compose/API/E2E.
+- Exigir recurso ficticioV6 real y E2E_HISTORIAL_ANTERIOR_DECISION=true para
+  decisiones previas en navegador; fixture sintéticoCI no acredita HA01/03/09.
+- Revisar capturas/contraste/teclado y mediciones; actualizar validación e informe.
+- InformeAG014, CSV y manifiestos conservan resultados reales y pendientes.
+- Respetar plazo; después requiere nuevo encargo temporal. Sin aceptación/integración/despliegue.

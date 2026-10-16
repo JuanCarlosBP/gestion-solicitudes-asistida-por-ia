@@ -1,0 +1,2 @@
+e5a001ca335826e6ad3c4ad65a6425b144bb0734907109cfed836a9d2ebeeabe  qa/evidencias/ag015/entrega-integridad.json
+12e98d4ef3033cf79fd87f21fbb1f2353a14b22a26fea0baf494e943cf25fdcb  qa/evidencias/ag015/manifiesto-commits.json

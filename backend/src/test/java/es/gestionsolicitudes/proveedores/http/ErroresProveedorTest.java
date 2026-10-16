@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import es.gestionsolicitudes.configuracion.ErroresControlados;
 import es.gestionsolicitudes.configuracion.SeguridadTecnica;
 import es.gestionsolicitudes.identidad.http.CookiesIdentidad;
+import es.gestionsolicitudes.identidad.http.RepositorioCsrfPorEntorno;
 import es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores;
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.CannotCreateTransactionException;
 
 @WebMvcTest(ControladorProveedores.class)
-@Import({SeguridadTecnica.class, ErroresControlados.class})
+@Import({SeguridadTecnica.class, ErroresControlados.class, RepositorioCsrfPorEntorno.class})
 class ErroresProveedorTest {
     @Autowired MockMvc http;
     @MockitoBean ServicioProveedores servicio;

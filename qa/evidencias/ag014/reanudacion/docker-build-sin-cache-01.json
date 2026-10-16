@@ -1,0 +1,7 @@
+{
+  "inicio": "2026-10-15T21:45:35.8685466+02:00",
+  "fin": "2026-10-15T21:46:07.3297934+02:00",
+  "salida": 0,
+  "proyecto": "gestion-solicitudes-ag014",
+  "comando": "docker compose --env-file infraestructura/.env.example -f infraestructura/compose.yaml build --no-cache backend frontend"
+}

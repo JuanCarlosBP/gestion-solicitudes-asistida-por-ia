@@ -1,0 +1,863 @@
+Compiled from "SessionManagementConfigurer.java"
+public final class org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H extends org.springframework.security.config.annotation.web.HttpSecurityBuilder<H>> extends org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer<org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H>, H> {
+  private final org.springframework.security.web.authentication.session.SessionAuthenticationStrategy DEFAULT_SESSION_FIXATION_STRATEGY;
+
+  private org.springframework.security.web.authentication.session.SessionAuthenticationStrategy sessionFixationAuthenticationStrategy;
+
+  private org.springframework.security.web.authentication.session.SessionAuthenticationStrategy sessionAuthenticationStrategy;
+
+  private org.springframework.security.web.authentication.session.SessionAuthenticationStrategy providedSessionAuthenticationStrategy;
+
+  private org.springframework.security.web.session.InvalidSessionStrategy invalidSessionStrategy;
+
+  private org.springframework.security.web.session.SessionInformationExpiredStrategy expiredSessionStrategy;
+
+  private java.util.List<org.springframework.security.web.authentication.session.SessionAuthenticationStrategy> sessionAuthenticationStrategies;
+
+  private org.springframework.security.core.session.SessionRegistry sessionRegistry;
+
+  private org.springframework.security.web.authentication.session.SessionLimit sessionLimit;
+
+  private java.lang.String expiredUrl;
+
+  private boolean maxSessionsPreventsLogin;
+
+  private org.springframework.security.config.http.SessionCreationPolicy sessionPolicy;
+
+  private boolean enableSessionUrlRewriting;
+
+  private java.lang.String invalidSessionUrl;
+
+  private java.lang.String sessionAuthenticationErrorUrl;
+
+  private org.springframework.security.web.authentication.AuthenticationFailureHandler sessionAuthenticationFailureHandler;
+
+  private java.util.Set<java.lang.String> propertiesThatRequireImplicitAuthentication;
+
+  private java.lang.Boolean requireExplicitAuthenticationStrategy;
+
+  private org.springframework.security.web.context.SecurityContextRepository sessionManagementSecurityContextRepository;
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method org/springframework/security/config/annotation/web/configurers/AbstractHttpConfigurer."<init>":()V
+       4: aload_0
+       5: invokestatic  #7                  // Method createDefaultSessionFixationProtectionStrategy:()Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+       8: putfield      #13                 // Field DEFAULT_SESSION_FIXATION_STRATEGY:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      11: aload_0
+      12: aload_0
+      13: getfield      #13                 // Field DEFAULT_SESSION_FIXATION_STRATEGY:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      16: putfield      #17                 // Field sessionFixationAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      19: aload_0
+      20: new           #20                 // class java/util/ArrayList
+      23: dup
+      24: invokespecial #22                 // Method java/util/ArrayList."<init>":()V
+      27: putfield      #23                 // Field sessionAuthenticationStrategies:Ljava/util/List;
+      30: aload_0
+      31: new           #27                 // class java/util/HashSet
+      34: dup
+      35: invokespecial #29                 // Method java/util/HashSet."<init>":()V
+      38: putfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+      41: aload_0
+      42: new           #34                 // class org/springframework/security/web/context/HttpSessionSecurityContextRepository
+      45: dup
+      46: invokespecial #36                 // Method org/springframework/security/web/context/HttpSessionSecurityContextRepository."<init>":()V
+      49: putfield      #37                 // Field sessionManagementSecurityContextRepository:Lorg/springframework/security/web/context/SecurityContextRepository;
+      52: return
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> invalidSessionUrl(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #41                 // Field invalidSessionUrl:Ljava/lang/String;
+       5: aload_0
+       6: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+       9: aload_1
+      10: invokedynamic #45,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      15: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      20: pop
+      21: aload_0
+      22: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> requireExplicitAuthenticationStrategy(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: invokestatic  #55                 // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+       5: putfield      #61                 // Field requireExplicitAuthenticationStrategy:Ljava/lang/Boolean;
+       8: aload_0
+       9: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> invalidSessionStrategy(org.springframework.security.web.session.InvalidSessionStrategy);
+    Code:
+       0: aload_1
+       1: ldc           #65                 // String invalidSessionStrategy
+       3: invokestatic  #67                 // Method org/springframework/util/Assert.notNull:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #73                 // Field invalidSessionStrategy:Lorg/springframework/security/web/session/InvalidSessionStrategy;
+      11: aload_0
+      12: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+      15: aload_1
+      16: invokestatic  #76                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      19: invokedynamic #81,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      24: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      29: pop
+      30: aload_0
+      31: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionAuthenticationErrorUrl(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #82                 // Field sessionAuthenticationErrorUrl:Ljava/lang/String;
+       5: aload_0
+       6: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+       9: aload_1
+      10: invokedynamic #85,  0             // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      15: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      20: pop
+      21: aload_0
+      22: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionAuthenticationFailureHandler(org.springframework.security.web.authentication.AuthenticationFailureHandler);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #86                 // Field sessionAuthenticationFailureHandler:Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+       5: aload_0
+       6: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+       9: aload_1
+      10: invokestatic  #76                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      13: invokedynamic #90,  0             // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      18: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      23: pop
+      24: aload_0
+      25: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> enableSessionUrlRewriting(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #91                 // Field enableSessionUrlRewriting:Z
+       5: aload_0
+       6: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionCreationPolicy(org.springframework.security.config.http.SessionCreationPolicy);
+    Code:
+       0: aload_1
+       1: ldc           #95                 // String sessionCreationPolicy cannot be null
+       3: invokestatic  #67                 // Method org/springframework/util/Assert.notNull:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #97                 // Field sessionPolicy:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      11: aload_0
+      12: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+      15: aload_1
+      16: invokestatic  #76                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      19: invokedynamic #101,  0            // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      24: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      29: pop
+      30: aload_0
+      31: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionAuthenticationStrategy(org.springframework.security.web.authentication.session.SessionAuthenticationStrategy);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #102                // Field providedSessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+       5: aload_0
+       6: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+       9: aload_1
+      10: invokestatic  #76                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      13: invokedynamic #105,  0            // InvokeDynamic #5:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      18: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      23: pop
+      24: aload_0
+      25: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> addSessionAuthenticationStrategy(org.springframework.security.web.authentication.session.SessionAuthenticationStrategy);
+    Code:
+       0: aload_0
+       1: getfield      #23                 // Field sessionAuthenticationStrategies:Ljava/util/List;
+       4: aload_1
+       5: invokeinterface #106,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      10: pop
+      11: aload_0
+      12: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H>.SessionFixationConfigurer sessionFixation();
+    Code:
+       0: new           #109                // class org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$SessionFixationConfigurer
+       3: dup
+       4: aload_0
+       5: invokespecial #111                // Method org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$SessionFixationConfigurer."<init>":(Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;)V
+       8: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionFixation(org.springframework.security.config.Customizer<org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H>.SessionFixationConfigurer>);
+    Code:
+       0: aload_1
+       1: new           #109                // class org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$SessionFixationConfigurer
+       4: dup
+       5: aload_0
+       6: invokespecial #111                // Method org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$SessionFixationConfigurer."<init>":(Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;)V
+       9: invokeinterface #114,  2          // InterfaceMethod org/springframework/security/config/Customizer.customize:(Ljava/lang/Object;)V
+      14: aload_0
+      15: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H>.ConcurrencyControlConfigurer maximumSessions(int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: invokestatic  #120                // InterfaceMethod org/springframework/security/web/authentication/session/SessionLimit.of:(I)Lorg/springframework/security/web/authentication/session/SessionLimit;
+       5: putfield      #126                // Field sessionLimit:Lorg/springframework/security/web/authentication/session/SessionLimit;
+       8: aload_0
+       9: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+      12: iload_1
+      13: invokedynamic #130,  0            // InvokeDynamic #6:makeConcatWithConstants:(I)Ljava/lang/String;
+      18: invokeinterface #49,  2           // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      23: pop
+      24: new           #133                // class org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$ConcurrencyControlConfigurer
+      27: dup
+      28: aload_0
+      29: invokespecial #135                // Method org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$ConcurrencyControlConfigurer."<init>":(Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;)V
+      32: areturn
+
+  public org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H> sessionConcurrency(org.springframework.security.config.Customizer<org.springframework.security.config.annotation.web.configurers.SessionManagementConfigurer<H>.ConcurrencyControlConfigurer>);
+    Code:
+       0: aload_1
+       1: new           #133                // class org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$ConcurrencyControlConfigurer
+       4: dup
+       5: aload_0
+       6: invokespecial #135                // Method org/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer$ConcurrencyControlConfigurer."<init>":(Lorg/springframework/security/config/annotation/web/configurers/SessionManagementConfigurer;)V
+       9: invokeinterface #114,  2          // InterfaceMethod org/springframework/security/config/Customizer.customize:(Ljava/lang/Object;)V
+      14: aload_0
+      15: areturn
+
+  private void setSessionFixationAuthenticationStrategy(org.springframework.security.web.authentication.session.SessionAuthenticationStrategy);
+    Code:
+       0: aload_0
+       1: aload_0
+       2: aload_1
+       3: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+       6: checkcast     #140                // class org/springframework/security/web/authentication/session/SessionAuthenticationStrategy
+       9: putfield      #17                 // Field sessionFixationAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      12: return
+
+  public void init(H);
+    Code:
+       0: aload_1
+       1: ldc           #142                // class org/springframework/security/web/context/SecurityContextRepository
+       3: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+       8: checkcast     #142                // class org/springframework/security/web/context/SecurityContextRepository
+      11: astore_2
+      12: aload_0
+      13: invokevirtual #150                // Method isStateless:()Z
+      16: istore_3
+      17: aload_2
+      18: ifnonnull     161
+      21: iload_3
+      22: ifeq          54
+      25: aload_1
+      26: ldc           #142                // class org/springframework/security/web/context/SecurityContextRepository
+      28: new           #154                // class org/springframework/security/web/context/RequestAttributeSecurityContextRepository
+      31: dup
+      32: invokespecial #156                // Method org/springframework/security/web/context/RequestAttributeSecurityContextRepository."<init>":()V
+      35: invokeinterface #157,  3          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.setSharedObject:(Ljava/lang/Class;Ljava/lang/Object;)V
+      40: aload_0
+      41: new           #161                // class org/springframework/security/web/context/NullSecurityContextRepository
+      44: dup
+      45: invokespecial #163                // Method org/springframework/security/web/context/NullSecurityContextRepository."<init>":()V
+      48: putfield      #37                 // Field sessionManagementSecurityContextRepository:Lorg/springframework/security/web/context/SecurityContextRepository;
+      51: goto          166
+      54: new           #34                 // class org/springframework/security/web/context/HttpSessionSecurityContextRepository
+      57: dup
+      58: invokespecial #36                 // Method org/springframework/security/web/context/HttpSessionSecurityContextRepository."<init>":()V
+      61: astore        4
+      63: aload         4
+      65: aload_0
+      66: getfield      #91                 // Field enableSessionUrlRewriting:Z
+      69: ifne          76
+      72: iconst_1
+      73: goto          77
+      76: iconst_0
+      77: invokevirtual #164                // Method org/springframework/security/web/context/HttpSessionSecurityContextRepository.setDisableUrlRewriting:(Z)V
+      80: aload         4
+      82: aload_0
+      83: invokevirtual #168                // Method isAllowSessionCreation:()Z
+      86: invokevirtual #171                // Method org/springframework/security/web/context/HttpSessionSecurityContextRepository.setAllowSessionCreation:(Z)V
+      89: aload_1
+      90: ldc           #174                // class org/springframework/security/authentication/AuthenticationTrustResolver
+      92: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+      97: checkcast     #174                // class org/springframework/security/authentication/AuthenticationTrustResolver
+     100: astore        5
+     102: aload         5
+     104: ifnull        114
+     107: aload         4
+     109: aload         5
+     111: invokevirtual #176                // Method org/springframework/security/web/context/HttpSessionSecurityContextRepository.setTrustResolver:(Lorg/springframework/security/authentication/AuthenticationTrustResolver;)V
+     114: aload_0
+     115: aload         4
+     117: putfield      #37                 // Field sessionManagementSecurityContextRepository:Lorg/springframework/security/web/context/SecurityContextRepository;
+     120: new           #180                // class org/springframework/security/web/context/DelegatingSecurityContextRepository
+     123: dup
+     124: iconst_2
+     125: anewarray     #142                // class org/springframework/security/web/context/SecurityContextRepository
+     128: dup
+     129: iconst_0
+     130: aload         4
+     132: aastore
+     133: dup
+     134: iconst_1
+     135: new           #154                // class org/springframework/security/web/context/RequestAttributeSecurityContextRepository
+     138: dup
+     139: invokespecial #156                // Method org/springframework/security/web/context/RequestAttributeSecurityContextRepository."<init>":()V
+     142: aastore
+     143: invokespecial #182                // Method org/springframework/security/web/context/DelegatingSecurityContextRepository."<init>":([Lorg/springframework/security/web/context/SecurityContextRepository;)V
+     146: astore        6
+     148: aload_1
+     149: ldc           #142                // class org/springframework/security/web/context/SecurityContextRepository
+     151: aload         6
+     153: invokeinterface #157,  3          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.setSharedObject:(Ljava/lang/Class;Ljava/lang/Object;)V
+     158: goto          166
+     161: aload_0
+     162: aload_2
+     163: putfield      #37                 // Field sessionManagementSecurityContextRepository:Lorg/springframework/security/web/context/SecurityContextRepository;
+     166: aload_1
+     167: ldc           #185                // class org/springframework/security/web/savedrequest/RequestCache
+     169: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+     174: checkcast     #185                // class org/springframework/security/web/savedrequest/RequestCache
+     177: astore        4
+     179: aload         4
+     181: ifnonnull     203
+     184: iload_3
+     185: ifeq          203
+     188: aload_1
+     189: ldc           #185                // class org/springframework/security/web/savedrequest/RequestCache
+     191: new           #187                // class org/springframework/security/web/savedrequest/NullRequestCache
+     194: dup
+     195: invokespecial #189                // Method org/springframework/security/web/savedrequest/NullRequestCache."<init>":()V
+     198: invokeinterface #157,  3          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.setSharedObject:(Ljava/lang/Class;Ljava/lang/Object;)V
+     203: aload_1
+     204: ldc           #140                // class org/springframework/security/web/authentication/session/SessionAuthenticationStrategy
+     206: aload_0
+     207: aload_1
+     208: invokevirtual #190                // Method getSessionAuthenticationStrategy:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+     211: invokeinterface #157,  3          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.setSharedObject:(Ljava/lang/Class;Ljava/lang/Object;)V
+     216: aload_1
+     217: ldc           #194                // class org/springframework/security/web/session/InvalidSessionStrategy
+     219: aload_0
+     220: invokevirtual #196                // Method getInvalidSessionStrategy:()Lorg/springframework/security/web/session/InvalidSessionStrategy;
+     223: invokeinterface #157,  3          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.setSharedObject:(Ljava/lang/Class;Ljava/lang/Object;)V
+     228: return
+
+  public void configure(H);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #200                // Method createSessionManagementFilter:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/web/session/SessionManagementFilter;
+       5: astore_2
+       6: aload_2
+       7: ifnull        18
+      10: aload_1
+      11: aload_2
+      12: invokeinterface #204,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.addFilter:(Ljakarta/servlet/Filter;)Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;
+      17: pop
+      18: aload_0
+      19: invokevirtual #208                // Method isConcurrentSessionControlEnabled:()Z
+      22: ifeq          48
+      25: aload_0
+      26: aload_1
+      27: invokevirtual #211                // Method createConcurrencyFilter:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/web/session/ConcurrentSessionFilter;
+      30: astore_3
+      31: aload_0
+      32: aload_3
+      33: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+      36: checkcast     #215                // class org/springframework/security/web/session/ConcurrentSessionFilter
+      39: astore_3
+      40: aload_1
+      41: aload_3
+      42: invokeinterface #204,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.addFilter:(Ljakarta/servlet/Filter;)Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;
+      47: pop
+      48: aload_0
+      49: getfield      #91                 // Field enableSessionUrlRewriting:Z
+      52: ifne          69
+      55: aload_1
+      56: new           #217                // class org/springframework/security/web/session/DisableEncodeUrlFilter
+      59: dup
+      60: invokespecial #219                // Method org/springframework/security/web/session/DisableEncodeUrlFilter."<init>":()V
+      63: invokeinterface #204,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.addFilter:(Ljakarta/servlet/Filter;)Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;
+      68: pop
+      69: aload_0
+      70: getfield      #97                 // Field sessionPolicy:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      73: getstatic     #220                // Field org/springframework/security/config/http/SessionCreationPolicy.ALWAYS:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      76: if_acmpne     93
+      79: aload_1
+      80: new           #225                // class org/springframework/security/web/session/ForceEagerSessionCreationFilter
+      83: dup
+      84: invokespecial #227                // Method org/springframework/security/web/session/ForceEagerSessionCreationFilter."<init>":()V
+      87: invokeinterface #204,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.addFilter:(Ljakarta/servlet/Filter;)Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;
+      92: pop
+      93: return
+
+  private boolean shouldRequireExplicitAuthenticationStrategy();
+    Code:
+       0: aload_0
+       1: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+       4: invokeinterface #228,  1          // InterfaceMethod java/util/Set.isEmpty:()Z
+       9: istore_1
+      10: aload_0
+      11: getfield      #61                 // Field requireExplicitAuthenticationStrategy:Ljava/lang/Boolean;
+      14: ifnonnull     19
+      17: iload_1
+      18: ireturn
+      19: aload_0
+      20: getfield      #61                 // Field requireExplicitAuthenticationStrategy:Ljava/lang/Boolean;
+      23: invokevirtual #231                // Method java/lang/Boolean.booleanValue:()Z
+      26: ifeq          57
+      29: iload_1
+      30: ifne          57
+      33: new           #234                // class java/lang/IllegalStateException
+      36: dup
+      37: aload_0
+      38: getfield      #61                 // Field requireExplicitAuthenticationStrategy:Ljava/lang/Boolean;
+      41: aload_0
+      42: getfield      #30                 // Field propertiesThatRequireImplicitAuthentication:Ljava/util/Set;
+      45: invokestatic  #76                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      48: invokedynamic #236,  0            // InvokeDynamic #7:makeConcatWithConstants:(Ljava/lang/Boolean;Ljava/lang/String;)Ljava/lang/String;
+      53: invokespecial #239                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+      56: athrow
+      57: aload_0
+      58: getfield      #61                 // Field requireExplicitAuthenticationStrategy:Ljava/lang/Boolean;
+      61: invokevirtual #231                // Method java/lang/Boolean.booleanValue:()Z
+      64: ireturn
+
+  private org.springframework.security.web.session.SessionManagementFilter createSessionManagementFilter(H);
+    Code:
+       0: aload_0
+       1: invokevirtual #242                // Method shouldRequireExplicitAuthenticationStrategy:()Z
+       4: ifeq          9
+       7: aconst_null
+       8: areturn
+       9: aload_0
+      10: getfield      #37                 // Field sessionManagementSecurityContextRepository:Lorg/springframework/security/web/context/SecurityContextRepository;
+      13: astore_2
+      14: new           #245                // class org/springframework/security/web/session/SessionManagementFilter
+      17: dup
+      18: aload_2
+      19: aload_0
+      20: aload_1
+      21: invokevirtual #190                // Method getSessionAuthenticationStrategy:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      24: invokespecial #247                // Method org/springframework/security/web/session/SessionManagementFilter."<init>":(Lorg/springframework/security/web/context/SecurityContextRepository;Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;)V
+      27: astore_3
+      28: aload_0
+      29: getfield      #82                 // Field sessionAuthenticationErrorUrl:Ljava/lang/String;
+      32: ifnull        50
+      35: aload_3
+      36: new           #250                // class org/springframework/security/web/authentication/SimpleUrlAuthenticationFailureHandler
+      39: dup
+      40: aload_0
+      41: getfield      #82                 // Field sessionAuthenticationErrorUrl:Ljava/lang/String;
+      44: invokespecial #252                // Method org/springframework/security/web/authentication/SimpleUrlAuthenticationFailureHandler."<init>":(Ljava/lang/String;)V
+      47: invokevirtual #253                // Method org/springframework/security/web/session/SessionManagementFilter.setAuthenticationFailureHandler:(Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;)V
+      50: aload_0
+      51: invokevirtual #196                // Method getInvalidSessionStrategy:()Lorg/springframework/security/web/session/InvalidSessionStrategy;
+      54: astore        4
+      56: aload         4
+      58: ifnull        67
+      61: aload_3
+      62: aload         4
+      64: invokevirtual #257                // Method org/springframework/security/web/session/SessionManagementFilter.setInvalidSessionStrategy:(Lorg/springframework/security/web/session/InvalidSessionStrategy;)V
+      67: aload_0
+      68: invokevirtual #261                // Method getSessionAuthenticationFailureHandler:()Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+      71: astore        5
+      73: aload         5
+      75: ifnull        84
+      78: aload_3
+      79: aload         5
+      81: invokevirtual #253                // Method org/springframework/security/web/session/SessionManagementFilter.setAuthenticationFailureHandler:(Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;)V
+      84: aload_1
+      85: ldc           #174                // class org/springframework/security/authentication/AuthenticationTrustResolver
+      87: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+      92: checkcast     #174                // class org/springframework/security/authentication/AuthenticationTrustResolver
+      95: astore        6
+      97: aload         6
+      99: ifnull        108
+     102: aload_3
+     103: aload         6
+     105: invokevirtual #265                // Method org/springframework/security/web/session/SessionManagementFilter.setTrustResolver:(Lorg/springframework/security/authentication/AuthenticationTrustResolver;)V
+     108: aload_3
+     109: aload_0
+     110: invokevirtual #266                // Method getSecurityContextHolderStrategy:()Lorg/springframework/security/core/context/SecurityContextHolderStrategy;
+     113: invokevirtual #270                // Method org/springframework/security/web/session/SessionManagementFilter.setSecurityContextHolderStrategy:(Lorg/springframework/security/core/context/SecurityContextHolderStrategy;)V
+     116: aload_0
+     117: aload_3
+     118: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+     121: checkcast     #245                // class org/springframework/security/web/session/SessionManagementFilter
+     124: areturn
+
+  private org.springframework.security.web.session.ConcurrentSessionFilter createConcurrencyFilter(H);
+    Code:
+       0: aload_0
+       1: invokevirtual #274                // Method getExpiredSessionStrategy:()Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;
+       4: astore_2
+       5: aload_0
+       6: aload_1
+       7: invokevirtual #278                // Method getSessionRegistry:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/core/session/SessionRegistry;
+      10: astore_3
+      11: aload_2
+      12: ifnull        27
+      15: new           #215                // class org/springframework/security/web/session/ConcurrentSessionFilter
+      18: dup
+      19: aload_3
+      20: aload_2
+      21: invokespecial #282                // Method org/springframework/security/web/session/ConcurrentSessionFilter."<init>":(Lorg/springframework/security/core/session/SessionRegistry;Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;)V
+      24: goto          35
+      27: new           #215                // class org/springframework/security/web/session/ConcurrentSessionFilter
+      30: dup
+      31: aload_3
+      32: invokespecial #285                // Method org/springframework/security/web/session/ConcurrentSessionFilter."<init>":(Lorg/springframework/security/core/session/SessionRegistry;)V
+      35: astore        4
+      37: aload_1
+      38: ldc_w         #288                // class org/springframework/security/config/annotation/web/configurers/LogoutConfigurer
+      41: invokeinterface #290,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getConfigurer:(Ljava/lang/Class;)Lorg/springframework/security/config/annotation/SecurityConfigurer;
+      46: checkcast     #288                // class org/springframework/security/config/annotation/web/configurers/LogoutConfigurer
+      49: astore        5
+      51: aload         5
+      53: ifnull        78
+      56: aload         5
+      58: invokevirtual #294                // Method org/springframework/security/config/annotation/web/configurers/LogoutConfigurer.getLogoutHandlers:()Ljava/util/List;
+      61: astore        6
+      63: aload         6
+      65: invokestatic  #298                // Method org/springframework/util/CollectionUtils.isEmpty:(Ljava/util/Collection;)Z
+      68: ifne          78
+      71: aload         4
+      73: aload         6
+      75: invokevirtual #303                // Method org/springframework/security/web/session/ConcurrentSessionFilter.setLogoutHandlers:(Ljava/util/List;)V
+      78: aload         4
+      80: aload_0
+      81: invokevirtual #266                // Method getSecurityContextHolderStrategy:()Lorg/springframework/security/core/context/SecurityContextHolderStrategy;
+      84: invokevirtual #307                // Method org/springframework/security/web/session/ConcurrentSessionFilter.setSecurityContextHolderStrategy:(Lorg/springframework/security/core/context/SecurityContextHolderStrategy;)V
+      87: aload         4
+      89: areturn
+
+  org.springframework.security.web.session.InvalidSessionStrategy getInvalidSessionStrategy();
+    Code:
+       0: aload_0
+       1: getfield      #73                 // Field invalidSessionStrategy:Lorg/springframework/security/web/session/InvalidSessionStrategy;
+       4: ifnull        12
+       7: aload_0
+       8: getfield      #73                 // Field invalidSessionStrategy:Lorg/springframework/security/web/session/InvalidSessionStrategy;
+      11: areturn
+      12: aload_0
+      13: getfield      #41                 // Field invalidSessionUrl:Ljava/lang/String;
+      16: ifnonnull     21
+      19: aconst_null
+      20: areturn
+      21: aload_0
+      22: new           #308                // class org/springframework/security/web/session/SimpleRedirectInvalidSessionStrategy
+      25: dup
+      26: aload_0
+      27: getfield      #41                 // Field invalidSessionUrl:Ljava/lang/String;
+      30: invokespecial #310                // Method org/springframework/security/web/session/SimpleRedirectInvalidSessionStrategy."<init>":(Ljava/lang/String;)V
+      33: putfield      #73                 // Field invalidSessionStrategy:Lorg/springframework/security/web/session/InvalidSessionStrategy;
+      36: aload_0
+      37: getfield      #73                 // Field invalidSessionStrategy:Lorg/springframework/security/web/session/InvalidSessionStrategy;
+      40: areturn
+
+  org.springframework.security.web.session.SessionInformationExpiredStrategy getExpiredSessionStrategy();
+    Code:
+       0: aload_0
+       1: getfield      #311                // Field expiredSessionStrategy:Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;
+       4: ifnull        12
+       7: aload_0
+       8: getfield      #311                // Field expiredSessionStrategy:Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;
+      11: areturn
+      12: aload_0
+      13: getfield      #315                // Field expiredUrl:Ljava/lang/String;
+      16: ifnonnull     21
+      19: aconst_null
+      20: areturn
+      21: aload_0
+      22: new           #318                // class org/springframework/security/web/session/SimpleRedirectSessionInformationExpiredStrategy
+      25: dup
+      26: aload_0
+      27: getfield      #315                // Field expiredUrl:Ljava/lang/String;
+      30: invokespecial #320                // Method org/springframework/security/web/session/SimpleRedirectSessionInformationExpiredStrategy."<init>":(Ljava/lang/String;)V
+      33: putfield      #311                // Field expiredSessionStrategy:Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;
+      36: aload_0
+      37: getfield      #311                // Field expiredSessionStrategy:Lorg/springframework/security/web/session/SessionInformationExpiredStrategy;
+      40: areturn
+
+  org.springframework.security.web.authentication.AuthenticationFailureHandler getSessionAuthenticationFailureHandler();
+    Code:
+       0: aload_0
+       1: getfield      #86                 // Field sessionAuthenticationFailureHandler:Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+       4: ifnull        12
+       7: aload_0
+       8: getfield      #86                 // Field sessionAuthenticationFailureHandler:Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+      11: areturn
+      12: aload_0
+      13: getfield      #82                 // Field sessionAuthenticationErrorUrl:Ljava/lang/String;
+      16: ifnonnull     21
+      19: aconst_null
+      20: areturn
+      21: aload_0
+      22: new           #250                // class org/springframework/security/web/authentication/SimpleUrlAuthenticationFailureHandler
+      25: dup
+      26: aload_0
+      27: getfield      #82                 // Field sessionAuthenticationErrorUrl:Ljava/lang/String;
+      30: invokespecial #252                // Method org/springframework/security/web/authentication/SimpleUrlAuthenticationFailureHandler."<init>":(Ljava/lang/String;)V
+      33: putfield      #86                 // Field sessionAuthenticationFailureHandler:Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+      36: aload_0
+      37: getfield      #86                 // Field sessionAuthenticationFailureHandler:Lorg/springframework/security/web/authentication/AuthenticationFailureHandler;
+      40: areturn
+
+  org.springframework.security.config.http.SessionCreationPolicy getSessionCreationPolicy();
+    Code:
+       0: aload_0
+       1: getfield      #97                 // Field sessionPolicy:Lorg/springframework/security/config/http/SessionCreationPolicy;
+       4: ifnull        12
+       7: aload_0
+       8: getfield      #97                 // Field sessionPolicy:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      11: areturn
+      12: aload_0
+      13: invokevirtual #321                // Method getBuilder:()Lorg/springframework/security/config/annotation/SecurityBuilder;
+      16: checkcast     #145                // class org/springframework/security/config/annotation/web/HttpSecurityBuilder
+      19: ldc           #221                // class org/springframework/security/config/http/SessionCreationPolicy
+      21: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+      26: checkcast     #221                // class org/springframework/security/config/http/SessionCreationPolicy
+      29: astore_1
+      30: aload_1
+      31: ifnull        38
+      34: aload_1
+      35: goto          41
+      38: getstatic     #325                // Field org/springframework/security/config/http/SessionCreationPolicy.IF_REQUIRED:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      41: areturn
+
+  private boolean isAllowSessionCreation();
+    Code:
+       0: aload_0
+       1: invokevirtual #328                // Method getSessionCreationPolicy:()Lorg/springframework/security/config/http/SessionCreationPolicy;
+       4: astore_1
+       5: getstatic     #220                // Field org/springframework/security/config/http/SessionCreationPolicy.ALWAYS:Lorg/springframework/security/config/http/SessionCreationPolicy;
+       8: aload_1
+       9: if_acmpeq     19
+      12: getstatic     #325                // Field org/springframework/security/config/http/SessionCreationPolicy.IF_REQUIRED:Lorg/springframework/security/config/http/SessionCreationPolicy;
+      15: aload_1
+      16: if_acmpne     23
+      19: iconst_1
+      20: goto          24
+      23: iconst_0
+      24: ireturn
+
+  private boolean isStateless();
+    Code:
+       0: aload_0
+       1: invokevirtual #328                // Method getSessionCreationPolicy:()Lorg/springframework/security/config/http/SessionCreationPolicy;
+       4: astore_1
+       5: getstatic     #332                // Field org/springframework/security/config/http/SessionCreationPolicy.STATELESS:Lorg/springframework/security/config/http/SessionCreationPolicy;
+       8: aload_1
+       9: if_acmpne     16
+      12: iconst_1
+      13: goto          17
+      16: iconst_0
+      17: ireturn
+
+  private org.springframework.security.web.authentication.session.SessionAuthenticationStrategy getSessionAuthenticationStrategy(H);
+    Code:
+       0: aload_0
+       1: getfield      #335                // Field sessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+       4: ifnull        12
+       7: aload_0
+       8: getfield      #335                // Field sessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      11: areturn
+      12: aload_0
+      13: getfield      #23                 // Field sessionAuthenticationStrategies:Ljava/util/List;
+      16: astore_2
+      17: aload_0
+      18: getfield      #102                // Field providedSessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      21: ifnonnull     39
+      24: aload_0
+      25: aload_0
+      26: getfield      #17                 // Field sessionFixationAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      29: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+      32: checkcast     #140                // class org/springframework/security/web/authentication/session/SessionAuthenticationStrategy
+      35: astore_3
+      36: goto          44
+      39: aload_0
+      40: getfield      #102                // Field providedSessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+      43: astore_3
+      44: aload_0
+      45: invokevirtual #208                // Method isConcurrentSessionControlEnabled:()Z
+      48: ifeq          151
+      51: aload_0
+      52: aload_1
+      53: invokevirtual #278                // Method getSessionRegistry:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/core/session/SessionRegistry;
+      56: astore        4
+      58: new           #338                // class org/springframework/security/web/authentication/session/ConcurrentSessionControlAuthenticationStrategy
+      61: dup
+      62: aload         4
+      64: invokespecial #340                // Method org/springframework/security/web/authentication/session/ConcurrentSessionControlAuthenticationStrategy."<init>":(Lorg/springframework/security/core/session/SessionRegistry;)V
+      67: astore        5
+      69: aload         5
+      71: aload_0
+      72: getfield      #126                // Field sessionLimit:Lorg/springframework/security/web/authentication/session/SessionLimit;
+      75: invokevirtual #341                // Method org/springframework/security/web/authentication/session/ConcurrentSessionControlAuthenticationStrategy.setMaximumSessions:(Lorg/springframework/security/web/authentication/session/SessionLimit;)V
+      78: aload         5
+      80: aload_0
+      81: getfield      #345                // Field maxSessionsPreventsLogin:Z
+      84: invokevirtual #348                // Method org/springframework/security/web/authentication/session/ConcurrentSessionControlAuthenticationStrategy.setExceptionIfMaximumExceeded:(Z)V
+      87: aload_0
+      88: aload         5
+      90: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+      93: checkcast     #338                // class org/springframework/security/web/authentication/session/ConcurrentSessionControlAuthenticationStrategy
+      96: astore        5
+      98: new           #351                // class org/springframework/security/web/authentication/session/RegisterSessionAuthenticationStrategy
+     101: dup
+     102: aload         4
+     104: invokespecial #353                // Method org/springframework/security/web/authentication/session/RegisterSessionAuthenticationStrategy."<init>":(Lorg/springframework/security/core/session/SessionRegistry;)V
+     107: astore        6
+     109: aload_0
+     110: aload         6
+     112: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+     115: checkcast     #351                // class org/springframework/security/web/authentication/session/RegisterSessionAuthenticationStrategy
+     118: astore        6
+     120: aload_2
+     121: iconst_3
+     122: anewarray     #140                // class org/springframework/security/web/authentication/session/SessionAuthenticationStrategy
+     125: dup
+     126: iconst_0
+     127: aload         5
+     129: aastore
+     130: dup
+     131: iconst_1
+     132: aload_3
+     133: aastore
+     134: dup
+     135: iconst_2
+     136: aload         6
+     138: aastore
+     139: invokestatic  #354                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+     142: invokeinterface #360,  2          // InterfaceMethod java/util/List.addAll:(Ljava/util/Collection;)Z
+     147: pop
+     148: goto          159
+     151: aload_2
+     152: aload_3
+     153: invokeinterface #106,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     158: pop
+     159: aload_0
+     160: aload_0
+     161: new           #363                // class org/springframework/security/web/authentication/session/CompositeSessionAuthenticationStrategy
+     164: dup
+     165: aload_2
+     166: invokespecial #365                // Method org/springframework/security/web/authentication/session/CompositeSessionAuthenticationStrategy."<init>":(Ljava/util/List;)V
+     169: invokevirtual #136                // Method postProcess:(Ljava/lang/Object;)Ljava/lang/Object;
+     172: checkcast     #140                // class org/springframework/security/web/authentication/session/SessionAuthenticationStrategy
+     175: putfield      #335                // Field sessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+     178: aload_0
+     179: getfield      #335                // Field sessionAuthenticationStrategy:Lorg/springframework/security/web/authentication/session/SessionAuthenticationStrategy;
+     182: areturn
+
+  private org.springframework.security.core.session.SessionRegistry getSessionRegistry(H);
+    Code:
+       0: aload_0
+       1: getfield      #367                // Field sessionRegistry:Lorg/springframework/security/core/session/SessionRegistry;
+       4: ifnonnull     21
+       7: aload_0
+       8: aload_0
+       9: ldc_w         #371                // class org/springframework/security/core/session/SessionRegistry
+      12: invokevirtual #373                // Method getBeanOrNull:(Ljava/lang/Class;)Ljava/lang/Object;
+      15: checkcast     #371                // class org/springframework/security/core/session/SessionRegistry
+      18: putfield      #367                // Field sessionRegistry:Lorg/springframework/security/core/session/SessionRegistry;
+      21: aload_0
+      22: getfield      #367                // Field sessionRegistry:Lorg/springframework/security/core/session/SessionRegistry;
+      25: ifnonnull     47
+      28: new           #376                // class org/springframework/security/core/session/SessionRegistryImpl
+      31: dup
+      32: invokespecial #378                // Method org/springframework/security/core/session/SessionRegistryImpl."<init>":()V
+      35: astore_2
+      36: aload_0
+      37: aload_1
+      38: aload_2
+      39: invokevirtual #379                // Method registerDelegateApplicationListener:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;Lorg/springframework/context/ApplicationListener;)V
+      42: aload_0
+      43: aload_2
+      44: putfield      #367                // Field sessionRegistry:Lorg/springframework/security/core/session/SessionRegistry;
+      47: aload_0
+      48: getfield      #367                // Field sessionRegistry:Lorg/springframework/security/core/session/SessionRegistry;
+      51: areturn
+
+  private void registerDelegateApplicationListener(H, org.springframework.context.ApplicationListener<?>);
+    Code:
+       0: aload_0
+       1: ldc_w         #383                // class org/springframework/security/context/DelegatingApplicationListener
+       4: invokevirtual #373                // Method getBeanOrNull:(Ljava/lang/Class;)Ljava/lang/Object;
+       7: checkcast     #383                // class org/springframework/security/context/DelegatingApplicationListener
+      10: astore_3
+      11: aload_3
+      12: ifnonnull     16
+      15: return
+      16: new           #385                // class org/springframework/context/event/GenericApplicationListenerAdapter
+      19: dup
+      20: aload_2
+      21: invokespecial #387                // Method org/springframework/context/event/GenericApplicationListenerAdapter."<init>":(Lorg/springframework/context/ApplicationListener;)V
+      24: astore        4
+      26: aload_3
+      27: aload         4
+      29: invokevirtual #390                // Method org/springframework/security/context/DelegatingApplicationListener.addListener:(Lorg/springframework/context/event/SmartApplicationListener;)V
+      32: return
+
+  private boolean isConcurrentSessionControlEnabled();
+    Code:
+       0: aload_0
+       1: getfield      #126                // Field sessionLimit:Lorg/springframework/security/web/authentication/session/SessionLimit;
+       4: ifnull        11
+       7: iconst_1
+       8: goto          12
+      11: iconst_0
+      12: ireturn
+
+  private static org.springframework.security.web.authentication.session.SessionAuthenticationStrategy createDefaultSessionFixationProtectionStrategy();
+    Code:
+       0: new           #394                // class org/springframework/security/web/authentication/session/ChangeSessionIdAuthenticationStrategy
+       3: dup
+       4: invokespecial #396                // Method org/springframework/security/web/authentication/session/ChangeSessionIdAuthenticationStrategy."<init>":()V
+       7: areturn
+
+  private <T> T getBeanOrNull(java.lang.Class<T>);
+    Code:
+       0: aload_0
+       1: invokevirtual #321                // Method getBuilder:()Lorg/springframework/security/config/annotation/SecurityBuilder;
+       4: checkcast     #145                // class org/springframework/security/config/annotation/web/HttpSecurityBuilder
+       7: ldc_w         #397                // class org/springframework/context/ApplicationContext
+      10: invokeinterface #144,  2          // InterfaceMethod org/springframework/security/config/annotation/web/HttpSecurityBuilder.getSharedObject:(Ljava/lang/Class;)Ljava/lang/Object;
+      15: checkcast     #397                // class org/springframework/context/ApplicationContext
+      18: astore_2
+      19: aload_2
+      20: ifnonnull     25
+      23: aconst_null
+      24: areturn
+      25: aload_2
+      26: aload_1
+      27: invokeinterface #399,  2          // InterfaceMethod org/springframework/context/ApplicationContext.getBeanProvider:(Ljava/lang/Class;)Lorg/springframework/beans/factory/ObjectProvider;
+      32: invokeinterface #403,  1          // InterfaceMethod org/springframework/beans/factory/ObjectProvider.getIfUnique:()Ljava/lang/Object;
+      37: areturn
+
+  public void configure(org.springframework.security.config.annotation.SecurityBuilder);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #145                // class org/springframework/security/config/annotation/web/HttpSecurityBuilder
+       5: invokevirtual #409                // Method configure:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)V
+       8: return
+
+  public void init(org.springframework.security.config.annotation.SecurityBuilder);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #145                // class org/springframework/security/config/annotation/web/HttpSecurityBuilder
+       5: invokevirtual #413                // Method init:(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)V
+       8: return
+}

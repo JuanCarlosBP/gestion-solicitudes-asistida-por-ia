@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.*;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -116,7 +117,7 @@ class IdentidadAccesoIT {
     @BeforeAll
     void arrancar() {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withCommand(
@@ -296,6 +297,80 @@ class IdentidadAccesoIT {
         assertThat(identidad.path("roles").size()).isEqualTo(2);
         assertThat(respuesta.body().contains(cookieValor(respuesta, "REFRESH-TOKEN"))).isFalse();
         assertThat(respuesta.body().contains(hashPrueba)).isFalse();
+    }
+
+    @Test
+    void csrfPermaneceEstableEntreLecturasBearerConcurrentes() throws Exception {
+        var acceso = servicio.iniciar(CORREO, CLAVE).orElseThrow();
+        String xsrf = csrf();
+        var consulta =
+                HttpRequest.newBuilder(URI.create(origen + "/api/identidad/yo"))
+                        .header("Authorization", "Bearer " + acceso.accessToken())
+                        .header("Cookie", "XSRF-TOKEN=" + xsrf)
+                        .GET()
+                        .build();
+        var primera = cliente.sendAsync(consulta, HttpResponse.BodyHandlers.ofString());
+        var segunda = cliente.sendAsync(consulta, HttpResponse.BodyHandlers.ofString());
+        for (var respuesta :
+                List.of(primera.get(10, TimeUnit.SECONDS), segunda.get(10, TimeUnit.SECONDS))) {
+            assertThat(respuesta.statusCode()).isEqualTo(200);
+            assertThat(
+                            respuesta.headers().allValues("Set-Cookie").stream()
+                                    .noneMatch(cookie -> cookie.startsWith("XSRF-TOKEN=")))
+                    .as("Validar un Bearer existente no sustituye la cookie compartida")
+                    .isTrue();
+        }
+        var sinCookie = get("/api/identidad/yo", acceso.accessToken());
+        assertThat(sinCookie.statusCode()).isEqualTo(200);
+        assertThat(cookieValor(sinCookie, "XSRF-TOKEN").isEmpty()).isFalse();
+        error(
+                post(
+                        "/api/autenticacion/renovar",
+                        "",
+                        xsrf,
+                        null,
+                        acceso.refresh(),
+                        acceso.accessToken()),
+                403,
+                "ACCESO_NO_PERMITIDO");
+        error(
+                post(
+                        "/api/autenticacion/renovar",
+                        "",
+                        xsrf,
+                        "distinto",
+                        acceso.refresh(),
+                        acceso.accessToken()),
+                403,
+                "ACCESO_NO_PERMITIDO");
+        var renovada = post("/api/autenticacion/renovar", "", xsrf, xsrf, acceso.refresh(), null);
+        assertThat(renovada.statusCode()).isEqualTo(200);
+        assertThat(
+                        renovada.headers().allValues("Set-Cookie").stream()
+                                .noneMatch(cookie -> cookie.startsWith("XSRF-TOKEN=")))
+                .as("Renovar la misma sesión mantiene XSRF sin alterar la rotación de refresh")
+                .isTrue();
+    }
+
+    @Test
+    void csrfRotaEnLoginYCierreRealesSinExponerloEnElCuerpo() throws Exception {
+        String anterior = csrf();
+        var login = login(CORREO, CLAVE, anterior);
+        assertThat(login.statusCode()).isEqualTo(200);
+        String actual = cookieValor(login, "XSRF-TOKEN");
+        assertThat(actual.equals(anterior)).as("Login reemplaza XSRF anterior").isFalse();
+        assertThat(login.body().contains(actual)).isFalse();
+        String refresh = cookieValor(login, "REFRESH-TOKEN");
+        error(
+                post("/api/autenticacion/cerrar-sesion", "", actual, anterior, refresh, null),
+                403,
+                "ACCESO_NO_PERMITIDO");
+        var cierre = post("/api/autenticacion/cerrar-sesion", "", actual, actual, refresh, null);
+        assertThat(cierre.statusCode()).isEqualTo(204);
+        String siguiente = cookieValor(cierre, "XSRF-TOKEN");
+        assertThat(siguiente.equals(actual)).as("Cierre reemplaza XSRF de la sesión").isFalse();
+        assertThat(cierre.body()).isEmpty();
+        assertThat(cookieValor(cierre, "REFRESH-TOKEN").isEmpty()).isTrue();
     }
 
     @Test

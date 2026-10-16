@@ -1,0 +1,11 @@
+# Solo QA local AG-014: conecta un frontend nuevo al backend de la copia ficticia,
+# conservando el contenedor frontend anterior detenido. No usar en despliegues.
+# Combinar después de infraestructura/compose.yaml y arrancar solo frontend
+# con --no-deps --no-recreate, proyecto gestion-solicitudes-ag014-ui02.
+services:
+  frontend:
+    image: gestion-solicitudes-ag014-frontend:correccion-01
+networks:
+  web:
+    external: true
+    name: gestion-solicitudes-ag014_web

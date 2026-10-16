@@ -1,0 +1,10 @@
+{
+  "observado": "2026-10-15T23:08:44.890Z",
+  "entrada": 2573,
+  "protegidos": 2211,
+  "protegidosAlterados": [],
+  "archivosAusentes": [],
+  "cambiosNoPrevistos": [],
+  "csvPrefijoHistoricoIntegro": true,
+  "comparacion": "Bytes SHA-256 frente a entrada; sin comandos Git."
+}

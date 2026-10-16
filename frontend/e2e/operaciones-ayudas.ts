@@ -4,7 +4,7 @@ import type { DescriptorOperacion } from '../src/app/operaciones/operacion-model
 import type { DetalleSolicitud } from '../src/app/solicitudes/solicitud-modelo';
 
 export const baseURL = process.env['BASE_URL'] ?? 'http://127.0.0.1:18080';
-export type RolDemo = 'ADMINISTRADOR' | 'SOLICITANTE' | 'SUPERVISOR';
+export type RolDemo = 'ADMINISTRADOR' | 'SOLICITANTE' | 'SUPERVISOR' | 'AUDITOR';
 export async function acceder(page: Page, rol: RolDemo, correo?: string) {
   await page.goto('/acceso');
   await page

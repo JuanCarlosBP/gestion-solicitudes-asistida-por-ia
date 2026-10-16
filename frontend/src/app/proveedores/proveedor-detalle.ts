@@ -16,10 +16,12 @@ import { catchError, combineLatest, finalize, map, of, startWith, Subject, switc
 import { esConflictoProveedor, mensajeErrorProveedor, Proveedor } from './proveedor-modelo';
 import { ProveedoresApi } from './proveedores-api';
 import { PermisosProveedores } from './proveedores-permisos';
+import { HistorialTimeline } from '../historial/historial-timeline';
+import { PermisosHistorial } from '../historial/historial-permisos';
 
 @Component({
   selector: 'app-proveedor-detalle',
-  imports: [RouterLink, DatePipe],
+  imports: [RouterLink, DatePipe, HistorialTimeline],
   templateUrl: './proveedor-detalle.html',
   styleUrl: './proveedores.css',
 })
@@ -32,6 +34,7 @@ export class ProveedorDetalle implements OnInit {
   private readonly alerta = viewChild<ElementRef<HTMLElement>>('alerta');
   private readonly refrescar = new Subject<void>();
   readonly permisos = inject(PermisosProveedores);
+  readonly historial = inject(PermisosHistorial);
   readonly proveedor = signal<Proveedor | null>(null);
   readonly cargando = signal(true);
   readonly guardando = signal(false);
@@ -91,6 +94,14 @@ export class ProveedorDetalle implements OnInit {
 
   recargar(): void {
     if (!this.guardando()) this.refrescar.next();
+  }
+  parametrosListado(): Record<string, string[]> {
+    const params = this.ruta.snapshot.queryParamMap;
+    return Object.fromEntries(
+      params.keys
+        .filter((key) => !key.startsWith('historial_'))
+        .map((key) => [key, params.getAll(key)]),
+    );
   }
 
   private enfocar(): void {

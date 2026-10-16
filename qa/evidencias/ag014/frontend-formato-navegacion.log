@@ -1,0 +1,8 @@
+src/app/historial/historial-timeline.ts 60ms
+src/app/historial/historial-timeline.html 57ms
+src/app/historial/historial-paginas.spec.ts 25ms
+src/app/solicitudes/solicitud-detalle.ts 10ms
+src/app/solicitudes/solicitud-detalle.html 33ms
+src/app/proveedores/proveedor-detalle.ts 6ms
+src/app/proveedores/proveedor-detalle.html 12ms (unchanged)
+e2e/historial.spec.ts 28ms

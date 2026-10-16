@@ -1,0 +1,86 @@
+{
+  "fechaUTC": "2026-10-15T20:07:18.145Z",
+  "terminado": true,
+  "muestras": [
+    {
+      "milisegundos": 0.19999999925494194,
+      "texto": "rgb(83, 101, 121)",
+      "fondo": "rgb(243, 246, 250)",
+      "contraste": 5.526858588998478,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 0.30000000074505806,
+      "texto": "rgb(83, 101, 121)",
+      "fondo": "rgb(243, 246, 250)",
+      "contraste": 5.526858588998478,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 10.300000000745058,
+      "texto": "rgb(111, 126, 143)",
+      "fondo": "rgb(206, 221, 225)",
+      "contraste": 2.976973838968578,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 27.300000000745058,
+      "texto": "rgb(163, 173, 184)",
+      "fondo": "rgb(138, 174, 179)",
+      "contraste": 1.050177759976316,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 43.80000000074506,
+      "texto": "rgb(204, 210, 216)",
+      "fondo": "rgb(85, 137, 143)",
+      "contraste": 2.5699087998301318,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 60.100000001490116,
+      "texto": "rgb(230, 232, 235)",
+      "fondo": "rgb(52, 114, 121)",
+      "contraste": 4.4676744775384005,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 78.19999999925494,
+      "texto": "rgb(244, 245, 247)",
+      "fondo": "rgb(33, 101, 108)",
+      "contraste": 6.125554687629505,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 93.30000000074506,
+      "texto": "rgb(252, 252, 253)",
+      "fondo": "rgb(23, 94, 101)",
+      "contraste": 7.249027307065088,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 111.10000000149012,
+      "texto": "rgb(255, 255, 255)",
+      "fondo": "rgb(19, 91, 99)",
+      "contraste": 7.765427575475824,
+      "deshabilitado": false,
+      "animaciones": 2
+    },
+    {
+      "milisegundos": 126.60000000149012,
+      "texto": "rgb(255, 255, 255)",
+      "fondo": "rgb(19, 91, 99)",
+      "contraste": 7.765427575475824,
+      "deshabilitado": false,
+      "animaciones": 0
+    }
+  ]
+}

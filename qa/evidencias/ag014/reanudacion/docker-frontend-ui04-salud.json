@@ -1,0 +1,7 @@
+{
+  "observacion": "La primera sonda utilizó por error /api/estado, ruta no pública que respondió401. No fue un fallo de /api/salud.",
+  "http": null,
+  "ruta": "/api/salud",
+  "fecha": "2026-10-15T22:05:06.9871605+02:00",
+  "cuerpo": null
+}

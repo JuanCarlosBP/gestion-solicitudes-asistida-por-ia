@@ -1,0 +1,15 @@
+{
+  "fecha": "2026-10-15T21:51:18.2825071+02:00",
+  "directorio": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\backend",
+  "argumentosMaven": [
+    "-B",
+    "verify",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/pruebas-backend"
+  ],
+  "javaHome": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.12.101-hotspot",
+  "mavenUserHome": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\maven-user",
+  "temp": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\pruebas-backend",
+  "conservar": "true",
+  "reuse": "true",
+  "ryukDisabled": "false"
+}

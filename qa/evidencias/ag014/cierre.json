@@ -1,0 +1,64 @@
+{
+  "inicioObservado": "2026-10-15T20:09:15+02:00",
+  "cierreParcial": "2026-10-15T20:42:08+02:00",
+  "duracionDesdePrimerReloj": "00:32:53",
+  "limiteConservador": "2026-10-16T04:05:00+02:00",
+  "zona": "Europe/Madrid",
+  "precision": "Lecturas iniciales anteriores al primer reloj; no se inventa su duración. Cierre parcial de entrega, con verificadores documentales finales inmediatamente posteriores.",
+  "estado": "IMPLEMENTACION_PREPARADA_VERIFICACION_INCOMPLETA",
+  "criterios": {
+    "HA-01": "PARCIAL",
+    "HA-02": "PARCIAL",
+    "HA-03": "PARCIAL",
+    "HA-04": "PARCIAL",
+    "HA-05": "PARCIAL",
+    "HA-06": "PARCIAL",
+    "HA-07": "PARCIAL",
+    "HA-08": "PARCIAL",
+    "HA-09": "PENDIENTE_EJECUCION_POSTGRESQL",
+    "HA-10": "PARCIAL"
+  },
+  "ejecutado": {
+    "backendUnitarias": 122,
+    "backendFallos": 0,
+    "backendErrores": 0,
+    "backendOmitidas": 0,
+    "spotless": "PASS",
+    "spotbugs": 0,
+    "backendPackage": "PASS; pruebas omitidas en package04, ejecutadas en final05",
+    "angularPruebas": 476,
+    "angularArchivos": 23,
+    "angularTiposLintFormatoBuild": "PASS",
+    "osvMavenComponentes": 132,
+    "osvNpmProduccion": 7,
+    "osvNpmCompleto": 653,
+    "osvVulnerabilidadesListadas": 0,
+    "actionlint": "PASS",
+    "e2eSoloInventariados": 33,
+    "e2eEjecutados": 0,
+    "capturasNuevas": 0
+  },
+  "revision": "Independiente acotada sin defectos altos/bloqueantes identificados. Observación baja Angular resuelta; cobertura previaV5 en navegador pendiente con fixture real y condición activa.",
+  "pendientes": [
+    "Reparación Docker fuera del workspace pendiente de permiso ya solicitado",
+    "13IT nuevas y regresión PostgreSQL; verify íntegro",
+    "V6→V7 con snapshot previo y comprobación posterior; decisionesV5 previas",
+    "Docker sin caché; Compose200/503/Swagger/persistencia; API/regresión",
+    "33E2E sin reintentos;12capturas360/768/1440; teclado/contraste",
+    "Medición real crecimiento/índices/latencia",
+    "npm audit: autorización explícita para envío a registry.npmjs.org pendiente",
+    "CI007 después de push humano; aceptación humana"
+  ],
+  "git": {
+    "comandos": [
+      "git status --short inicial antes de leer prohibición; salida vacía"
+    ],
+    "escrituras": false,
+    "posteriores": false,
+    "lecturaHead": true,
+    "consultaGitHub": "Solo CI heredada PR4/PR5"
+  },
+  "opcional008": "NO_CREADO: puerta de verificación007 no cumplida",
+  "proteccion": "V1–V6 y AG003–013 comparados por SHA256; resultado final en entrega-integridad.json",
+  "noAceptadaIntegradaDesplegada": true
+}

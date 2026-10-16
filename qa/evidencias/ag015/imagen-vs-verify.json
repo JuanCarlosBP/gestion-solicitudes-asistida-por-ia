@@ -1,0 +1,805 @@
+{
+  "diferencias": 0,
+  "clases": 133,
+  "comparacion": [
+    {
+      "clase": "es/gestionsolicitudes/GestionSolicitudesApplication.class",
+      "imagen": "b5e09dfd355348588f48b7f4437f4dc87b53a2a7dec54d5d9b30ebb911018e97",
+      "verify": "b5e09dfd355348588f48b7f4437f4dc87b53a2a7dec54d5d9b30ebb911018e97",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/ContratoApi.class",
+      "imagen": "7fba0b40231ce94a68894be6ab3bfab6e2f16c2a10462ef846987234fc8d9e0b",
+      "verify": "7fba0b40231ce94a68894be6ab3bfab6e2f16c2a10462ef846987234fc8d9e0b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/ErroresControlados$1.class",
+      "imagen": "0632ccbee2238b8a5dbeefa585b59029c13ba53aa8cdd934647eb8cb6233b8e6",
+      "verify": "0632ccbee2238b8a5dbeefa585b59029c13ba53aa8cdd934647eb8cb6233b8e6",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/ErroresControlados$ErrorPublico.class",
+      "imagen": "4e83c1ed62fabc72de608d446a6a0b617ba523d2933fc420eeab192957ffc65e",
+      "verify": "4e83c1ed62fabc72de608d446a6a0b617ba523d2933fc420eeab192957ffc65e",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/ErroresControlados.class",
+      "imagen": "ee25cc1c115975a230e3784975a50ce48900a30448a47968046cc6f782d97908",
+      "verify": "ee25cc1c115975a230e3784975a50ce48900a30448a47968046cc6f782d97908",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/SeguridadTecnica$1.class",
+      "imagen": "fd7a55c4ba32c5421db58064226460c18587cbd13feb710b2833b09c3657a856",
+      "verify": "fd7a55c4ba32c5421db58064226460c18587cbd13feb710b2833b09c3657a856",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/configuracion/SeguridadTecnica.class",
+      "imagen": "fa132b7e496bb720173ff19f97ce714e1fb7c3ec6e2e216d4f28fe47927469de",
+      "verify": "fa132b7e496bb720173ff19f97ce714e1fb7c3ec6e2e216d4f28fe47927469de",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/aplicacion/RegistroHistorial.class",
+      "imagen": "70d4b7628809fd535890f3934c29f4027b70cfb2627d32d231f8ee6c41475269",
+      "verify": "70d4b7628809fd535890f3934c29f4027b70cfb2627d32d231f8ee6c41475269",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/aplicacion/RepositorioHistorial.class",
+      "imagen": "f70485ef8e166ed692dc0471e4b2aefb1eadc3b82fe9802f4a4d7aea7eb530e8",
+      "verify": "f70485ef8e166ed692dc0471e4b2aefb1eadc3b82fe9802f4a4d7aea7eb530e8",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/aplicacion/ServicioHistorial.class",
+      "imagen": "eb69f82c3edeeb1db535ca5dd09b29c6d806ca1c3aa38ad2bce8a2f302e0f9a0",
+      "verify": "eb69f82c3edeeb1db535ca5dd09b29c6d806ca1c3aa38ad2bce8a2f302e0f9a0",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/AccionHistorial.class",
+      "imagen": "16a35c76aa598fa0adc0265a825793e8bd175317ba65c26700ffe17c1701c47e",
+      "verify": "16a35c76aa598fa0adc0265a825793e8bd175317ba65c26700ffe17c1701c47e",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/CambioHistorial.class",
+      "imagen": "c7f096a9dd68b11b9d4beea4c73c1e36b21e65336e60d602f7a38babe96c2b73",
+      "verify": "c7f096a9dd68b11b9d4beea4c73c1e36b21e65336e60d602f7a38babe96c2b73",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/ConsultaHistorial.class",
+      "imagen": "984d7c45ba17025cb337de907d212659638b2028530311a8f453d6e54290017a",
+      "verify": "984d7c45ba17025cb337de907d212659638b2028530311a8f453d6e54290017a",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/EventoHistorial$Actor.class",
+      "imagen": "3616fdf10f7ae4eace96bd753297ba003221075a58249975201061e518a5804e",
+      "verify": "3616fdf10f7ae4eace96bd753297ba003221075a58249975201061e518a5804e",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/EventoHistorial$Origen.class",
+      "imagen": "17044f12cba1b6eb15bd85d29891ddabf249419532400fac646bba93d8539b70",
+      "verify": "17044f12cba1b6eb15bd85d29891ddabf249419532400fac646bba93d8539b70",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/EventoHistorial.class",
+      "imagen": "d3da74cb8cb6f61eb199a54250bb50f5746028c6fa8c5cc004f1734d3b739a57",
+      "verify": "d3da74cb8cb6f61eb199a54250bb50f5746028c6fa8c5cc004f1734d3b739a57",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/PaginaHistorial.class",
+      "imagen": "519869677b5dd606cc0fb53581dcae1d7021e5cf361692bf35d7426d01fc5a5d",
+      "verify": "519869677b5dd606cc0fb53581dcae1d7021e5cf361692bf35d7426d01fc5a5d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/ResumenAplicacion$Estados.class",
+      "imagen": "eb2b31ffd4d798c5b7850fe0393b584c3ba98ed74a39e5f5d6a429ac9f6d9080",
+      "verify": "eb2b31ffd4d798c5b7850fe0393b584c3ba98ed74a39e5f5d6a429ac9f6d9080",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/ResumenAplicacion$Pendientes.class",
+      "imagen": "77dd68ea200a7794c740335fc8e586fd3090d68949fefe332a7f7bca93d3ea74",
+      "verify": "77dd68ea200a7794c740335fc8e586fd3090d68949fefe332a7f7bca93d3ea74",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/ResumenAplicacion.class",
+      "imagen": "fb9f65c32d1af0be0c4c36ebc8bde4ea9d9b38fc16f7d784acaea24c9e834634",
+      "verify": "fb9f65c32d1af0be0c4c36ebc8bde4ea9d9b38fc16f7d784acaea24c9e834634",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/dominio/TipoRecurso.class",
+      "imagen": "629f9d675f5d527d184b137d579f16db2987e79cde2a3f377bbe40cf7bf4d5b0",
+      "verify": "629f9d675f5d527d184b137d579f16db2987e79cde2a3f377bbe40cf7bf4d5b0",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/http/ControladorHistorial.class",
+      "imagen": "c4365aabe882483a3ea905c1811028d4dcdaeca36708d6f5b93b2183858acf18",
+      "verify": "c4365aabe882483a3ea905c1811028d4dcdaeca36708d6f5b93b2183858acf18",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/http/FiltrosHistorial.class",
+      "imagen": "3a8a1ec2789ecab09195993306a4eef73521beab85ec6c0ac7104301a730057f",
+      "verify": "3a8a1ec2789ecab09195993306a4eef73521beab85ec6c0ac7104301a730057f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/historial/persistencia/RepositorioHistorialJdbc.class",
+      "imagen": "73540ad8b59b353de36e15ad6ea33737d6e97f974049134574d13f07481c705f",
+      "verify": "73540ad8b59b353de36e15ad6ea33737d6e97f974049134574d13f07481c705f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.class",
+      "imagen": "2fdc490d332c4eb7f0aacc9f858695a2510c04ae530238eff9167666f095128d",
+      "verify": "2fdc490d332c4eb7f0aacc9f858695a2510c04ae530238eff9167666f095128d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/Contrasenas.class",
+      "imagen": "577df4b066795ea6dabaaa961cfe66364406955849977d92d3898967bcd70ab7",
+      "verify": "577df4b066795ea6dabaaa961cfe66364406955849977d92d3898967bcd70ab7",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.class",
+      "imagen": "42f7f07a75302a303ef668586ff3d5b12f16e6048f8e51c821c7c55437ac0968",
+      "verify": "42f7f07a75302a303ef668586ff3d5b12f16e6048f8e51c821c7c55437ac0968",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.class",
+      "imagen": "ac271e864fe7f102f9c99d2bb322d939c7ce99a3093ae4c8352b329b93da9a9a",
+      "verify": "ac271e864fe7f102f9c99d2bb322d939c7ce99a3093ae4c8352b329b93da9a9a",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco$Credencial.class",
+      "imagen": "20ed4adfd82082f73cf86b41f72f6b809aa4d54f1bbbb8d98185224cf4482aba",
+      "verify": "20ed4adfd82082f73cf86b41f72f6b809aa4d54f1bbbb8d98185224cf4482aba",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.class",
+      "imagen": "dc9c314104d539748d47482f9c1c004207455998d6f4c0ed587fa69a5338be49",
+      "verify": "dc9c314104d539748d47482f9c1c004207455998d6f4c0ed587fa69a5338be49",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.class",
+      "imagen": "3d68130f552c7fd8175365e2325923fb32941b769abac358a7b2ebf210c4adb0",
+      "verify": "3d68130f552c7fd8175365e2325923fb32941b769abac358a7b2ebf210c4adb0",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.class",
+      "imagen": "689d3b9148ef8b64e490869639de749dc0b6b29df881597c06b538434fd3f0e9",
+      "verify": "689d3b9148ef8b64e490869639de749dc0b6b29df881597c06b538434fd3f0e9",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/configuracion/ClavesRsa.class",
+      "imagen": "8022b5e2dac12562e8396d9e5067932266cd36fe6ba0772ec3d56b5679a67871",
+      "verify": "8022b5e2dac12562e8396d9e5067932266cd36fe6ba0772ec3d56b5679a67871",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.class",
+      "imagen": "3d5d1c6426f916ce9319635e2badbb73c4845df766a11756ea80af3a843423d2",
+      "verify": "3d5d1c6426f916ce9319635e2badbb73c4845df766a11756ea80af3a843423d2",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.class",
+      "imagen": "e19f794a9cb570fe0d4210772159a586f96adfb4c0bd6af105b9b4d53720dcff",
+      "verify": "e19f794a9cb570fe0d4210772159a586f96adfb4c0bd6af105b9b4d53720dcff",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.class",
+      "imagen": "4814ead8deaf5f2b836cfc732f165011c3916dc357cbc83b8e74b00255cde474",
+      "verify": "4814ead8deaf5f2b836cfc732f165011c3916dc357cbc83b8e74b00255cde474",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/Correo.class",
+      "imagen": "983d89056e09030e41a64113218bc099975979ed23f89cd0a9b664f05d458d9f",
+      "verify": "983d89056e09030e41a64113218bc099975979ed23f89cd0a9b664f05d458d9f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/IntentosAcceso.class",
+      "imagen": "6f1b4db93623b01320d7576e077cbac1435281c533d94b383015d480e46284ae",
+      "verify": "6f1b4db93623b01320d7576e077cbac1435281c533d94b383015d480e46284ae",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/Rol.class",
+      "imagen": "32ea17959db9ea057067cfae18fb43dd36dd7bd38c14204356345108cab41d83",
+      "verify": "32ea17959db9ea057067cfae18fb43dd36dd7bd38c14204356345108cab41d83",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/SesionAcceso.class",
+      "imagen": "ff985ef5af6134c2838d3075324fb5d666b0a14af1e4c480acf00d80a0528853",
+      "verify": "ff985ef5af6134c2838d3075324fb5d666b0a14af1e4c480acf00d80a0528853",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/TokenRefresco.class",
+      "imagen": "fda4157afd07333a3508e231d09f9982934cd864e0521d008d4a7662b31d2026",
+      "verify": "fda4157afd07333a3508e231d09f9982934cd864e0521d008d4a7662b31d2026",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/Usuario.class",
+      "imagen": "78cec73999174d3ad7893bb326917f1e7668e8c9a5493d92897abee7255be947",
+      "verify": "78cec73999174d3ad7893bb326917f1e7668e8c9a5493d92897abee7255be947",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/dominio/UsuarioPublico.class",
+      "imagen": "404471c3debfcb79a7c6f3cf6603f1499093e88e89990f23e853dfeee02495a3",
+      "verify": "404471c3debfcb79a7c6f3cf6603f1499093e88e89990f23e853dfeee02495a3",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion$RespuestaAcceso.class",
+      "imagen": "d7fc78a520aa3546482a0b5fcdb5e039377ad1baaa7c1a3087b54077d184e1fb",
+      "verify": "d7fc78a520aa3546482a0b5fcdb5e039377ad1baaa7c1a3087b54077d184e1fb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion$SolicitudLogin.class",
+      "imagen": "51d64ec1d89e63bf137b49277d900eb0582f86db09254a8d2591c45d8e4a46c1",
+      "verify": "51d64ec1d89e63bf137b49277d900eb0582f86db09254a8d2591c45d8e4a46c1",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/ControladorAutenticacion.class",
+      "imagen": "cf4fba06f1a3210e35ba97dbe56983ed27cc6f5249927fcc501a94807a00eb29",
+      "verify": "cf4fba06f1a3210e35ba97dbe56983ed27cc6f5249927fcc501a94807a00eb29",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/ControladorIdentidad.class",
+      "imagen": "2e1a46beb47247916219f43470668158d02dde4ebdabed008ac3d4e1c62c2c54",
+      "verify": "2e1a46beb47247916219f43470668158d02dde4ebdabed008ac3d4e1c62c2c54",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/ControladorSupervisores.class",
+      "imagen": "338f08efc36d4f34c5a11909a7d8f7fd37e00b77340f900bd7a5202c11aee10f",
+      "verify": "338f08efc36d4f34c5a11909a7d8f7fd37e00b77340f900bd7a5202c11aee10f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/CookiesIdentidad.class",
+      "imagen": "1dd2181240843765a99653668be326996f73f9395373f2d5ef014a2e96c8462b",
+      "verify": "1dd2181240843765a99653668be326996f73f9395373f2d5ef014a2e96c8462b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.class",
+      "imagen": "007a2175228b919d029b7e1d3c0cd2c31529d307fe4121b3e22ed908e8e5de37",
+      "verify": "007a2175228b919d029b7e1d3c0cd2c31529d307fe4121b3e22ed908e8e5de37",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.class",
+      "imagen": "2faa9188c67729da23eed9eb72ccb787299ec5e5faff3c9c8e6f81a65687f229",
+      "verify": "2faa9188c67729da23eed9eb72ccb787299ec5e5faff3c9c8e6f81a65687f229",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/AutorizacionOperaciones.class",
+      "imagen": "90e87a5c729488bca2bcb301da68cd7421b0ae2ecc773f87bd521c1eea6544a2",
+      "verify": "90e87a5c729488bca2bcb301da68cd7421b0ae2ecc773f87bd521c1eea6544a2",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones$Confirmada.class",
+      "imagen": "be946b9a9f8bfd1d87ce850872dce916b70bc05e09dee46369755ea550094e56",
+      "verify": "be946b9a9f8bfd1d87ce850872dce916b70bc05e09dee46369755ea550094e56",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/RepositorioOperaciones.class",
+      "imagen": "86cb0ee8434f5eb25d76737a0e56353f726b55e1a316efe60478d5a66a2244e4",
+      "verify": "86cb0ee8434f5eb25d76737a0e56353f726b55e1a316efe60478d5a66a2244e4",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$1.class",
+      "imagen": "64c95a5a9a9b99b7bb3006495d6ae1b9949d06cc519a1bc556d6fbb5fc77cceb",
+      "verify": "64c95a5a9a9b99b7bb3006495d6ae1b9949d06cc519a1bc556d6fbb5fc77cceb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$Clave.class",
+      "imagen": "3cd967da550020f6bccedb250a564762abb605744c96358c67ae3e8242f1ce88",
+      "verify": "3cd967da550020f6bccedb250a564762abb605744c96358c67ae3e8242f1ce88",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$EnCurso.class",
+      "imagen": "7565ba9dbd574f468fb9d6dce1ed8872a050bb23323ee4265b5d7dc9ba19cbcb",
+      "verify": "7565ba9dbd574f468fb9d6dce1ed8872a050bb23323ee4265b5d7dc9ba19cbcb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones$Terminada.class",
+      "imagen": "7061d69d369c8531bf9cb5daac2af67b2a4223d36c7aedf73ba14cc7ab9ce2c3",
+      "verify": "7061d69d369c8531bf9cb5daac2af67b2a4223d36c7aedf73ba14cc7ab9ce2c3",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/aplicacion/ServicioOperaciones.class",
+      "imagen": "bf3c0581e6af37c697c533c3a51a6689260d765033876e35af3e82e040c68b75",
+      "verify": "bf3c0581e6af37c697c533c3a51a6689260d765033876e35af3e82e040c68b75",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/ErrorOperacion$Codigo.class",
+      "imagen": "c65c4f5f2305c7d979d2224f0d4df832e43c20c8b0c84ecd2ee90612acbc502e",
+      "verify": "c65c4f5f2305c7d979d2224f0d4df832e43c20c8b0c84ecd2ee90612acbc502e",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/ErrorOperacion.class",
+      "imagen": "ffe909c4abac3173941353413fe9202c7307598cd3fa3a8a74ece57c08d07ffd",
+      "verify": "ffe909c4abac3173941353413fe9202c7307598cd3fa3a8a74ece57c08d07ffd",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/EstadoOperacion$Resultado.class",
+      "imagen": "6db4ab2fab5c73e8f05f7fa8e6102d80613168700f0788bc99629f7dd18ff2a8",
+      "verify": "6db4ab2fab5c73e8f05f7fa8e6102d80613168700f0788bc99629f7dd18ff2a8",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/EstadoOperacion.class",
+      "imagen": "1f3695b06a5b29ab4d3456efc93ca2900cf11ddd805bc6d1331bf34060532623",
+      "verify": "1f3695b06a5b29ab4d3456efc93ca2900cf11ddd805bc6d1331bf34060532623",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/HuellaOperacion.class",
+      "imagen": "6ec642f2037077bd72a587e62c74d1aca2c0da2dd435e5a208ebfba5f2067c16",
+      "verify": "6ec642f2037077bd72a587e62c74d1aca2c0da2dd435e5a208ebfba5f2067c16",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/PeticionOperacion.class",
+      "imagen": "a81f475c47498056581ed0c93c899f586932faaeaf6abfbfc2465c73cb26fd09",
+      "verify": "a81f475c47498056581ed0c93c899f586932faaeaf6abfbfc2465c73cb26fd09",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/dominio/TipoOperacion.class",
+      "imagen": "7b51ecd2aeba915b9fc895d69aa06088cfd5e083a7335aa25911fbd374fae879",
+      "verify": "7b51ecd2aeba915b9fc895d69aa06088cfd5e083a7335aa25911fbd374fae879",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/http/ControladorOperaciones.class",
+      "imagen": "c0b8d24dfbe730e1444b6246eaac20590aee11e0181d8af23f34b10e9f251c17",
+      "verify": "c0b8d24dfbe730e1444b6246eaac20590aee11e0181d8af23f34b10e9f251c17",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc$1.class",
+      "imagen": "cb69a47e5cb76c6016a2d6ffa5251e6671c39de88e71cc8e11522600746bd186",
+      "verify": "cb69a47e5cb76c6016a2d6ffa5251e6671c39de88e71cc8e11522600746bd186",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc$BorradorPersistido.class",
+      "imagen": "702be90d61f90358e2a9b7b948e6f6de32f86c3ae54aff17233088471f6d4bbe",
+      "verify": "702be90d61f90358e2a9b7b948e6f6de32f86c3ae54aff17233088471f6d4bbe",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/operaciones/persistencia/RepositorioOperacionesJdbc.class",
+      "imagen": "4e2ce6ae18d5b826e04fba82abac8f1527fc8299e9b07c05987aa5f23ca1712e",
+      "verify": "4e2ce6ae18d5b826e04fba82abac8f1527fc8299e9b07c05987aa5f23ca1712e",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/aplicacion/RepositorioProveedores.class",
+      "imagen": "e41b207cb0153b6faa4871a939c715a57fb3adbba76740c1cebf3d2d3405b180",
+      "verify": "e41b207cb0153b6faa4871a939c715a57fb3adbba76740c1cebf3d2d3405b180",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores$1.class",
+      "imagen": "4c8076908cc563b638d7ef4c9b8999a79843e4b43477caacf65358aae2374eeb",
+      "verify": "4c8076908cc563b638d7ef4c9b8999a79843e4b43477caacf65358aae2374eeb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.class",
+      "imagen": "de4326b04240f78c1b74d0a3054e9c5cb6381c2234387d1b492447953f10f13f",
+      "verify": "de4326b04240f78c1b74d0a3054e9c5cb6381c2234387d1b492447953f10f13f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/ActorProveedor.class",
+      "imagen": "c80e474c27a523f088e3869f06b52a52f4559371fbd967340c3aee9058b98659",
+      "verify": "c80e474c27a523f088e3869f06b52a52f4559371fbd967340c3aee9058b98659",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores$Orden.class",
+      "imagen": "fdf0da53589e917d0104c183544160201ab3a2c628d924fc67f94166e81fff8d",
+      "verify": "fdf0da53589e917d0104c183544160201ab3a2c628d924fc67f94166e81fff8d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/ConsultaProveedores.class",
+      "imagen": "42ea6c1878be296324aec6756d6d556e7edabf861d33628b4d6ffa4bd4903359",
+      "verify": "42ea6c1878be296324aec6756d6d556e7edabf861d33628b4d6ffa4bd4903359",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/DatosProveedor.class",
+      "imagen": "28bfad14e913184c35b63f1985a04786d1ed330d485e0b88f3977eaf95f3f773",
+      "verify": "28bfad14e913184c35b63f1985a04786d1ed330d485e0b88f3977eaf95f3f773",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/ErrorProveedor$Codigo.class",
+      "imagen": "9ef5b02a7458d7288602248daf68e61d9dfd3f05e4628f476d72ec359f6083a0",
+      "verify": "9ef5b02a7458d7288602248daf68e61d9dfd3f05e4628f476d72ec359f6083a0",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/ErrorProveedor.class",
+      "imagen": "04a676dcb879beaa020da00bd3521b6332fe2865ab1a339d717e4a6cebd3e965",
+      "verify": "04a676dcb879beaa020da00bd3521b6332fe2865ab1a339d717e4a6cebd3e965",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/PaginaProveedores.class",
+      "imagen": "03ddb75c8bb5b6b6a8561a9a97804d919da16641609919f5dcd0a7d6c0569052",
+      "verify": "03ddb75c8bb5b6b6a8561a9a97804d919da16641609919f5dcd0a7d6c0569052",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/Proveedor.class",
+      "imagen": "f1bf099cd993dba279090537fa8715160778a1016eb472f66264c2643e8c236c",
+      "verify": "f1bf099cd993dba279090537fa8715160778a1016eb472f66264c2643e8c236c",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/dominio/TipoProveedor.class",
+      "imagen": "6f42891485950ab92cc1bf5700334e47864bd48e27b96ed46da451e648264a57",
+      "verify": "6f42891485950ab92cc1bf5700334e47864bd48e27b96ed46da451e648264a57",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/ControladorProveedores.class",
+      "imagen": "eb443ddd96088afb66b6002e4182f4ddcd2d0bceb3a62fd1804da4cc9131b195",
+      "verify": "eb443ddd96088afb66b6002e4182f4ddcd2d0bceb3a62fd1804da4cc9131b195",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Alta.class",
+      "imagen": "e669c638584c3571f300e9cc84dfe7ae13019c88a61cca616a0b439f8c8f1de1",
+      "verify": "e669c638584c3571f300e9cc84dfe7ae13019c88a61cca616a0b439f8c8f1de1",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Edicion.class",
+      "imagen": "bd189b32386dfa9931fc7254c69c5c75a764be49d8f533bb8aa3f8a2e6614249",
+      "verify": "bd189b32386dfa9931fc7254c69c5c75a764be49d8f533bb8aa3f8a2e6614249",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/EntradaProveedor$Estado.class",
+      "imagen": "da555e5de19378787715a7e6e7eb528c85723a6272dc94475a66dc8a35bc1f71",
+      "verify": "da555e5de19378787715a7e6e7eb528c85723a6272dc94475a66dc8a35bc1f71",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/EntradaProveedor.class",
+      "imagen": "2f1ff0dae7bc18eeb02ef313b623b38df793114edb740e066a32747646fd68bb",
+      "verify": "2f1ff0dae7bc18eeb02ef313b623b38df793114edb740e066a32747646fd68bb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/FiltrosProveedores.class",
+      "imagen": "d29b317811d7052e146af6a70568a51682c3caa3218675fdb52eef1bb66df37a",
+      "verify": "d29b317811d7052e146af6a70568a51682c3caa3218675fdb52eef1bb66df37a",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/ProveedorPublico$Pagina.class",
+      "imagen": "81df5a8284f101e3b6404125a5b968d98b6beb40159d4d6963ddeb84419c5f78",
+      "verify": "81df5a8284f101e3b6404125a5b968d98b6beb40159d4d6963ddeb84419c5f78",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/http/ProveedorPublico.class",
+      "imagen": "02e5173ddbc7745512ca7af603b04b1a2ab569c51c0d25ba9d51372820a669f3",
+      "verify": "02e5173ddbc7745512ca7af603b04b1a2ab569c51c0d25ba9d51372820a669f3",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc$1.class",
+      "imagen": "a53d6875901c534718cd5e87430ba486037910d4d9142a55e5eb4b246e84f08b",
+      "verify": "a53d6875901c534718cd5e87430ba486037910d4d9142a55e5eb4b246e84f08b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/proveedores/persistencia/RepositorioProveedoresJdbc.class",
+      "imagen": "b213fe04197a96098ad3050b7dd5ba982833ba408246cf9a89cf249979dc2700",
+      "verify": "b213fe04197a96098ad3050b7dd5ba982833ba408246cf9a89cf249979dc2700",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/aplicacion/ComprobacionBaseDatos.class",
+      "imagen": "6d6fced78c017d4763bac78131da6f75e8ab981025b2bdf01255ff2fa61fb86f",
+      "verify": "6d6fced78c017d4763bac78131da6f75e8ab981025b2bdf01255ff2fa61fb86f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/aplicacion/EstadoSalud.class",
+      "imagen": "4050b7dc2a0c165fd9116539b2e1d81eca088d6719e1bd5740a8f62df4423eb1",
+      "verify": "4050b7dc2a0c165fd9116539b2e1d81eca088d6719e1bd5740a8f62df4423eb1",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/aplicacion/ServicioSalud.class",
+      "imagen": "1b7561320eba1b8ed8a116f0556755520c65049e0b95a672adc4ba05d30675a4",
+      "verify": "1b7561320eba1b8ed8a116f0556755520c65049e0b95a672adc4ba05d30675a4",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/http/ControladorSalud.class",
+      "imagen": "24523c4742520b7871b997deeda0e20f4538cbc29c3cac5759914a58b66ab8ff",
+      "verify": "24523c4742520b7871b997deeda0e20f4538cbc29c3cac5759914a58b66ab8ff",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/http/RespuestaSalud.class",
+      "imagen": "651de8ae273e5ae39a3922ce3760b674daf7627c168acbe17471437b857d31fa",
+      "verify": "651de8ae273e5ae39a3922ce3760b674daf7627c168acbe17471437b857d31fa",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/salud/persistencia/ComprobacionPostgres.class",
+      "imagen": "2baaa02b89063945d3564825b32231b8b1590cfcdeb068020ade8bce7c64853c",
+      "verify": "2baaa02b89063945d3564825b32231b8b1590cfcdeb068020ade8bce7c64853c",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/aplicacion/RepositorioSolicitudes.class",
+      "imagen": "cd3ad9810c75d2d29ca21b1164fa26e14268615608fa016183e550f7fbbab958",
+      "verify": "cd3ad9810c75d2d29ca21b1164fa26e14268615608fa016183e550f7fbbab958",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes$1.class",
+      "imagen": "7fdd1d97d4d89290c289ede398ff248a4efbf6f2b632a6733ae65746e7b5691f",
+      "verify": "7fdd1d97d4d89290c289ede398ff248a4efbf6f2b632a6733ae65746e7b5691f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.class",
+      "imagen": "9d6a5cedb9593950031c2ca164e91169636d5e23f2d39234da31824997d9d647",
+      "verify": "9d6a5cedb9593950031c2ca164e91169636d5e23f2d39234da31824997d9d647",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ActorSolicitud.class",
+      "imagen": "f3477176bbfd4611e5c5bc27b278dc174204314661f61f7dbb95ff7825461e9a",
+      "verify": "f3477176bbfd4611e5c5bc27b278dc174204314661f61f7dbb95ff7825461e9a",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Concepto$Unidad.class",
+      "imagen": "92c09bc57249e68e67dd8debe5443ac654a5192bc7f0149f32c08d21505c6acd",
+      "verify": "92c09bc57249e68e67dd8debe5443ac654a5192bc7f0149f32c08d21505c6acd",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Concepto.class",
+      "imagen": "fe94e410af5459d224f2b259d22a79b36c65c25cad1408efeabb9e923383df8b",
+      "verify": "fe94e410af5459d224f2b259d22a79b36c65c25cad1408efeabb9e923383df8b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes$Orden.class",
+      "imagen": "fc1ee59ea1e187a067e0c18a6cc7059479af2fedc55e95168aec73fc8d705e0b",
+      "verify": "fc1ee59ea1e187a067e0c18a6cc7059479af2fedc55e95168aec73fc8d705e0b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ConsultaSolicitudes.class",
+      "imagen": "c34a5644faa07d28e80842a1d52e32589907ceb9514a11ea56d77052a3a74516",
+      "verify": "c34a5644faa07d28e80842a1d52e32589907ceb9514a11ea56d77052a3a74516",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/DatosBorrador.class",
+      "imagen": "0463a44ee49f6eb4210a8ce695180c6dada2aad5cf06f0356915f8512483e4c1",
+      "verify": "0463a44ee49f6eb4210a8ce695180c6dada2aad5cf06f0356915f8512483e4c1",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/DatosDecision$Tipo.class",
+      "imagen": "12b122b81ff37c0be95211ae6243d226aaf96b84d9ba36bf8111bd8e8dd0ca94",
+      "verify": "12b122b81ff37c0be95211ae6243d226aaf96b84d9ba36bf8111bd8e8dd0ca94",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/DatosDecision.class",
+      "imagen": "bea1fd3d90c2398eb83b3ff019cdebd5502f16f32ee78e8f7747e700c9cc65c6",
+      "verify": "bea1fd3d90c2398eb83b3ff019cdebd5502f16f32ee78e8f7747e700c9cc65c6",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/DecisionSolicitud.class",
+      "imagen": "2ca188a9783598340da321677a599930fb6d64cc57a2bc96620c4b85694b4578",
+      "verify": "2ca188a9783598340da321677a599930fb6d64cc57a2bc96620c4b85694b4578",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud$Codigo.class",
+      "imagen": "4cacfa2c1c5c3cbc41245a5c1f4a2fc609eda55331254df4f551b9e9889e7aa5",
+      "verify": "4cacfa2c1c5c3cbc41245a5c1f4a2fc609eda55331254df4f551b9e9889e7aa5",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ErrorSolicitud.class",
+      "imagen": "7ce545ff3fc3f86d5adede311ad2bb3a9a3050fbd9ff830da1cde7a7139fe118",
+      "verify": "7ce545ff3fc3f86d5adede311ad2bb3a9a3050fbd9ff830da1cde7a7139fe118",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Pagina.class",
+      "imagen": "e2f75c1f3c99f532d710c360e0f9c11ed9b2e1ff186dc49328ee81a0b831dd60",
+      "verify": "e2f75c1f3c99f532d710c360e0f9c11ed9b2e1ff186dc49328ee81a0b831dd60",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ResultadoDecision.class",
+      "imagen": "c060955ec61ed11ebe4b9ee9602a92958ec7076a885d6aae18f96e5850e1033d",
+      "verify": "c060955ec61ed11ebe4b9ee9602a92958ec7076a885d6aae18f96e5850e1033d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/ResultadoPresentacion.class",
+      "imagen": "78cd5f823a90fd024b2d60a197aa5b399887097f28404fd32ea099899af969e3",
+      "verify": "78cd5f823a90fd024b2d60a197aa5b399887097f28404fd32ea099899af969e3",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Solicitud$Persona.class",
+      "imagen": "44d6af936d2cde0262cc799fe597e41df3ee6d5b6653cc0c8f95534cc42a4dbb",
+      "verify": "44d6af936d2cde0262cc799fe597e41df3ee6d5b6653cc0c8f95534cc42a4dbb",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Solicitud$Proveedor.class",
+      "imagen": "29c1037ca2d9d258184a20b40d02ca4313a24b4f4b655c6fdece8af693a1f751",
+      "verify": "29c1037ca2d9d258184a20b40d02ca4313a24b4f4b655c6fdece8af693a1f751",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/dominio/Solicitud.class",
+      "imagen": "9a03c0ae2846bedc7b399eda146a80a281cbcdb3ff301828853cd4a072e7979d",
+      "verify": "9a03c0ae2846bedc7b399eda146a80a281cbcdb3ff301828853cd4a072e7979d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.class",
+      "imagen": "b9e0171462af75e2ba59a80f3ce3564f9278d96f9362de13715bef84dec4b20b",
+      "verify": "b9e0171462af75e2ba59a80f3ce3564f9278d96f9362de13715bef84dec4b20b",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/DetalleSolicitud$Linea.class",
+      "imagen": "c55af0eba1c7678c21ef0acc031fd97cd24b1cf698dbde4d00d2c65f3be624cd",
+      "verify": "c55af0eba1c7678c21ef0acc031fd97cd24b1cf698dbde4d00d2c65f3be624cd",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/DetalleSolicitud.class",
+      "imagen": "dc9954a435f5ff0f96503ea90515d085804b567838e302d32640c7be92ed9e24",
+      "verify": "dc9954a435f5ff0f96503ea90515d085804b567838e302d32640c7be92ed9e24",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaDecision$Aprobacion.class",
+      "imagen": "d57eee7e345ad5a33d256f7adba12552a81b26bb72ca3fa7aee57f43d8865900",
+      "verify": "d57eee7e345ad5a33d256f7adba12552a81b26bb72ca3fa7aee57f43d8865900",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaDecision$Rechazo.class",
+      "imagen": "754dfa9c2192695660080bdde0015c4d8c95910e40d7e9d2fc19d541c0c947e5",
+      "verify": "754dfa9c2192695660080bdde0015c4d8c95910e40d7e9d2fc19d541c0c947e5",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaDecision.class",
+      "imagen": "12d3f90e9d4d2807fe4426832c6be82cdc40427bc0bb7f2ae6a4098bf9f38128",
+      "verify": "12d3f90e9d4d2807fe4426832c6be82cdc40427bc0bb7f2ae6a4098bf9f38128",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Alta.class",
+      "imagen": "46001de449b45e218ce1ef6e50411a8ccb9a408cccb5a993bee45470d5c8ab98",
+      "verify": "46001de449b45e218ce1ef6e50411a8ccb9a408cccb5a993bee45470d5c8ab98",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Borrador.class",
+      "imagen": "e4564430ac9a88c267c3e73c6cf82e196496594eb8c076651c1585653e93880f",
+      "verify": "e4564430ac9a88c267c3e73c6cf82e196496594eb8c076651c1585653e93880f",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Linea.class",
+      "imagen": "8059bb553ca76e0b42892d68238982565e7fa5872da899ae9b1b6624d9d6e497",
+      "verify": "8059bb553ca76e0b42892d68238982565e7fa5872da899ae9b1b6624d9d6e497",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud$Presentacion.class",
+      "imagen": "ae39dc477e74c3f95c3e0d1e391b8a7c97db4b16e41730a82a6e2a52073f3efc",
+      "verify": "ae39dc477e74c3f95c3e0d1e391b8a7c97db4b16e41730a82a6e2a52073f3efc",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/EntradaSolicitud.class",
+      "imagen": "7868501c65f222199cbc710c2e0d977ff6bb30a54a2ba5808224b898545393ed",
+      "verify": "7868501c65f222199cbc710c2e0d977ff6bb30a54a2ba5808224b898545393ed",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/FiltrosSolicitudes.class",
+      "imagen": "98aaed6e2514554b0a56a7a542021009dd4f1fca18113861f1485f18e6848964",
+      "verify": "98aaed6e2514554b0a56a7a542021009dd4f1fca18113861f1485f18e6848964",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/http/ResumenSolicitud.class",
+      "imagen": "e2ee9087cb740bf1fccbf6acafe9f9745c58f587b7eb4ab646c8ed9811ed169d",
+      "verify": "e2ee9087cb740bf1fccbf6acafe9f9745c58f587b7eb4ab646c8ed9811ed169d",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc$1.class",
+      "imagen": "2918a1aaf685ccf0b0a4094413b4ca7654745fd653fc60826e3374be05ad6ee4",
+      "verify": "2918a1aaf685ccf0b0a4094413b4ca7654745fd653fc60826e3374be05ad6ee4",
+      "iguales": true
+    },
+    {
+      "clase": "es/gestionsolicitudes/solicitudes/persistencia/RepositorioSolicitudesJdbc.class",
+      "imagen": "017983305821fd75f5d26909731619a0664febd3174625c3cbdea1e9ecd51ec2",
+      "verify": "017983305821fd75f5d26909731619a0664febd3174625c3cbdea1e9ecd51ec2",
+      "iguales": true
+    }
+  ],
+  "fecha": "2026-10-16T01:02:29.8269821+02:00"
+}

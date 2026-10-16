@@ -49,6 +49,17 @@ test('teclado, foco, idioma y ancho móvil', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Saltar al contenido' })).toBeFocused();
+  await expect(page.getByRole('link', { name: 'Saltar al contenido' })).toHaveCSS(
+    'outline-width',
+    '3px',
+  );
+  await expect(page.getByRole('link', { name: 'Saltar al contenido' })).toHaveCSS(
+    'outline-style',
+    'solid',
+  );
+  await expect(
+    page.locator('link[rel="stylesheet"][media="print"], link[rel="stylesheet"][onload]'),
+  ).toHaveCount(0);
   await page.keyboard.press('Enter');
   await expect(page.locator('main')).toBeFocused();
   await page.keyboard.press('Tab');
@@ -71,21 +82,35 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
     '/api/autenticacion/csrf',
     '/api/autenticacion/iniciar-sesion',
     '/api/autenticacion/renovar',
+    '/api/historial',
     '/api/identidad/supervisores',
     '/api/identidad/yo',
     '/api/operaciones-idempotentes/{clave}',
     '/api/proveedores',
     '/api/proveedores/{id}',
     '/api/proveedores/{id}/desactivar',
+    '/api/proveedores/{id}/historial',
     '/api/proveedores/{id}/reactivar',
+    '/api/resumen',
     '/api/salud',
     '/api/solicitudes',
     '/api/solicitudes/{id}',
     '/api/solicitudes/{id}/aprobar',
+    '/api/solicitudes/{id}/historial',
     '/api/solicitudes/{id}/presentar',
     '/api/solicitudes/{id}/rechazar',
   ]);
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('200');
+  for (const ruta of [
+    '/api/historial',
+    '/api/proveedores/{id}/historial',
+    '/api/solicitudes/{id}/historial',
+    '/api/resumen',
+  ]) {
+    expect(Object.keys(contrato.paths[ruta])).toEqual(['get']);
+    for (const estado of ['200', '401', '403', '503'])
+      expect(contrato.paths[ruta].get.responses).toHaveProperty(estado);
+  }
   for (const estado of ['200', '400', '401', '404', '503'])
     expect(contrato.paths['/api/operaciones-idempotentes/{clave}'].get.responses).toHaveProperty(
       estado,

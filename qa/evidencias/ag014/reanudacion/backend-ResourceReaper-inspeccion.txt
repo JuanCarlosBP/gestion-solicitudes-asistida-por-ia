@@ -1,0 +1,580 @@
+Compiled from "ResourceReaper.java"
+public class org.testcontainers.utility.ResourceReaper {
+  private static final org.slf4j.Logger log;
+
+  private static final org.slf4j.Logger LOGGER;
+
+  private static final java.util.Map<java.lang.String, java.lang.String> MARKER_LABELS;
+
+  static final java.util.List<java.util.List<java.util.Map$Entry<java.lang.String, java.lang.String>>> DEATH_NOTE;
+
+  private static org.testcontainers.utility.ResourceReaper instance;
+
+  final com.github.dockerjava.api.DockerClient dockerClient;
+
+  private java.util.Map<java.lang.String, java.lang.String> registeredContainers;
+
+  private java.util.Set<java.lang.String> registeredNetworks;
+
+  private java.util.Set<java.lang.String> registeredImages;
+
+  private java.util.concurrent.atomic.AtomicBoolean hookIsSet;
+
+  org.testcontainers.utility.ResourceReaper();
+    Code:
+       0: aload_0
+       1: invokespecial #52                 // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: invokestatic  #58                 // Method org/testcontainers/DockerClientFactory.lazyClient:()Lcom/github/dockerjava/api/DockerClient;
+       8: putfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+      11: aload_0
+      12: new           #62                 // class java/util/concurrent/ConcurrentHashMap
+      15: dup
+      16: invokespecial #63                 // Method java/util/concurrent/ConcurrentHashMap."<init>":()V
+      19: putfield      #65                 // Field registeredContainers:Ljava/util/Map;
+      22: aload_0
+      23: invokestatic  #71                 // Method org/testcontainers/shaded/com/google/common/collect/Sets.newConcurrentHashSet:()Ljava/util/Set;
+      26: putfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+      29: aload_0
+      30: invokestatic  #71                 // Method org/testcontainers/shaded/com/google/common/collect/Sets.newConcurrentHashSet:()Ljava/util/Set;
+      33: putfield      #75                 // Field registeredImages:Ljava/util/Set;
+      36: aload_0
+      37: new           #77                 // class java/util/concurrent/atomic/AtomicBoolean
+      40: dup
+      41: iconst_0
+      42: invokespecial #80                 // Method java/util/concurrent/atomic/AtomicBoolean."<init>":(Z)V
+      45: putfield      #82                 // Field hookIsSet:Ljava/util/concurrent/atomic/AtomicBoolean;
+      48: return
+
+  public static synchronized org.testcontainers.utility.ResourceReaper instance();
+    Code:
+       0: getstatic     #86                 // Field instance:Lorg/testcontainers/utility/ResourceReaper;
+       3: ifnonnull     62
+       6: ldc           #88                 // String TESTCONTAINERS_RYUK_DISABLED
+       8: invokestatic  #94                 // Method java/lang/System.getenv:(Ljava/lang/String;)Ljava/lang/String;
+      11: invokestatic  #100                // Method java/lang/Boolean.parseBoolean:(Ljava/lang/String;)Z
+      14: ifne          21
+      17: iconst_1
+      18: goto          22
+      21: iconst_0
+      22: istore_0
+      23: iload_0
+      24: ifeq          40
+      27: new           #102                // class org/testcontainers/utility/RyukResourceReaper
+      30: dup
+      31: invokespecial #103                // Method org/testcontainers/utility/RyukResourceReaper."<init>":()V
+      34: putstatic     #86                 // Field instance:Lorg/testcontainers/utility/ResourceReaper;
+      37: goto          62
+      40: ldc           #105                // String \n********************************************************************************\nRyuk has been disabled. This can cause unexpected behavior in your environment.\n********************************************************************************
+      42: astore_1
+      43: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      46: aload_1
+      47: invokeinterface #113,  2          // InterfaceMethod org/slf4j/Logger.warn:(Ljava/lang/String;)V
+      52: new           #115                // class org/testcontainers/utility/JVMHookResourceReaper
+      55: dup
+      56: invokespecial #116                // Method org/testcontainers/utility/JVMHookResourceReaper."<init>":()V
+      59: putstatic     #86                 // Field instance:Lorg/testcontainers/utility/ResourceReaper;
+      62: getstatic     #86                 // Field instance:Lorg/testcontainers/utility/ResourceReaper;
+      65: areturn
+
+  public void performCleanup();
+    Code:
+       0: aload_0
+       1: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+       4: aload_0
+       5: invokedynamic #141,  0            // InvokeDynamic #0:accept:(Lorg/testcontainers/utility/ResourceReaper;)Ljava/util/function/BiConsumer;
+      10: invokeinterface #145,  2          // InterfaceMethod java/util/Map.forEach:(Ljava/util/function/BiConsumer;)V
+      15: aload_0
+      16: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+      19: aload_0
+      20: invokedynamic #155,  0            // InvokeDynamic #1:accept:(Lorg/testcontainers/utility/ResourceReaper;)Ljava/util/function/Consumer;
+      25: invokeinterface #160,  2          // InterfaceMethod java/util/Set.forEach:(Ljava/util/function/Consumer;)V
+      30: aload_0
+      31: getfield      #75                 // Field registeredImages:Ljava/util/Set;
+      34: aload_0
+      35: invokedynamic #165,  0            // InvokeDynamic #2:accept:(Lorg/testcontainers/utility/ResourceReaper;)Ljava/util/function/Consumer;
+      40: invokeinterface #160,  2          // InterfaceMethod java/util/Set.forEach:(Ljava/util/function/Consumer;)V
+      45: return
+
+  public void registerFilterForCleanup(java.util.List<java.util.Map$Entry<java.lang.String, java.lang.String>>);
+    Code:
+       0: getstatic     #170                // Field DEATH_NOTE:Ljava/util/List;
+       3: dup
+       4: astore_2
+       5: monitorenter
+       6: getstatic     #170                // Field DEATH_NOTE:Ljava/util/List;
+       9: aload_1
+      10: invokeinterface #176,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      15: pop
+      16: getstatic     #170                // Field DEATH_NOTE:Ljava/util/List;
+      19: invokevirtual #179                // Method java/lang/Object.notifyAll:()V
+      22: aload_2
+      23: monitorexit
+      24: goto          32
+      27: astore_3
+      28: aload_2
+      29: monitorexit
+      30: aload_3
+      31: athrow
+      32: return
+    Exception table:
+       from    to  target type
+           6    24    27   any
+          27    30    27   any
+
+  public void registerLabelsFilterForCleanup(java.util.Map<java.lang.String, java.lang.String>);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokeinterface #189,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+       7: invokeinterface #193,  1          // InterfaceMethod java/util/Set.stream:()Ljava/util/stream/Stream;
+      12: invokedynamic #205,  0            // InvokeDynamic #3:apply:()Ljava/util/function/Function;
+      17: invokeinterface #211,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+      22: invokestatic  #217                // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+      25: invokeinterface #221,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      30: checkcast     #172                // class java/util/List
+      33: invokevirtual #223                // Method registerFilterForCleanup:(Ljava/util/List;)V
+      36: return
+
+  public void registerContainerForCleanup(java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #228                // Method setHook:()V
+       4: aload_0
+       5: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+       8: aload_1
+       9: aload_2
+      10: invokeinterface #232,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      15: pop
+      16: return
+
+  public void stopAndRemoveContainer(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_0
+       3: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+       6: aload_1
+       7: invokeinterface #238,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      12: checkcast     #240                // class java/lang/String
+      15: invokespecial #128                // Method removeContainer:(Ljava/lang/String;Ljava/lang/String;)V
+      18: aload_0
+      19: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+      22: aload_1
+      23: invokeinterface #243,  2          // InterfaceMethod java/util/Map.remove:(Ljava/lang/Object;)Ljava/lang/Object;
+      28: pop
+      29: return
+
+  public void stopAndRemoveContainer(java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokespecial #128                // Method removeContainer:(Ljava/lang/String;Ljava/lang/String;)V
+       6: aload_0
+       7: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+      10: aload_1
+      11: invokeinterface #243,  2          // InterfaceMethod java/util/Map.remove:(Ljava/lang/Object;)Ljava/lang/Object;
+      16: pop
+      17: return
+
+  private void removeContainer(java.lang.String, java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+       4: aload_1
+       5: invokeinterface #253,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.inspectContainerCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/InspectContainerCmd;
+      10: invokeinterface #259,  1          // InterfaceMethod com/github/dockerjava/api/command/InspectContainerCmd.exec:()Lcom/github/dockerjava/api/command/InspectContainerResponse;
+      15: astore        4
+      17: aload         4
+      19: invokevirtual #263                // Method com/github/dockerjava/api/command/InspectContainerResponse.getState:()Lcom/github/dockerjava/api/command/InspectContainerResponse$ContainerState;
+      22: ifnull        46
+      25: getstatic     #267                // Field java/lang/Boolean.TRUE:Ljava/lang/Boolean;
+      28: aload         4
+      30: invokevirtual #263                // Method com/github/dockerjava/api/command/InspectContainerResponse.getState:()Lcom/github/dockerjava/api/command/InspectContainerResponse$ContainerState;
+      33: invokevirtual #271                // Method com/github/dockerjava/api/command/InspectContainerResponse$ContainerState.getRunning:()Ljava/lang/Boolean;
+      36: invokevirtual #274                // Method java/lang/Boolean.equals:(Ljava/lang/Object;)Z
+      39: ifeq          46
+      42: iconst_1
+      43: goto          47
+      46: iconst_0
+      47: istore_3
+      48: goto          89
+      51: astore        4
+      53: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      56: ldc_w         #276                // String Was going to stop container but it apparently no longer exists: {}
+      59: aload_1
+      60: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+      65: return
+      66: astore        4
+      68: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      71: ldc_w         #282                // String Error encountered when checking container for shutdown (ID: {}) - it may not have been stopped, or may already be stopped. Root cause: {}
+      74: aload_1
+      75: aload         4
+      77: invokestatic  #288                // Method org/testcontainers/shaded/com/google/common/base/Throwables.getRootCause:(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+      80: invokevirtual #292                // Method java/lang/Throwable.getMessage:()Ljava/lang/String;
+      83: invokeinterface #295,  4          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+      88: return
+      89: iload_3
+      90: ifeq          158
+      93: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      96: ldc_w         #297                // String Stopping container: {}
+      99: aload_1
+     100: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+     105: aload_0
+     106: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+     109: aload_1
+     110: invokeinterface #301,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.killContainerCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/KillContainerCmd;
+     115: invokeinterface #306,  1          // InterfaceMethod com/github/dockerjava/api/command/KillContainerCmd.exec:()Ljava/lang/Void;
+     120: pop
+     121: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     124: ldc_w         #308                // String Stopped container: {}
+     127: aload_2
+     128: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+     133: goto          158
+     136: astore        4
+     138: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     141: ldc_w         #310                // String Error encountered shutting down container (ID: {}) - it may not have been stopped, or may already be stopped. Root cause: {}
+     144: aload_1
+     145: aload         4
+     147: invokestatic  #288                // Method org/testcontainers/shaded/com/google/common/base/Throwables.getRootCause:(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+     150: invokevirtual #292                // Method java/lang/Throwable.getMessage:()Ljava/lang/String;
+     153: invokeinterface #295,  4          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+     158: aload_0
+     159: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+     162: aload_1
+     163: invokeinterface #253,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.inspectContainerCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/InspectContainerCmd;
+     168: invokeinterface #259,  1          // InterfaceMethod com/github/dockerjava/api/command/InspectContainerCmd.exec:()Lcom/github/dockerjava/api/command/InspectContainerResponse;
+     173: pop
+     174: goto          192
+     177: astore        4
+     179: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     182: ldc_w         #312                // String Was going to remove container but it apparently no longer exists: {}
+     185: aload_1
+     186: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+     191: return
+     192: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     195: ldc_w         #314                // String Removing container: {}
+     198: aload_1
+     199: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+     204: aload_0
+     205: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+     208: aload_1
+     209: invokeinterface #318,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.removeContainerCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/RemoveContainerCmd;
+     214: iconst_1
+     215: invokestatic  #322                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     218: invokeinterface #328,  2          // InterfaceMethod com/github/dockerjava/api/command/RemoveContainerCmd.withRemoveVolumes:(Ljava/lang/Boolean;)Lcom/github/dockerjava/api/command/RemoveContainerCmd;
+     223: iconst_1
+     224: invokestatic  #322                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     227: invokeinterface #331,  2          // InterfaceMethod com/github/dockerjava/api/command/RemoveContainerCmd.withForce:(Ljava/lang/Boolean;)Lcom/github/dockerjava/api/command/RemoveContainerCmd;
+     232: invokeinterface #332,  1          // InterfaceMethod com/github/dockerjava/api/command/RemoveContainerCmd.exec:()Ljava/lang/Void;
+     237: pop
+     238: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     241: ldc_w         #334                // String Removed container and associated volume(s): {}
+     244: aload_2
+     245: invokeinterface #337,  3          // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;Ljava/lang/Object;)V
+     250: goto          275
+     253: astore        4
+     255: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     258: ldc_w         #310                // String Error encountered shutting down container (ID: {}) - it may not have been stopped, or may already be stopped. Root cause: {}
+     261: aload_1
+     262: aload         4
+     264: invokestatic  #288                // Method org/testcontainers/shaded/com/google/common/base/Throwables.getRootCause:(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+     267: invokevirtual #292                // Method java/lang/Throwable.getMessage:()Ljava/lang/String;
+     270: invokeinterface #295,  4          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+     275: return
+    Exception table:
+       from    to  target type
+           0    48    51   Class com/github/dockerjava/api/exception/NotFoundException
+           0    48    66   Class java/lang/Exception
+          93   133   136   Class java/lang/Exception
+         158   174   177   Class java/lang/Exception
+         192   250   253   Class java/lang/Exception
+
+  public void registerNetworkIdForCleanup(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #228                // Method setHook:()V
+       4: aload_0
+       5: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+       8: aload_1
+       9: invokeinterface #345,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      14: pop
+      15: return
+
+  public void removeNetworkById(java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #150                // Method removeNetwork:(Ljava/lang/String;)V
+       5: return
+
+  private void removeNetwork(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+       4: invokeinterface #351,  1          // InterfaceMethod com/github/dockerjava/api/DockerClient.listNetworksCmd:()Lcom/github/dockerjava/api/command/ListNetworksCmd;
+       9: iconst_1
+      10: anewarray     #240                // class java/lang/String
+      13: dup
+      14: iconst_0
+      15: aload_1
+      16: aastore
+      17: invokeinterface #357,  2          // InterfaceMethod com/github/dockerjava/api/command/ListNetworksCmd.withIdFilter:([Ljava/lang/String;)Lcom/github/dockerjava/api/command/ListNetworksCmd;
+      22: invokeinterface #360,  1          // InterfaceMethod com/github/dockerjava/api/command/ListNetworksCmd.exec:()Ljava/lang/Object;
+      27: checkcast     #172                // class java/util/List
+      30: astore_2
+      31: goto          59
+      34: astore_3
+      35: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      38: ldc_w         #362                // String Error encountered when looking up network for removal (name: {}) - it may not have been removed
+      41: aload_1
+      42: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+      47: aload_0
+      48: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+      51: aload_1
+      52: invokeinterface #364,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+      57: pop
+      58: return
+      59: aload_2
+      60: invokeinterface #368,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      65: astore_3
+      66: aload_3
+      67: invokeinterface #374,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      72: ifeq          157
+      75: aload_3
+      76: invokeinterface #377,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      81: checkcast     #379                // class com/github/dockerjava/api/model/Network
+      84: astore        4
+      86: aload_0
+      87: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+      90: aload         4
+      92: invokevirtual #382                // Method com/github/dockerjava/api/model/Network.getId:()Ljava/lang/String;
+      95: invokeinterface #386,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.removeNetworkCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/RemoveNetworkCmd;
+     100: invokeinterface #389,  1          // InterfaceMethod com/github/dockerjava/api/command/RemoveNetworkCmd.exec:()Ljava/lang/Void;
+     105: pop
+     106: aload_0
+     107: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+     110: aload         4
+     112: invokevirtual #382                // Method com/github/dockerjava/api/model/Network.getId:()Ljava/lang/String;
+     115: invokeinterface #364,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+     120: pop
+     121: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     124: ldc_w         #391                // String Removed network: {}
+     127: aload_1
+     128: invokeinterface #337,  3          // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;Ljava/lang/Object;)V
+     133: goto          154
+     136: astore        5
+     138: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+     141: ldc_w         #393                // String Error encountered removing network (name: {}) - it may not have been removed
+     144: aload         4
+     146: invokevirtual #396                // Method com/github/dockerjava/api/model/Network.getName:()Ljava/lang/String;
+     149: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+     154: goto          66
+     157: aload_0
+     158: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+     161: aload_1
+     162: invokeinterface #364,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+     167: pop
+     168: goto          187
+     171: astore        6
+     173: aload_0
+     174: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+     177: aload_1
+     178: invokeinterface #364,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+     183: pop
+     184: aload         6
+     186: athrow
+     187: return
+    Exception table:
+       from    to  target type
+           0    31    34   Class java/lang/Exception
+          86   133   136   Class java/lang/Exception
+           0    47   171   any
+          59   157   171   any
+         171   173   171   any
+
+  public void unregisterNetwork(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #73                 // Field registeredNetworks:Ljava/util/Set;
+       4: aload_1
+       5: invokeinterface #364,  2          // InterfaceMethod java/util/Set.remove:(Ljava/lang/Object;)Z
+      10: pop
+      11: return
+
+  public void unregisterContainer(java.lang.String);
+    Code:
+       0: aload_0
+       1: getfield      #65                 // Field registeredContainers:Ljava/util/Map;
+       4: aload_1
+       5: invokeinterface #243,  2          // InterfaceMethod java/util/Map.remove:(Ljava/lang/Object;)Ljava/lang/Object;
+      10: pop
+      11: return
+
+  public void registerImageForCleanup(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #228                // Method setHook:()V
+       4: aload_0
+       5: getfield      #75                 // Field registeredImages:Ljava/util/Set;
+       8: aload_1
+       9: invokeinterface #345,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+      14: pop
+      15: return
+
+  private void removeImage(java.lang.String);
+    Code:
+       0: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+       3: ldc_w         #407                // String Removing image tagged {}
+       6: aload_1
+       7: invokeinterface #280,  3          // InterfaceMethod org/slf4j/Logger.trace:(Ljava/lang/String;Ljava/lang/Object;)V
+      12: aload_0
+      13: getfield      #60                 // Field dockerClient:Lcom/github/dockerjava/api/DockerClient;
+      16: aload_1
+      17: invokeinterface #411,  2          // InterfaceMethod com/github/dockerjava/api/DockerClient.removeImageCmd:(Ljava/lang/String;)Lcom/github/dockerjava/api/command/RemoveImageCmd;
+      22: iconst_1
+      23: invokestatic  #322                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      26: invokeinterface #416,  2          // InterfaceMethod com/github/dockerjava/api/command/RemoveImageCmd.withForce:(Ljava/lang/Boolean;)Lcom/github/dockerjava/api/command/RemoveImageCmd;
+      31: invokeinterface #417,  1          // InterfaceMethod com/github/dockerjava/api/command/RemoveImageCmd.exec:()Ljava/lang/Void;
+      36: pop
+      37: goto          70
+      40: astore_2
+      41: getstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      44: new           #419                // class java/lang/StringBuilder
+      47: dup
+      48: invokespecial #420                // Method java/lang/StringBuilder."<init>":()V
+      51: ldc_w         #422                // String Unable to delete image
+      54: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      57: aload_1
+      58: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      61: invokevirtual #429                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      64: aload_2
+      65: invokeinterface #432,  3          // InterfaceMethod org/slf4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+      70: return
+    Exception table:
+       from    to  target type
+          12    37    40   Class java/lang/Throwable
+
+  void setHook();
+    Code:
+       0: aload_0
+       1: getfield      #82                 // Field hookIsSet:Ljava/util/concurrent/atomic/AtomicBoolean;
+       4: iconst_0
+       5: iconst_1
+       6: invokevirtual #437                // Method java/util/concurrent/atomic/AtomicBoolean.compareAndSet:(ZZ)Z
+       9: ifeq          34
+      12: invokestatic  #443                // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+      15: new           #445                // class java/lang/Thread
+      18: dup
+      19: getstatic     #449                // Field org/testcontainers/DockerClientFactory.TESTCONTAINERS_THREAD_GROUP:Ljava/lang/ThreadGroup;
+      22: aload_0
+      23: invokedynamic #457,  0            // InvokeDynamic #4:run:(Lorg/testcontainers/utility/ResourceReaper;)Ljava/lang/Runnable;
+      28: invokespecial #460                // Method java/lang/Thread."<init>":(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;)V
+      31: invokevirtual #464                // Method java/lang/Runtime.addShutdownHook:(Ljava/lang/Thread;)V
+      34: return
+
+  public java.util.Map<java.lang.String, java.lang.String> getLabels();
+    Code:
+       0: getstatic     #469                // Field MARKER_LABELS:Ljava/util/Map;
+       3: areturn
+
+  public com.github.dockerjava.api.command.CreateContainerCmd register(org.testcontainers.containers.GenericContainer<?>, com.github.dockerjava.api.command.CreateContainerCmd);
+    Code:
+       0: aload_2
+       1: invokeinterface #476,  1          // InterfaceMethod com/github/dockerjava/api/command/CreateContainerCmd.getLabels:()Ljava/util/Map;
+       6: aload_0
+       7: invokevirtual #477                // Method getLabels:()Ljava/util/Map;
+      10: invokeinterface #480,  2          // InterfaceMethod java/util/Map.putAll:(Ljava/util/Map;)V
+      15: aload_2
+      16: areturn
+
+  public void init();
+    Code:
+       0: return
+
+  private static java.util.AbstractMap$SimpleEntry lambda$registerLabelsFilterForCleanup$1(java.util.Map$Entry);
+    Code:
+       0: new           #12                 // class java/util/AbstractMap$SimpleEntry
+       3: dup
+       4: ldc_w         #488                // String label
+       7: new           #419                // class java/lang/StringBuilder
+      10: dup
+      11: invokespecial #420                // Method java/lang/StringBuilder."<init>":()V
+      14: aload_0
+      15: invokeinterface #491,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+      20: checkcast     #240                // class java/lang/String
+      23: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      26: ldc_w         #493                // String =
+      29: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      32: aload_0
+      33: invokeinterface #496,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+      38: checkcast     #240                // class java/lang/String
+      41: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      44: invokevirtual #429                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      47: invokespecial #498                // Method java/util/AbstractMap$SimpleEntry."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      50: areturn
+
+  private static java.util.Map$Entry lambda$static$0(java.util.Map$Entry);
+    Code:
+       0: new           #12                 // class java/util/AbstractMap$SimpleEntry
+       3: dup
+       4: ldc_w         #488                // String label
+       7: new           #419                // class java/lang/StringBuilder
+      10: dup
+      11: invokespecial #420                // Method java/lang/StringBuilder."<init>":()V
+      14: aload_0
+      15: invokeinterface #491,  1          // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+      20: checkcast     #240                // class java/lang/String
+      23: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      26: ldc_w         #493                // String =
+      29: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      32: aload_0
+      33: invokeinterface #496,  1          // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+      38: checkcast     #240                // class java/lang/String
+      41: invokevirtual #426                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      44: invokevirtual #429                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      47: invokespecial #498                // Method java/util/AbstractMap$SimpleEntry."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+      50: areturn
+
+  static org.slf4j.Logger access$000();
+    Code:
+       0: getstatic     #506                // Field log:Lorg/slf4j/Logger;
+       3: areturn
+
+  static {};
+    Code:
+       0: ldc           #2                  // class org/testcontainers/utility/ResourceReaper
+       2: invokestatic  #513                // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+       5: putstatic     #506                // Field log:Lorg/slf4j/Logger;
+       8: ldc           #2                  // class org/testcontainers/utility/ResourceReaper
+      10: invokestatic  #513                // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+      13: putstatic     #107                // Field LOGGER:Lorg/slf4j/Logger;
+      16: getstatic     #516                // Field org/testcontainers/DockerClientFactory.TESTCONTAINERS_SESSION_ID_LABEL:Ljava/lang/String;
+      19: getstatic     #519                // Field org/testcontainers/DockerClientFactory.SESSION_ID:Ljava/lang/String;
+      22: invokestatic  #525                // Method java/util/Collections.singletonMap:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+      25: putstatic     #469                // Field MARKER_LABELS:Ljava/util/Map;
+      28: new           #527                // class java/util/ArrayList
+      31: dup
+      32: iconst_1
+      33: anewarray     #172                // class java/util/List
+      36: dup
+      37: iconst_0
+      38: getstatic     #530                // Field org/testcontainers/DockerClientFactory.DEFAULT_LABELS:Ljava/util/Map;
+      41: invokeinterface #189,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+      46: invokeinterface #193,  1          // InterfaceMethod java/util/Set.stream:()Ljava/util/stream/Stream;
+      51: getstatic     #469                // Field MARKER_LABELS:Ljava/util/Map;
+      54: invokeinterface #189,  1          // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+      59: invokeinterface #193,  1          // InterfaceMethod java/util/Set.stream:()Ljava/util/stream/Stream;
+      64: invokestatic  #534                // InterfaceMethod java/util/stream/Stream.concat:(Ljava/util/stream/Stream;Ljava/util/stream/Stream;)Ljava/util/stream/Stream;
+      67: invokedynamic #539,  0            // InvokeDynamic #5:apply:()Ljava/util/function/Function;
+      72: invokeinterface #211,  2          // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+      77: invokestatic  #217                // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+      80: invokeinterface #221,  2          // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+      85: checkcast     #172                // class java/util/List
+      88: aastore
+      89: invokestatic  #545                // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+      92: invokespecial #548                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+      95: putstatic     #170                // Field DEATH_NOTE:Ljava/util/List;
+      98: return
+}

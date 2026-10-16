@@ -1,0 +1,14 @@
+{
+  "alcance": "completo",
+  "exitCode": 0,
+  "argumentos": [
+    "-B",
+    "-ntp",
+    "verify",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/ag015/backend-temporal"
+  ],
+  "fin": "2026-10-16T00:56:09.1216298+02:00",
+  "conservacion": true,
+  "sistema": "Windows; PostgreSQL Linux en Docker",
+  "inicio": "2026-10-16T00:54:24.6764923+02:00"
+}

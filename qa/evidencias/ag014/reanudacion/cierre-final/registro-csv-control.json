@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-10-15T20:22:01.280Z",
+  "causa": "Concatenación PowerShell fragmentó el campo de resultado nuevo. Primera reparación no llegó a escribir al encontrar fecha convertida a DateTime.",
+  "correccion": "Serialización CSV con once cadenas y reemplazo exclusivo de la nueva fila; validación de bytes previos",
+  "prefijoCompletoPrevioBytes": 42676,
+  "prefijoCompletoPrevioSha256": "560c3fd093f0011e1889224f6b92e3b6b02a7788998ce89a035f11fb855e5258",
+  "prefijoCompletoPrevioConservado": true,
+  "campos": 11,
+  "resultado": "PASS",
+  "evidenciaAnterior": "registro-reanudacion-intento01.txt y pre-ajuste-csv/"
+}

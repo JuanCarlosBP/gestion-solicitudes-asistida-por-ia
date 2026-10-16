@@ -1,0 +1,49 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/historial/historial-paginas.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                     | Names                                |  Raw size
+spec-app-historial-historial-paginas.js | spec-app-historial-historial-paginas | 508.56 kB | 
+chunk-RSTWSNOR.js                       | -                                    |   4.75 kB | 
+styles.css                              | styles                               |   1.47 kB | 
+init-testbed.js                         | init-testbed                         |   1.21 kB | 
+vitest-mock-patch.js                    | vitest-mock-patch                    | 974 bytes | 
+
+                                        | Initial total                        | 516.96 kB
+
+Application bundle generation complete. [2.353 seconds] - 2026-10-15T19:57:27.707Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/historial/historial-paginas.spec.ts (24 tests | 1 failed) 390ms
+     × restablece campos editados sin aplicar cuando la URL ya es la inicial 20ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/historial/historial-paginas.spec.ts > Historial: rutas, estados, permisos y navegación HA01/04/05/06/08 > restablece campos editados sin aplicar cuando la URL ya es la inicial
+AssertionError: expected 'APROBADA' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ APROBADA
+
+ ❯ src/app/historial/historial-paginas.spec.ts:178:37
+    176|     recargada.flush(paginaHistorialPrueba());
+    177|     await estable(vista);
+    178|     expect(control('accion').value).toBe('');
+       |                                     ^
+    179|     expect(control('desde').value).toBe('');
+    180|     expect(control('size').value).toBe('20');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 passed (24)
+   Start at  21:57:28
+   Duration  2.48s (transform 264ms, setup 484ms, import 281ms, tests 390ms, environment 1.13s)
+

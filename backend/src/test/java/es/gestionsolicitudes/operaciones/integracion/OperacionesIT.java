@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.*;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import es.gestionsolicitudes.operaciones.aplicacion.*;
 import es.gestionsolicitudes.operaciones.dominio.*;
 import es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores;
@@ -61,7 +62,7 @@ class OperacionesIT {
     @BeforeAll
     void arrancar() throws Exception {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withUsername("administrador_prueba")
@@ -104,7 +105,7 @@ class OperacionesIT {
         var legados = sembrarLegados();
         var antes = filasLegadas(false);
         iniciar();
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
         assertThat(filasLegadas(true)).isEqualTo(antes);
         assertThat(
                         admin.queryForObject(
@@ -286,7 +287,7 @@ class OperacionesIT {
     @BeforeEach
     void limpiar() {
         admin.execute(
-                "TRUNCATE gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
+                "TRUNCATE gestion.eventos_historial,gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
         admin.update("UPDATE gestion.usuarios SET habilitado=true");
         for (Rol rol : Rol.values())
             admin.update(

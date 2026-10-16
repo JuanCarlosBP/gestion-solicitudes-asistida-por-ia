@@ -8,6 +8,7 @@ import ch.qos.logback.core.read.ListAppender;
 import es.gestionsolicitudes.GestionSolicitudesApplication;
 import es.gestionsolicitudes.identidad.aplicacion.*;
 import es.gestionsolicitudes.identidad.dominio.Rol;
+import es.gestionsolicitudes.integracion.ContenedoresPrueba;
 import es.gestionsolicitudes.proveedores.aplicacion.ServicioProveedores;
 import es.gestionsolicitudes.proveedores.dominio.*;
 import es.gestionsolicitudes.solicitudes.aplicacion.ServicioSolicitudes;
@@ -68,7 +69,7 @@ class AprobacionesIT {
     @BeforeAll
     void arrancar() throws Exception {
         base =
-                new PostgreSQLContainer(
+                ContenedoresPrueba.postgres(
                                 DockerImageName.parse(IMAGEN).asCompatibleSubstituteFor("postgres"))
                         .withDatabaseName("gestion")
                         .withUsername("administrador_prueba")
@@ -171,7 +172,7 @@ class AprobacionesIT {
                         autor,
                         clave);
         iniciarAplicacion();
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
         assertThat(contexto.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
         assertThat(
                         administrador.queryForObject(
@@ -299,7 +300,7 @@ class AprobacionesIT {
     @BeforeEach
     void limpiar() {
         administrador.execute(
-                "TRUNCATE gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
+                "TRUNCATE gestion.eventos_historial,gestion.decisiones_solicitud,gestion.operaciones_idempotentes_solicitud,gestion.conceptos_solicitud,gestion.solicitudes,gestion.proveedores");
         administrador.execute("UPDATE gestion.usuarios SET habilitado=true");
         actores.forEach(
                 (nombre, actor) -> {
@@ -1159,7 +1160,7 @@ class AprobacionesIT {
         iniciarAplicacion();
         autenticarTodos();
         obtenerCsrf();
-        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(6);
+        assertThat(contexto.getBean(Flyway.class).info().applied()).hasSize(7);
         assertThat(contexto.getBean(Flyway.class).migrate().migrationsExecuted).isZero();
         var replay =
                 decidir(

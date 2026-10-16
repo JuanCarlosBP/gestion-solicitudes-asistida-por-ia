@@ -1,0 +1,298 @@
+{
+  "criterio": "Texto normal >=4.5:1 sobre fondo computado; muestra acotada, no auditoría WCAG completa.",
+  "teclado": [
+    {
+      "anchoVentana": 360,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    },
+    {
+      "anchoVentana": 768,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    },
+    {
+      "anchoVentana": 1440,
+      "accionEnfocada": true,
+      "actorEnfocado": true,
+      "ancho": "3px",
+      "estilo": "solid"
+    }
+  ],
+  "muestras": [
+    {
+      "ancho": 360,
+      "pantalla": "timeline",
+      "resultados": [
+        {
+          "selector": ".historial-panel h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".historial-panel .ayuda",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".historial-panel label",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".evento-historial .actor",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".transicion span",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(234, 244, 243)",
+          "contraste": 6.927120608423313
+        },
+        {
+          "selector": ".acciones-historial button[type=submit]",
+          "color": "rgb(255, 255, 255)",
+          "fondo": "rgb(19, 91, 99)",
+          "contraste": 7.765427575475824
+        },
+        {
+          "selector": ".acciones-historial button.secundario",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 7.765427575475824
+        }
+      ]
+    },
+    {
+      "ancho": 360,
+      "pantalla": "global",
+      "resultados": [
+        {
+          "selector": ".limite-historia",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 244, 232)",
+          "contraste": 12.792585473548137
+        }
+      ]
+    },
+    {
+      "ancho": 360,
+      "pantalla": "resumen",
+      "resultados": [
+        {
+          "selector": ".resumen-inicio h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".resumen-inicio .detalle",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".contadores dt",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 5.526858588998478
+        },
+        {
+          "selector": ".contadores dd",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 12.80326309477216
+        }
+      ]
+    },
+    {
+      "ancho": 768,
+      "pantalla": "timeline",
+      "resultados": [
+        {
+          "selector": ".historial-panel h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".historial-panel .ayuda",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".historial-panel label",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".evento-historial .actor",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".transicion span",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(234, 244, 243)",
+          "contraste": 6.927120608423313
+        },
+        {
+          "selector": ".acciones-historial button[type=submit]",
+          "color": "rgb(255, 255, 255)",
+          "fondo": "rgb(19, 91, 99)",
+          "contraste": 7.765427575475824
+        },
+        {
+          "selector": ".acciones-historial button.secundario",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 7.765427575475824
+        }
+      ]
+    },
+    {
+      "ancho": 768,
+      "pantalla": "global",
+      "resultados": [
+        {
+          "selector": ".limite-historia",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 244, 232)",
+          "contraste": 12.792585473548137
+        }
+      ]
+    },
+    {
+      "ancho": 768,
+      "pantalla": "resumen",
+      "resultados": [
+        {
+          "selector": ".resumen-inicio h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".resumen-inicio .detalle",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".contadores dt",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 5.526858588998478
+        },
+        {
+          "selector": ".contadores dd",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 12.80326309477216
+        }
+      ]
+    },
+    {
+      "ancho": 1440,
+      "pantalla": "timeline",
+      "resultados": [
+        {
+          "selector": ".historial-panel h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".historial-panel .ayuda",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".historial-panel label",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".evento-historial .actor",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".transicion span",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(234, 244, 243)",
+          "contraste": 6.927120608423313
+        },
+        {
+          "selector": ".acciones-historial button[type=submit]",
+          "color": "rgb(255, 255, 255)",
+          "fondo": "rgb(19, 91, 99)",
+          "contraste": 7.765427575475824
+        },
+        {
+          "selector": ".acciones-historial button.secundario",
+          "color": "rgb(19, 91, 99)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 7.765427575475824
+        }
+      ]
+    },
+    {
+      "ancho": 1440,
+      "pantalla": "global",
+      "resultados": [
+        {
+          "selector": ".limite-historia",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 244, 232)",
+          "contraste": 12.792585473548137
+        }
+      ]
+    },
+    {
+      "ancho": 1440,
+      "pantalla": "resumen",
+      "resultados": [
+        {
+          "selector": ".resumen-inicio h2",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 13.878038046697387
+        },
+        {
+          "selector": ".resumen-inicio .detalle",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(255, 255, 255)",
+          "contraste": 5.990812905200404
+        },
+        {
+          "selector": ".contadores dt",
+          "color": "rgb(83, 101, 121)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 5.526858588998478
+        },
+        {
+          "selector": ".contadores dd",
+          "color": "rgb(25, 46, 67)",
+          "fondo": "rgb(243, 246, 250)",
+          "contraste": 12.80326309477216
+        }
+      ]
+    }
+  ]
+}

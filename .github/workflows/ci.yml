@@ -1,4 +1,4 @@
-name: Verificación de base, identidad, solicitudes y concurrencia
+name: Verificación de base, identidad, solicitudes, concurrencia e historial
 
 on:
   push:
@@ -170,12 +170,15 @@ jobs:
         run: node qa/verificar-aprobaciones-compose.mjs
       - name: Idempotencia transversal, veinte peticiones, espera y recuperación
         run: node qa/verificar-concurrencia-compose.mjs
+      - name: Historial, proyección V5, permisos, filtros y resumen
+        run: node qa/verificar-historial-compose.mjs
       - name: Usuario ficticio ajeno para navegador
         run: >-
           node --input-type=module -e "import {readFileSync,appendFileSync} from 'node:fs';
           const usuarios=JSON.parse(readFileSync(process.env.QA_EVIDENCE_DIR+'/usuarios-aprobaciones.json','utf8'));
-          appendFileSync(process.env.GITHUB_ENV,'E2E_AJENO_CORREO='+usuarios.ajeno.correo+'\n'+'E2E_MULTIPLE_CORREO='+usuarios.multiple.correo+'\n');"
-      - name: Navegador 001 a 006, accesibilidad, recuperación y Swagger
+          const historial=JSON.parse(readFileSync(process.env.QA_EVIDENCE_DIR+'/historial-fixture.json','utf8'));
+          appendFileSync(process.env.GITHUB_ENV,'E2E_AJENO_CORREO='+usuarios.ajeno.correo+'\n'+'E2E_MULTIPLE_CORREO='+usuarios.multiple.correo+'\n'+'E2E_HISTORIAL_ANTERIOR_ID='+historial.historiaAnteriorId+'\n');"
+      - name: Navegador 001 a 007, accesibilidad, historial, recuperación y Swagger
         working-directory: frontend
         run: npm run test:e2e
       - name: Documentación y búsqueda acotada de secretos
@@ -192,6 +195,8 @@ jobs:
           node --check qa/verificar-solicitudes-compose.mjs
           node --check qa/verificar-aprobaciones-compose.mjs
           node --check qa/verificar-concurrencia-compose.mjs
+          node --check qa/verificar-historial-compose.mjs
+          node --check qa/verificar-evolucion-v7.mjs
           node --check qa/verificar-evolucion-v6.mjs
           node --check qa/verificar-evolucion-v5.mjs
           node --check qa/preparar-usuarios-solicitudes.mjs

@@ -1,0 +1,16 @@
+{
+  "retries": 0,
+  "exitCode": 0,
+  "fin": "2026-10-16T00:55:18.4301959+02:00",
+  "argumentos": [
+    "frontend/node_modules/@playwright/test/cli.js",
+    "test",
+    "--config",
+    "tmp/ag015/playwright.config.ts",
+    "--grep",
+    "AP-05/08"
+  ],
+  "sistema": "Windows",
+  "url": "http://127.0.0.1:18081",
+  "inicio": "2026-10-16T00:55:16.3046222+02:00"
+}

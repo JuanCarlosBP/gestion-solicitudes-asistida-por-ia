@@ -1,0 +1,178 @@
+[
+  {
+    "nombre": "es.gestionsolicitudes.historial.http.FiltrosHistorialTest",
+    "pruebas": 23,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.194"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.historial.integracion.HistorialIT",
+    "pruebas": 13,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "13.454"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.639"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "1.11"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest",
+    "pruebas": 7,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.272"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.http.CookiesIdentidadTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.029"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.integracion.IdentidadAccesoIT",
+    "pruebas": 13,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "4.147"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.identidad.integracion.PerfilesIdentidadIT",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "8.088"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.integracion.BaseVerificableIT",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "7.292"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest",
+    "pruebas": 6,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.242"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest",
+    "pruebas": 9,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.024"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.operaciones.integracion.OperacionesIT",
+    "pruebas": 16,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "15.053"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest",
+    "pruebas": 24,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.067"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.proveedores.http.ErroresProveedorTest",
+    "pruebas": 4,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "3.236"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.proveedores.integracion.ProveedoresIT",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "3.945"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest",
+    "pruebas": 2,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.005"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.salud.http.ControladorSaludTest",
+    "pruebas": 5,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.476"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest",
+    "pruebas": 3,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.262"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest",
+    "pruebas": 8,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.026"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest",
+    "pruebas": 15,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "0.043"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.solicitudes.integracion.AprobacionesIT",
+    "pruebas": 28,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "10.961"
+  },
+  {
+    "nombre": "es.gestionsolicitudes.solicitudes.integracion.SolicitudesIT",
+    "pruebas": 31,
+    "fallos": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": "8.282"
+  }
+]

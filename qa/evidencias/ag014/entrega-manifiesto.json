@@ -1,0 +1,1088 @@
+{
+  "fecha": "2026-10-15T18:42:38.790Z",
+  "creados": [
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/aplicacion/RegistroHistorial.java",
+      "bytes": 745,
+      "sha256": "2f44ba5d118be44aaed7c6db666dfabe4f2b279d7188029a45bfef02e98922f5"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/aplicacion/RepositorioHistorial.java",
+      "bytes": 505,
+      "sha256": "5bdb159572d9c092f9dc0b2dbb26433feef9526b9803c226a947382240b8ddf6"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/aplicacion/ServicioHistorial.java",
+      "bytes": 2882,
+      "sha256": "be88ac8f92a65bdda3ce5ef7438a3278b4a15bf8561d76f787f045493bd18a20"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/AccionHistorial.java",
+      "bytes": 657,
+      "sha256": "34af5cbbfed97bd360f3457a4b581436f10cc54cec79f9c0d316e2830944dfc8"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/CambioHistorial.java",
+      "bytes": 505,
+      "sha256": "ed97fe24bee941f079e4ef9b3f2140d1c8453b1d457227a2d724a992ac6a9ed7"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/ConsultaHistorial.java",
+      "bytes": 827,
+      "sha256": "ac7e09708b0d852aec385038785e87e0df4dc295c2efaaed4b94a0aac7b6da64"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/EventoHistorial.java",
+      "bytes": 1037,
+      "sha256": "d602186ed0550ece31ac43e65fb18be43a6232794da23e16edb3c203be42d9f7"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/PaginaHistorial.java",
+      "bytes": 370,
+      "sha256": "e7d64a96162807bdecca46fb23c47767e9860836cfa0a961f4e1b830cf83818b"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/ResumenAplicacion.java",
+      "bytes": 339,
+      "sha256": "3b8d278e240182b4b8a94e9c114199d58bff6aeac104045fb98e73006cef6275"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/dominio/TipoRecurso.java",
+      "bytes": 107,
+      "sha256": "25a524033edbaa34cadb7c66913387564965146820ec10254497b07141fe8bea"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/http/ControladorHistorial.java",
+      "bytes": 10739,
+      "sha256": "11b7eac8bbffaeec320303b278f5f35594a52865e08209e6375fc181e9791770"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/http/FiltrosHistorial.java",
+      "bytes": 2255,
+      "sha256": "620e5146a16e67a21e8db6e97f8241d66797f8c58e60fbade06005a6479bbc49"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/historial/persistencia/RepositorioHistorialJdbc.java",
+      "bytes": 10546,
+      "sha256": "b13933ecc2b29f5cf6cec2e491084afa31bea9212a283deb8727fb9f28254148"
+    },
+    {
+      "ruta": "backend/src/main/resources/db/migration/V7__historial_de_negocio.sql",
+      "bytes": 3110,
+      "sha256": "16cae845532a68beae02725b6fc60b1d1873dc87c2040c19d3d0bffd49a5b2a6"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/historial/http/FiltrosHistorialTest.java",
+      "bytes": 3684,
+      "sha256": "55a0406a61d4c22368951618bde5c3a18d2015b635ba170b2bb4ec1ea6c25db8"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/historial/integracion/HistorialIT.java",
+      "bytes": 52835,
+      "sha256": "69a446dcb6a128d02724b426403d5686c10eee9957c91efb70ac2cb73526b3c7"
+    },
+    {
+      "ruta": "docs/decisiones/ADR-0008-historial-de-negocio-y-consulta.md",
+      "bytes": 3059,
+      "sha256": "64190f59bfd9961d162388af9b6d8ae2bb5db6a69b90f7dace2d4b96a1fda96a"
+    },
+    {
+      "ruta": "docs/trazabilidad/AG-014-informe.md",
+      "bytes": 11337,
+      "sha256": "4dc4ee2af162dfa2894684ecad448d48b7f113468d5971bd18c477699fdc3ef7"
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/plan.md",
+      "bytes": 4561,
+      "sha256": "4a946928c474dec876d2cc05c46ee3597c5e1cbc7e30b69467137b73a9517c69"
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/tareas.md",
+      "bytes": 3205,
+      "sha256": "eba64be8975f631cfbf5f46ada078e2f43b96ff6ff5e73df3acd87cdf441144e"
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/validacion.md",
+      "bytes": 7183,
+      "sha256": "80d88e9d983c1364c9496e1a1c464f9df8b72e17206c06d3f4f6d08fea04923e"
+    },
+    {
+      "ruta": "frontend/e2e/historial.spec.ts",
+      "bytes": 21328,
+      "sha256": "cfa1fb6924a7efb762069abe8256f705993b9c030ed16892fa07b9ea3d4376e6"
+    },
+    {
+      "ruta": "frontend/src/app/historial/datos-prueba.ts",
+      "bytes": 1040,
+      "sha256": "e76604e2ce3108cc51d36a56c02da5bf257a4e909352b965dd8368d62b763d69"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-api.spec.ts",
+      "bytes": 2284,
+      "sha256": "dcd04e904987766b86225f6d8c51df5724570e17fede69f297d1a807629822cd"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-api.ts",
+      "bytes": 1200,
+      "sha256": "a4b3045c02439c0b48c3f109f0cce4c07cd1875836d9b75601c0a0d2ec8e08ce"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-modelo.spec.ts",
+      "bytes": 2909,
+      "sha256": "d1017290bff031b64fd1c9b692d37bc4a67012cdeab80ca2bec8be2913e0fc62"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-modelo.ts",
+      "bytes": 4960,
+      "sha256": "165c6771e4314635d3efb86d2d1780e1afcf8c8bc8639fd7ed62d5d2f354c8a8"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-pagina.ts",
+      "bytes": 1155,
+      "sha256": "0ba735b11e1e2e827f0af174235430993f4ff3ac1a5eba8c6f6809ef4f3dfdaf"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-paginas.spec.ts",
+      "bytes": 11868,
+      "sha256": "7bf441e44a3deeb530c2d7677e408f84936a48630c13595e6905afd245930421"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-permisos.ts",
+      "bytes": 1009,
+      "sha256": "9b5f70642a33eac296a32e3d132660e6e67b764e2d296df15087daaa857eae71"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-timeline.css",
+      "bytes": 3450,
+      "sha256": "4634f69305fc4a8b167945b44b9893f310c65377549b0a01f2529f73e5178193"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-timeline.html",
+      "bytes": 6627,
+      "sha256": "99d62894ca711558e027c213d9ad77bf090fdab81198b14a8705357b58b71a9f"
+    },
+    {
+      "ruta": "frontend/src/app/historial/historial-timeline.ts",
+      "bytes": 5943,
+      "sha256": "db351af6e8199c1edb366f09b2d89484f5e7c9b6358a5a551c2d5b833197eca3"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/actionlint-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/actionlint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/maven-osv.json",
+      "bytes": 35083,
+      "sha256": "e141c682dfe42ebf6f15ee4d1b886bc4e0bebb3aa9cf61aa8b360a1826a36468"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/maven.cdx.json",
+      "bytes": 27967,
+      "sha256": "a4a2b9e2034a5db693d64e21618ad1cb6657b2f407a931877d6d783a841379e7"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-completo-osv.json",
+      "bytes": 140681,
+      "sha256": "e2b48b794b07b7a1017626aa5de0f7bdf7ad642ec6eaec393ffc2aff20ab5329"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-completo-osv.log",
+      "bytes": 406,
+      "sha256": "0059da23f6bdeedd9144102ff18cdba54b889559667b002e68e7558967641ef4"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-completo.cdx.json",
+      "bytes": 100788,
+      "sha256": "d4ad1867d9f95a162e2a6611abfbbe2825bdd7993f60f1d4913ed42c746a5f6e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-offline-resumen.json",
+      "bytes": 566,
+      "sha256": "ed9d98a18e3eec223a2aa0b5f4a3a91f612b66f44d099feb3dcea7e5e561be92"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-produccion-osv.json",
+      "bytes": 1839,
+      "sha256": "9da64e28b9a9a616a8cbee8545c24af74d44583d9d36daf86e30f15ecfa75eab"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-produccion-osv.log",
+      "bytes": 406,
+      "sha256": "06e9414496bc9c6fa70116d71e63d30d31ad200a020beb34b115d09b9b203d32"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/auditorias-actualizadas/npm-produccion.cdx.json",
+      "bytes": 1192,
+      "sha256": "433fb4573f83f86efc3e22f1d5ba1bcd93cf454bf1982570a9e8e410672bb0fb"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-compilacion-01.log",
+      "bytes": 5080,
+      "sha256": "6e671d747ea7518119c40fa395ca9f877a0dd66a520583b5d8cf471b57fa1e51"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-compilacion-02.log",
+      "bytes": 2626,
+      "sha256": "66dbda3501d9f1ec5d917030b57e7131f4f97f31b829def6826deda80c60fe3c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-estado-previo-postgresql.json",
+      "bytes": 772,
+      "sha256": "101f3b288861c618f3f9ff2e4a5bfe50fa53c1d58db52f9cf95ad79f2dc57a74"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-estatico-dependencias-03.log",
+      "bytes": 2493,
+      "sha256": "3716519bb323ec9b3defc2d342108f853824b7b92df36c1a263b3f7f21b7a670"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-fuentes-final-05.csv",
+      "bytes": 19462,
+      "sha256": "6bff9a8802b1e525e71cc5a74dafebd105ba93178333012e1ff72ab794839fc7"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-fuentes-previo-postgresql.csv",
+      "bytes": 19462,
+      "sha256": "6bff9a8802b1e525e71cc5a74dafebd105ba93178333012e1ff72ab794839fc7"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.historial.http.FiltrosHistorialTest.xml",
+      "bytes": 48833,
+      "sha256": "4c0408fc13e3685c0085b519defc80daf2ea6f27441d1d192721d5f5e87ce8ef"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest.xml",
+      "bytes": 47324,
+      "sha256": "a3b3313da2ea679d43d22866c486a44478c04052247bd8b0a39ba0dc5c23fd43"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest.xml",
+      "bytes": 46527,
+      "sha256": "c13e7ed38f364806aa34a67c3a26531e37f293706f5e113ab43f0fc3b74adedb"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest.xml",
+      "bytes": 46725,
+      "sha256": "1c78d097c3fcd4b9fddd80c8d6cc059e5cafc623c9a1dc812107168cca24b26b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.identidad.http.CookiesIdentidadTest.xml",
+      "bytes": 45732,
+      "sha256": "e7c7971986d6ec38cb47ea95add544960bfd827efc30882ed727f61e1413f110"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest.xml",
+      "bytes": 46443,
+      "sha256": "12da8e3964449af53f56f30ffb6537cff5662ab57293f77b5938212837f5cd4b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest.xml",
+      "bytes": 46865,
+      "sha256": "65e7bc6eb807ca2380ad7bfc9f8b8de13d3cf0accc8eae0c6854e2bd62eeba93"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest.xml",
+      "bytes": 48973,
+      "sha256": "42e59c823e7b594b1e8924b50533c98e4efa6e478c0e5c3ea5b520171238abde"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.proveedores.http.ErroresProveedorTest.xml",
+      "bytes": 49187,
+      "sha256": "20b7d8d3498f61c8a5b16d7859295bb9c627fbd950d2a16d8f32f0579cc8f359"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+      "bytes": 46128,
+      "sha256": "97eac3231e9659b0cc0604611d72151297c449b4c0a6ee33b69edfb08edcdf0b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+      "bytes": 49301,
+      "sha256": "c87c57a72e4d547dc52e8933613c002e2921721c0056e6080540a1ea0f4b33d8"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+      "bytes": 46289,
+      "sha256": "8b14f51d44d25f8641688d25c496da96a2f8ee4f7c55547f64796a79cc2a1613"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest.xml",
+      "bytes": 47064,
+      "sha256": "2aeb1971d5895c30c5fac044536ce4a1daf52aed1aeaf58ddd2e51b962b1719a"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-junit-final-05/TEST-es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest.xml",
+      "bytes": 48057,
+      "sha256": "f64be94b6ce985af3300627a295ebd50bc28513ef94548358a39349bddce4466"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-package-04.log",
+      "bytes": 3618,
+      "sha256": "16a71eeab7e01625ee45581d79ab204a9aef7ba78e35db0315ed5307db1a7bd9"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-resumen-final-05.json",
+      "bytes": 908,
+      "sha256": "30c1d8977eb6049636c76154b7902b820b34d1b13f867d2b4162eff711c52cd4"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-spotbugs-01.xml",
+      "bytes": 72213,
+      "sha256": "3e8503adc8d61d504fbc96b9a5701c6db0c379e9a584cd9a396f762da6a8819a"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-spotbugs-03.xml",
+      "bytes": 65204,
+      "sha256": "229d618ef83125320b693646534a109a11eb71bc9fcad9efc5684b93944cfbf6"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-spotbugs-final-05.xml",
+      "bytes": 62740,
+      "sha256": "a2222d8890aedc30e47cecd390c3992641fec5dd0c5dffb3686d8af4fec0b93c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-spotbugs-final.xml",
+      "bytes": 65204,
+      "sha256": "229d618ef83125320b693646534a109a11eb71bc9fcad9efc5684b93944cfbf6"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-autoattach-01.dumpstream",
+      "bytes": 231,
+      "sha256": "1463f5fe2492e184c408bcf25ef960e2a611c7a49d2566097b88390baf62480b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-estatico-01.log",
+      "bytes": 3994,
+      "sha256": "a5acf344bf149bba9a2a6ee4cda1223094645d5a53c1fbf5fda573fde87fc797"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-estatico-02.log",
+      "bytes": 14890,
+      "sha256": "a2fb0d4edc5c200d621fa17135afdc3d8bf7a2232db7db07f4cf651f2d63bc7a"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-estatico-final-05.log",
+      "bytes": 12317,
+      "sha256": "5b9b793d92bb3df6e5db9d15c3c42f111bfa0b1924f012a59a24c2e3dac5ca53"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.historial.http.FiltrosHistorialTest.txt",
+      "bytes": 369,
+      "sha256": "ad79a5d31022aa75a59e80dc6c621690f76dafc5cdce3f53b4bbd962ec1218f9"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest.txt",
+      "bytes": 390,
+      "sha256": "d06e1f8fac23c02c43acb6c0e1a9ccbe5db6454baab13b5d50d885e49257844c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest.txt",
+      "bytes": 374,
+      "sha256": "524f671acfbf3a84cd26e9c9a7c28fcd89c65f03458fde700757dccede6aef33"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest.txt",
+      "bytes": 374,
+      "sha256": "2b1ee84ac7bb070b7c60dc099704d2b5ab4273b7ace18c13ab79c0f0e633094d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.identidad.http.CookiesIdentidadTest.txt",
+      "bytes": 368,
+      "sha256": "8638a2e56a37c2b93d71f3d8fd07563df6d1a7901a5cd9dcbd5a89ee57ce19c4"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest.txt",
+      "bytes": 390,
+      "sha256": "48eb1b10dddc64d06b99ef1229436d705f5f91eb9f0720efe1bc56e89e94c11e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest.txt",
+      "bytes": 382,
+      "sha256": "20b4c5a1f377e9c18b32d728f9319f3e8302b27fbeefae1ae591f745c98b4564"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest.txt",
+      "bytes": 379,
+      "sha256": "a4db6d5c9cd6b473cedfa877eae9768702e04bfedc130076a55fcdc545b2182f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.proveedores.http.ErroresProveedorTest.txt",
+      "bytes": 372,
+      "sha256": "403d762548110b9589927c5a2b369eef6d5bd658c2103ea7f3e07ea92961b1c3"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.txt",
+      "bytes": 366,
+      "sha256": "715a3a286e554ce802f76df0772f5fc6235616067f7ec8630d6dcb54d238ffc9"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.salud.http.ControladorSaludTest.txt",
+      "bytes": 360,
+      "sha256": "7d417505498d901a482017735cd603f2e8e313f667ad835728d8c5678f489596"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.txt",
+      "bytes": 384,
+      "sha256": "ae45d832a4e01c8e6b86a92a6a400c6760260c6a87777e403e6bd8c12ff022c8"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest.txt",
+      "bytes": 384,
+      "sha256": "f4c19c05a2786dfe0c62d3d479d2569360aaf8090abde7e0eb510dc8e2b9cae8"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest.txt",
+      "bytes": 383,
+      "sha256": "6739393dff3c1aa5845ca0306929b5c389387c16eb610231714ebbd752493b49"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.historial.http.FiltrosHistorialTest.xml",
+      "bytes": 48825,
+      "sha256": "d9f7c4bf706e7c2481117ec01a9aaa1d148e8118a6827e4f86941b130b167a34"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest.xml",
+      "bytes": 47326,
+      "sha256": "13d7f3d245865ce8701c8dc4824beb91f642f5f259bfa3b031a3384897e6408d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.identidad.configuracion.JwtYClavesTest.xml",
+      "bytes": 46527,
+      "sha256": "53655b139e1c55fc4172497150336d99ba3509dca4f4f5d59e05b81fd796680b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.identidad.dominio.IdentidadDominioTest.xml",
+      "bytes": 46723,
+      "sha256": "dc4809dafa6c594be1e428a1dd3451257b16029da8f7580f5d867804554657ff"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.identidad.http.CookiesIdentidadTest.xml",
+      "bytes": 45734,
+      "sha256": "36ca8894f1a14b468ad807fb0550e96ad917d1f66c61ef598ece081e40ac5163"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.operaciones.aplicacion.ServicioOperacionesTest.xml",
+      "bytes": 46441,
+      "sha256": "f6cc0eee54495bba6c884e54dcdcf142b4019004342af86e42850a16555f1400"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.operaciones.dominio.OperacionesDominioTest.xml",
+      "bytes": 46863,
+      "sha256": "14159116c620825d3288569ff9cc7bf4c695b752023c89bfbb83b8f54d04e338"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.proveedores.dominio.ProveedorDominioTest.xml",
+      "bytes": 48977,
+      "sha256": "58144b9262a360fc45d62655350a0fffbddf9a90a7c02049dc181f123de92697"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.proveedores.http.ErroresProveedorTest.xml",
+      "bytes": 49186,
+      "sha256": "eb90b2b013e79c801e7d14b378ba74cbc5c5da08621f379f36ba1d63c7100d01"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.salud.aplicacion.ServicioSaludTest.xml",
+      "bytes": 46126,
+      "sha256": "27bf056873fa66df7bf90f944e45dd76b24bfc69434b8e1a1422e0d6d2c01934"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.salud.http.ControladorSaludTest.xml",
+      "bytes": 49302,
+      "sha256": "1fd27af7d62c9550d037bd8ab45261f7be0d478304cebc2bdbc06b04ed8fd1ce"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.salud.persistencia.ComprobacionPostgresTest.xml",
+      "bytes": 46289,
+      "sha256": "8711771a27ea02f4a2b6521c7140b154912b958f42010b6d816561796db0925f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.solicitudes.dominio.AprobacionesDominioTest.xml",
+      "bytes": 47061,
+      "sha256": "0d65a06493fed46247b0c1c987fb0c1d14630b018ed881788e1f6ad5c78b0a28"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-reportes/TEST-es.gestionsolicitudes.solicitudes.dominio.SolicitudesDominioTest.xml",
+      "bytes": 48056,
+      "sha256": "c1eb3e7dac828f10c55b5fec5ecc67ea99e4fa23f173be6ac8d519af0f063317"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/backend-unitarias-resumen.json",
+      "bytes": 2689,
+      "sha256": "d2d3e19f46ed2374ef1f62c3eca51de38eb2d57e7ade6e55a8a3ff74c6005007"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/bloqueos-entorno.json",
+      "bytes": 1648,
+      "sha256": "7be2d20e806dc4a054a1c495d8cb1d81f9859090db2e7d74a70daaed61167629"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/ci-remota-consulta.json",
+      "bytes": 804,
+      "sha256": "4fbbd76e60710417d743e10e1b73abb728be40fcfefea658077f5a9f09ae6c3f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/cierre.json",
+      "bytes": 2589,
+      "sha256": "533eca8ed6b5aa1a359352036804919065d2cf05cc091bd9600af717eda606bc"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/dependencias-preliminares.log",
+      "bytes": 2654,
+      "sha256": "9c42d558a60603ae507eccb57645bc1a479d5cf480ac21ddfa42fc827b48e76f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/docker-reinicio-normal.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/documentacion-actual/documentacion-control.json",
+      "bytes": 239,
+      "sha256": "51925a5aa1937d5f443558257362596c81e1bd3c92f96fe282718ea55c7dad9b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/documentacion-cierre/documentacion-control.json",
+      "bytes": 239,
+      "sha256": "176004b56ff4397dc8bc8ca3b4975216a692a69ac5b67e3fccfe443d239a1203"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/documentacion-final/documentacion-control.json",
+      "bytes": 239,
+      "sha256": "da24d65d905892dad87926afb44b72caec60af2e3be4a5125627edab55ace53e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/documentacion-intermedia/documentacion-control.json",
+      "bytes": 239,
+      "sha256": "bad3e7a98a112841b7452629a26d6e4c6db4569a5c9a09877af2feaee5ecd869"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/documentacion-pre-revision/documentacion-control.json",
+      "bytes": 239,
+      "sha256": "7ee1923a72e45ede9e5590dc669bb6c608a91734f85223a8bf8890deea90c89c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/e2e-inventario.log",
+      "bytes": 4120,
+      "sha256": "50f572aeeed440fe743385395f4f458fad0a78825f1d4cb0178fd5153bec0e85"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/encargo-humano.txt",
+      "bytes": 15511,
+      "sha256": "8cc94cb31c47ece24693008c356a5c6af5548c65a32bae6554571a00cee8da77"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/entrada.json",
+      "bytes": 627721,
+      "sha256": "702cd5c272a84908cdb9e9fb26e5281cc8f10d08654465b5aa714a9e8a44f9df"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/especificacion-borrador-entrada.txt",
+      "bytes": 9829,
+      "sha256": "9ac9145503682b5895a132a4b8f9d62f794933692388b3d439e0444fe8254024"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-build-02.log",
+      "bytes": 596,
+      "sha256": "087a1d9b13b1f7fe2fafa993da6b37bdad75e3cc7a191a974aa1ee2921d74b36"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-build-04.log",
+      "bytes": 596,
+      "sha256": "49bdd36d67934a37e07ffb35d501af69a60e6f80a7743a7d617908d91c8fe2c0"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-build-05.log",
+      "bytes": 596,
+      "sha256": "c1bc5699aff540e327f97a09378d8207614af68bee710a101228f5f6f376bc87"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-entrega-provisional.txt",
+      "bytes": 2361,
+      "sha256": "db80662c51120c561390a57193fbd7d840ed3e2b494de7e800b2b6ee5b215a45"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-format-check-02.log",
+      "bytes": 351,
+      "sha256": "938c9f511f0bf015fd1be92b5c89e30540f6a4745a23d9fdab6334556dee4bfc"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-format-check-03.log",
+      "bytes": 197,
+      "sha256": "3ceb47f2e7ca0733c1da31ac0d1d5805fa7e1752d7768e1f7d3cdae4583fe99f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-format-check-04.log",
+      "bytes": 197,
+      "sha256": "3ceb47f2e7ca0733c1da31ac0d1d5805fa7e1752d7768e1f7d3cdae4583fe99f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-format-check-05.log",
+      "bytes": 197,
+      "sha256": "3ceb47f2e7ca0733c1da31ac0d1d5805fa7e1752d7768e1f7d3cdae4583fe99f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-formato-aplicado.log",
+      "bytes": 1278,
+      "sha256": "c324654c3c4b0f86fa448ec3c81ab61e861ad6b40b3796486e334956ba3452ce"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-formato-correccion01.log",
+      "bytes": 114,
+      "sha256": "4126e157574f002e1afedafc2e0a4e1cc42f384606137c4abf6af45b0759ef99"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-formato-e2e.log",
+      "bytes": 28,
+      "sha256": "5a6c05f20d265042cbf5aeefe68ea7bb6cab50ae7b48340a2e1268d1b7639143"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-formato-navegacion.log",
+      "bytes": 375,
+      "sha256": "ee365f556f827676902e8a94e1ec49b19648a0cecf36824cc1d76f6689391eb4"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-formato-revision01.log",
+      "bytes": 104,
+      "sha256": "8f04be7502c531d87cbd5c603089bf8d2a54d69229d994ec244cd52676dd6ebf"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-fuentes-01.json",
+      "bytes": 4152,
+      "sha256": "cdd8f3e3204c266dbd8b47180cbc239e956c54ec7764bcbc87e5254fc1f87cb5"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-lint-02.log",
+      "bytes": 103,
+      "sha256": "6e0ec5aaaba10d666497a86fcb7ecac7854f23c9d0a089fbd56e6e53277e2c6e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-lint-04.log",
+      "bytes": 103,
+      "sha256": "6e0ec5aaaba10d666497a86fcb7ecac7854f23c9d0a089fbd56e6e53277e2c6e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-lint-05.log",
+      "bytes": 103,
+      "sha256": "6e0ec5aaaba10d666497a86fcb7ecac7854f23c9d0a089fbd56e6e53277e2c6e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-completos-01.log",
+      "bytes": 6333,
+      "sha256": "a3ece2db61eb8dbb4fdb367130c1c8bc3f438c31cc1d30a3be59361d9ceccd30"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-completos-02.log",
+      "bytes": 6333,
+      "sha256": "d050ab4c450eb020b7bb8c6d9ca7f2e85b86a6dc03475d9dcc2ab103350b12df"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-completos-03.log",
+      "bytes": 6334,
+      "sha256": "a8c0002bd61fd2234148ed37118783dd4928ca327fe210fc9e8c93b31272a18a"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-completos-05.log",
+      "bytes": 6333,
+      "sha256": "45d1aee7035b205bc52dd227a49d17a090eaa2763028bb17c6e0547c3973d1c5"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-enfocados-01.log",
+      "bytes": 1857,
+      "sha256": "0b80af2ae4e30e8b6023dcd39ffdd7627b1309b0a451a0b9319e91ace6719ce9"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-tests-revision01.log",
+      "bytes": 1530,
+      "sha256": "4487f3e6f50300f79f3588faaf5c263127167d09cc5e60fb913b2badef2c7442"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-typecheck-02.log",
+      "bytes": 164,
+      "sha256": "73747cdcc2bc2f66d8315eba9251779fd35d81a8a0a8481333b7a659a22d6879"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-typecheck-04.log",
+      "bytes": 164,
+      "sha256": "73747cdcc2bc2f66d8315eba9251779fd35d81a8a0a8481333b7a659a22d6879"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-typecheck-05.log",
+      "bytes": 164,
+      "sha256": "73747cdcc2bc2f66d8315eba9251779fd35d81a8a0a8481333b7a659a22d6879"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-typecheck-inicial.log",
+      "bytes": 164,
+      "sha256": "73747cdcc2bc2f66d8315eba9251779fd35d81a8a0a8481333b7a659a22d6879"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/frontend-typecheck-pruebas.log",
+      "bytes": 164,
+      "sha256": "73747cdcc2bc2f66d8315eba9251779fd35d81a8a0a8481333b7a659a22d6879"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/maven-osv-actualizado.log",
+      "bytes": 601,
+      "sha256": "e2e10c02421ee136bf7f1e5431a315a71015519c414e870d18b01423f921badc"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/memoria-entrada.txt",
+      "bytes": 3232,
+      "sha256": "e286eba7c9e8867171c1bf0b8423057028d223ef423ae5b97992a8b21b5f787f"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-audit-completo.json",
+      "bytes": 209,
+      "sha256": "60e1734259f6ff756607477f77185ce7d216f58a690d85d33eb12ac81facb00d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-audit-produccion.json",
+      "bytes": 209,
+      "sha256": "60e1734259f6ff756607477f77185ce7d216f58a690d85d33eb12ac81facb00d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-auditoria-local.log",
+      "bytes": 120,
+      "sha256": "72900e01bc6956b8194f034d88a0917a3ecfecd8a338d65ad6c0506c8aaaa25b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-completo-osv.json",
+      "bytes": 140657,
+      "sha256": "92f623071cc8305264e3a18819f0f5cad296772d15b0e6c4e52631aaf95dfd9c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-completo-osv.log",
+      "bytes": 382,
+      "sha256": "e818f4f08aabb2dba9816d27aa7d08ad3e4dd45ddf86d58ab0910bb1017ea541"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-completo.cdx.json",
+      "bytes": 100788,
+      "sha256": "d4ad1867d9f95a162e2a6611abfbbe2825bdd7993f60f1d4913ed42c746a5f6e"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-offline-resumen.json",
+      "bytes": 566,
+      "sha256": "cb57d5a0dfc9d3fe58a168f99afaf335c73eff1f64ea7906605e9b2fb216cf03"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-osv-actualizado.log",
+      "bytes": 120,
+      "sha256": "72900e01bc6956b8194f034d88a0917a3ecfecd8a338d65ad6c0506c8aaaa25b"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-produccion-osv.json",
+      "bytes": 1815,
+      "sha256": "57c697b2cce4bbedb147dfcc227beb157f1c6cd2b4bcf422fafde30c4f5757dd"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-produccion-osv.log",
+      "bytes": 382,
+      "sha256": "25afc6b2a873bc1756d5bd63aa3e88652ea28b237cd1891a715458b5347d7b75"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/npm-produccion.cdx.json",
+      "bytes": 1192,
+      "sha256": "433fb4573f83f86efc3e22f1d5ba1bcd93cf454bf1982570a9e8e410672bb0fb"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/osv-bases-descargadas.json",
+      "bytes": 387,
+      "sha256": "a75d4a4e3982fdb9784e15eb375ac89cab89095d63f8c7e22c4fb01481005ea0"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/precondicion-backend-final.log",
+      "bytes": 1341,
+      "sha256": "4c9b118e62f506491e66bcb48c1da17b5a46a3966f4865c846a94e885bd1b814"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/precondicion-backend-local.log",
+      "bytes": 508,
+      "sha256": "9354b708ade49b86dd12c197cb4af5869e66e74fe97d0b07c19eb55a87e0e83d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/precondicion-backend.log",
+      "bytes": 478,
+      "sha256": "776adf3126b08a1e5cdfbd5e8a26414afd1bce6bb31fd05ed0f8dc366f8a049d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/precondicion-frontend.log",
+      "bytes": 596,
+      "sha256": "f1ceec072bd43648eab898ceb68ea522a49dd3c3502507da8389b05d2d1b537c"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/precondicion.json",
+      "bytes": 535,
+      "sha256": "01db93cc80055fe08e629e610e183d90767682de1fd0c31306270450f6867d65"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/proteccion-destinos.json",
+      "bytes": 280,
+      "sha256": "260fe32557da6ea42a8441af0af1fba8b87e11bfc1292394e9265d29b03403c9"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/registro-entrada.csv",
+      "bytes": 41669,
+      "sha256": "a35e7f499923878f036caaf65e394f456f8b16fe9a75c82292705dac6d9ccb1d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/revision-cierre-parcial.md",
+      "bytes": 3766,
+      "sha256": "a3f2717bb0afec068e527623419d6b45a66feaf444f597bed35ed50ffe07cc9d"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/revision-inicial.md",
+      "bytes": 804,
+      "sha256": "6fefddeecf9280a69d38772140c598fb55732c6c968037fc9e2ca3db7d02b57a"
+    },
+    {
+      "ruta": "qa/evidencias/ag014/sesion.json",
+      "bytes": 597,
+      "sha256": "330039e96260ba8fc02de9e671753d3c9db6b4b34e8fa277aab535ee934d8a83"
+    },
+    {
+      "ruta": "qa/preparar-ag014.mjs",
+      "bytes": 2906,
+      "sha256": "5e5c9ba5adc2f422d55e9a7993c830cc2481004ccde13478066a15988e4bec9d"
+    },
+    {
+      "ruta": "qa/verificar-entrega-ag014.mjs",
+      "bytes": 4976,
+      "sha256": "cbac5766bf61d3302b02e6a1ba758640ea5e4d0ead22b5db074096f0d649ca92"
+    },
+    {
+      "ruta": "qa/verificar-evolucion-v7.mjs",
+      "bytes": 3904,
+      "sha256": "a7962260b7beffaca9f4f1da0888fc3ce61edec33657cc9c9346ba2263da8363"
+    },
+    {
+      "ruta": "qa/verificar-historial-compose.mjs",
+      "bytes": 17289,
+      "sha256": "1d1a02cce47c01aa725f399769e90de3c9fc4c2d47e6ca57d149e2389a5d027f"
+    }
+  ],
+  "modificados": [
+    {
+      "ruta": ".github/workflows/ci.yml",
+      "bytes": 9658,
+      "sha256": "98fdb973e593e7a8862fa45b52e41678fc155599ce896017c4ea434c190bee47"
+    },
+    {
+      "ruta": ".gitignore",
+      "bytes": 789,
+      "sha256": "df434935510276c7dcc64f08b4d5f7f6217f1d54099696dd24a0df95b42e2a4e"
+    },
+    {
+      "ruta": "backend/spotbugs-exclusiones.xml",
+      "bytes": 2605,
+      "sha256": "3df7c46526d697f8151e6ce95977260e71ef59aa6e00399b09f030a120ea53f4"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+      "bytes": 2078,
+      "sha256": "b32d2ab1f2a74010a068e677f0f43f99749b76eb45a6db211d2aa3658c07f6de"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+      "bytes": 12489,
+      "sha256": "c09a806893792d011a41d207a8004ad2fc55db622cd558b36816e865954c3ea3"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/proveedores/aplicacion/ServicioProveedores.java",
+      "bytes": 11610,
+      "sha256": "ffcd6bf947c582cb028d83e323365df3781345fdfcf66839d80220e9aa3c608e"
+    },
+    {
+      "ruta": "backend/src/main/java/es/gestionsolicitudes/solicitudes/aplicacion/ServicioSolicitudes.java",
+      "bytes": 17811,
+      "sha256": "9997881ac2ca4fbca7b4e78648f1fca5afeae5fa65777b856aaef8fc0e9fa0a5"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+      "bytes": 10325,
+      "sha256": "f390367689ebe6033e84e7f6c13e4eb920acff6bd3b9e98b77d56b79ecd0c5c5"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/operaciones/integracion/OperacionesIT.java",
+      "bytes": 58404,
+      "sha256": "f0aa8de47450db1bcdb635dc09f647fff9d332dcbd257a03ea26e58cee50418c"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/proveedores/integracion/ProveedoresIT.java",
+      "bytes": 52929,
+      "sha256": "b57d5a833c6066931530413b8dc13bb8344bd45e82a95627e287d36c65538141"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/AprobacionesIT.java",
+      "bytes": 75296,
+      "sha256": "0beabeba6340a08db1d446ce2a9f62fd59daf8857668f8c16ddd8f2911ca1f77"
+    },
+    {
+      "ruta": "backend/src/test/java/es/gestionsolicitudes/solicitudes/integracion/SolicitudesIT.java",
+      "bytes": 78327,
+      "sha256": "306eb90b1bff1e684842d1e76992f4b260450bd2ed9cc111db6b2f17e56c681b"
+    },
+    {
+      "ruta": "docs/documentaciondev/api-y-rutas.md",
+      "bytes": 15182,
+      "sha256": "719a3ba72dcd73c3f61da97a25a01a14eb48ebc0d92ec06a9ee0de763da1e7b1"
+    },
+    {
+      "ruta": "docs/documentaciondev/arquitectura.md",
+      "bytes": 14515,
+      "sha256": "b942390435d48dbcda9069c4fc42f54af6825b9bfc3ab0ebfcbcb0ffa021a50e"
+    },
+    {
+      "ruta": "docs/documentaciondev/entorno.md",
+      "bytes": 22107,
+      "sha256": "4b9d1f56d5509cd6614d5599a4cd43c25f15f225eed18eefd7c15c61190dfd52"
+    },
+    {
+      "ruta": "docs/documentaciondev/modelo-de-datos.md",
+      "bytes": 11558,
+      "sha256": "88cf1d1ba12d7d4445de195bc7b0544c5d71c0e33f26556ad8507a1b0afe8737"
+    },
+    {
+      "ruta": "docs/README.md",
+      "bytes": 14639,
+      "sha256": "11bd0e0b21bc450b4e11d4487fce90fb518560634e66c9e175dff7f0385e10f8"
+    },
+    {
+      "ruta": "docs/seguridad.md",
+      "bytes": 15551,
+      "sha256": "366c840e1c95996604a58b5c00fc5a09dc1a7243078216efa7d1f3cab2cfe7c4"
+    },
+    {
+      "ruta": "docs/seguridad/cobertura-owasp.md",
+      "bytes": 23387,
+      "sha256": "5adda406bad65314cf7203832672c16fdf53a7d02bd61e4f36da7721353e2f69"
+    },
+    {
+      "ruta": "docs/seguridad/modelo-de-amenazas.md",
+      "bytes": 19759,
+      "sha256": "2a0094e117bb28db31b48332ba163f99fc61b31cd59b2544687b3796c1e02461"
+    },
+    {
+      "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+      "bytes": 42676,
+      "sha256": "560c3fd093f0011e1889224f6b92e3b6b02a7788998ce89a035f11fb855e5258"
+    },
+    {
+      "ruta": "especificaciones/007-historial-auditoria/especificacion.md",
+      "bytes": 9665,
+      "sha256": "387d3fd848465ab450e6366823af9da578d03a36ec1cdfd985c63c4ac05cfcfd"
+    },
+    {
+      "ruta": "especificaciones/README.md",
+      "bytes": 7575,
+      "sha256": "ec5fd25f9e3dc6284ff06aef794bc54346dac4cb0804e57a6c97bad02a16caf6"
+    },
+    {
+      "ruta": "frontend/e2e/operaciones-ayudas.ts",
+      "bytes": 5848,
+      "sha256": "22137c86b6d6904bf347f1e09816a2488a3a34f0cb033babadeb1f29ff3703a6"
+    },
+    {
+      "ruta": "frontend/src/app/app.html",
+      "bytes": 1644,
+      "sha256": "ef36ed078f71718bb52c66afb0bab4340a99c4dfffe1542425f1267b467de820"
+    },
+    {
+      "ruta": "frontend/src/app/app.routes.ts",
+      "bytes": 3745,
+      "sha256": "c023b453d7160a4e54ea781990fee531cdd0e1dc93f22cb13cae0f3af6cfe759"
+    },
+    {
+      "ruta": "frontend/src/app/app.ts",
+      "bytes": 858,
+      "sha256": "98a8c4aa3957e3830ddcc7deafed1015a76cb69f5478279dd2cd727093608068"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.css",
+      "bytes": 2811,
+      "sha256": "18a560581e0685756f38f7f94277909f63c73997c7cb8f0c2b94de69a23a694a"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.html",
+      "bytes": 3663,
+      "sha256": "97f547a83e2bbf33e9557d089eb09dc92434eea28ac7b95604eaeb5809edeffa"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.spec.ts",
+      "bytes": 5075,
+      "sha256": "a3fdf6fc3970a4e69499f080bde15db80594beb47edf62a6de0b12a71183ddfe"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.ts",
+      "bytes": 2301,
+      "sha256": "b50b35502de71e43f95e0506f62cbc169558327c5654f16e349702ae38cb5367"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-detalle.html",
+      "bytes": 2401,
+      "sha256": "c3be1b8f22d512a24a005aec465820218a65dc53121eeab469fcb1f7123db5e7"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedor-detalle.ts",
+      "bytes": 3894,
+      "sha256": "1f5d8e384eb32ec9053eb3c424200298b06c0e1a19f4ec22baeb9a4b57bf3e05"
+    },
+    {
+      "ruta": "frontend/src/app/proveedores/proveedores-paginas.spec.ts",
+      "bytes": 23944,
+      "sha256": "f81ff956904bb5b63113f36015023e1a5807cc300b7151790b07044894bf1b03"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/aprobaciones.spec.ts",
+      "bytes": 21303,
+      "sha256": "cd7de61729866f96daa04c2e4852b42a4db06635cea47100a4e4f1b38ba0ab88"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-detalle.html",
+      "bytes": 8229,
+      "sha256": "d747db14af8b96d03a821b82bc0cba52c6feaa7970c8d124953a71daafa35558"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-detalle.ts",
+      "bytes": 6065,
+      "sha256": "e0f058a20d90d68bf1a6a50d0c6a069ad76fab515d3a76e03524c815bd2258d5"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitudes-paginas.spec.ts",
+      "bytes": 23733,
+      "sha256": "26b3070e63a23bedcfba087c7c499215f7b54d8411de654ba8ba6addbccabe4d"
+    },
+    {
+      "ruta": "MEMORY.md",
+      "bytes": 2989,
+      "sha256": "b96ad73621831a5dadc5b67799523d2be31c636189ca7d51f4f3576ca3f89caf"
+    },
+    {
+      "ruta": "qa/rutas-evidencia.mjs",
+      "bytes": 1774,
+      "sha256": "d08e191a5f2112e3088dddf2647b8e242bf0b8a0fbe22adb95102dd1acbc1b92"
+    },
+    {
+      "ruta": "README.md",
+      "bytes": 12086,
+      "sha256": "ae993e19dd6398bec88b79073b43fd4b500129720fe747fa9235ec20aa595d39"
+    }
+  ],
+  "eliminados": [],
+  "salidasAutogeneradas": [
+    "entrega-manifiesto.json",
+    "entrega-integridad.json",
+    "fuentes-finales.json",
+    "manifiesto-commits.json"
+  ],
+  "preparadoresAntesDeFotografia": [
+    "qa/preparar-ag014.mjs"
+  ],
+  "limite": "Comparación SHA256 desde entradaAG014 más preparador inicial conocido; no es diff Git."
+}

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.677 s -- in es.gestionsolicitudes.identidad.aplicacion.ServicioAutenticacionTest

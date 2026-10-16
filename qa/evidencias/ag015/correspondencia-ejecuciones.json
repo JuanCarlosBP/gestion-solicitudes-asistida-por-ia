@@ -1,0 +1,323 @@
+{
+  "observado": "2026-10-15T23:04:22.615Z",
+  "proyecto": "gestion-solicitudes-ag015-final",
+  "puerto": 18081,
+  "imagenes": [
+    "sha256:00a145c8fa5005d896b2525f46b38e128d225ce72a9eaf7b730558279dad679f|2026-10-15T22:53:17.966732518Z|[\"gestion-solicitudes-ag015-final-backend:latest\"]",
+    "sha256:ab3481ae0d6f04e6031f4b366638cf607033484005ddb833051d1eacaa4cd681|2026-10-15T20:12:37.695486279Z|[\"gestion-solicitudes-ag015-final-frontend:latest\"]",
+    "sha256:abdaf2ec20e42f83f9eec5f3ce5e82aceb65fa3b3cf696071cb1b007fe816a08|2026-10-15T22:52:22.367320797Z|[\"gestion-solicitudes-ag015-linux:qa\"]"
+  ],
+  "contenedores": [
+    "373d5dc34816e8f92d2418cd4214f13d47b0e0df7802b78fa93de10e3599c049|/gestion-solicitudes-ag015-final-backend-1|sha256:00a145c8fa5005d896b2525f46b38e128d225ce72a9eaf7b730558279dad679f|gestion-solicitudes-ag015-final|exited",
+    "f1d4496945bd73563d568f5f08659b1aed67267291d0912d0345add1212c07ab|/gestion-solicitudes-ag015-final-frontend-1|sha256:ab3481ae0d6f04e6031f4b366638cf607033484005ddb833051d1eacaa4cd681|gestion-solicitudes-ag015-final|exited",
+    "0fe5ef9044edf0be3f3d515464c25b339da7196a3a17d62a3f5d53ee70f609e4|/gestion-solicitudes-ag015-final-postgres-1|sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826|gestion-solicitudes-ag015-final|exited"
+  ],
+  "limite": "Identidades observadas al cierre y enlazadas al proyecto ejecutado; no se presentan como capturas anteriores a las pruebas.",
+  "fuentesBackendComprobadas": 124,
+  "discrepanciasBackend": [],
+  "clasesImagenVsVerify": 133,
+  "diferenciasClases": 0,
+  "e2eOriginal": {
+    "ruta": "frontend/e2e/aprobaciones.spec.ts",
+    "entrada": "3bccdf904b5bc6be4d6eb1f7bb3fabbc512c49763821be2afd2bf974aefa2932",
+    "final": "3bccdf904b5bc6be4d6eb1f7bb3fabbc512c49763821be2afd2bf974aefa2932"
+  },
+  "ejecuciones": [
+    {
+      "nombre": "despues-intercalada",
+      "retries": 0,
+      "exitCode": 0,
+      "fin": "2026-10-16T00:55:18.4301959+02:00",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "tmp/ag015/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "sistema": "Windows",
+      "url": "http://127.0.0.1:18081",
+      "inicio": "2026-10-16T00:55:16.3046222+02:00"
+    },
+    {
+      "nombre": "enfocada-01",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:32.8990640+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:31.0147206+02:00"
+    },
+    {
+      "nombre": "enfocada-02",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:34.7705512+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:32.9118214+02:00"
+    },
+    {
+      "nombre": "enfocada-03",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:36.6697015+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:34.7756522+02:00"
+    },
+    {
+      "nombre": "enfocada-04",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:38.6088627+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:36.6819631+02:00"
+    },
+    {
+      "nombre": "enfocada-05",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:40.4898518+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:38.6129460+02:00"
+    },
+    {
+      "nombre": "enfocada-06",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:42.3924635+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:40.4939683+02:00"
+    },
+    {
+      "nombre": "enfocada-07",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:44.2182920+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:42.3957756+02:00"
+    },
+    {
+      "nombre": "enfocada-08",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:46.1141866+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:44.2212512+02:00"
+    },
+    {
+      "nombre": "enfocada-09",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:47.9991115+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:46.1176906+02:00"
+    },
+    {
+      "nombre": "enfocada-10",
+      "retries": 0,
+      "url": "http://127.0.0.1:18081",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts",
+        "--grep",
+        "AP-05/08"
+      ],
+      "fin": "2026-10-16T00:55:49.8677738+02:00",
+      "exitCode": 0,
+      "sistema": "Windows",
+      "inicio": "2026-10-16T00:55:48.0021635+02:00"
+    },
+    {
+      "nombre": "windows-completa02",
+      "url": "http://127.0.0.1:18081",
+      "exitCode": 0,
+      "retries": 0,
+      "inicio": "2026-10-16T00:58:46.7838549+02:00",
+      "fin": "2026-10-16T00:59:40.7400848+02:00",
+      "argumentos": [
+        "frontend/node_modules/@playwright/test/cli.js",
+        "test",
+        "--config",
+        "frontend/playwright.config.ts"
+      ],
+      "sistema": "Windows"
+    },
+    {
+      "nombre": "linux-complementaria",
+      "inicio": "2026-10-15T23:00:16.821Z",
+      "fin": "2026-10-15T23:00:49.939Z",
+      "sistema": "Linux en Docker local",
+      "node": "v24.13.0",
+      "retries": 0,
+      "argumentos": [
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "aprobaciones.spec.ts",
+        "base.spec.ts",
+        "historial.spec.ts",
+        "identidad.spec.ts",
+        "proveedores.spec.ts",
+        "solicitudes.spec.ts"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "api": [
+    {
+      "nombre": "sesiones",
+      "ruta": "qa/evidencias/ag015/api-final/compose-sesiones.json",
+      "controles": 88,
+      "fallidos": 0
+    },
+    {
+      "nombre": "proveedores",
+      "ruta": "qa/evidencias/ag015/api-final/compose-proveedores.json",
+      "controles": 78,
+      "fallidos": 0
+    },
+    {
+      "nombre": "solicitudes",
+      "ruta": "qa/evidencias/ag015/api-final/compose-solicitudes.json",
+      "controles": 119,
+      "fallidos": 0
+    },
+    {
+      "nombre": "aprobaciones",
+      "ruta": "qa/evidencias/ag015/api-final/compose-aprobaciones.json",
+      "controles": 140,
+      "fallidos": 0
+    },
+    {
+      "nombre": "concurrencia",
+      "ruta": "qa/evidencias/ag015/api-final/compose-concurrencia.json",
+      "controles": 67,
+      "fallidos": 0
+    },
+    {
+      "nombre": "historial",
+      "ruta": "qa/evidencias/ag015/api-final/historial-api.json",
+      "controles": 144,
+      "fallidos": 0
+    }
+  ],
+  "frontend": [
+    {
+      "archivo": "build.json",
+      "inicio": "2026-10-16T00:54:50.0800242+02:00",
+      "fin": "2026-10-16T00:54:56.4062591+02:00",
+      "exitCode": 0,
+      "paso": "build"
+    },
+    {
+      "archivo": "format-check.json",
+      "inicio": "2026-10-16T00:54:04.0006139+02:00",
+      "fin": "2026-10-16T00:54:06.0962210+02:00",
+      "exitCode": 0,
+      "paso": "format:check"
+    },
+    {
+      "archivo": "lint.json",
+      "inicio": "2026-10-16T00:53:38.2554296+02:00",
+      "fin": "2026-10-16T00:54:03.9977085+02:00",
+      "exitCode": 0,
+      "paso": "lint"
+    },
+    {
+      "archivo": "test.json",
+      "inicio": "2026-10-16T00:54:06.0997531+02:00",
+      "fin": "2026-10-16T00:54:50.0772939+02:00",
+      "exitCode": 0,
+      "paso": "test"
+    },
+    {
+      "archivo": "typecheck.json",
+      "inicio": "2026-10-16T00:53:25.8401660+02:00",
+      "fin": "2026-10-16T00:53:38.2370739+02:00",
+      "exitCode": 0,
+      "paso": "typecheck"
+    }
+  ]
+}

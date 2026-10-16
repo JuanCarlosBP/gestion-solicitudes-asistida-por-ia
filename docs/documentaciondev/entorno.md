@@ -360,3 +360,86 @@ evidencias por job. El log histórico enlazado `qa/evidencias/ag011/backend-veri
 se incluye mediante una excepción exacta de `.gitignore`, conservando sus bytes.
 La corrección del fallo remoto se reprodujo localmente; requiere commit/push humano
 y nueva ejecución remota. Véase [AG-013](../trazabilidad/AG-013-informe.md).
+
+## Verificación007 — AG-014
+
+Usar destinos nuevos dentro de qa/evidencias/ag014 o tmp/evidencias, nunca AG003–013.
+El resolvedor rechaza estos directorios históricos incluso si se indican a mano.
+No ejecutar los verificadores de entrega de sesiones anteriores con escritura
+sobre sus carpetas; qa/verificar-entrega-ag014.mjs compara huellas de entrada.
+
+Antes de aplicar V7 al volumen ficticio local, qa/verificar-evolucion-v7.mjs antes
+conserva conteos/huellas de siete tablas y checksumsV1–V6, más IDs mínimosV5.
+Después de migrar y antes de nuevas acciones, modo despues comprueba preservación
+y tablaV7 vacía. No se usa este procedimiento sobre datos reales.
+QA_HISTORIAL_ANTERIOR puede apuntar a historial-anterior.json para las pruebas API;
+E2E_HISTORIAL_ANTERIOR_ID identifica ese recurso ficticio en navegador.
+Para acreditar decisiones V5 anteriores en navegador, ese recurso debe tener una
+decisión previa real en el volumen ficticioV6 y debe activarse
+E2E_HISTORIAL_ANTERIOR_DECISION=true. La variante sintética de CI, que omite esa
+condición, no acredita esta conservación ni cierra HA-01/03/09 por sí sola.
+En CI desde base nueva se usa un recurso fixture sin creación registrada, declarado
+artificial; la evolución real previa se verifica con PostgreSQL IT.
+
+Comandos adicionales previstos: node qa/verificar-historial-compose.mjs,
+node qa/verificar-entrega-ag014.mjs. El primero comprueba eventos/proyección/
+permisos/filtros/resumen y mide20 GET locales; no es benchmark productivo.
+Los comandos Maven/Angular/Compose heredados siguen siendo obligatorios.
+Un socket Docker inaccesible requiere resolver el entorno: no sustituir PostgreSQL
+por base en memoria ni declarar integraciones que no se ejecutaron.
+
+En la reanudación AG-014 el usuario reinició WSL y abrió Docker Desktop. El motor
+29.1.3 y Compose2.40.3 respondieron; el acceso desde el aislamiento devolvía
+`permission denied` sobre el pipe Docker y funcionó con permiso de herramienta.
+El agente no eliminó el socket ni usó restablecimiento de fábrica.
+
+Para conservar también los contenedores existentes, se usa el proyecto separado
+`COMPOSE_PROJECT_NAME=gestion-solicitudes-ag014` con la misma configuración Compose.
+La base ficticiaV6 se copió con pg_dump/pg_restore a su volumen de QA: siete tablas,
+sus columnas y checksums coincidieron antes de arrancar007. Los recursos originales
+permanecen detenidos. Todos los verificadores y E2E deben heredar ese nombre de
+proyecto; solo se admiten start/stop/restart, sin recrear ni eliminar contenedores.
+Las imágenes se construyeron sin caché bajo los nombres del proyecto de QA.
+
+Las correcciones de frontend se prueban conservando cada contenedor anterior
+detenido. `qa/compose-frontend-conservado.yaml` define el frontend final como
+proyecto `gestion-solicitudes-ag014-ui06`, conectado a la red web ya existente,
+sin declarar otra base de datos ni volúmenes. Para E2E se mantiene
+COMPOSE_PROJECT_NAME=gestion-solicitudes-ag014, porque sus ayudantes SQL/reinicio
+operan el backend y PostgreSQL de esa copia. BASE_URL sigue siendo el loopback18080.
+El primer montajeui02 con configuración combinada creó además una red y un volumen
+vacíos; se conservan por la prohibición humana de borrar recursos. No forman
+parte de la arquitectura de aplicación ni se presentan como despliegue público.
+
+Para las IT de esta sesión, `backend/verificar-conservando.ps1` admite
+`-Alcance historial` o `-Alcance completo` y un `-Intento` de dos cifras nuevo.
+Activa el helper de pruebas con GESTION_QA_CONSERVAR_CONTENEDORES=true,
+TESTCONTAINERS_REUSE_ENABLE=true y TESTCONTAINERS_RYUK_DISABLED=false.
+El modo exige Testcontainers2.0.5 y conserva cada contenedor detenido con etiqueta
+de instancia única; mantiene los asserts y comprueba los inventarios de recursos.
+Fuera de ese modo optativo, el ciclo de vida de pruebas existente se conserva.
+
+La auditoría npm de la reanudación usa explícitamente
+`--registry=https://registry.npmjs.org`, autorizada por el usuario para enviar
+solo el inventario necesario. Los fallos de DNS y el rechazo automático anteriores
+se conservan por separado; no se presentan como ejecuciones superadas.
+
+El cierre final se comprueba con `qa/verificar-compose-conservado-ag014.ps1`:
+solo start/stop/exec sobre los proyectos QA y ui06, huellas de nueve tablas,
+503 por caída real de PostgreSQL y recuperación200 en navegador. El script usa
+un directorio exclusivo y rechaza sobrescribir ese intento. Todos los recursos
+se conservan detenidos al terminar. No ejecutar el start global de la configuración
+base junto al frontend separado: activaría también su frontend anterior en el mismo puerto.
+
+Tras AG-014 hay30 contenedores detenidos,17 volúmenes y20 imágenes, incluidos todos
+los recursos previos. Para reabrir únicamente la aplicación QA conservada desde
+la raíz del workspace, sin reconstruir ni recrear:
+
+```powershell
+docker compose -p gestion-solicitudes-ag014 --env-file infraestructura/.env -f infraestructura/compose.yaml start postgres backend
+docker compose -p gestion-solicitudes-ag014-ui06 -f qa/compose-frontend-conservado.yaml start frontend
+```
+
+La URL local es http://127.0.0.1:18080. Esto usa datos ficticios de QA; no es un
+procedimiento aprobado de producción. Una futura limpieza de estos recursos
+requiere autorización humana nueva.

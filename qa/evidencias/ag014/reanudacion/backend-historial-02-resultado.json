@@ -1,0 +1,15 @@
+{
+  "fecha": "2026-10-15T21:51:03.3024774+02:00",
+  "salidaMaven": 0,
+  "recursosPreviosAusentes": {
+    "contenedores": [],
+    "volumenes": [],
+    "imagenes": []
+  },
+  "contenedoresNuevos": [
+    "fffb0b5ead55389f5a311ada477903e0c14b5fb24887f50a350305d6402cbb88"
+  ],
+  "volumenesNuevos": [
+    "cfab926ba0e8f3ae681728a1a6d166992dd0a939ce07749cb7782f96c1b946b9"
+  ]
+}

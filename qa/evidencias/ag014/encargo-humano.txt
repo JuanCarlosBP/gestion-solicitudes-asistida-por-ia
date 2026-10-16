@@ -1,0 +1,347 @@
+Trabaja exclusivamente en:
+
+C:\Users\carli\gestion-solicitudes-asistida-por-ia
+
+EJECUCIÓN AUTORIZADA: AG-014
+INCREMENTO OBLIGATORIO: 007-historial-auditoria
+CONTINUACIÓN DOCUMENTAL OPCIONAL: borrador 008
+
+La rama preparada por la persona responsable debe ser:
+
+feature/007-historial-auditoria
+
+ALCANCE HUMANO
+
+La persona responsable, al enviar este encargo, aprueba las decisiones D-007-01
+hasta D-007-10 incluidas abajo. Debes conciliarlas con el borrador 007 y con
+las reglas ya aprobadas en 001–006. Ningún requisito anterior se puede debilitar
+ni fingir satisfecho.
+
+OBJETIVO
+
+Implementar un historial de operaciones empresariales consultable y seguro,
+respaldado por PostgreSQL, integrado con las transacciones, permisos, Angular,
+OpenAPI, pruebas, QA y CI existentes. No inventar acontecimientos pasados ni
+exponer datos sensibles para que el historial parezca más completo.
+
+NO ejecutes ningún comando Git: ni status, diff, add, commit, push, pull,
+merge, checkout, switch, rev-parse ni otros.
+NO publiques ni integres las PR existentes.
+NO modifiques evidencias AG-003 a AG-013, migraciones V1–V6 ni datos reales.
+NO introduzcas microservicios, una segunda BD, Kafka, Redis o infraestructura
+innecesaria.
+NO compres recursos, configures cuentas externas ni despliegues públicamente.
+NO reduzcas controles para acortar tiempos.
+
+Límite máximo: ocho horas desde inicio real. Registrar inicio, fecha/hora límite
+y fin en Europe/Madrid.
+
+=======================================================================
+1. RECONOCIMIENTO BREVE Y ORQUESTACIÓN
+=======================================================================
+
+Leer AGENTS.md, MEMORY.md, borrador 007, especificación/plan/validación 004–006,
+ADR-0005 a ADR-0007, modelo de datos, seguridad, contrato API, migraciones V4–V6
+y únicamente el código necesario para integrar los eventos.
+
+Máximo quince minutos de precondiciones: Java 21, Node, npm, Docker,
+construcción básica y protección de evidencias. No repetir todas las pruebas
+anteriores antes de trabajar. La CI remota se comprobará después mediante GitHub,
+pero no bloquea 007 si los contratos heredados pasan localmente.
+
+La sesión principal es coordinador. Si se pueden usar subagentes:
+- planificador: SDD, esquema, contrato y casos límite (lectura);
+- implementador backend: V7, persistencia, transacciones, HTTP y pruebas;
+- implementador frontend: Angular, vistas, estados y pruebas;
+- revisor independiente: lectura, riesgos, matriz y evidencia.
+Máximo tres subagentes concurrentes. Un solo escritor por archivo.
+Si no se pueden invocar, usar fallback secuencial nivel 3 sin más de cinco
+minutos de investigación. No afirmar aislamiento read-only técnico si solo
+es una regla de instrucciones.
+
+=======================================================================
+2. DECISIONES APROBADAS D-007
+=======================================================================
+
+D-007-01 — Qué se registra
+
+Eventos de negocio duraderos, no cada petición HTTP. Registrar a partir de V7:
+- PROVEEDOR_CREADO, PROVEEDOR_MODIFICADO, PROVEEDOR_DESACTIVADO,
+  PROVEEDOR_REACTIVADO;
+- BORRADOR_CREADO, BORRADOR_GUARDADO, SOLICITUD_PRESENTADA;
+- APROBADA y RECHAZADA se obtienen de la tabla autoritativa ya existente
+  gestion.decisiones_solicitud (V5), sin duplicar eventos en una segunda tabla.
+
+Ningún replay de idempotencia, reintento o lectura crea un evento de negocio.
+Un cambio de estado no-op no crea un evento falso.
+Los fallos y rechazos técnicos siguen en sus registros mínimos de seguridad,
+no se inventan como transacciones exitosas.
+
+D-007-02 — Historia anterior a V7
+
+NO reconstruir ni inventar altas o modificaciones previas a V7 mediante
+created_at, updated_at, Git, logs o datos actuales.
+Las decisiones ya almacenadas en V5 sí pueden proyectarse porque hay un
+registro durable de ese hecho con autor, fecha y transición. La consulta debe
+explicar cuando un recurso existe desde antes del inicio de la auditoría,
+sin insinuar que conocemos sus eventos anteriores.
+Conservar V5, V6, registros idempotentes y checksums sin alteraciones.
+
+D-007-03 — Persistencia y atomicidad
+
+Crear únicamente Flyway V7 para un historial append-only de cambios de
+proveedores y solicitudes. Campos mínimos:
+- id UUID o identificador monotónico;
+- tipo_recurso cerrado;
+- recurso_id UUID;
+- accion cerrada;
+- actor_id UUID;
+- actor_nombre_visible resumido al momento del hecho, si autorizado;
+- version_anterior y version_resultante, cuando aplica;
+- estado_anterior y estado_resultante, cuando aplica;
+- ocurrido_en TIMESTAMPTZ de servidor;
+- peticion_id/operacion_id cuando existe y no sea un secreto;
+- datos mínimos de presentación, nunca cuerpo completo ni campos privados.
+
+La inserción del evento debe realizarse en la MISMA transacción que la
+modificación de negocio. Si falla el evento, falla el cambio y hay rollback.
+Otorgar a la aplicación solo SELECT e INSERT de la tabla de eventos; no
+UPDATE ni DELETE. La BD con privilegios administrativos sí puede cambiar
+datos: NO vender esto como integridad criptográfica inalterable.
+Sin borrado físico o purga automática del historial en v1.
+
+D-007-04 — Información que NO se conserva
+
+Nunca guardar ni devolver en eventos:
+- JWT, refresh token, cookies, CSRF, contraseñas, claves;
+- dirección o IP completa de visitantes;
+- identificación fiscal completa, correo o teléfono del proveedor;
+- descripción larga de solicitud ni conceptos completos;
+- comentario o motivo íntegro de decisión en listado global;
+- cuerpos HTTP, cabeceras completas ni stack traces.
+
+El detalle autorizado de una decisión puede seguir mostrando comentario/motivo
+desde su registro V5 original, conforme a los permisos ya existentes.
+
+D-007-05 — Permisos sobre historial
+
+Historial de una solicitud:
+- SOLICITANTE: únicamente solicitudes propias;
+- SUPERVISOR: las asignadas conforme a las reglas existentes;
+- AUDITOR y ADMINISTRADOR: todas;
+- usuarios multirrol: unión explícita de permisos.
+
+Historial de proveedor:
+- AUDITOR y ADMINISTRADOR;
+- SOLICITANTE/SUPERVISOR no obtienen historial interno solo por poder
+  consultar el catálogo activo.
+
+Listado global de auditoría:
+- únicamente AUDITOR y ADMINISTRADOR.
+
+Comprobar permisos en backend sobre identidad VIGENTE y recurso, no en Angular.
+Recurso inexistente/no visible devuelve 404 controlado, sin filtrar detalles.
+
+D-007-06 — Contrato HTTP
+
+Crear endpoints GET:
+- /api/solicitudes/{id}/historial
+- /api/proveedores/{id}/historial
+- /api/historial
+- /api/resumen
+
+Todos autenticados. /api/historial solo AUDITOR/ADMINISTRADOR.
+El resumen se calcula según visibilidad del rol y muestra contadores de
+solicitudes por estado y acciones pendientes propias, no métricas inventadas.
+No introducir nuevos endpoints de escritura del historial.
+
+D-007-07 — Filtros y paginación
+
+- page empieza en 0;
+- size 20 por defecto y máximo 100;
+- orden descendente por fecha e identificador único para desempatar;
+- filtros cerrados por recurso, acción, actor UUID y fechas ISO válidas;
+- periodo desde/hasta coherente; sin SQL dinámico abierto;
+- contar DESPUÉS de aplicar permisos y filtros;
+- evitar consultas N+1 y devolver páginas acotadas;
+- documentar límite real observado, sin afirmar un SLA no medido.
+
+D-007-08 — Registro V5 de decisiones
+
+No duplicar una decisión anterior ni una nueva al consultarla.
+Construir una proyección coherente, de solo lectura, de
+`gestion.decisiones_solicitud` con:
+- tipo APROBADA/RECHAZADA;
+- solicitud, actor y fecha originales;
+- versión previa y resultante;
+- resumen breve, sin exponer comentario/motivo en listado global.
+
+Si hay una decisión y un evento de solicitud presentada, ordenar ambos en la
+misma línea temporal. Garantizar clave de evento estable para paginación;
+no confundir UUID original con secuencia de eventos.
+
+D-007-09 — Interfaz Angular
+
+- historial cronológico en detalle de solicitud;
+- historial del proveedor solo para auditor/admin;
+- vista global de auditoría para roles autorizados;
+- resumen de la aplicación con datos reales y permisos;
+- filtros/páginas/rutas directas;
+- estados vacío, cargando, fallo, sin acceso y datos anteriores desconocidos;
+- diseño armonizado con sistema visual 004–006;
+- responsive 360, 768, 1440; etiquetas, teclado, foco, contraste;
+- sin introducir dependencias visuales nuevas.
+
+Ninguna pantalla ofrece editar o borrar eventos.
+
+D-007-10 — Retención, prueba y honestidad
+
+La retención jurídica definitiva y cualquier purga requieren decisión y
+procedimiento posterior. No inventar un plazo legal de conservación.
+Documentar crecimiento, índices, estimación observada y riesgos de datos.
+La ausencia de eventos anteriores a V7 es una limitación visible.
+Probar que un fallo de escritura de auditoría provoca rollback del cambio,
+que un replay no duplica eventos, que un usuario no lee otros recursos y que
+las decisiones anteriores siguen disponibles de manera coherente.
+
+=======================================================================
+3. SDD DE 007
+=======================================================================
+
+Actualizar el borrador:
+`especificaciones/007-historial-auditoria/especificacion.md`
+Estado: Aprobada por decisión humana AG-014.
+Conciliar D-007-01–10 con el borrador, sin borrar sus límites ni ocultar
+discrepancias; si aparece una contradicción que comprometa integridad,
+seguridad o privacidad, pararse SOLO en ese punto y continuar lo independiente.
+
+Crear:
+- especificaciones/007-historial-auditoria/plan.md
+- especificaciones/007-historial-auditoria/tareas.md
+- especificaciones/007-historial-auditoria/validacion.md
+- docs/decisiones/ADR-0008-historial-de-negocio-y-consulta.md
+
+Criterios HA-01–HA-10:
+HA-01 fuentes reales;
+HA-02 eventos nuevos atómicos;
+HA-03 decisiones V5 sin duplicación;
+HA-04 privacidad de proyección;
+HA-05 permisos;
+HA-06 consultas/filtros/paginación;
+HA-07 resumen real;
+HA-08 Angular accesible;
+HA-09 PostgreSQL, concurrencia y pruebas negativas;
+HA-10 CI, QA, documentación y evidencias.
+
+El ADR explica por qué no se hace backfill ficticio, por qué no hay borrado,
+la proyección V5, el orden seguro y alternativas rechazadas.
+
+=======================================================================
+4. IMPLEMENTACIÓN Y PRUEBAS
+=======================================================================
+
+Backend Java/Spring/JdbcTemplate y V7:
+- esquema append-only;
+- inserción en las transacciones existentes sin añadir efectos falsos;
+- selectores seguros y DTO mínimos;
+- autorización por recurso y rol;
+- unión/consulta de decisiones de V5 sin duplicación;
+- paginación/orden estable;
+- documentación OpenAPI;
+- pruebas PostgreSQL real, rollback, carreras, replay, permisos y privacidad.
+
+Frontend Angular:
+- clientes API, modelos, vistas, rutas y tests;
+- timeline, resumen, estado vacío y errores;
+- estilos reutilizando el sistema propio, sin refactor general innecesario;
+- pruebas de visibilidad, filtros, navegación, accesibilidad y responsive.
+
+E2E con usuarios exclusivamente ficticios:
+1. alta de proveedor y evento;
+2. modificación, baja y reactivación;
+3. crear/editar/presentar solicitud, historial correcto;
+4. aprobar/rechazar con evento V5, sin duplicaciones;
+5. reintento idempotente sin segundo evento;
+6. recursos ajenos invisibles;
+7. auditor/admin con listado global;
+8. resumen por perfil;
+9. recursos anteriores a V7 sin historia inventada;
+10. recarga, navegación y teclado.
+
+Regresión obligatoria 001–006, incluidas:
+- `mvnw verify` real: Spotless, SpotBugs, unitarias y PostgreSQL IT;
+- Angular tipos/lint/formato/pruebas/build;
+- Docker sin caché cuando proceda;
+- Compose, salud 200/503, Swagger;
+- usuarios, proveedores, solicitudes, aprobaciones, idempotencia;
+- E2E completo, sin ocultar fallos con reintentos;
+- npm/Maven auditorías, actionlint y documentación;
+- comprobación de evidencias sin secretos.
+
+No sustituir pruebas PostgreSQL por base en memoria.
+La CI remota se considera pendiente hasta que la persona haga push.
+
+=======================================================================
+5. DOCUMENTACIÓN Y EVIDENCIAS
+=======================================================================
+
+Registrar AG-014 en `docs/trazabilidad/ejecuciones-agentes.csv`.
+Crear `docs/trazabilidad/AG-014-informe.md` y `qa/evidencias/ag014/`.
+Actualizar solo los documentos afectados: README, índices, arquitectura,
+API/rutas, modelo de datos, seguridad, amenazas, OWASP, entorno, MEMORY, CI,
+especificación/validación y manual de usuario si ya existe.
+
+No alterar informes, logs, capturas, migraciones ni artefactos históricos.
+Distinguir evidencias reales, límites de revisión y criterios pendientes.
+
+=======================================================================
+6. TRATAMIENTO DE FALLOS
+=======================================================================
+
+No parar por warnings, subagente/MCP no disponible, dependencias transitivas
+preliminares ya reguladas, ni por un fallo de una prueba aislada con trabajo
+independiente. Dos ciclos de corrección por mismo fallo como máximo; después
+bloquear solo lo afectado y seguir trabajo seguro.
+
+Bloqueos globales: riesgo de corrupción o privacidad, pérdida de datos,
+secreto real requerido, modificación obligada de V1–V6, vulnerabilidad alta
+aplicable sin solución, imposibilidad de construir o plazo agotado.
+
+=======================================================================
+7. CONTINUACIÓN OPCIONAL DE 008
+=======================================================================
+
+Si 007 queda COMPLETAMENTE verificada localmente, revisión sin bloqueantes,
+y restan al menos 90 minutos de la ventana:
+
+- crear únicamente borrador de especificación 008-demo-operacion-entrega;
+- inventariar requisitos reales de despliegue, Javadoc, manuales, copias de
+  seguridad, cuentas ficticias, limpieza de datos y prueba desde Internet;
+- preparar tareas documentales no invasivas y borradores de configuración sin
+  claves ni alteración de producción;
+- registrar opciones Cloudflare Pages Free (Angular), Render servicio siempre
+  activo (Spring) y Neon Free (PostgreSQL) como candidatas, no despliegue hecho;
+- no contratar, crear cuentas, configurar DNS, migrar una BD real ni publicar.
+
+NO comenzar código o despliegue 008 sin su aprobación humana posterior.
+
+=======================================================================
+8. ENTREGA
+=======================================================================
+
+Informa:
+- inicio, cierre y duración;
+- HA-01 a HA-10 uno por uno;
+- SDD/ADR, V7, contratos;
+- eventos nuevos y proyección V5;
+- pruebas de rollback, replays, permisos, datos previos;
+- backend, Angular, E2E, auditorías, regresión;
+- capturas 360/768/1440, accesibilidad acotada;
+- archivos creados/modificados, riesgos;
+- manifiesto de commits semánticos para ejecución humana;
+- confirmación precisa de operaciones Git (sin afirmar ausencia si no es real);
+- borrador 008 solo si se cumplió su condición;
+- pendientes remotos y aceptación.
+
+No declares 007 aceptada, integrada ni desplegada.
+Empieza ahora.

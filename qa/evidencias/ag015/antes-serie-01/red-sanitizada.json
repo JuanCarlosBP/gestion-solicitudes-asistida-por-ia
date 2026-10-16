@@ -1,0 +1,558 @@
+[
+  {
+    "orden": 1,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/autenticacion/csrf",
+    "cookiePresente": false,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 2,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/csrf",
+    "estado": 204,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 3,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/renovar",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 4,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/renovar",
+    "estado": 401,
+    "cookiesEmitidas": [
+      "REFRESH-TOKEN"
+    ],
+    "error": "NO_AUTENTICADO"
+  },
+  {
+    "orden": 5,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/autenticacion/csrf",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 6,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/csrf",
+    "estado": 204,
+    "cookiesEmitidas": [],
+    "error": null
+  },
+  {
+    "orden": 7,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/iniciar-sesion",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 8,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/iniciar-sesion",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "REFRESH-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 9,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/identidad/yo",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 10,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/identidad/yo",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 11,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/autenticacion/csrf",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 12,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/csrf",
+    "estado": 204,
+    "cookiesEmitidas": [],
+    "error": null
+  },
+  {
+    "orden": 13,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/renovar",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 14,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/autenticacion/renovar",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "REFRESH-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 15,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 16,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/solicitudes/:id",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 17,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id/historial",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 18,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/solicitudes/:id/historial",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 19,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/autenticacion/csrf",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 20,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/autenticacion/csrf",
+    "estado": 204,
+    "cookiesEmitidas": [],
+    "error": null
+  },
+  {
+    "orden": 21,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/renovar",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": false,
+    "mismoActor": null
+  },
+  {
+    "orden": 22,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/autenticacion/renovar",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "REFRESH-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 23,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 24,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/solicitudes/:id",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 25,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id/historial",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 26,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/solicitudes/:id/historial",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 27,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "POST",
+    "ruta": "/api/solicitudes/:id/aprobar",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 28,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 29,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "estado": 404,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": "OPERACION_NO_ENCONTRADA"
+  },
+  {
+    "orden": 30,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/solicitudes/:id/aprobar",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 31,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 32,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 33,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 34,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/solicitudes/:id",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 35,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id/historial",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 36,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/solicitudes/:id/historial",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 37,
+    "evento": "peticion",
+    "pagina": 1,
+    "metodo": "GET",
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 38,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "POST",
+    "ruta": "/api/solicitudes/:id/rechazar",
+    "cookiePresente": true,
+    "cabeceraPresente": true,
+    "csrfIguales": true,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 39,
+    "evento": "respuesta",
+    "pagina": 1,
+    "ruta": "/api/operaciones-idempotentes/:id",
+    "estado": 404,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": "OPERACION_NO_ENCONTRADA"
+  },
+  {
+    "orden": 40,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/solicitudes/:id/rechazar",
+    "estado": 409,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": "SOLICITUD_NO_DECIDIBLE"
+  },
+  {
+    "orden": 41,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 42,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/solicitudes/:id",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  },
+  {
+    "orden": 43,
+    "evento": "peticion",
+    "pagina": 2,
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/:id/historial",
+    "cookiePresente": true,
+    "cabeceraPresente": false,
+    "csrfIguales": false,
+    "bearerPresente": true,
+    "mismoActor": true,
+    "roles": [
+      "SUPERVISOR"
+    ]
+  },
+  {
+    "orden": 44,
+    "evento": "respuesta",
+    "pagina": 2,
+    "ruta": "/api/solicitudes/:id/historial",
+    "estado": 200,
+    "cookiesEmitidas": [
+      "XSRF-TOKEN",
+      "XSRF-TOKEN"
+    ],
+    "error": null
+  }
+]
