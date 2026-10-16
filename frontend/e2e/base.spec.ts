@@ -66,11 +66,18 @@ test('Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real', async ({ p
   expect(respuesta.status()).toBe(200);
   const contrato = await respuesta.json();
   expect(contrato.openapi).toMatch(/^3\.1\./);
-  expect(Object.keys(contrato.paths)).toEqual(['/api/salud']);
+  expect(Object.keys(contrato.paths).sort()).toEqual([
+    '/api/autenticacion/cerrar-sesion',
+    '/api/autenticacion/csrf',
+    '/api/autenticacion/iniciar-sesion',
+    '/api/autenticacion/renovar',
+    '/api/identidad/yo',
+    '/api/salud',
+  ]);
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('200');
   expect(contrato.paths['/api/salud'].get.responses).toHaveProperty('503');
   await page.goto('/swagger-ui/index.html');
-  await page.locator('.opblock-summary').click();
+  await page.locator('.opblock-summary').filter({ hasText: '/api/salud' }).click();
   await page.getByRole('button', { name: 'Try it out' }).click();
   await page.getByRole('button', { name: 'Execute', exact: true }).click();
   await expect(page.locator('.responses-wrapper')).toContainText('DISPONIBLE');
@@ -85,7 +92,7 @@ test('cabeceras, mínimo contrato y denegación por el backend', async ({ reques
   expect(inicio.headers()['content-security-policy']).toContain("frame-ancestors 'none'");
   expect(inicio.headers()['x-frame-options']).toBe('DENY');
   const prohibida = await request.get('/api/no-autorizada');
-  expect(prohibida.status()).toBe(403);
-  expect(await prohibida.json()).toEqual({ error: 'ACCESO_NO_PERMITIDO' });
+  expect(prohibida.status()).toBe(401);
+  expect(await prohibida.json()).toEqual({ error: 'NO_AUTENTICADO' });
   expect((await request.post('/api/salud')).status()).toBe(403);
 });

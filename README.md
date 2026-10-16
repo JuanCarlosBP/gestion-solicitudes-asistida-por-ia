@@ -9,6 +9,16 @@ con permisos claros y un historial que permita saber qué ocurrió.
 
 ## Estado actual
 
+AG-010 ha implementado [002 — Identidad y acceso](especificaciones/002-identidad-acceso/especificacion.md),
+con especificación, plan y tareas aprobados expresamente por la persona responsable.
+Las comprobaciones locales pasan: 55 pruebas backend, 56 Angular, 8 E2E,
+Docker sin caché, Compose con caída/recuperación reales y auditorías finales.
+El [informe AG-010](docs/trazabilidad/AG-010-informe.md) y la
+[validación 002](especificaciones/002-identidad-acceso/validacion.md) separan resultados
+reales de pendientes. 002 no está aceptada ni integrada.
+
+### Base de entrada conservada
+
 AG-008 completó la verificación local de la base implementada en AG-006:
 Spotless y `mvnw verify` pasaron, con 13 pruebas backend, 11 Angular y 5 E2E
 acreditadas. PostgreSQL/Flyway, persistencia, caída 503 y recuperación pasaron.
@@ -75,8 +85,8 @@ La primera versión deberá permitir:
 CRUD significa crear, consultar, modificar y eliminar.
 Un endpoint es una dirección de la API para una operación concreta.
 
-Las capacidades de negocio siguen previstas. Solo están implementadas las rutas
-técnicas Angular, la API de salud, OpenAPI y Swagger descritos en 001.
+Las capacidades de negocio siguen previstas. Están implementadas la base técnica
+001 y la identidad de 002: acceso, cuenta, sesiones, roles y sus controles de seguridad.
 No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
 La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
 
@@ -120,7 +130,8 @@ Las reglas de actuación están en [AGENTS.md](AGENTS.md).
 ## Seguridad, calidad y documentación
 
 La seguridad y la calidad son requisitos desde el diseño.
-El servidor será la autoridad final sobre identidad, permisos y datos.
+El servidor es la autoridad final sobre identidad y permisos; las reglas de datos
+de los módulos futuros se definirán en sus respectivos incrementos.
 Una funcionalidad necesitará criterios de aceptación y evidencias de sus comprobaciones;
 tener políticas escritas no demuestra que los controles funcionen.
 

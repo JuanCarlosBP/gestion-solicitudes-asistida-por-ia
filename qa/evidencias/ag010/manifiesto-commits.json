@@ -1,0 +1,640 @@
+{
+  "fecha": "2026-10-13T22:32:30.682Z",
+  "estado": "Propuesta para ejecución humana; no se ejecuta Git ni se crean commits.",
+  "criterio": "Agrupación lógica; validar el conjunto completo antes de integrar. Evidencias se enumeran sin hashes circulares.",
+  "grupos": [
+    {
+      "id": 1,
+      "mensaje": "docs(sdd): definir identidad y acceso aprobados en AG-010",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "docs/decisiones/ADR-0003-identidad-jwt-y-sesiones.md",
+          "sha256": "C83D037757FEB8CB38D7AD050DBFBF6E19DB2EF1FB9BE2B7AA57DFE9BB3853A0"
+        },
+        {
+          "estado": "creados",
+          "ruta": "especificaciones/002-identidad-acceso/especificacion.md",
+          "sha256": "AEC9BEB7227630F1EFF9D99DBB8D40426706006D50429346C22DBF186E333C85"
+        },
+        {
+          "estado": "creados",
+          "ruta": "especificaciones/002-identidad-acceso/plan.md",
+          "sha256": "8BCFF6434B6F45C975FCBEB6CE2855848A065EA0E33C538C36505C212E12BC8F"
+        },
+        {
+          "estado": "creados",
+          "ruta": "especificaciones/002-identidad-acceso/tareas.md",
+          "sha256": "420A9DA78D075A506E54C53F907FB844A1FAD2E19D0B4972FD5554C2A1C042B1"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "mensaje": "feat(identidad): autenticar y revocar sesiones con JWT y refresh",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/AccesoEmitido.java",
+          "sha256": "8463B49DBF0B8EC89291C08CB53969F4F2155AB7620446F6F1E348B3BC3CD30E"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/Contrasenas.java",
+          "sha256": "CB5E7EDD61FFFFB715AABD399D80CF362D00860B5A9BA7DA161BF9DFB88726C8"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/EmisorJwt.java",
+          "sha256": "D833396EE30052849E684B7157484158064B8E90402086F2345E8C347408BCFF"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/RepositorioIdentidad.java",
+          "sha256": "E488E9E70D16DAF7C8DEBE8FAECB89A964A7F304205B836247082C3CF3703DE3"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/SecretosRefresco.java",
+          "sha256": "E39B9DDFB3BB451ABA45703CE17FC2A2B047534CC47F142D8A22C9F6B8AFBB81"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacion.java",
+          "sha256": "B85CBC7AB03E37658F530E56F6177983F014AE3727F496E5CC2FD76B3FD5C3DE"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/AprovisionamientoLocal.java",
+          "sha256": "B7E17F33B2FF64AA605315A6323625BAA6F1EBA2F2548706047D254779D70FC4"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ClavesRsa.java",
+          "sha256": "117D4483BB2A6C2C29AC163CCC5F9A3EDFBE93C369A3B54E6FEA263C1D8BF108"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ConfiguracionIdentidad.java",
+          "sha256": "8344DB7E30CCBB93FC63DCF903FAF0308E35526C2E0E309EA40CFA5BE0A77E00"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/DuracionesIdentidad.java",
+          "sha256": "EF33346BA8BB71137B54D008E178611D1C94AAF1E9D469369A7A338B1B2E27CB"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/configuracion/ValidadorJwt.java",
+          "sha256": "FAF6987DF4A7B423761AFDF04C26A8C18DD18257084C4A63DDA4A45D03F4A76A"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Correo.java",
+          "sha256": "0421EEAA594A555B4D028FBA52B4A34321CBBF27A19625F8DAA969D43CE78896"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/IntentosAcceso.java",
+          "sha256": "3E60F8D2EE616828FB6B61419FB341A71F024CA71E54938E1064E9130F9D182C"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Rol.java",
+          "sha256": "BFCB1C27A8F7A91C61FD90D80524DA70B17DFD170F2265D1957AEA48E93BFA60"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/SesionAcceso.java",
+          "sha256": "97D1AA9B07A2E8E22610C9FA54E3D3210AE81EAD72749E9118B23D1EF09BABA7"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/TokenRefresco.java",
+          "sha256": "3BF220E73A1A3853B7C1CA7CD6DF538EAE75ADBA06806BB2CF32033639FDB536"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/Usuario.java",
+          "sha256": "A8FD43EA4196C327DCC7EBCAF696AD98EB99E1070A29F422F8130E92468F81A0"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/dominio/UsuarioPublico.java",
+          "sha256": "50DCE39B8AE2D28A9C9BE77D9909BD79A67D3A5FCAE12ACCF42E112684B8E1F4"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java",
+          "sha256": "75DAC5644971CF89DA9EE62C698BFCFAED5597ECA46018C93F8E032E735D75A0"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java",
+          "sha256": "D1C3A2484A34BB0313952BC02A09FD4FE16E16A91C1FB35D6D3455AAB68FD96E"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/CookiesIdentidad.java",
+          "sha256": "B394CFB9DCEF14DFE9B2990532DF72AACA56B2892ABF39D2E8582B963B7BDDC9"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/http/RepositorioCsrfPorEntorno.java",
+          "sha256": "379C49B88C1FB8DF8F58C82888A868546214D54FB696ECF9BBAF2B4B8AA0E632"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/identidad/persistencia/RepositorioIdentidadJdbc.java",
+          "sha256": "EE6D0D3BDCA67CF550D80FEEC7C7B1152B2E37F3B3A93F84FF7DD95B09824345"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/main/resources/db/migration/V2__identidad_y_acceso.sql",
+          "sha256": "A19208EB1D925F43D08883BD69AFFE9E8C5EA16841BD57118A9AA48186A249C3"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/aplicacion/ServicioAutenticacionTest.java",
+          "sha256": "085908D04416DB2809C9EBE0575089DB5F462EC07DAF0B3CED382C12CEB6CCFB"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/configuracion/JwtYClavesTest.java",
+          "sha256": "DFF488191DAEC6670AA187C8FF016BF6277C930D0D3B6D4536E1AF7485F3D934"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/dominio/IdentidadDominioTest.java",
+          "sha256": "3F2D0FCB21D4561364531B7C43A24FB9D064459E0187DF21560AA965D1E99880"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/http/CookiesIdentidadTest.java",
+          "sha256": "FBD7E57D72B3998AC80FF97C374F6E6EC768D8A8EF7795E249A31B5E5DDF2D06"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/IdentidadAccesoIT.java",
+          "sha256": "3C3A244BECF70D8711AC01C436435D9959C3806DB87E65830EA654CB00B21E98"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/identidad/integracion/PerfilesIdentidadIT.java",
+          "sha256": "F61DBC5E0D0DBCAB9E97F36A89AC68EDD046E1FB5BBF6258EB1F962715F41B22"
+        },
+        {
+          "estado": "creados",
+          "ruta": "backend/src/test/resources/db/invalida/V999__fallo_intencionado.sql",
+          "sha256": "ADB96B6A3EC68563BEE777303F64C79257DA8A53B606FB77FFE837B7A5B6F786"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/pom.xml",
+          "antes": "7B6ADCA71B3ED2A6D274F77B5798C39E0AE5EC24F716B8085863BE3CDE847B82",
+          "sha256": "0AB04B8625746659C463F263BCF5F7CE5D923F4ACAF18429CA81795FF2415CF7"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ContratoApi.java",
+          "antes": "8250FD1CCDE63BE4E969898AA43E670D004388A9F42FB3B399A43CCB46E163B6",
+          "sha256": "4B45448ACFA893FDA32323A39955AD127DEEF9FD6A9CEFA185F9D10C79214852"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/ErroresControlados.java",
+          "antes": "0AAA29E461EEC984325CEC0BA635A1ECDD047DC2A72EDA9E7ED7800FE8DA4DA6",
+          "sha256": "05EDAFBE880384B3557039F4E812152189A8E691322CB93EE7F2EBE1C76FA5DF"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/main/java/es/gestionsolicitudes/configuracion/SeguridadTecnica.java",
+          "antes": "79F7DB00D54F7DBC790BFFECC5D1903BBEE94768508679C7B57961E7FC396BDC",
+          "sha256": "7E351E00C56937E0494C540CFD83316206EF011EB639EBA51D2EA3B0ED70BA7F"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/main/resources/application.yaml",
+          "antes": "792642E1BF9A043F29DAF540782DA6B8E4DA366BBF236B93A1998C688032B460",
+          "sha256": "6A6E3BE447BB04BC5BBCE88ABD7F3FFDAF0B405694EC948341BF99FFAA0C1E3F"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/integracion/BaseVerificableIT.java",
+          "antes": "D9D19047BA28B19700A95EC9224DC78A85F7E66296528DBB06AC349DBD29103E",
+          "sha256": "40EE335F2BA1C805B9673251A3D8070D78AA679FE41CD3CE4ECDC754C245B2EA"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "backend/src/test/java/es/gestionsolicitudes/salud/http/ControladorSaludTest.java",
+          "antes": "A8FDE52593625A1D62024287A5AA13F0EBCE1487C93EB4A7C00AB77F49D7D2AD",
+          "sha256": "79C5C1CF0161922D5EF2D6A7ACD391B5F9FDAA98058A537096D029A0A2325EDF"
+        },
+        {
+          "estado": "eliminados",
+          "ruta": "backend/src/test/resources/db/invalida/V2__fallo_intencionado.sql",
+          "sha256": "4CBADE9C81761C0C2748270CFC7FDADF1C6B809CE6800ED2D4C9882EFB5374D8"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "mensaje": "feat(frontend): incorporar acceso y cuenta con sesión en memoria",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "frontend/e2e/identidad.spec.ts",
+          "sha256": "1FB0E6BF897B67DA9011598EA8ED0464C79D08DB223E5B7FBC7DAD8AB6DF38D8"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/acceso.html",
+          "sha256": "91527BE24A59CFC942367E16D87C96C94632AAFA29CD2AE0BF1B4535408C290C"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/acceso.spec.ts",
+          "sha256": "A5524C454B91E3B77F2CE102F296235D74874F3B7F12DC3ACA0C7C24203835D4"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/acceso.ts",
+          "sha256": "1D1CF213AD51559F8880A58DFD5EF7EF2C3F98820AC690EB5DA03D92AA2D0C8E"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/autenticacion.spec.ts",
+          "sha256": "CE4F920AF1581B363FD3FFE0219F21226AECB31012A88A3053679B5C145C6D71"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/autenticacion.ts",
+          "sha256": "291D926D33EA9408EEECE2F8C0C11BE4720E411D308A864E66A8CE644BC708AE"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/datos-prueba.ts",
+          "sha256": "799BBEA1C7E54DAE09605F5C78E541A0793298D57FBA880EAA8BD98135824052"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/identidad-modelo.ts",
+          "sha256": "5F4094CD879215DC22B0C5FB15E0F17CB6703D811CAE936C2AC7DC4EF025D6DD"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/identidad.css",
+          "sha256": "118EAAD36554DEA9A9B1E9983DD0040DB074A05EC9339729B20FCF470C4C88C9"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/mi-cuenta.html",
+          "sha256": "EEC732E37460E82CD388A227A69EF6BBADEC5EA9754C95BCC34212E8EA88A358"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/mi-cuenta.spec.ts",
+          "sha256": "44D50E9B2F45CEE7BC80430C8117D3F2435F866B47782D2DC3D4755B92495ACF"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/mi-cuenta.ts",
+          "sha256": "AE95B29E75BB3FE2E8CBCC7FD0422CC97429F2C9338173B44FC3B11F533B8751"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-guard.spec.ts",
+          "sha256": "3E8ACBB499B5FD1A6F5535EDFF4705F9300441FA9F1633C7D59C1A6F6D5927E8"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-guard.ts",
+          "sha256": "E03E68FE46EBCFE45AC644990003BE4336044C4CF5EE7D168DEDBCD9DCFE1864"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-interceptor.spec.ts",
+          "sha256": "ABF60FDE4515D7D5569FE6EE92009C45695AA7B27C003A6430DC91FC0295C646"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-interceptor.ts",
+          "sha256": "24227EAF86426AE856002D1B5265BEADBFC2EBEBB0CB17C6266B9C0B5D4F13E1"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-store.spec.ts",
+          "sha256": "D3FFC300E0697190098E4C56E0D920806AE9DDB7FD06F797F8FF8000F3B82546"
+        },
+        {
+          "estado": "creados",
+          "ruta": "frontend/src/app/identidad/sesion-store.ts",
+          "sha256": "105A26894DA5EFE90E0C4892006FD021A2BEBC3B61B7AB6E74D3D073B6223903"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/e2e/base.spec.ts",
+          "antes": "05FA16178CEA407D337F465FAA63D237C368D3533D2B634224747EDDD8B8C206",
+          "sha256": "0546A016F10F505EB988ADBF6D64B1EB7E7F5F2C79175BB4E7D97925DA1B923E"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/playwright.config.ts",
+          "antes": "07B4D860B3C3EA0A8C8BABFE15F1F92EEA501534CB79DFA4091ECC18EB96B6DC",
+          "sha256": "BD594F8A9A26DC664DA839A0833D3073C1F74C2A234F1B142CB3AD83C2D6236B"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.config.ts",
+          "antes": "2E2CBAD01484E664EF105087DE215D51AB14B949E5F1D372BF9AE22A28E95097",
+          "sha256": "8F70B9965253FAEAC032EA7056722DA96065B4FA1E33FD998CC3DC309056CBED"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.css",
+          "antes": "BC7D1E8D1FC73EF05F2A86B57E1936852DDC3F816BE8A91DF5AFB114EDAC865C",
+          "sha256": "D701E5C778E10B5EF65346ECC83E719091C8876ACBD2886EE7A6A93420DF7A0F"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.html",
+          "antes": "9B221FAB1E06F849A42A016BA91A459E8B36F81300769924D6885F93106C01F7",
+          "sha256": "5B7B5F0A8C589AC3FE2BA76F3896BEA86F38C6567957C7C1442F5818CFC66917"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.routes.spec.ts",
+          "antes": "1B6E504D92E8006C16E5DEFA829649B7B52536527D89D03D4699917F76F6DDB1",
+          "sha256": "7BFA4290737E212D87B357E55AC15C8EA9778E0C2BFDDA6DEF69AC0D213F12E6"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.routes.ts",
+          "antes": "6D8C6BB51389B3F177ECCE20ED83314D7F97FE8C2DB3F0DB84BBA343231F3FE9",
+          "sha256": "F7D0878E49867E15187D784FE6C2C37266214564B7190B79E702117F7D35F8F8"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "frontend/src/app/app.ts",
+          "antes": "758E15DB96BA701D72B57A6BFC21D26C6D29117188F3C0E7216C72C32F9F0ABF",
+          "sha256": "836A149EB46B3FE5B51643A0CCF209571647E7E31F587B21310E8BAA23769AB2"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "mensaje": "ci(qa): verificar identidad en Compose y proteger evidencias",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "infraestructura/.env",
+          "sha256": "CF52FDCE9340A2CCBA376A704D6D4436D14C8B19B202CD727B064A6EF2EB7FDF"
+        },
+        {
+          "estado": "creados",
+          "ruta": "qa/auditar-npm-offline.mjs",
+          "sha256": "6C39758051EB9D6C910BE75C4CFC26F19F2726DC8BB92F86E15A27C240531D3D"
+        },
+        {
+          "estado": "creados",
+          "ruta": "qa/verificar-sesiones-compose.mjs",
+          "sha256": "74EB6E241D8ECFF6C8FB65B310C1EBDE0D185ADFCB6F6B4759952E211B256AA2"
+        },
+        {
+          "estado": "modificados",
+          "ruta": ".github/workflows/ci.yml",
+          "antes": "2ACC843A03D5BEBC30A5D475B90B7077C4EC0289E718B87C4608F37F7D502942",
+          "sha256": "D81CCC66786F3E597C7341FD4EE2F694348732DFBAAF775D4A6427D95314EAE9"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "infraestructura/.env.example",
+          "antes": "CF52FDCE9340A2CCBA376A704D6D4436D14C8B19B202CD727B064A6EF2EB7FDF",
+          "sha256": "6980206E53F8C4794F0AB5A5C774BF8917C413FD9001B43F23119663DB4DAE1C"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "infraestructura/compose.yaml",
+          "antes": "E64FE5E0D53DACAFF66F48D8CF2B869EF74542F76C742EC5FCF7D580B7127DE9",
+          "sha256": "4C471767FB8A314EDBF52CB888DA0F26BFBF3544CFFE6FC0F5FDE3879A61A195"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "qa/rutas-evidencia.mjs",
+          "antes": "7EA8EF4F2F2792A7DE6CCE6365982B9B3FA490E58181619A24E2BAAA6957B6B0",
+          "sha256": "B854055E66393CD95965B67311129BE6EBBE8874A126F1921998BA5332A9F0AF"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "mensaje": "docs(ag010): registrar validación, revisión y entrega local",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "docs/documentaciondev/api-y-rutas.md",
+          "sha256": "FC59AEEFB4B9E46AD2479C7E177852070E0B58072FD4126A2B272F7F705DE37E"
+        },
+        {
+          "estado": "creados",
+          "ruta": "docs/documentaciondev/modelo-de-datos.md",
+          "sha256": "27D7A76BEDCA7A8503CC208DB468948CFAC9D2AAB5745D153E91727BBC71B386"
+        },
+        {
+          "estado": "creados",
+          "ruta": "docs/documentaciondev/seguridad.md",
+          "sha256": "463FA80DD6E2E99EAACB668D0CC5030788A0128A29FF5CA3D3E0630D551BF886"
+        },
+        {
+          "estado": "creados",
+          "ruta": "docs/trazabilidad/AG-010-informe.md",
+          "sha256": "8F36EDD137E608816C503FC6A02CE11FD75BAE31A65793EAD885C1AFE55D6BFE"
+        },
+        {
+          "estado": "creados",
+          "ruta": "especificaciones/002-identidad-acceso/validacion.md",
+          "sha256": "C5720245F2083E4E34147ECAC2222D2DA304BE4B5BD19DA25365FB9C44DFF8E7"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/documentaciondev/arquitectura.md",
+          "antes": "319FEB35707A72A2215EF6DC6C007D575FDA2A5C6BC4381AB66DCD36F347C2A1",
+          "sha256": "AC6CEB84BE66FADED7115AFBEEC13AC76C3D75DAC2E38D49CC286609CD3EBA51"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/documentaciondev/entorno.md",
+          "antes": "2C20EC18FF67575A721991CB9802B83D64402A271160CC621D25A1C980F8ECA1",
+          "sha256": "4EFA505C3083E690337011F7FA0B029F7ADEE6EAF9814F69AC27B2059F24DDFF"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/documentaciondev/versiones.md",
+          "antes": "0BB68A106F94EEDD91F129118FC3E774627FCF9CA90145402A535F495773A9C0",
+          "sha256": "07E0C7897BE80E3889B38C74990A4A94AE5FB752634844AA8EC5E5E721A842BE"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/README.md",
+          "antes": "7DEB46D5C1DE04101799A6E9DBC05E2C9145D13E622B9E34ABEAD690112BF65E",
+          "sha256": "C97AB39E1A6B6B23B4ED1BF01D1A818AB3A8DDE8E96AE0CF38F59C38852757CD"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/seguridad/cobertura-owasp.md",
+          "antes": "97EFC4F8D078B9F3E7A048F96AFA8251977014C7C9801BFDAC64EE760EF8D8D1",
+          "sha256": "7F1D4E18F056BC9ED3726AE80B7E7E2C127FCF1850A30CBEFC1F10FF329B7CC4"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/seguridad/modelo-de-amenazas.md",
+          "antes": "DC9CE3DF65C067C16D03CB67F331D1D4535A022663B78E0D200E8323596F7C2F",
+          "sha256": "4A86643A24079F385BAEEE4127AA5F3B92E23BEF321B9AEC19DF3AE72E0E48D6"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "docs/trazabilidad/ejecuciones-agentes.csv",
+          "antes": "FFFDFACF0C99ACFB187FF3CCA5010E22048E249F67720B6C3C684AC75AB52B92",
+          "sha256": "36B5B6E79ED6DC5BAE78DA9AD252C9503667E15BE2507784A6A569EF05B3CA96"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "especificaciones/README.md",
+          "antes": "9C6DB11A62A52A153389B52371D6567F243D61F5AB4FC036005442124CB30D0D",
+          "sha256": "B0DD2F62014C4F46D0A1201A431E6AD5A1528D802246D5835CD102C63C6724CC"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "MEMORY.md",
+          "antes": "9122AC1AC78D8CB8430CE3DF465D241307A4FD4713F3DF647AD221BB7A713D5B",
+          "sha256": "17D2B179D677F866587182375C071468744776E55DD96956FC2CF96122627415"
+        },
+        {
+          "estado": "modificados",
+          "ruta": "README.md",
+          "antes": "B3B77EB0ADC061C45D0A1EF01C706E9099904ACFCD9414A731425EDD57A812E4",
+          "sha256": "6A833981BBD9301F349ABE38498CA6460A38E9982BF1D285551B68EAF452E52C"
+        }
+      ],
+      "evidenciasNuevas": [
+        "qa/evidencias/ag010/actionlint-01.log",
+        "qa/evidencias/ag010/actionlint-02.log",
+        "qa/evidencias/ag010/actionlint-final.json",
+        "qa/evidencias/ag010/angular-dependencias-control.json",
+        "qa/evidencias/ag010/auditorias.md",
+        "qa/evidencias/ag010/backend-compile-01.log",
+        "qa/evidencias/ag010/backend-compile-02.log",
+        "qa/evidencias/ag010/backend-fuentes-sha256.json",
+        "qa/evidencias/ag010/backend-pruebas.json",
+        "qa/evidencias/ag010/backend-resultados.md",
+        "qa/evidencias/ag010/backend-unitarias-01.log",
+        "qa/evidencias/ag010/backend-verify-01.log",
+        "qa/evidencias/ag010/backend-verify-02.log",
+        "qa/evidencias/ag010/backend-verify-03.log",
+        "qa/evidencias/ag010/backend-verify-04.log",
+        "qa/evidencias/ag010/backend-verify-05.log",
+        "qa/evidencias/ag010/bouncycastle-metadatos.xml",
+        "qa/evidencias/ag010/cierre.json",
+        "qa/evidencias/ag010/compose-arranque.log",
+        "qa/evidencias/ag010/compose-cierre.json",
+        "qa/evidencias/ag010/compose-configuracion-efectiva.json",
+        "qa/evidencias/ag010/compose-parada.log",
+        "qa/evidencias/ag010/compose-persistencia-caida.json",
+        "qa/evidencias/ag010/compose-regresion.log",
+        "qa/evidencias/ag010/compose-sesiones.json",
+        "qa/evidencias/ag010/compose-sesiones.log",
+        "qa/evidencias/ag010/compose-v2.40.3-checksums.txt",
+        "qa/evidencias/ag010/comprobar-compose-activo.mjs",
+        "qa/evidencias/ag010/comprobar-datos-sensibles.mjs",
+        "qa/evidencias/ag010/controles-scripts-final.json",
+        "qa/evidencias/ag010/controles-scripts.json",
+        "qa/evidencias/ag010/crear-manifiesto-commits.mjs",
+        "qa/evidencias/ag010/crear-manifiesto.mjs",
+        "qa/evidencias/ag010/csv-prefijo-inicial.json",
+        "qa/evidencias/ag010/datos-sensibles-control.json",
+        "qa/evidencias/ag010/dependencias-maven-01.txt",
+        "qa/evidencias/ag010/dependencias-maven.txt",
+        "qa/evidencias/ag010/docker-action-publica.yml",
+        "qa/evidencias/ag010/docker-backend-sin-cache.log",
+        "qa/evidencias/ag010/docker-frontend-sin-cache.log",
+        "qa/evidencias/ag010/documentacion-control-01.json",
+        "qa/evidencias/ag010/documentacion-control.json",
+        "qa/evidencias/ag010/entrega-integridad.json",
+        "qa/evidencias/ag010/entrega-manifiesto.json",
+        "qa/evidencias/ag010/frontend-acceso-escritorio.png",
+        "qa/evidencias/ag010/frontend-acceso-movil.png",
+        "qa/evidencias/ag010/frontend-build-01.txt",
+        "qa/evidencias/ag010/frontend-build-03.txt",
+        "qa/evidencias/ag010/frontend-e2e-01.txt",
+        "qa/evidencias/ag010/frontend-e2e-01.xml",
+        "qa/evidencias/ag010/frontend-format-check-01.txt",
+        "qa/evidencias/ag010/frontend-format-check-03.txt",
+        "qa/evidencias/ag010/frontend-format-check-04.txt",
+        "qa/evidencias/ag010/frontend-format-check-e2e.txt",
+        "qa/evidencias/ag010/frontend-lint-01.txt",
+        "qa/evidencias/ag010/frontend-lint-03.txt",
+        "qa/evidencias/ag010/frontend-lint-e2e.txt",
+        "qa/evidencias/ag010/frontend-manifiesto.json",
+        "qa/evidencias/ag010/frontend-mi-cuenta-escritorio.png",
+        "qa/evidencias/ag010/frontend-resultados.json",
+        "qa/evidencias/ag010/frontend-test-01.txt",
+        "qa/evidencias/ag010/frontend-test-02.txt",
+        "qa/evidencias/ag010/frontend-test-03.txt",
+        "qa/evidencias/ag010/frontend-typecheck-01.txt",
+        "qa/evidencias/ag010/frontend-typecheck-02.txt",
+        "qa/evidencias/ag010/frontend-typecheck-03.txt",
+        "qa/evidencias/ag010/frontend-typecheck-e2e.txt",
+        "qa/evidencias/ag010/fuentes-verificadas.json",
+        "qa/evidencias/ag010/huellas-iniciales.json",
+        "qa/evidencias/ag010/inicio-disponible.png",
+        "qa/evidencias/ag010/inicio-error.png",
+        "qa/evidencias/ag010/inicio.json",
+        "qa/evidencias/ag010/manifiesto-commits.json",
+        "qa/evidencias/ag010/maven-01.cdx.json",
+        "qa/evidencias/ag010/maven-auditoria-02.log",
+        "qa/evidencias/ag010/maven-auditoria.log",
+        "qa/evidencias/ag010/maven-hallazgos-iniciales.json",
+        "qa/evidencias/ag010/maven-inventario-02.log",
+        "qa/evidencias/ag010/maven-inventario.log",
+        "qa/evidencias/ag010/maven-osv-01.json",
+        "qa/evidencias/ag010/maven-osv.json",
+        "qa/evidencias/ag010/maven.cdx.json",
+        "qa/evidencias/ag010/memoria-entrada.txt",
+        "qa/evidencias/ag010/navegador-disponible.json",
+        "qa/evidencias/ag010/navegador-error.json",
+        "qa/evidencias/ag010/npm-audit-completo.json",
+        "qa/evidencias/ag010/npm-audit-permiso.json",
+        "qa/evidencias/ag010/npm-audit-produccion.json",
+        "qa/evidencias/ag010/npm-audit-salidas.json",
+        "qa/evidencias/ag010/npm-completo-osv.json",
+        "qa/evidencias/ag010/npm-completo-osv.log",
+        "qa/evidencias/ag010/npm-completo.cdx.json",
+        "qa/evidencias/ag010/npm-offline-resumen.json",
+        "qa/evidencias/ag010/npm-produccion-osv.json",
+        "qa/evidencias/ag010/npm-produccion-osv.log",
+        "qa/evidencias/ag010/npm-produccion.cdx.json",
+        "qa/evidencias/ag010/osv-maven-base.json",
+        "qa/evidencias/ag010/osv-npm-base.json",
+        "qa/evidencias/ag010/osv-preparacion.log",
+        "qa/evidencias/ag010/precondicion-backend.log",
+        "qa/evidencias/ag010/precondicion-frontend-build.log",
+        "qa/evidencias/ag010/precondicion-npm-ci.log",
+        "qa/evidencias/ag010/precondicion.json",
+        "qa/evidencias/ag010/registrar-cierre.mjs",
+        "qa/evidencias/ag010/revision-independiente.md",
+        "qa/evidencias/ag010/verificacion-local.json"
+      ]
+    },
+    {
+      "id": 6,
+      "mensaje": "docs(proveedores): proponer especificación 003 para revisión humana",
+      "archivos": [
+        {
+          "estado": "creados",
+          "ruta": "especificaciones/003-proveedores/especificacion.md",
+          "sha256": "E34359F6360907E101A8524FBB6503BB2C9E98D798475D5941A9B1229E4E7690"
+        }
+      ]
+    }
+  ]
+}

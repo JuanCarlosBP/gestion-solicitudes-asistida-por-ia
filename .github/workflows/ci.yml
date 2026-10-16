@@ -1,4 +1,4 @@
-name: Verificación de la base 001
+name: Verificación de base e identidad
 
 on:
   push:
@@ -8,6 +8,9 @@ on:
 
 permissions:
   contents: read
+
+env:
+  DOCKER_VERSION: v29.1.3
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,6 +34,12 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.13.0'
+      - name: Docker fijado para PostgreSQL real
+        uses: docker/setup-docker-action@e43656e248c0bd0647d3f5c195d116aacf6fcaf4 # v4
+        with:
+          version: ${{ env.DOCKER_VERSION }}
+          channel: stable
+          set-host: 'true'
       - name: Preparar evidencias exclusivas del job
         shell: bash
         run: |
@@ -117,6 +126,21 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.13.0'
+      - name: Docker fijado para integración
+        uses: docker/setup-docker-action@e43656e248c0bd0647d3f5c195d116aacf6fcaf4 # v4
+        with:
+          version: ${{ env.DOCKER_VERSION }}
+          channel: stable
+          set-host: 'true'
+      - name: Compose 2.40.3 con integridad comprobada
+        shell: bash
+        run: |
+          mkdir -p "$HOME/.docker/cli-plugins"
+          curl --fail --location --silent --show-error https://github.com/docker/compose/releases/download/v2.40.3/docker-compose-linux-x86_64 -o "$RUNNER_TEMP/docker-compose"
+          echo "dba9d98e1ba5bfe11d88c99b9bd32fc4a0624a30fafe68eea34d61a3e42fd372  $RUNNER_TEMP/docker-compose" | sha256sum --check
+          install -m 0755 "$RUNNER_TEMP/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+          docker version --format '{{.Server.Version}}'
+          docker compose version
       - name: Preparar evidencias exclusivas del job
         shell: bash
         run: |
@@ -136,9 +160,21 @@ jobs:
       - name: Persistencia, caída real y recuperación
         shell: pwsh
         run: ./qa/verificar-compose.ps1
-      - name: Navegador, rutas, accesibilidad y Swagger
+      - name: Sesiones, reinicio, rotación y reutilización
+        run: node qa/verificar-sesiones-compose.mjs
+      - name: Navegador 001 y 002, accesibilidad y Swagger
         working-directory: frontend
         run: npm run test:e2e
+      - name: Documentación y búsqueda acotada de secretos
+        run: node qa/verificar-documentacion.mjs
+      - name: Actionlint 1.7.12 y sintaxis de verificadores
+        shell: bash
+        run: |
+          curl --fail --location --silent --show-error https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz -o "$RUNNER_TEMP/actionlint.tar.gz"
+          echo "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
+          "$RUNNER_TEMP/actionlint" .github/workflows/ci.yml
+          node --check qa/verificar-sesiones-compose.mjs
       - name: Parada sin eliminar volúmenes
         if: ${{ always() }}
         run: docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop

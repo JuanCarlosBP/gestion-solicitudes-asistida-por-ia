@@ -1,0 +1,105 @@
+{
+  "requisito": "IA-13",
+  "tareas": [
+    "IA-T06",
+    "IA-T07"
+  ],
+  "fecha": "2026-10-14T00:25:06.3254888+02:00",
+  "entorno": {
+    "node": "24.13.0",
+    "sandbox": "workspace-write",
+    "pruebas": "require_escalated aprobado, sin red",
+    "npm": "11.6.2",
+    "sistema": "Windows"
+  },
+  "esperado": "Estado solo en memoria; XSRF; restauración; guard; renovación única concurrente; reintento único; logout sin resurrección; formulario accesible; regresión 001",
+  "observado": "56 pruebas Angular PASS, 10 suites; tipos/lint/formato/build PASS. 8 E2E 001/002 Compose PASS en http://127.0.0.1:18080; capturas de acceso escritorio/móvil y cuenta ficticia inspeccionadas sin defectos visuales observados.",
+  "ejecutado": [
+    {
+      "resultado": "PASS",
+      "comando": "npm run typecheck",
+      "evidencia": "frontend-typecheck-03.txt"
+    },
+    {
+      "resultado": "PASS",
+      "comando": "npm run lint",
+      "evidencia": "frontend-lint-03.txt"
+    },
+    {
+      "resultado": "PASS",
+      "comando": "npm run format:check",
+      "evidencia": "frontend-format-check-04.txt"
+    },
+    {
+      "resultado": "PASS 56/56, 10 suites",
+      "comando": "npm test",
+      "evidencia": "frontend-test-03.txt"
+    },
+    {
+      "resultado": "PASS 262.71 kB",
+      "comando": "npm run build",
+      "evidencia": "frontend-build-03.txt"
+    },
+    {
+      "comando": "BASE_URL=http://127.0.0.1:18080 PLAYWRIGHT_BROWSERS_PATH=<repo>/tmp/playwright npm run test:e2e",
+      "resultado": "PASS 8/8, sin reintentos, 3.3 segundos",
+      "evidencia": "frontend-e2e-01.txt y frontend-e2e-01.xml"
+    },
+    {
+      "comando": "npm run typecheck; npm run lint; npm run format:check después de añadir capturas",
+      "resultado": "PASS",
+      "evidencia": "frontend-typecheck-e2e.txt, frontend-lint-e2e.txt, frontend-format-check-e2e.txt"
+    },
+    {
+      "comando": "view_image sobre tres capturas PNG",
+      "resultado": "PASS inspección visual: etiquetas, distribución, contraste aparente, sin superposición ni recortes; acceso con campos vacíos y cuenta ficticia sin credenciales",
+      "evidencia": "frontend-acceso-escritorio.png, frontend-acceso-movil.png, frontend-mi-cuenta-escritorio.png"
+    }
+  ],
+  "incidencias": [
+    {
+      "defecto": "Inferencia de unión de Observable en espera de logout",
+      "intentosCorreccion": 1,
+      "evidencia": "frontend-typecheck-01.txt y frontend-typecheck-02.txt",
+      "estado": "Resuelto con tipo Observable<unknown>"
+    },
+    {
+      "defecto": "Sandbox: Vite no resuelve paquetes Angular instalados en suites nuevas y existentes",
+      "intentosCorreccion": 1,
+      "evidencia": "frontend-test-01.txt y frontend-test-02.txt",
+      "estado": "Sin cambios de producto; ejecución escalada aprobada PASS"
+    },
+    {
+      "defecto": "Formato de línea nueva con Observable<unknown>",
+      "intentosCorreccion": 1,
+      "evidencia": "frontend-format-check-03.txt y frontend-format-check-04.txt",
+      "estado": "Prettier aplicado; PASS"
+    }
+  ],
+  "cobertura": [
+    "Store anónimo, identidad, limpieza y época; sin Storage.setItem",
+    "CSRF previo, contrato login, contraseña sin recortes",
+    "Restauración compartida, fallo 401/403/503 y fallo de CSRF",
+    "Renovación compartida, cancelación de consumidor, recuperación tras fallo",
+    "Logout durante refresh/login y respuestas tardías; cierre fallido reintentable",
+    "Login espera refresh anterior y evita sobrescribir cookie nueva",
+    "Bearer solo API del mismo origen y nunca autenticación",
+    "401 concurrentes/tardíos; un reintento; sin bucles; fallo refresh pierde sesión",
+    "403/503 de recurso no renuevan; 401 anónimo no renueva",
+    "Guard espera restauración; rutas /inicio /acceso /mi-cuenta y desconocida",
+    "Labels, autocomplete, carga, error genérico, foco, limpieza del campo contraseña",
+    "Identidad del backend y roles múltiples; logout y fallo de red; identidad tardía",
+    "E2E Compose: CSRF, login, roles, recarga con una renovación, logout, guard y ausencia de tokens en almacenamiento/URL",
+    "E2E Compose: teclado, foco de error, validación nativa, ancho móvil y navegación",
+    "E2E regresión 001: inicio, recarga, raíz, desconocida, salud/error/recuperación, Swagger seis rutas y deny por defecto"
+  ],
+  "pendientes": [
+    "Revisión independiente y aceptación humana",
+    "Auditorías/CI/Docker/documentación a cargo del coordinador"
+  ],
+  "limites": [
+    "Exclusión mutua dentro de una instancia Angular; dos pestañas no coordinadas pueden revocar de forma segura",
+    "XSS puede actuar mientras haya sesión; no se declara solución global a XSS",
+    "No Git, no dependencias nuevas, no escritura fuera de frontend y evidencias asignadas"
+  ]
+}

@@ -13,6 +13,8 @@ spring:
       data-source-properties:
         connectTimeout: 3
         socketTimeout: 3
+        # Los detalles de errores PostgreSQL pueden incluir valores internos de la fila.
+        logServerErrorDetail: false
   flyway:
     url: ${DB_URL}
     user: ${MIGRACION_USUARIO}

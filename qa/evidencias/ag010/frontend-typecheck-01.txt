@@ -1,0 +1,10 @@
+
+> gestion-solicitudes-frontend@0.0.1 typecheck
+> tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.spec.json && tsc --noEmit -p tsconfig.e2e.json
+
+src/app/identidad/autenticacion.ts(82,5): error TS2322: Type 'Observable<null> | Observable<(Acceso | null)[]>' is not assignable to type 'Observable<void> | undefined'.
+  Type 'Observable<null>' is not assignable to type 'Observable<void>'.
+    Type 'null' is not assignable to type 'void'.
+src/app/identidad/autenticacion.ts(83,7): error TS2554: Expected 0 arguments, but got 4.
+src/app/identidad/autenticacion.ts(90,5): error TS2322: Type 'Observable<void> | undefined' is not assignable to type 'Observable<void>'.
+  Type 'undefined' is not assignable to type 'Observable<void>'.

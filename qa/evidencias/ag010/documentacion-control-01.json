@@ -1,0 +1,14 @@
+{
+  "fecha": "2026-10-13T22:11:41.342Z",
+  "archivos": 515,
+  "enlaces": 383,
+  "errores": [
+    "qa\\evidencias\\ag010\\memoria-entrada.md: destino ausente docs/trazabilidad/memoria-hasta-ag005.md",
+    "qa\\evidencias\\ag010\\memoria-entrada.md: destino ausente docs/trazabilidad/AG-008-informe.md",
+    "qa\\evidencias\\ag010\\memoria-entrada.md: destino ausente docs/trazabilidad/REV-001-revision-independiente-01.md",
+    "qa\\evidencias\\ag010\\memoria-entrada.md: destino ausente docs/trazabilidad/AG-009-informe.md",
+    "qa\\evidencias\\ag010\\memoria-entrada.md: destino ausente especificaciones/001-base-verificable/validacion.md"
+  ],
+  "ubicacionesPatronesSecretos": [],
+  "limite": "Búsqueda acotada; no garantiza ausencia de todo secreto. No imprime valores encontrados."
+}

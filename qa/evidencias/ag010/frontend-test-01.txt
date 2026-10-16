@@ -1,0 +1,235 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false
+
+> Building...
+√ Building...
+Initial chunk files                      | Names                                 |  Raw size
+chunk-7LZ75KXO.js                        | -                                     |  11.86 kB | 
+chunk-MWG6SIDI.js                        | -                                     |  10.18 kB | 
+chunk-Z3EXMNVU.js                        | -                                     |   9.62 kB | 
+spec-app-app.js                          | spec-app-app                          |   8.17 kB | 
+spec-app-identidad-sesion-interceptor.js | spec-app-identidad-sesion-interceptor |   7.57 kB | 
+spec-app-identidad-autenticacion.js      | spec-app-identidad-autenticacion      |   5.86 kB | 
+chunk-RSTWSNOR.js                        | -                                     |   4.75 kB | 
+spec-app-app.routes.js                   | spec-app-app.routes                   |   4.28 kB | 
+spec-app-identidad-acceso.js             | spec-app-identidad-acceso             |   3.61 kB | 
+chunk-REXL4XY7.js                        | -                                     |   3.30 kB | 
+spec-app-identidad-mi-cuenta.js          | spec-app-identidad-mi-cuenta          |   3.21 kB | 
+spec-app-inicio-inicio.js                | spec-app-inicio-inicio                |   2.40 kB | 
+spec-app-inicio-salud-api.js             | spec-app-inicio-salud-api             |   1.96 kB | 
+spec-app-identidad-sesion-guard.js       | spec-app-identidad-sesion-guard       |   1.53 kB | 
+chunk-YCQTGEDS.js                        | -                                     |   1.48 kB | 
+init-testbed.js                          | init-testbed                          |   1.21 kB | 
+spec-app-identidad-sesion-store.js       | spec-app-identidad-sesion-store       |   1.19 kB | 
+chunk-K32UC3AB.js                        | -                                     |   1.18 kB | 
+vitest-mock-patch.js                     | vitest-mock-patch                     | 974 bytes | 
+chunk-AEN7IN5D.js                        | -                                     | 538 bytes | 
+chunk-2PECFU4L.js                        | -                                     | 436 bytes | 
+styles.css                               | styles                                | 381 bytes | 
+
+                                         | Initial total                         |  85.69 kB
+
+Application bundle generation complete. [1.455 seconds] - 2026-10-13T22:05:07.691Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/inicio/inicio.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/identidad/autenticacion.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/identidad/acceso.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/identidad/sesion-interceptor.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/app.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/inicio/salud-api.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/identidad/sesion-guard.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/identidad/mi-cuenta.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/app.routes.spec.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/app.routes.spec.ts [ src/app/app.routes.spec.ts ]
+Error: Failed to resolve import "@angular/router" from "src/app/app.routes.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/app.routes.spec.ts:2:38
+  16 |  import "./chunk-RSTWSNOR.js";
+  17 |  import { TestBed } from "@angular/core/testing";
+  18 |  import { provideRouter, Router } from "@angular/router";
+     |                                         ^
+  19 |  import { provideHttpClient } from "@angular/common/http";
+  20 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/app.spec.ts [ src/app/app.spec.ts ]
+Error: Failed to resolve import "@angular/router" from "src/app/app.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/app.spec.ts:2:30
+  4  |  import "./chunk-RSTWSNOR.js";
+  5  |  import { TestBed } from "@angular/core/testing";
+  6  |  import { provideRouter } from "@angular/router";
+     |                                 ^
+  7  |  import { Component, inject } from "@angular/core";
+  8  |  import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/identidad/acceso.spec.ts [ src/app/identidad/acceso.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/identidad/acceso.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/identidad/acceso.spec.ts:2:34
+  9  |  import "./chunk-RSTWSNOR.js";
+  10 |  import { TestBed } from "@angular/core/testing";
+  11 |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  12 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  13 |  import { provideRouter, Router } from "@angular/router";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/identidad/autenticacion.spec.ts [ src/app/identidad/autenticacion.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/identidad/autenticacion.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/identidad/autenticacion.spec.ts:1:34
+  9  |  } from "./chunk-YCQTGEDS.js";
+  10 |  import "./chunk-RSTWSNOR.js";
+  11 |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  12 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  13 |  import { TestBed } from "@angular/core/testing";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/identidad/mi-cuenta.spec.ts [ src/app/identidad/mi-cuenta.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/identidad/mi-cuenta.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/identidad/mi-cuenta.spec.ts:2:34
+  9  |  import "./chunk-RSTWSNOR.js";
+  10 |  import { TestBed } from "@angular/core/testing";
+  11 |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  12 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  13 |  import { provideRouter, Router } from "@angular/router";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/identidad/sesion-guard.spec.ts [ src/app/identidad/sesion-guard.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/identidad/sesion-guard.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/identidad/sesion-guard.spec.ts:2:34
+  9  |  import "./chunk-RSTWSNOR.js";
+  10 |  import { TestBed } from "@angular/core/testing";
+  11 |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  12 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  13 |  import { provideRouter } from "@angular/router";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/identidad/sesion-interceptor.spec.ts [ src/app/identidad/sesion-interceptor.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/identidad/sesion-interceptor.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/identidad/sesion-interceptor.spec.ts:1:64
+  12 |    __spreadValues
+  13 |  } from "./chunk-RSTWSNOR.js";
+  14 |  import { HttpClient, provideHttpClient, withInterceptors } from "@angular/common/http";
+     |                                                                   ^
+  15 |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  16 |  import { TestBed } from "@angular/core/testing";
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/inicio/inicio.spec.ts [ src/app/inicio/inicio.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/inicio/inicio.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/inicio/inicio.spec.ts:2:34
+  5  |  import "./chunk-RSTWSNOR.js";
+  6  |  import { TestBed } from "@angular/core/testing";
+  7  |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  8  |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  9  |  describe("Pantalla de inicio", () => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/inicio/salud-api.spec.ts [ src/app/inicio/salud-api.spec.ts ]
+Error: Failed to resolve import "@angular/common/http" from "src/app/inicio/salud-api.spec.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend/src/app/inicio/salud-api.spec.ts:2:34
+  4  |  import "./chunk-RSTWSNOR.js";
+  5  |  import { TestBed } from "@angular/core/testing";
+  6  |  import { provideHttpClient } from "@angular/common/http";
+     |                                     ^
+  7  |  import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+  8  |  describe("Contrato de salud", () => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/config.js:29079:43
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/config.js:29076:14
+ ❯ normalizeUrl node_modules/vite/dist/node/chunks/config.js:27199:18
+ ❯ node_modules/vite/dist/node/chunks/config.js:27257:32
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/config.js:27225:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/config.js:28877:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/config.js:22746:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/9]⎯
+
+
+ Test Files  9 failed | 1 passed (10)
+      Tests  2 passed (2)
+   Start at  00:05:09
+   Duration  16.51s (transform 632ms, setup 14.41s, import 408ms, tests 5ms, environment 138.67s)
+

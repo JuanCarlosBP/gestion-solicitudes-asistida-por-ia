@@ -1,0 +1,43 @@
+<section class="panel" aria-labelledby="titulo-cuenta">
+  <p class="contexto">Identidad y acceso</p>
+  <h1 #titulo id="titulo-cuenta" tabindex="-1">Mi cuenta</h1>
+  <p role="status" aria-live="polite">
+    @if (estado() === 'carga') {
+      Consultando tu cuenta…
+    }
+    @if (estado() === 'cierre') {
+      Cerrando sesión…
+    }
+  </p>
+  @if (usuario(); as cuenta) {
+    <dl>
+      <dt>Nombre</dt>
+      <dd>{{ cuenta.nombreVisible }}</dd>
+      <dt>Correo electrónico</dt>
+      <dd>{{ cuenta.correo }}</dd>
+      <dt>Identificador</dt>
+      <dd>{{ cuenta.id }}</dd>
+      <dt>Roles</dt>
+      <dd>
+        <ul>
+          @for (rol of cuenta.roles; track rol) {
+            <li>{{ rol }}</li>
+          }
+        </ul>
+      </dd>
+    </dl>
+  }
+  @if (estado() === 'error') {
+    <p class="error" role="alert">No se ha podido consultar tu cuenta. Inténtalo de nuevo.</p>
+    <button type="button" (click)="consultar()">Volver a consultar</button>
+  }
+  @if (estado() === 'error-cierre') {
+    <p class="error" role="alert">
+      No se ha podido confirmar el cierre de sesión. Vuelve a intentarlo.
+    </p>
+  }
+  <button type="button" (click)="salir()" [disabled]="estado() === 'cierre'">
+    {{ estado() === 'error-cierre' ? 'Reintentar cierre de sesión' : 'Cerrar sesión' }}
+  </button>
+  <a routerLink="/inicio">Volver al inicio</a>
+</section>

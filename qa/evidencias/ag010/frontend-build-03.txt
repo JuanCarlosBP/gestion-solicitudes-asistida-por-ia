@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-2XVWGWAO.js    | main          | 262.47 kB |                70.75 kB
+styles-T6TP5HFB.css | styles        | 244 bytes |               244 bytes
+
+                    | Initial total | 262.71 kB |                71.00 kB
+
+Application bundle generation complete. [1.912 seconds] - 2026-10-13T22:06:43.910Z
+
+Output location: C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\dist\gestion-solicitudes-frontend
+

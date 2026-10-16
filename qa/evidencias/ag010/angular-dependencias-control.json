@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-10-14T00:15:20.7556602+02:00",
+  "lockfileActual": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+  "lockfileInicial": "7DEE45F2789B312968EFC716FB269C14E51836ACEA17D46B13BA41E7BF98A25F",
+  "intacto": true,
+  "investigacionAngularRepetida": false,
+  "auditoriasActuales": "npm audit y OSV offline",
+  "politica": "ADR-0002"
+}

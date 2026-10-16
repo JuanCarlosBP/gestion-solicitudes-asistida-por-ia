@@ -622,3 +622,24 @@ Para considerar cubierta una categoría deberán existir:
 - evidencias;
 - riesgos restantes conocidos;
 - justificación para todo aquello que se marque como no aplicable.
+
+## 16. Controles parciales de identidad — AG-010
+
+002 incorpora controles limitados al acceso. La fuente de resultados es
+[validación 002](../../especificaciones/002-identidad-acceso/validacion.md), con
+evidencias propias AG-010. Los estados globales anteriores de categoría no se
+convierten en «Verificado» por completar este incremento.
+
+| Categoría afectada | Controles y requisitos | Comprobaciones de 002 y límites |
+|---|---|---|
+| A01 — Acceso | IA-06/10/12: sid, roles del servidor, default deny y CSRF. | Bearer ausente/inválido, roles de método, 403 CSRF. Recursos y reglas de negocio futuros pendientes. |
+| A02 — Configuración | IA-07/09/14: perfiles, cookies y OpenAPI local. | Falta de claves, atributos de cookies, CORS cerrado y cabeceras. HTTPS público pendiente. |
+| A03 — Cadena de suministro | IA-14 y ADR-0002: versiones exactas y auditoría. | Inventarios actuales y auditorías con herramienta/fecha explícitas; no cobertura de vulnerabilidades desconocidas. |
+| A04 — Criptografía | IA-02/06/07/08: Argon2id, RSA y hash del refresh aleatorio. | Parámetros/sal, claims/algoritmo/fechas, claves inválidas y secretos fuera de JSON. Gestión operativa pública pendiente. |
+| A05 — Inyección | IA-01/04/13: SQL parametrizado, entradas limitadas y Angular. | Correo/contraseña, DTO limitado y salida segura; no acredita todas las entradas futuras. |
+| A07 — Autenticación | IA-01–13: cuentas, bloqueo, login, rotación, reuse, logout y restauración. | Unitarias, HTTP, PostgreSQL concurrente y E2E. MFA/recuperación/administración no implementadas. |
+| A09 — Registro | IA-05/08/14: eventos técnicos sin credenciales. | Fallos, reuse y búsqueda acotada. Alertas, retención e historial funcional pendientes. |
+| A10 — Excepciones | IA-08/11/14: transacciones y fallo seguro. | Rotación concurrente, revocación persistida, PostgreSQL caído y recuperación. No acredita recuperación completa de desastres. |
+
+No se añaden identificadores ASVS sin comprobar su texto y aplicabilidad.
+Trazabilidad concreta de amenazas en el [modelo](modelo-de-amenazas.md).

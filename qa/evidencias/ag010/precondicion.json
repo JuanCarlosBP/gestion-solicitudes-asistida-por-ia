@@ -1,0 +1,14 @@
+{
+  "fin": "2026-10-14T00:00:02+02:00",
+  "resultado": "PASS",
+  "verify001": "13 pruebas, Spotless y SpotBugs",
+  "npmCi": "PASS",
+  "frontendBuild": "PASS",
+  "composeConfig": "PASS",
+  "docker": "29.1.3",
+  "compose": "2.40.3-desktop.1",
+  "limiteMinutos": 20,
+  "duracionHastaRegistroSegundos": 276,
+  "incidencia": "Docker requiere elevación puntual del sandbox",
+  "evidencia": "precondicion-*.log"
+}

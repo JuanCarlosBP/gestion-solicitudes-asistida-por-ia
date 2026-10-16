@@ -1,8 +1,10 @@
-# Preparación, ejecución y comprobación de 001
+# Preparación, ejecución y comprobación de 001 y 002
 
 **Estado:** Procedimientos comprobados con los límites indicados; revisión humana pendiente.
 **Entorno observado:** Windows 11, PowerShell 7, Docker Desktop con contenedores Linux.
-**Fecha:** 2026-10-13. [Versiones y fuentes](versiones.md), [resultados](../../especificaciones/001-base-verificable/validacion.md).
+**Fecha:** AG-010, 2026-10-14. [Versiones y fuentes](versiones.md),
+[resultados 001](../../especificaciones/001-base-verificable/validacion.md) y
+[resultados 002](../../especificaciones/002-identidad-acceso/validacion.md).
 
 ## Requisitos
 
@@ -13,6 +15,8 @@ Se necesita acceso a npm oficial, Maven Central y registros oficiales de imágen
 La capacidad heredada del host era 309,37 GiB libres; no es una medición final.
 Las descargas y cachés locales de AG-006 residen en `tmp/` salvo la incidencia
 inicial de caché npm documentada en validación.
+AG-010 conserva esas versiones y añade Bouncy Castle 1.86 estable para Argon2;
+el starter Resource Server queda gestionado por el BOM de Boot 4.0.8.
 
 Los comandos siguientes parten de la raíz del proyecto. No ejecutan Git.
 Los bloques Windows usan PowerShell; las variables solo afectan esa consola.
@@ -35,6 +39,21 @@ Abrir [inicio local](http://127.0.0.1:18080/inicio) y
 [Swagger local](http://127.0.0.1:18080/swagger-ui/index.html).
 Se comprobaron apertura directa, recarga y redirección desde la raíz.
 Solo el frontend publica un puerto; PostgreSQL no se expone al host.
+
+002 añade [acceso](http://127.0.0.1:18080/acceso) y
+[mi cuenta](http://127.0.0.1:18080/mi-cuenta). Compose activa explícitamente `local`.
+El ejemplo `.env.example` contiene cuatro grupos DEMO ficticios con sufijos
+CORREO/NOMBRE/CLAVE para SOLICITANTE, SUPERVISOR, AUDITOR y ADMINISTRADOR.
+No son credenciales para un entorno público. Si ya existe `.env`, añadir los
+grupos ficticios de forma consciente sin sobrescribir configuración propia.
+No imprimir `docker compose config` completo: contiene variables sensibles;
+usar siempre `config --quiet` para validación.
+
+El aprovisionamiento crea cuentas ausentes y no cambia las contraseñas ni los
+roles de cuentas existentes. Cambiar el ejemplo después del primer arranque no
+actualiza automáticamente una cuenta; no existe todavía CRUD de usuarios.
+Sin configuración DEMO no se crean cuentas; un grupo parcial impide el arranque.
+El perfil normal tampoco las crea. Cada contraseña se valida y almacena como Argon2id.
 
 ## Parada y persistencia comprobadas
 
@@ -190,6 +209,46 @@ en `tmp/evidencias/backend` y `tmp/evidencias/compose`; no publica evidencias hi
 La segunda CI está pendiente del siguiente push humano; 001 no está aceptada ni integrada.
 El Wrapper Linux y los builds multietapa pasaron en Docker; no equivalen a haber
 ejecutado el workflow remoto. El conjunto de pruebas en un runner Linux queda pendiente.
+
+## Configuración de identidad y comprobaciones AG-010
+
+Local/test generan un par RSA efímero al arrancar. Tras reiniciar, el JWT anterior
+deja de validar y el refresh persistido permite obtener uno nuevo. El perfil
+`test` no aprovisiona usuarios de demostración. Fuera de esos perfiles son
+obligatorias ambas claves, cada una mediante una sola fuente:
+
+- `IDENTIDAD_CLAVE_PRIVADA_RUTA` o `IDENTIDAD_CLAVE_PRIVADA_PEM`: PKCS8 RSA.
+- `IDENTIDAD_CLAVE_PUBLICA_RUTA` o `IDENTIDAD_CLAVE_PUBLICA_PEM`: X509 RSA.
+
+No usar claves reales en Git ni ejemplos. Se valida el par y su tamaño mínimo
+2048 bits; faltantes/inválidas producen un error controlado de arranque.
+Valores predeterminados: `identidad.duracion-acceso=PT10M` y
+`identidad.duracion-refresco=PT8H`. Duraciones positivas, enteras en segundos,
+con acceso menor o igual que la familia. La renovación no prolonga la familia.
+
+En el navegador los JWT viven solo en memoria. Recargar restaura mediante
+cookie refresh HttpOnly y XSRF. No abrir la aplicación mediante una IP de red
+para forzar HTTP: el modo sin Secure solo admite loopback local. Un entorno
+público requiere HTTPS, Secure y secretos distintos, todavía no acreditados.
+
+AG-010 dirige toda evidencia nueva a `qa/evidencias/ag010/`; los verificadores
+rechazan AG-003–AG-009. Las pruebas de identidad en Compose se invocan desde raíz
+con `node qa/verificar-sesiones-compose.mjs`, `BASE_URL` del puerto real y
+`QA_ENTORNO` apuntando al ejemplo ficticio utilizado. Reinicia únicamente backend,
+comprueba cuatro roles, JWT invalidado/refresh conservado, rotación, reuse y logout.
+Su estado ejecutado se registra en validación; no sustituye E2E del navegador.
+
+Las auditorías npm de producción y completas requieren enviar metadatos al
+registro público; la persona responsable lo autorizó expresamente durante AG-010.
+La alternativa `node qa/auditar-npm-offline.mjs` compara dos SBOM locales con
+OSV-Scanner 2.7.0 y el volcado público completo npm en
+`tmp/osv-cache/osv-scalibr/npm/all.zip`, sin enviar inventarios. No se presenta
+como ejecución de npm audit. La fecha y huella del volcado quedan en evidencias.
+
+La CI de 002 fija Docker 29.1.3 mediante Action oficial por SHA y Compose 2.40.3
+con SHA-256 del binario Linux. Incluye reinicio/sesiones, E2E 001/002, documentación
+y actionlint 1.7.12. Resultados remotos pendientes del push humano; los jobs
+publican exclusivamente salidas propias de esa ejecución.
 
 Errores reales registrados: Docker denegado en sandbox, DNS restringido,
 JAVA_HOME 17, caché npm mal asignada inicialmente, exports/formateador, temporales

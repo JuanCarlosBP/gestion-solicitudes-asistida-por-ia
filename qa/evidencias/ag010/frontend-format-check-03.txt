@@ -1,0 +1,7 @@
+
+> gestion-solicitudes-frontend@0.0.1 format:check
+> prettier --check src e2e playwright.config.ts *.json *.mjs .prettierrc
+
+Checking formatting...
+[warn] src/app/identidad/autenticacion.ts
+[warn] Code style issues found in the above file. Run Prettier with --write to fix.

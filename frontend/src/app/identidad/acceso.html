@@ -1,0 +1,39 @@
+<section class="panel" aria-labelledby="titulo-acceso">
+  <p class="contexto">Identidad y acceso</p>
+  <h1 id="titulo-acceso">Acceso</h1>
+  <p>Introduce tus datos para consultar tu cuenta.</p>
+  <form (submit)="entrar($event, correo, contrasena)" [attr.aria-busy]="cargando()">
+    <label for="correo">Correo electrónico</label>
+    <input
+      #correo
+      id="correo"
+      name="correo"
+      type="email"
+      autocomplete="username"
+      required
+      [readOnly]="cargando()"
+    />
+    <label for="contrasena">Contraseña</label>
+    <input
+      #contrasena
+      id="contrasena"
+      name="contrasena"
+      type="password"
+      autocomplete="current-password"
+      required
+      [readOnly]="cargando()"
+    />
+    <p #errorVisible class="error" role="alert" tabindex="-1" aria-live="assertive">
+      @if (error()) {
+        No se ha podido iniciar sesión. Comprueba los datos e inténtalo de nuevo.
+      }
+    </p>
+    <button type="submit" [disabled]="cargando()">
+      {{ cargando() ? 'Iniciando sesión…' : 'Iniciar sesión' }}
+    </button>
+    <p role="status" aria-live="polite">
+      {{ cargando() ? 'Comprobando los datos de acceso.' : '' }}
+    </p>
+  </form>
+  <a routerLink="/inicio">Volver al inicio</a>
+</section>

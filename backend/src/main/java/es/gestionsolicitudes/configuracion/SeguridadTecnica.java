@@ -1,47 +1,106 @@
 package es.gestionsolicitudes.configuracion;
 
+import es.gestionsolicitudes.identidad.http.CookiesIdentidad;
+import es.gestionsolicitudes.identidad.http.RepositorioCsrfPorEntorno;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.ObjectPostProcessor;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
+import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SeguridadTecnica {
     @Bean
-    SecurityFilterChain cadenaTecnica(HttpSecurity http) throws Exception {
+    SecurityFilterChain cadenaTecnica(
+            HttpSecurity http, Environment entorno, CookiesIdentidad cookies) throws Exception {
         http.authorizeHttpRequests(
-                        reglas ->
+                        reglas -> {
+                            reglas.requestMatchers(
+                                            HttpMethod.GET, "/api/salud", "/api/autenticacion/csrf")
+                                    .permitAll();
+                            reglas.requestMatchers(
+                                            HttpMethod.POST,
+                                            "/api/autenticacion/iniciar-sesion",
+                                            "/api/autenticacion/renovar",
+                                            "/api/autenticacion/cerrar-sesion")
+                                    .permitAll();
+                            if (entorno.acceptsProfiles(Profiles.of("local", "test"))) {
                                 reglas.requestMatchers(
                                                 HttpMethod.GET,
-                                                "/api/salud",
                                                 "/v3/api-docs",
                                                 "/v3/api-docs/swagger-config",
                                                 "/swagger-ui.html",
                                                 "/swagger-ui/**")
-                                        .permitAll()
-                                        .anyRequest()
-                                        .denyAll())
+                                        .permitAll();
+                            }
+                            reglas.requestMatchers(HttpMethod.GET, "/api/identidad/yo")
+                                    .authenticated()
+                                    .anyRequest()
+                                    .denyAll();
+                        })
                 .sessionManagement(
                         sesion -> sesion.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .requestCache(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .logout(AbstractHttpConfigurer::disable)
+                .oauth2ResourceServer(
+                        recurso ->
+                                recurso.jwt(jwt -> jwt.jwtAuthenticationConverter(conversorJwt()))
+                                        .authenticationEntryPoint(
+                                                (peticion, respuesta, error) ->
+                                                        error(respuesta, 401, "NO_AUTENTICADO"))
+                                        .accessDeniedHandler(
+                                                (peticion, respuesta, error) ->
+                                                        error(
+                                                                respuesta,
+                                                                403,
+                                                                "ACCESO_NO_PERMITIDO")))
+                .csrf(
+                        csrf -> {
+                            csrf.csrfTokenRepository(new RepositorioCsrfPorEntorno(cookies))
+                                    .csrfTokenRequestHandler(
+                                            new CsrfTokenRequestAttributeHandler());
+                            // Resource Server añade una exclusión Bearer durante init. Se
+                            // restablece el
+                            // matcher final para que TODO método mutable exija XSRF, también con
+                            // Bearer.
+                            csrf.addObjectPostProcessor(
+                                    new ObjectPostProcessor<CsrfFilter>() {
+                                        @Override
+                                        public <O extends CsrfFilter> O postProcess(O filtro) {
+                                            filtro.setRequireCsrfProtectionMatcher(
+                                                    CsrfFilter.DEFAULT_CSRF_MATCHER);
+                                            return filtro;
+                                        }
+                                    });
+                        })
                 .exceptionHandling(
                         errores ->
                                 errores.authenticationEntryPoint(
-                                                (peticion, respuesta, error) -> denegar(respuesta))
+                                                (peticion, respuesta, error) ->
+                                                        error(respuesta, 401, "NO_AUTENTICADO"))
                                         .accessDeniedHandler(
-                                                (peticion, respuesta, error) -> denegar(respuesta)))
+                                                (peticion, respuesta, error) ->
+                                                        error(
+                                                                respuesta,
+                                                                403,
+                                                                "ACCESO_NO_PERMITIDO")))
                 .headers(
                         cabeceras ->
                                 cabeceras
@@ -60,16 +119,20 @@ public class SeguridadTecnica {
         return http.build();
     }
 
-    @Bean
-    UserDetailsService sinCuentasFuncionales() {
-        // Evita credenciales generadas por defecto; 001 no incorpora usuarios ni login.
-        return new InMemoryUserDetailsManager();
+    public static JwtAuthenticationConverter conversorJwt() {
+        var roles = new JwtGrantedAuthoritiesConverter();
+        roles.setAuthoritiesClaimName("roles");
+        roles.setAuthorityPrefix("ROLE_");
+        var conversor = new JwtAuthenticationConverter();
+        conversor.setJwtGrantedAuthoritiesConverter(roles);
+        return conversor;
     }
 
-    private static void denegar(HttpServletResponse respuesta) throws IOException {
-        respuesta.setStatus(HttpServletResponse.SC_FORBIDDEN);
+    private static void error(HttpServletResponse respuesta, int estado, String codigo)
+            throws IOException {
+        respuesta.setStatus(estado);
         respuesta.setContentType("application/json");
         respuesta.setCharacterEncoding("UTF-8");
-        respuesta.getWriter().write("{\"error\":\"ACCESO_NO_PERMITIDO\"}");
+        respuesta.getWriter().write("{\"error\":\"" + codigo + "\"}");
     }
 }

@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-13T22:06:41.893Z",
+  "herramienta": "OSV-Scanner 2.7.0",
+  "inventarioEnviado": false,
+  "resultados": [
+    {
+      "alcance": "produccion",
+      "componentes": 7,
+      "salida": 0,
+      "errorEjecucion": false
+    },
+    {
+      "alcance": "completo",
+      "componentes": 653,
+      "salida": 0,
+      "errorEjecucion": false
+    }
+  ],
+  "limites": "No equivale a npm audit. Cobertura de vulnerabilidades publicadas en el volcado local OSV; sin CVE desconocidas ni análisis de código. Producción excluye entradas dev del lockfile."
+}

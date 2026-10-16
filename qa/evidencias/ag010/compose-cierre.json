@@ -1,0 +1,23 @@
+{
+  "volumenConservado": true,
+  "servicios": [
+    {
+      "Service": "backend",
+      "State": "exited",
+      "ExitCode": 143
+    },
+    {
+      "Service": "frontend",
+      "State": "exited",
+      "ExitCode": 0
+    },
+    {
+      "Service": "postgres",
+      "State": "exited",
+      "ExitCode": 0
+    }
+  ],
+  "fecha": "2026-10-14T00:27:51.4801888+02:00",
+  "volumen": "gestion-solicitudes-001_datos-postgres",
+  "resultado": "PASS"
+}

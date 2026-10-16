@@ -1,0 +1,7 @@
+{
+  "inicio_registrado": "2026-10-13T23:55:26.0000000+02:00",
+  "limite": "2026-10-14T09:55:26.0000000+02:00",
+  "zona": "Europe/Madrid",
+  "ejecucion": "AG-010",
+  "incidencia_inicial": "git status --short ejecutado antes de leer el adjunto; salida vacía. Prohibidas nuevas operaciones Git."
+}
