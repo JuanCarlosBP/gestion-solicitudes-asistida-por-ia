@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.csrf.CsrfToken;
@@ -20,10 +21,15 @@ import org.springframework.web.bind.annotation.*;
 public class ControladorAutenticacion {
     private final ServicioAutenticacion servicio;
     private final CookiesIdentidad cookies;
+    private final RepositorioCsrfPorEntorno csrf;
 
-    public ControladorAutenticacion(ServicioAutenticacion servicio, CookiesIdentidad cookies) {
+    public ControladorAutenticacion(
+            ServicioAutenticacion servicio,
+            CookiesIdentidad cookies,
+            RepositorioCsrfPorEntorno csrf) {
         this.servicio = servicio;
         this.cookies = cookies;
+        this.csrf = csrf;
     }
 
     public record SolicitudLogin(
@@ -69,9 +75,15 @@ public class ControladorAutenticacion {
         @ApiResponse(responseCode = "403", description = "CSRF inválido")
     })
     public ResponseEntity<?> iniciar(
-            @RequestBody SolicitudLogin entrada, HttpServletRequest peticion) {
+            @RequestBody SolicitudLogin entrada,
+            HttpServletRequest peticion,
+            HttpServletResponse respuestaHttp) {
         return servicio.iniciar(entrada.correo(), entrada.contrasena())
-                .<ResponseEntity<?>>map(acceso -> respuesta(acceso, peticion))
+                .<ResponseEntity<?>>map(
+                        acceso -> {
+                            csrf.rotar(peticion, respuestaHttp);
+                            return respuesta(acceso, peticion, respuestaHttp);
+                        })
                 .orElseGet(
                         () ->
                                 ResponseEntity.status(401)
@@ -93,9 +105,10 @@ public class ControladorAutenticacion {
     })
     public ResponseEntity<?> renovar(
             @CookieValue(name = CookiesIdentidad.REFRESH, required = false) String refresh,
-            HttpServletRequest peticion) {
+            HttpServletRequest peticion,
+            HttpServletResponse respuestaHttp) {
         return servicio.renovar(refresh)
-                .<ResponseEntity<?>>map(acceso -> respuesta(acceso, peticion))
+                .<ResponseEntity<?>>map(acceso -> respuesta(acceso, peticion, respuestaHttp))
                 .orElseGet(
                         () ->
                                 ResponseEntity.status(401)
@@ -114,20 +127,22 @@ public class ControladorAutenticacion {
     })
     public ResponseEntity<Void> cerrar(
             @CookieValue(name = CookiesIdentidad.REFRESH, required = false) String refresh,
-            HttpServletRequest peticion) {
+            HttpServletRequest peticion,
+            HttpServletResponse respuestaHttp) {
         servicio.cerrar(refresh);
-        return ResponseEntity.noContent()
-                .header(HttpHeaders.SET_COOKIE, cookies.borrar(peticion))
-                .header("Clear-Site-Data", "\"cache\"")
-                .build();
+        csrf.rotar(peticion, respuestaHttp);
+        respuestaHttp.addHeader(HttpHeaders.SET_COOKIE, cookies.borrar(peticion));
+        return ResponseEntity.noContent().header("Clear-Site-Data", "\"cache\"").build();
     }
 
     private ResponseEntity<RespuestaAcceso> respuesta(
-            AccesoEmitido acceso, HttpServletRequest peticion) {
+            AccesoEmitido acceso, HttpServletRequest peticion, HttpServletResponse respuestaHttp) {
+        // Agregar ambas cookies en la misma respuesta evita que ResponseEntity
+        // sustituya el Set-Cookie de XSRF por el de refresh.
+        respuestaHttp.addHeader(
+                HttpHeaders.SET_COOKIE,
+                cookies.refresco(peticion, acceso.refresh(), acceso.expiraRefresh()));
         return ResponseEntity.ok()
-                .header(
-                        HttpHeaders.SET_COOKIE,
-                        cookies.refresco(peticion, acceso.refresh(), acceso.expiraRefresh()))
                 .body(
                         new RespuestaAcceso(
                                 acceso.accessToken(),

@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import es.gestionsolicitudes.configuracion.ErroresControlados;
 import es.gestionsolicitudes.configuracion.SeguridadTecnica;
 import es.gestionsolicitudes.identidad.http.CookiesIdentidad;
+import es.gestionsolicitudes.identidad.http.RepositorioCsrfPorEntorno;
 import es.gestionsolicitudes.salud.aplicacion.EstadoSalud;
 import es.gestionsolicitudes.salud.aplicacion.ServicioSalud;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(ControladorSalud.class)
-@Import({SeguridadTecnica.class, ErroresControlados.class})
+@Import({SeguridadTecnica.class, ErroresControlados.class, RepositorioCsrfPorEntorno.class})
 class ControladorSaludTest {
     @Autowired MockMvc http;
     @MockitoBean ServicioSalud servicio;

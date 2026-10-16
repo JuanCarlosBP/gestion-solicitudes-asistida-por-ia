@@ -1,6 +1,5 @@
 package es.gestionsolicitudes.configuracion;
 
-import es.gestionsolicitudes.identidad.http.CookiesIdentidad;
 import es.gestionsolicitudes.identidad.http.RepositorioCsrfPorEntorno;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,8 +15,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CsrfAuthenticationStrategy;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 
@@ -27,7 +28,8 @@ import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 public class SeguridadTecnica {
     @Bean
     SecurityFilterChain cadenaTecnica(
-            HttpSecurity http, Environment entorno, CookiesIdentidad cookies) throws Exception {
+            HttpSecurity http, Environment entorno, RepositorioCsrfPorEntorno repositorioCsrf)
+            throws Exception {
         http.authorizeHttpRequests(
                         reglas -> {
                             reglas.requestMatchers(
@@ -123,13 +125,29 @@ public class SeguridadTecnica {
                 .csrf(
                         csrf -> {
                             var manejador = new CsrfTokenRequestAttributeHandler();
-                            // Materializa también el token rotado tras autenticar Bearer. Sin
-                            // ello Spring borra la cookie y difiere su reposición, dejando al
-                            // navegador sin token para la siguiente escritura. Conserva la
-                            // rotación y la comprobación de cookie + cabecera en cada mutable.
+                            // Materializa el token cuando falta, también tras una rotación.
                             manejador.setCsrfRequestAttributeName(null);
-                            csrf.csrfTokenRepository(new RepositorioCsrfPorEntorno(cookies))
-                                    .csrfTokenRequestHandler(manejador);
+                            var rotacion = new CsrfAuthenticationStrategy(repositorioCsrf);
+                            rotacion.setRequestHandler(manejador);
+                            csrf.csrfTokenRepository(repositorioCsrf)
+                                    .csrfTokenRequestHandler(manejador)
+                                    .sessionAuthenticationStrategy(
+                                            (autenticacion, peticion, respuesta) -> {
+                                                // En modo stateless validar cada Bearer no inicia
+                                                // una
+                                                // sesión nueva. Rotar aquí desincroniza
+                                                // cookie/cabecera
+                                                // de peticiones concurrentes, incluso entre
+                                                // pestañas.
+                                                // El controlador propio rota en login/logout
+                                                // reales.
+                                                if (!(autenticacion
+                                                                instanceof JwtAuthenticationToken)
+                                                        || !autenticacion.isAuthenticated()) {
+                                                    rotacion.onAuthentication(
+                                                            autenticacion, peticion, respuesta);
+                                                }
+                                            });
                             // Resource Server añade una exclusión Bearer durante init. Se
                             // restablece el
                             // matcher final para que TODO método mutable exija XSRF, también con
