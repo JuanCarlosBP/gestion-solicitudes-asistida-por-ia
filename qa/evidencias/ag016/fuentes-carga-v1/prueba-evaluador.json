@@ -1,0 +1,5 @@
+{
+  "fuente": "qa/ag016/evaluar.test.mjs",
+  "sha256": "d7b7728ff5af621cd43174ee038e5dcb932a67a80850f5024060488a044ff382",
+  "motivo": "Conservar pruebas del evaluador2 previo a variante reloj"
+}

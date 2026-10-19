@@ -1,0 +1,34 @@
+{
+  "ejecucion": "carga-final-a1",
+  "modo": "MEDICION_65_MINUTOS",
+  "actualizado": "2026-10-16T13:29:54.395Z",
+  "fase": "fuera-ventana",
+  "inicioMedicion": "2026-10-16T12:24:54.373Z",
+  "transcurridoMs": 3900022.3145000003,
+  "finVentana": true,
+  "visitantes": [
+    {
+      "visitante": "A",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 145
+    },
+    {
+      "visitante": "B",
+      "pausas": [
+        "caducidad-natural"
+      ],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 136
+    },
+    {
+      "visitante": "C",
+      "pausas": [
+        "caducidad-natural"
+      ],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 136
+    }
+  ],
+  "incidencias": 2
+}

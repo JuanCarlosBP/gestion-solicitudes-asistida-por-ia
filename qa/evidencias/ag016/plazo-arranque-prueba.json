@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-10-16T11:38:48.076Z",
+  "estado": "PASS",
+  "reloj": "simulado",
+  "etapasMs": [
+    60000,
+    40000
+  ],
+  "totalMs": 100000,
+  "rechazado": true,
+  "frontera90s": true
+}

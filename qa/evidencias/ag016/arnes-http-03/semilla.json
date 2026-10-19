@@ -1,0 +1,43 @@
+{
+  "semilla": 160082026,
+  "resultado": "PASS",
+  "fin": "2026-10-16T12:00:34.860Z",
+  "visitantes": [
+    {
+      "visitante": "A",
+      "estado": "PASS",
+      "ms": 84258.16040000001,
+      "proveedores": 20,
+      "solicitudes": 100,
+      "conceptosPorSolicitud": 5,
+      "BORRADOR": 60,
+      "PRESENTADA": 20,
+      "APROBADA": 10,
+      "RECHAZADA": 10
+    },
+    {
+      "visitante": "B",
+      "estado": "PASS",
+      "ms": 84258.40860000001,
+      "proveedores": 20,
+      "solicitudes": 100,
+      "conceptosPorSolicitud": 5,
+      "BORRADOR": 60,
+      "PRESENTADA": 20,
+      "APROBADA": 10,
+      "RECHAZADA": 10
+    },
+    {
+      "visitante": "C",
+      "estado": "PASS",
+      "ms": 84564.8666,
+      "proveedores": 20,
+      "solicitudes": 100,
+      "conceptosPorSolicitud": 5,
+      "BORRADOR": 60,
+      "PRESENTADA": 20,
+      "APROBADA": 10,
+      "RECHAZADA": 10
+    }
+  ]
+}

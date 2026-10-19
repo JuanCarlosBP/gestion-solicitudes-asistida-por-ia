@@ -1,0 +1,5 @@
+{
+  "tipo": "FIXTURE_OFFLINE_DE_ESCRITURA_EXCLUSIVA",
+  "pasadaReal": false,
+  "nota": "Archivo sintético para comprobar que el CLI rechaza sobreescritura; no contiene resultados de capacidad."
+}

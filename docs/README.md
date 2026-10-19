@@ -1,6 +1,33 @@
+# Documentación — entrada actual
+
+**Actualización de cierre de código008 — 19/10/2026.** La aplicación y el pulido
+`ui-20261019142334` están desplegados; los recibos y la revisión de capturas se
+explican en [estado actual](cierre/008-estado.md). GitHub/CI se acreditan mediante
+la PR y su commit integrado, no por esta cabecera. Copias periódicas externas,
+recuperación global y reinicio del VPS siguen diferenciados como cierre operativo.
+
+Empieza por [la guía sin comandos](manual-usuario/recorrido-entrevista.md), sigue
+por [API y Swagger](cierre/api-y-swagger.md) y [operación pública](operacion-publica-008.md).
+
+---
+## Índice y estados históricos conservados; no son el estado vigente
+
 # Índice de documentación
 
 **Estado del documento:** Aprobado
+
+001–007 y la reparación AG-015 están aceptados e integrados por comunicación humana AG-016 del 2026-10-16. Base main `eaa0baec78ed9b99d8039ea7e6256b254be295d3`, árbol `5e5d0a92ed719e74729461ab3f8d63baaa84bcb2`; CI main `38882642418`: backend/frontend/compose PASS según el encargo. 008 está autorizado para diseño, implementación y pruebas locales con revisión independiente; ejecución en curso, sin aceptación ni publicación de008. [Informe AG-016](trazabilidad/AG-016-informe.md).
+
+## Demo008 y operación
+
+- [Guía de demo por rol](demo-008.md).
+- [Operación, copia y recuperación](operacion-demo-008.md).
+- [Inventario para portfolio](capacidades-portfolio.md).
+- [Rutas y contratos para el capítulo privado008](contratos-capitulo-008.md).
+
+## Antecedentes conservados
+
+Los estados pendientes de los párrafos y tablas siguientes corresponden a sus ejecuciones históricas; el estado vigente001–007 es el comunicado arriba. La validación008 se añadirá cuando haya comprobaciones.
 
 Este índice recoge archivos existentes y distingue su estado de aprobación.
 Un documento aprobado no demuestra una implementación ni una prueba ejecutada.

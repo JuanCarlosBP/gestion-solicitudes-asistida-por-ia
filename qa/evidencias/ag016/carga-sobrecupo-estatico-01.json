@@ -1,0 +1,46 @@
+{
+  "inicio": "2026-10-16T11:39:28.180Z",
+  "fin": "2026-10-16T11:39:28.182Z",
+  "resultado": "PASS",
+  "alcance": "Comprobación offline con dobles; no ejecución HTTP real, pico ni benchmark",
+  "casos": [
+    {
+      "nombre": "rechazo-correcto",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "reserva-indebida",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "limite-proxy-no-sustituye-cupo",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "error409-distinto",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "cookie-reserva-indebida",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "cliente-ya-reservado",
+      "resultado": "PASS"
+    }
+  ],
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "6eb491f3cd7662348f1670b44c85e9cbd9da4b25cedeb6b7cd49e6a78750da98"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "8ce5c96226a6e9f3f52bd78b613bc93077af6832a646db551ae1d7c0f3cbfda6"
+    },
+    {
+      "ruta": "qa/evidencias/ag016/contrato-carga.json",
+      "sha256": "3ffd040daec049cf51e5e5ef46fb4d3ed481df546460d3fd40f055dc1f4f2331"
+    }
+  ]
+}

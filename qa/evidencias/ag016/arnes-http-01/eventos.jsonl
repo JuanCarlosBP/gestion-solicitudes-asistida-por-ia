@@ -1,0 +1,2 @@
+{"fecha":"2026-10-16T11:50:47.604Z","tipo":"RAFAGA_SOBRECUPO","intentos":3,"rechazosCorrectos":0,"reservaEsperada":false}
+{"fecha":"2026-10-16T11:50:47.604Z","tipo":"INCIDENCIA","codigo":"SOBRECUPO_CSRF_HTTP_204_ESPERADO_200","etapa":"prueba-arnes-no-benchmark"}

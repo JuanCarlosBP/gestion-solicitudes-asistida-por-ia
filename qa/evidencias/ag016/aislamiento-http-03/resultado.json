@@ -1,0 +1,779 @@
+{
+  "inicio": "2026-10-16T11:13:04.593Z",
+  "fin": "2026-10-16T11:13:30.985Z",
+  "estado": "PASS",
+  "controles": [
+    {
+      "criterio": "Contexto de reserva0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contexto de reserva1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contexto de reserva2",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Tres espacios exclusivos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cuarto visitante recibe409sin compartir",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "B no lee recurso A",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "C no lee recurso A",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Contexto ausente denegado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Selector B con cookieA denegado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "JWT A con reservaB denegado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "SelectorJWT A no sustituyen cookieB",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CSRF conservado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-2",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-2",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-3",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-3",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-4",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-4",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-5",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-5",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-6",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-6",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-7",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-7",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-8",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-8",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-9",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-9",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-10",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-10",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaA-11",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Conexión reutilizadaB-11",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Auditor historia propia",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Auditor no obtiene escritura",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Cambio rol revoca sid anterior",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Historial globalB no incluyeA",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reinicio recupera salud dentro90s",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reserva/JWT persistentes tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reserva revocada falla antes reciclaje",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reciclaje prepara espacio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reasignación cambia generación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CookiesJWT anteriores no acceden reasignado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Refresh antiguo con nueva reserva denegado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Datos anteriores no aparecen reasignados",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "B sigue intacto tras reciclajeA",
+      "resultado": "PASS"
+    }
+  ],
+  "mediciones": [
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 27.134,
+      "fecha": "2026-10-16T11:13:04.621Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 17.508100000000006,
+      "fecha": "2026-10-16T11:13:04.639Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.946700000000007,
+      "fecha": "2026-10-16T11:13:04.644Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 9.054000000000002,
+      "fecha": "2026-10-16T11:13:04.653Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.915200000000013,
+      "fecha": "2026-10-16T11:13:04.658Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 8.352500000000006,
+      "fecha": "2026-10-16T11:13:04.666Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 3.7787000000000006,
+      "fecha": "2026-10-16T11:13:04.670Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 409,
+      "ms": 8.477699999999999,
+      "fecha": "2026-10-16T11:13:04.678Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.971600000000009,
+      "fecha": "2026-10-16T11:13:04.683Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 163.24970000000002,
+      "fecha": "2026-10-16T11:13:04.847Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.3408000000000015,
+      "fecha": "2026-10-16T11:13:04.851Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 101.31279999999998,
+      "fecha": "2026-10-16T11:13:04.952Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.074999999999989,
+      "fecha": "2026-10-16T11:13:04.957Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 181.7835,
+      "fecha": "2026-10-16T11:13:05.138Z"
+    },
+    {
+      "operacion": "crear",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 95.27160000000003,
+      "fecha": "2026-10-16T11:13:05.234Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 12.63009999999997,
+      "fecha": "2026-10-16T11:13:05.247Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 10.047699999999963,
+      "fecha": "2026-10-16T11:13:05.257Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 3.320600000000013,
+      "fecha": "2026-10-16T11:13:05.260Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 3.254299999999944,
+      "fecha": "2026-10-16T11:13:05.263Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 5.922200000000089,
+      "fecha": "2026-10-16T11:13:05.269Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 3.32630000000006,
+      "fecha": "2026-10-16T11:13:05.273Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "POST",
+      "estado": 403,
+      "ms": 34.81169999999997,
+      "fecha": "2026-10-16T11:13:05.307Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 10.916299999999978,
+      "fecha": "2026-10-16T11:13:05.318Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 7.455799999999954,
+      "fecha": "2026-10-16T11:13:05.326Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 8.14370000000008,
+      "fecha": "2026-10-16T11:13:05.334Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 6.889700000000062,
+      "fecha": "2026-10-16T11:13:05.341Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 6.977200000000039,
+      "fecha": "2026-10-16T11:13:05.348Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 7.731199999999944,
+      "fecha": "2026-10-16T11:13:05.356Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 6.595800000000054,
+      "fecha": "2026-10-16T11:13:05.362Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 7.7450000000000045,
+      "fecha": "2026-10-16T11:13:05.370Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 7.246399999999994,
+      "fecha": "2026-10-16T11:13:05.377Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 8.686300000000074,
+      "fecha": "2026-10-16T11:13:05.386Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 20.533999999999992,
+      "fecha": "2026-10-16T11:13:05.407Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 6.980799999999931,
+      "fecha": "2026-10-16T11:13:05.414Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 7.1924000000000206,
+      "fecha": "2026-10-16T11:13:05.421Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 6.8607999999999265,
+      "fecha": "2026-10-16T11:13:05.428Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 7.157799999999952,
+      "fecha": "2026-10-16T11:13:05.435Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 7.2082000000000335,
+      "fecha": "2026-10-16T11:13:05.442Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 7.1253999999999,
+      "fecha": "2026-10-16T11:13:05.449Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 7.987899999999968,
+      "fecha": "2026-10-16T11:13:05.457Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 6.588500000000067,
+      "fecha": "2026-10-16T11:13:05.464Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 6.661299999999983,
+      "fecha": "2026-10-16T11:13:05.471Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 6.0745999999999185,
+      "fecha": "2026-10-16T11:13:05.477Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 34.753400000000056,
+      "fecha": "2026-10-16T11:13:05.511Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 10.345299999999952,
+      "fecha": "2026-10-16T11:13:05.522Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 5.867500000000064,
+      "fecha": "2026-10-16T11:13:05.528Z"
+    },
+    {
+      "operacion": "logout",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 10.057999999999993,
+      "fecha": "2026-10-16T11:13:05.538Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 3.3466999999999416,
+      "fecha": "2026-10-16T11:13:05.541Z"
+    },
+    {
+      "operacion": "login-AUDITOR",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 67.74759999999992,
+      "fecha": "2026-10-16T11:13:05.609Z"
+    },
+    {
+      "operacion": "/api/historial",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 10.898799999999937,
+      "fecha": "2026-10-16T11:13:05.620Z"
+    },
+    {
+      "operacion": "crear",
+      "metodo": "POST",
+      "estado": 403,
+      "ms": 7.386500000000069,
+      "fecha": "2026-10-16T11:13:05.627Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 5.256399999999985,
+      "fecha": "2026-10-16T11:13:05.633Z"
+    },
+    {
+      "operacion": "logout",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 7.042899999999918,
+      "fecha": "2026-10-16T11:13:05.640Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 3.5570000000000164,
+      "fecha": "2026-10-16T11:13:05.643Z"
+    },
+    {
+      "operacion": "login-AUDITOR",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 67.33859999999981,
+      "fecha": "2026-10-16T11:13:05.711Z"
+    },
+    {
+      "operacion": "/api/historial",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 9.37440000000015,
+      "fecha": "2026-10-16T11:13:05.720Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 7.647899999999936,
+      "fecha": "2026-10-16T11:13:06.815Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.7435999999997875,
+      "fecha": "2026-10-16T11:13:07.325Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 4.662299999999959,
+      "fecha": "2026-10-16T11:13:07.837Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.6993999999999687,
+      "fecha": "2026-10-16T11:13:08.344Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 3.0622999999995955,
+      "fecha": "2026-10-16T11:13:08.854Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.4617000000007465,
+      "fecha": "2026-10-16T11:13:09.365Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.248199999999997,
+      "fecha": "2026-10-16T11:13:09.878Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 3.896099999999933,
+      "fecha": "2026-10-16T11:13:10.390Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.8132000000005064,
+      "fecha": "2026-10-16T11:13:10.907Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 6.802500000000691,
+      "fecha": "2026-10-16T11:13:11.418Z"
+    },
+    {
+      "operacion": "/api/salud",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 401.98489999999947,
+      "fecha": "2026-10-16T11:13:12.322Z"
+    },
+    {
+      "operacion": "/api/historial",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 139.8208999999997,
+      "fecha": "2026-10-16T11:13:12.462Z"
+    },
+    {
+      "operacion": "liberar",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 75.09870000000046,
+      "fecha": "2026-10-16T11:13:12.537Z"
+    },
+    {
+      "operacion": "/api/historial",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 9.668999999999869,
+      "fecha": "2026-10-16T11:13:13.346Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 7.316299999998591,
+      "fecha": "2026-10-16T11:13:30.712Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 14.783699999999953,
+      "fecha": "2026-10-16T11:13:30.726Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.167600000000675,
+      "fecha": "2026-10-16T11:13:30.731Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 143.64649999999892,
+      "fecha": "2026-10-16T11:13:30.874Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 5.300500000001193,
+      "fecha": "2026-10-16T11:13:30.880Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.241699999998673,
+      "fecha": "2026-10-16T11:13:30.884Z"
+    },
+    {
+      "operacion": "refresh",
+      "metodo": "POST",
+      "estado": 401,
+      "ms": 52.72149999999965,
+      "fecha": "2026-10-16T11:13:30.937Z"
+    },
+    {
+      "operacion": "/api/solicitudes/19a237ce-bc64-46ec-a85d-767460e335d9",
+      "metodo": "GET",
+      "estado": 404,
+      "ms": 18.99079999999958,
+      "fecha": "2026-10-16T11:13:30.956Z"
+    },
+    {
+      "operacion": "/api/historial",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 9.520800000002055,
+      "fecha": "2026-10-16T11:13:30.965Z"
+    },
+    {
+      "operacion": "liberar",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 7.491900000000896,
+      "fecha": "2026-10-16T11:13:30.973Z"
+    },
+    {
+      "operacion": "liberar",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 6.044700000002194,
+      "fecha": "2026-10-16T11:13:30.979Z"
+    },
+    {
+      "operacion": "liberar",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 6.518400000000838,
+      "fecha": "2026-10-16T11:13:30.985Z"
+    }
+  ]
+}

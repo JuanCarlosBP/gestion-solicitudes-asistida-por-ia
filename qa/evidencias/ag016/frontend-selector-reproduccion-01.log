@@ -1,0 +1,49 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/solicitudes/solicitudes-editores.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                          | Names                                     |  Raw size
+spec-app-solicitudes-solicitudes-editores.js | spec-app-solicitudes-solicitudes-editores | 108.45 kB | 
+chunk-RSTWSNOR.js                            | -                                         |   4.75 kB | 
+styles.css                                   | styles                                    |   1.49 kB | 
+init-testbed.js                              | init-testbed                              |   1.21 kB | 
+vitest-mock-patch.js                         | vitest-mock-patch                         | 974 bytes | 
+
+                                             | Initial total                             | 116.88 kB
+
+Application bundle generation complete. [2.630 seconds] - 2026-10-16T11:51:31.378Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-editores.spec.ts (10 tests | 1 failed) 257ms
+     × AG016: una selección rechazada durante una búsqueda no queda visible como si se hubiera adoptado 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/solicitudes/solicitudes-editores.spec.ts > Selectores acotados de referencias > AG016: una selección rechazada durante una búsqueda no queda visible como si se hubiera adoptado
+AssertionError: expected '00000000-0000-4000-8000-000000000101' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ 00000000-0000-4000-8000-000000000101
+
+ ❯ src/app/solicitudes/solicitudes-editores.spec.ts:147:28
+    145|     vista.detectChanges();
+    146|     expect(vista.componentInstance.valor()).toBeNull();
+    147|     expect(selector.value).toBe('');
+       |                            ^
+    148|   });
+    149|   it('error consulta recuperable sin reflejar cuerpo ni borrar referen…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  13:51:31
+   Duration  2.27s (transform 121ms, setup 487ms, import 125ms, tests 257ms, environment 1.20s)
+

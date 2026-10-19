@@ -1,5 +1,5 @@
 param(
-    [string]$ArchivoEntorno = 'infraestructura/.env',
+    [string]$ArchivoEntorno,
     [string]$DirectorioEvidencias,
     [ValidateRange(1, 65535)][int]$PuertoFrontend,
     [switch]$OmitirNavegador
@@ -7,15 +7,21 @@ param(
 $ErrorActionPreference = 'Stop'
 $raizProyecto = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $raizProyecto
-$archivoConfiguracion = if ([IO.Path]::IsPathFullyQualified($ArchivoEntorno)) {
-    [IO.Path]::GetFullPath($ArchivoEntorno)
-} else {
-    [IO.Path]::GetFullPath((Join-Path $raizProyecto $ArchivoEntorno))
+# Valida proyecto/Compose/override/entorno explícitos antes de consultar HTTP u operar Docker.
+$contextoJson = & node qa/docker-contexto.mjs --contexto
+if ($LASTEXITCODE -ne 0) { throw 'Contexto Docker QA ausente o no autorizado.' }
+$contextoCompose = @($contextoJson | ConvertFrom-Json)
+$archivoConfiguracion = $contextoCompose[4]
+if ($PSBoundParameters.ContainsKey('ArchivoEntorno')) {
+    $solicitado = if ([IO.Path]::IsPathFullyQualified($ArchivoEntorno)) {
+        [IO.Path]::GetFullPath($ArchivoEntorno)
+    } else {
+        [IO.Path]::GetFullPath((Join-Path $raizProyecto $ArchivoEntorno))
+    }
+    if (-not [string]::Equals($solicitado, $archivoConfiguracion, [StringComparison]::OrdinalIgnoreCase)) {
+        throw 'ArchivoEntorno no coincide con QA_ENTORNO explícito.'
+    }
 }
-if (-not $archivoConfiguracion.StartsWith($raizProyecto + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
-    throw 'El archivo de entorno debe estar dentro del proyecto.'
-}
-if (-not (Test-Path -LiteralPath $archivoConfiguracion -PathType Leaf)) { throw 'No existe el archivo de entorno seleccionado.' }
 
 # La prioridad coincide con Compose; el parámetro explícito es la primera opción.
 $puerto = if ($PSBoundParameters.ContainsKey('PuertoFrontend')) { [string]$PuertoFrontend } else { $env:FRONTEND_PUERTO }
@@ -26,7 +32,7 @@ if ([string]::IsNullOrWhiteSpace($puerto)) {
         }
     }
 }
-if ([string]::IsNullOrWhiteSpace($puerto)) { $puerto = '18080' }
+if ([string]::IsNullOrWhiteSpace($puerto)) { throw 'FRONTEND_PUERTO debe estar configurado explícitamente.' }
 $numeroPuerto = 0
 if (-not [int]::TryParse($puerto, [ref]$numeroPuerto) -or $numeroPuerto -lt 1 -or $numeroPuerto -gt 65535) {
     throw 'FRONTEND_PUERTO debe ser un entero entre 1 y 65535.'
@@ -45,12 +51,11 @@ $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $raizProyecto 'tmp/playwright'
 $env:TEMP = Join-Path $raizProyecto 'tmp/pruebas-frontend'
 $env:TMP = $env:TEMP
 New-Item -ItemType Directory -Path $env:TEMP -Force | Out-Null
-$argumentosCompose = @('compose', '--env-file', $archivoConfiguracion, '-f', 'infraestructura/compose.yaml')
 $resultadosCompose = [System.Collections.Generic.List[object]]::new()
 
 function Ejecutar-Compose {
     param([string[]]$Operacion)
-    $salida = & docker @argumentosCompose @Operacion
+    $salida = & node qa/docker-contexto.mjs -- @Operacion
     if ($LASTEXITCODE -ne 0) { throw "Fallo Compose en $($Operacion[0])" }
     return $salida
 }
@@ -74,12 +79,12 @@ function Leer-Historial {
 
 try {
     Ejecutar-Compose @('config', '--quiet') | Out-Null
-    Ejecutar-Compose @('start') | Out-Null
+    Ejecutar-Compose @('start', 'postgres', 'backend', 'frontend') | Out-Null
     Esperar-Salud
     $antes = Leer-Historial
     if (-not $antes.StartsWith('1:')) { throw 'No se encuentra la migración inicial.' }
-    Ejecutar-Compose @('stop') | Out-Null
-    Ejecutar-Compose @('start') | Out-Null
+    Ejecutar-Compose @('stop', 'frontend', 'backend', 'postgres') | Out-Null
+    Ejecutar-Compose @('start', 'postgres', 'backend', 'frontend') | Out-Null
     Esperar-Salud
     $despues = Leer-Historial
     if ($antes -ne $despues) { throw 'El historial no se conservó entre parada y arranque.' }
@@ -95,7 +100,7 @@ try {
         if ($LASTEXITCODE -ne 0) { throw 'El navegador no reflejó el error real.' }
     }
 } finally {
-    Ejecutar-Compose @('start') | Out-Null
+    Ejecutar-Compose @('start', 'postgres', 'backend', 'frontend') | Out-Null
 }
 Esperar-Salud
 if (-not $OmitirNavegador) {

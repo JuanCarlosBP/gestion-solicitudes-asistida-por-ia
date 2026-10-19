@@ -1,0 +1,44 @@
+[
+  {
+    "inicio": "2026-10-16T12:15:19.104Z",
+    "fin": "2026-10-16T12:15:27.209Z",
+    "comando": "npm run test -- --include=src/app/demo/*.spec.ts",
+    "exitCode": 0,
+    "resultado": "PASS"
+  },
+  {
+    "inicio": "2026-10-16T12:15:27.211Z",
+    "fin": "2026-10-16T12:15:38.814Z",
+    "comando": "npm run test",
+    "exitCode": 0,
+    "resultado": "PASS"
+  },
+  {
+    "inicio": "2026-10-16T12:15:38.814Z",
+    "fin": "2026-10-16T12:15:42.443Z",
+    "comando": "npm run typecheck",
+    "exitCode": 0,
+    "resultado": "PASS"
+  },
+  {
+    "inicio": "2026-10-16T12:15:42.443Z",
+    "fin": "2026-10-16T12:15:45.724Z",
+    "comando": "npm run lint",
+    "exitCode": 0,
+    "resultado": "PASS"
+  },
+  {
+    "inicio": "2026-10-16T12:15:45.724Z",
+    "fin": "2026-10-16T12:15:47.666Z",
+    "comando": "npm run format:check",
+    "exitCode": 0,
+    "resultado": "PASS"
+  },
+  {
+    "inicio": "2026-10-16T12:15:47.666Z",
+    "fin": "2026-10-16T12:15:52.093Z",
+    "comando": "npm run build",
+    "exitCode": 0,
+    "resultado": "PASS"
+  }
+]

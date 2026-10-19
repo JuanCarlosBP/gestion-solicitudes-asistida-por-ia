@@ -1,0 +1,174 @@
+{
+  "version": "AG-018-UI-1.2-SELECCION-ESTABLE",
+  "archivos": [
+    {
+      "ruta": "frontend/src/app/solicitudes/decimal-entrada.ts",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "5708543e89cdc0862647444065d6a1872707bfe38335034c5e4154c8cfa3823a"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-calculos.ts",
+      "antesSHA256": "d10ae56c5ce664053934488618e230b262f30f8b11051547a1cae8bf494858f1",
+      "antesLF": "d10ae56c5ce664053934488618e230b262f30f8b11051547a1cae8bf494858f1",
+      "despuesSHA256": "18b0b25dbed0113673773b89701216714ed48448cfcb074fc7e14cec81878b37"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitudes-api.ts",
+      "antesSHA256": "5e5cd97f20085b7c9ce4faa5e0216020910b53e736d6dc080fa08b4cd5b98a5c",
+      "antesLF": "5e5cd97f20085b7c9ce4faa5e0216020910b53e736d6dc080fa08b4cd5b98a5c",
+      "despuesSHA256": "58be9d8ab415af582e1225ce3fae618b4ac1c023814ca300988022f2c49c9938"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/conceptos-editor.html",
+      "antesSHA256": "916d23633a6068d2cbc10c47e35afba8c7c0a98aee895b00ddd6aff8f65b2e96",
+      "antesLF": "916d23633a6068d2cbc10c47e35afba8c7c0a98aee895b00ddd6aff8f65b2e96",
+      "despuesSHA256": "73fedcf670770f2f513e0d40eb801c23365dc5a2ba8bb1ec8615064d2954f694"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-detalle.ts",
+      "antesSHA256": "e0f058a20d90d68bf1a6a50d0c6a069ad76fab515d3a76e03524c815bd2258d5",
+      "antesLF": "e0f058a20d90d68bf1a6a50d0c6a069ad76fab515d3a76e03524c815bd2258d5",
+      "despuesSHA256": "af92afe76c6e8da6fabf65ba8428ef6113dd63381839b359af7481ef4cb1f22c"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-detalle.html",
+      "antesSHA256": "d747db14af8b96d03a821b82bc0cba52c6feaa7970c8d124953a71daafa35558",
+      "antesLF": "d747db14af8b96d03a821b82bc0cba52c6feaa7970c8d124953a71daafa35558",
+      "despuesSHA256": "b900c62bc6cd7774a440674679affec31382e001e3640d8b28aa3d913cf2d1d6"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitud-calculos.spec.ts",
+      "antesSHA256": "0a238f20f61f02981fef82de829f6ab0e7014c202d70a78eedfa6581c0c0f619",
+      "antesLF": "0a238f20f61f02981fef82de829f6ab0e7014c202d70a78eedfa6581c0c0f619",
+      "despuesSHA256": "8c69f37f6cf43a27a5ce87f33a01b8f2d08d3a1516ce79f08a82cd93219756d9"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/referencia-selector.ts",
+      "antesSHA256": "87eb926998f2662329eefaecf22bd3bcdadeec98c5674d6c7265e924d8675a46",
+      "antesLF": "87eb926998f2662329eefaecf22bd3bcdadeec98c5674d6c7265e924d8675a46",
+      "despuesSHA256": "d61f0771242b908f605b3c1d40f9f3c319033d4295e95c55427c512a211f9a71"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/referencia-selector.html",
+      "antesSHA256": "a996e71412c72078abd30657d8c8bfa89237a177937bb3bf21c0ea10530f7fb9",
+      "antesLF": "a996e71412c72078abd30657d8c8bfa89237a177937bb3bf21c0ea10530f7fb9",
+      "despuesSHA256": "7e27b9ebcbecdd941376beee247be92bdcfe168e796d1e34879b7971acfd26d2"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/referencia-selector.css",
+      "antesSHA256": "a5579f10b1641def5f678c511dcfdb91d088c15d5f88aa5032c33a78e9025565",
+      "antesLF": "a5579f10b1641def5f678c511dcfdb91d088c15d5f88aa5032c33a78e9025565",
+      "despuesSHA256": "762675f2eb12155a1f9afd3b8643d57f1584aa5b9a5d6c140083534fbea1f206"
+    },
+    {
+      "ruta": "frontend/src/app/demo/demo-pagina.html",
+      "antesSHA256": "e7c791ff64bd63f89c4e6036fd0f1b94219902a9b8be5ae66af6fe79bd9f8683",
+      "antesLF": "e7c791ff64bd63f89c4e6036fd0f1b94219902a9b8be5ae66af6fe79bd9f8683",
+      "despuesSHA256": "e11bde8af636a9aa7575bd2e3079370318b013be0595c343e09ccd8664f21c24"
+    },
+    {
+      "ruta": "frontend/src/app/demo/demo-pagina.css",
+      "antesSHA256": "060e49b650d4aab620e5641529d09241529536d0b7a4b53d99d0b6922b3e628d",
+      "antesLF": "060e49b650d4aab620e5641529d09241529536d0b7a4b53d99d0b6922b3e628d",
+      "despuesSHA256": "c759812d57ae0ea9ae4d615bbf0d76dd33bb3a142307e8f1169c773799fc70de"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso.html",
+      "antesSHA256": "91527be24a59cfc942367e16d87c96c94632aafa29cd2ae0bf1b4535408c290c",
+      "antesLF": "91527be24a59cfc942367e16d87c96c94632aafa29cd2ae0bf1b4535408c290c",
+      "despuesSHA256": "8f5abf75ff4d522626707a439ab070fdc81957650a2f5b80aad2c9eae9cf78ef"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/identidad.css",
+      "antesSHA256": "c18598a6b1f73135abb265dfe7b8f5c094f6f4625236d9624d0da551b1e6a0ff",
+      "antesLF": "c18598a6b1f73135abb265dfe7b8f5c094f6f4625236d9624d0da551b1e6a0ff",
+      "despuesSHA256": "c0f0835f174eed2fe9efc6f4d13f2bb1096ea3dc9b38e3945146b2cdc5cf7948"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.html",
+      "antesSHA256": "220e42c22f6e04615e44a932b42e8dacbb3bca25a78744b3b3ebcaa180f99ffb",
+      "antesLF": "220e42c22f6e04615e44a932b42e8dacbb3bca25a78744b3b3ebcaa180f99ffb",
+      "despuesSHA256": "b7c323122858af784a88c3bed4502838aa262e23ac51503d6ca817179748d0af"
+    },
+    {
+      "ruta": "frontend/src/app/inicio/inicio.css",
+      "antesSHA256": "18a560581e0685756f38f7f94277909f63c73997c7cb8f0c2b94de69a23a694a",
+      "antesLF": "18a560581e0685756f38f7f94277909f63c73997c7cb8f0c2b94de69a23a694a",
+      "despuesSHA256": "1322ec03bd74ba4e2991dec938d31475fcd58a32b4845b7ff27e0c7971f8b4f2"
+    },
+    {
+      "ruta": "infraestructura/publica/nginx.conf",
+      "antesSHA256": "c3c38df060ad4b189165342afa406baf7f53cfd05626dc254d58b0868c5be236",
+      "antesLF": "c3c38df060ad4b189165342afa406baf7f53cfd05626dc254d58b0868c5be236",
+      "despuesSHA256": "105e6cf486d01edc5bcfc52dc007a26cee32c0b46f41059078b7b01cbea61cc2"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/decimal-entrada.spec.ts",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "46b66f70b736077c4bb769ca5fa4784af722fc10f1c55182c10d387e3c205c2e"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitudes-api.spec.ts",
+      "antesSHA256": "16b6aabd5bcab90a79b818830b50afa3000de7e0430271a9647174a0d9ab3a32",
+      "antesLF": "16b6aabd5bcab90a79b818830b50afa3000de7e0430271a9647174a0d9ab3a32",
+      "despuesSHA256": "8592d2bcd214eb2f7890b9039d5d9782d00d8457aaa194fedfa0e8f07042e4f1"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/solicitudes-editores.spec.ts",
+      "antesSHA256": "fa8fd800874753a352ad7c473d4035ebf19fd2cd1386503fd2bce814a592f050",
+      "antesLF": "fa8fd800874753a352ad7c473d4035ebf19fd2cd1386503fd2bce814a592f050",
+      "despuesSHA256": "0a0aeb69c3e19b67816f92cbe2ae35532a8302ccbf8ad02fe39464bfffe45c5a"
+    },
+    {
+      "ruta": "frontend/public/presentacion/index.html",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "6666f36dff5c9bf7129a08cae6e9b655cefd0d0ffddbde419b7e9a8876456a41"
+    },
+    {
+      "ruta": "frontend/public/presentacion/presentacion.css",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "de386378cdc26ca07a241e997a2950d527553de5ed51e9287920101b07d4394d"
+    },
+    {
+      "ruta": "especificaciones/008-demo-operacion-entrega/pulido-visual-ag018.md",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "70f2dc56bc27f0577b2da26f0eb134531f386f4f0b3e7057dbd9155415b356d3"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/referencia-busqueda.spec.ts",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "afd424ce752fe4ca17d444d83e2a9267518ec819990b50d62d6322851d1a5168"
+    },
+    {
+      "ruta": "frontend/src/app/identidad/acceso-demo.spec.ts",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "a5af45d899658ea6ffd1d1a487bbed83004592428c3706da74bf7f8e02ff3382"
+    },
+    {
+      "ruta": "frontend/src/app/solicitudes/referencia-seleccion-estable.spec.ts",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "0d530a51cb2e76247cd2d7f947b79c9cb901475329fa6ae92172582bdacb0701"
+    },
+    {
+      "ruta": "especificaciones/008-demo-operacion-entrega/correccion-seleccion-ag018.md",
+      "antesSHA256": null,
+      "antesLF": null,
+      "despuesSHA256": "1b76b8c5557f223bd0986fd76f6d1fe5e59eea07915dfec660fff842da468b40"
+    }
+  ],
+  "preservados": [
+    {
+      "ruta": "frontend/src/app/identidad/acceso.ts",
+      "sha256": "1d1cf213ad51559f8880a58dfd5ef7ef2c3f98820ac690eb5da03d92aa2d0c8e",
+      "sha256LF": "1d1cf213ad51559f8880a58dfd5ef7ef2c3f98820ac690eb5da03d92aa2d0c8e"
+    }
+  ]
+}

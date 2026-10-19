@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-16T12:19:17.200Z",
+  "estado": "PASS_ACOTADO",
+  "archivos": 376,
+  "bytes": 6326940,
+  "metodo": "Comparación exacta contra valores privados locales sin copiarlos, y patrón de JWT compacto; archivos de texto AG016 solamente, no acredita ausencia universal de secretos",
+  "hallazgos": []
+}

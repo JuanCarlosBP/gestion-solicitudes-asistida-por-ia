@@ -1,0 +1,16 @@
+
+> gestion-solicitudes-frontend@0.0.1 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+main-AE7SWUFC.js    | main          | 474.45 kB |               109.29 kB
+styles-6GABB4AX.css | styles        |   1.19 kB |               499 bytes
+
+                    | Initial total | 475.64 kB |               109.79 kB
+
+Application bundle generation complete. [3.344 seconds] - 2026-10-16T11:06:38.939Z
+
+Output location: C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\dist\gestion-solicitudes-frontend
+

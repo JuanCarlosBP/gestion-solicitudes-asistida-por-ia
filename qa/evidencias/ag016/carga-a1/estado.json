@@ -1,0 +1,30 @@
+{
+  "ejecucion": "carga-a1",
+  "modo": "MEDICION_65_MINUTOS",
+  "actualizado": "2026-10-16T12:13:47.340Z",
+  "fase": "calentamiento",
+  "inicioMedicion": "2026-10-16T12:12:08.741Z",
+  "transcurridoMs": 98598.72889999999,
+  "finVentana": false,
+  "visitantes": [
+    {
+      "visitante": "A",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 4
+    },
+    {
+      "visitante": "B",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 4
+    },
+    {
+      "visitante": "C",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 4
+    }
+  ],
+  "incidencias": 0
+}

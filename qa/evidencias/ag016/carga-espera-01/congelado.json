@@ -1,0 +1,18 @@
+{
+  "fecha": "2026-10-16T12:07:08.599Z",
+  "estado": "CONGELADO_PRE_A1",
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "b11ee4085f3aecc32af50ee48fef0c2ff9608e9ff3987e8a9cdc857162cd373c"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "b6878c25966c17a5ad4b9fa7cefa148ecaab6a2bcc6c54dc7d81fb018c70e51d"
+    },
+    {
+      "ruta": "qa/evidencias/ag016/contrato-carga.json",
+      "sha256": "ccead245ea6f2e320886f0dc2e58137ab6ce7b79f24863d2e5e6d458a8aa6707"
+    }
+  ]
+}

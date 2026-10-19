@@ -139,9 +139,9 @@
               <th scope="row">
                 <span class="numero-linea">{{ linea.posicion }}.</span> {{ linea.descripcion }}
               </th>
-              <td data-etiqueta="Cantidad">{{ linea.cantidad }}</td>
+              <td data-etiqueta="Cantidad">{{ decimalVisible(linea.cantidad) }}</td>
               <td data-etiqueta="Unidad">{{ nombresUnidad[linea.unidad] }}</td>
-              <td data-etiqueta="Precio unitario">{{ linea.precioUnitario }} €</td>
+              <td data-etiqueta="Precio unitario">{{ decimalVisible(linea.precioUnitario) }} €</td>
               <td data-etiqueta="Importe" class="importe-linea">
                 <strong>{{ euros(linea.importeLinea) }}</strong>
               </td>

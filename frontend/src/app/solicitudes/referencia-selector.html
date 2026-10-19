@@ -5,19 +5,27 @@
       #busqueda
       [id]="tipo() + '-buscar'"
       type="search"
-      [value]="nombre()"
+      [value]="textoBusqueda()"
+      (input)="editarBusqueda(busqueda.value, $event)"
+      (compositionend)="editarBusqueda(busqueda.value)"
       (keydown.enter)="buscarConTeclado($event, busqueda.value)"
-      [disabled]="deshabilitado() || buscando()"
+      [disabled]="deshabilitado()"
+      [attr.aria-describedby]="tipo() + '-buscar-ayuda'"
     />
     <button
       type="button"
       class="secundario"
       (click)="buscar(busqueda.value)"
-      [disabled]="deshabilitado() || buscando()"
+      [disabled]="deshabilitado()"
     >
       Buscar {{ tipo() }}
     </button>
   </div>
+  <p class="ayuda" [id]="tipo() + '-buscar-ayuda'">
+    Escribe el nombre completo o una parte: la lista inferior se filtra al dejar de escribir.
+    También puedes pulsar Buscar o Enter. Después elige una opción de esa lista. La búsqueda no
+    selecciona automáticamente. Borra el texto para ver todas las opciones.
+  </p>
   <label [for]="tipo() + '-seleccion'">{{
     tipo() === 'proveedor' ? 'Proveedor' : 'Supervisor'
   }}</label>
@@ -29,12 +37,7 @@
     [attr.aria-describedby]="tipo() + '-ayuda'"
   >
     <option value="" [selected]="valor() === null">Sin {{ tipo() }}</option>
-    @if (fueraDePagina()) {
-      <option [value]="valor()" selected>
-        {{ nombreSeleccionado() || nombreActual() || 'Referencia guardada no disponible' }}
-      </option>
-    }
-    @for (opcion of pagina()?.elementos; track opcion.id) {
+    @for (opcion of opciones(); track opcion.id) {
       <option [value]="opcion.id" [selected]="valor() === opcion.id">{{ opcion.nombre }}</option>
     }
   </select>
@@ -45,6 +48,18 @@
         : 'Supervisores habilitados distintos del autor. Opcional en borrador.'
     }}
   </p>
+  @if (valor()) {
+    <p class="referencia-elegida" role="status">
+      {{ tipo() === 'proveedor' ? 'Proveedor seleccionado' : 'Supervisor seleccionado' }}:
+      <strong>{{ nombreSeleccionado() || nombreActual() || 'Referencia guardada' }}</strong
+      >. Cambiar la búsqueda no borra esta selección.
+    </p>
+  } @else {
+    <p class="ayuda">Todavía no has seleccionado {{ tipo() }}.</p>
+  }
+  @if (!buscando() && pagina()?.totalElementos === 0) {
+    <p role="status">Sin coincidencias. Prueba una parte del nombre o deja la búsqueda vacía.</p>
+  }
   @if (error()) {
     <p class="error-campo" role="alert">{{ error() }}</p>
   }

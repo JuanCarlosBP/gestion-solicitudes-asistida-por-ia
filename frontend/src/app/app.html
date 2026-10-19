@@ -7,6 +7,7 @@
   >
   <nav aria-label="Navegación principal">
     <a routerLink="/inicio" routerLinkActive="activo" ariaCurrentWhenActive="page">Inicio</a>
+    <a routerLink="/demo" routerLinkActive="activo" ariaCurrentWhenActive="page">Demo</a>
     @if (sesion.autenticado()) {
       @if (solicitudes.supervisar()) {
         <a routerLink="/aprobaciones" routerLinkActive="activo" ariaCurrentWhenActive="page"
@@ -35,7 +36,7 @@
       <a routerLink="/acceso" routerLinkActive="activo" ariaCurrentWhenActive="page">Acceso</a>
     }
   </nav>
-  <span class="entorno">Entorno local</span>
+  <span class="entorno">Demostración · datos ficticios</span>
 </header>
 <main #contenido id="contenido" tabindex="-1"><app-operaciones-panel /><router-outlet /></main>
 <footer>Gestión de Solicitudes · Espacio de trabajo</footer>

@@ -44,7 +44,7 @@ describe('Estimación decimal exacta SCI-05', () => {
     ['1', '100000000000'],
     ['999999999999.999', '99999999999.9999'],
     ['', '1'],
-    ['1,1', '1'],
+    ['1,1,1', '1'],
   ])('rechaza cantidad/precio/límite inválidos %s × %s', (cantidad, precioUnitario) =>
     expect(importeLineaEstimado({ cantidad, precioUnitario })).toBeNull(),
   );

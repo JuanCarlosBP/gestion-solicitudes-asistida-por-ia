@@ -1,0 +1,6 @@
+
+> gestion-solicitudes-frontend@0.0.1 format:check
+> prettier --check src e2e playwright.config.ts *.json *.mjs .prettierrc
+
+Checking formatting...
+All matched files use Prettier code style!

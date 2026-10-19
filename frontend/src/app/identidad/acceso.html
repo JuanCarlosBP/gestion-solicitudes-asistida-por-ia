@@ -1,8 +1,49 @@
 <section class="panel" aria-labelledby="titulo-acceso">
   <p class="contexto">Identidad y acceso</p>
   <h1 id="titulo-acceso">Acceso</h1>
-  <p>Introduce tus datos para consultar tu cuenta.</p>
-  <form (submit)="entrar($event, correo, contrasena)" [attr.aria-busy]="cargando()">
+  <section class="acceso-demo" aria-labelledby="titulo-acceso-demo">
+    <h2 id="titulo-acceso-demo">¿Vienes a probar el proyecto?</h2>
+    <p>
+      El formulario de esta página muestra cómo se inicia sesión en una instalación de la aplicación
+      con cuentas propias: cada persona usa su correo y su contraseña.
+    </p>
+    <p>
+      En esta demostración no tienes una cuenta personal ni necesitas crear una. Para probarla, no
+      uses el formulario de acceso: sigue estos pasos.
+    </p>
+    <ol class="pasos-demo">
+      <li>Abre <strong>Demo</strong> y pulsa <strong>Reservar mi espacio</strong>.</li>
+      <li>
+        Elige <strong>Entrar como solicitante</strong> para crear un borrador, añadir conceptos y
+        presentar una solicitud.
+      </li>
+      <li>
+        Vuelve a <strong>Demo</strong>, sin liberar el espacio, y elige
+        <strong>Entrar como supervisor</strong> para aprobar o rechazar la solicitud.
+      </li>
+      <li>
+        Vuelve a <strong>Demo</strong> y entra como <strong>auditor</strong> para consultar el
+        historial. Al terminar, pulsa <strong>Liberar mi espacio</strong>.
+      </li>
+    </ol>
+    <p>
+      Los tres roles utilizan los datos ficticios de tu reserva, separados de los de otros
+      visitantes. No introduzcas contraseñas de IONOS, GitHub ni de tu ordenador.
+    </p>
+    <a class="boton-demo" routerLink="/demo">Ir a Demo y reservar mi espacio</a>
+  </section>
+  <h2 id="titulo-formulario-acceso">Inicio de sesión con cuenta propia</h2>
+  <p id="ayuda-formulario-acceso">
+    Esta es la ventana de acceso convencional de la aplicación. Se conserva para mostrar esa parte
+    del proyecto; el recorrido de demostración se realiza desde Demo, sin que tengas que introducir
+    un usuario o contraseña propios.
+  </p>
+  <form
+    (submit)="entrar($event, correo, contrasena)"
+    [attr.aria-busy]="cargando()"
+    aria-labelledby="titulo-formulario-acceso"
+    aria-describedby="ayuda-formulario-acceso"
+  >
     <label for="correo">Correo electrónico</label>
     <input
       #correo

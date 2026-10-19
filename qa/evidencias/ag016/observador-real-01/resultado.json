@@ -1,0 +1,45 @@
+{
+  "fecha": "2026-10-16T13:45:36.214Z",
+  "resultado": "PASS",
+  "tipo": "SOLO_LECTURA_EVENTOS_HISTORICOS",
+  "pasadaOrigen": "carga-final-a1",
+  "observaciones": [
+    {
+      "version": "AG016-observador-1",
+      "resultado": "CADUCADA",
+      "espacio": "ag016_demo_02",
+      "generacion": "cdc4103f-b9b8-4c04-b607-04271a6dca43",
+      "expiraEn": "2026-10-16T13:23:28.398302Z",
+      "reservadaEn": "2026-10-16T12:23:28.398302Z",
+      "caducadaEn": "2026-10-16T13:23:28.896724Z",
+      "ttlCoherente": true,
+      "posterior": true,
+      "retrasoServidorMs": 498.422,
+      "observadoUTC": "2026-10-16T13:45:33.849Z",
+      "duracionMs": 2463.6286999999998,
+      "identidad": {
+        "postgres": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+        "backend": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98"
+      }
+    },
+    {
+      "version": "AG016-observador-1",
+      "resultado": "CADUCADA",
+      "espacio": "ag016_demo_03",
+      "generacion": "7fdc6f3b-a42e-4749-845e-848ca12e1143",
+      "expiraEn": "2026-10-16T13:23:28.708593Z",
+      "reservadaEn": "2026-10-16T12:23:28.708593Z",
+      "caducadaEn": "2026-10-16T13:23:28.896724Z",
+      "ttlCoherente": true,
+      "posterior": true,
+      "retrasoServidorMs": 188.131,
+      "observadoUTC": "2026-10-16T13:45:36.214Z",
+      "duracionMs": 2365.2499000000003,
+      "identidad": {
+        "postgres": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+        "backend": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98"
+      }
+    }
+  ],
+  "limite": "Comprueba integración privada contra eventos reales ya persistidos; no sustituye nuevas ventanas ni la prueba temporal exacta"
+}

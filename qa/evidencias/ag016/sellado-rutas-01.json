@@ -1,0 +1,42 @@
+{
+  "fecha": "2026-10-16T12:28:13.711Z",
+  "tipo": "COMPROBACION_OFFLINE_NO_BENCHMARK",
+  "casos": [
+    {
+      "nombre": "Ruta interna",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "\"D:fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"C:fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"D:/fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"../fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"qa/../../fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"/fuera.txt\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\".\"",
+      "estado": "PASS_RECHAZADA"
+    },
+    {
+      "nombre": "\"a\\nb\"",
+      "estado": "PASS_RECHAZADA"
+    }
+  ]
+}

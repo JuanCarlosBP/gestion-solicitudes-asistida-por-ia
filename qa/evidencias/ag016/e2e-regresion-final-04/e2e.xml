@@ -1,0 +1,287 @@
+<testsuites id="" name="" tests="33" failures="4" skipped="0" errors="2" time="118.96934000000002">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="3" failures="3" skipped="0" time="0.374" errors="0">
+<testcase name="AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales" classname="aprobaciones.spec.ts" time="0.135">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\test-failed-1.png]]
+
+[[ATTACHMENT|aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\error-context.md]]
+]]>
+</system-out>
+<failure message="El coordinador debe proporcionar un SOLICITANTE ajeno ficticio" type="expect.toBeTruthy">
+<![CDATA[  aprobaciones.spec.ts:192:5 › AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales 
+
+    Error: El coordinador debe proporcionar un SOLICITANTE ajeno ficticio
+
+    expect(received).toBeTruthy()
+
+    Received: undefined
+
+      182 |   const ajeno = process.env['E2E_AJENO_CORREO'];
+      183 |   const multiple = process.env['E2E_MULTIPLE_CORREO'];
+    > 184 |   expect(ajeno, 'El coordinador debe proporcionar un SOLICITANTE ajeno ficticio').toBeTruthy();
+          |                                                                                   ^
+      185 |   expect(
+      186 |     multiple,
+      187 |     'El coordinador debe proporcionar la cuenta ficticia de cuatro roles',
+        at fixturesExternos (C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:184:83)
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:197:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-01-03-04-0-80126-lectores-autorizados-reales\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible" classname="aprobaciones.spec.ts" time="0.118">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-1.png]]
+
+[[ATTACHMENT|aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\error-context.md]]
+]]>
+</system-out>
+<failure message="El coordinador debe proporcionar un SOLICITANTE ajeno ficticio" type="expect.toBeTruthy">
+<![CDATA[  aprobaciones.spec.ts:341:5 › AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible 
+
+    Error: El coordinador debe proporcionar un SOLICITANTE ajeno ficticio
+
+    expect(received).toBeTruthy()
+
+    Received: undefined
+
+      182 |   const ajeno = process.env['E2E_AJENO_CORREO'];
+      183 |   const multiple = process.env['E2E_MULTIPLE_CORREO'];
+    > 184 |   expect(ajeno, 'El coordinador debe proporcionar un SOLICITANTE ajeno ficticio').toBeTruthy();
+          |                                                                                   ^
+      185 |   expect(
+      186 |     multiple,
+      187 |     'El coordinador debe proporcionar la cuenta ficticia de cuatro roles',
+        at fixturesExternos (C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:184:83)
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:346:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-02-03-07-0-447b2-o-validado-y-motivo-visible\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="0.121">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png]]
+
+[[ATTACHMENT|aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md]]
+]]>
+</system-out>
+<failure message="El coordinador debe proporcionar un SOLICITANTE ajeno ficticio" type="expect.toBeTruthy">
+<![CDATA[  aprobaciones.spec.ts:484:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora 
+
+    Error: El coordinador debe proporcionar un SOLICITANTE ajeno ficticio
+
+    expect(received).toBeTruthy()
+
+    Received: undefined
+
+      182 |   const ajeno = process.env['E2E_AJENO_CORREO'];
+      183 |   const multiple = process.env['E2E_MULTIPLE_CORREO'];
+    > 184 |   expect(ajeno, 'El coordinador debe proporcionar un SOLICITANTE ajeno ficticio').toBeTruthy();
+          |                                                                                   ^
+      185 |   expect(
+      186 |     multiple,
+      187 |     'El coordinador debe proporcionar la cuenta ficticia de cuatro roles',
+        at fixturesExternos (C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:184:83)
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\aprobaciones.spec.ts:489:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\aprobaciones-AP-05-08-vers-68143--la-única-decisión-ganadora\error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="base.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="5" failures="0" skipped="0" time="2.147" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.406">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.288">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.179">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="1.254">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.02">
+</testcase>
+</testsuite>
+<testsuite name="historial.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="10" failures="0" skipped="0" time="8.088" errors="2">
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E01: autor lee timeline integrado y directo con fuentes y transición real" classname="historial.spec.ts" time="0.625">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E02: supervisor ve rechazo y el historial omite el motivo del detalle" classname="historial.spec.ts" time="0.491">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E03: global filtra, pagina, recarga y vuelve atrás con URL persistente" classname="historial.spec.ts" time="0.759">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E04: administrador y auditor consultan ciclo completo de proveedor" classname="historial.spec.ts" time="0.568">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E05: resumen corresponde a API por cuatro perfiles y conserva salud" classname="historial.spec.ts" time="1.432">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E06: sin rol no hay global/proveedor y recurso ajeno equivale a inexistente" classname="historial.spec.ts" time="0.566">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\test-failed-1.png]]
+
+[[ATTACHMENT|historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\error-context.md]]
+
+[[ATTACHMENT|historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\error-context.md]]
+]]>
+</system-out>
+<error message="Falta fixture E2E_AJENO_CORREO para probar solicitudes de otro autor." type="Error">
+<![CDATA[  historial.spec.ts:277:7 › 007: diez recorridos de historial y resumen › HA-E2E06: sin rol no hay global/proveedor y recurso ajeno equivale a inexistente 
+
+    Error: Falta fixture E2E_AJENO_CORREO para probar solicitudes de otro autor.
+
+      302 |     const correoAjeno = process.env['E2E_AJENO_CORREO'];
+      303 |     if (!correoAjeno)
+    > 304 |       throw new Error('Falta fixture E2E_AJENO_CORREO para probar solicitudes de otro autor.');
+          |             ^
+      305 |     const contexto = await browser.newContext({ baseURL });
+      306 |     try {
+      307 |       const ajeno = await contexto.newPage();
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\historial.spec.ts:304:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\error-context.md
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-d86c6-jeno-equivale-a-inexistente\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E07: historia anterior a V7 explícita y decisión previa conservada" classname="historial.spec.ts" time="0.118">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|historial-007-diez-recorri-1a782--decisión-previa-conservada\test-failed-1.png]]
+
+[[ATTACHMENT|historial-007-diez-recorri-1a782--decisión-previa-conservada\error-context.md]]
+
+[[ATTACHMENT|historial-007-diez-recorri-1a782--decisión-previa-conservada\error-context.md]]
+]]>
+</system-out>
+<error message="Falta fixture preV7 E2E_HISTORIAL_ANTERIOR_ID; no se sustituye por datos nuevos." type="Error">
+<![CDATA[  historial.spec.ts:320:7 › 007: diez recorridos de historial y resumen › HA-E2E07: historia anterior a V7 explícita y decisión previa conservada 
+
+    Error: Falta fixture preV7 E2E_HISTORIAL_ANTERIOR_ID; no se sustituye por datos nuevos.
+
+      323 |     const id = process.env['E2E_HISTORIAL_ANTERIOR_ID'];
+      324 |     if (!id || !/^[0-9a-f-]{36}$/i.test(id))
+    > 325 |       throw new Error(
+          |             ^
+      326 |         'Falta fixture preV7 E2E_HISTORIAL_ANTERIOR_ID; no se sustituye por datos nuevos.',
+      327 |       );
+      328 |     await acceder(page, 'AUDITOR');
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\historial.spec.ts:325:13
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-1a782--decisión-previa-conservada\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-1a782--decisión-previa-conservada\error-context.md
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\historial-007-diez-recorri-1a782--decisión-previa-conservada\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E08: vacío e inválidos muestran recuperación sin inventar eventos" classname="historial.spec.ts" time="0.688">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E09: fallo de red controlado y recuperación consulta PostgreSQL real" classname="historial.spec.ts" time="0.491">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E10: teclado, foco, etiquetas y capturas360/768/1440" classname="historial.spec.ts" time="2.35">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="3" failures="0" skipped="0" time="1.159" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.587">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.343">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.229">
+</testcase>
+</testsuite>
+<testsuite name="operaciones.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="9" failures="0" skipped="0" time="25.49" errors="0">
+<testcase name="CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta" classname="operaciones.spec.ts" time="1.207">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-01-04-06-07-1b079-y-recuperación-de-baja-alta\attachments\replay-csrf-b9d70eb07b798f621a6dbf0d7179dca08dd4cdb2.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.792">
+</testcase>
+<testcase name="CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.83">
+</testcase>
+<testcase name="CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar" classname="operaciones.spec.ts" time="1.474">
+</testcase>
+<testcase name="CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable" classname="operaciones.spec.ts" time="2.128">
+</testcase>
+<testcase name="CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave" classname="operaciones.spec.ts" time="0.716">
+</testcase>
+<testcase name="CI-05/07: permiso revocado antes de recuperar y replay no concede acceso" classname="operaciones.spec.ts" time="3.295">
+</testcase>
+<testcase name="CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable" classname="operaciones.spec.ts" time="5.107">
+</testcase>
+<testcase name="CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña" classname="operaciones.spec.ts" time="7.941">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\attachments\diagnostico-progreso-36ec44cd3033b336e3f2dd8a57c8df124dfa3e31.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="1" failures="0" skipped="0" time="4.288" errors="0">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="4.288">
+</testcase>
+</testsuite>
+<testsuite name="solicitudes.spec.ts" timestamp="2026-10-16T12:18:21.731Z" hostname="" tests="2" failures="1" skipped="0" time="0.73" errors="0">
+<testcase name="SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales" classname="solicitudes.spec.ts" time="0.088">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|solicitudes-SCI-01–13-trec-63ced-lar-API-y-PostgreSQL-reales\test-failed-1.png]]
+
+[[ATTACHMENT|solicitudes-SCI-01–13-trec-63ced-lar-API-y-PostgreSQL-reales\error-context.md]]
+]]>
+</system-out>
+<failure message="El coordinador prepara un SOLICITANTE ajeno ficticio antes de ejecutar" type="expect.toBeTruthy">
+<![CDATA[  solicitudes.spec.ts:107:5 › SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales 
+
+    Error: El coordinador prepara un SOLICITANTE ajeno ficticio antes de ejecutar
+
+    expect(received).toBeTruthy()
+
+    Received: undefined
+
+      115 |     ajenoCorreo,
+      116 |     'El coordinador prepara un SOLICITANTE ajeno ficticio antes de ejecutar',
+    > 117 |   ).toBeTruthy();
+          |     ^
+      118 |   const marca = randomUUID();
+      119 |   const asunto = `Solicitud E2E ${marca}`;
+      120 |   const admin = await sesionApi('ADMINISTRADOR');
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\solicitudes.spec.ts:117:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\qa\evidencias\ag016\e2e-regresion-final-04\solicitudes-SCI-01–13-trec-63ced-lar-API-y-PostgreSQL-reales\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\qa\evidencias\ag016\e2e-regresion-final-04\solicitudes-SCI-01–13-trec-63ced-lar-API-y-PostgreSQL-reales\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga" classname="solicitudes.spec.ts" time="0.642">
+</testcase>
+</testsuite>
+</testsuites>

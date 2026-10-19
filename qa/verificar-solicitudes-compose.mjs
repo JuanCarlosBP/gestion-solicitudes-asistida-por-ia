@@ -1,9 +1,8 @@
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { argumentosCompose, ejecutarDocker } from './docker-contexto.mjs';
 import { randomUUID } from 'node:crypto';
-import { prepararDirectorioEvidencias, raizProyecto, rutaDelProyecto } from './rutas-evidencia.mjs';
+import { prepararDirectorioEvidencias, raizProyecto } from './rutas-evidencia.mjs';
 import { prepararUsuariosSolicitudes } from './preparar-usuarios-solicitudes.mjs';
 
 // QA de integración solo loopback y cuentas ficticias. Credenciales/respuestas en memoria.
@@ -13,9 +12,8 @@ if (base.protocol !== 'http:' || !['127.0.0.1', 'localhost', '[::1]'].includes(b
   throw new Error('La comprobación exige HTTP loopback sin credenciales ni parámetros.');
 }
 const evidencia = prepararDirectorioEvidencias();
-const entorno = rutaDelProyecto(process.env.QA_ENTORNO || 'infraestructura/.env.example');
-const ejecutar = promisify(execFile);
-const compose = ['compose', '--env-file', entorno, '-f', 'infraestructura/compose.yaml'];
+const ejecutar = ejecutarDocker;
+const compose = argumentosCompose();
 const controles = [];
 const sesiones = [];
 const marca = `QA004-${randomUUID()}`;

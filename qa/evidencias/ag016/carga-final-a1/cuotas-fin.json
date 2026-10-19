@@ -1,0 +1,87 @@
+{
+  "fecha": "2026-10-16T13:29:57.969Z",
+  "limites": [
+    {
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "iniciadoEn": "2026-10-16T13:12:55.057830591Z",
+      "imagen": "sha256:1f500b8f2ae84da11b3bd52b8a65443d8a84be96e2227c141466f00f09df1e54",
+      "memoria": 1006632960,
+      "swap": 1006632960,
+      "nanoCpus": 550000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "1006632960\n0\n55000 100000"
+    },
+    {
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "iniciadoEn": "2026-10-16T12:22:54.048163897Z",
+      "imagen": "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "memoria": 536870912,
+      "swap": 536870912,
+      "nanoCpus": 250000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "536870912\n0\n25000 100000"
+    },
+    {
+      "servicio": "frontend",
+      "id": "c0801f383985c84c300b197bedccfebb6cb1479f3d4de3b0ce3ddfa7b5657e6a",
+      "iniciadoEn": "2026-10-16T12:22:57.427787258Z",
+      "imagen": "sha256:a0ab83c999e704576ba6c5b1e769cfe125055ceb3b5f5d283a5b4b59a683eaa1",
+      "memoria": 67108864,
+      "swap": 67108864,
+      "nanoCpus": 50000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "67108864\n0\n5000 100000"
+    },
+    {
+      "servicio": "provisionador",
+      "id": "95b9d76061f11defb930909725c6377aa3008d53149a530b6c4071d5c9d06fa1",
+      "iniciadoEn": "2026-10-16T12:22:54.85304466Z",
+      "imagen": "sha256:1f500b8f2ae84da11b3bd52b8a65443d8a84be96e2227c141466f00f09df1e54",
+      "memoria": 268435456,
+      "swap": 268435456,
+      "nanoCpus": 50000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "268435456\n0\n5000 100000"
+    }
+  ],
+  "parametros": {
+    "runtime": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    },
+    "provisionador": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    }
+  }
+}

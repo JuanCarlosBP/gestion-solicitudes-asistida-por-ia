@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ErroresControlados {
     public record ErrorPublico(String error) {}
 
+    @ExceptionHandler(es.gestionsolicitudes.demo.dominio.ErrorDemo.class)
+    public org.springframework.http.ResponseEntity<ErrorPublico> tratarDemo(
+            es.gestionsolicitudes.demo.dominio.ErrorDemo error) {
+        return org.springframework.http.ResponseEntity.status(error.estado())
+                .body(new ErrorPublico(error.codigo()));
+    }
+
     @ExceptionHandler(es.gestionsolicitudes.operaciones.dominio.ErrorOperacion.class)
     public org.springframework.http.ResponseEntity<ErrorPublico> tratarOperacion(
             es.gestionsolicitudes.operaciones.dominio.ErrorOperacion error) {

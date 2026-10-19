@@ -1,0 +1,970 @@
+{
+  "id": "ui-20261019142334",
+  "archivos": [
+    {
+      "ruta": "antecedente/detalle-fallos-angular-1792417175482.json",
+      "bytes": 1979,
+      "sha256": "012659ee16a2993623a0f4a456b933ec0d357430647e0e11bdacd23c7e3defc0"
+    },
+    {
+      "ruta": "antecedente/originales.json",
+      "bytes": 3075,
+      "sha256": "0f765e5b9669260f39968c3ea9bb318ee7ed5838ccf1ebc636784ed8d87ba07a"
+    },
+    {
+      "ruta": "antecedente/parche-aplicado.json",
+      "bytes": 7993,
+      "sha256": "02dd627801e06e56e1ef987abc543f9e40fbc0ea8205d5a80be9675b79351b01"
+    },
+    {
+      "ruta": "antecedente/pasos.json",
+      "bytes": 10398,
+      "sha256": "f606addd1a05c51ab7c71815681c1dfab0d8692af220774c483c70ff94d7d441"
+    },
+    {
+      "ruta": "antecedente/resultado.json",
+      "bytes": 129,
+      "sha256": "dad78c77b7895f109041bac049cef98e2bae4cd867ebab6f23820a3abde9c8c9"
+    },
+    {
+      "ruta": "controlador-acceso-conservado.json",
+      "bytes": 365,
+      "sha256": "3aaeb0e06b98871f846026e53fac0de15048e877ee26fe02c8247209b974c2e9"
+    },
+    {
+      "ruta": "fuentes-frontend.json",
+      "bytes": 18352,
+      "sha256": "cfdadbe2dd790db052adc0a439ed29d9011bb3cd03d16e34956f116c999166e2"
+    },
+    {
+      "ruta": "originales.json",
+      "bytes": 357,
+      "sha256": "22aa1c1ec632987f696d6f20ccf65a3db109554f1bf0aec568375a8b4a05e2c1"
+    },
+    {
+      "ruta": "parche-aplicado.json",
+      "bytes": 8491,
+      "sha256": "ff08e818a773972f3053cbcae6dbf4b08e04d2de56fb0ecd0c56903e496c756c"
+    },
+    {
+      "ruta": "pasos.json",
+      "bytes": 5321,
+      "sha256": "2361a3f3462e23920d55379232de2497b7b8efbc150ee12fe785efa413fa125c"
+    },
+    {
+      "ruta": "previa/busquedas-reales.json",
+      "bytes": 1936,
+      "sha256": "86be58cb57481f5b0876d16c62eb92680bd7e14a54f4bdf22be596f10a33910f"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-1024.png",
+      "bytes": 96179,
+      "sha256": "665525fa2febcfe5775e16ea976e9b7d88bb7dcade4d888a2c38b413ef6cd12b"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-1280.png",
+      "bytes": 98290,
+      "sha256": "9d846d5c05bbb62ff0a4f4ba47b7fe99adbe04f59a7f02f4913b43e20e6244d5"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-1440.png",
+      "bytes": 99979,
+      "sha256": "8e28fc17a3ccd02ea132e574bdb6beff35c360034276b1cf15abde221dcc28c5"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-1920.png",
+      "bytes": 104004,
+      "sha256": "3299fbc3e4320be2334d8f6ec83cf142b883ee70a456fe015a934ed790d79b50"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-320.png",
+      "bytes": 90458,
+      "sha256": "4e3f35b085ae1bcf13fec4f08d9ba08fb6d95d0f6df0492c58a3f34844626c32"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-360.png",
+      "bytes": 87362,
+      "sha256": "5d87ab82f375ed2ec67806b7a25a62f5bedbc645f9689e1143c6d8c3a3d2e691"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-390.png",
+      "bytes": 85647,
+      "sha256": "8a0dfc37960f03053b09a8599547b9d7a586c9bf2ba916dd875027010d13a59b"
+    },
+    {
+      "ruta": "previa/capturas/01-portada-768.png",
+      "bytes": 87982,
+      "sha256": "675c6913fcba674e8ca1070b09a1daf8649e11c0b3c531c16e3436b69fc064ff"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-1024.png",
+      "bytes": 60459,
+      "sha256": "a5367db117106fb34d8bdce4892fb778e85951240541972ea00de59c4e357aa6"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-1280.png",
+      "bytes": 63523,
+      "sha256": "41ab5d38dd4f42be7bbce5155107d82e0a2fd028ef69a37b08e099e25fdeacdd"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-1440.png",
+      "bytes": 64988,
+      "sha256": "3702de2edd0a2c51d6da4979b09ffaa98fe434bbfbf83ca29363098835de6a3e"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-1920.png",
+      "bytes": 67622,
+      "sha256": "692d4fa42ca8b75786a57fa06a96b1302742923d9f16c37c70f9c17bf981254c"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-320.png",
+      "bytes": 53900,
+      "sha256": "23993dc279ab6d12b12dcf4771b96ba884647f2eb0add958585445d13819a0e0"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-360.png",
+      "bytes": 52237,
+      "sha256": "d6d68927d4b23cc82e67a2756d9fb145fdd539cd24f21a41ef9509a549d81dfa"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-390.png",
+      "bytes": 51962,
+      "sha256": "9b035084b55c1bbf3064ae1a1a6d7fe19f066de1b7db9f0eafa9f5535ebfe026"
+    },
+    {
+      "ruta": "previa/capturas/02-inicio-768.png",
+      "bytes": 56226,
+      "sha256": "1a1b24e4465b79a3e1394a44930c8b1723d74c43675768b76b0ce85deb4d5236"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-1024.png",
+      "bytes": 84287,
+      "sha256": "1b4a6fd495aff6351db596db7d5cf7b671b7f41acbe3ada88164d5bd481866f6"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-1280.png",
+      "bytes": 87288,
+      "sha256": "f74a04d41d484cd519992b9208ca5ef12455f08a934b573d776c3041730f330b"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-1440.png",
+      "bytes": 88793,
+      "sha256": "f44961852167e401446fdb440f9343e4b79fdd781bde1680693597c1aec3487c"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-1920.png",
+      "bytes": 92320,
+      "sha256": "636351b4484c6ea9a45469359b3613132925739d9054552d97cdc5e27547528c"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-320.png",
+      "bytes": 74491,
+      "sha256": "1e85c7bbeb2cf2a3cc95f8e665d2465579807889b464147662ff277dc2515588"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-360.png",
+      "bytes": 73956,
+      "sha256": "1b9daac592bdf97d27038767d1b3d5c616956aa1aafbf16eb55fba098a8400e6"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-390.png",
+      "bytes": 72605,
+      "sha256": "8fd69cf5effaa1eea30bad5c1a178918ed0f3fc5d3c00c5029fbb353d9c64d47"
+    },
+    {
+      "ruta": "previa/capturas/03-acceso-conservado-768.png",
+      "bytes": 82096,
+      "sha256": "a6a84e045bf22842406898178c1f81395160f757cd7b8c089ec1ce234be72fb8"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-1024.png",
+      "bytes": 107351,
+      "sha256": "823fe694b58d0addb60179f2d345f33da03da6e588626bcbbda9d377f22a557e"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-1280.png",
+      "bytes": 108547,
+      "sha256": "1efc98376c633d6cb0984e140b0bc08fd7edfa5a5fed0dad07e7b8fa86573314"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-1440.png",
+      "bytes": 110116,
+      "sha256": "1859ff5366e60b3bb2cc65915f2c61516c22b234dd6919c85dd7f135f45e3770"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-1920.png",
+      "bytes": 113782,
+      "sha256": "be0221821a062e7e9901b52c14cfd6d5e6cc8533152288bc0cc91e222ff5d4c9"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-320.png",
+      "bytes": 110069,
+      "sha256": "284dcd70b15a0a46198c046d13d820dd02c7aa9900f26376f22209192cbba21d"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-360.png",
+      "bytes": 109870,
+      "sha256": "8df9da499a4dc9075d0607353b5aa398ed3b265594e9291e6f026e80b921430b"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-390.png",
+      "bytes": 108846,
+      "sha256": "ec0fcfd7375ff1d7f1cd6674998f1c7c8d63dc90451679eb8d748654250904be"
+    },
+    {
+      "ruta": "previa/capturas/04-demo-botones-768.png",
+      "bytes": 111954,
+      "sha256": "508a702d9ad9231195151e365dcfaaf7d312589b04b344b60d4834abf9e33498"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-1024.png",
+      "bytes": 102114,
+      "sha256": "0737b52cbf740c01bb48a599b71a1bae284cb025e554a31c3510a38f339df2cf"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-1280.png",
+      "bytes": 100824,
+      "sha256": "707b8df084a7fc0cdef811b3dd94ddb30ea1cf6ef9f35257035c0c0102a5cf17"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-1440.png",
+      "bytes": 99601,
+      "sha256": "eff7ec153d7dbb970f487289d5dcb136d9a290729926f184342957e595cf69b8"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-1920.png",
+      "bytes": 103232,
+      "sha256": "8beb312e0cc7a9866032ca5dc201be4aadbfac809b0ca8a508e21078bce3e83c"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-320.png",
+      "bytes": 111586,
+      "sha256": "b776c065554b378a02f994c4a90912af1a24c08349d2a5487a271d4b773c5ab7"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-360.png",
+      "bytes": 112686,
+      "sha256": "efef04d8f8f1f744c01aaa43726a963a21fafc89997808a8cc4caf4decbeaf5b"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-390.png",
+      "bytes": 110756,
+      "sha256": "2b36cd302b0c7653c8d8b34e16808c980df0b303696f481634b35d6ba8884f9f"
+    },
+    {
+      "ruta": "previa/capturas/05-buscadores-768.png",
+      "bytes": 105202,
+      "sha256": "f7a39fd85fec48f642da9eaef1247bed1bef32e1bfe35d4c6119c34c5a9c8b49"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-1024.png",
+      "bytes": 121188,
+      "sha256": "8b0f95b2a59f1eb889f4ed5f401e938fb7f3a2b6a5383da47ab4ad8394ab19d7"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-1280.png",
+      "bytes": 124848,
+      "sha256": "4db06f326afa56618339ca3d3251efcfec4d315c6344f3ddcf6235f5f6719809"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-1440.png",
+      "bytes": 125162,
+      "sha256": "264f1fb1dc5fde4e12f81f14e70afae2b7e0c814e843c0467fcac45777065243"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-1920.png",
+      "bytes": 130263,
+      "sha256": "b598034776c10f1e12bbf7314e637b278d67f78eb194c25aaec20b1a9fa70453"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-320.png",
+      "bytes": 134226,
+      "sha256": "fe4e0e58c80ba62ce57e2cd5d2729b675f4931b071e2d78f70d733f1c51741cc"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-360.png",
+      "bytes": 135957,
+      "sha256": "3df5b8006b5e85f612cebc7378ed9acc50a2a3be11160fe34aad7be1a69a7718"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-390.png",
+      "bytes": 134648,
+      "sha256": "5e4febc10ecac9866426ad258b4216081e1e8fbeeba7529f39abd37fef6bf17e"
+    },
+    {
+      "ruta": "previa/capturas/06-coma-editor-768.png",
+      "bytes": 132906,
+      "sha256": "0d01efa4a736280b0a14dfe7d7d80424bcb3961cecebc7b3a97bfea05258ebf3"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-1024.png",
+      "bytes": 143762,
+      "sha256": "ca0aaeeff55cd282e028674ee9ae4ee64af904150613939ab4bf5203e56aa247"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-1280.png",
+      "bytes": 147216,
+      "sha256": "2279677a64122e7dfa7f3bf14abc44e98e2c87f3102b28270e35e81634f5beb5"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-1440.png",
+      "bytes": 149953,
+      "sha256": "0c7beca76caffb9ace48f6f639a00d42e321a04a1ec6d56290d1a25550cc1acd"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-1920.png",
+      "bytes": 155557,
+      "sha256": "17fad76ffbc3c6ca3b953f0470fe88c574443c31e5300d59ba0394e5e75f2588"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-320.png",
+      "bytes": 142939,
+      "sha256": "7e9ae597b94285ead1383e3f71e0eabe2f99539da207e1150ea3c6062885f031"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-360.png",
+      "bytes": 144608,
+      "sha256": "21250a301a8a41a417a93f04ec30fc999156cb28bca1f995c51cbdac69d38403"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-390.png",
+      "bytes": 144478,
+      "sha256": "74778e8aa61a5afcea571b73215c3b8e6077ca147f41cd218e29579834beed65"
+    },
+    {
+      "ruta": "previa/capturas/07-precios-legibles-768.png",
+      "bytes": 136966,
+      "sha256": "5546570d6fa0fae103d8e59bc8c3700b539e400c94bb65cb547ea95acf139045"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-1024.png",
+      "bytes": 175990,
+      "sha256": "14d7ef322a8ffbfc8cbd40cd833a38d3fa0e1eb1f7d4b102147892072a9b5915"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-1280.png",
+      "bytes": 181275,
+      "sha256": "f80e141a442c5a314093e00c78c7bfb62b14ec5b08ab89297334cd8687e7622a"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-1440.png",
+      "bytes": 184796,
+      "sha256": "e2575aef59ee5c1458687e5a599dbc7d975ace6d14633a3a183abfe47b343d2a"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-1920.png",
+      "bytes": 191569,
+      "sha256": "2b505c23543c6918524db26fa712ce1499c1d0ee5a8efcfe3892d3fb12c4b32d"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-320.png",
+      "bytes": 162263,
+      "sha256": "a27acf96377cf4052c9101d3cbba841209535ea6e3c4a9624c4a17a7f3b6358d"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-360.png",
+      "bytes": 174599,
+      "sha256": "5da447e35d60a0f9c310cb3f9489f4281cbd78f9a31f514139587611cb2650b8"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-390.png",
+      "bytes": 174382,
+      "sha256": "5cdf8116a0c7dabae38e3c8ea9ec76f9e2a6a0b0c2759ae89484435acf40ca1e"
+    },
+    {
+      "ruta": "previa/capturas/08-aprobacion-768.png",
+      "bytes": 169030,
+      "sha256": "efb4982e1289bb736143c8688dfe50bf7f4b971fb4d97e1ca5c79fcd2471a340"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-1024.png",
+      "bytes": 116624,
+      "sha256": "8ba0c53c91412237cba958e2e99cfb0044daa332fa9a30d796d3c0351c226fe1"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-1280.png",
+      "bytes": 118163,
+      "sha256": "5bc12744652457cafd39af26296171b38992e2539a078f7e021ef72679f32140"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-1440.png",
+      "bytes": 120309,
+      "sha256": "25d607ffbc84ead468207eb792b2811cc2d522be739a21093cd5136923002994"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-1920.png",
+      "bytes": 124996,
+      "sha256": "d5e01121224d7cf336a8bef8add77d70f6c568444582f3430e3fbdd56e940789"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-320.png",
+      "bytes": 116054,
+      "sha256": "f03a66cdef354c266201464287f3289700ac24859c63de0c0b9cca86f6d3226a"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-360.png",
+      "bytes": 117477,
+      "sha256": "6c15405b541c1b36e45c91ac2f51890dd3c41477899d435f09cff2a9a239e51e"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-390.png",
+      "bytes": 116639,
+      "sha256": "ef038c45f38ac55551b9de598b9a538510405bf70c3395acf10f3e4df8baffe9"
+    },
+    {
+      "ruta": "previa/capturas/09-auditoria-768.png",
+      "bytes": 114986,
+      "sha256": "4e56eb909e2ccc2d20f8b70b67ee00518ec0cd1ed49146e4024004d24cae244d"
+    },
+    {
+      "ruta": "previa/capturas.json",
+      "bytes": 7186,
+      "sha256": "ec19ddb8ed2982700b135da474ced5924f5c9d4d5e65d0c6cbdd48d79f1e94e5"
+    },
+    {
+      "ruta": "previa/GALERIA.html",
+      "bytes": 14370,
+      "sha256": "d3ee3db1112cabebd535fe3940c282ae6da98e621f616bed5762f2f29f0d97f6"
+    },
+    {
+      "ruta": "previa/resultado-ui.json",
+      "bytes": 14522,
+      "sha256": "9cc17989e0ca6dc3a43f2bd23cba7b1bb58873835fb679ca6d3bfdc09c2e52d2"
+    },
+    {
+      "ruta": "publico/busquedas-reales.json",
+      "bytes": 1938,
+      "sha256": "f338ae5dd5ef1a88d47af494b91e973a047e02845bd5826bd4f48db2018365a9"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-1024.png",
+      "bytes": 96179,
+      "sha256": "665525fa2febcfe5775e16ea976e9b7d88bb7dcade4d888a2c38b413ef6cd12b"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-1280.png",
+      "bytes": 98290,
+      "sha256": "9d846d5c05bbb62ff0a4f4ba47b7fe99adbe04f59a7f02f4913b43e20e6244d5"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-1440.png",
+      "bytes": 99979,
+      "sha256": "8e28fc17a3ccd02ea132e574bdb6beff35c360034276b1cf15abde221dcc28c5"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-1920.png",
+      "bytes": 104004,
+      "sha256": "3299fbc3e4320be2334d8f6ec83cf142b883ee70a456fe015a934ed790d79b50"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-320.png",
+      "bytes": 90458,
+      "sha256": "4e3f35b085ae1bcf13fec4f08d9ba08fb6d95d0f6df0492c58a3f34844626c32"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-360.png",
+      "bytes": 87362,
+      "sha256": "5d87ab82f375ed2ec67806b7a25a62f5bedbc645f9689e1143c6d8c3a3d2e691"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-390.png",
+      "bytes": 85647,
+      "sha256": "8a0dfc37960f03053b09a8599547b9d7a586c9bf2ba916dd875027010d13a59b"
+    },
+    {
+      "ruta": "publico/capturas/01-portada-768.png",
+      "bytes": 87982,
+      "sha256": "675c6913fcba674e8ca1070b09a1daf8649e11c0b3c531c16e3436b69fc064ff"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-1024.png",
+      "bytes": 60459,
+      "sha256": "a5367db117106fb34d8bdce4892fb778e85951240541972ea00de59c4e357aa6"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-1280.png",
+      "bytes": 63523,
+      "sha256": "41ab5d38dd4f42be7bbce5155107d82e0a2fd028ef69a37b08e099e25fdeacdd"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-1440.png",
+      "bytes": 64988,
+      "sha256": "3702de2edd0a2c51d6da4979b09ffaa98fe434bbfbf83ca29363098835de6a3e"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-1920.png",
+      "bytes": 67622,
+      "sha256": "692d4fa42ca8b75786a57fa06a96b1302742923d9f16c37c70f9c17bf981254c"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-320.png",
+      "bytes": 53900,
+      "sha256": "23993dc279ab6d12b12dcf4771b96ba884647f2eb0add958585445d13819a0e0"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-360.png",
+      "bytes": 52237,
+      "sha256": "d6d68927d4b23cc82e67a2756d9fb145fdd539cd24f21a41ef9509a549d81dfa"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-390.png",
+      "bytes": 51962,
+      "sha256": "9b035084b55c1bbf3064ae1a1a6d7fe19f066de1b7db9f0eafa9f5535ebfe026"
+    },
+    {
+      "ruta": "publico/capturas/02-inicio-768.png",
+      "bytes": 56226,
+      "sha256": "1a1b24e4465b79a3e1394a44930c8b1723d74c43675768b76b0ce85deb4d5236"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-1024.png",
+      "bytes": 84287,
+      "sha256": "1b4a6fd495aff6351db596db7d5cf7b671b7f41acbe3ada88164d5bd481866f6"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-1280.png",
+      "bytes": 87288,
+      "sha256": "f74a04d41d484cd519992b9208ca5ef12455f08a934b573d776c3041730f330b"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-1440.png",
+      "bytes": 88793,
+      "sha256": "f44961852167e401446fdb440f9343e4b79fdd781bde1680693597c1aec3487c"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-1920.png",
+      "bytes": 92320,
+      "sha256": "636351b4484c6ea9a45469359b3613132925739d9054552d97cdc5e27547528c"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-320.png",
+      "bytes": 74491,
+      "sha256": "1e85c7bbeb2cf2a3cc95f8e665d2465579807889b464147662ff277dc2515588"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-360.png",
+      "bytes": 73956,
+      "sha256": "1b9daac592bdf97d27038767d1b3d5c616956aa1aafbf16eb55fba098a8400e6"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-390.png",
+      "bytes": 72605,
+      "sha256": "8fd69cf5effaa1eea30bad5c1a178918ed0f3fc5d3c00c5029fbb353d9c64d47"
+    },
+    {
+      "ruta": "publico/capturas/03-acceso-conservado-768.png",
+      "bytes": 82096,
+      "sha256": "a6a84e045bf22842406898178c1f81395160f757cd7b8c089ec1ce234be72fb8"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-1024.png",
+      "bytes": 107351,
+      "sha256": "823fe694b58d0addb60179f2d345f33da03da6e588626bcbbda9d377f22a557e"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-1280.png",
+      "bytes": 108547,
+      "sha256": "1efc98376c633d6cb0984e140b0bc08fd7edfa5a5fed0dad07e7b8fa86573314"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-1440.png",
+      "bytes": 110116,
+      "sha256": "1859ff5366e60b3bb2cc65915f2c61516c22b234dd6919c85dd7f135f45e3770"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-1920.png",
+      "bytes": 113782,
+      "sha256": "be0221821a062e7e9901b52c14cfd6d5e6cc8533152288bc0cc91e222ff5d4c9"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-320.png",
+      "bytes": 110069,
+      "sha256": "284dcd70b15a0a46198c046d13d820dd02c7aa9900f26376f22209192cbba21d"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-360.png",
+      "bytes": 109870,
+      "sha256": "8df9da499a4dc9075d0607353b5aa398ed3b265594e9291e6f026e80b921430b"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-390.png",
+      "bytes": 108846,
+      "sha256": "ec0fcfd7375ff1d7f1cd6674998f1c7c8d63dc90451679eb8d748654250904be"
+    },
+    {
+      "ruta": "publico/capturas/04-demo-botones-768.png",
+      "bytes": 111954,
+      "sha256": "508a702d9ad9231195151e365dcfaaf7d312589b04b344b60d4834abf9e33498"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-1024.png",
+      "bytes": 102066,
+      "sha256": "506faebd134a7c5d656d6d0d44782b6c46f1caf748f1cd05930e48fae14e8120"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-1280.png",
+      "bytes": 100804,
+      "sha256": "017b19054fbd01df0ad9f60c3dd742c348b8cdc0804165e495d8940c5dd8261b"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-1440.png",
+      "bytes": 99578,
+      "sha256": "31f95e5144e19dac6372ff6f3587f52c37b172dea79a8f5d35e1a26aca17f36f"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-1920.png",
+      "bytes": 103210,
+      "sha256": "d433cf6ef7c30d9201903793333372c010109ebb218160ca187159e0f8ce5842"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-320.png",
+      "bytes": 111549,
+      "sha256": "1c933ab3afd7c5ed4d5d4ede3af5eb441005874d01de0eac8211846dfbe79dbb"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-360.png",
+      "bytes": 112650,
+      "sha256": "3a94dbf9f33cc471c9f2e98bcb10a430077e479e2e91eab064f28f5fa582f346"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-390.png",
+      "bytes": 110712,
+      "sha256": "6563b282f1f909f934108c03fd208bdf1433cdb4de7409b6f46900684df5349d"
+    },
+    {
+      "ruta": "publico/capturas/05-buscadores-768.png",
+      "bytes": 105039,
+      "sha256": "be9d611156826fdb8b76df5a28f08077a7fb41be82c20ccce40a85fe70325e0d"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-1024.png",
+      "bytes": 121140,
+      "sha256": "e2d4db776f9b7494c0fb41ea404ccec0c4487ea8b237d9428ebc332816ae7ccc"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-1280.png",
+      "bytes": 124829,
+      "sha256": "22adc79629679c61faa73fec2e31a401232ad65cfcb9e189c01a663a9f35f9f7"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-1440.png",
+      "bytes": 125139,
+      "sha256": "63516eba259a04645b644290a4504e33b5ac912b0a58d731b5e6cd0524936952"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-1920.png",
+      "bytes": 130235,
+      "sha256": "d5c63c7eb19b2a4b3aa8a0c8f30a7e74ed49595440fde4cef6dacfb34dcf95ae"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-320.png",
+      "bytes": 134188,
+      "sha256": "401c943fc9c950a665d5c6194ffb483553cafde8741290b8619fbd75591853f4"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-360.png",
+      "bytes": 135926,
+      "sha256": "9741b470e62edc974fc31869812f437d30fdb138612506330155de675fbe931c"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-390.png",
+      "bytes": 134603,
+      "sha256": "b9282033d45e2918cccdd11afacf916c76a6fedc8d53d9510bb2ba34c3550ece"
+    },
+    {
+      "ruta": "publico/capturas/06-coma-editor-768.png",
+      "bytes": 132749,
+      "sha256": "9039427384c950436d910651110b3bc50f4c0dc772aee13a2c774b0f2889872d"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-1024.png",
+      "bytes": 143137,
+      "sha256": "8dd59d1cc1ae94db4b448ed2cd1771cfd886d9799bbf8789ebba56462bae0103"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-1280.png",
+      "bytes": 146644,
+      "sha256": "edc0f62c71ce1166a51359fd1f17bea093bc127997a2a9825e223b2338ff2f18"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-1440.png",
+      "bytes": 149360,
+      "sha256": "9262fd9a665beab6886a578c3135a996fb9febcfae512b7136c8f0fef7e43776"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-1920.png",
+      "bytes": 154954,
+      "sha256": "0b9f3ba54bdd96a59acaf2d2f06b0defda5f2e70d9d89e5a6ad9c04b5c8b1c49"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-320.png",
+      "bytes": 112730,
+      "sha256": "25e9d479103d30b1187706f85354e8875cc5f03e52eb885702496a2c5b8c04ab"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-360.png",
+      "bytes": 114325,
+      "sha256": "4772441a8ec2b123f215a95665306d72b4907a13ff84dd5bca21f91fa6f4bcf5"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-390.png",
+      "bytes": 114514,
+      "sha256": "c4cfe2b2ab3cf268b2f2ffc552c1e9832bd4845d5de71ae1bf7f43b4d52fca55"
+    },
+    {
+      "ruta": "publico/capturas/07-precios-legibles-768.png",
+      "bytes": 136413,
+      "sha256": "97a38f0ba9a15168fc94ad50a31aa1a5aa6f50eb320c72d7555d8680a18b5f10"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-1024.png",
+      "bytes": 175448,
+      "sha256": "38a6ddd92f0f6f624c54fa4c043c66bda199d5905df2366b436f3ee75f21b413"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-1280.png",
+      "bytes": 180701,
+      "sha256": "7ac19a9036d87fafd8698936efad15b3fca4ad1bc8143d92980500756002e5e1"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-1440.png",
+      "bytes": 184207,
+      "sha256": "b1d1ebf4f8c7713fabedb3ff9121be093b3cbd59b9df457e6d4bf9fcdbd9b75f"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-1920.png",
+      "bytes": 191009,
+      "sha256": "d625fe9c1f607b12ddb3afadf81b2eb87572d112d843e8ca39675ec54dfbaae2"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-320.png",
+      "bytes": 161502,
+      "sha256": "730c890c823381b67988c65445dc1307b9fd3a9cb697862fec06308812f23281"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-360.png",
+      "bytes": 174104,
+      "sha256": "bb5f5f388bb1ccead355bc31139ef75dfacbd0c76f2c9f6a02e464f2d188852e"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-390.png",
+      "bytes": 174023,
+      "sha256": "3553bc0745d93e728e7b286bc87c1c7d5b013fef2c000ddcad8199f63c8785ec"
+    },
+    {
+      "ruta": "publico/capturas/08-aprobacion-768.png",
+      "bytes": 168592,
+      "sha256": "ae94f334f1345ee62f408e009d7406b5a6e6e41072652e04dc0e1a45bd123a52"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-1024.png",
+      "bytes": 115570,
+      "sha256": "8fb236e7cc211fdcdc90f07362a03e290f47e2f06b7f63ce304ce463eb7eab50"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-1280.png",
+      "bytes": 117058,
+      "sha256": "57201b67e43d7c9b65dcb664a577b554e8aecc0c6624a9b4634b855fec242396"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-1440.png",
+      "bytes": 119334,
+      "sha256": "888af7783c0c7d7d103de8d5cecd1c6c1969a12d5cce4fa7dde2b4cec926ebfa"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-1920.png",
+      "bytes": 123890,
+      "sha256": "e939f2445f71c6cad931b25cf0b0670dd1d736063aacbdb30f24986a5b202ce2"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-320.png",
+      "bytes": 115405,
+      "sha256": "43de5838aaac481609848481b777e3040c4bbc0ca4d6d5ba8bb47e770de07b11"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-360.png",
+      "bytes": 116877,
+      "sha256": "3d458dcc91c44c61ee5a96e9e581cdec5955e4bc2787c2f745f4d4ff24dbec91"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-390.png",
+      "bytes": 116052,
+      "sha256": "695321a9702c5e4dcff99f60e358978dbc1461cec5531aa608c77a73ab736476"
+    },
+    {
+      "ruta": "publico/capturas/09-auditoria-768.png",
+      "bytes": 114107,
+      "sha256": "09af409014b8ad93bd78233753bbf20726c6ea58680743c310bc692af890fc24"
+    },
+    {
+      "ruta": "publico/capturas.json",
+      "bytes": 7186,
+      "sha256": "ec19ddb8ed2982700b135da474ced5924f5c9d4d5e65d0c6cbdd48d79f1e94e5"
+    },
+    {
+      "ruta": "publico/GALERIA.html",
+      "bytes": 14370,
+      "sha256": "d3ee3db1112cabebd535fe3940c282ae6da98e621f616bed5762f2f29f0d97f6"
+    },
+    {
+      "ruta": "publico/resultado-ui.json",
+      "bytes": 14502,
+      "sha256": "c7ee367d2467e8a3ff41ffcc283d256c0080c420507f268e96036c5ca210d0a5"
+    },
+    {
+      "ruta": "reanudacion-seleccion.json",
+      "bytes": 6598,
+      "sha256": "01057f19f31b8174104126a3a4a095a021b6614e116588842371bb02063d3f47"
+    },
+    {
+      "ruta": "resultado.json",
+      "bytes": 1384,
+      "sha256": "baa1502db08a5bd1245b0a53c1413347b9c6f3bb7cd5c9de3c5d75749db0028c"
+    },
+    {
+      "ruta": "seleccion-verificacion.json",
+      "bytes": 236,
+      "sha256": "4a5844f80c208652e2265e105649849bd4e2556a34e63a47ea98d7d23c20619c"
+    },
+    {
+      "ruta": "vps-resultado.json",
+      "bytes": 456,
+      "sha256": "f95434cf18a398a06f09cd077dceda9987fad86ea3aedcc95cddda69c34470d0"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/decimal-entrada.ts",
+      "bytes": 773,
+      "sha256": "5708543e89cdc0862647444065d6a1872707bfe38335034c5e4154c8cfa3823a"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitud-calculos.ts",
+      "bytes": 4639,
+      "sha256": "18b0b25dbed0113673773b89701216714ed48448cfcb074fc7e14cec81878b37"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitudes-api.ts",
+      "bytes": 4195,
+      "sha256": "58be9d8ab415af582e1225ce3fae618b4ac1c023814ca300988022f2c49c9938"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/conceptos-editor.html",
+      "bytes": 5622,
+      "sha256": "73fedcf670770f2f513e0d40eb801c23365dc5a2ba8bb1ec8615064d2954f694"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitud-detalle.ts",
+      "bytes": 6161,
+      "sha256": "af92afe76c6e8da6fabf65ba8428ef6113dd63381839b359af7481ef4cb1f22c"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitud-detalle.html",
+      "bytes": 8261,
+      "sha256": "b900c62bc6cd7774a440674679affec31382e001e3640d8b28aa3d913cf2d1d6"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitud-calculos.spec.ts",
+      "bytes": 7457,
+      "sha256": "8c69f37f6cf43a27a5ce87f33a01b8f2d08d3a1516ce79f08a82cd93219756d9"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/referencia-selector.ts",
+      "bytes": 6994,
+      "sha256": "1ce5835c86ffa311c1f6b8eb83c7d0f941acfeacad80ea9f7928fb9cfb0affcb"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/referencia-selector.html",
+      "bytes": 3467,
+      "sha256": "7e27b9ebcbecdd941376beee247be92bdcfe168e796d1e34879b7971acfd26d2"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/referencia-selector.css",
+      "bytes": 878,
+      "sha256": "762675f2eb12155a1f9afd3b8643d57f1584aa5b9a5d6c140083534fbea1f206"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/demo/demo-pagina.html",
+      "bytes": 3343,
+      "sha256": "e11bde8af636a9aa7575bd2e3079370318b013be0595c343e09ccd8664f21c24"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/demo/demo-pagina.css",
+      "bytes": 2100,
+      "sha256": "c759812d57ae0ea9ae4d615bbf0d76dd33bb3a142307e8f1169c773799fc70de"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/identidad/acceso.html",
+      "bytes": 3105,
+      "sha256": "8f5abf75ff4d522626707a439ab070fdc81957650a2f5b80aad2c9eae9cf78ef"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/identidad/identidad.css",
+      "bytes": 1798,
+      "sha256": "c0f0835f174eed2fe9efc6f4d13f2bb1096ea3dc9b38e3945146b2cdc5cf7948"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/inicio/inicio.html",
+      "bytes": 4315,
+      "sha256": "b7c323122858af784a88c3bed4502838aa262e23ac51503d6ca817179748d0af"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/inicio/inicio.css",
+      "bytes": 3212,
+      "sha256": "1322ec03bd74ba4e2991dec938d31475fcd58a32b4845b7ff27e0c7971f8b4f2"
+    },
+    {
+      "ruta": "fuentes/infraestructura/publica/nginx.conf",
+      "bytes": 3252,
+      "sha256": "105e6cf486d01edc5bcfc52dc007a26cee32c0b46f41059078b7b01cbea61cc2"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/decimal-entrada.spec.ts",
+      "bytes": 1814,
+      "sha256": "46b66f70b736077c4bb769ca5fa4784af722fc10f1c55182c10d387e3c205c2e"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitudes-api.spec.ts",
+      "bytes": 6205,
+      "sha256": "8592d2bcd214eb2f7890b9039d5d9782d00d8457aaa194fedfa0e8f07042e4f1"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/solicitudes-editores.spec.ts",
+      "bytes": 11169,
+      "sha256": "0a0aeb69c3e19b67816f92cbe2ae35532a8302ccbf8ad02fe39464bfffe45c5a"
+    },
+    {
+      "ruta": "fuentes/frontend/public/presentacion/index.html",
+      "bytes": 3985,
+      "sha256": "6666f36dff5c9bf7129a08cae6e9b655cefd0d0ffddbde419b7e9a8876456a41"
+    },
+    {
+      "ruta": "fuentes/frontend/public/presentacion/presentacion.css",
+      "bytes": 3192,
+      "sha256": "de386378cdc26ca07a241e997a2950d527553de5ed51e9287920101b07d4394d"
+    },
+    {
+      "ruta": "fuentes/especificaciones/008-demo-operacion-entrega/pulido-visual-ag018.md",
+      "bytes": 4046,
+      "sha256": "70f2dc56bc27f0577b2da26f0eb134531f386f4f0b3e7057dbd9155415b356d3"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/referencia-busqueda.spec.ts",
+      "bytes": 8244,
+      "sha256": "afd424ce752fe4ca17d444d83e2a9267518ec819990b50d62d6322851d1a5168"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/identidad/acceso-demo.spec.ts",
+      "bytes": 2810,
+      "sha256": "a5af45d899658ea6ffd1d1a487bbed83004592428c3706da74bf7f8e02ff3382"
+    },
+    {
+      "ruta": "fuentes/frontend/src/app/solicitudes/referencia-seleccion-estable.spec.ts",
+      "bytes": 7843,
+      "sha256": "c878d07456f16cb3e360ac4bb4e6fff2ae4b368627c5611e958a7df215c68f0f"
+    },
+    {
+      "ruta": "fuentes/especificaciones/008-demo-operacion-entrega/correccion-seleccion-ag018.md",
+      "bytes": 2856,
+      "sha256": "1b76b8c5557f223bd0986fd76f6d1fe5e59eea07915dfec660fff842da468b40"
+    }
+  ]
+}

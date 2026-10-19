@@ -7,6 +7,79 @@
 [resultados 002](../../especificaciones/002-identidad-acceso/validacion.md) y
 [resultados 003](../../especificaciones/003-proveedores/validacion.md).
 
+## Contexto QA vigente
+
+AG-016 exige contexto explícito a los verificadores Compose de 001–007 y a sus
+ayudantes E2E. Los apartados posteriores conservan los procedimientos y resultados
+históricos de cada incremento; sus ejemplos de invocación deben completarse con
+este contexto al usar los scripts actuales. Los estados de aceptación vigentes y
+las comprobaciones nuevas se consultan en el [informe AG-016](../trazabilidad/AG-016-informe.md).
+
+[qa/docker-contexto.mjs](../../qa/docker-contexto.mjs) exige las cuatro variables
+`COMPOSE_PROJECT_NAME`, `COMPOSE_FILE`, `QA_ENTORNO` y `QA_COMPOSE_OVERRIDE`.
+Los tres archivos deben existir dentro del workspace; el override debe ser distinto
+del Compose principal. No hay selección automática de proyecto ni de `.env.example`.
+Antes de `exec`, `start`, `stop` o `restart`, el helper comprueba el ID completo,
+la etiqueta de proyecto y el servicio, y opera sobre ese ID. `--contexto` solo
+resuelve argumentos y rutas, sin llamar a Docker ni imprimir el contenido del entorno.
+
+Para la regresión AG-016, desde la raíz y en una consola dedicada, con el laboratorio
+ya preparado por su único operador:
+
+```powershell
+$env:COMPOSE_PROJECT_NAME = 'gestion-solicitudes-ag016-regresion'
+$env:COMPOSE_FILE = Join-Path (Get-Location) 'infraestructura/compose.yaml'
+$env:QA_ENTORNO = Join-Path (Get-Location) 'tmp/ag016/regresion.env'
+$env:QA_COMPOSE_OVERRIDE = Join-Path (Get-Location) 'qa/ag016/compose-regresion.yaml'
+$env:FRONTEND_PUERTO = '18087'
+$env:BASE_URL = 'http://127.0.0.1:18087'
+$env:QA_EVIDENCE_DIR = Join-Path (Get-Location) 'qa/evidencias/ag016/regresion-manual-001'
+node qa/docker-contexto.mjs --contexto
+```
+
+Elegir un directorio de evidencia nuevo antes de cada ejecución; no reutilizar
+`regresion-manual-001` si existe. Este contexto coincide exactamente con la lista
+permitida del helper. `tmp/ag016/regresion.env` es configuración local preparada;
+el ejemplo no la crea ni copia secretos. El complemento de
+[regresión](../../qa/ag016/compose-regresion.yaml) utiliza las imágenes locales
+AG-016 con el perfil y proxy de 001–007. El puerto y la URL deben coincidir con el
+conjunto existente. La resolución de contexto se ha comprobado sin Docker;
+el resultado de cada prueba real se registra por separado en su evidencia.
+
+Con las precondiciones de cada verificador, los comandos
+`node qa/verificar-sesiones-compose.mjs`,
+`node qa/verificar-proveedores-compose.mjs` y
+`node qa/verificar-solicitudes-compose.mjs` heredan este bloque completo.
+Lo mismo se aplica a aprobaciones, concurrencia, historial, evolución SQL y
+preparación de usuarios. El navegador de regresión debe heredar el contexto y
+sus fixtures, con `E2E_DEMO` sin definir. Estas pruebas crean datos ficticios y
+algunas reinician servicios: coordinar su ejecución con el operador Docker.
+
+El job `compose` de [CI](../../.github/workflows/ci.yml) proporciona el contexto
+equivalente en Ubuntu mediante estas variables de job:
+
+```yaml
+COMPOSE_PROJECT_NAME: gestion-solicitudes-ci-${{ github.run_id }}-${{ github.run_attempt }}
+COMPOSE_FILE: ${{ github.workspace }}/infraestructura/compose.yaml
+QA_ENTORNO: ${{ github.workspace }}/infraestructura/.env
+QA_COMPOSE_OVERRIDE: ${{ github.workspace }}/qa/compose-ci.yaml
+QA_EVIDENCE_DIR: ${{ github.workspace }}/tmp/evidencias/compose
+FRONTEND_PUERTO: '18080'
+BASE_URL: http://127.0.0.1:18080
+```
+
+El workflow prepara el archivo ficticio `.env`, valida con
+`node qa/docker-contexto.mjs -- config --quiet` y crea el proyecto exclusivo del
+job con los mismos archivos explícitos. Los verificadores heredan esas variables;
+la parada utiliza `node qa/docker-contexto.mjs -- stop frontend backend postgres`.
+[compose-ci.yaml](../../qa/compose-ci.yaml) es un complemento explícito sin cambios
+de servicios. Este bloque describe el workflow actual; no acredita una nueva
+ejecución remota ni sustituye sus resultados.
+
+La demo008 usa su propio proyecto, configuración y helper, descritos en
+[operación de la demo](../operacion-demo-008.md). Su contexto no sirve para ejecutar
+la regresión 001–007; abrir una consola distinta evita mezclar ambas configuraciones.
+
 ## Requisitos
 
 Java/javac Temurin 21.0.12.1, Node 24.13.0, npm 11.6.2,
@@ -235,7 +308,8 @@ público requiere HTTPS, Secure y secretos distintos, todavía no acreditados.
 AG-010 dirige toda evidencia nueva a `qa/evidencias/ag010/`; los verificadores
 rechazan AG-003–AG-009. Las pruebas de identidad en Compose se invocan desde raíz
 con `node qa/verificar-sesiones-compose.mjs`, `BASE_URL` del puerto real y
-`QA_ENTORNO` apuntando al ejemplo ficticio utilizado. Reinicia únicamente backend,
+el [contexto QA vigente](#contexto-qa-vigente) completo; la ejecución histórica usó
+el ejemplo ficticio como `QA_ENTORNO`. Reinicia únicamente backend,
 comprueba cuatro roles, JWT invalidado/refresh conservado, rotación, reuse y logout.
 Su estado ejecutado se registra en validación; no sustituye E2E del navegador.
 
@@ -269,7 +343,8 @@ Los verificadores rechazan destinos históricos AG-003–AG-010.
 El contrato y los datos de ejemplo están en especificación 003. El catálogo usa
 V3 sobre el volumen existente, sin borrar V1/V2 ni datos. Los usuarios ficticios
 siguen siendo los cuatro de infraestructura/.env.example. La comprobación API
-propia, desde raíz con Compose listo, usa QA_EVIDENCE_DIR y QA_ENTORNO:
+propia, desde raíz con Compose listo, requiere el
+[contexto QA vigente](#contexto-qa-vigente) y `QA_EVIDENCE_DIR` exclusivo:
 `node qa/verificar-proveedores-compose.mjs`. Pasan78 controles REST, junto a88 de
 sesiones,9 E2E y persistencia/caída503/recuperación200 en imágenes definitivas.
 La validación conserva resultados y primeros fallos antes de correcciones.
@@ -294,7 +369,8 @@ AG-003–AG-011. No se ejecutan comandos Git. Las consultas públicas autorizada
 envían solo metadatos; OSV Maven compara el inventario local sin conexión.
 
 Con Compose listo, ejecutar `node qa/verificar-solicitudes-compose.mjs` con
-`QA_ENTORNO=infraestructura/.env.example` y `QA_EVIDENCE_DIR` exclusivo. Comprueba
+el [contexto QA vigente](#contexto-qa-vigente) y `QA_EVIDENCE_DIR` exclusivo.
+AG-012 usó históricamente `QA_ENTORNO=infraestructura/.env.example`. Comprueba
 API004, cálculos, visibilidad, referencias, conflictos, idempotencia y reinicio.
 El preparador crea usuarios ficticios únicos copiando internamente el hash del
 solicitante demo; no imprime hashes ni devuelve credenciales. El descriptor

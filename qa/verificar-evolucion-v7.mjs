@@ -1,13 +1,13 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { argumentosCompose, ejecutarDockerSync as execFileSync } from './docker-contexto.mjs';
 import { prepararDirectorioEvidencias, raizProyecto } from './rutas-evidencia.mjs';
 
 // Solo el volumen ficticio local. Se guardan conteos/huellas, nunca filas sensibles.
 const modo = process.argv[2];
+const compose = argumentosCompose();
 if (!['antes', 'despues'].includes(modo)) throw new Error('Usar antes o despues.');
 const evidencia = prepararDirectorioEvidencias();
-const compose = ['compose', '--env-file', 'infraestructura/.env.example', '-f', 'infraestructura/compose.yaml'];
 const sql = (consulta) => execFileSync('docker', [...compose, 'exec', '-T', 'postgres', 'psql',
   '-U', 'administrador_local', '-d', 'gestion', '-v', 'ON_ERROR_STOP=1', '-tAc', consulta],
 { cwd: raizProyecto, windowsHide: true, timeout: 15000, encoding: 'utf8' }).trim();

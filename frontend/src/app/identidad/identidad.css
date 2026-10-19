@@ -75,3 +75,36 @@ button {
   border-radius: var(--radio-control);
   min-height: 2.75rem;
 }
+
+.acceso-demo {
+  margin-block: 1.5rem;
+  padding: 1.25rem;
+  background: var(--color-suave);
+  border-radius: var(--radio);
+}
+.acceso-demo h2 {
+  font-size: 1.2rem;
+}
+.acceso-demo .boton-demo {
+  display: inline-flex;
+  margin: 0.5rem 0 0;
+  padding: 0.85rem 1rem;
+  background: var(--color-primario);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radio-control);
+  max-width: 100%;
+}
+
+.pasos-demo {
+  padding-inline-start: 1.4rem;
+  margin-block: 1rem;
+}
+.pasos-demo li + li {
+  margin-block-start: 0.55rem;
+}
+.acceso-demo p,
+.pasos-demo li,
+#ayuda-formulario-acceso {
+  overflow-wrap: anywhere;
+}

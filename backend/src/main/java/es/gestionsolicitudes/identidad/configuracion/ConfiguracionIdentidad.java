@@ -42,12 +42,22 @@ public class ConfiguracionIdentidad {
     }
 
     @Bean
-    JwtDecoder decodificadorJwt(ClavesRsa claves, RepositorioIdentidad repositorio, Clock reloj) {
+    JwtDecoder decodificadorJwt(
+            ClavesRsa claves, RepositorioIdentidad repositorio, Clock reloj, Environment entorno) {
         NimbusJwtDecoder decodificador =
                 NimbusJwtDecoder.withPublicKey(claves.publica())
                         .signatureAlgorithm(SignatureAlgorithm.RS256)
                         .build();
-        decodificador.setJwtValidator(new ValidadorJwt(repositorio, reloj));
+        decodificador.setJwtValidator(
+                new ValidadorJwt(
+                        repositorio,
+                        reloj,
+                        entorno.acceptsProfiles(org.springframework.core.env.Profiles.of("demo"))));
         return decodificador;
+    }
+
+    JwtDecoder decodificadorJwt(ClavesRsa claves, RepositorioIdentidad repositorio, Clock reloj) {
+        return decodificadorJwt(
+                claves, repositorio, reloj, new org.springframework.core.env.StandardEnvironment());
     }
 }

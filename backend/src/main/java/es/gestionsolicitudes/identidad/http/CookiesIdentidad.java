@@ -18,7 +18,7 @@ public class CookiesIdentidad {
     private final Clock reloj;
 
     public CookiesIdentidad(Environment entorno, Clock reloj) {
-        this.local = entorno.acceptsProfiles(Profiles.of("local"));
+        this.local = entorno.acceptsProfiles(Profiles.of("local", "demo-local"));
         this.reloj = reloj;
     }
 

@@ -1,0 +1,320 @@
+{
+  "fecha": "2026-10-16T11:47:07.071Z",
+  "baseUrl": "http://127.0.0.1:18087",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado sin identidad devuelve 401",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Alta con Bearer sin CSRF devuelve 403",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Alta rechazada para AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Alta rechazada para SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Alta rechazada para SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Alta 201 activa y versión cero",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Location del recurso creado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "DTO público sin normalizado ni campos internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Datos de proveedor sin caché compartida",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Activo visible ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Activo visible AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Activo visible SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Activo visible SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Edición preserva identidad y creación e incrementa versión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Edición obsoleta devuelve conflicto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo no editable rechazado: activo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo no editable rechazado: id",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo no editable rechazado: creadoEn",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Campo no editable rechazado: rol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Desactivación lógica",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Desactivación repetida vigente no modifica",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Estado coincidente con versión antigua sigue siendo conflicto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inactivo oculto SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inactivo rechazado SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro todos rechazado SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado no filtra inactivo SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inactivo oculto SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro inactivo rechazado SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Filtro todos rechazado SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado no filtra inactivo SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inactivo visible ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inactivo visible AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "desactivar rechazado AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "reactivar rechazado AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Editar rechazado AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "desactivar rechazado SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "reactivar rechazado SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Editar rechazado SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "desactivar rechazado SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "reactivar rechazado SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Editar rechazado SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Duplicado normalizado incluye inactivo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reactivación autorizada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Reactivación repetida vigente no modifica",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Dos altas HTTP simultáneas: una persiste y una recibe duplicado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Dos ediciones HTTP simultáneas: una gana y una recibe conflicto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera incrementa una sola versión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma identidad fiscal en otro país ISO permitida",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: page=-1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: size=0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: size=101",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: sort=id,asc",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: sort=denominacion,sql",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: paisFiscal=XX",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: tipo=OTRO",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Consulta inválida controlada: activo=quizas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Paginación, búsqueda sin mayúsculas y totales",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Fiscal exacto normalizado y filtros AND",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Página vacía conserva total",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Acentos significativos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Comodín porcentaje tratado como literal",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Inexistente 404 controlado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrado físico denegado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor persistido tras reiniciar backend y Flyway",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Logs backend/PostgreSQL sin datos fiscales ni contactos ficticios de esta prueba",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico confirmado de CREAR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico confirmado de MODIFICAR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico confirmado de DESACTIVAR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico confirmado de REACTIVAR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico de conflicto de versión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Evento técnico de rechazo por duplicado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Repetición de DESACTIVAR no duplica evento de modificación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Repetición de REACTIVAR no duplica evento de modificación",
+      "resultado": "PASS"
+    }
+  ],
+  "limites": "Solo datos ficticios identificados QA-AG011, conservados sin borrar. Reinicia backend. Concurrencia HTTP real sobre Compose/PostgreSQL; no acredita carga a 50.000. Tokens/cuerpos/logs solo en memoria."
+}

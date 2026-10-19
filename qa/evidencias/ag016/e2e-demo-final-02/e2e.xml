@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="75.94113899999999">
+<testsuite name="demo-aislamiento.spec.ts" timestamp="2026-10-16T11:57:31.588Z" hostname="" tests="1" failures="0" skipped="0" time="2.732" errors="0">
+<testcase name="008: tres espacios exclusivos, recorrido real por roles, cuarto visitante y pestaña antigua" classname="demo-aislamiento.spec.ts" time="2.732">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\attachments\diagnostico-formulario-sin-datos-d5adcdfaaeec83c69979999815ff085635e2dfe5.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

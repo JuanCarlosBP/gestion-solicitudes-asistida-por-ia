@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Proyecto personal full stack: proveedores, solicitudes, aprobaciones e historial. Prueba un espacio de demostración propio con tres roles y datos ficticios."
+    />
+    <title>Gestión de Solicitudes · JCBP Software</title>
+    <link rel="stylesheet" href="/presentacion/presentacion.css" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <a class="marca" href="/" aria-label="Gestión de Solicitudes, presentación"
+        ><span aria-hidden="true" class="simbolo">GS</span><span>Gestión de Solicitudes</span></a
+      >
+      <a class="autor" href="https://jcbpsoftware.com/">JCBP Software</a>
+    </header>
+    <main id="contenido">
+      <section class="portada" aria-labelledby="titulo">
+        <p class="etiqueta">PROYECTO PERSONAL · DEMOSTRACIÓN INTERACTIVA</p>
+        <h1 id="titulo">Una solicitud.<br />Tres perspectivas.</h1>
+        <p class="introduccion">
+          Prepara una petición con proveedor e importes, revísala como supervisor y consulta su
+          historial como auditor. Un recorrido completo, con datos ficticios y un espacio
+          independiente para cada visitante.
+        </p>
+        <div class="acciones">
+          <a class="boton" href="/inicio">Comenzar</a>
+          <a
+            class="boton secundario"
+            href="https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia"
+            >Ver código y documentación</a
+          >
+        </div>
+        <p class="aclaracion">
+          No necesitas usuario ni contraseña de prueba. Desde Inicio podrás reservar tu espacio y
+          elegir un rol.
+        </p>
+      </section>
+      <section aria-labelledby="recorrido">
+        <h2 id="recorrido">Qué puedes probar</h2>
+        <div class="tarjetas">
+          <article>
+            <span class="paso">01 · SOLICITANTE</span>
+            <h3>Preparar y presentar</h3>
+            <p>
+              Crea un borrador, elige proveedor y supervisor, añade conceptos y comprueba los
+              importes antes de presentarlo.
+            </p>
+          </article>
+          <article>
+            <span class="paso">02 · SUPERVISOR</span>
+            <h3>Revisar y decidir</h3>
+            <p>
+              Consulta la solicitud asignada y apruébala o recházala. La decisión queda registrada y
+              se respetan los permisos del rol.
+            </p>
+          </article>
+          <article>
+            <span class="paso">03 · AUDITOR</span>
+            <h3>Seguir el historial</h3>
+            <p>
+              Consulta lo ocurrido en tu espacio: quién actuó, qué cambió y cuándo. Este rol no
+              modifica las solicitudes.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="tecnica" aria-labelledby="tecnica">
+        <h2 id="tecnica">Cómo está construido</h2>
+        <p>
+          Java y Spring Boot en el servidor; Angular y TypeScript en la interfaz; PostgreSQL para
+          los datos y Docker para la ejecución. Incluye pruebas, control de permisos, prevención de
+          operaciones duplicadas e historial de negocio.
+        </p>
+        <p>
+          Proyecto de Juan Carlos Bohórquez Plato. Desarrollo asistido por IA bajo dirección humana,
+          con especificaciones, decisiones y verificaciones documentadas.
+        </p>
+      </section>
+      <aside class="aviso">
+        <strong>Solo datos inventados.</strong> Los espacios de demostración son temporales y se
+        reciclan. No introduzcas información personal, contraseñas ni documentos reales.
+      </aside>
+    </main>
+    <footer>
+      Gestión de Solicitudes · Proyecto de JCBP Software ·
+      <a href="/demo">Ir directamente a la demo</a>
+    </footer>
+  </body>
+</html>

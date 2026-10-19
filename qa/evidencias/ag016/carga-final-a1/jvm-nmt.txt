@@ -1,0 +1,107 @@
+Native Memory Tracking:
+
+Total: reserved=2013299233, committed=276001313
+       malloc: 31855137 #224018
+       mmap:   reserved=1981444096, committed=244146176
+
+-                 Java Heap (reserved=553648128, committed=130764800)
+                            (mmap: reserved=553648128, committed=130764800, peak=163991552) 
+ 
+-                     Class (reserved=1075246206, committed=9499774)
+                            (classes #12889)
+                            (  instance classes #12015, array classes #874)
+                            (malloc=1504382 #39395) (peak=1620342 #40186) 
+                            (mmap: reserved=1073741824, committed=7995392, at peak) 
+                            (  Metadata:   )
+                            (    reserved=67108864, committed=55443456)
+                            (    used=55035560)
+                            (    waste=407896 =0.74%)
+                            (  Class space:)
+                            (    reserved=1073741824, committed=7995392)
+                            (    used=7433216)
+                            (    waste=562176 =7.03%)
+ 
+-                    Thread (reserved=14728944, committed=1203952)
+                            (threads #13)
+                            (stack: reserved=14680064, committed=1155072, peak=1155072)
+                            (malloc=32848 #95) (peak=94872 #244) 
+                            (arena=16032 #28) (peak=396440 #62)
+ 
+-                      Code (reserved=256167992, committed=38600760)
+                            (malloc=2535480 #8437) (peak=3155416 #12337) 
+                            (mmap: reserved=253632512, committed=36065280, at peak) 
+                            (arena=0 #0) (peak=33712 #1)
+ 
+-                        GC (reserved=1834154, committed=453802)
+                            (malloc=23722 #80) (peak=260850 #140) 
+                            (mmap: reserved=1810432, committed=430080, peak=561152) 
+ 
+-                  Compiler (reserved=672056, committed=672056)
+                            (malloc=73112 #622) (peak=309408 #697) 
+                            (arena=598944 #10) (peak=59179640 #12)
+ 
+-                  Internal (reserved=487457, committed=487457)
+                            (malloc=450593 #14893) (peak=482924 #15012) 
+                            (mmap: reserved=36864, committed=36864, at peak) 
+ 
+-                     Other (reserved=10240, committed=10240)
+                            (malloc=10240 #1) (peak=161792 #19) 
+ 
+-                    Symbol (reserved=19185248, committed=19185248)
+                            (malloc=17442032 #155163) (at peak) 
+                            (arena=1743216 #1) (at peak)
+ 
+-    Native Memory Tracking (reserved=3667976, committed=3667976)
+                            (malloc=83688 #1479) (peak=89232 #1566) 
+                            (tracking overhead=3584288)
+ 
+-        Shared class space (reserved=16777216, committed=12247040, readonly=0)
+                            (mmap: reserved=16777216, committed=12247040, peak=12484608) 
+ 
+-               Arena Chunk (reserved=3150816, committed=3150816)
+                            (malloc=3150816 #240) (peak=61193368 #1424) 
+ 
+-                   Tracing (reserved=257, committed=257)
+                            (malloc=257 #5) (at peak) 
+ 
+-                Statistics (reserved=128, committed=128)
+                            (malloc=128 #2) (at peak) 
+ 
+-                 Arguments (reserved=135, committed=135)
+                            (malloc=135 #5) (at peak) 
+ 
+-                    Module (reserved=100128, committed=100128)
+                            (malloc=100128 #2490) (peak=107728 #2504) 
+ 
+-                 Safepoint (reserved=8192, committed=8192)
+                            (mmap: reserved=8192, committed=8192, at peak) 
+ 
+-           Synchronization (reserved=79216, committed=79216)
+                            (malloc=79216 #751) (peak=101264 #963) 
+ 
+-            Serviceability (reserved=17152, committed=17152)
+                            (malloc=17152 #9) (peak=17296 #11) 
+ 
+-                 Metaspace (reserved=67515456, committed=55850048)
+                            (malloc=406592 #336) (at peak) 
+                            (mmap: reserved=67108864, committed=55443456, at peak) 
+ 
+-      String Deduplication (reserved=680, committed=680)
+                            (malloc=680 #8) (at peak) 
+ 
+-           Object Monitors (reserved=1456, committed=1456)
+                            (malloc=1456 #7) (peak=47008 #226) 
+ 
+-                   Unknown (reserved=0, committed=0)
+                            (mmap: reserved=0, committed=0, peak=20480) 
+ 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+

@@ -1,0 +1,61 @@
+{
+  "fecha": "2026-10-16T12:06:52.625Z",
+  "comando": "node qa/evidencias/ag016/carga-espera-01/validar.mjs qa/evidencias/ag016/carga-espera-01/despues.json",
+  "entorno": {
+    "node": "v24.13.0",
+    "plataforma": "win32"
+  },
+  "criterio": "hasta no termina antes del instante objetivo, incluso si el temporizador retorna anticipadamente",
+  "metodo": "Reloj y temporizador deterministas inyectados en la función real extraída; sin HTTP ni carga",
+  "fuente": {
+    "ruta": "qa/ag016/carga.mjs",
+    "sha256": "b11ee4085f3aecc32af50ee48fef0c2ff9608e9ff3987e8a9cdc857162cd373c"
+  },
+  "resultados": [
+    {
+      "caso": "retorno anticipado de 0,5 ms",
+      "objetivoMs": 1000,
+      "observadoMs": 1000,
+      "esperasMs": [
+        1000,
+        0.5
+      ],
+      "resultado": "PASS"
+    },
+    {
+      "caso": "dos retornos anticipados sucesivos",
+      "objetivoMs": 50.75,
+      "observadoMs": 50.75,
+      "esperasMs": [
+        0.75,
+        0.5,
+        0.25
+      ],
+      "resultado": "PASS"
+    },
+    {
+      "caso": "temporizador llega al plazo",
+      "objetivoMs": 6.25,
+      "observadoMs": 6.25,
+      "esperasMs": [
+        1.25
+      ],
+      "resultado": "PASS"
+    },
+    {
+      "caso": "plazo ya alcanzado",
+      "objetivoMs": 10,
+      "observadoMs": 10,
+      "esperasMs": [],
+      "resultado": "PASS"
+    },
+    {
+      "caso": "plazo pasado",
+      "objetivoMs": 9,
+      "observadoMs": 10,
+      "esperasMs": [],
+      "resultado": "PASS"
+    }
+  ],
+  "resultado": "PASS"
+}

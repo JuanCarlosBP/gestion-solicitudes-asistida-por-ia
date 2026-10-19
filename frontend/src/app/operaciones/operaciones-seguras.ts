@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DestroyRef, inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { catchError, defer, finalize, map, Observable, switchMap, tap, throwError } from 'rxjs';
 import { SesionStore } from '../identidad/sesion-store';
+import { DemoContexto } from '../demo/demo-contexto';
 import {
   ConsultaOperacion,
   DescriptorOperacion,
@@ -22,6 +23,7 @@ export type IntencionOperacion = WritableSignal<DescriptorOperacion | undefined>
 export class OperacionesSeguras {
   private readonly http = inject(HttpClient);
   private readonly sesion = inject(SesionStore);
+  private readonly demo = inject(DemoContexto);
   private readonly plataforma = inject(PLATAFORMA_OPERACIONES);
   private readonly consultas = new Set<string>();
   private readonly confirmadas = new Map<string, ResultadoOperacion | undefined>();
@@ -57,8 +59,10 @@ export class OperacionesSeguras {
       )
         intencion.set(undefined);
       const asociado = intencion?.();
-      if (asociado && this.confirmadas.has(asociado.clave))
-        return throwError(() => this.errorConfirmada(this.confirmadas.get(asociado.clave)));
+      if (asociado && this.confirmadas.has(this.claveMemoria(asociado.clave)))
+        return throwError(() =>
+          this.errorConfirmada(this.confirmadas.get(this.claveMemoria(asociado.clave))),
+        );
       const epoca = this.sesion.epoca;
       let descriptor: DescriptorOperacion | undefined;
       let ambito = '';
@@ -102,6 +106,7 @@ export class OperacionesSeguras {
           );
         }),
         switchMap((intento) => {
+          if (epoca !== this.sesion.epoca) return throwError(() => new Error('SESION_CAMBIADA'));
           this.mostrar(intento, 'ENVIANDO', 'Enviando operación…');
           return enviar(intento.clave);
         }),
@@ -118,8 +123,8 @@ export class OperacionesSeguras {
         catchError((error: unknown) => {
           if (epoca === this.sesion.epoca) {
             if (descriptor && reclamado) {
-              const resultadoConfirmado = this.confirmadas.get(descriptor.clave);
-              if (this.confirmadas.has(descriptor.clave)) {
+              const resultadoConfirmado = this.confirmadas.get(this.claveMemoria(descriptor.clave));
+              if (this.confirmadas.has(this.claveMemoria(descriptor.clave))) {
                 const fallo = this.fallo(error);
                 const incierto =
                   fallo.status === undefined ||
@@ -169,8 +174,9 @@ export class OperacionesSeguras {
   }
 
   cambiarUsuario(usuarioId: string | null): void {
-    if (usuarioId === this.usuarioActual) return;
-    this.usuarioActual = usuarioId;
+    const ambitoUsuario = usuarioId ? this.identidadAmbito(usuarioId) : null;
+    if (ambitoUsuario === this.usuarioActual) return;
+    this.usuarioActual = ambitoUsuario;
     this.confirmadas.clear();
     this.operaciones.set([]);
     this.problema.set('');
@@ -180,7 +186,7 @@ export class OperacionesSeguras {
   resultadoConfirmado(descriptor: DescriptorOperacion | undefined): ResultadoOperacion | undefined {
     // La señal notifica también si otra tarjeta sustituye la del intento anterior.
     this.operaciones();
-    return descriptor ? this.confirmadas.get(descriptor.clave) : undefined;
+    return descriptor ? this.confirmadas.get(this.claveMemoria(descriptor.clave)) : undefined;
   }
 
   recuperarPendientes(): void {
@@ -204,27 +210,31 @@ export class OperacionesSeguras {
           );
         }
       },
-      error: () =>
-        this.problema.set('No se pueden recuperar operaciones sin una sesión disponible.'),
+      error: () => {
+        if (epoca === this.sesion.epoca)
+          this.problema.set('No se pueden recuperar operaciones sin una sesión disponible.');
+      },
     });
   }
 
   recuperar(descriptor: DescriptorOperacion): void {
-    if (this.consultas.has(descriptor.clave)) return;
+    const claveConsulta = this.claveMemoria(descriptor.clave);
+    if (this.consultas.has(claveConsulta)) return;
     const epoca = this.sesion.epoca;
-    this.consultas.add(descriptor.clave);
+    this.consultas.add(claveConsulta);
     this.mostrar(descriptor, 'RECUPERANDO', 'Recuperando el resultado de la operación…');
     this.ambito()
       .pipe(
-        switchMap((ambito) =>
-          this.http
+        switchMap((ambito) => {
+          if (epoca !== this.sesion.epoca) return throwError(() => new Error('SESION_CAMBIADA'));
+          return this.http
             .get<ConsultaOperacion>(
               `/api/operaciones-idempotentes/${encodeURIComponent(descriptor.clave)}`,
               { timeout: 10000 },
             )
-            .pipe(map((respuesta) => ({ ambito, respuesta }))),
-        ),
-        finalize(() => this.consultas.delete(descriptor.clave)),
+            .pipe(map((respuesta) => ({ ambito, respuesta })));
+        }),
+        finalize(() => this.consultas.delete(claveConsulta)),
       )
       .subscribe({
         next: ({ ambito, respuesta }) => {
@@ -279,7 +289,15 @@ export class OperacionesSeguras {
   }
 
   private ambito(): Observable<string> {
-    return this.plataforma.ambito(this.sesion.usuario()?.id ?? null);
+    const usuarioId = this.sesion.usuario()?.id;
+    return this.plataforma.ambito(usuarioId ? this.identidadAmbito(usuarioId) : null);
+  }
+  private identidadAmbito(usuarioId: string): string {
+    const selector = this.demo.selector();
+    return selector ? `${selector}|${usuarioId}` : usuarioId;
+  }
+  private claveMemoria(clave: string): string {
+    return `${this.identidadAmbito(this.sesion.usuario()?.id ?? '')}|${clave}`;
   }
   private nombre(ambito: string, clave: string): string {
     return `${prefijoOperaciones}${ambito}.${clave}`;
@@ -317,8 +335,9 @@ export class OperacionesSeguras {
     mensaje: string,
     resultado?: ResultadoOperacion,
   ): void {
-    if (estado !== 'COMPLETADA' && this.confirmadas.has(descriptor.clave)) return;
-    if (estado === 'COMPLETADA') this.confirmadas.set(descriptor.clave, resultado);
+    const clave = this.claveMemoria(descriptor.clave);
+    if (estado !== 'COMPLETADA' && this.confirmadas.has(clave)) return;
+    if (estado === 'COMPLETADA') this.confirmadas.set(clave, resultado);
     this.operaciones.update((actuales) => [
       ...actuales.filter(
         (vista) =>

@@ -1,6 +1,19 @@
 <p class="etiqueta">INICIO</p>
 <h1>Gestión de Solicitudes</h1>
-<p class="introduccion">Comprueba la conexión con el servicio antes de comenzar.</p>
+<p class="introduccion">
+  Crea una solicitud, revísala y consulta su historial con tres roles distintos.
+</p>
+@if (!sesion.autenticado()) {
+  <section class="comenzar-demo" aria-labelledby="titulo-comenzar">
+    <h2 id="titulo-comenzar">Comienza sin usuario ni contraseña</h2>
+    <p>
+      Pulsa el botón, reserva un espacio y elige Solicitante. Después podrás cambiar a Supervisor y
+      Auditor sin perder los datos de tu reserva.
+    </p>
+    <a class="boton-comenzar" routerLink="/demo">Comenzar demostración</a>
+    <p>Usa solo datos ficticios. El espacio es temporal e independiente para cada visitante.</p>
+  </section>
+}
 @if (sesion.autenticado()) {
   <section
     class="resumen-inicio"
@@ -93,6 +106,7 @@
   </button>
 </section>
 <p class="nota">
-  Esta comprobación confirma la conexión técnica. Accede con tu cuenta para consultar proveedores y
-  gestionar las solicitudes disponibles según tus permisos.
+  Esta comprobación confirma la conexión técnica. En la demo, reserva tu espacio y elige un rol para
+  consultar proveedores y gestionar las solicitudes disponibles según sus permisos.
 </p>
+<p><a routerLink="/demo">Explorar la demo con un espacio exclusivo</a></p>

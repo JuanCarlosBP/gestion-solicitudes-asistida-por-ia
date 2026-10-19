@@ -1,0 +1,17 @@
+# El servidor HTTP nunca migra ni dispone de credenciales de provisión.
+spring:
+  flyway:
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://invalid:1/sin_fallback
+    username: sin_fallback
+    password: sin_fallback
+server:
+  tomcat:
+    max-http-form-post-size: 128KB
+    max-swallow-size: 128KB
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

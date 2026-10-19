@@ -1,0 +1,4 @@
+URL base: http://127.0.0.1:18087; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag016\regresion-api-final-01; archivo de entorno: C:\Users\carli\gestion-solicitudes-asistida-por-ia\tmp\ag016\regresion.env
+Navegador: http://127.0.0.1:18087; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag016\regresion-api-final-01
+Navegador: http://127.0.0.1:18087; evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag016\regresion-api-final-01
+PASS: historial persistente, HTTP 503 real y recuperación 200. Navegador ejecutado: True. Evidencias: C:\Users\carli\gestion-solicitudes-asistida-por-ia\qa\evidencias\ag016\regresion-api-final-01. Sin borrar volúmenes.

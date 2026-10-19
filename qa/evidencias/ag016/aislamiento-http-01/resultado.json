@@ -1,0 +1,20 @@
+{
+  "inicio": "2026-10-16T11:10:33.854Z",
+  "fin": "2026-10-16T11:10:33.870Z",
+  "estado": "FAIL",
+  "controles": [],
+  "mediciones": [
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 0,
+      "ms": 14.437999999999999,
+      "fecha": "2026-10-16T11:10:33.869Z",
+      "fallo": "TypeError"
+    }
+  ],
+  "error": {
+    "etapa": "reserva",
+    "mensaje": "fetch failed"
+  }
+}

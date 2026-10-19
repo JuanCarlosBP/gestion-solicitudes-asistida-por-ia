@@ -1,0 +1,27 @@
+{
+  "inicio": "2026-10-16T12:02:00.990Z",
+  "fin": "2026-10-16T12:02:04.573Z",
+  "accion": "actualizar-frontend",
+  "resultado": {
+    "antes": [
+      {
+        "id": "d584614f68fd6ac7467081b8b99e86ba9a87cdb408e74f95fd74042f2d696887",
+        "proyecto": "gestion-solicitudes-ag016",
+        "servicio": "frontend",
+        "estado": "running",
+        "iniciadoEn": "2026-10-16T11:56:07.648042481Z"
+      }
+    ],
+    "despues": [
+      {
+        "id": "4e73ff87c6a1b8c13c897d2091320abf3eb0da39cea60351e9c4879caa56b052",
+        "proyecto": "gestion-solicitudes-ag016",
+        "servicio": "frontend",
+        "estado": "running",
+        "iniciadoEn": "2026-10-16T12:02:03.152640308Z"
+      }
+    ],
+    "comando": ""
+  },
+  "estado": "PASS"
+}

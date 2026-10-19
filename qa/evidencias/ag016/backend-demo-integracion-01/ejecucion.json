@@ -1,0 +1,16 @@
+{
+  "inicio": "2026-10-16T13:15:20.0424083+02:00",
+  "alcance": "demo",
+  "conservacion": true,
+  "argumentos": [
+    "-B",
+    "-ntp",
+    "test-compile",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=DemoIT",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/ag016/backend-temporal"
+  ],
+  "fin": "2026-10-16T13:15:25.9742723+02:00",
+  "exitCode": 0
+}

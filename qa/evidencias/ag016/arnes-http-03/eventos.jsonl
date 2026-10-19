@@ -1,0 +1,5 @@
+{"fecha":"2026-10-16T12:00:34.873Z","tipo":"RAFAGA_SOBRECUPO","intentos":3,"rechazosCorrectos":3,"reservaEsperada":false}
+{"fecha":"2026-10-16T12:00:34.874Z","tipo":"PRUEBA_ARNES_RECORRIDO_INICIO","visitante":"A","desfasePlanificadoMs":0,"desfaseObservadoMs":0.10090000000491273}
+{"fecha":"2026-10-16T12:00:35.876Z","tipo":"PRUEBA_ARNES_RECORRIDO_INICIO","visitante":"B","desfasePlanificadoMs":1000,"desfaseObservadoMs":1002.1802999999927}
+{"fecha":"2026-10-16T12:00:36.882Z","tipo":"PRUEBA_ARNES_RECORRIDO_INICIO","visitante":"C","desfasePlanificadoMs":2000,"desfaseObservadoMs":2007.7755999999936}
+{"fecha":"2026-10-16T12:00:37.136Z","tipo":"PRUEBA_ARNES_FIN","resultado":"PASS","recorridos":3,"benchmark":false}

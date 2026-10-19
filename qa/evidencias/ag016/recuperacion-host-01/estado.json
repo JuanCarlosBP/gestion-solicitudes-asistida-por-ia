@@ -1,0 +1,31 @@
+{
+  "inicio": "2026-10-16T11:28:22.160Z",
+  "fin": "2026-10-16T11:28:36.539Z",
+  "antes": [
+    {
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "postgres",
+      "estado": "exited"
+    },
+    {
+      "id": "25aacd1277f494638c0a8118d011eee360334585cc7cc013b072956e245588c7",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "provisionador",
+      "estado": "exited"
+    },
+    {
+      "id": "042c465c080eeb435b5a7c533743e3dac0216b519e0901144f9bf7c18f3dfb8d",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "backend",
+      "estado": "exited"
+    },
+    {
+      "id": "ffca090c50e07b6e32c62177707fd4b93037333e38ee6dd53e450a09168495fa",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "frontend",
+      "estado": "exited"
+    }
+  ],
+  "espacios": "ag016_demo_01|RECICLABLE|934d292f-d110-4550-a0ea-350efcd6d149|\nag016_demo_02|RECICLABLE|01e2ced7-4a5c-4386-8cb5-5a7ab01ed2ff|\nag016_demo_03|RESERVADO|c3905722-dfb5-4a82-81a8-a78099600b9b|2026-10-16 12:22:47.95351+00"
+}

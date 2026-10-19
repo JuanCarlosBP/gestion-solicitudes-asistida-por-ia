@@ -1,0 +1,11 @@
+{
+  "inicio": "2026-10-16T11:09:27.978Z",
+  "fin": "2026-10-16T11:09:35.271Z",
+  "accion": "construir",
+  "resultado": {
+    "jarSha256": "2c083c2dc88166db2254d2eb91cdf2ddb42541574d9b444c4608aaa959008b0d",
+    "backend": "sha256:e9b98e6f18b8bfd5e3bc12802bec1e7747b0651967a15ea28473920dc06df991",
+    "frontend": "sha256:67836aafeed032ea2836af315f47910b30e05112cdad2e3fdac963e3c1a8a8c0"
+  },
+  "estado": "PASS"
+}

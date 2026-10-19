@@ -1,100 +1,91 @@
 # Especificación — 008 Demo, operación y entrega
 
-**Estado: borrador pendiente de clarificación y aprobación humana.**
-Creado únicamente como continuación documental autorizada por AG-014, después de
-[007 verificado localmente](../007-historial-auditoria/validacion.md) y de la
-[puerta008](../../qa/evidencias/ag014/reanudacion/puerta008.json), cumplida
-el2026-10-15 a22:17:38+02:00 con347,351minutos restantes. No hay plan/tareas aprobados,
-implementación008, cuentas creadas, recursos contratados ni despliegue público.
+**Estado: ejecución local autorizada por el encargo humano AG-016 del 2026-10-16.**
+El encargo agrupa concreción, plan, tareas, implementación y pruebas, con revisión
+independiente del diseño antes del código. No acredita verificación, aceptación
+humana ni publicación. Sustituye los límites históricos de AG-014/015.
 
-## Objetivo y antecedentes
+## Base y objetivo
 
-Preparar una demostración reproducible con datos exclusivamente ficticios y una
-entrega comprensible, recuperable y operable por la persona responsable. La base
-existente es un monolito modular Java21/Spring/PostgreSQL y Angular, con OpenAPI,
-Docker, identidad/sesiones, permisos, idempotencia e historial V5/V7 comprobados.
+001–007 y AG-015 aceptados e integrados según el humano. Base:
+`eaa0baec78ed9b99d8039ea7e6256b254be295d3`; árbol:
+`5e5d0a92ed719e74729461ab3f8d63baaa84bcb2`; CI main `38882642418`,
+backend/frontend/compose PASS según encargo. Rama preparada por el humano:
+`feature/008-demo-operacion-entrega`. Contrastar base leyendo metadatos, sin Git.
+No repetir una suite idéntica de baseline.
 
-Fuentes vigentes: [arquitectura](../../docs/documentaciondev/arquitectura.md),
-[entorno](../../docs/documentaciondev/entorno.md),
-[API](../../docs/documentaciondev/api-y-rutas.md),
-[modelo de datos](../../docs/documentaciondev/modelo-de-datos.md),
-[seguridad](../../docs/seguridad.md) y
-[entrega AG-014](../../docs/trazabilidad/AG-014-informe.md).
-Las comprobaciones locales007 no acreditan todavía operación en Internet, restore
-de desastre, rendimiento público, un SLA ni aceptación del producto.
+Entregar demo local ejecutable y medible: Angular estático, una instancia Java
+de aplicación y un PostgreSQL con pocas bases ficticias separadas. Cada visitante
+reserva exclusivamente un espacio; cupo configurable inicial tres, duración de
+ensayo 60 minutos. No Java por visitante ni alternativa de negocio compartido.
 
-## Requisitos propuestos
+Fuentes: [seguridad](../../docs/seguridad.md),
+[calidad](../../docs/politicas/calidad.md), [plan](plan.md), [tareas](tareas.md)
+y [ADR0009](../../docs/decisiones/ADR-0009-demo-aislada-y-operacion.md).
+Protocolo externo v1.0 aportado por el humano y leído; huella/ruta en
+[referencia](../../qa/evidencias/ag016/protocolo-referencia.json). Sus límites
+históricos AG-015 quedan sustituidos por AG-016. Añade objetivo de arranque frío
+≤90 s, 100 % de recorridos nominales válidos, sin 5xx/timeouts inesperados ni swap
+sostenido. Datos propuestos:20 proveedores y100 solicitudes de5conceptos por
+espacio, estados diversos e historial legítimo. No alterar template0/template1.
 
-| ID | Requisito para clarificar y aprobar |
+## Criterios DO-01–DO-10
+
+| ID | Resultado y comprobación exigidos |
 |---|---|
-| DO-01 | Definir audiencia, duración, responsable, presupuesto y finalidad de la demo. Solo datos y cuentas ficticios identificados como tales; separar completamente entornos y credenciales de producción. |
-| DO-02 | Evaluar alojamiento Angular/Spring/PostgreSQL compatible con las versiones fijadas, TLS, rutas SPA, API, migraciones, conectividad, cuotas, suspensión y persistencia. Documentar coste y límites con fuentes vigentes antes de elegir. |
-| DO-03 | Resolver el origen público de frontend/API sin debilitar CSRF, cookies, CORS, CSP, autenticación, roles actuales ni autorización por recurso. El nginx local y su proxy /api no se trasladan automáticamente a un alojamiento estático. |
-| DO-04 | Definir secretos externos por entorno, provisión humana, rotación/revocación, acceso mínimo y separación de credenciales de migración/aplicación. Secretos del servidor y claves privadas nunca llegan al cliente ni al repositorio/configuración publicada/evidencia. Conservar el contrato002: el navegador trata las credenciales de acceso y sesión necesarias con las protecciones vigentes (access token transitorio y refresh en cookie protegida), sin persistencia o exposición insegura ni registro en evidencia. |
-| DO-05 | Proponer cuentas ficticias por rol y guion de demostración con altas, solicitudes, decisiones, idempotencia e historial. Aprobar creación, restablecimiento, caducidad y revocación; no publicar credenciales reutilizables ni abrir administración indiscriminada. |
-| DO-06 | Diseñar copia y restauración verificables, responsables, cifrado/acceso, destino, frecuencia, RPO/RTO y retención aprobados. Probar restore en un entorno ficticio separado, cotejando datos/checksums/permisos, decisiones V5 y eventos V7. No sobrescribir la fuente para probar. |
-| DO-07 | Decidir retención y limpieza de datos de demo, sesiones, idempotencia e historial como conjunto coherente. No introducir purga, borrado de eventos, plazos jurídicos inventados ni pérdida de protección de replay. Cualquier operación destructiva exige procedimiento y autorización posterior. |
-| DO-08 | Revisar Javadoc útil de contratos/restricciones/decisiones y preparar manuales de usuario por rol, instalación, operación, copia/restore, resolución de incidencias y recuperación. Usar contenido en español, ejemplos ficticios y enlaces comprobables. |
-| DO-09 | Tras autorización de publicación, probar desde Internet rutas directas, TLS, cookies/CSRF/CORS/CSP, permisos negativos, secretos ausentes, salud200/503 y recuperación, persistencia, resumen e historial. Registrar URL/fecha/versiones y evidencia sanitizada sin atribuir éxito antes de ejecutar. |
-| DO-10 | Preparar entrega revisable: inventario/versiones, configuración sin secretos, guía de despliegue/rollback, limitaciones, pruebas/CI remota, responsables y acta de aceptación humana. Publicación, integración y aceptación son decisiones separadas. |
+| DO-01 | Presentación pública ficticia, reserva exclusiva, cupo/duración configurables. Tres reservas obtienen espacios distintos; la cuarta recibe capacidad ocupada. |
+| DO-02 | Perfiles local/público separados, topología aprobada. Construcción fuera del presupuesto; cuotas y consumo del conjunto medidos. Proveedor/precio/dominio reservados al humano. |
+| DO-03 | Origen único /api, CSRF, cookies, JWT/sid, refresh, revocación y permisos conservados. TLS preparado sin DNS/publicación. Sin reserva válida, ninguna base de negocio por defecto. |
+| DO-04 | Secretos por referencias/archivos fuera de Git; runtime mínimo y provisión/migración separada. Runtime sin superusuario, CREATEDB, CREATEROLE ni socket Docker. Verificar CONNECT y roles globales. |
+| DO-05 | Cuentas/contraseñas ficticias temporales por generación para solicitante/supervisor/auditor, catálogo preparado, sin administrador público. Botones con autenticación real y guías de 3–4 pasos. Credenciales solo al titular válido, no-store, nunca logs/evidencias/almacenamiento navegador. |
+| DO-06 | Copia/restore a QA nueva, nunca sobre fuente; cotejar datos, V5/V7 y permisos. Medir tiempos; RPO/RTO y retención operativa como propuestas humanas, no contratos. |
+| DO-07 | Ciclo persistente de reserva/revocación/drenaje/reciclaje y recuperación tras reinicio. Reciclar base ficticia como conjunto sin purgar eventos individualmente. Comprobar entorno local, inventario cerrado y ausencia de reserva vigente antes de recrear. |
+| DO-08 | Guías por rol, manuales públicos de operación/recuperación, Javadoc útil, inventario portfolio y rutas/contratos estables para capítulo008 privado. No manual privado en repositorio ni cambios web personal. |
+| DO-09 | Aislamiento, regresión y suite local antes de dimensionar. Internet/TLS real pendientes de publicación humana. No afirmar PUBLICADO ni réplica exacta del VPS. |
+| DO-10 | Entrega por criterio, decisiones/evidencias/revisión/incidencias/tiempos, matriz A/B dos pasadas, capacidad recomendada solo con datos. Manifiesto grupos→mensajeSugerido+archivos únicos, hashes/sello con autorreferencias excluidas. |
 
-## Opciones de alojamiento, todavía sin seleccionar
+## Aislamiento observable
 
-| Candidata solicitada | Aspectos que requieren contraste y decisión |
+| ID | Criterio |
 |---|---|
-| Cloudflare Pages Free para Angular | Compatibilidad SPA y rutas directas, cabeceras, límites del plan y solución aprobada para un origen API compatible con la seguridad existente. No se afirma que ejecute nginx ni un backend Java. |
-| Render, servicio Spring siempre activo | Plan que realmente garantice el comportamiento requerido sin suspensión; coste, región, Java21/Docker, arranque, memoria, conexiones y gestión de secretos. No se afirma gratuidad ni disponibilidad permanente de un plan no comprobado. |
-| Neon Free para PostgreSQL | Versión y extensiones necesarias, conexiones/pooling, TLS, cuotas, suspensión, almacenamiento, backups/restore y límites del plan. No se asume que un nivel gratuito satisfaga los objetivos de recuperación. |
+| AIS-01 | Resolver reserva/espacio/generación antes de cualquier consulta de negocio, incluso validación JWT/login/refresh/historial. ID de URL/cabecera sin prueba no autoriza. Contexto ausente/manipulado denegado. |
+| AIS-02 | A nunca consulta/muta B; auditor solo historia global de A. Probar cuentas copiadas, JWT/refresh/cookies antiguos, cambio de rol y reasignación. |
+| AIS-03 | Destino autorizado y usuario PostgreSQL por espacio; ningún nombre de BD desde cliente. CONNECT denegado entre espacios y a control. |
+| AIS-04 | Limpiar contexto al finalizar/excepción; no heredarlo a hilos. Pools por BD/total acotados; probar reutilización de conexiones/hilos y ausencia de fallback. |
+| AIS-05 | Memoria idempotente, Web Locks y localStorage incluyen espacio/generación. Respuestas antiguas no repueblan otra reserva. Analizar advisory locks según ámbito real de PostgreSQL antes de cambiarlos. |
+| AIS-06 | Expiración/revocación deniega admisiones nuevas; operaciones admitidas terminan o revierten en generación antigua antes de reciclar. Nunca alcanzan base reasignada. |
+| AIS-07 | Reinicio conserva reservas/estados. Fallo de provisión bloquea el espacio. No clonar sesiones/tokens vivos. |
+| AIS-08 | Límites configurables de reservas/peticiones/autenticación/entradas/almacenamiento sin debilitar Argon2/CSRF. Errores sanitizados y sin credenciales en evidencia. |
+| AIS-09 | Laboratorio exclusivo AG-016, inventario previo/final, puertos propios y un dueño Docker. Scripts exigen proyecto/Compose/variables, sin fallback; antes de exec/stop/restart verifican ID/servicio/etiqueta. Preservar recursos previos. |
 
-Son candidatas del encargo, no servicios contratados ni capacidades/precios verificados.
-Las condiciones comerciales y técnicas deberán contrastarse en fuentes oficiales
-vigentes al tomar la decisión; no se ha realizado esa evaluación externa en este borrador.
-No se introducen microservicios, Kafka, Redis ni bases adicionales en la arquitectura.
+## Ensayos autorizados
 
-## Borrador conceptual de configuración
+A=2 GiB/1 vCPU; B=4 GiB/2 vCPU. C=8 GiB/4 vCPU solo si ambos fallan.
+Dos pasadas secuenciales por perfil: 10 minutos calentamiento, 30 nominal,
+5 pico, 20 operación con caducidad/reciclaje/copia/restore. Misma versión,
+semilla/mezcla/datos, tres visitantes crean/editan/presentan/deciden/consultan
+historial y resumen/inician sesión/renuevan.
 
-Inventario documental, deliberadamente no ejecutable y sin claves:
+Presupuesto conjunto Java+PostgreSQL+web/proxy+provisión+reserva SO/Docker;
+carga/navegador fuera. Verificar cgroups/cuotas; declarar aproximaciones.
+No cambiar límites globales de Docker Desktop ni reducir ventanas/umbrales.
+Registrar muestras/tasas/errores previstos e imprevistos y p50/p95/p99 por
+operación; RSS/heap/nativa/caché reclamable, CPU/throttling, conexiones, OOM,
+reinicios, swap e I/O. Objetivos: cero cruces/pérdida inesperada; p95 lectura
+≤500 ms, escritura ≤1 s, login ≤2 s; margen RAM nominal objetivo ≥25%;
+cero OOM/reinicios imprevistos; reserva preparada ≤3 s. Inducidos aparte.
+Recomendar menor perfil con margen; insuficiencia de evidencia implica bloqueo
+concreto. No autoriza compra ni acredita rendimiento en VPS real.
 
-| Elemento | Valor pendiente |
-|---|---|
-| URL pública y origen de API | Por decidir y aprobar junto al proxy/origen común. |
-| Alojamiento frontend/backend/BD | Candidatas anteriores; selección, región y plan pendientes. |
-| TLS, DNS y cabeceras | Responsable y mecanismo pendientes; sin cambios DNS realizados. |
-| Perfil y secretos del backend | Perfil público aprobado y referencias al gestor de secretos elegido, nunca valores reales. |
-| Conexión PostgreSQL | Host/base/TLS y referencia de credencial externa pendientes; aplicación con mínimos privilegios. |
-| Migraciones | Flyway V1–V7 preservadas, credencial separada y comprobación previa; no migrar una BD real desde este encargo. |
-| Copias y observabilidad | Destino/frecuencia/retención/alertas/RPO/RTO pendientes; logs mínimos sin datos sensibles. |
+## Antecedentes y fronteras
 
-No copiar contraseñas de ejemplo local ni habilitar perfiles demo públicamente sin
-la decisión y los controles de DO-04/05. El futuro rollback debe considerar también
-compatibilidad de esquema y datos; no se propone borrar migraciones ni volver atrás
-destructivamente una BD.
+Cloudflare Pages/Render/Neon fueron candidatas del borrador AG-014 sin precios
+ni capacidades comprobados. Son antecedentes; la opción aprobada es VPS con
+Java/PostgreSQL únicos y bases separadas. No se reabre esa elección.
 
-## Clarificaciones abiertas
-
-1. ¿Quién accederá, durante cuánto tiempo y con qué presupuesto máximo? ¿Qué significa
-   «siempre activo» para esta demo y cómo se comprobará, sin inventar un SLA?
-2. ¿Qué origen público y mecanismo de acceso/proxy se aprueban para mantener las
-   garantías actuales? ¿Quién gestionará cuentas, DNS, facturación y secretos?
-3. ¿Qué RPO/RTO, destino de copias y retención se necesitan? ¿Quién autoriza y
-   presencia la prueba de restauración y la eventual limpieza?
-4. ¿Se permite acceso anónimo a información de presentación o solo usuarios invitados?
-   El acceso de negocio continuará autenticado y autorizado salvo cambio aprobado.
-5. ¿Qué manuales y guion necesita cada perfil y quién firma la aceptación?
-
-## Salidas documentales propuestas para un plan posterior
-
-Inventario de configuración/versiones y alternativas; revisión de Javadoc relevante;
-manual de usuario y operación; procedimiento de backup/restore y rollback; guion de
-cuentas/datos ficticios y limpieza; matriz de pruebas desde Internet; checklist de
-entrega y aceptación. Son propuestas de contenido, no tareas aprobadas ni ejecutadas.
-Los criterios DO-01–10 deberán concretarse en resultados esperados observables
-durante clarificación antes de redactar y aprobar un plan de implementación.
-
-## Fuera de esta continuación
-
-No se crean planes, tareas de ejecución, migraciones, código008 ni configuración
-operativa. No se compran recursos, crean cuentas, publican credenciales, configuran
-DNS, despliegan servicios ni alteran producción. Los30 contenedores detenidos,
-17 volúmenes y20 imágenes conservados tras AG-014 no se limpian desde este borrador.
-El siguiente paso es revisión humana de esta especificación y sus clarificaciones.
+Dominio/proveedor/precio/credenciales reales/licencia/compra/DNS/publicación
+corresponden al humano y no bloquean localhost. Una decisión nueva de permisos,
+privacidad, alcance o coste se eleva. V1–V7, informes/sellos/CSV históricos se
+preservan. No Git, Kafka, Redis, microservicios, Kubernetes, WSL global,
+prune, down -v, reset, socket Docker en contenedores ni montajes privilegiados.
+No destruir bases/contenedores/volúmenes/evidencias previos.

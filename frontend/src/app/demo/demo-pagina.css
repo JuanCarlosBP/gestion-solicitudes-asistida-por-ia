@@ -1,0 +1,123 @@
+:host {
+  display: block;
+}
+.etiqueta {
+  color: var(--color-primario);
+  font-weight: 750;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 22ch;
+  margin-block: 0.7rem 1rem;
+}
+.introduccion {
+  max-width: 70ch;
+  font-size: 1.15rem;
+  color: var(--color-tenue);
+}
+.aviso-datos,
+.aviso {
+  padding: 1rem;
+  background: var(--color-aviso);
+  border-radius: var(--radio-control);
+}
+.reserva,
+.guia {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.reserva {
+  margin-block: 2rem;
+  border-top: 4px solid var(--color-primario);
+}
+h2,
+h3 {
+  margin-top: 0;
+}
+.tiempo {
+  font-size: 1.3rem;
+}
+.guias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.guia {
+  display: flex;
+  flex-direction: column;
+}
+ol {
+  padding-left: 1.3rem;
+  margin-top: 0;
+}
+li {
+  margin-bottom: 0.8rem;
+}
+button {
+  background: var(--color-primario);
+  color: #fff;
+  border: 1px solid var(--color-primario);
+  border-radius: var(--radio-control);
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 650;
+}
+button:enabled:hover {
+  background: var(--color-primario-hover);
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+button.secundario {
+  background: var(--color-panel);
+  color: var(--color-primario);
+}
+button.secundario:enabled:hover {
+  background: var(--color-suave);
+}
+.guia button {
+  margin-top: auto;
+}
+.error {
+  color: var(--color-error);
+}
+.nota {
+  color: var(--color-tenue);
+  margin-block: 1.5rem;
+}
+@media (max-width: 800px) {
+  .guias {
+    grid-template-columns: 1fr;
+  }
+  .reserva button {
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+}
+
+.acciones-reserva {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+.acciones-reserva button {
+  max-width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 800px) {
+  .acciones-reserva {
+    flex-direction: column;
+  }
+  .reserva .acciones-reserva button {
+    margin: 0;
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "instante": "2026-10-16T11:51:52.714Z",
+  "resultado": "PASS",
+  "archivos": [
+    {
+      "ruta": "frontend/e2e/operaciones-entorno.ts",
+      "sha256": "0c992d6294b5d5728236a8d1f97d772669a03c1eeb002f2f897f538479049171"
+    },
+    {
+      "ruta": "qa/docker-contexto.mjs",
+      "sha256": "485b3977e40064a43a9f7469efb26f10e2d681e75f988989e4a0076e81a386b0"
+    }
+  ],
+  "comprobaciones": [
+    {
+      "comando": "node node_modules/typescript/bin/tsc --noEmit -p tsconfig.e2e.json",
+      "desde": "frontend",
+      "exitCode": 0
+    },
+    {
+      "comando": "node node_modules/prettier/bin/prettier.cjs --check e2e/operaciones-entorno.ts",
+      "desde": "frontend",
+      "exitCode": 0
+    },
+    {
+      "comando": "node node_modules/eslint/bin/eslint.js e2e/operaciones-entorno.ts --max-warnings=0",
+      "desde": "frontend",
+      "exitCode": 0
+    },
+    {
+      "comando": "node --check qa/docker-contexto.mjs",
+      "desde": "raiz",
+      "exitCode": 0
+    },
+    {
+      "comando": "node node_modules/@playwright/test/cli.js test --list --reporter=list",
+      "desde": "frontend",
+      "exitCode": 0,
+      "casos": 33,
+      "archivos": 7
+    },
+    {
+      "comando": "Smoke por stdin con transpileModule CJS y execFile simulado; CLI real solo rechazos previos a Docker",
+      "exitCode": 0,
+      "controles": 8
+    }
+  ],
+  "cambio": "Wrapper Playwright invoca helper CLI en Node separado sin shell; mantiene validación única y plazos internos SQL15s/restart60s mediante variable del proceso hijo validada.",
+  "dockerEjecutado": false,
+  "gitEjecutado": false,
+  "productoCompiladoModificado": false,
+  "asercionesOriginalesModificadas": false,
+  "pendiente": "Coordinador repite E2E real con Docker; listado no equivale a ejecución."
+}

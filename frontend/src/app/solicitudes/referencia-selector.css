@@ -17,3 +17,34 @@
   padding-inline: 0.65rem;
   font-size: 0.8rem;
 }
+
+:host,
+.selector-referencia {
+  display: block;
+  min-width: 0;
+}
+.busqueda-referencia {
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.busqueda-referencia input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  width: 100%;
+}
+.busqueda-referencia button {
+  max-width: 100%;
+  white-space: normal;
+}
+.referencia-elegida {
+  background: var(--color-suave);
+  padding: 0.65rem;
+  border-radius: var(--radio-control);
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+}
+@media (max-width: 480px) {
+  .busqueda-referencia button {
+    width: 100%;
+  }
+}

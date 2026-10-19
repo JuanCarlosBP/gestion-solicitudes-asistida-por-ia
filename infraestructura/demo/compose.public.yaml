@@ -1,0 +1,11 @@
+# Preparado para decisión humana. No se aplica desde AG-016 a Internet.
+services:
+  backend:
+    environment:
+      SPRING_PROFILES_ACTIVE: demo
+  frontend:
+    ports: !override
+      - "${PUBLIC_HTTPS_BIND:?Defina enlace explícito}:8443"
+    volumes: !override
+      - ./nginx-public.conf:/etc/nginx/nginx.conf:ro
+      - ${PUBLIC_TLS_DIR:?Ruta externa a certificados}:/run/tls:ro

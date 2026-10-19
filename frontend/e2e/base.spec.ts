@@ -63,8 +63,23 @@ test('teclado, foco, idioma y ancho móvil', async ({ page }) => {
   await page.keyboard.press('Enter');
   await expect(page.locator('main')).toBeFocused();
   await page.keyboard.press('Tab');
+  const comenzar = page.getByRole('link', { name: 'Comenzar demostración', exact: true });
+  await expect(comenzar).toBeFocused();
+  await expect(comenzar).toHaveAttribute('href', '/demo');
+  await expect(comenzar).toHaveCSS('outline-width', '3px');
+  await expect(comenzar).toHaveCSS('outline-style', 'solid');
+  await page.keyboard.press('Tab');
   await expect(page.getByRole('button', { name: 'Volver a comprobar' })).toBeFocused();
+  await page.keyboard.press('Shift+Tab');
+  await expect(comenzar).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Volver a comprobar' })).toBeFocused();
+  const comprobacion = page.waitForResponse(
+    (respuesta) =>
+      new URL(respuesta.url()).pathname === '/api/salud' && respuesta.request().method() === 'GET',
+  );
   await page.keyboard.press('Enter');
+  expect((await comprobacion).status()).toBe(200);
   await expect(page.getByRole('status')).toContainText('Sistema disponible');
   const desbordamiento = await page.evaluate(
     () => document.documentElement.scrollWidth > window.innerWidth,

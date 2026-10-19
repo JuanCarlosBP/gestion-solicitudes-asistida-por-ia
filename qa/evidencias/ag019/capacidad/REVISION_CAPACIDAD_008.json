@@ -1,0 +1,805 @@
+{
+  "fuenteZip": "DEVOLVER_CIERRE_008_V3.zip",
+  "sha256Zip": "bf8d4222674225d2d4a86c45d4531e5c7b4490cba6a475240c630c1075fd04e5",
+  "archivosContrastados": 148,
+  "pasadas": [
+    {
+      "pasada": "A1",
+      "perfil": "A",
+      "duracionMs": 3900013.6074,
+      "inicio": "2026-10-16T13:53:03.105Z",
+      "fin": "2026-10-16T14:58:03.119Z",
+      "criteriosPass": 80,
+      "cgroupsNominalMaxMiB": 539.95703125,
+      "reservaSoMiB": 256.0,
+      "presupuestoNominalMiB": 795.95703125,
+      "proporcionRamNominalPct": 38.865089416503906,
+      "margenNominalPct": 61.134910583496094,
+      "presupuestoTodasFasesMaxMiB": 855.9453125,
+      "cpu": {
+        "nominal": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 36841995,
+              "duracionMs": 1791385,
+              "periodos": 6145,
+              "limitados": 235,
+              "limitadoUs": 9772176,
+              "maxCores": 0.0771946080878682,
+              "coresMedios": 0.02056620715256631,
+              "porcentajePeriodosLimitados": 3.824247355573637
+            },
+            "postgres": {
+              "cpuUs": 44090068,
+              "duracionMs": 1791385,
+              "periodos": 7082,
+              "limitados": 704,
+              "limitadoUs": 33918357,
+              "maxCores": 0.03195182890265841,
+              "coresMedios": 0.024612279325773076,
+              "porcentajePeriodosLimitados": 9.940694719005931
+            },
+            "frontend": {
+              "cpuUs": 5307187,
+              "duracionMs": 1791385,
+              "periodos": 1752,
+              "limitados": 742,
+              "limitadoUs": 66567391,
+              "maxCores": 0.004839856230031949,
+              "coresMedios": 0.002962616634615116,
+              "porcentajePeriodosLimitados": 42.35159817351598
+            },
+            "provisionador": {
+              "cpuUs": 10572112,
+              "duracionMs": 1791385,
+              "periodos": 5893,
+              "limitados": 1159,
+              "limitadoUs": 97094901,
+              "maxCores": 0.008632683658170914,
+              "coresMedios": 0.005901641467356263,
+              "porcentajePeriodosLimitados": 19.6674020023757
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 5.404274458031076
+        },
+        "pico": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 13188972,
+              "duracionMs": 290211,
+              "periodos": 1222,
+              "limitados": 70,
+              "limitadoUs": 2519928,
+              "maxCores": 0.06165496900619876,
+              "coresMedios": 0.045446147802805544,
+              "porcentajePeriodosLimitados": 5.728314238952537
+            },
+            "postgres": {
+              "cpuUs": 8474640,
+              "duracionMs": 290211,
+              "periodos": 1366,
+              "limitados": 117,
+              "limitadoUs": 6322526,
+              "maxCores": 0.03303428285857071,
+              "coresMedios": 0.029201649834086234,
+              "porcentajePeriodosLimitados": 8.56515373352855
+            },
+            "frontend": {
+              "cpuUs": 1268513,
+              "duracionMs": 290211,
+              "periodos": 462,
+              "limitados": 144,
+              "limitadoUs": 19875142,
+              "maxCores": 0.006063780865740278,
+              "coresMedios": 0.004371002477507744,
+              "porcentajePeriodosLimitados": 31.16883116883117
+            },
+            "provisionador": {
+              "cpuUs": 1722178,
+              "duracionMs": 290211,
+              "periodos": 941,
+              "limitados": 193,
+              "limitadoUs": 17308819,
+              "maxCores": 0.007612020766773163,
+              "coresMedios": 0.005934227165751815,
+              "porcentajePeriodosLimitados": 20.51009564293305
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 8.495302728015133
+        },
+        "operaciones": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 32915025,
+              "duracionMs": 1181890,
+              "periodos": 4449,
+              "limitados": 352,
+              "limitadoUs": 36611297,
+              "maxCores": 0.27709951044060344,
+              "coresMedios": 0.02784948260836457,
+              "porcentajePeriodosLimitados": 7.91189031242976
+            },
+            "postgres": {
+              "cpuUs": 32131807,
+              "duracionMs": 1191904,
+              "periodos": 5242,
+              "limitados": 535,
+              "limitadoUs": 29676511,
+              "maxCores": 0.07630656278094096,
+              "coresMedios": 0.02695838507128091,
+              "porcentajePeriodosLimitados": 10.206028233498664
+            },
+            "frontend": {
+              "cpuUs": 3484565,
+              "duracionMs": 1191904,
+              "periodos": 1316,
+              "limitados": 460,
+              "limitadoUs": 41095618,
+              "maxCores": 0.00592027972027972,
+              "coresMedios": 0.0029235282371734635,
+              "porcentajePeriodosLimitados": 34.954407294832826
+            },
+            "provisionador": {
+              "cpuUs": 10906781,
+              "duracionMs": 1191904,
+              "periodos": 4506,
+              "limitados": 1599,
+              "limitadoUs": 279811194,
+              "maxCores": 0.04802594945262873,
+              "coresMedios": 0.009150721031223991,
+              "porcentajePeriodosLimitados": 35.48601864181092
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 6.688211694804293
+        }
+      },
+      "maximaMediaCpuVentanas5minNominal": {
+        "desde": "2026-10-16T14:03:19.171000+00:00",
+        "duracionMs": 300234.0,
+        "porcentaje": 5.58927469906806
+      },
+      "ventanas5minCalculadas": 150,
+      "latencia": {
+        "nominal": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 17.042,
+            "operacion": "historial"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 70.761,
+            "operacion": "aprobar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 125.571,
+            "operacion": "login-AUDITOR"
+          }
+        },
+        "pico": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 78.538,
+            "operacion": "lista-solicitante"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 109.725,
+            "operacion": "aprobar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 122.227,
+            "operacion": "login-SUPERVISOR"
+          }
+        }
+      },
+      "arranqueMs": 17451.783600000002,
+      "conexionesMaximas": 7,
+      "cadencia": {
+        "recorridos": 330,
+        "calentamiento": 60,
+        "nominal": 180,
+        "pico": 90,
+        "peticiones": 8250
+      },
+      "slotsAusentesNominalPico": 0,
+      "slotsDuplicadosNominalPico": 0,
+      "retrasoAgendaNominalPicoMaxMs": 19.868999999947846
+    },
+    {
+      "pasada": "A2",
+      "perfil": "A",
+      "duracionMs": 3900003.3816,
+      "inicio": "2026-10-16T20:43:39.976Z",
+      "fin": "2026-10-16T21:48:40.377Z",
+      "criteriosPass": 80,
+      "cgroupsNominalMaxMiB": 489.26953125,
+      "reservaSoMiB": 256.0,
+      "presupuestoNominalMiB": 745.26953125,
+      "proporcionRamNominalPct": 36.390113830566406,
+      "margenNominalPct": 63.609886169433594,
+      "presupuestoTodasFasesMaxMiB": 830.58984375,
+      "cpu": {
+        "nominal": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 38394148,
+              "duracionMs": 1791803,
+              "periodos": 6296,
+              "limitados": 271,
+              "limitadoUs": 9994165,
+              "maxCores": 0.07525454727163702,
+              "coresMedios": 0.021427661411438644,
+              "porcentajePeriodosLimitados": 4.304320203303685
+            },
+            "postgres": {
+              "cpuUs": 44318585,
+              "duracionMs": 1791803,
+              "periodos": 7244,
+              "limitados": 779,
+              "limitadoUs": 33913364,
+              "maxCores": 0.0340126974605079,
+              "coresMedios": 0.024734072328263766,
+              "porcentajePeriodosLimitados": 10.75372722252899
+            },
+            "frontend": {
+              "cpuUs": 4864450,
+              "duracionMs": 1791803,
+              "periodos": 1790,
+              "limitados": 607,
+              "limitadoUs": 47246748,
+              "maxCores": 0.004684189486308215,
+              "coresMedios": 0.002714835280440986,
+              "porcentajePeriodosLimitados": 33.910614525139664
+            },
+            "provisionador": {
+              "cpuUs": 10820205,
+              "duracionMs": 1791803,
+              "periodos": 5926,
+              "limitados": 1166,
+              "limitadoUs": 95136275,
+              "maxCores": 0.010167166566686663,
+              "coresMedios": 0.006038724681228907,
+              "porcentajePeriodosLimitados": 19.676004049949377
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 5.49152937013723
+        },
+        "pico": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 15378291,
+              "duracionMs": 290266,
+              "periodos": 1181,
+              "limitados": 123,
+              "limitadoUs": 4947030,
+              "maxCores": 0.0911949245678889,
+              "coresMedios": 0.05297999421220536,
+              "porcentajePeriodosLimitados": 10.414902624894157
+            },
+            "postgres": {
+              "cpuUs": 8526182,
+              "duracionMs": 290266,
+              "periodos": 1323,
+              "limitados": 129,
+              "limitadoUs": 5751627,
+              "maxCores": 0.03306016390165901,
+              "coresMedios": 0.029373684827020734,
+              "porcentajePeriodosLimitados": 9.750566893424036
+            },
+            "frontend": {
+              "cpuUs": 1204139,
+              "duracionMs": 290266,
+              "periodos": 559,
+              "limitados": 100,
+              "limitadoUs": 8170663,
+              "maxCores": 0.005815310813511893,
+              "coresMedios": 0.0041483983656370365,
+              "porcentajePeriodosLimitados": 17.88908765652952
+            },
+            "provisionador": {
+              "cpuUs": 1689470,
+              "duracionMs": 290266,
+              "periodos": 956,
+              "limitados": 188,
+              "limitadoUs": 15569175,
+              "maxCores": 0.008191965624063156,
+              "coresMedios": 0.005820419890720925,
+              "porcentajePeriodosLimitados": 19.665271966527197
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 9.232249729558406
+        },
+        "operaciones": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 37551817,
+              "duracionMs": 1181056,
+              "periodos": 4615,
+              "limitados": 421,
+              "limitadoUs": 39750407,
+              "maxCores": 0.4143383323335333,
+              "coresMedios": 0.0317951197911022,
+              "porcentajePeriodosLimitados": 9.122426868905743
+            },
+            "postgres": {
+              "cpuUs": 32891537,
+              "duracionMs": 1191066,
+              "periodos": 5306,
+              "limitados": 596,
+              "limitadoUs": 27837125,
+              "maxCores": 0.10847158126061332,
+              "coresMedios": 0.02761520940065454,
+              "porcentajePeriodosLimitados": 11.232566905390124
+            },
+            "frontend": {
+              "cpuUs": 3270851,
+              "duracionMs": 1191066,
+              "periodos": 1345,
+              "limitados": 407,
+              "limitadoUs": 32295818,
+              "maxCores": 0.005305932880543348,
+              "coresMedios": 0.0027461542853208804,
+              "porcentajePeriodosLimitados": 30.260223048327138
+            },
+            "provisionador": {
+              "cpuUs": 10412930,
+              "duracionMs": 1191066,
+              "periodos": 4530,
+              "limitados": 1474,
+              "limitadoUs": 216546868,
+              "maxCores": 0.05396891243502599,
+              "coresMedios": 0.008742529801035376,
+              "porcentajePeriodosLimitados": 32.53863134657836
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 7.0899013278113
+        }
+      },
+      "maximaMediaCpuVentanas5minNominal": {
+        "desde": "2026-10-16T21:10:45.019000+00:00",
+        "duracionMs": 300311.0,
+        "porcentaje": 5.649028174126156
+      },
+      "ventanas5minCalculadas": 150,
+      "latencia": {
+        "nominal": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 12.855,
+            "operacion": "historial"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 15.465,
+            "operacion": "editar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 157.141,
+            "operacion": "login-AUDITOR"
+          }
+        },
+        "pico": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 31.574,
+            "operacion": "lista-supervisor"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 21.68,
+            "operacion": "editar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 128.214,
+            "operacion": "login-SOLICITANTE"
+          }
+        }
+      },
+      "arranqueMs": 16901.150500000003,
+      "conexionesMaximas": 7,
+      "cadencia": {
+        "recorridos": 330,
+        "calentamiento": 60,
+        "nominal": 180,
+        "pico": 90,
+        "peticiones": 8250
+      },
+      "slotsAusentesNominalPico": 0,
+      "slotsDuplicadosNominalPico": 0,
+      "retrasoAgendaNominalPicoMaxMs": 15.768999999854714
+    },
+    {
+      "pasada": "B1",
+      "perfil": "B",
+      "duracionMs": 3900001.3985,
+      "inicio": "2026-10-16T22:49:13.658Z",
+      "fin": "2026-10-16T23:54:13.699Z",
+      "criteriosPass": 80,
+      "cgroupsNominalMaxMiB": 537.9609375,
+      "reservaSoMiB": 512.0,
+      "presupuestoNominalMiB": 1049.9609375,
+      "proporcionRamNominalPct": 25.633811950683594,
+      "margenNominalPct": 74.3661880493164,
+      "presupuestoTodasFasesMaxMiB": 1128.90625,
+      "cpu": {
+        "nominal": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 36930727,
+              "duracionMs": 1791367,
+              "periodos": 7584,
+              "limitados": 16,
+              "limitadoUs": 431686,
+              "maxCores": 0.0731990412463797,
+              "coresMedios": 0.020615946927681487,
+              "porcentajePeriodosLimitados": 0.2109704641350211
+            },
+            "postgres": {
+              "cpuUs": 43936628,
+              "duracionMs": 1791367,
+              "periodos": 6625,
+              "limitados": 11,
+              "limitadoUs": 480220,
+              "maxCores": 0.03212008799120088,
+              "coresMedios": 0.02452687137811515,
+              "porcentajePeriodosLimitados": 0.1660377358490566
+            },
+            "frontend": {
+              "cpuUs": 4833172,
+              "duracionMs": 1791367,
+              "periodos": 1699,
+              "limitados": 606,
+              "limitadoUs": 45936113,
+              "maxCores": 0.00511366360367559,
+              "coresMedios": 0.0026980356342391036,
+              "porcentajePeriodosLimitados": 35.66804002354326
+            },
+            "provisionador": {
+              "cpuUs": 9296855,
+              "duracionMs": 1791367,
+              "periodos": 4988,
+              "limitados": 7,
+              "limitadoUs": 165217,
+              "maxCores": 0.007543545645435456,
+              "coresMedios": 0.005189810351536006,
+              "porcentajePeriodosLimitados": 0.14033680834001605
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 2.651533214578587
+        },
+        "pico": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 14620529,
+              "duracionMs": 290162,
+              "periodos": 1428,
+              "limitados": 10,
+              "limitadoUs": 496787,
+              "maxCores": 0.08033389983005099,
+              "coresMedios": 0.05038746975827296,
+              "porcentajePeriodosLimitados": 0.7002801120448179
+            },
+            "postgres": {
+              "cpuUs": 8190807,
+              "duracionMs": 290162,
+              "periodos": 1270,
+              "limitados": 2,
+              "limitadoUs": 115309,
+              "maxCores": 0.03240865480711573,
+              "coresMedios": 0.028228393104541602,
+              "porcentajePeriodosLimitados": 0.15748031496062992
+            },
+            "frontend": {
+              "cpuUs": 1140098,
+              "duracionMs": 290162,
+              "periodos": 490,
+              "limitados": 93,
+              "limitadoUs": 5893643,
+              "maxCores": 0.0046494051784464665,
+              "coresMedios": 0.003929177493951655,
+              "porcentajePeriodosLimitados": 18.979591836734695
+            },
+            "provisionador": {
+              "cpuUs": 1365137,
+              "duracionMs": 290162,
+              "periodos": 790,
+              "limitados": 0,
+              "limitadoUs": 0,
+              "maxCores": 0.0059549585538799564,
+              "coresMedios": 0.004704740799966915,
+              "porcentajePeriodosLimitados": 0.0
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 4.362489057836657
+        },
+        "operaciones": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 30380757,
+              "duracionMs": 1180959,
+              "periodos": 5535,
+              "limitados": 40,
+              "limitadoUs": 3665912,
+              "maxCores": 0.22051053630280634,
+              "coresMedios": 0.02572549682080411,
+              "porcentajePeriodosLimitados": 0.7226738934056007
+            },
+            "postgres": {
+              "cpuUs": 31245506,
+              "duracionMs": 1190973,
+              "periodos": 4670,
+              "limitados": 20,
+              "limitadoUs": 1502893,
+              "maxCores": 0.09748560287942412,
+              "coresMedios": 0.026235276534396664,
+              "porcentajePeriodosLimitados": 0.4282655246252677
+            },
+            "frontend": {
+              "cpuUs": 3035492,
+              "duracionMs": 1190973,
+              "periodos": 1116,
+              "limitados": 382,
+              "limitadoUs": 27660450,
+              "maxCores": 0.005117764670598821,
+              "coresMedios": 0.002548749635801987,
+              "porcentajePeriodosLimitados": 34.229390681003586
+            },
+            "provisionador": {
+              "cpuUs": 8245155,
+              "duracionMs": 1190973,
+              "periodos": 3398,
+              "limitados": 113,
+              "limitadoUs": 17450501,
+              "maxCores": 0.09240003994407829,
+              "coresMedios": 0.006923041076497956,
+              "porcentajePeriodosLimitados": 3.3254855797527956
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 3.071628203375036
+        }
+      },
+      "maximaMediaCpuVentanas5minNominal": {
+        "desde": "2026-10-16T23:01:26.561000+00:00",
+        "duracionMs": 300248.0,
+        "porcentaje": 2.8145388145799473
+      },
+      "ventanas5minCalculadas": 150,
+      "latencia": {
+        "nominal": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 9.874,
+            "operacion": "lista-solicitante"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 11.496,
+            "operacion": "rechazar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 42.402,
+            "operacion": "login-SUPERVISOR"
+          }
+        },
+        "pico": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 9.616,
+            "operacion": "lista-solicitante"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 11.596,
+            "operacion": "editar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 49.422,
+            "operacion": "login-SOLICITANTE"
+          }
+        }
+      },
+      "arranqueMs": 7296.7201,
+      "conexionesMaximas": 7,
+      "cadencia": {
+        "recorridos": 330,
+        "calentamiento": 60,
+        "nominal": 180,
+        "pico": 90,
+        "peticiones": 8250
+      },
+      "slotsAusentesNominalPico": 0,
+      "slotsDuplicadosNominalPico": 0,
+      "retrasoAgendaNominalPicoMaxMs": 16.94400000013411
+    },
+    {
+      "pasada": "B2",
+      "perfil": "B",
+      "duracionMs": 3900003.2132,
+      "inicio": "2026-10-16T23:56:12.829Z",
+      "fin": "2026-10-17T01:01:12.843Z",
+      "criteriosPass": 80,
+      "cgroupsNominalMaxMiB": 500.53515625,
+      "reservaSoMiB": 512.0,
+      "presupuestoNominalMiB": 1012.53515625,
+      "proporcionRamNominalPct": 24.720096588134766,
+      "margenNominalPct": 75.27990341186523,
+      "presupuestoTodasFasesMaxMiB": 1136.30078125,
+      "cpu": {
+        "nominal": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 33194637,
+              "duracionMs": 1791323,
+              "periodos": 7965,
+              "limitados": 5,
+              "limitadoUs": 117862,
+              "maxCores": 0.06335180746954264,
+              "coresMedios": 0.018530793720618784,
+              "porcentajePeriodosLimitados": 0.06277463904582549
+            },
+            "postgres": {
+              "cpuUs": 43984153,
+              "duracionMs": 1791323,
+              "periodos": 6704,
+              "limitados": 9,
+              "limitadoUs": 221936,
+              "maxCores": 0.03359406534119293,
+              "coresMedios": 0.02455400449835122,
+              "porcentajePeriodosLimitados": 0.13424821002386636
+            },
+            "frontend": {
+              "cpuUs": 3783030,
+              "duracionMs": 1791323,
+              "periodos": 1469,
+              "limitados": 407,
+              "limitadoUs": 28035270,
+              "maxCores": 0.00423568215892054,
+              "coresMedios": 0.002111863689574689,
+              "porcentajePeriodosLimitados": 27.705922396187884
+            },
+            "provisionador": {
+              "cpuUs": 9399559,
+              "duracionMs": 1791323,
+              "periodos": 4860,
+              "limitados": 6,
+              "limitadoUs": 200098,
+              "maxCores": 0.007896751624187907,
+              "coresMedios": 0.005247271988357209,
+              "porcentajePeriodosLimitados": 0.12345679012345678
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 2.5221966948450953
+        },
+        "pico": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 12657383,
+              "duracionMs": 290208,
+              "periodos": 1415,
+              "limitados": 6,
+              "limitadoUs": 178425,
+              "maxCores": 0.07574630295763389,
+              "coresMedios": 0.0436148658892932,
+              "porcentajePeriodosLimitados": 0.42402826855123676
+            },
+            "postgres": {
+              "cpuUs": 8377886,
+              "duracionMs": 290208,
+              "periodos": 1221,
+              "limitados": 3,
+              "limitadoUs": 220952,
+              "maxCores": 0.03104067152992905,
+              "coresMedios": 0.028868556345793363,
+              "porcentajePeriodosLimitados": 0.2457002457002457
+            },
+            "frontend": {
+              "cpuUs": 1004044,
+              "duracionMs": 290208,
+              "periodos": 456,
+              "limitados": 61,
+              "limitadoUs": 3594988,
+              "maxCores": 0.0038997401039584166,
+              "coresMedios": 0.0034597392215238725,
+              "porcentajePeriodosLimitados": 13.37719298245614
+            },
+            "provisionador": {
+              "cpuUs": 1428699,
+              "duracionMs": 290208,
+              "periodos": 785,
+              "limitados": 0,
+              "limitadoUs": 0,
+              "maxCores": 0.0059653104068779364,
+              "coresMedios": 0.004923017284154813,
+              "porcentajePeriodosLimitados": 0.0
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 4.043308937038263
+        },
+        "operaciones": {
+          "servicios": {
+            "backend": {
+              "cpuUs": 31540704,
+              "duracionMs": 1181032,
+              "periodos": 5287,
+              "limitados": 32,
+              "limitadoUs": 2189235,
+              "maxCores": 0.208583908045977,
+              "coresMedios": 0.02670605368863841,
+              "porcentajePeriodosLimitados": 0.605258180442595
+            },
+            "postgres": {
+              "cpuUs": 31944959,
+              "duracionMs": 1191045,
+              "periodos": 4735,
+              "limitados": 23,
+              "limitadoUs": 1580968,
+              "maxCores": 0.09883860980725058,
+              "coresMedios": 0.026820950509846394,
+              "porcentajePeriodosLimitados": 0.4857444561774023
+            },
+            "frontend": {
+              "cpuUs": 2426627,
+              "duracionMs": 1191045,
+              "periodos": 983,
+              "limitados": 260,
+              "limitadoUs": 16631266,
+              "maxCores": 0.004027186406796602,
+              "coresMedios": 0.0020373932135225787,
+              "porcentajePeriodosLimitados": 26.44964394710071
+            },
+            "provisionador": {
+              "cpuUs": 8274989,
+              "duracionMs": 1191045,
+              "periodos": 3259,
+              "limitados": 117,
+              "limitadoUs": 17549076,
+              "maxCores": 0.12942016386890487,
+              "coresMedios": 0.006947671162718453,
+              "porcentajePeriodosLimitados": 3.590058300092053
+            }
+          },
+          "porcentajePresupuestoTotalMedia": 3.125603428736292
+        }
+      },
+      "maximaMediaCpuVentanas5minNominal": {
+        "desde": "2026-10-17T00:08:16.730000+00:00",
+        "duracionMs": 300198.0,
+        "porcentaje": 2.625481348976342
+      },
+      "ventanas5minCalculadas": 150,
+      "latencia": {
+        "nominal": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 10.102,
+            "operacion": "lista-solicitante"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 11.524,
+            "operacion": "editar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 41.2,
+            "operacion": "login-SOLICITANTE"
+          }
+        },
+        "pico": {
+          "lectura": {
+            "maximoDeP95PorOperacionMs": 9.391,
+            "operacion": "lista-solicitante"
+          },
+          "escritura": {
+            "maximoDeP95PorOperacionMs": 10.788,
+            "operacion": "editar"
+          },
+          "acceso": {
+            "maximoDeP95PorOperacionMs": 36.94,
+            "operacion": "login-SOLICITANTE"
+          }
+        }
+      },
+      "arranqueMs": 7189.050900000001,
+      "conexionesMaximas": 6,
+      "cadencia": {
+        "recorridos": 330,
+        "calentamiento": 60,
+        "nominal": 180,
+        "pico": 90,
+        "peticiones": 8250
+      },
+      "slotsAusentesNominalPico": 0,
+      "slotsDuplicadosNominalPico": 0,
+      "retrasoAgendaNominalPicoMaxMs": 16.493999999947846
+    }
+  ],
+  "minutosCargaObservada": 260.00036001166666,
+  "metodo": "Relectura y recálculo offline; no nuevas cargas. La reserva SO es presupuesto fijo del protocolo, no consumo del anfitrión medido. CPU nominal suma de cgroups; los máximos de p95 NO son un p95 global ni un promedio de pasadas. Las colas internas de Hikari/SO no se instrumentaron directamente."
+}

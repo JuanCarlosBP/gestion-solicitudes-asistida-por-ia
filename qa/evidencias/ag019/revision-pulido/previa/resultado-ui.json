@@ -1,0 +1,535 @@
+{
+  "estado": "PASS_FUNCIONAL_PENDIENTE_REVISION_VISUAL",
+  "modo": "Estáticos nuevos en navegador; API real VPS",
+  "pruebas": [
+    {
+      "criterio": "Raíz devuelve portada 200 sin bucle",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 01-portada/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 02-inicio/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Formulario conservado visible, sin credenciales precargadas",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Guía explica reserva, tres roles y liberación final",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 03-acceso-conservado/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Botones separados al menos 8px a 320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Botones separados al menos 8px a 1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 04-demo-botones/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Reserva propia, sin liberar espacios de terceros",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Acceso real como solicitante",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (automática por nombre completo): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (automática por nombre completo)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Nombre completo escrito encuentra el proveedor sin abrir la lista",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (automática por parte del nombre): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (automática por parte del nombre)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Parte interna del nombre encuentra proveedor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "La lista de proveedor realmente está filtrada, no devuelve la lista original",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (botón): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (botón)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mayúsculas y espacios exteriores conservan coincidencias de proveedor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (Enter): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (Enter)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Enter busca el nombre completo de proveedor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (automática sin resultados): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (automática sin resultados)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin coincidencias de proveedor se anuncia, no se inventan resultados",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mismo nodo proveedor sigue elegido sin coincidencias",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin duplicar la opción retenida proveedor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real proveedor (limpiar texto): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados proveedor (limpiar texto)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Borrar texto recupera las opciones de proveedor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mismo nodo proveedor sigue elegido al limpiar",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (automática por nombre completo): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (automática por nombre completo)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Nombre completo escrito encuentra el supervisor sin abrir la lista",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (automática por parte del nombre): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (automática por parte del nombre)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Parte interna del nombre encuentra supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "La lista de supervisor realmente está filtrada, no devuelve la lista original",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (botón): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (botón)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mayúsculas y espacios exteriores conservan coincidencias de supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (Enter): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (Enter)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Enter busca el nombre completo de supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (automática sin resultados): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (automática sin resultados)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin coincidencias de supervisor se anuncia, no se inventan resultados",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mismo nodo supervisor sigue elegido sin coincidencias",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin duplicar la opción retenida supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Búsqueda real supervisor (limpiar texto): respuesta 200",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Contrato de resultados supervisor (limpiar texto)",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Borrar texto recupera las opciones de supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Mismo nodo supervisor sigue elegido al limpiar",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Buscar por texto no envía ni guarda el formulario padre",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 05-buscadores/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 06-coma-editor/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Guardar coma en API real",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Los dos UUID elegidos llegan al guardado",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "API recibe cadenas con punto, sin redondeo",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Total confirmado por Java 727,00 €",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 07-precios-legibles/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Acceso real como supervisor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 08-aprobacion/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Acceso real como auditor",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/320",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/360",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/390",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/768",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/1024",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/1280",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/1440",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin desbordamiento horizontal: 09-auditoria/1920",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Sin errores JavaScript ni respuestas 5xx durante el recorrido",
+      "estado": "PASS"
+    },
+    {
+      "criterio": "Liberada únicamente la reserva de esta prueba",
+      "estado": "PASS"
+    }
+  ],
+  "capturas": 72
+}

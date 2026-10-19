@@ -1,16 +1,15 @@
 import { randomUUID } from 'node:crypto';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { argumentosCompose, ejecutarDocker } from './docker-contexto.mjs';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { prepararDirectorioEvidencias, raizProyecto, rutaDelProyecto } from './rutas-evidencia.mjs';
+import { prepararDirectorioEvidencias, raizProyecto } from './rutas-evidencia.mjs';
 
-const ejecutar = promisify(execFile);
+const ejecutar = ejecutarDocker;
 
 /** Cuentas exclusivas de QA sobre Compose local; nunca devuelve ni imprime hashes. */
 export async function prepararUsuariosSolicitudes() {
-  const entorno = rutaDelProyecto(process.env.QA_ENTORNO || 'infraestructura/.env.example');
+  const compose = argumentosCompose();
   const usuarios = Object.fromEntries(['ajeno', 'multiple', 'inhabilitado'].map((tipo) => {
     const id = randomUUID();
     return [tipo, { id, correo: `qa-${tipo}-${id}@demo.invalid` }];
@@ -27,7 +26,7 @@ export async function prepararUsuariosSolicitudes() {
       : [tipo === 'inhabilitado' ? 'SUPERVISOR' : 'SOLICITANTE']).map((rol) =>
       `INSERT INTO gestion.usuarios_roles(usuario_id,rol) VALUES ('${u.id}','${rol}');`),
   ]), 'COMMIT;'].join('\n');
-  await ejecutar('docker', ['compose', '--env-file', entorno, '-f', 'infraestructura/compose.yaml',
+  await ejecutar('docker', [...compose,
     'exec', '-T', 'postgres', 'psql', '-U', 'administrador_local', '-d', 'gestion', '-v', 'ON_ERROR_STOP=1', '-c', sql],
   { cwd: raizProyecto, windowsHide: true, timeout: 15000, maxBuffer: 1024 * 1024 });
   return usuarios;

@@ -1,0 +1,2 @@
+# Complemento explícito para el laboratorio efímero del job; no cambia servicios.
+services: {}

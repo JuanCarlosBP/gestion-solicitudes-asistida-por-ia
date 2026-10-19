@@ -1,0 +1,14 @@
+{
+  "proveedorId": "d235384c-3beb-4fe4-87aa-88d2dd87680d",
+  "solicitudes": [
+    {
+      "id": "ca07070f-cacc-4867-adf3-057b73b0520f",
+      "estado": "APROBADA"
+    },
+    {
+      "id": "75ecd0ab-127a-4c87-9d65-96726475aa57",
+      "estado": "RECHAZADA"
+    }
+  ],
+  "historiaAnteriorId": "733e3da4-97e6-405e-8aed-52096cf8195b"
+}

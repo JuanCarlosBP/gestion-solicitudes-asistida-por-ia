@@ -1,0 +1,17 @@
+{"fecha":"2026-10-16T23:30:13.733Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:30:13.734Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:30:13.734Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:32:13.716Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:32:13.718Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:32:13.719Z","operacion":"inducido-sobrecupo-reserva","status":409,"fase":"pico","visitante":"OPERADOR","formato":"JSON","codigo":"DEMO_CAPACIDAD_OCUPADA"}
+{"fecha":"2026-10-16T23:37:15.285Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:15.793Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:16.309Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:16.824Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:17.329Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:17.844Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:18.353Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:18.863Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:37:19.368Z","operacion":"inducido-reinicio-salud","status":502,"fase":"operaciones","visitante":"OPERADOR","formato":"HTML","codigo":null}
+{"fecha":"2026-10-16T23:47:49.975Z","operacion":"inducido-caducidad","status":401,"fase":"operaciones","visitante":"C","formato":"JSON","codigo":"DEMO_RESERVA_INVALIDA"}
+{"fecha":"2026-10-16T23:47:51.614Z","operacion":"inducido-caducidad","status":401,"fase":"operaciones","visitante":"B","formato":"JSON","codigo":"DEMO_RESERVA_INVALIDA"}

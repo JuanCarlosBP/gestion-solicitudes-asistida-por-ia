@@ -1,0 +1,384 @@
+{
+  "version": "AG016-carga-reloj-1",
+  "estado": "IMPLEMENTADO_PENDIENTE_PRUEBA_REAL",
+  "semilla": 160082026,
+  "fuentes": [
+    "qa/ag016/carga.mjs",
+    "qa/ag016/recorrido.mjs",
+    "qa/ag016/cliente.mjs",
+    "qa/ag016/caducidad-carga.mjs",
+    "qa/ag016/caducidad-carga.test.mjs",
+    "qa/ag016/observar-caducidad.mjs"
+  ],
+  "comando": "node qa/ag016/carga.mjs",
+  "variablesObligatorias": [
+    "COMPOSE_PROJECT_NAME",
+    "COMPOSE_FILE",
+    "AG016_ENTORNO_ARCHIVO",
+    "AG016_EJECUCION"
+  ],
+  "ejecucionOficial": {
+    "nombre": "Exclusivamente carga-reloj-a1, carga-reloj-a2, carga-reloj-b1 o carga-reloj-b2",
+    "perfil": "Debe coincidir con PERFIL_RECURSOS del entorno A o B",
+    "baseQA": "Exclusivamente ag016_restore_qa_reloj_a1/a2/b1/b2 según sufijo; helper exige que no exista",
+    "salidas": "No pueden existir los directorios <ejecucion>, <ejecucion>-copia ni <ejecucion>-reinicio en qa/evidencias/ag016",
+    "candado": "tmp/ag016/carga-activa.lock exclusivo impide dos cargas simultáneas; no se elimina un candado previo automáticamente",
+    "duracionMedicionMs": 3900000,
+    "acortarPorVariable": false,
+    "faseInicio": "Solo tras comprobar y completar la semilla de los tres espacios",
+    "faseFin": "No se admiten nuevas peticiones después del límite monotónico de65min; respuestas pendientes se drenan y su cola queda fuera de la duración prevista"
+  },
+  "pruebaArnes": {
+    "activacion": "AG016_PRUEBA_ARNES=true y nombre que contenga arnes",
+    "etiqueta": "PRUEBA_ARNES_NO_BENCHMARK",
+    "contenido": "Preflight, tres reservas, semilla completa, una ráfaga de tres intentos de sobrecupo y un recorrido por visitante con desfases0/1000/2000ms idénticos al planificador oficial; libera al terminar correctamente",
+    "planificador": "Arnés y ejecución oficial comparten DESFASES_VISITANTES_MS; no se añaden pausas entre peticiones ni reintentos. Registra desfase previsto/observado de cada recorrido",
+    "operacionesInfraestructura": false,
+    "emiteInicioMedicion": false,
+    "limite": "No sirve como pasada A/B, no sustituye65min y no mide capacidad oficial"
+  },
+  "preparacionFueraVentana": {
+    "reserva": "Tres espacios LISTO exclusivos, cupo3 y TTL60min; reserva mediante API y CSRF",
+    "porVisitante": {
+      "proveedores": 20,
+      "origenProveedores": "CLI de provisión autorizado por el coordinador; el arnés verifica catálogo activo y no usa cuenta administradora",
+      "solicitudes": 100,
+      "conceptosPorSolicitud": 5,
+      "BORRADOR": 60,
+      "PRESENTADA": 20,
+      "APROBADA": 10,
+      "RECHAZADA": 10
+    },
+    "creacion": "API real, login solicitante y creación/edición/presentación; supervisor decide20; auditor verifica resumen exacto",
+    "inicial": "Exige cero solicitudes previas por generación; no reintenta ni completa una semilla parcialmente fallida",
+    "pacingPorPeticionMs": 300,
+    "maximoTeoricoPeticionesPorMinutoEspacio": 200,
+    "maximoTeoricoPeticionesPorSegundoTresEspacios": 10,
+    "determinismo": "Conceptos y claves de idempotencia derivados de160082026, visitante y número; UUID/fechas de servidor siguen siendo reales",
+    "contadorEventos": "No se fabrican eventos históricos ni se escribe SQL de negocio",
+    "inicioOficial": "La referencia monotónica recepción de reserva + TTL debe dejar más de45min30s tras completar la semilla, para situar la pausa de caducidad en operaciones"
+  },
+  "fases": [
+    {
+      "nombre": "calentamiento",
+      "inicioMinuto": 0,
+      "finMinuto": 10,
+      "intervaloPorVisitanteMs": 30000,
+      "recorridosProgramadosPorVisitante": 20
+    },
+    {
+      "nombre": "nominal",
+      "inicioMinuto": 10,
+      "finMinuto": 40,
+      "intervaloPorVisitanteMs": 30000,
+      "recorridosProgramadosPorVisitante": 60
+    },
+    {
+      "nombre": "pico",
+      "inicioMinuto": 40,
+      "finMinuto": 45,
+      "intervaloPorVisitanteMs": 10000,
+      "recorridosProgramadosPorVisitante": 30
+    },
+    {
+      "nombre": "operaciones",
+      "inicioMinuto": 45,
+      "finMinuto": 65,
+      "intervaloPorVisitanteMs": 30000,
+      "recorridosProgramadosPorVisitante": 40
+    }
+  ],
+  "visitantes": {
+    "cantidad": 3,
+    "nombres": [
+      "A",
+      "B",
+      "C"
+    ],
+    "desfaseMs": [
+      0,
+      1000,
+      2000
+    ],
+    "origenIP": "Un mismo generador externo al presupuesto de servidor"
+  },
+  "planificador": {
+    "solapamientoPorVisitante": false,
+    "catchUp": false,
+    "perdidaSlots": "Un recorrido que termina después del siguiente slot hace perder ese slot; se registra omisión por sobrecarga y falla capacidad",
+    "pausas": "Slots omitidos por copia/reinicio/reciclaje/caducidad se registran aparte; no se cuentan como recorridos válidos",
+    "nominal": "Exige180recorridos válidos de180programados entre los tres visitantes; ninguna pausa operativa está planificada en nominal",
+    "fallos": "Un fallo corta ese recorrido, se conserva y no se reintenta. El siguiente slot inicia otro recorrido con otra clave. No hay retries ocultos"
+  },
+  "recorrido": {
+    "peticionesCorrectasEsperadas": 25,
+    "operaciones": [
+      "csrf",
+      "login-SOLICITANTE",
+      "lista-solicitante",
+      "proveedores",
+      "supervisores",
+      "resumen-solicitante",
+      "crear",
+      "editar",
+      "presentar",
+      "presentar-replay",
+      "csrf",
+      "refresh",
+      "logout",
+      "csrf",
+      "login-SUPERVISOR",
+      "lista-supervisor",
+      "detalle-supervisor",
+      "aprobar o rechazar",
+      "logout",
+      "csrf",
+      "login-AUDITOR",
+      "historial global del espacio",
+      "resumen-auditor",
+      "detalle-auditor",
+      "logout"
+    ],
+    "nuevaSolicitud": "Cinco conceptos; proveedor rotatorio entre20; supervisor real asignado; aprobación/rechazo alternos por número de recorrido",
+    "replay": "Misma entrada y clave de la presentación; se exige respuesta idéntica, no se cuenta como otra presentación útil",
+    "cambioRol": "ClienteDemo.login cierra la sesión anterior por ruta que recibe cookie refresh; backend mantiene una sesión por espacio",
+    "picoPorEspacio": {
+      "recorridosMinuto": 6,
+      "peticionesMinuto": 150,
+      "loginRefreshMinuto": 24
+    },
+    "picoConjunto": {
+      "peticionesMinuto": 450,
+      "loginRefreshMinuto": 72,
+      "csrfLogoutLoginRefreshMinuto": 198
+    },
+    "advertenciaLimiteProxy": "La zona de90/minIP para autenticación costosa debe limitar login/refresh; incluir CSRF/logout no corresponde a esta mezcla"
+  },
+  "sobrecupoDurantePico": {
+    "fuente": "Protocolo externo v1.0, sección4 paso4; concretado antes de ejecutar pasadas oficiales",
+    "minutosDesdeInicio": [
+      41,
+      43
+    ],
+    "intentosSimultaneosPorRafaga": 3,
+    "totalIntentosOficiales": 6,
+    "cliente": "Cada intento usa cliente HTTP nuevo sin selector, sesión ni cookie de reserva; obtiene CSRF con respuesta204 exacta del contrato original y emite un solo POST",
+    "respuestaExigida": "409 con DEMO_CAPACIDAD_OCUPADA y sin cookie DEMO-RESERVA; 429 no sustituye a la comprobación de capacidad",
+    "sinReintentos": true,
+    "trafico": "6 GET CSRF +6 POST reserva por pasada oficial; las tres reservas útiles permanecen activas",
+    "metricas": "inducido-sobrecupo-csrf e inducido-sobrecupo-reserva separados y marcados inducidos; 409 previsto no cuenta como fallo ni throughput útil",
+    "eventos": "RAFAGA_SOBRECUPO y operaciones sobrecupo-pico-41/43 con instantes reales y conteo de rechazos; cualquier respuesta distinta falla el escenario",
+    "modoArnes": "Una ráfaga de tres intentos valida el mecanismo antes de sus tres recorridos; no simula una ventana ni acredita la fase pico"
+  },
+  "operacionesFinales": [
+    {
+      "minutoPrevisto": 46,
+      "accion": "Pausar A, drenar su recorrido en curso y ejecutar copia-restore.mjs en proceso Node hijo asíncrono",
+      "otros": "B y C continúan",
+      "baseQA": "Nueva por pasada; validación y permisos en helper"
+    },
+    {
+      "minutoPrevisto": 48,
+      "accion": "Pausar tres visitantes, drenar recorridos y ejecutar operar.mjs restart backend",
+      "salud": "Sondeos cada500ms, límite90s, métrica inducido-reinicio-salud separada; solo reanuda tras salud200 y helper exitoso"
+    },
+    {
+      "minutoPrevisto": 50,
+      "accion": "Tras copia exitosa, pausar y liberar A por API; esperar provisión externa y reasignar",
+      "falloCopia": "No liberar A si no existe copia/restauración confirmada"
+    },
+    {
+      "minutoPrevisto": "Recepción monotónica de la reserva original B/C + TTL anunciado60min, incluyendo preparación",
+      "accion": "Pausa30s antes de la referencia, drena el recorrido en curso y observa caducidad natural persistida. Solo tras barrera coherente emite UNA GET de reserva antigua y exige401; después espera provisión y reasigna",
+      "provision": "Supervisor Java persistente sin HTTP dentro del servicio provisionador; el arnés nunca destruye ni provisiona bases"
+    }
+  ],
+  "reasignacion": {
+    "sondeo": "GET /api/demo cada1s hasta disponibilidad, máximo120s y dentro de ventana; reservas serializadas globalmente",
+    "post": "Un solo POST por reasignación; cualquier fallo409/429/transporte se conserva y no se reintenta",
+    "totalPostReservaUtilPrevisto": 6,
+    "totalPostReservaInducidoSobrecupo": 6,
+    "datos": "Nueva generación, nuevo visitante real:20proveedores y0solicitudes iniciales; continúa carga sin resembrar100solicitudes",
+    "finOficial": "No libera reservas nuevas fuera de la ventana. El coordinador gestiona cierre/revocación y provisión de la siguiente pasada como operación separada"
+  },
+  "evidencias": {
+    "directorio": "qa/evidencias/ag016/<AG016_EJECUCION>/",
+    "peticionesJsonlCamposExactos": [
+      "operacion",
+      "status",
+      "ms",
+      "fase",
+      "visitante",
+      "fecha",
+      "relativaMs"
+    ],
+    "rechazosJsonlCamposExactos": [
+      "fecha",
+      "operacion",
+      "status",
+      "fase",
+      "visitante",
+      "formato",
+      "codigo"
+    ],
+    "rechazos": "Solo erroresHTTP: formato cerradoJSON/HTML/OTRO/AUSENTE y código de lista pública cerrada, null si noJSON uOTRO_CODIGO_OMITIDO; nunca cuerpo ni cabeceras crudas. Permite distinguir rechazoJSON de aplicación y respuestaHTML compatible con proxy",
+    "tiemposPeticiones": "fecha ISO al terminar respuesta; relativaMs inicio aproximado de petición respecto al inicio monotónico medido (null durante semilla), para correlacionar con sampler",
+    "excluido": [
+      "payloads",
+      "cookies",
+      "tokens",
+      "contraseñas",
+      "cabeceras crudas (solo fecha Date parseada/reformateada como fechaHttpUTC)",
+      "URL con identificadores",
+      "mensajes remotos sin sanitizar"
+    ],
+    "semilla": "semilla.json; conteos y duración aparte, sin cuerpos",
+    "estado": "estado.json mutable cada1s durante medición; antes/después de pausas y al cerrar",
+    "senalSamplerInicio": "inicio-medicion.json con inicio ISO, origenMonoMs, finPrevisto ISO, duracionMs3900000, fases y perfil",
+    "senalSamplerFin": "fin-medicion.json al cerrar admisiones; incluye duración monotónica observada",
+    "operacion": "eventos.jsonl con instantes previstos/reales y pausas; helpers guardan <ejecucion>-copia/restore.json y <ejecucion>-reinicio/ejecucion.json",
+    "resumen": "resultado-carga.json; muestras, estados, errores inesperados, p50/p95/p99/máximo y tasa por fase+operación; conteos y percentiles de recorridos",
+    "separacion": "Semilla, sondeos inducidos y errores esperados no inflan throughput útil ni recorridos válidos",
+    "pasoPerfil": "PASS del arnés no acredita recursos ni cumplimiento total del protocolo: coordinador incorpora sampler/cuotas/RAM/CPU/OOM/swap/I-O y umbrales antes de recomendar perfil",
+    "reservaObservadaCampos": [
+      "fecha",
+      "tipo",
+      "visitante",
+      "espacio",
+      "generacion",
+      "recibidaMonoMs",
+      "recibidaUTC",
+      "rttMs",
+      "expiraEn",
+      "ttlMinutos",
+      "fechaHttpUTC",
+      "referenciaMonoMs"
+    ],
+    "observacionCaducidadCampos": [
+      "fecha",
+      "tipo",
+      "visitante",
+      "inicioRelativoMs",
+      "finRelativoMs",
+      "observacion"
+    ],
+    "barreraCaducidadCampos": [
+      "fecha",
+      "tipo",
+      "visitante",
+      "referenciaRelativaMs",
+      "limiteRelativoMs",
+      "observaciones",
+      "finRelativoMs",
+      "ultimaObservacion",
+      "duracionMs"
+    ],
+    "observacionFallidaCampos": [
+      "fecha",
+      "tipo",
+      "visitante",
+      "inicioRelativoMs",
+      "finRelativoMs",
+      "codigo"
+    ],
+    "observacionJsonCampos": [
+      "version",
+      "resultado",
+      "espacio",
+      "generacion",
+      "expiraEn",
+      "reservadaEn",
+      "caducadaEn",
+      "ttlCoherente",
+      "posterior",
+      "retrasoServidorMs",
+      "observadoUTC",
+      "duracionMs",
+      "identidad"
+    ],
+    "cronologia": "referenciaRelativaMs=RESERVA_OBSERVADA.referenciaMonoMs−inicio-medicion.origenMonoMs; barrera confirmada debe preceder el inicio de la única GET401. UTC host solo permite correlación diagnóstica"
+  },
+  "requisitosExternos": [
+    "Root aplica perfil y verifica identidad/cuotas antes de medir; no builds durante ventana",
+    "Root comprueba supervisor Java persistente en provisionador e inicia muestrear.mjs con misma AG016_EJECUCION",
+    "Los helpers reciben proyecto/Compose/entorno completos y verifican identidad Docker antes de operar",
+    "No se modifican los65min ni umbrales para aprobar; una prueba abortada o incompleta no es una pasada válida",
+    "C solo se habilitará mediante decisión del coordinador tras falloA/B; este arnés oficial acepta exclusivamenteA/B",
+    "Observador privado de solo lectura disponible y con timeout propio; nueva IT PostgreSQL+filtro acredita la frontera exacta sin depender del reconciliador",
+    "Inventario y helper de copia/restauración deben aceptar exclusivamente las cuatro nuevas bases QA de esta variante; root controla Docker"
+  ],
+  "verificacion": {
+    "fecha": "2026-10-16T13:45:23.519Z",
+    "entorno": {
+      "node": "v24.13.0",
+      "plataforma": "win32"
+    },
+    "sintaxis": "PASS node --check carga.mjs, caducidad-carga.mjs y caducidad-carga.test.mjs; exit0",
+    "pruebasPuras": "PASS node --test qa/ag016/caducidad-carga.test.mjs:34/34, sin red ni Docker; incluye interfaz del helper real con comandos privados simulados",
+    "ejecucionReal": "PENDIENTE_COORDINADOR"
+  },
+  "compatibilidadHistorica": {
+    "contratoAnterior": "qa/evidencias/ag016/contrato-carga.json",
+    "sha256Anterior": "ccead245ea6f2e320886f0dc2e58137ab6ce7b79f24863d2e5e6d458a8aa6707",
+    "pasadaAnterior": "carga-final-a1",
+    "resultadoAnterior": "FAIL conservado; no reclasificar ni reutilizar sus muestras como variante corregida",
+    "producto": "Sin cambios de frontend, backend, límites, datos, mezcla HTTP ni umbrales por esta variante del arnés"
+  },
+  "barreraCaducidad": {
+    "cobertura": "Ciclo natural persistido: evento CADUCADA de espacio/generación originales y posterior denegación401. La frontera exacta del filtro con estado aún RESERVADO corresponde a la IT específica PostgreSQL+filtro; esta barrera no la sustituye",
+    "referencia": "performance.now() al recibir el POST de reserva + duracionMinutos del preflight. expiraEn y UTC Windows son diagnósticos, nunca convierten el plazo al reloj monotónico",
+    "estadoAutoritativo": "RESERVADA original única + TTL igual a expiraEn en PostgreSQL; CADUCADA de la misma generación con instante>=expiraEn. La observación es de solo lectura y no provoca la caducidad",
+    "observador": {
+      "comando": "node qa/ag016/observar-caducidad.mjs",
+      "version": "AG016-observador-1",
+      "variables": [
+        "AG016_CADUCIDAD_ESPACIO",
+        "AG016_CADUCIDAD_GENERACION",
+        "AG016_CADUCIDAD_EXPIRA",
+        "AG016_CADUCIDAD_TTL_MINUTOS"
+      ],
+      "ttlMinutos": "60",
+      "contexto": "Proyecto, Compose y entorno del laboratorio explícitos; identidad postgres/backend running validada por el helper",
+      "salida": "Un JSON cerrado; ESPERANDO o CADUCADA con exit0. FAIL, salida inválida, identidad distinta, contexto distinto o incoherencia falla sin fallback",
+      "proceso": "Hijo Node asíncrono; stdout acotado16KiB, stderr no se propaga; timeout exterior por llamada=min(10000ms, tiempo restante de observación, tiempo restante hasta65min)",
+      "soloLectura": true
+    },
+    "intervaloObservacionesMs": 1000,
+    "semanticaIntervalo": "Un segundo desde completar una observación ESPERANDO hasta iniciar la siguiente; sin catch-up. Es observación privada repetida, no reintento de la sonda HTTP",
+    "limiteObservacionesMs": 120000,
+    "origenLimite": "Referencia monotónica +120s, acotado siempre al fin monotónico de65min; el retraso de una lectura no renueva el plazo",
+    "respuestaInducidoCaducidad": 401,
+    "cantidadGetPorVisitante": 1,
+    "fallo": "Error de helper, falta de evento dentro del límite, inconsistencia o fin de ventana => FAIL sin GET prematura. Después de confirmar barrera,200 u otra respuesta distinta401 => FAIL, sin reintento",
+    "precision": "El helper normaliza únicamente el parámetro SQL a ISO6 con redondeo half-up de JDBC42.7.13, incluidos empates y acarreo de segundo/día; conserva expiraEn público original. Helper y evaluador verifican microsegundos. El módulo añade coherencia Date.parse con tolerancia1ms exclusivamente para resolución/redondeo, nunca para ampliar plazos ni cambiar status.",
+    "relojes": "No se infiere un desfase constante ni se usa Date HTTP como autoridad. La transición persistida protege frente a cambios de los relojes entre observaciones. Todas las duraciones y límites del planificador usan el monotónico",
+    "trafico": "Observaciones privadas se registran en eventos.jsonl, con sus costes y pausas. No generan filas HTTP ficticias, no inflan throughput ni recorridos válidos. La única GET real mantiene inducido-caducidad",
+    "fases": "Calentamiento10min, nominal30min, pico5min y operaciones20min permanecen idénticos. La espera de barrera ocurre en operaciones y sus slots omitidos se contabilizan como pausa, sin prolongar65min"
+  },
+  "huellasFuentes": [
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "3df56cccba1b279462a97b467aa7b29204c1fb779ecef47460af2f77e7826359"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "b6878c25966c17a5ad4b9fa7cefa148ecaab6a2bcc6c54dc7d81fb018c70e51d"
+    },
+    {
+      "ruta": "qa/ag016/cliente.mjs",
+      "sha256": "a0f0575444512638c1c2bec64130796b19a4f6ceb96005d33d96c6f236746540"
+    },
+    {
+      "ruta": "qa/ag016/caducidad-carga.mjs",
+      "sha256": "23f399fc982e5a583ff2ce53d7066fa4e3971582695ae978912b5ef535ea950f"
+    },
+    {
+      "ruta": "qa/ag016/caducidad-carga.test.mjs",
+      "sha256": "3417d6bdde9109b9ecb62e6d2a4885175fd2c31843a91d34f0ee841e353aac71"
+    },
+    {
+      "ruta": "qa/ag016/observar-caducidad.mjs",
+      "sha256": "f874f6283dfe44add043f4300cdebfbf0fe47958e024bb3654b7b93f1990c0d7"
+    }
+  ]
+}

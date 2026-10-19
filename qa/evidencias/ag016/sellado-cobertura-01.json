@@ -1,0 +1,26 @@
+{
+  "fecha": "2026-10-16T12:27:02.033Z",
+  "tipo": "COMPROBACION_OFFLINE_NO_BENCHMARK",
+  "casos": [
+    {
+      "nombre": "Cobertura exacta",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Duplicación con omisión se rechaza",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Entrada ajena se rechaza",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Autorreferencia se rechaza",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Omisión se rechaza",
+      "estado": "PASS"
+    }
+  ]
+}

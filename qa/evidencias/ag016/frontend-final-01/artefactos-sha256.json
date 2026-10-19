@@ -1,0 +1,20 @@
+{
+  "fecha": "2026-10-16T11:40:50.380Z",
+  "artefactos": [
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/index.html",
+      "bytes": 458,
+      "sha256": "2676a0f9722616a438f26dcb98c10bc1d78a232636a21fc9ee96bac51d6e9e70"
+    },
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/main-AE7SWUFC.js",
+      "bytes": 474450,
+      "sha256": "ed8c244d27bb208d03616415d0d630bdf7ab373855ea3899f5780ac17743f4d6"
+    },
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/styles-6GABB4AX.css",
+      "bytes": 1191,
+      "sha256": "0ad0cb4bec7335f81391a864482fdce09ac461cdbb28a5e68b25916a0ffc2717"
+    }
+  ]
+}

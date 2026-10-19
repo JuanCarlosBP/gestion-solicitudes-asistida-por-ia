@@ -1,0 +1,80 @@
+{
+  "registradoEn": "2026-10-16T12:11:32.054Z",
+  "versionEvaluador": "AG016-evaluador-2",
+  "tipo": "VERIFICACION_OFFLINE_NO_BENCHMARK",
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/evaluar.mjs",
+      "sha256": "71256fc96ff28db6f1723c8059008bf4a1525bca3ec2ad521d1de179cda3f40c"
+    },
+    {
+      "ruta": "qa/ag016/evaluar.test.mjs",
+      "sha256": "d7b7728ff5af621cd43174ee038e5dcb932a67a80850f5024060488a044ff382"
+    }
+  ],
+  "comprobaciones": [
+    {
+      "comando": "node --check qa/ag016/evaluar.mjs",
+      "inicio": "2026-10-16T12:11:31.007Z",
+      "fin": "2026-10-16T12:11:31.054Z",
+      "exitCode": 0
+    },
+    {
+      "comando": "node --test --test-reporter=tap qa/ag016/evaluar.test.mjs",
+      "inicio": "2026-10-16T12:11:31.054Z",
+      "fin": "2026-10-16T12:11:31.999Z",
+      "exitCode": 0
+    },
+    {
+      "comando": "node qa/ag016/evaluar.mjs --matriz",
+      "inicio": "2026-10-16T12:11:31.999Z",
+      "fin": "2026-10-16T12:11:32.052Z",
+      "exitCode": 0
+    }
+  ],
+  "pruebas": {
+    "ejecutadas": 25,
+    "pass": 25,
+    "fallos": 0,
+    "omitidas": 0,
+    "evidencia": "pruebas.txt"
+  },
+  "capturaNmtReal": {
+    "fuente": "qa/evidencias/ag016/preflight-medicion-01/nmt-real.json",
+    "sha256": "6a5337cf928ae46b99d8852db34ac0da03d5b182ea884b86074eb555ce486245",
+    "criterio": {
+      "codigo": "EVIDENCIA_NATIVA_NMT",
+      "estado": "PASS",
+      "observado": {
+        "bloques": 1,
+        "totalesParseables": 1,
+        "completos": 1
+      },
+      "esperado": "Total y Java Heap NMT parseables y coherentes en el mismo bloque; nativa aproximada disponible"
+    },
+    "bloques": [
+      {
+        "reservadaBytes": 2705524603,
+        "comprometidaBytes": 374163323,
+        "heapReservadaBytes": 1182793728,
+        "heapComprometidaBytes": 192937984,
+        "nativaComprometidaAproximadaBytes": 181225339
+      }
+    ],
+    "nota": "Solo validación del parser con captura existente; no acredita una pasada ni capacidad."
+  },
+  "cambios": [
+    "JVM y NMT obligatorios; parseo ausente, parcial o incoherente bloquea INCOMPLETO",
+    "Parámetros públicos cerrados; runtime=provisionador e inicio=fin; comparabilidad entre pasadas",
+    "Matriz ofrece candidato con dos PASS y cuatro pasadas completas comparables; revisión técnica CPU/cola antes de recomendar"
+  ],
+  "pendientes": [
+    "Revisión independiente final",
+    "Cuatro pasadas reales completas y análisis técnico de CPU/cola"
+  ],
+  "alcance": [
+    "Sin Docker/Git ni compilaciones",
+    "Fixtures sintéticos en memoria",
+    "No se ha evaluado ninguna pasada real"
+  ]
+}

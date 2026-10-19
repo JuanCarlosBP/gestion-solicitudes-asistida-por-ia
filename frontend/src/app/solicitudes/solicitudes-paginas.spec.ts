@@ -7,9 +7,9 @@ import { prepararOperacionesPrueba } from '../operaciones/datos-prueba';
 import { OperacionesSeguras } from '../operaciones/operaciones-seguras';
 
 beforeEach(prepararOperacionesPrueba);
-import { provideRouter, Router } from '@angular/router';
+import { NavigationEnd, provideRouter, Router } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
-import { of } from 'rxjs';
+import { filter, firstValueFrom, of } from 'rxjs';
 import { routes } from '../app.routes';
 import { Autenticacion } from '../identidad/autenticacion';
 import { accesoPrueba } from '../identidad/datos-prueba';
@@ -365,6 +365,56 @@ describe('Solicitudes: páginas, rutas y permisos SCI-01–12', () => {
       queryParamsHandling: 'preserve',
     });
   });
+  it.each(['directa', 'crear-antes'])(
+    'AG016: seleccionar referencias desde el DOM tras entrada %s transmite ambos UUID al PUT',
+    async (entrada) => {
+      const actual: DetalleSolicitud = {
+        ...solicitudPrueba,
+        proveedorId: null,
+        proveedor: null,
+        supervisorId: null,
+        supervisor: null,
+      };
+      let vista: RouterTestingHarness;
+      if (entrada === 'directa') vista = await editor(actual);
+      else {
+        vista = await RouterTestingHarness.create('/solicitudes/nueva');
+        campo(vista, 'asunto', actual.asunto);
+        enviar(vista);
+        const navegacion = firstValueFrom(
+          TestBed.inject(Router).events.pipe(filter((evento) => evento instanceof NavigationEnd)),
+        );
+        http().expectOne('/api/solicitudes').flush(actual);
+        await navegacion;
+        vista.detectChanges();
+        http().expectOne(url).flush(actual);
+        vista.detectChanges();
+        selectores();
+        await estable(vista);
+      }
+      vi.spyOn(TestBed.inject(Router), 'navigate').mockResolvedValue(true);
+      for (const [tipo, id] of [
+        ['proveedor', solicitudPrueba.proveedorId!],
+        ['supervisor', supervisorPrueba.id],
+      ]) {
+        const selector = vista.routeNativeElement!.querySelector<HTMLSelectElement>(
+          `#${tipo}-seleccion`,
+        )!;
+        expect(selector.disabled).toBe(false);
+        selector.value = id;
+        selector.dispatchEvent(new Event('change', { bubbles: true }));
+        await estable(vista);
+        expect(selector.value).toBe(id);
+      }
+      enviar(vista);
+      const peticion = http().expectOne(url);
+      expect(peticion.request.method).toBe('PUT');
+      expect(peticion.request.body.proveedorId).toBe(solicitudPrueba.proveedorId);
+      expect(peticion.request.body.supervisorId).toBe(supervisorPrueba.id);
+      peticion.flush({ ...solicitudPrueba, supervisorId: supervisorPrueba.id, version: 4 });
+      await estable(vista);
+    },
+  );
   it('conceptos inválidos muestran errores asociados y bloquean HTTP', async () => {
     const vista = await editor();
     campo(vista, 'concepto-0-cantidad', '-1');

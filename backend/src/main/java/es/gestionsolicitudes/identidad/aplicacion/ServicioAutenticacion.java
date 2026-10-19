@@ -68,6 +68,9 @@ public class ServicioAutenticacion {
             return loginFallido();
         }
         repositorio.guardarIntentos(usuario.publico().id(), IntentosAcceso.vacios(), ahora);
+        if (es.gestionsolicitudes.demo.dominio.ContextoDemo.actual() != null) {
+            repositorio.reemplazarSesionDemo(ahora);
+        }
         var credencial = secretos.nueva();
         var sesion =
                 new SesionAcceso(
@@ -76,7 +79,8 @@ public class ServicioAutenticacion {
                         UUID.randomUUID(),
                         credencial.id(),
                         ahora,
-                        ahora.plus(duraciones.refresco()),
+                        es.gestionsolicitudes.demo.dominio.ContextoDemo.limitar(
+                                ahora.plus(duraciones.refresco())),
                         null);
         repositorio.crearSesion(sesion);
         repositorio.crearToken(token(credencial, sesion, ahora));

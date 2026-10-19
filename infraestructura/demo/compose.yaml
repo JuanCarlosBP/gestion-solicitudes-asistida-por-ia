@@ -1,0 +1,101 @@
+name: ${COMPOSE_PROJECT_NAME:?COMPOSE_PROJECT_NAME obligatorio}
+services:
+  postgres:
+    image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+    user: postgres
+    environment:
+      POSTGRES_DB: ag016_control
+      POSTGRES_USER: ag016_provision
+      POSTGRES_PASSWORD_FILE: /run/secrets/admin.secret
+    command: [postgres, -c, hba_file=/etc/postgresql/ag016-pg_hba.conf, -c, log_error_verbosity=terse, -c, log_min_error_statement=panic, -c, log_parameter_max_length_on_error=0, -c, log_statement=none, -c, max_connections=40, -c, shared_buffers=128MB, -c, statement_timeout=10000, -c, idle_in_transaction_session_timeout=10000]
+    volumes:
+      - datos-ag016:/var/lib/postgresql/data
+      - ./inicializar.sh:/docker-entrypoint-initdb.d/10-ag016.sh:ro
+      - ./pg_hba.conf:/etc/postgresql/ag016-pg_hba.conf:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/admin.secret:/run/secrets/admin.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/migracion.secret:/run/secrets/migracion.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/control.secret:/run/secrets/control.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/app01.secret:/run/secrets/app01.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/app02.secret:/run/secrets/app02.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/app03.secret:/run/secrets/app03.secret:ro
+    networks: [datos]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U ag016_provision -d ag016_control"]
+      interval: 3s
+      timeout: 2s
+      retries: 30
+    mem_limit: ${PG_MEMORIA:?Límite PG obligatorio}
+    memswap_limit: ${PG_MEMORIA:?Límite PG obligatorio}
+    cpus: ${PG_CPU:?Cuota PG obligatoria}
+    pids_limit: 100
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: "no"
+  provisionador:
+    image: ${BACKEND_IMAGEN:?Imagen backend obligatoria}
+    entrypoint: [java, -Xmx96m, -jar, /aplicacion/aplicacion.jar, --demo-supervisar]
+    stop_grace_period: 35s
+    environment:
+      DEMO_CONFIG_RUTA: /run/secrets/provision.properties
+    volumes:
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/provision.properties:/run/secrets/provision.properties:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/semilla.secret:/run/secrets/semilla.secret:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [datos]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    mem_limit: ${PROVISION_MEMORIA:?Límite provisión obligatorio}
+    memswap_limit: ${PROVISION_MEMORIA:?Límite provisión obligatorio}
+    cpus: ${PROVISION_CPU:?Cuota provisión obligatoria}
+    pids_limit: 100
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: "no"
+  backend:
+    image: ${BACKEND_IMAGEN:?Imagen backend obligatoria}
+    environment:
+      SPRING_PROFILES_ACTIVE: ${DEMO_PERFILES:?Perfiles obligatorios}
+      DEMO_CONFIG_RUTA: /run/secrets/runtime.properties
+      IDENTIDAD_CLAVE_PRIVADA_RUTA: /run/secrets/identidad-privada.pem
+      IDENTIDAD_CLAVE_PUBLICA_RUTA: /run/secrets/identidad-publica.pem
+      SERVIDOR_DIRECCION: 0.0.0.0
+      JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=55 -XX:NativeMemoryTracking=summary -XX:+UnlockDiagnosticVMOptions -XX:+PrintNMTStatistics"
+    volumes:
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/runtime.properties:/run/secrets/runtime.properties:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/semilla.secret:/run/secrets/semilla.secret:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/identidad-privada.pem:/run/secrets/identidad-privada.pem:ro
+      - ${AG016_SECRETOS_DIR:?Secretos obligatorios}/identidad-publica.pem:/run/secrets/identidad-publica.pem:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [datos, web]
+    read_only: true
+    tmpfs: [/tmp:size=64m]
+    mem_limit: ${JAVA_MEMORIA:?Límite Java obligatorio}
+    memswap_limit: ${JAVA_MEMORIA:?Límite Java obligatorio}
+    cpus: ${JAVA_CPU:?Cuota Java obligatoria}
+    pids_limit: 150
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: "no"
+  frontend:
+    image: ${FRONTEND_IMAGEN:?Imagen frontend obligatoria}
+    ports: ["127.0.0.1:${FRONTEND_PUERTO:?Puerto obligatorio}:8080"]
+    volumes:
+      - ./nginx-local.conf:/etc/nginx/nginx.conf:ro
+    depends_on: [backend]
+    networks: [web]
+    read_only: true
+    tmpfs: [/tmp:size=16m]
+    mem_limit: ${WEB_MEMORIA:?Límite web obligatorio}
+    memswap_limit: ${WEB_MEMORIA:?Límite web obligatorio}
+    cpus: ${WEB_CPU:?Cuota web obligatoria}
+    pids_limit: 30
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: "no"
+volumes:
+  datos-ag016:
+networks:
+  datos: {internal: true}
+  web:

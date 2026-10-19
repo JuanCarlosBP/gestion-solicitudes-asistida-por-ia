@@ -1,0 +1,42 @@
+{
+  "entorno": "v22.16.0",
+  "resultados": [
+    {
+      "pasada": "a1",
+      "estado": "PASS",
+      "criterios": 80,
+      "fuentesReleidas": 14,
+      "duracionMs": 3900013.6074,
+      "nuevaCarga": false,
+      "camposCoinciden": true
+    },
+    {
+      "pasada": "a2",
+      "estado": "PASS",
+      "criterios": 80,
+      "fuentesReleidas": 14,
+      "duracionMs": 3900003.3816,
+      "nuevaCarga": false,
+      "camposCoinciden": true
+    },
+    {
+      "pasada": "b1",
+      "estado": "PASS",
+      "criterios": 80,
+      "fuentesReleidas": 14,
+      "duracionMs": 3900001.3985,
+      "nuevaCarga": false,
+      "camposCoinciden": true
+    },
+    {
+      "pasada": "b2",
+      "estado": "PASS",
+      "criterios": 80,
+      "fuentesReleidas": 14,
+      "duracionMs": 3900003.2132,
+      "nuevaCarga": false,
+      "camposCoinciden": true
+    }
+  ],
+  "nota": "Lectura offline. No Docker, red, nuevas cargas ni modificación del ZIP aportado."
+}

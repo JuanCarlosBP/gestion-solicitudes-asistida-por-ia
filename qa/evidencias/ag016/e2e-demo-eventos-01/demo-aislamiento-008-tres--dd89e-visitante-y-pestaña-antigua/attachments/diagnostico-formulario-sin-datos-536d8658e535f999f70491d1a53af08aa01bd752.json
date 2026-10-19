@@ -1,0 +1,238 @@
+[
+  {
+    "fecha": "2026-10-16T11:52:54.287Z",
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T11:52:54.421Z",
+    "tipo": "console-error",
+    "visitante": 1,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T11:52:54.528Z",
+    "tipo": "console-error",
+    "visitante": 2,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T11:52:54.632Z",
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T11:52:54.766Z",
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.211Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.217Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.217Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.224Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.224Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.226Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.226Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.228Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.228Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.277Z",
+    "tipo": "dom-click",
+    "referencia": "proveedor",
+    "buscandoDOM": false,
+    "selectorDeshabilitado": false,
+    "seleccionEsUuid": false,
+    "visitante": 0
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.278Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.280Z",
+    "tipo": "espera-resuelta",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.288Z",
+    "tipo": "dom-change",
+    "referencia": "proveedor",
+    "buscandoDOM": false,
+    "selectorDeshabilitado": false,
+    "seleccionEsUuid": true,
+    "visitante": 0
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.293Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.293Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.325Z",
+    "tipo": "dom-click",
+    "referencia": "supervisor",
+    "buscandoDOM": false,
+    "selectorDeshabilitado": false,
+    "seleccionEsUuid": false,
+    "visitante": 0
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.330Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.341Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.342Z",
+    "tipo": "espera-resuelta",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.342Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.349Z",
+    "tipo": "dom-change",
+    "referencia": "supervisor",
+    "buscandoDOM": false,
+    "selectorDeshabilitado": false,
+    "seleccionEsUuid": true,
+    "visitante": 0
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.463Z",
+    "tipo": "put-borrador-campos",
+    "visitante": 0,
+    "proveedorPresente": true,
+    "proveedorEsUuid": false,
+    "proveedorEsNull": true,
+    "supervisorPresente": true,
+    "supervisorEsUuid": true,
+    "supervisorEsNull": false,
+    "conceptosCantidad": 1
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.479Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.485Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.485Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T11:52:55.636Z",
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "estado": "PASS",
+  "archivos": [
+    {
+      "ruta": "frontend/src/app/identidad/acceso.ts",
+      "sha256": "1d1cf213ad51559f8880a58dfd5ef7ef2c3f98820ac690eb5da03d92aa2d0c8e",
+      "sha256LF": "1d1cf213ad51559f8880a58dfd5ef7ef2c3f98820ac690eb5da03d92aa2d0c8e"
+    }
+  ],
+  "alcance": "No se cambia el código de autenticación ni se oculta el formulario."
+}

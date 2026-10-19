@@ -1,0 +1,101 @@
+{
+  "fecha": "2026-10-16",
+  "proyecto": "gestion-solicitudes-ag016",
+  "compose": "infraestructura/demo/compose.yaml",
+  "basesNuevas": [
+    {
+      "nombre": "ag016_control",
+      "tipo": "operacion-persistente",
+      "recrear": false
+    },
+    {
+      "nombre": "ag016_demo_01",
+      "tipo": "ficticia-efimera",
+      "recrear": "Solo RECICLABLE, lista cerrada, laboratorio local, sin reserva vigente ni conexiones"
+    },
+    {
+      "nombre": "ag016_demo_02",
+      "tipo": "ficticia-efimera",
+      "recrear": "Solo RECICLABLE, lista cerrada, laboratorio local, sin reserva vigente ni conexiones"
+    },
+    {
+      "nombre": "ag016_demo_03",
+      "tipo": "ficticia-efimera",
+      "recrear": "Solo RECICLABLE, lista cerrada, laboratorio local, sin reserva vigente ni conexiones"
+    },
+    {
+      "nombre": "ag016_restore_qa",
+      "tipo": "restauracion-nueva",
+      "recrear": false
+    },
+    {
+      "nombre": "ag016_restore_qa_funcional",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Tras copia autorizada"
+    },
+    {
+      "nombre": "ag016_restore_qa_a1",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Tras copia autorizada"
+    },
+    {
+      "nombre": "ag016_restore_qa_a2",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Tras copia autorizada"
+    },
+    {
+      "nombre": "ag016_restore_qa_b1",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Tras copia autorizada"
+    },
+    {
+      "nombre": "ag016_restore_qa_b2",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Tras copia autorizada"
+    },
+    {
+      "nombre": "ag016_restore_qa_c1",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo siA yB fallan"
+    },
+    {
+      "nombre": "ag016_restore_qa_c2",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo siA yB fallan"
+    },
+    {
+      "nombre": "ag016_restore_qa_funcional_02",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Repetición autorizada tras reinicio de Windows13:24; conservar QA funcional anterior."
+    }
+  ],
+  "servicios": [
+    "postgres",
+    "provisionador",
+    "backend",
+    "frontend"
+  ],
+  "puertosLoopback": [
+    18086,
+    18087,
+    18088,
+    18089
+  ],
+  "volumen": "gestion-solicitudes-ag016_datos-ag016",
+  "propietarioDocker": "coordinador root",
+  "regresion": {
+    "proyectoPrevisto": "gestion-solicitudes-ag016-regresion",
+    "baseNueva": "gestion",
+    "tipo": "ficticia en cluster nuevo aislado",
+    "testcontainers": "Solo clusters nuevos por invocación con etiqueta gestion.qa.proyecto=gestion-solicitudes-ag016; BD gestion conservada, sin tocar instancias previas"
+  },
+  "prohibidos": "Eliminar recursos presentes en recursos-previos.json; WSL global,prune,down -v,socket en contenedores,privileged"
+}

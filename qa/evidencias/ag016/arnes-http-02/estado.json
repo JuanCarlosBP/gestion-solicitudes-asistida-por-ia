@@ -1,0 +1,30 @@
+{
+  "ejecucion": "arnes-http-02",
+  "modo": "PRUEBA_ARNES_NO_BENCHMARK",
+  "actualizado": "2026-10-16T11:54:58.112Z",
+  "fase": "prueba-arnes-no-benchmark",
+  "inicioMedicion": null,
+  "transcurridoMs": 566.6824999999953,
+  "finVentana": false,
+  "visitantes": [
+    {
+      "visitante": "A",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 0
+    },
+    {
+      "visitante": "B",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 0
+    },
+    {
+      "visitante": "C",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 0
+    }
+  ],
+  "incidencias": 4
+}

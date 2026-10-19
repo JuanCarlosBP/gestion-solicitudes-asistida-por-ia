@@ -1,0 +1,28 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/inicio/*.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files          | Names                     |  Raw size
+spec-app-inicio-inicio.js    | spec-app-inicio-inicio    |  38.90 kB | 
+chunk-RSTWSNOR.js            | -                         |   4.75 kB | 
+spec-app-inicio-salud-api.js | spec-app-inicio-salud-api |   1.96 kB | 
+styles.css                   | styles                    |   1.49 kB | 
+init-testbed.js              | init-testbed              |   1.21 kB | 
+chunk-K32UC3AB.js            | -                         |   1.18 kB | 
+vitest-mock-patch.js         | vitest-mock-patch         | 974 bytes | 
+
+                             | Initial total             |  50.47 kB
+
+Application bundle generation complete. [2.461 seconds] - 2026-10-16T11:04:30.008Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  13 passed (13)
+   Start at  13:04:30
+   Duration  2.53s (transform 159ms, setup 1.14s, import 148ms, tests 296ms, environment 2.74s)
+

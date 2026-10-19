@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: fixture completo acredita reglas, pero jamás recomienda datos sintéticos
+ok 1 - fixture completo acredita reglas, pero jamás recomienda datos sintéticos
+  ---
+  duration_ms: 37.9895
+  type: 'test'
+  ...
+# Subtest: ausencia de entradas no produce ceros ni PASS
+ok 2 - ausencia de entradas no produce ceros ni PASS
+  ---
+  duration_ms: 0.5743
+  type: 'test'
+  ...
+# Subtest: percentiles son crudos, exactos y muestran latencias inválidas
+ok 3 - percentiles son crudos, exactos y muestran latencias inválidas
+  ---
+  duration_ms: 0.0931
+  type: 'test'
+  ...
+# Subtest: 65min no se sustituyen por PASS resumido ni por prueba de arnés
+ok 4 - 65min no se sustituyen por PASS resumido ni por prueba de arnés
+  ---
+  duration_ms: 44.8242
+  type: 'test'
+  ...
+# Subtest: nominal exige180 recorridos y no oculta slots perdidos
+ok 5 - nominal exige180 recorridos y no oculta slots perdidos
+  ---
+  duration_ms: 21.5485
+  type: 'test'
+  ...
+# Subtest: nominal y pico no promedian sus percentiles ni semilla/inducidos
+ok 6 - nominal y pico no promedian sus percentiles ni semilla/inducidos
+  ---
+  duration_ms: 25.4548
+  type: 'test'
+  ...
+# Subtest: 500 inesperado y ms ausente quedan visibles
+ok 7 - 500 inesperado y ms ausente quedan visibles
+  ---
+  duration_ms: 23.1527
+  type: 'test'
+  ...
+# Subtest: RAM agrega cuatro cgroups y reservaSO sin descontar caché
+ok 8 - RAM agrega cuatro cgroups y reservaSO sin descontar caché
+  ---
+  duration_ms: 19.8031
+  type: 'test'
+  ...
+# Subtest: hueco y error nominal son incompletos; errores junto al reinicio se separan
+ok 9 - hueco y error nominal son incompletos; errores junto al reinicio se separan
+  ---
+  duration_ms: 61.0924
+  type: 'test'
+  ...
+# Subtest: OOM, swap y reinicio ajeno al escenario fallan
+ok 10 - OOM, swap y reinicio ajeno al escenario fallan
+  ---
+  duration_ms: 25.5961
+  type: 'test'
+  ...
+# Subtest: contador que retrocede sin cambio de iniciadoEn no genera CPU negativa
+ok 11 - contador que retrocede sin cambio de iniciadoEn no genera CPU negativa
+  ---
+  duration_ms: 18.7712
+  type: 'test'
+  ...
+# Subtest: huellas y cuotas cambiadas impiden comparar versión
+ok 12 - huellas y cuotas cambiadas impiden comparar versión
+  ---
+  duration_ms: 34.5918
+  type: 'test'
+  ...
+# Subtest: parámetros públicos ausentes o con esquema abierto quedan incompletos sin reproducir valores ajenos
+ok 13 - parámetros públicos ausentes o con esquema abierto quedan incompletos sin reproducir valores ajenos
+  ---
+  duration_ms: 90.252
+  type: 'test'
+  ...
+# Subtest: parámetros cambiados al cierre o distintos entre runtime y provisión fallan
+ok 14 - parámetros cambiados al cierre o distintos entre runtime y provisión fallan
+  ---
+  duration_ms: 32.6694
+  type: 'test'
+  ...
+# Subtest: orden de claves o espacios no altera la identidad de parámetros
+ok 15 - orden de claves o espacios no altera la identidad de parámetros
+  ---
+  duration_ms: 16.1464
+  type: 'test'
+  ...
+# Subtest: NMT sin unidad se interpreta en bytes y separa heap del mismo bloque
+ok 16 - NMT sin unidad se interpreta en bytes y separa heap del mismo bloque
+  ---
+  duration_ms: 20.2348
+  type: 'test'
+  ...
+# Subtest: heap ausente, vacío, ilegible, incoherente o fuera de ventana impide elegibilidad
+ok 17 - heap ausente, vacío, ilegible, incoherente o fuera de ventana impide elegibilidad
+  ---
+  duration_ms: 128.864
+  type: 'test'
+  ...
+# Subtest: NMT ausente, vacío, parcial o incoherente impide elegibilidad y no inventa nativa
+ok 18 - NMT ausente, vacío, parcial o incoherente impide elegibilidad y no inventa nativa
+  ---
+  duration_ms: 88.2957
+  type: 'test'
+  ...
+# Subtest: una muestra válida no oculta otra JVM o NMT ilegible
+ok 19 - una muestra válida no oculta otra JVM o NMT ilegible
+  ---
+  duration_ms: 16.8959
+  type: 'test'
+  ...
+# Subtest: I/O con dispositivo ausente no inventa delta cero ni negativo
+ok 20 - I/O con dispositivo ausente no inventa delta cero ni negativo
+  ---
+  duration_ms: 18.2516
+  type: 'test'
+  ...
+# Subtest: registros JSON null y números ausentes no provocan éxito ni excepción
+ok 21 - registros JSON null y números ausentes no provocan éxito ni excepción
+  ---
+  duration_ms: 20.1673
+  type: 'test'
+  ...
+# Subtest: sello parcial y cuotas sin imagen quedan incompletos
+ok 22 - sello parcial y cuotas sin imagen quedan incompletos
+  ---
+  duration_ms: 17.6822
+  type: 'test'
+  ...
+# Subtest: identidad cambiada entre última muestra y cierre no se ignora
+ok 23 - identidad cambiada entre última muestra y cierre no se ignora
+  ---
+  duration_ms: 16.0504
+  type: 'test'
+  ...
+# Subtest: matriz vacía, duplicada o sintética no recomienda
+ok 24 - matriz vacía, duplicada o sintética no recomienda
+  ---
+  duration_ms: 17.1315
+  type: 'test'
+  ...
+# Subtest: selección lógica exige dosPASS por perfil y comparabilidad de las cuatro pasadas
+ok 25 - selección lógica exige dosPASS por perfil y comparabilidad de las cuatro pasadas
+  ---
+  duration_ms: 32.5102
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 897.724

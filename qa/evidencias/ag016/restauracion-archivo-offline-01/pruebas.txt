@@ -1,0 +1,20 @@
+✔ sobre persistido válido se autentica y devuelve únicamente el plaintext en memoria (1.632ms)
+✔ cabecera, tamaño y truncamiento se rechazan (0.4421ms)
+✔ hash de evidencia distinto impide descifrar (0.1588ms)
+✔ tamper de IV, tag o ciphertext no se acepta aunque se actualice el SHA público (1.1593ms)
+✔ clave incorrecta o de longitud ajena no produce plaintext (0.322ms)
+✔ payload autenticado que no es formato custom de PostgreSQL se rechaza (0.1902ms)
+✔ metadata solo admite fuente inventariada, PASS y límites explícitos (0.3158ms)
+✔ snapshot incompleto, duplicado, con tabla extra o agregados inválidos se rechaza (0.2249ms)
+✔ metadata se canoniza sin reproducir campos adicionales (0.2624ms)
+✔ rutas usan solo identificadores cerrados y evidencia nueva distinta (0.2334ms)
+✔ rutas no admiten traversal, rutas absolutas, separadores ni valores ausentes (0.1206ms)
+✔ la frontera real del helper no emite ni serializa salida sensible de un subproceso fallido (108.2647ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.0081

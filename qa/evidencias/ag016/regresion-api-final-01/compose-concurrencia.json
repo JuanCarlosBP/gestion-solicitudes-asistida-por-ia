@@ -1,0 +1,335 @@
+{
+  "fecha": "2026-10-16T11:47:51.831Z",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 alta proveedor201",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay alta201",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 PUT proveedor sin clave conserva contrato",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay original después de PUT",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 consulta éxito original mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 recuperación sin campos sensibles",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 otra cuenta no ve clave conocida",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 recuperación sin identidad401",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 inexistente404",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 UUID inválido400",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 desactivar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay baja exacto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI03 incompatibilidad transversal409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 reactivar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay reactivación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 proveedor exige UUID válido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 alta borrador exige clave",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 alta borrador UUID inválido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 replay no evita CSRF",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 crear borrador201",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 guardar borrador sin clave",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay borrador inicial tras guardar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 presentar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 aprobar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay decisión exacta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI08 replay PRESENTADA después de decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 un evento de decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 decisión recuperable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 crear borrador201",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 guardar borrador sin clave",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay borrador inicial tras guardar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 presentar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI01 rechazar200",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay decisión exacta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI08 replay PRESENTADA después de decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 un evento de decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 decisión recuperable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 veinte misma clave mismo resultado sin503",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 una fila para veinte peticiones",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 veinte claves distintas veinte efectos sin503",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI02 dos versiones un éxito y VERSION_OBSOLETA",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 GET progreso real durante bloqueo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 timeout409 y Retry-After1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 espera HTTP observada en torno a3s sin espera ilimitada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 titular también respeta espera máxima sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 reintento tras liberar bloqueo ejecuta una sola transición",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI04 replay después de en-progreso recupera original",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 permiso revocado oculta recuperación con JWT vigente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI05 permiso revocado impide replay",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 reautenticación conserva usuarios tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 replay original tras reinicio real",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 recuperación tras reinicio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 respuesta descartada tras commit recuperable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 PG caído503 con filtro real",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI09 error no expone detalles internos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "CI06 dependencia recuperada conserva éxito",
+      "resultado": "PASS"
+    }
+  ],
+  "mediciones": [
+    {
+      "escenario": "20 misma clave",
+      "totalMs": 70.9190000000001,
+      "peticionesMs": [
+        25.0163,
+        36.87630000000013,
+        31.758200000000215,
+        39.128799999999956,
+        34.551099999999906,
+        55.836900000000014,
+        51.77210000000014,
+        47.2655000000002,
+        43.50150000000008,
+        41.031000000000176,
+        53.29959999999983,
+        45.32170000000019,
+        58.596300000000156,
+        61.89300000000003,
+        48.91840000000002,
+        69.54579999999987,
+        63.535500000000184,
+        67.75629999999978,
+        56.57590000000005,
+        60.12130000000002
+      ]
+    },
+    {
+      "escenario": "20 claves distintas",
+      "totalMs": 48.92499999999973,
+      "peticionesMs": [
+        41.31950000000006,
+        40.121599999999944,
+        48.29389999999967,
+        23.70679999999993,
+        36.707400000000234,
+        20.29260000000022,
+        38.19920000000002,
+        31.598399999999856,
+        44.38710000000037,
+        31.273200000000088,
+        44.47380000000021,
+        44.1257999999998,
+        26.754899999999907,
+        31.424599999999828,
+        34.98270000000002,
+        47.74940000000015,
+        26.857300000000123,
+        22.840999999999894,
+        19.38040000000001,
+        27.24940000000015
+      ]
+    },
+    {
+      "escenario": "duplicado con titular bloqueado",
+      "ms": 3124.4192,
+      "estado": 409
+    }
+  ],
+  "error": null,
+  "limite": "Entorno local ficticio; mediciones observadas, no SLA productivo. Respuesta perdida real también se verifica E2E."
+}

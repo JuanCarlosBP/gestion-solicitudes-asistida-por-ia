@@ -1,0 +1,137 @@
+[
+  {
+    "nombre": "Formato de los archivos frontend afectados",
+    "codigo": 0,
+    "duracionMs": 304,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Regresión aislada de búsqueda escrita y formulario conservado",
+    "codigo": 0,
+    "duracionMs": 515,
+    "extracto": [
+      "✔ proveedor: error recuperable no expone cuerpo ni bloquea próximas consultas (0.5576ms)",
+      "✔ supervisor: error recuperable no expone cuerpo ni bloquea próximas consultas (0.3331ms)",
+      "✔ proveedor: error recuperable conserva nombre seleccionado (0.4415ms)",
+      "✔ supervisor: error recuperable conserva nombre seleccionado (0.345ms)",
+      "ℹ tests 48",
+      "ℹ fail 0"
+    ]
+  },
+  {
+    "nombre": "Pruebas de los controles de reanudación",
+    "codigo": 0,
+    "duracionMs": 706,
+    "extracto": [
+      "ℹ tests 26",
+      "ℹ fail 0"
+    ]
+  },
+  {
+    "nombre": "Angular typecheck",
+    "codigo": 0,
+    "duracionMs": 5459,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Angular lint",
+    "codigo": 0,
+    "duracionMs": 20690,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Angular format:check",
+    "codigo": 0,
+    "duracionMs": 2184,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Angular test",
+    "codigo": 0,
+    "duracionMs": 31062,
+    "extracto": [
+      " ✓  gestion-solicitudes-frontend  src/app/demo/demo-interceptor.spec.ts (16 tests) 84ms",
+      " ✓  gestion-solicitudes-frontend  src/app/demo/demo-api.spec.ts (11 tests) 97ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/solicitudes-api.spec.ts (15 tests) 107ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/acceso-demo.spec.ts (2 tests) 123ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/autenticacion.spec.ts (12 tests) 18ms",
+      " ✓  gestion-solicitudes-frontend  src/app/proveedores/proveedores-api.spec.ts (14 tests) 24ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/foco-visible.spec.ts (4 tests) 235ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/sesion-interceptor.spec.ts (18 tests) 23ms",
+      " ✓  gestion-solicitudes-frontend  src/app/historial/historial-api.spec.ts (4 tests) 5ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/sesion-guard.spec.ts (2 tests) 4ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/acceso.spec.ts (4 tests) 191ms",
+      " ✓  gestion-solicitudes-frontend  src/app/inicio/salud-api.spec.ts (4 tests) 11ms",
+      " ✓  gestion-solicitudes-frontend  src/app/demo/demo-contexto.spec.ts (9 tests) 25ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/solicitud-calculos.spec.ts (81 tests) 11ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/mi-cuenta.spec.ts (4 tests) 205ms",
+      " ✓  gestion-solicitudes-frontend  src/app/historial/historial-modelo.spec.ts (34 tests) 3ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/decimal-entrada.spec.ts (19 tests) 2ms",
+      " ✓  gestion-solicitudes-frontend  src/app/identidad/sesion-store.spec.ts (2 tests) 1ms",
+      " ✓  gestion-solicitudes-frontend  src/app/proveedores/proveedor-validacion.spec.ts (18 tests) 2ms",
+      " ✓  gestion-solicitudes-frontend  src/app/demo/demo-operaciones.spec.ts (2 tests) 16ms",
+      " ✓  gestion-solicitudes-frontend  src/app/demo/demo-pagina.spec.ts (8 tests) 285ms",
+      " ✓  gestion-solicitudes-frontend  src/app/operaciones/operaciones-seguras.spec.ts (59 tests) 330ms",
+      " ✓  gestion-solicitudes-frontend  src/app/app.routes.spec.ts (6 tests) 317ms",
+      " ✓  gestion-solicitudes-frontend  src/app/inicio/inicio.spec.ts (9 tests) 388ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/referencia-seleccion-estable.spec.ts (16 tests) 473ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/referencia-busqueda.spec.ts (24 tests) 554ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/solicitudes-editores.spec.ts (12 tests) 597ms",
+      " ✓  gestion-solicitudes-frontend  src/app/historial/historial-paginas.spec.ts (24 tests) 720ms",
+      " ✓  gestion-solicitudes-frontend  src/app/proveedores/proveedores-paginas.spec.ts (45 tests) 842ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/aprobaciones.spec.ts (71 tests) 1041ms",
+      " ✓  gestion-solicitudes-frontend  src/app/solicitudes/solicitudes-paginas.spec.ts (42 tests) 1068ms",
+      " Test Files  32 passed (32)",
+      "      Tests  592 passed (592)",
+      "   Duration  15.09s (transform 2.87s, setup 13.33s, import 5.22s, tests 7.93s, environment 397.52s)"
+    ]
+  },
+  {
+    "nombre": "Angular build",
+    "codigo": 0,
+    "duracionMs": 4141,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Vista previa nueva y API real del VPS",
+    "codigo": 0,
+    "duracionMs": 16331,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Construir solo imagen frontend",
+    "codigo": 0,
+    "duracionMs": 1534,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Guardar imagen frontend",
+    "codigo": 0,
+    "duracionMs": 958,
+    "extracto": [
+      ""
+    ]
+  },
+  {
+    "nombre": "Preparar entrega solo de interfaz",
+    "codigo": 0,
+    "duracionMs": 1124,
+    "extracto": [
+      ""
+    ]
+  }
+]
