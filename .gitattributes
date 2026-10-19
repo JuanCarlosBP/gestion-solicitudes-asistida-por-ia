@@ -31,3 +31,11 @@ qa/evidencias/ag014/** -text -whitespace
 
 # Evidencias AG-015: conservar bytes, no reformatear capturas.
 qa/evidencias/ag015/** -text -whitespace
+
+# Evidencias AG-016: preservar muestras, capturas y huellas byte a byte.
+qa/evidencias/ag016/** -text -whitespace
+
+# Evidencia 008 y revisión final: conservar los bytes de los recibos.
+qa/evidencias/ag019/** -text -whitespace
+qa/ag016/revision-medicion/evaluador-v3-original.mjs -text -whitespace
+qa/ag016/revision-medicion/evaluador-v4.mjs -text -whitespace

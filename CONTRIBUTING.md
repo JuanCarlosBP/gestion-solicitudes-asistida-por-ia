@@ -1,98 +1,59 @@
-# Cómo contribuir
+# Trabajar en Gestión de Solicitudes
 
-**Estado:** Aprobado
+## Primero: saber qué se va a cambiar
 
-Los cambios deben responder a una necesidad concreta y poder comprobarse.
-La persona responsable del proyecto decide qué se acepta y cuándo se integra.
+Lee `AGENTS.md` y la especificación del incremento. No cambies una regla de negocio
+para hacer pasar una prueba. Anota el problema, el comportamiento esperado y la
+prueba que lo demuestra. Conserva los resultados fallidos con su causa.
 
-## Antes de proponer
+**Rama** significa una línea de trabajo en Git. **Commit** guarda una versión
+identificada. **Pull request (PR)** propone integrar esa línea con `main`. **CI**
+son las comprobaciones automáticas de GitHub. No son lo mismo que desplegar.
 
-Lee [MEMORY.md](MEMORY.md) para conocer el estado y la siguiente acción.
-Consulta la [visión y alcance](docs/vision-y-alcance.md) si cambia el producto.
-Revisa la [constitución](docs/constitucion.md) y las políticas aplicables.
-El [índice](docs/README.md) permite encontrarlas sin cargar toda la documentación.
+## En qué carpeta se ejecutan las comprobaciones
 
-Actualmente el producto aún no tiene una base funcional ejecutable.
-G02-B, P2 y el paquete 001 están aprobados documentalmente.
-001 espera el lanzamiento humano y las comprobaciones bloqueantes del preflight.
-La aprobación del diseño no acredita implementación ni pruebas ejecutadas.
+En Windows, abre PowerShell en la raíz del repositorio. Para Angular entra en
+`frontend`; para Maven entra en `backend`. No uses una terminal conectada al VPS
+para ejecutar comandos destinados al ordenador de desarrollo.
 
-## Proponer un cambio
+Frontend, con las dependencias ya instaladas según el entorno del proyecto:
 
-Explica el problema, a quién afecta y qué comportamiento se necesita.
-Indica qué queda dentro y fuera del cambio.
-Incluye un ejemplo concreto y cómo comprobarías su resultado.
-Relaciona la propuesta con una especificación existente cuando la haya.
+```powershell
+Set-Location frontend
+npm run typecheck
+npm run lint
+npm run format:check
+npm test
+npm run build
+```
 
-Las dudas de negocio deben resolverse antes de implementar la parte afectada.
-No cambies un requisito para justificar el comportamiento de código existente.
-El proceso aprobado está en [SDD](docs/metodologia/sdd.md).
-Las vulnerabilidades siguen [SECURITY.md](SECURITY.md), por un canal privado.
+Backend, desde su carpeta y con Docker local disponible para PostgreSQL de pruebas:
 
-## Del requisito a la evidencia
+```powershell
+.\mvnw.cmd -B -ntp verify
+```
 
-Cada tarea debe señalar el requisito que atiende.
-Cada requisito necesita criterios de aceptación observables.
-Cada comprobación debe indicar qué criterio verifica.
-Su evidencia debe corresponder a los archivos y al entorno revisados.
+`verify` ejecuta los controles configurados: no publica en GitHub ni despliega.
+No uses opciones de omitir pruebas para acreditar una entrega.
 
-La relación esperada es requisito → tarea → prueba → evidencia.
-Después se relacionará con el cambio versionado por la persona responsable.
-Una captura aislada o una CI en verde no demuestra todos los requisitos.
-Una prueba no ejecutada se registra como pendiente.
+## Antes de proponer una integración
 
-## Implementar el alcance autorizado
+Comprueba código, formato, pruebas, documentación, enlaces y ausencia de secretos.
+Revisa qué archivos se preparan para el commit; nunca añadas `.env`, claves,
+contraseñas, dumps privados, dependencias ni binarios de compilación al repositorio.
+Los informes históricos se conservan. Si una evidencia contiene datos sensibles,
+se prepara una versión pública sanitizada, sin falsificar el resultado.
 
-Consulta la especificación, el plan y las tareas aprobados antes de programar.
-Trabaja en una unidad que pueda revisarse sin mezclar cambios ajenos.
-Mantén las responsabilidades separadas y evita dependencias innecesarias.
-Si cambia el alcance, vuelve a la especificación y solicita decisión humana.
+Los cambios de Git y despliegue los realiza la persona responsable, salvo una
+autorización explícita. Se conserva el historial con merge commits; no se exige
+reescribir commits publicados ni forzar envíos.
 
-Los agentes siguen [AGENTS.md](AGENTS.md).
-Ningún agente realizará operaciones Git durante este trabajo.
-La persona responsable elegirá una rama cuando convenga aislar el cambio.
-La creación de ramas no sustituye la aprobación del trabajo.
+## Dos entornos, dos propósitos
 
-## Pruebas y documentación
+La demo pública solo utiliza datos ficticios y roles temporales. El laboratorio
+local permite pruebas internas de API/Swagger y administración. No traslades las
+credenciales de uno al otro. La configuración Docker y las instrucciones de
+operación deben indicar siempre el proyecto y los archivos de entorno autorizados.
 
-Aplica la [política de calidad](docs/politicas/calidad.md).
-Ejecuta las comprobaciones pertinentes y registra también los fallos.
-Comprueba primero la parte modificada y después las regresiones necesarias.
-No omitas una prueba obligatoria porque el entorno no permita ejecutarla:
-declara el bloqueo y su efecto sobre la aceptación.
-
-Revisa los contratos, instrucciones y ejemplos afectados.
-Sigue la [política documental](docs/politicas/documentacion.md).
-No presentes como comprobado un comando que todavía no se ha ejecutado.
-
-## Revisión y preparación de Git
-
-Antes de staging, revisa alcance, diferencias, pruebas y documentos.
-Comprueba que no se incorporan archivos generados ni datos privados.
-El revisor comunica hallazgos; el implementador realiza las correcciones.
-La aceptación final corresponde a la persona responsable del proyecto.
-
-La persona responsable selecciona y comprueba los archivos del staging.
-Los commits serán semánticos: el mensaje describe el propósito del cambio.
-Por ejemplo, `docs: definir el proceso de contribución`.
-Se usarán tipos como `feat`, `fix`, `docs`, `test` o `chore` según lo ocurrido.
-No se mezclarán cambios independientes para ocultar su alcance.
-
-Cuando corresponda una PR, explicará problema, solución y validación.
-Una PR es una solicitud de revisión antes de integrar un cambio.
-Debe identificar los pendientes y enlazar requisitos y evidencias útiles.
-La persona responsable realizará commit, push y comprobación del remoto.
-
-## Información protegida
-
-No incluyas contraseñas, tokens, claves privadas ni credenciales reales.
-Tampoco los incluyas en ejemplos, prompts, informes o capturas.
-Usa datos ficticios y revisa los archivos antes de compartirlos.
-Si encuentras un secreto, señala su ubicación sin reproducirlo
-y aplica la [política de seguridad](docs/seguridad.md).
-
-## Entrega
-
-Informa qué cambió, qué se comprobó y qué sigue pendiente.
-Actualiza la memoria breve cuando cambie el estado relevante.
-Detente después de entregar; la revisión humana determina el siguiente paso.
+[Guía para empezar](docs/manual-usuario/recorrido-entrevista.md) ·
+[Estado verificable](docs/cierre/008-estado.md)

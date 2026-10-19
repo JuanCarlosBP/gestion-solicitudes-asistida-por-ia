@@ -1,3 +1,14 @@
+# Especificaciones — estado de lectura
+
+**Cierre de código008 — 19/10/2026.** 001–007 están integrados. 008 dispone de demo
+pública y pulido comprobado; la integración del código se identifica por su PR/CI.
+Consulta [la validación actualizada de008](008-demo-operacion-entrega/validacion.md)
+y [el cierre](../docs/cierre/008-estado.md) antes de las tablas históricas de abajo.
+No se declara completado el cierre operativo del VPS por integrar código.
+
+---
+## Estados documentados anteriormente, conservados como antecedentes
+
 # Especificaciones del producto
 
 **Estado:** Aprobado
@@ -7,16 +18,11 @@ La especificación define qué se necesita; el plan propone cómo conseguirlo;
 las tareas ordenan el trabajo y sus evidencias.
 El proceso está en [SDD](../docs/metodologia/sdd.md).
 
-Estado vigente comunicado por el encargo AG-013: gobierno/001/002 aceptados
-formalmente;003–005 verificados localmente. Las referencias AG-009/010 de la tabla
-conservan el resultado documentado en aquellas ejecuciones.006 queda verificada
-localmente en AG-013; su aceptación e integración continúan pendientes.
-AG-014 verifica007 localmente y, tras su puerta, crea solo el borrador008.
-AG-015 corrige localmente la primera CI fallida de007; publicación y nueva CI
-siguen pendientes. [Informe correctivo](../docs/trazabilidad/AG-015-informe.md).
-008 tiene aprobación conceptual de la tercera opción (un VPS, Java y PostgreSQL,
-bases temporales separadas); prototipo y dimensionamiento después del cierre007.
-El archivo008 permanece como borrador histórico, sin cambios en esta reparación.
+001–007 y la reparación AG-015 están aceptados e integrados por comunicación humana AG-016 del 2026-10-16. Base main `eaa0baec78ed9b99d8039ea7e6256b254be295d3`, árbol `5e5d0a92ed719e74729461ab3f8d63baaa84bcb2`; CI main `38882642418`: backend/frontend/compose PASS según el encargo. 008 está autorizado para diseño, implementación y pruebas locales con revisión independiente; ejecución en curso, sin aceptación ni publicación de008. [Informe AG-016](../docs/trazabilidad/AG-016-informe.md).
+
+[Plan008](008-demo-operacion-entrega/plan.md), [tareas008](008-demo-operacion-entrega/tareas.md) y [ADR0009](../docs/decisiones/ADR-0009-demo-aislada-y-operacion.md) concretan el encargo; revisión previa en curso.
+
+Las tablas y párrafos históricos conservan resultados de cada ejecución; sus pendientes anteriores no sustituyen la aceptación001–007 comunicada arriba.
 
 ## Paquete existente
 
@@ -51,7 +57,7 @@ El archivo008 permanece como borrador histórico, sin cambios en esta reparació
 | 007 — Historial y auditoría | [Plan](007-historial-auditoria/plan.md) | Autorizado por AG-014 y ejecutado. |
 | 007 — Historial y auditoría | [Tareas](007-historial-auditoria/tareas.md) | Ejecutadas y verificadas localmente. |
 | 007 — Historial y auditoría | [Validación](007-historial-auditoria/validacion.md) | Corrección AG-015 verificada localmente tras primera CI fallida; publicación, nueva CI, aceptación e integración pendientes. |
-| 008 — Demo, operación y entrega | [Especificación](008-demo-operacion-entrega/especificacion.md) | Solo borrador tras puerta AG-014; sin plan/tareas aprobados, código ni despliegue. |
+| 008 — Demo, operación y entrega | [Especificación](008-demo-operacion-entrega/especificacion.md) | Ejecución local autorizada por AG-016; SDD concretado y revisión previa en curso. |
 
 Los tres y DT-01 a DT-08 recibieron aprobación humana expresa el 2026-10-13.
 001 está aprobado para implementación tras lanzamiento humano y preflight bloqueante.

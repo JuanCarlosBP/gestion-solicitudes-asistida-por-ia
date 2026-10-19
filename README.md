@@ -1,224 +1,97 @@
 # Gestión de Solicitudes
 
-**Estado del documento:** Aprobada como presentación inicial
+Aplicación personal para preparar solicitudes con conceptos e importes, revisarlas
+como supervisor y consultar su historial como auditor. Java/Spring Boot en el
+servidor, Angular en el navegador y PostgreSQL para los datos.
 
-Aplicación empresarial prevista para centralizar la creación, revisión,
-aprobación y seguimiento de solicitudes internas.
-Su finalidad es reunir los datos y las decisiones en un mismo lugar,
-con permisos claros y un historial que permita saber qué ocurrió.
+[![Comprobaciones del repositorio](https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia/actions/workflows/ci.yml/badge.svg)](https://github.com/JuanCarlosBP/gestion-solicitudes-asistida-por-ia/actions/workflows/ci.yml)
 
-## Estado actual
+## Probarla sin instalar nada
 
-[AG-015](docs/trazabilidad/AG-015-informe.md) corrige la regresión de aprobaciones
-de la primera CI de007: respuestas Bearer concurrentes rotaban la cookie CSRF.
-La corrección conserva CSRF y permisos; pasan diez carreras originales consecutivas,
-33 E2E completos en Windows,24 complementarios en Linux,249 pruebas backend,
-479 Angular y636 controles API. Publicación, nueva CI y aceptación de007 pendientes.
-El informe registra también los intentos fallidos y el incidente de aislamiento QA.
-008 tiene aprobación conceptual de su tercera opción; prototipo y dimensionamiento
-quedan para después del cierre de007, sin implementación en AG-015.
+**[Presentación del proyecto](https://gestion-empresarial.jcbpsoftware.com/)** ·
+**[Entrar directamente en la demo](https://gestion-empresarial.jcbpsoftware.com/demo)**
 
-Los párrafos siguientes conservan los resultados históricos de cada ejecución.
+1. Pulsa **Reservar mi espacio** y después **Entrar como solicitante**.
+2. Crea una solicitud, elige proveedor y supervisor, añade conceptos y preséntala.
+3. Vuelve a **Demo sin liberar el espacio** y entra como supervisor para decidir.
+4. Vuelve a Demo como auditor para consultar el historial. Libera al terminar.
 
-AG-014 autoriza [007 — Historial y auditoría](especificaciones/007-historial-auditoria/especificacion.md)
-y las decisiones D-007-01–10: eventos nuevos atómicos, consulta de decisiones V5,
-historial por recurso/global y resumen según permisos. Implementación realizada,
-verificada localmente; [validación007](especificaciones/007-historial-auditoria/validacion.md)
-es la fuente de resultados. La autorización sustituye el límite anterior de borrador007.
-El [informe AG-014](docs/trazabilidad/AG-014-informe.md) registra247 pruebas backend,
-479 Angular,639 controles API y33 E2E finales, migración y auditorías superadas,
-12 capturas y revisión independiente sin hallazgos abiertos.
-Aceptación, integración y despliegue permanecen pendientes de decisión humana.
-Tras la puerta autorizada se creó únicamente el
-[borrador008](especificaciones/008-demo-operacion-entrega/especificacion.md), sin implementación ni publicación.
+No necesitas correo ni contraseña de prueba. El formulario **Acceso** se conserva
+para mostrar la entrada con cuenta propia en una instalación convencional; la demo
+utiliza una reserva temporal y tres roles. No introduzcas datos personales, claves,
+archivos ni información real de empresas.
 
-AG-013 autoriza e implementa [006](especificaciones/006-concurrencia-idempotencia/especificacion.md):
-idempotencia transversal, espera acotada y recuperación Angular. SDD y ADR0007
-aprobados por encargo humano; CI-01–10 verificados localmente, con revisión sin
-hallazgos abiertos. Estado verificable en
-[informe AG-013](docs/trazabilidad/AG-013-informe.md) y
-[validación006](especificaciones/006-concurrencia-idempotencia/validacion.md).
-Aceptación e integración de006 pendientes. El encargo comunica aceptación formal
-de gobierno/001/002. Los párrafos siguientes conservan la evolución anterior;
-la autorización AG-013 sustituye el límite de borrador006 de AG-012.
-Tras verificar006 se creó únicamente la
-[especificación007](especificaciones/007-historial-auditoria/especificacion.md),
-aprobada posteriormente por AG-014.
+Cada visitante dispone de una base de datos independiente durante su reserva.
+Hay tres espacios y la reserva dura 60 minutos. Si están ocupados, la aplicación
+lo indica: no comparte un espacio usado con otro visitante. Los datos se reciclan.
 
-AG-012 ejecuta004 por autorización humana integral, con SDD y ADR0005 aprobados.
-La corrección heredada de proveedores pasa enfocada y regresión001–003;
-[adenda003](especificaciones/003-proveedores/validacion-ag012.md) conserva el fallo remoto.
-004 verificada localmente:144 pruebas backend,275 Angular,11 E2E y controles
-Compose/API/auditorías. SCI-01–14 y revisión sin hallazgos abiertos; aceptación
-e integración pendientes. La puerta005 se cumplió con564 minutos restantes.
-005 implementada:180 pruebas backend,346 Angular,14 E2E y425 controles API PASS;
-V5 conserva V1–V4 y datos existentes. AP-01–10 verificados localmente, con revisión
-independiente sin hallazgos abiertos; aceptación e integración pendientes.
-Tras cumplir la puerta de continuación se creó únicamente el
-[borrador006, ahora aprobado por AG-013](especificaciones/006-concurrencia-idempotencia/especificacion.md).
-Estado detallado en [informe AG-012](docs/trazabilidad/AG-012-informe.md).
+**[Guía de uso en lenguaje sencillo](docs/manual-usuario/recorrido-entrevista.md)**
 
+## Qué se puede comprobar
 
-AG-011 implementa [003 — Proveedores](especificaciones/003-proveedores/especificacion.md)
-por autorización humana integral: catálogo, permisos, baja/reactivación y versión
-optimista. Especificación, plan, tareas y ADR-0004 aprobados. Pasan 98 pruebas backend,
-130 Angular, 9 E2E y las comprobaciones de Docker/Compose, seguridad y auditorías.
-La revisión independiente concluye sin hallazgos abiertos. Los resultados propios se registran en
-[validación 003](especificaciones/003-proveedores/validacion.md).
-CI remota, aceptación e integración pendientes de actuación humana.
+- Proveedores, borradores, conceptos e importes; presentar, aprobar o rechazar.
+- Permisos por rol, sesión y recurso. El navegador no decide los permisos finales.
+- Concurrencia e idempotencia: evitar sobrescrituras y duplicados de una operación.
+- Historial de negocio y consulta por recurso. No se inventan hechos anteriores.
+- Aislamiento de espacios y revocación de sesiones al liberar o reciclar la demo.
 
-AG-010 ha implementado [002 — Identidad y acceso](especificaciones/002-identidad-acceso/especificacion.md),
-con especificación, plan y tareas aprobados expresamente por la persona responsable.
-Las comprobaciones locales pasan: 55 pruebas backend, 56 Angular, 8 E2E,
-Docker sin caché, Compose con caída/recuperación reales y auditorías finales.
-El [informe AG-010](docs/trazabilidad/AG-010-informe.md) y la
-[validación 002](especificaciones/002-identidad-acceso/validacion.md) separan resultados
-reales de pendientes. 002 no está aceptada ni integrada.
+La búsqueda admite el nombre completo o parte de él. Los precios aceptan coma o
+punto decimal; el servidor recibe cadenas normalizadas, sin pérdida de precisión.
+Los precios unitarios no muestran ceros innecesarios; los importes finales muestran
+dos decimales.
 
-### Base de entrada conservada
+## Dónde mirar el código
 
-AG-008 completó la verificación local de la base implementada en AG-006:
-Spotless y `mvnw verify` pasaron, con 13 pruebas backend, 11 Angular y 5 E2E
-acreditadas. PostgreSQL/Flyway, persistencia, caída 503 y recuperación pasaron.
-
-La persona responsable publicó `feature/001-base-verificable` y la PR borrador #1.
-La primera CI remota se ejecutó: frontend pasó; backend falló por la notación
-de versión Java de setup-java y Compose por `COPY public` sobre una carpeta vacía.
-[REV-001](docs/trazabilidad/REV-001-revision-independiente-01.md) registró R-01 a R-04.
-[AG-009](docs/trazabilidad/AG-009-informe.md) aplica las correcciones y repite la QA local.
-**La segunda CI remota está pendiente del siguiente push humano; 001 no está
-aceptada ni integrada.** AG-009 no ejecuta operaciones Git.
-
-La [validación](especificaciones/001-base-verificable/validacion.md) conserva los
-resultados actuales y la historia anterior. [Versiones](docs/documentaciondev/versiones.md)
-conserva AG-004/005 y la selección de AG-006. La política autorizada de
-[ADR-0002](docs/decisiones/ADR-0002-politica-dependencias-transitivas.md) permite
-las transitivas preliminares verificadas; las directas siguen estables y exactas.
-El [informe AG-006](docs/trazabilidad/AG-006-informe.md) conserva los resultados
-históricos; el informe AG-009 reúne las correcciones, evidencias y pendientes actuales.
-
-Ya existen:
-
-- visión y alcance, constitución y reglas de trabajo para los agentes;
-- política de seguridad, modelo de amenazas y cobertura OWASP;
-- política de calidad y conciliación de los 28 hallazgos iniciales de seguridad;
-- configuración básica de edición y Git, y un repositorio público en GitHub.
-
-Los diagnósticos previos de configuración y MCP permanecen en la trazabilidad.
-AG-006 leyó y aplicó las cuatro skills locales pertinentes y utilizó el
-[fallback aprobado](docs/metodologia/orquestacion.md#16-fallback-agéntico)
-de nivel 3, sin delegación. No volvió a probar MCP ni permisos de roles delegados.
-Existen aplicación local, pruebas y configuración de CI. No existe despliegue público.
-La integración continua es la automatización de comprobaciones de los cambios.
-
-## Actores previstos
-
-| Actor | Responsabilidad prevista |
+| Carpeta | Qué contiene |
 |---|---|
-| Solicitante | Crear y gestionar las solicitudes que tenga permitidas. |
-| Supervisor | Revisar solicitudes y aprobarlas o rechazarlas cuando esté autorizado. |
-| Auditor | Consultar información e historial autorizados, sin permisos de modificación por ese rol. |
-| Administrador | Gestionar funciones administrativas definidas expresamente. |
+| `backend/` | Programa Java, API, reglas, seguridad, acceso a datos y pruebas. |
+| `frontend/` | Pantallas Angular, componentes, estilos y pruebas de navegador. |
+| `infraestructura/` | Imágenes Docker y configuraciones separadas de laboratorio y VPS. |
+| `especificaciones/` | Qué se pidió en cada incremento y cómo se comprueba. |
+| `docs/decisiones/` | Motivos de decisiones técnicas, alternativas y consecuencias. |
+| `qa/` | Ejecutores y evidencias de las comprobaciones. |
+| `.agents/` y `.codex/` | Instrucciones y roles de la asistencia de IA supervisada. |
 
-Un supervisor no podrá aprobar su propia solicitud.
-Ser administrador no permitirá saltarse las reglas de negocio.
+[Mapa del proyecto](docs/mapa-del-proyecto.md) ·
+[Decisión del despliegue público](docs/decisiones/ADR-0010-configuracion-publica-controlada.md) ·
+[Cómo colaborar](CONTRIBUTING.md)
 
-## Funcionalidades previstas
+## Pruebas y límites de lo demostrado
 
-La primera versión deberá permitir:
+La revisión de UI del 19/10/2026 conserva **592 pruebas Angular satisfactorias** y
+**132 controles del recorrido público**, con 72 capturas de nueve estados en ocho
+anchos (320–1920 píxeles). Es evidencia fechada, no un contador que se actualice solo.
 
-- identificar a los usuarios y comprobar sus permisos;
-- gestionar proveedores, solicitudes y los conceptos de cada solicitud;
-- calcular o validar importes en el servidor;
-- guardar borradores y presentar solicitudes para revisión;
-- aprobar o rechazar mediante cambios de estado permitidos;
-- consultar listados, filtros, paginación e historial autorizado;
-- detectar cambios simultáneos incompatibles sin sobrescribir datos en silencio;
-- evitar efectos duplicados cuando una operación se repita y así lo requiera;
-- abrir las pantallas principales mediante rutas directas de Angular;
-- ofrecer endpoints REST independientes para operaciones CRUD y de negocio;
-- documentar la API con OpenAPI y Swagger UI;
-- ofrecer una demo pública validada con datos ficticios.
+La matriz local A/B comprende cuatro ventanas completas de 65 minutos: dos con
+1 CPU/2 GiB y dos con 2 CPU/4 GiB. No equivale a cientos de usuarios ni a un SLA.
 
-CRUD significa crear, consultar, modificar y eliminar.
-Un endpoint es una dirección de la API para una operación concreta.
+En GitHub Actions se comprueban backend, frontend, integración y la demo aislada.
+El resultado vigente es el del badge y su ejecución concreta; un archivo de informe
+antiguo no sustituye el resultado del commit actual.
 
-Están implementadas la base técnica001, la identidad002 (acceso, cuenta, sesiones
-y roles), el catálogo003, las solicitudes con conceptos e importes004, las
-aprobaciones005 y la concurrencia e idempotencia transversal006. Incluyen versiones
-optimistas, recuperación de operaciones, registro de presentación y evento mínimo
-de decisión.
-El historial funcional ampliado007 está implementado y verificado localmente por AG-014;
-la demo pública continúa prevista.
-No se incluyen pagos reales, operaciones bancarias ni datos reales de clientes.
-La [visión y alcance](docs/vision-y-alcance.md) define los límites completos.
+[Revisión de UI y estado del cierre](docs/cierre/008-estado.md) ·
+[API y Swagger: qué se comprueba](docs/cierre/api-y-swagger.md)
 
-## Tecnologías y arquitectura previstas
+## Ejecutar y estudiar
 
-| Parte | Tecnología prevista y función |
-|---|---|
-| Servidor o backend | Java 21 y Spring para las reglas y operaciones del sistema. |
-| Interfaz o frontend | HTML define la estructura y CSS la presentación; Angular con TypeScript organiza el comportamiento. |
-| Datos | PostgreSQL para guardar la información. |
-| Entorno de ejecución | Docker para preparar los servicios en contenedores, con sus dependencias y configuración. |
-| Comunicación | API REST, una interfaz HTTP para intercambiar datos y solicitar operaciones. |
-| Contrato y consulta de la API | OpenAPI para describirla y Swagger UI para consultar e interactuar con esa descripción. |
+Las instrucciones de instalación están en [entorno](docs/documentaciondev/entorno.md)
+y [operación local](docs/operacion-demo-008.md) y [operación pública](docs/operacion-publica-008.md). Léelas antes de ejecutar una
+configuración: los laboratorios y el VPS tienen datos y permisos distintos.
 
-TypeScript se convierte en JavaScript para ejecutarse en el navegador.
-Las rutas Angular permitirán abrir directamente una pantalla; los endpoints REST
-permitirán llamar a operaciones de la API con sus propios permisos y validaciones.
-La demo pública está prevista; todavía no existe un despliegue validado.
+Swagger está habilitado en el entorno local autorizado. En la demo pública sus
+rutas se deniegan deliberadamente; no se publica un panel administrador.
 
-La arquitectura prevista es un monolito modular: una aplicación de servidor
-organizada en módulos con responsabilidades claras.
-Separará la entrada HTTP, los casos de uso, las reglas de negocio y la persistencia.
-Persistencia significa cómo se guarda y recupera la información.
-Angular se organizará por funcionalidades.
-La [arquitectura actual](docs/documentaciondev/arquitectura.md) describe la base
-existente sin atribuirle módulos funcionales futuros.
+## Autoría y forma de trabajo
 
-## Forma de trabajo
+Proyecto personal de **Juan Carlos Bohórquez Plato — JCBP Software**. Desarrollo
+asistido por IA bajo dirección humana: requisitos, decisiones, revisión, pruebas y
+aceptación de entregas. No se presenta como producto oficial de ninguna empresa.
+El autor está consolidando Java/Spring y aprendiendo Angular; que una función exista
+en el proyecto no significa atribuir dominio experto de toda su tecnología.
 
-Se utiliza SDD spec-anchored: desarrollo guiado por especificaciones que se
-mantienen como referencia durante toda la evolución del sistema.
-Primero se define qué debe cumplirse; después se planifica, se divide en tareas,
-se implementa lo autorizado y se comprueba el resultado.
-Los cambios de requisitos se reflejan primero en su especificación.
+[Portfolio](https://jcbpsoftware.com) · [Seguridad](SECURITY.md)
 
-El desarrollo agéntico supervisado consiste en utilizar agentes de IA con
-funciones delimitadas: proponer, implementar o revisar.
-La persona responsable del proyecto conserva la decisión y aprobación entre fases.
-Las reglas de actuación están en [AGENTS.md](AGENTS.md).
-
-## Seguridad, calidad y documentación
-
-La seguridad y la calidad son requisitos desde el diseño.
-El servidor es la autoridad final sobre identidad y permisos; las reglas de datos
-de los módulos futuros se definirán en sus respectivos incrementos.
-Una funcionalidad necesitará criterios de aceptación y evidencias de sus comprobaciones;
-tener políticas escritas no demuestra que los controles funcionen.
-
-El [índice documental](docs/README.md) reúne los documentos existentes y su responsabilidad.
-La [constitución](docs/constitucion.md) fija los principios del proyecto.
-Las políticas de [seguridad](docs/seguridad.md), [calidad](docs/politicas/calidad.md)
-y [documentación](docs/politicas/documentacion.md) desarrollan sus reglas.
-
-## Ejecución
-
-Desde la raíz, con Docker disponible y solo si no existe una configuración local:
-
-```powershell
-Copy-Item infraestructura/.env.example infraestructura/.env
-docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml up -d --build --wait --wait-timeout 120
-```
-
-Abrir [inicio](http://127.0.0.1:18080/inicio) o
-[Swagger](http://127.0.0.1:18080/swagger-ui/index.html). El ejemplo usa valores ficticios.
-PostgreSQL no publica puertos. Para detener sin borrar datos:
-
-```powershell
-docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop
-```
-
-La [guía de entorno](docs/documentaciondev/entorno.md) detalla requisitos,
-construcción, pruebas, arranque, parada, errores comprobados y límites pendientes.
+La cronología anterior permanece en [trazabilidad](docs/trazabilidad/) y en Git.
+El [README anterior](docs/trazabilidad/README-anterior-cierre008.txt) se conserva como
+antecedente, no como estado actual. El manual privado de estudio no forma parte de
+la demo ni se publica con datos privados en este repositorio.
