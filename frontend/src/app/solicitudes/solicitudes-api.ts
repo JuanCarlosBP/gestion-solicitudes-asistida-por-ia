@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { decimalParaApi } from './decimal-entrada';
 import { IntencionOperacion, OperacionesSeguras } from '../operaciones/operaciones-seguras';
 import { ResultadoOperacion } from '../operaciones/operacion-modelo';
 import {
@@ -53,9 +54,9 @@ export class SolicitudesApi {
       ({ id, descripcion, cantidad, unidad, precioUnitario, posicion }) => ({
         id,
         descripcion,
-        cantidad,
+        cantidad: decimalParaApi(cantidad),
         unidad,
-        precioUnitario,
+        precioUnitario: decimalParaApi(precioUnitario),
         posicion,
       }),
     );

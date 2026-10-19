@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FindBugsFilter>
+  <!-- FuenteDemo es el pool compartido administrado por Spring; copiarlo crearía
+       conexiones ajenas al gate de drenaje. Campo final/privado, sin getter/setter. -->
+  <Match>
+    <Class name="es.gestionsolicitudes.demo.aplicacion.ServicioDemo"/>
+    <Method name="&lt;init&gt;"/>
+    <Field name="fuente"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
   <!-- HttpSecurity.build y sus configuradores declaran Exception en su API.
        No se puede estrechar la firma del factory sin ocultar el fallo de arranque. -->
   <Match>

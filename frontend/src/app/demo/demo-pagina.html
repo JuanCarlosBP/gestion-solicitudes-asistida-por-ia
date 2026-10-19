@@ -1,0 +1,101 @@
+<p class="etiqueta">DEMO INTERACTIVA</p>
+<h1>Prueba el recorrido de una solicitud</h1>
+<p class="introduccion">
+  Reserva un espacio exclusivo y recorre el proceso como solicitante, supervisor y auditor.
+  Trabajarás con cuentas temporales y un catálogo de proveedores ficticios.
+</p>
+<p class="aviso-datos">
+  Usa solo datos inventados. La reserva caduca y sus datos se eliminan al preparar de nuevo el
+  espacio.
+</p>
+@if (contexto.aviso()) {
+  <p role="alert" class="aviso">{{ contexto.aviso() }}</p>
+}
+@if (error()) {
+  <p role="alert" class="error">{{ error() }}</p>
+}
+@if (mensaje()) {
+  <p role="status">{{ mensaje() }}</p>
+}
+<section
+  class="reserva"
+  aria-labelledby="titulo-reserva"
+  [attr.aria-busy]="ocupada() || cargando()"
+>
+  <h2 id="titulo-reserva">Tu espacio de demostración</h2>
+  @if (cargando()) {
+    <p role="status">Consultando disponibilidad…</p>
+  }
+  @if (contexto.reserva(); as reserva) {
+    <p class="tiempo">
+      <strong>{{ minutos() }} min</strong> restantes
+    </p>
+    <p>
+      Reserva válida hasta
+      <time [attr.datetime]="reserva.expiraEn">{{
+        reserva.expiraEn | date: 'dd/MM/yyyy HH:mm'
+      }}</time>
+      (hora local).
+    </p>
+    <p>Cambiar de rol mantiene los datos de esta reserva y cierra la sesión del rol anterior.</p>
+    @if (sesion.usuario(); as usuario) {
+      <p>
+        Sesión actual: <strong>{{ usuario.nombreVisible }}</strong
+        >.
+      </p>
+    }
+    <button type="button" class="secundario" [disabled]="ocupada()" (click)="liberar()">
+      Liberar mi espacio
+    </button>
+  } @else if (presentacion(); as datos) {
+    @if (datos.habilitada) {
+      <p>
+        <strong>{{ datos.duracionMinutos }} minutos</strong> por reserva · hasta
+        {{ datos.cupo }} visitantes simultáneos.
+      </p>
+      <p>{{ datos.disponibles }} espacios disponibles en la última consulta.</p>
+      <div class="acciones-reserva">
+        <button type="button" [disabled]="ocupada() || cargando()" (click)="reservar()">
+          Reservar mi espacio
+        </button>
+        <button
+          type="button"
+          class="secundario"
+          [disabled]="ocupada() || cargando()"
+          (click)="cargar()"
+        >
+          Actualizar disponibilidad
+        </button>
+      </div>
+    } @else {
+      <p>La demo no está habilitada en este entorno.</p>
+    }
+  } @else if (!cargando()) {
+    <button type="button" class="secundario" (click)="cargar()">Volver a consultar</button>
+  }
+</section>
+<h2>Un recorrido, tres perspectivas</h2>
+<p>Empieza como solicitante. Vuelve a la sección Demo para cambiar de rol cuando lo necesites.</p>
+<div class="guias">
+  @for (guia of guias; track guia.rol) {
+    <section class="guia" [attr.aria-labelledby]="'guia-' + guia.rol">
+      <h3 [id]="'guia-' + guia.rol">{{ guia.nombre }}</h3>
+      <ol>
+        @for (paso of guia.pasos; track paso) {
+          <li>{{ paso }}</li>
+        }
+      </ol>
+      <button
+        type="button"
+        [disabled]="!contexto.reserva() || ocupada() || cargando()"
+        (click)="entrar(guia.rol)"
+      >
+        Entrar como {{ guia.nombre.toLowerCase() }}
+      </button>
+    </section>
+  }
+</div>
+<p class="nota">
+  Cada visitante trabaja en su propio espacio. El auditor consulta únicamente el historial de esa
+  reserva. La demo no ofrece una cuenta administradora.
+</p>

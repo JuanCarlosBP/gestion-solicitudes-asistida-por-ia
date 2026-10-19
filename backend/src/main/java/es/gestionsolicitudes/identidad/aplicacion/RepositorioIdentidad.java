@@ -28,5 +28,8 @@ public interface RepositorioIdentidad {
 
     void revocar(SesionAcceso sesion, Instant ahora, String motivo);
 
+    /** Transición de cuenta de un visitante demo, únicamente dentro de su base y transacción. */
+    void reemplazarSesionDemo(Instant ahora);
+
     boolean sesionActiva(UUID sesion, UUID usuario, Instant ahora);
 }

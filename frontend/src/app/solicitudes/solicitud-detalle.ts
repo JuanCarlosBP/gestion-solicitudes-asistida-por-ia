@@ -14,6 +14,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, combineLatest, finalize, map, of, startWith, Subject, switchMap } from 'rxjs';
 import { euros } from './solicitud-calculos';
+import { decimalVisible } from './decimal-entrada';
 import {
   DetalleSolicitud,
   esConflictoSolicitud,
@@ -57,6 +58,7 @@ export class SolicitudDetalle implements OnInit {
   readonly error = signal('');
   readonly aviso = signal('');
   readonly euros = euros;
+  readonly decimalVisible = decimalVisible;
   readonly nombresUnidad = nombresUnidad;
   readonly nombresEstado = nombresEstado;
 

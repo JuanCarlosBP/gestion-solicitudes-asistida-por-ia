@@ -39,13 +39,19 @@ public class EmisorJwt {
                         .expiresAt(fin)
                         .id(UUID.randomUUID().toString())
                         .claim("sid", sesion.id().toString())
-                        .claim("roles", usuario.roles().stream().map(Enum::name).sorted().toList())
-                        .build();
+                        .claim("roles", usuario.roles().stream().map(Enum::name).sorted().toList());
+        var contexto = es.gestionsolicitudes.demo.dominio.ContextoDemo.actual();
+        if (contexto != null) {
+            claims.claim("demo_reserva", contexto.reservaId().toString())
+                    .claim("demo_espacio", contexto.espacio())
+                    .claim("demo_generacion", contexto.generacion().toString());
+        }
         String acceso =
                 codificador
                         .encode(
                                 JwtEncoderParameters.from(
-                                        JwsHeader.with(SignatureAlgorithm.RS256).build(), claims))
+                                        JwsHeader.with(SignatureAlgorithm.RS256).build(),
+                                        claims.build()))
                         .getTokenValue();
         return new AccesoEmitido(
                 acceso,

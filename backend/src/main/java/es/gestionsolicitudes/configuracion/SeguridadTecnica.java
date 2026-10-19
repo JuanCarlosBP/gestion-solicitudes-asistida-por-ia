@@ -28,13 +28,37 @@ import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 public class SeguridadTecnica {
     @Bean
     SecurityFilterChain cadenaTecnica(
-            HttpSecurity http, Environment entorno, RepositorioCsrfPorEntorno repositorioCsrf)
+            HttpSecurity http,
+            Environment entorno,
+            RepositorioCsrfPorEntorno repositorioCsrf,
+            org.springframework.beans.factory.ObjectProvider<
+                            es.gestionsolicitudes.demo.http.FiltroContextoDemo>
+                    filtroDemo)
             throws Exception {
+        boolean demo = entorno.acceptsProfiles(Profiles.of("demo"));
+        if (demo)
+            http.addFilterBefore(
+                    filtroDemo.getObject(),
+                    org.springframework.security.oauth2.server.resource.web.authentication
+                            .BearerTokenAuthenticationFilter.class);
         http.authorizeHttpRequests(
                         reglas -> {
                             reglas.requestMatchers(
-                                            HttpMethod.GET, "/api/salud", "/api/autenticacion/csrf")
+                                            HttpMethod.GET,
+                                            "/api/salud",
+                                            "/api/autenticacion/csrf",
+                                            "/api/demo")
                                     .permitAll();
+                            if (demo) {
+                                reglas.requestMatchers(HttpMethod.GET, "/api/demo/reserva")
+                                        .permitAll();
+                                reglas.requestMatchers(
+                                                HttpMethod.POST,
+                                                "/api/demo/reservas",
+                                                "/api/demo/acceso",
+                                                "/api/demo/reserva/liberar")
+                                        .permitAll();
+                            }
                             reglas.requestMatchers(
                                             HttpMethod.POST,
                                             "/api/autenticacion/iniciar-sesion",
@@ -112,7 +136,20 @@ public class SeguridadTecnica {
                 .logout(AbstractHttpConfigurer::disable)
                 .oauth2ResourceServer(
                         recurso ->
-                                recurso.jwt(jwt -> jwt.jwtAuthenticationConverter(conversorJwt()))
+                                recurso.bearerTokenResolver(
+                                                peticion ->
+                                                        demo
+                                                                        && es.gestionsolicitudes
+                                                                                .demo.http
+                                                                                .FiltroContextoDemo
+                                                                                .publica(peticion)
+                                                                ? null
+                                                                : new org.springframework.security
+                                                                                .oauth2.server
+                                                                                .resource.web
+                                                                                .DefaultBearerTokenResolver()
+                                                                        .resolve(peticion))
+                                        .jwt(jwt -> jwt.jwtAuthenticationConverter(conversorJwt()))
                                         .authenticationEntryPoint(
                                                 (peticion, respuesta, error) ->
                                                         errorAutenticacion(respuesta, error))

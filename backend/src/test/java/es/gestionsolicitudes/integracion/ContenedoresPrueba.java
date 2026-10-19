@@ -11,11 +11,28 @@ public final class ContenedoresPrueba {
     private ContenedoresPrueba() {}
 
     public static PostgreSQLContainer postgres(DockerImageName imagen) {
+        String proyecto = System.getenv("GESTION_QA_PROYECTO_AG016");
+        if (proyecto != null
+                && (!"gestion-solicitudes-ag016".equals(proyecto)
+                        || !Boolean.parseBoolean(
+                                System.getenv("GESTION_QA_CONSERVAR_CONTENEDORES"))))
+            throw new IllegalStateException(
+                    "QA AG-016 exige proyecto exacto y conservación de recursos");
+        PostgreSQLContainer base;
         if (!Boolean.parseBoolean(System.getenv("GESTION_QA_CONSERVAR_CONTENEDORES"))) {
-            return new PostgreSQLContainer(imagen);
+            base = new PostgreSQLContainer(imagen);
+        } else {
+            validarConservacion();
+            base = new PostgresConservado(imagen);
         }
-        validarConservacion();
-        return new PostgresConservado(imagen);
+        if (proyecto != null) {
+            if (!"gestion-solicitudes-ag016".equals(proyecto))
+                throw new IllegalStateException("Proyecto QA AG-016 inválido");
+            base.withLabel("gestion.qa.proyecto", proyecto);
+            base.withCreateContainerCmdModifier(
+                    comando -> comando.withName("ag016-qa-" + UUID.randomUUID()));
+        }
+        return base;
     }
 
     private static void validarConservacion() {
@@ -34,13 +51,16 @@ public final class ContenedoresPrueba {
     private static final class PostgresConservado extends PostgreSQLContainer {
         private static final System.Logger LOG =
                 System.getLogger(PostgresConservado.class.getName());
+        private final String instancia = UUID.randomUUID().toString();
+        private final String proyecto = System.getenv("GESTION_QA_PROYECTO_AG016");
 
         private PostgresConservado(DockerImageName imagen) {
             super(imagen);
             withReuse(true);
             withLabel("gestion.qa.conservar", "true");
+            withLabel("gestion.qa.tipo", "postgres");
             // Aislamiento: nunca reutilizar datos de otra instancia o ejecución de prueba.
-            withLabel("gestion.qa.instancia", UUID.randomUUID().toString());
+            withLabel("gestion.qa.instancia", instancia);
         }
 
         @Override
@@ -57,17 +77,36 @@ public final class ContenedoresPrueba {
         public void stop() {
             var id = getContainerId();
             if (id == null) return;
-            var estado = getDockerClient().inspectContainerCmd(id).exec().getState();
+            var inspeccion = getDockerClient().inspectContainerCmd(id).exec();
+            validarIdentidad(id, inspeccion);
+            var estado = inspeccion.getState();
             if (Boolean.TRUE.equals(estado.getRunning())) {
                 getDockerClient().stopContainerCmd(id).withTimeout(5).exec();
             }
             // close() delega a este método: repetir el cierre conserva el mismo recurso.
-            var finalEstado = getDockerClient().inspectContainerCmd(id).exec().getState();
+            var finalInspeccion = getDockerClient().inspectContainerCmd(id).exec();
+            validarIdentidad(id, finalInspeccion);
+            var finalEstado = finalInspeccion.getState();
             LOG.log(
                     System.Logger.Level.INFO,
                     "QA_CONTENEDOR_CONSERVADO id={0} estado={1}",
                     id,
                     finalEstado.getStatus());
+        }
+
+        private void validarIdentidad(
+                String id, com.github.dockerjava.api.command.InspectContainerResponse inspeccion) {
+            var config = inspeccion.getConfig();
+            var etiquetas = config == null ? null : config.getLabels();
+            if (!id.matches("[a-f0-9]{64}")
+                    || !id.equals(inspeccion.getId())
+                    || etiquetas == null
+                    || !"true".equals(etiquetas.get("gestion.qa.conservar"))
+                    || !"postgres".equals(etiquetas.get("gestion.qa.tipo"))
+                    || !instancia.equals(etiquetas.get("gestion.qa.instancia"))
+                    || (proyecto != null && !proyecto.equals(etiquetas.get("gestion.qa.proyecto"))))
+                throw new IllegalStateException(
+                        "Identidad del contenedor QA no coincide; parada denegada");
         }
     }
 }

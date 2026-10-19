@@ -1,0 +1,43 @@
+#!/bin/sh
+set -eu
+# Solo ejecutado por entrypoint sobre un volumen NUEVO. No recrea recursos.
+[ "$POSTGRES_DB" = ag016_control ] && [ "$POSTGRES_USER" = ag016_provision ] || exit 20
+export AG016_MIGRACION="$(cat /run/secrets/migracion.secret)"
+export AG016_CONTROL="$(cat /run/secrets/control.secret)"
+export AG016_APP01="$(cat /run/secrets/app01.secret)"
+export AG016_APP02="$(cat /run/secrets/app02.secret)"
+export AG016_APP03="$(cat /run/secrets/app03.secret)"
+psql --no-psqlrc -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" <<'SQL'
+\getenv migracion AG016_MIGRACION
+\getenv control AG016_CONTROL
+\getenv app01 AG016_APP01
+\getenv app02 AG016_APP02
+\getenv app03 AG016_APP03
+CREATE ROLE gestion_migracion LOGIN PASSWORD :'migracion' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+CREATE ROLE gestion_app NOLOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+CREATE ROLE ag016_control_app LOGIN PASSWORD :'control' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+CREATE ROLE ag016_app_01 LOGIN PASSWORD :'app01' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS IN ROLE gestion_app;
+CREATE ROLE ag016_app_02 LOGIN PASSWORD :'app02' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS IN ROLE gestion_app;
+CREATE ROLE ag016_app_03 LOGIN PASSWORD :'app03' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS IN ROLE gestion_app;
+REVOKE ALL ON DATABASE postgres FROM PUBLIC;
+REVOKE ALL ON DATABASE ag016_control FROM PUBLIC;
+GRANT CONNECT ON DATABASE ag016_control TO ag016_control_app, gestion_migracion;
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+CREATE DATABASE ag016_demo_01 OWNER gestion_migracion;
+CREATE DATABASE ag016_demo_02 OWNER gestion_migracion;
+CREATE DATABASE ag016_demo_03 OWNER gestion_migracion;
+REVOKE ALL ON DATABASE ag016_demo_01, ag016_demo_02, ag016_demo_03 FROM PUBLIC;
+GRANT CONNECT ON DATABASE ag016_demo_01 TO ag016_app_01;
+GRANT CONNECT ON DATABASE ag016_demo_02 TO ag016_app_02;
+GRANT CONNECT ON DATABASE ag016_demo_03 TO ag016_app_03;
+\connect ag016_demo_01
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+CREATE SCHEMA gestion AUTHORIZATION gestion_migracion;
+\connect ag016_demo_02
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+CREATE SCHEMA gestion AUTHORIZATION gestion_migracion;
+\connect ag016_demo_03
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+CREATE SCHEMA gestion AUTHORIZATION gestion_migracion;
+SQL
+unset AG016_MIGRACION AG016_CONTROL AG016_APP01 AG016_APP02 AG016_APP03

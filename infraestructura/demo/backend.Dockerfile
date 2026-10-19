@@ -1,0 +1,7 @@
+FROM eclipse-temurin:21.0.12.1_1-jre-noble@sha256:000fd431958bc81a24abe1e8e5f0f0fd3ae365a594bd50aadb20696805f9408c
+WORKDIR /aplicacion
+RUN groupadd --gid 10001 aplicacion && useradd --uid 10001 --gid 10001 --no-create-home aplicacion
+COPY --chown=10001:10001 aplicacion.jar aplicacion.jar
+USER 10001:10001
+EXPOSE 8080
+ENTRYPOINT ["java", "-XX:MaxRAMPercentage=55.0", "-jar", "aplicacion.jar"]

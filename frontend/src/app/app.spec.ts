@@ -14,5 +14,7 @@ describe('Estructura accesible', () => {
     expect(html.querySelector('main')?.id).toBe('contenido');
     expect(html.querySelector('a.saltar')?.getAttribute('href')).toBe('#contenido');
     expect(html.querySelector('header')?.textContent).toContain('Gestión de Solicitudes');
+    expect(html.querySelector('.entorno')?.textContent).toContain('Demostración');
+    expect(html.querySelector('.entorno')?.textContent).not.toContain('Entorno local');
   });
 });

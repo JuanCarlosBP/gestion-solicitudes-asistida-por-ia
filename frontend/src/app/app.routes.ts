@@ -14,7 +14,9 @@ import { SolicitudDetalle } from './solicitudes/solicitud-detalle';
 import { solicitudesGuard } from './solicitudes/solicitudes-permisos';
 import { HistorialPagina } from './historial/historial-pagina';
 import { historialGuard } from './historial/historial-permisos';
+import { DemoPagina } from './demo/demo-pagina';
 export const routes: Routes = [
+  { path: 'demo', component: DemoPagina, title: 'Demo · Gestión de Solicitudes' },
   {
     path: 'historial',
     component: HistorialPagina,

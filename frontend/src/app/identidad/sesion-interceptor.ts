@@ -11,7 +11,10 @@ export const sesionInterceptor: HttpInterceptorFn = (peticion, siguiente) => {
   if (
     destino.origin !== origen ||
     !destino.pathname.startsWith('/api/') ||
-    destino.pathname.startsWith('/api/autenticacion/')
+    destino.pathname.startsWith('/api/autenticacion/') ||
+    destino.pathname === '/api/demo' ||
+    destino.pathname.startsWith('/api/demo/') ||
+    destino.pathname === '/api/salud'
   ) {
     return siguiente(peticion);
   }
@@ -26,6 +29,7 @@ export const sesionInterceptor: HttpInterceptorFn = (peticion, siguiente) => {
       if (
         !(error instanceof HttpErrorResponse) ||
         error.status !== 401 ||
+        (error.error as { error?: string } | null)?.error === 'DEMO_RESERVA_INVALIDA' ||
         !token ||
         epoca !== sesion.epoca
       ) {

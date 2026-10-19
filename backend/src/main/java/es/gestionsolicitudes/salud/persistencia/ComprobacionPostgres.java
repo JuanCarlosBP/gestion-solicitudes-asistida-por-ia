@@ -6,6 +6,7 @@ import javax.sql.DataSource;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@org.springframework.context.annotation.Profile("!demo")
 public class ComprobacionPostgres implements ComprobacionBaseDatos {
     private final DataSource dataSource;
 

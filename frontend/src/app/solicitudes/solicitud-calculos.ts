@@ -1,10 +1,12 @@
 import { BorradorSolicitud, EntradaConcepto, unidades, uuidValido } from './solicitud-modelo';
 
+import { decimalParaApi } from './decimal-entrada';
+
 const maximoCentimos = 999999999999999n;
 
 /** Enteros escalados: evita usar coma flotante incluso en estimaciones y formato. */
 function decimalEscalado(valor: string, escala: number, enteros: number): bigint | null {
-  const partes = /^(0|[1-9]\d*)(?:\.(\d+))?$/.exec(valor);
+  const partes = /^(0|[1-9]\d*)(?:\.(\d+))?$/.exec(decimalParaApi(valor));
   if (!partes || partes[1].length > enteros || (partes[2]?.length ?? 0) > escala) return null;
   const numero = BigInt(partes[1] + (partes[2] ?? '').padEnd(escala, '0'));
   return numero > 0n ? numero : null;
@@ -45,9 +47,11 @@ export function validarConcepto(concepto: EntradaConcepto): Record<string, strin
   const longitud = [...concepto.descripcion.trim()].length;
   if (longitud < 1 || longitud > 300) errores['descripcion'] = 'Indica entre 1 y 300 caracteres.';
   if (decimalEscalado(concepto.cantidad, 3, 12) === null)
-    errores['cantidad'] = 'Mayor que 0; máximo 999999999999.999, hasta 3 decimales.';
+    errores['cantidad'] =
+      'Mayor que 0; usa coma o punto y hasta 3 decimales; menor que 1.000.000.000.000.';
   if (decimalEscalado(concepto.precioUnitario, 4, 11) === null)
-    errores['precioUnitario'] = 'Mayor que 0; máximo 99999999999.9999, hasta 4 decimales.';
+    errores['precioUnitario'] =
+      'Mayor que 0; usa coma o punto y hasta 4 decimales; menor que 100.000.000.000 €.';
   if (!unidades.includes(concepto.unidad)) errores['unidad'] = 'Selecciona una unidad válida.';
   if (!Number.isSafeInteger(concepto.posicion) || concepto.posicion < 1)
     errores['posicion'] = 'La posición debe ser un entero positivo.';

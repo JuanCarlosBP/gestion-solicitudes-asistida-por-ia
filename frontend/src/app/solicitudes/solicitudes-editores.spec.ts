@@ -127,6 +127,25 @@ describe('Selectores acotados de referencias', () => {
     vista.componentInstance.seleccionar('');
     expect(cambio).toHaveBeenCalledWith(null);
   });
+  it('AG016: una selección rechazada durante una búsqueda no queda visible como si se hubiera adoptado', () => {
+    const vista = montar('proveedor');
+    peticion('proveedor').flush(paginaPrueba([solicitudPrueba.proveedor]));
+    vista.detectChanges();
+    const cambio = vi.fn();
+    vista.componentInstance.cambio.subscribe(cambio);
+    const selector = (vista.nativeElement as HTMLElement).querySelector('select')!;
+    vista.componentInstance.buscar('');
+    expect(vista.componentInstance.buscando()).toBe(true);
+    // Antes del siguiente render, el DOM conserva el control habilitado.
+    expect(selector.disabled).toBe(false);
+    selector.value = solicitudPrueba.proveedorId!;
+    selector.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(cambio).not.toHaveBeenCalled();
+    peticion('proveedor').flush(paginaPrueba([solicitudPrueba.proveedor]));
+    vista.detectChanges();
+    expect(vista.componentInstance.valor()).toBeNull();
+    expect(selector.value).toBe('');
+  });
   it('error consulta recuperable sin reflejar cuerpo ni borrar referencia', () => {
     const vista = montar('proveedor');
     vista.componentRef.setInput('valor', solicitudPrueba.proveedorId);
@@ -167,4 +186,51 @@ describe('Selectores acotados de referencias', () => {
       (p) => p.url === '/api/identidad/supervisores',
     );
   });
+});
+
+describe('AG018: búsquedas repetidas sin seleccionar datos antiguos', () => {
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }),
+  );
+  afterEach(() => TestBed.inject(HttpTestingController).verify());
+  it.each(['proveedor', 'supervisor'] as const)(
+    'mantiene escritura, cancela la consulta anterior y exige elegir %s',
+    (tipo) => {
+      const http = TestBed.inject(HttpTestingController);
+      const url = tipo === 'proveedor' ? '/api/proveedores' : '/api/identidad/supervisores';
+      const vista = TestBed.createComponent(ReferenciaSelector);
+      vista.componentRef.setInput('tipo', tipo);
+      vista.detectChanges();
+      http.expectOne((r) => r.url === url).flush(paginaPrueba([]));
+      vista.detectChanges();
+      const componente = vista.componentInstance;
+      const cambio = vi.fn();
+      componente.cambio.subscribe(cambio);
+      componente.buscar('Primera');
+      const anterior = http.expectOne((r) => r.url === url);
+      vista.detectChanges();
+      const campo = (vista.nativeElement as HTMLElement).querySelector<HTMLInputElement>('input')!;
+      expect(campo.disabled).toBe(false);
+      componente.buscar('Segunda');
+      expect(anterior.cancelled).toBe(true);
+      const actual = http.expectOne((r) => r.url === url);
+      if (tipo === 'proveedor') actual.flush(paginaPrueba([solicitudPrueba.proveedor]));
+      else actual.flush(paginaPrueba([supervisorPrueba]));
+      vista.detectChanges();
+      expect(cambio).not.toHaveBeenCalled();
+      const id = tipo === 'proveedor' ? solicitudPrueba.proveedorId! : supervisorPrueba.id;
+      componente.seleccionar(id);
+      vista.componentRef.setInput('valor', id);
+      vista.detectChanges();
+      expect(cambio).toHaveBeenCalledWith(id);
+      expect((vista.nativeElement as HTMLElement).textContent).toContain('seleccionado');
+      componente.buscar('Sin resultados');
+      http.expectOne((r) => r.url === url).flush(paginaPrueba([]));
+      vista.detectChanges();
+      expect(componente.valor()).toBe(id);
+      expect((vista.nativeElement as HTMLElement).textContent).toContain('Sin coincidencias');
+    },
+  );
 });

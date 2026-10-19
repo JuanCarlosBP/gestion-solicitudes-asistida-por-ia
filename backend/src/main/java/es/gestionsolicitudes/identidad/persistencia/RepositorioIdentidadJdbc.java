@@ -192,6 +192,20 @@ public class RepositorioIdentidadJdbc implements RepositorioIdentidad {
                         fecha(ahora)));
     }
 
+    @Override
+    public void reemplazarSesionDemo(Instant ahora) {
+        es.gestionsolicitudes.demo.dominio.ContextoDemo.exigir();
+        // Advisory locks PostgreSQL tienen ámbito de base. Serializa los cambios de rol de
+        // este visitante; ninguna sesión de otra base participa en este bloqueo o UPDATE.
+        jdbc.execute("SELECT pg_advisory_xact_lock(16008002)");
+        jdbc.update(
+                "UPDATE gestion.sesiones_acceso SET revocado_en=?, motivo_revocacion='CIERRE' WHERE revocado_en IS NULL",
+                fecha(ahora));
+        jdbc.update(
+                "UPDATE gestion.tokens_refresco SET estado='REVOCADO', revocado_en=?, motivo_revocacion='CIERRE' WHERE estado <> 'REVOCADO'",
+                fecha(ahora));
+    }
+
     private static Timestamp fecha(Instant instante) {
         return instante == null ? null : Timestamp.from(instante);
     }

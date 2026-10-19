@@ -110,3 +110,25 @@ describe('Contrato HTTP SCI-01–11', () => {
     },
   );
 });
+
+describe('AG018: frontera decimal de la API', () => {
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }),
+  );
+  afterEach(() => TestBed.inject(HttpTestingController).verify());
+  it('envía punto canónico como cadena sin modificar el formulario ni redondear', () => {
+    const datos = borradorPrueba();
+    datos.conceptos[0] = { ...datos.conceptos[0], cantidad: '2,5', precioUnitario: '98,8001' };
+    TestBed.inject(SolicitudesApi).guardar(solicitudPrueba.id, datos).subscribe();
+    const peticion = TestBed.inject(HttpTestingController).expectOne(
+      `/api/solicitudes/${solicitudPrueba.id}`,
+    );
+    expect(peticion.request.body.conceptos[0].cantidad).toBe('2.5');
+    expect(peticion.request.body.conceptos[0].precioUnitario).toBe('98.8001');
+    expect(datos.conceptos[0].precioUnitario).toBe('98,8001');
+    expect(peticion.request.body.version).toBe(datos.version);
+    peticion.flush(solicitudPrueba);
+  });
+});

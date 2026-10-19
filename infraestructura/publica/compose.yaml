@@ -1,0 +1,110 @@
+name: gestion-solicitudes-publica
+services:
+  postgres:
+    image: ${PG_IMAGEN:?Imagen PostgreSQL fijada obligatoria}
+    user: postgres
+    environment:
+      POSTGRES_DB: ag016_control
+      POSTGRES_USER: ag016_provision
+      POSTGRES_PASSWORD_FILE: /run/secrets/admin.secret
+    command: [postgres, -c, hba_file=/etc/postgresql/gestion-pg_hba.conf, -c, log_error_verbosity=terse, -c, log_min_error_statement=panic, -c, log_parameter_max_length_on_error=0, -c, log_statement=none, -c, max_connections=40, -c, shared_buffers=128MB, -c, statement_timeout=10000, -c, idle_in_transaction_session_timeout=10000]
+    volumes:
+      - datos-publicos:/var/lib/postgresql/data
+      - ./inicializar.sh:/docker-entrypoint-initdb.d/10-gestion.sh:ro
+      - ./pg_hba.conf:/etc/postgresql/gestion-pg_hba.conf:ro
+      - /etc/jcbp-gestion/secretos/admin.secret:/run/secrets/admin.secret:ro
+      - /etc/jcbp-gestion/secretos/migracion.secret:/run/secrets/migracion.secret:ro
+      - /etc/jcbp-gestion/secretos/control.secret:/run/secrets/control.secret:ro
+      - /etc/jcbp-gestion/secretos/app01.secret:/run/secrets/app01.secret:ro
+      - /etc/jcbp-gestion/secretos/app02.secret:/run/secrets/app02.secret:ro
+      - /etc/jcbp-gestion/secretos/app03.secret:/run/secrets/app03.secret:ro
+    networks: [datos]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U ag016_provision -d ag016_control"]
+      interval: 3s
+      timeout: 2s
+      retries: 30
+    mem_limit: 768m
+    memswap_limit: 768m
+    cpus: 0.50
+    pids_limit: 100
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '3'}}
+  provisionador:
+    image: ${BACKEND_IMAGEN:?Imagen backend obligatoria}
+    entrypoint: [java, -Xmx96m, -jar, /aplicacion/aplicacion.jar, --demo-supervisar]
+    stop_grace_period: 35s
+    environment:
+      DEMO_CONFIG_RUTA: /run/secrets/provision.properties
+    volumes:
+      - /etc/jcbp-gestion/secretos/provision.properties:/run/secrets/provision.properties:ro
+      - /etc/jcbp-gestion/secretos/semilla.secret:/run/secrets/semilla.secret:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [datos]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    mem_limit: 384m
+    memswap_limit: 384m
+    cpus: 0.20
+    pids_limit: 100
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '3'}}
+  backend:
+    image: ${BACKEND_IMAGEN:?Imagen backend obligatoria}
+    environment:
+      SPRING_PROFILES_ACTIVE: demo
+      DEMO_CONFIG_RUTA: /run/secrets/runtime.properties
+      IDENTIDAD_CLAVE_PRIVADA_RUTA: /run/secrets/identidad-privada.pem
+      IDENTIDAD_CLAVE_PUBLICA_RUTA: /run/secrets/identidad-publica.pem
+      SERVIDOR_DIRECCION: 0.0.0.0
+      SERVER_FORWARD_HEADERS_STRATEGY: none
+    volumes:
+      - /etc/jcbp-gestion/secretos/runtime.properties:/run/secrets/runtime.properties:ro
+      - /etc/jcbp-gestion/secretos/semilla.secret:/run/secrets/semilla.secret:ro
+      - /etc/jcbp-gestion/secretos/identidad-privada.pem:/run/secrets/identidad-privada.pem:ro
+      - /etc/jcbp-gestion/secretos/identidad-publica.pem:/run/secrets/identidad-publica.pem:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [datos, web]
+    read_only: true
+    tmpfs: [/tmp:size=64m]
+    mem_limit: 1536m
+    memswap_limit: 1536m
+    cpus: 1.15
+    pids_limit: 150
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '3'}}
+  frontend:
+    image: ${FRONTEND_IMAGEN:?Imagen frontend obligatoria}
+    command: [-c, /etc/nginx/jcbp/nginx.conf, -g, 'daemon off;']
+    ports: ['0.0.0.0:80:8080', '0.0.0.0:443:8443']
+    volumes:
+      - /etc/jcbp-gestion/web:/etc/nginx/jcbp:ro
+      - /etc/jcbp-gestion/tls:/run/tls:ro
+      - /var/lib/jcbp-acme:/run/acme:ro
+      - /var/lib/jcbp-gestion/mantenimiento:/run/mantenimiento:ro
+      - /var/lib/jcbp-gestion/publico:/run/publico:ro
+    depends_on: [backend]
+    networks: [web]
+    read_only: true
+    tmpfs: [/tmp:size=16m]
+    mem_limit: 128m
+    memswap_limit: 128m
+    cpus: 0.05
+    pids_limit: 30
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+    logging: {driver: json-file, options: {max-size: 5m, max-file: '3'}}
+volumes:
+  datos-publicos:
+networks:
+  datos: {internal: true}
+  web: {internal: false}

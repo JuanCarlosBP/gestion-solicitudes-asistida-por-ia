@@ -19,7 +19,7 @@ import org.springframework.transaction.support.*;
 public class ServicioOperaciones {
     private static final long ESPERA = TimeUnit.SECONDS.toNanos(3);
 
-    private record Clave(UUID usuario, UUID clave) {}
+    private record Clave(String ambito, UUID usuario, UUID clave) {}
 
     // Solo metadatos: jamás conserva cuerpos, resultados, claves de acceso o textos.
     private record EnCurso(
@@ -59,7 +59,11 @@ public class ServicioOperaciones {
             Runnable replay) {
         long limite = System.nanoTime() + ESPERA;
         boolean esperando = false;
-        var clave = new Clave(peticion.usuario(), peticion.clave());
+        var clave =
+                new Clave(
+                        es.gestionsolicitudes.demo.dominio.ContextoDemo.ambito(),
+                        peticion.usuario(),
+                        peticion.clave());
         var titular =
                 new EnCurso(
                         peticion.tipo(),
@@ -165,7 +169,12 @@ public class ServicioOperaciones {
     public EstadoOperacion consultar(UUID usuario, UUID clave) {
         var confirmada = repositorio.buscar(usuario, clave);
         if (confirmada.isPresent()) return visible(usuario, confirmada.get());
-        var pendiente = enCurso.get(new Clave(usuario, clave));
+        var pendiente =
+                enCurso.get(
+                        new Clave(
+                                es.gestionsolicitudes.demo.dominio.ContextoDemo.ambito(),
+                                usuario,
+                                clave));
         if (pendiente != null) {
             autorizacion.exigirConsulta(usuario, pendiente.tipo(), pendiente.recurso());
             return new EstadoOperacion("EN_PROGRESO", pendiente.tipo(), pendiente.recurso(), null);
