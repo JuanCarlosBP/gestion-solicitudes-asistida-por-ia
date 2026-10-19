@@ -1,0 +1,56 @@
+{
+  "entorno": {
+    "node": "v24.13.0",
+    "plataforma": "win32"
+  },
+  "ejecuciones": [
+    {
+      "script": "test",
+      "argumentos": [
+        "--",
+        "--include=src/app/demo/*.spec.ts"
+      ],
+      "inicio": "2026-10-16T12:00:03.747Z",
+      "fin": "2026-10-16T12:00:11.855Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "test.log"
+    },
+    {
+      "script": "typecheck",
+      "argumentos": [],
+      "inicio": "2026-10-16T12:00:11.856Z",
+      "fin": "2026-10-16T12:00:15.461Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "typecheck.log"
+    },
+    {
+      "script": "lint",
+      "argumentos": [],
+      "inicio": "2026-10-16T12:00:15.462Z",
+      "fin": "2026-10-16T12:00:18.942Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "lint.log"
+    },
+    {
+      "script": "format:check",
+      "argumentos": [],
+      "inicio": "2026-10-16T12:00:18.942Z",
+      "fin": "2026-10-16T12:00:20.923Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "format-check.log"
+    },
+    {
+      "script": "build",
+      "argumentos": [],
+      "inicio": "2026-10-16T12:00:20.924Z",
+      "fin": "2026-10-16T12:00:25.346Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "build.log"
+    }
+  ]
+}

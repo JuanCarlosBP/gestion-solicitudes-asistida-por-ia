@@ -1,0 +1,17 @@
+{
+  "fecha": "2026-10-16T10:50:16.025Z",
+  "archivos": [
+    "MEMORY.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/README.md",
+    "especificaciones/README.md",
+    "especificaciones/008-demo-operacion-entrega/especificacion.md",
+    "especificaciones/008-demo-operacion-entrega/plan.md",
+    "especificaciones/008-demo-operacion-entrega/tareas.md",
+    "docs/decisiones/ADR-0009-demo-aislada-y-operacion.md",
+    "docs/trazabilidad/AG-016-informe.md"
+  ],
+  "enlaces": 191,
+  "errores": []
+}

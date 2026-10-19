@@ -1,0 +1,9 @@
+{
+  "inicio": "2026-10-16T13:33:37.8785629Z",
+  "fin": "2026-10-16T13:33:38.2014610Z",
+  "exitCode": 0,
+  "sintaxis": "PASS",
+  "tipo": "PRUEBAS_OFFLINE_NO_CAPACIDAD",
+  "helperSha256": "02449d34a85188a656f9fc6edd0ad855a8f8720c44f669f47327d42e887ec3a2",
+  "testSha256": "d1e6ba47285a0386eab5a3d5a5803bf9f97d0902a22713f7a12ee6efd22d14d3"
+}

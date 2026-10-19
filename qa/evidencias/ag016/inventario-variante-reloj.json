@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-10-16T13:42:52.961Z",
+  "proyecto": "gestion-solicitudes-ag016",
+  "compose": "infraestructura/demo/compose.yaml",
+  "complementa": "qa/evidencias/ag016/inventario-autorizado.json",
+  "motivo": "Cuatro nuevas pasadas completas tras corregir la referencia de reloj de caducidad; todas las evidencias y bases anteriores se conservan",
+  "basesNuevas": [
+    {
+      "nombre": "ag016_restore_qa_reloj_a1",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo tras copia autorizada en la pasada correspondiente; debe no existir"
+    },
+    {
+      "nombre": "ag016_restore_qa_reloj_a2",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo tras copia autorizada en la pasada correspondiente; debe no existir"
+    },
+    {
+      "nombre": "ag016_restore_qa_reloj_b1",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo tras copia autorizada en la pasada correspondiente; debe no existir"
+    },
+    {
+      "nombre": "ag016_restore_qa_reloj_b2",
+      "tipo": "restauracion-nueva-una-sola-ejecucion",
+      "recrear": false,
+      "condicion": "Solo tras copia autorizada en la pasada correspondiente; debe no existir"
+    }
+  ],
+  "propietarioDocker": "coordinador root",
+  "prohibidos": "No sobrescribir destinos anteriores ni eliminar recursos previos"
+}

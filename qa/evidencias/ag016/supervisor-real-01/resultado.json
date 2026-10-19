@@ -1,0 +1,61 @@
+{
+  "inicio": "2026-10-16T11:46:23.914Z",
+  "fin": "2026-10-16T11:46:33.150Z",
+  "estado": "PASS",
+  "controles": [
+    {
+      "criterio": "Supervisor real persistente sin HTTP",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Espacio recibido dentro del inventario cerrado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Liberación produce generación nueva automáticamente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sesión antigua denegada después del reciclaje",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Nueva generación sin solicitudes anteriores",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Supervisor sigue activo justo antes de enviar señal",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Apagado por señal con salida0/143 sin SIGKILL/OOM dentro de35s",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Sin conexión migradora después del apagado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Supervisor vuelve a iniciar",
+      "resultado": "PASS"
+    }
+  ],
+  "reciclajeMs": 3926.6448,
+  "apagadoMs": 897.0920999999998,
+  "previoApagado": {
+    "id": "95b9d76061f11defb930909725c6377aa3008d53149a530b6c4071d5c9d06fa1",
+    "proyecto": "gestion-solicitudes-ag016",
+    "servicio": "provisionador",
+    "estado": "running"
+  },
+  "detenido": {
+    "id": "95b9d76061f11defb930909725c6377aa3008d53149a530b6c4071d5c9d06fa1",
+    "proyecto": "gestion-solicitudes-ag016",
+    "servicio": "provisionador",
+    "estado": "exited"
+  },
+  "salida": {
+    "exitCode": 143,
+    "oom": false
+  }
+}

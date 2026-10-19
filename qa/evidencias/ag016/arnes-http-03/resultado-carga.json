@@ -1,0 +1,827 @@
+{
+  "ejecucion": "arnes-http-03",
+  "modo": "PRUEBA_ARNES_NO_BENCHMARK",
+  "inicioProceso": "2026-10-16T11:59:09.329Z",
+  "finProceso": "2026-10-16T12:00:37.142Z",
+  "inicioMedicion": null,
+  "ventanaCompleta": false,
+  "semilla": 160082026,
+  "resultado": "PASS",
+  "falloPrincipal": null,
+  "perfil": "B",
+  "operaciones": [],
+  "incidencias": [],
+  "grupos": [
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "aprobar",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 7.707,
+      "p95": 8.531,
+      "p99": 8.531,
+      "maximo": 8.531,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "crear",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 7.938,
+      "p95": 8.732,
+      "p99": 8.732,
+      "maximo": 8.732,
+      "estados": {
+        "201": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "csrf",
+      "inducido": false,
+      "muestras": 12,
+      "p50": 2.875,
+      "p95": 5.9,
+      "p99": 5.9,
+      "maximo": 5.9,
+      "estados": {
+        "204": 12
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "detalle-auditor",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.252,
+      "p95": 4.54,
+      "p99": 4.54,
+      "maximo": 4.54,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "detalle-supervisor",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.32,
+      "p95": 4.572,
+      "p99": 4.572,
+      "maximo": 4.572,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "editar",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 8.529,
+      "p95": 8.861,
+      "p99": 8.861,
+      "maximo": 8.861,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "historial",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 7.274,
+      "p95": 7.718,
+      "p99": 7.718,
+      "maximo": 7.718,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "inducido-sobrecupo-csrf",
+      "inducido": true,
+      "muestras": 3,
+      "p50": 4.391,
+      "p95": 5.456,
+      "p99": 5.456,
+      "maximo": 5.456,
+      "estados": {
+        "204": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "inducido-sobrecupo-reserva",
+      "inducido": true,
+      "muestras": 3,
+      "p50": 6.232,
+      "p95": 7.299,
+      "p99": 7.299,
+      "maximo": 7.299,
+      "estados": {
+        "409": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "liberar",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.126,
+      "p95": 4.352,
+      "p99": 4.352,
+      "maximo": 4.352,
+      "estados": {
+        "204": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "lista-solicitante",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 7.373,
+      "p95": 8.012,
+      "p99": 8.012,
+      "maximo": 8.012,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "lista-supervisor",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 5.946,
+      "p95": 7.01,
+      "p99": 7.01,
+      "maximo": 7.01,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "login-AUDITOR",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 29.256,
+      "p95": 48.559,
+      "p99": 48.559,
+      "maximo": 48.559,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "login-SOLICITANTE",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 29.765,
+      "p95": 34.433,
+      "p99": 34.433,
+      "maximo": 34.433,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "login-SUPERVISOR",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 27.883,
+      "p95": 28.937,
+      "p99": 28.937,
+      "maximo": 28.937,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "logout",
+      "inducido": false,
+      "muestras": 9,
+      "p50": 4.945,
+      "p95": 6.73,
+      "p99": 6.73,
+      "maximo": 6.73,
+      "estados": {
+        "204": 9
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "presentar",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 8.795,
+      "p95": 9.148,
+      "p99": 9.148,
+      "maximo": 9.148,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "presentar-replay",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 7.366,
+      "p95": 8.642,
+      "p99": 8.642,
+      "maximo": 8.642,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "proveedores",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 5.577,
+      "p95": 6.237,
+      "p99": 6.237,
+      "maximo": 6.237,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "refresh",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 8.076,
+      "p95": 8.262,
+      "p99": 8.262,
+      "maximo": 8.262,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "resumen-auditor",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.526,
+      "p95": 4.737,
+      "p99": 4.737,
+      "maximo": 4.737,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "resumen-solicitante",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.791,
+      "p95": 5.093,
+      "p99": 5.093,
+      "maximo": 5.093,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "prueba-arnes-no-benchmark",
+      "operacion": "supervisores",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 4.974,
+      "p95": 5.464,
+      "p99": 5.464,
+      "maximo": 5.464,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "aprobar",
+      "inducido": false,
+      "muestras": 30,
+      "p50": 15.471,
+      "p95": 19.62,
+      "p99": 19.977,
+      "maximo": 19.977,
+      "estados": {
+        "200": 30
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "crear",
+      "inducido": false,
+      "muestras": 300,
+      "p50": 14.134,
+      "p95": 20.136,
+      "p99": 22.055,
+      "maximo": 29.654,
+      "estados": {
+        "201": 300
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "csrf",
+      "inducido": false,
+      "muestras": 12,
+      "p50": 4.94,
+      "p95": 7.779,
+      "p99": 7.779,
+      "maximo": 7.779,
+      "estados": {
+        "204": 12
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "editar",
+      "inducido": false,
+      "muestras": 300,
+      "p50": 14.948,
+      "p95": 21.821,
+      "p99": 23.516,
+      "maximo": 25.506,
+      "estados": {
+        "200": 300
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "login-AUDITOR",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 36.238,
+      "p95": 42.414,
+      "p99": 42.414,
+      "maximo": 42.414,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "login-SOLICITANTE",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 43.386,
+      "p95": 48.4,
+      "p99": 48.4,
+      "maximo": 48.4,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "login-SUPERVISOR",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 46.704,
+      "p95": 47.202,
+      "p99": 47.202,
+      "maximo": 47.202,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "logout",
+      "inducido": false,
+      "muestras": 9,
+      "p50": 10.185,
+      "p95": 11.562,
+      "p99": 11.562,
+      "maximo": 11.562,
+      "estados": {
+        "204": 9
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "preflight-presentacion",
+      "inducido": false,
+      "muestras": 1,
+      "p50": 28.609,
+      "p95": 28.609,
+      "p99": 28.609,
+      "maximo": 28.609,
+      "estados": {
+        "200": 1
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "presentar",
+      "inducido": false,
+      "muestras": 120,
+      "p50": 13.917,
+      "p95": 20.271,
+      "p99": 23.802,
+      "maximo": 26.808,
+      "estados": {
+        "200": 120
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "proveedores",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 11.882,
+      "p95": 12.386,
+      "p99": 12.386,
+      "maximo": 12.386,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "rechazar",
+      "inducido": false,
+      "muestras": 30,
+      "p50": 14.84,
+      "p95": 22.305,
+      "p99": 23.503,
+      "maximo": 23.503,
+      "estados": {
+        "200": 30
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "reserva",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 9.735,
+      "p95": 9.907,
+      "p99": 9.907,
+      "maximo": 9.907,
+      "estados": {
+        "201": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "semilla-validar-resumen",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 9.508,
+      "p95": 9.971,
+      "p99": 9.971,
+      "maximo": 9.971,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "semilla-validar-vacio",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 14.202,
+      "p95": 14.646,
+      "p99": 14.646,
+      "maximo": 14.646,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    },
+    {
+      "fase": "semilla",
+      "operacion": "supervisores",
+      "inducido": false,
+      "muestras": 3,
+      "p50": 11.086,
+      "p95": 12.991,
+      "p99": 12.991,
+      "maximo": 12.991,
+      "estados": {
+        "200": 3
+      },
+      "erroresInesperados": 0,
+      "peticionesPorSegundoVentana": null
+    }
+  ],
+  "recorridos": [
+    {
+      "visitante": "A",
+      "fases": {
+        "calentamiento": {
+          "programados": 20,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "nominal": {
+          "programados": 60,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "pico": {
+          "programados": 30,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "operaciones": {
+          "programados": 40,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        }
+      }
+    },
+    {
+      "visitante": "B",
+      "fases": {
+        "calentamiento": {
+          "programados": 20,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "nominal": {
+          "programados": 60,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "pico": {
+          "programados": 30,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "operaciones": {
+          "programados": 40,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        }
+      }
+    },
+    {
+      "visitante": "C",
+      "fases": {
+        "calentamiento": {
+          "programados": 20,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "nominal": {
+          "programados": 60,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "pico": {
+          "programados": 30,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        },
+        "operaciones": {
+          "programados": 40,
+          "iniciados": 0,
+          "validos": 0,
+          "fallidos": 0,
+          "omitidosPorPausa": 0,
+          "omitidosPorSobrecarga": 0,
+          "truncadosAlCierre": 0,
+          "latenciaRecorrido": {
+            "muestras": 0,
+            "p50": null,
+            "p95": null,
+            "p99": null,
+            "maximo": null
+          },
+          "proporcionValidaProgramada": 0
+        }
+      }
+    }
+  ],
+  "limites": [
+    "Este resultado no incorpora todavía recursos/umbral RAM, OOM, swap ni validación VPS.",
+    "Errores inducidos y semilla están separados del tráfico útil.",
+    "PASS del arnés no constituye recomendación de perfil ni aceptación humana."
+  ]
+}

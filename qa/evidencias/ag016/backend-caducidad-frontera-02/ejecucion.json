@@ -1,0 +1,16 @@
+{
+  "inicio": "2026-10-16T15:44:49.1103161+02:00",
+  "alcance": "caducidad",
+  "argumentos": [
+    "-B",
+    "-ntp",
+    "test-compile",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=CaducidadDemoIT",
+    "-DargLine=-javaagent:C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/m2/org/mockito/mockito-core/5.20.0/mockito-core-5.20.0.jar -Duser.home=C:/Users/carli/gestion-solicitudes-asistida-por-ia/tmp/ag016/backend-temporal"
+  ],
+  "exitCode": 0,
+  "fin": "2026-10-16T15:44:59.8309555+02:00",
+  "conservacion": true
+}

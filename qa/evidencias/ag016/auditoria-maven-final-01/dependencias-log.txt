@@ -1,0 +1,8 @@
+New-Item : Acceso denegado a la ruta de acceso '.m2'.
+En línea: 88 Carácter: 5
++     New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\Users\carli\.m2:String) [New-Item], UnauthorizedAccessException
+    + FullyQualifiedErrorId : CreateDirectoryUnauthorizedAccessError,Microsoft.PowerShell.Commands.NewItemCommand
+ 
+Cannot start maven from wrapper  

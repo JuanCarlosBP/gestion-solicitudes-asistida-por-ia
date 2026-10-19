@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-10-16T12:22:11.678Z",
+  "metodo": "SHA256 de bytes frente a entrada AG015 y sello AG015; archivos históricos exclusivamente",
+  "archivos": 2738,
+  "diferencias": [],
+  "csvPrevio": {
+    "bytes": 44728,
+    "sha256": "32e6a6a1a505da773fc667b992dbdc99684f59d51c9fc571d5277ac5cbc25743"
+  },
+  "comprobacionesHash": 2738,
+  "nota": "Se deduplican rutas que aparecen en ambas fuentes; todas las comparaciones byte a byte coincidieron."
+}

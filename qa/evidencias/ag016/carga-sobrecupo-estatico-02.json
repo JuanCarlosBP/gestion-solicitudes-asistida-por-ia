@@ -1,0 +1,51 @@
+{
+  "inicio": "2026-10-16T11:52:31.983Z",
+  "fin": "2026-10-16T11:52:31.987Z",
+  "resultado": "PASS",
+  "alcance": "Dobles offline alineados con CSRF204 del contrato original; no HTTP real ni benchmark",
+  "correccion": "La versión01 asumía CSRF200 erróneamente; arnes-http-01 observó204 y se conserva FAIL. Backend y contrato API no cambian.",
+  "casos": [
+    {
+      "nombre": "rechazo-correcto-csrf204",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "csrf200-no-es-contrato",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "reserva-indebida",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "limite-proxy-no-sustituye-cupo",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "error409-distinto",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "cookie-reserva-indebida",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "cliente-ya-reservado",
+      "resultado": "PASS"
+    }
+  ],
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "6eb491f3cd7662348f1670b44c85e9cbd9da4b25cedeb6b7cd49e6a78750da98"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "4e97791b6d0f390c11c219e533fcbd2b17312583b63d0d826e9d98ebec439a18"
+    },
+    {
+      "ruta": "qa/evidencias/ag016/contrato-carga.json",
+      "sha256": "30e4968fcc48fe4b6f47a9fd5a23256789cbda2a8b998393c11127ddacb8fb29"
+    }
+  ]
+}

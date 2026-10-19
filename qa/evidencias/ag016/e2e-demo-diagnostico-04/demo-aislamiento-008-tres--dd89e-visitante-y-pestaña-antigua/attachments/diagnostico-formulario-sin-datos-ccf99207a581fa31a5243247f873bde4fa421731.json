@@ -1,0 +1,43 @@
+[
+  {
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "tipo": "console-error",
+    "visitante": 1,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "tipo": "console-error",
+    "visitante": 2,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "tipo": "put-borrador-campos",
+    "visitante": 0,
+    "proveedorPresente": true,
+    "proveedorEsUuid": true,
+    "proveedorEsNull": false,
+    "supervisorPresente": true,
+    "supervisorEsUuid": true,
+    "supervisorEsNull": false,
+    "conceptosCantidad": 1
+  },
+  {
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  }
+]

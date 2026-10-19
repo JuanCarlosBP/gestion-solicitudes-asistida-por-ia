@@ -1,0 +1,301 @@
+[
+  {
+    "fecha": "2026-10-16T12:18:56.922Z",
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.012Z",
+    "tipo": "contador-reserva",
+    "duracionMinutos": 60,
+    "expiraEn": "2026-10-16T13:18:57.310222214Z",
+    "fechaCliente": "2026-10-16T12:18:57.008Z",
+    "fechaHttp": "Fri, 16 Oct 2026 12:18:57 GMT",
+    "restantesSinAcotarMs": 3600302,
+    "texto": "60 min"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.061Z",
+    "tipo": "console-error",
+    "visitante": 1,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.142Z",
+    "tipo": "contador-reserva",
+    "duracionMinutos": 60,
+    "expiraEn": "2026-10-16T13:18:57.438304462Z",
+    "fechaCliente": "2026-10-16T12:18:57.140Z",
+    "fechaHttp": "Fri, 16 Oct 2026 12:18:57 GMT",
+    "restantesSinAcotarMs": 3600298,
+    "texto": "60 min"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.189Z",
+    "tipo": "console-error",
+    "visitante": 2,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.258Z",
+    "tipo": "contador-reserva",
+    "duracionMinutos": 60,
+    "expiraEn": "2026-10-16T13:18:57.550425410Z",
+    "fechaCliente": "2026-10-16T12:18:57.256Z",
+    "fechaHttp": "Fri, 16 Oct 2026 12:18:57 GMT",
+    "restantesSinAcotarMs": 3600294,
+    "texto": "60 min"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.307Z",
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.421Z",
+    "tipo": "console-error",
+    "visitante": 3,
+    "causa": "ERROR_NO_CLASIFICADO"
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.911Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.918Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.918Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.925Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.925Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.928Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.928Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.932Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.932Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 1,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:57.998Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.012Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.013Z",
+    "tipo": "espera-resuelta",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.013Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "proveedor",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.065Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.078Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.079Z",
+    "tipo": "espera-resuelta",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.079Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "supervisor",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.199Z",
+    "tipo": "put-borrador-campos",
+    "visitante": 0,
+    "proveedorPresente": true,
+    "proveedorEsUuid": true,
+    "proveedorEsNull": false,
+    "supervisorPresente": true,
+    "supervisorEsUuid": true,
+    "supervisorEsNull": false,
+    "conceptosCantidad": 1
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.215Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.221Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.221Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 2,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.376Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 3
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.384Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 3,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.385Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 3,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.663Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 4
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.670Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 4,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.670Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 4,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.859Z",
+    "tipo": "consulta-inicio",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 5
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.866Z",
+    "tipo": "consulta-cabeceras",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 5,
+    "status": 200
+  },
+  {
+    "fecha": "2026-10-16T12:18:58.866Z",
+    "tipo": "consulta-fin",
+    "visitante": 0,
+    "referencia": "detalle",
+    "ordinal": 5,
+    "transporteCorrecto": true
+  },
+  {
+    "fecha": "2026-10-16T12:18:59.386Z",
+    "tipo": "console-error",
+    "visitante": 0,
+    "causa": "ERROR_NO_CLASIFICADO"
+  }
+]

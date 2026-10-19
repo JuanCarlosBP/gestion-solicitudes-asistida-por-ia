@@ -1,0 +1,5 @@
+{"fecha":"2026-10-16T11:54:57.558Z","tipo":"RAFAGA_SOBRECUPO","intentos":3,"rechazosCorrectos":3,"reservaEsperada":false}
+{"fecha":"2026-10-16T11:54:58.094Z","tipo":"INCIDENCIA","codigo":"RESUMEN_AUDITOR_HTTP_429_ESPERADO_200","etapa":"prueba-arnes","visitante":"A"}
+{"fecha":"2026-10-16T11:54:58.094Z","tipo":"INCIDENCIA","codigo":"FALLO_NO_CONTROLADO","etapa":"prueba-arnes","visitante":"B"}
+{"fecha":"2026-10-16T11:54:58.094Z","tipo":"INCIDENCIA","codigo":"FALLO_NO_CONTROLADO","etapa":"prueba-arnes","visitante":"C"}
+{"fecha":"2026-10-16T11:54:58.095Z","tipo":"INCIDENCIA","codigo":"PRUEBA_ARNES_FALLIDA","etapa":"prueba-arnes-no-benchmark"}

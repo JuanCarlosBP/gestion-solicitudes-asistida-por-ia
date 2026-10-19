@@ -1,0 +1,11 @@
+{
+  "inicio": "2026-10-16T11:56:03.601Z",
+  "fin": "2026-10-16T11:56:04.795Z",
+  "accion": "construir-frontend",
+  "resultado": {
+    "jarSha256": "0fbecb6dc3890ba27c73eed6280ddd0320b524725eb5fb4f9fc7b3931109650b",
+    "backend": "sha256:1f500b8f2ae84da11b3bd52b8a65443d8a84be96e2227c141466f00f09df1e54",
+    "frontend": "sha256:95224abdb9b332f87ea5fbcd4fcc88742a7e3239fb6a6fcd7d662f91f7d56f53"
+  },
+  "estado": "PASS"
+}

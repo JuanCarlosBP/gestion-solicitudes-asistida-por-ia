@@ -1,0 +1,927 @@
+{
+  "inicio": "2026-10-16T11:31:41.742Z",
+  "fin": "2026-10-16T11:33:22.549Z",
+  "estado": "PASS",
+  "proyecto": "gestion-solicitudes-ag016",
+  "origen": "http://127.0.0.1:18086",
+  "controles": [
+    {
+      "fecha": "2026-10-16T11:31:42.260Z",
+      "criterio": "postgres en ejecución",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:42.776Z",
+      "criterio": "backend en ejecución",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:43.274Z",
+      "criterio": "provisionador en ejecución",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:43.664Z",
+      "criterio": "Precondición: tres LISTO exclusivos sin reserva",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.054Z",
+      "criterio": "Destino restore funcional nuevo",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.095Z",
+      "criterio": "Reserva 0",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 201,
+        "estado": 201,
+        "ms": 10.568499999999858
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.163Z",
+      "criterio": "Login real SOLICITANTE 0",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 63.986799999999675
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.200Z",
+      "criterio": "Reserva 1",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 201,
+        "estado": 201,
+        "ms": 7.253899999999703
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.248Z",
+      "criterio": "Login real SOLICITANTE 1",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 44.00570000000016
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.259Z",
+      "criterio": "Reserva 2",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 201,
+        "estado": 201,
+        "ms": 7.0526999999997315
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.312Z",
+      "criterio": "Login real SOLICITANTE 2",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 49.56719999999996
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.312Z",
+      "criterio": "A/B/C usan bases distintas",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:31:44.328Z",
+      "criterio": "Crear fuente A",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 201,
+        "estado": 201,
+        "ms": 15.746299999999792
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:14.954Z",
+      "criterio": "Restore conserva negocio e invalida sesiones/refresh copiados",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:14.967Z",
+      "criterio": "JWT fuente A sigue válido tras restore",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 12.942699999999604
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:14.970Z",
+      "criterio": "JWT copiado no habilita selector de base QA",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 401,
+        "estado": 401,
+        "ms": 3.15839999999298
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:14.973Z",
+      "criterio": "JWT copiado sin cookie tampoco habilita QA",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 401,
+        "estado": 401,
+        "ms": 2.8836000000010245
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:15.355Z",
+      "criterio": "Bloqueo de tabla concedido por PostgreSQL",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 376.3896999999997,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:15.761Z",
+      "criterio": "Operación HTTP admitida espera el bloqueo SQL",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 406.38819999999396,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:15.761Z",
+      "criterio": "Petición y bloqueo siguen en vuelo antes de caducar",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:16.174Z",
+      "criterio": "QA_CADUCIDAD_ENVUELO: CAS y evento únicos",
+      "resultado": "PASS",
+      "observado": {
+        "filas": 1,
+        "eventos": 1,
+        "fechaBD": "2026-10-16T11:32:15.982128+00:00",
+        "expiraEn": "2026-10-16T11:32:16.981782+00:00"
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.418Z",
+      "criterio": "A entra en DRENANDO con la operación admitida en curso",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 1243.859000000004,
+        "muestras": 3
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.418Z",
+      "criterio": "DRENANDO no espera a que la operación termine",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.424Z",
+      "criterio": "Nueva admisión caducada rechazada durante drenaje",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 401,
+        "estado": 401,
+        "ms": 5.3914999999979045
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.812Z",
+      "criterio": "No RECICLABLE mientras continúa la operación en vuelo",
+      "resultado": "PASS",
+      "observado": {
+        "estado": "DRENANDO"
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:20.437Z",
+      "criterio": "Operación admitida termina en la base original",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 201,
+        "estado": 201,
+        "ms": 4981.950500000006
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:20.837Z",
+      "criterio": "Ambas solicitudes permanecen en la base original",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:21.727Z",
+      "criterio": "A pasa a RECICLABLE después de terminar",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 890.5501000000004,
+        "muestras": 2
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:21.727Z",
+      "criterio": "Drenaje retira reserva sin cambiar generación",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:22.094Z",
+      "criterio": "Pool A sin conexiones runtime tras el drenaje",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 367.0494999999937,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.067Z",
+      "criterio": "QA_DRENANDO_ARRANQUE: CAS y evento únicos",
+      "resultado": "PASS",
+      "observado": {
+        "filas": 1,
+        "eventos": 1,
+        "fechaBD": "2026-10-16T11:32:23.305501+00:00",
+        "expiraEn": "2026-10-16T12:31:44.143565+00:00"
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.480Z",
+      "criterio": "B persiste DRENANDO con backend detenido",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.467Z",
+      "criterio": "Salud recuperada en 90 s desde start",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 5469.079700000002,
+        "muestras": 11
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.467Z",
+      "criterio": "Arranque completo no supera 90 s",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 5986.494400000003
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.476Z",
+      "criterio": "JWT B anterior rechazado tras arrancar",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 401,
+        "estado": 401,
+        "ms": 8.51430000000255
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.889Z",
+      "criterio": "B se reconcilia a RECICLABLE al arrancar",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 412.94779999999446,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.972Z",
+      "criterio": "Reserva y JWT C sobreviven al reinicio",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 83.04839999999967
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:30.351Z",
+      "criterio": "A reciclable antes de inducir conexión externa",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:30.738Z",
+      "criterio": "A sin conexiones antes de inducir fallo",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:31.581Z",
+      "criterio": "Conexión QA externa presente antes de provisionar",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 424.15840000000026,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.129Z",
+      "criterio": "Provisionador rechaza base con conexión externa",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.512Z",
+      "criterio": "Fallo de provisión deja A BLOQUEADO sin reserva",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.512Z",
+      "criterio": "Provisionador no termina la conexión externa QA",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.899Z",
+      "criterio": "Fallo conserva solicitudes/historial/idempotencia de A",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:49.301Z",
+      "criterio": "Fallo queda registrado exactamente una vez",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:32:49.318Z",
+      "criterio": "Fallo de reciclaje A no afecta reserva C",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 16.511499999993248
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:02.565Z",
+      "criterio": "Conexión QA finaliza por sí sola y A queda vacía de conexiones",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 393.4175999999861,
+        "muestras": 1
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:02.961Z",
+      "criterio": "QA_REPARACION_CONEXION: CAS y evento únicos",
+      "resultado": "PASS",
+      "observado": {
+        "filas": 1,
+        "eventos": 1,
+        "fechaBD": "2026-10-16T11:33:02.984387+00:00",
+        "expiraEn": null
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:20.928Z",
+      "criterio": "Provisión tras reparación privada termina correctamente",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:33:21.325Z",
+      "criterio": "CLI prepara generación nueva de A sin reserva",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:33:21.732Z",
+      "criterio": "Nueva generación A no contiene solicitudes antiguas",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.132Z",
+      "criterio": "Reciclaje conserva eventos de fallo y reparación",
+      "resultado": "PASS"
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.138Z",
+      "criterio": "Credenciales A antiguas siguen denegadas tras reparación",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 401,
+        "estado": 401,
+        "ms": 6.039199999999255
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.150Z",
+      "criterio": "C sigue accesible tras restauración y reciclajes",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 200,
+        "estado": 200,
+        "ms": 11.561599999986356
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.168Z",
+      "criterio": "Liberación final C",
+      "resultado": "PASS",
+      "observado": {
+        "esperado": 204,
+        "estado": 204,
+        "ms": 18.22720000000845
+      }
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.549Z",
+      "criterio": "C termina RECICLABLE",
+      "resultado": "PASS",
+      "observado": {
+        "ms": 380.4640999999974,
+        "muestras": 1
+      }
+    }
+  ],
+  "mediciones": [
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 28.846399999999903,
+      "fecha": "2026-10-16T11:31:44.084Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 10.568499999999858,
+      "fecha": "2026-10-16T11:31:44.095Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.304299999999785,
+      "fecha": "2026-10-16T11:31:44.099Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 63.986799999999675,
+      "fecha": "2026-10-16T11:31:44.163Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 29.223299999999654,
+      "fecha": "2026-10-16T11:31:44.192Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 7.253899999999703,
+      "fecha": "2026-10-16T11:31:44.200Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.041500000000269,
+      "fecha": "2026-10-16T11:31:44.204Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 44.00570000000016,
+      "fecha": "2026-10-16T11:31:44.248Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 4.083000000000084,
+      "fecha": "2026-10-16T11:31:44.252Z"
+    },
+    {
+      "operacion": "reserva",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 7.0526999999997315,
+      "fecha": "2026-10-16T11:31:44.259Z"
+    },
+    {
+      "operacion": "csrf",
+      "metodo": "GET",
+      "estado": 204,
+      "ms": 3.592399999999998,
+      "fecha": "2026-10-16T11:31:44.263Z"
+    },
+    {
+      "operacion": "login-SOLICITANTE",
+      "metodo": "POST",
+      "estado": 200,
+      "ms": 49.56719999999996,
+      "fecha": "2026-10-16T11:31:44.312Z"
+    },
+    {
+      "operacion": "crear",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 15.746299999999792,
+      "fecha": "2026-10-16T11:31:44.328Z"
+    },
+    {
+      "operacion": "/api/solicitudes/f2f2b378-50c0-4c42-93c5-8bfb0e7ef97e",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 12.942699999999604,
+      "fecha": "2026-10-16T11:32:14.967Z"
+    },
+    {
+      "operacion": "/api/solicitudes/f2f2b378-50c0-4c42-93c5-8bfb0e7ef97e",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 3.15839999999298,
+      "fecha": "2026-10-16T11:32:14.970Z"
+    },
+    {
+      "operacion": "/api/solicitudes/f2f2b378-50c0-4c42-93c5-8bfb0e7ef97e",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 2.8836000000010245,
+      "fecha": "2026-10-16T11:32:14.973Z"
+    },
+    {
+      "operacion": "/api/solicitudes/f2f2b378-50c0-4c42-93c5-8bfb0e7ef97e",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 5.3914999999979045,
+      "fecha": "2026-10-16T11:32:17.424Z"
+    },
+    {
+      "operacion": "crear",
+      "metodo": "POST",
+      "estado": 201,
+      "ms": 4981.950500000006,
+      "fecha": "2026-10-16T11:32:20.337Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 3.047999999995227,
+      "fecha": "2026-10-16T11:32:24.001Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 3.673399999999674,
+      "fecha": "2026-10-16T11:32:24.513Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 7.302100000000792,
+      "fecha": "2026-10-16T11:32:25.029Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 7.204099999995378,
+      "fecha": "2026-10-16T11:32:25.539Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.937599999997474,
+      "fecha": "2026-10-16T11:32:26.044Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 2.258799999995972,
+      "fecha": "2026-10-16T11:32:26.555Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 4.395300000003772,
+      "fecha": "2026-10-16T11:32:27.070Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 4.9966999999960535,
+      "fecha": "2026-10-16T11:32:27.582Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 8.015699999996286,
+      "fecha": "2026-10-16T11:32:28.098Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 502,
+      "ms": 5.674899999998161,
+      "fecha": "2026-10-16T11:32:28.607Z"
+    },
+    {
+      "operacion": "salud-arranque",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 353.2907999999952,
+      "fecha": "2026-10-16T11:32:29.467Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 8.51430000000255,
+      "fecha": "2026-10-16T11:32:29.476Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 83.04839999999967,
+      "fecha": "2026-10-16T11:32:29.972Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 16.511499999993248,
+      "fecha": "2026-10-16T11:32:49.318Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 401,
+      "ms": 6.039199999999255,
+      "fecha": "2026-10-16T11:33:22.138Z"
+    },
+    {
+      "operacion": "/api/solicitudes",
+      "metodo": "GET",
+      "estado": 200,
+      "ms": 11.561599999986356,
+      "fecha": "2026-10-16T11:33:22.150Z"
+    },
+    {
+      "operacion": "liberar",
+      "metodo": "POST",
+      "estado": 204,
+      "ms": 18.22720000000845,
+      "fecha": "2026-10-16T11:33:22.168Z"
+    }
+  ],
+  "traza": [
+    {
+      "fecha": "2026-10-16T11:31:42.260Z",
+      "evento": "identidad-validada",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "postgres",
+      "estado": "running"
+    },
+    {
+      "fecha": "2026-10-16T11:31:42.776Z",
+      "evento": "identidad-validada",
+      "id": "042c465c080eeb435b5a7c533743e3dac0216b519e0901144f9bf7c18f3dfb8d",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "backend",
+      "estado": "running"
+    },
+    {
+      "fecha": "2026-10-16T11:31:43.274Z",
+      "evento": "identidad-validada",
+      "id": "25aacd1277f494638c0a8118d011eee360334585cc7cc013b072956e245588c7",
+      "proyecto": "gestion-solicitudes-ag016",
+      "servicio": "provisionador",
+      "estado": "running"
+    },
+    {
+      "fecha": "2026-10-16T11:32:14.973Z",
+      "evento": "bloqueo-inicio",
+      "espacio": "ag016_demo_01",
+      "segundos": 5
+    },
+    {
+      "fecha": "2026-10-16T11:32:16.175Z",
+      "evento": "QA_CADUCIDAD_ENVUELO",
+      "espacio": "ag016_demo_01",
+      "filas": 1,
+      "eventos": 1,
+      "fechaBD": "2026-10-16T11:32:15.982128+00:00",
+      "expiraEn": "2026-10-16T11:32:16.981782+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:16.546Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "RESERVADO",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:16.362139+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:16.980Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "RESERVADO",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:16.795451+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.418Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "DRENANDO",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:17.792767+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:17.812Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "DRENANDO",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:18.180375+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:20.337Z",
+      "evento": "http-en-vuelo-fin",
+      "fallo": false
+    },
+    {
+      "fecha": "2026-10-16T11:32:20.437Z",
+      "evento": "bloqueo-fin",
+      "fallo": false
+    },
+    {
+      "fecha": "2026-10-16T11:32:21.228Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "DRENANDO",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:21.507996+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:21.727Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "RECICLABLE",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:32:21.994273+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:22.094Z",
+      "evento": "conexiones-tras-drenaje",
+      "espacio": "ag016_demo_01",
+      "total": 0,
+      "runtime": 0
+    },
+    {
+      "fecha": "2026-10-16T11:32:22.665Z",
+      "evento": "backend-stop",
+      "id": "042c465c080eeb435b5a7c533743e3dac0216b519e0901144f9bf7c18f3dfb8d",
+      "ms": 419.1537000000026
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.067Z",
+      "evento": "QA_DRENANDO_ARRANQUE",
+      "espacio": "ag016_demo_02",
+      "filas": 1,
+      "eventos": 1,
+      "fechaBD": "2026-10-16T11:32:23.305501+00:00",
+      "expiraEn": "2026-10-16T12:31:44.143565+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.480Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_02",
+      "estado": "DRENANDO",
+      "generacion": "905afcb6-3c16-4030-9633-63137acadfeb",
+      "sinReserva": false,
+      "fechaBD": "2026-10-16T11:32:23.717224+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.481Z",
+      "evento": "alcance-reinicio",
+      "modo": "DRENANDO persistente al arrancar; sin operación en vuelo simulada"
+    },
+    {
+      "fecha": "2026-10-16T11:32:23.998Z",
+      "evento": "backend-start",
+      "id": "042c465c080eeb435b5a7c533743e3dac0216b519e0901144f9bf7c18f3dfb8d",
+      "ms": 358.5197000000044
+    },
+    {
+      "fecha": "2026-10-16T11:32:29.888Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_02",
+      "estado": "RECICLABLE",
+      "generacion": "905afcb6-3c16-4030-9633-63137acadfeb",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:32:29.927382+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:30.351Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "RECICLABLE",
+      "generacion": "345b0716-1baa-4664-a609-fd3a591b59ae",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:32:30.390271+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:32:31.150Z",
+      "evento": "conexion-externa-inicio",
+      "espacio": "ag016_demo_01",
+      "segundos": 30
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.129Z",
+      "evento": "provision-lote",
+      "codigo": 1,
+      "ms": 16547.509700000002,
+      "falloEsperado": true
+    },
+    {
+      "fecha": "2026-10-16T11:32:48.512Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "BLOQUEADO",
+      "generacion": "956f8ce6-2db0-478a-bea5-1aad13c6fb72",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:32:48.884382+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:33:02.172Z",
+      "evento": "conexion-externa-fin",
+      "fallo": false
+    },
+    {
+      "fecha": "2026-10-16T11:33:02.565Z",
+      "evento": "reparacion-operador",
+      "espacio": "ag016_demo_01",
+      "causa": "Conexión QA temporal ya finalizada"
+    },
+    {
+      "fecha": "2026-10-16T11:33:02.961Z",
+      "evento": "QA_REPARACION_CONEXION",
+      "espacio": "ag016_demo_01",
+      "filas": 1,
+      "eventos": 1,
+      "fechaBD": "2026-10-16T11:33:02.984387+00:00",
+      "expiraEn": null
+    },
+    {
+      "fecha": "2026-10-16T11:33:20.928Z",
+      "evento": "provision-lote",
+      "codigo": 0,
+      "ms": 17966.836899999995,
+      "falloEsperado": false
+    },
+    {
+      "fecha": "2026-10-16T11:33:21.325Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_01",
+      "estado": "LISTO",
+      "generacion": "b9925517-1817-45f3-9f9d-30488415cb28",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:33:22.178738+00:00"
+    },
+    {
+      "fecha": "2026-10-16T11:33:22.548Z",
+      "evento": "estado",
+      "espacio": "ag016_demo_03",
+      "estado": "RECICLABLE",
+      "generacion": "43e63928-07ce-4ce1-a1b6-e79d6a2c51d5",
+      "sinReserva": true,
+      "fechaBD": "2026-10-16T11:33:23.401497+00:00"
+    }
+  ],
+  "pendientes": [
+    "Cupo de almacenamiento: ensayo separado a cargo del coordinador."
+  ],
+  "alcance": "Restore activo; caducidad real en vuelo; DRENANDO persistente al arrancar; fallo por conexión externa y reparación privada.",
+  "limites": "Storage separado. No se simula supervivencia de una transacción HTTP a una parada. No se reintentan mutaciones."
+}

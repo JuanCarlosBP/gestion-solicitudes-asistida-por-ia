@@ -1,0 +1,8 @@
+name: gestion-solicitudes-ag016-regresion
+services:
+  backend:
+    image: gestion-solicitudes-ag016-backend:local
+  frontend:
+    image: gestion-solicitudes-ag016-frontend:local
+    volumes:
+      - ../frontend/nginx.conf:/etc/nginx/nginx.conf:ro

@@ -1,0 +1,72 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/demo/demo-pagina.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files          | Names                     |  Raw size
+spec-app-demo-demo-pagina.js | spec-app-demo-demo-pagina |  46.02 kB | 
+chunk-RSTWSNOR.js            | -                         |   4.75 kB | 
+styles.css                   | styles                    |   1.49 kB | 
+init-testbed.js              | init-testbed              |   1.21 kB | 
+vitest-mock-patch.js         | vitest-mock-patch         | 974 bytes | 
+
+                             | Initial total             |  54.45 kB
+
+Application bundle generation complete. [2.472 seconds] - 2026-10-16T12:14:47.726Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts (8 tests | 3 failed) 127ms
+     × no supera los 60 minutos anunciados con servidor adelantado 250 ms 11ms
+     × no supera los 60 minutos anunciados con servidor adelantado 30000 ms 8ms
+     × no supera los 30 minutos anunciados con servidor adelantado 250 ms 9ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 5 passed (8)
+   Start at  14:14:48
+   Duration  2.09s (transform 132ms, setup 486ms, import 114ms, tests 127ms, environment 1.15s)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts > DO-01/05/08: presentación y guías accesibles > no supera los 60 minutos anunciados con servidor adelantado 250 ms
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts > DO-01/05/08: presentación y guías accesibles > no supera los 60 minutos anunciados con servidor adelantado 30000 ms
+AssertionError: expected 61 to be 60 // Object.is equality
+
+- Expected
++ Received
+
+- 60
++ 61
+
+ ❯ src/app/demo/demo-pagina.spec.ts:108:51
+    106|         http.expectOne('/api/demo/reservas').flush({ ...reservaPrueba(…
+    107|         vista.detectChanges();
+    108|         expect(vista.componentInstance.minutos()).toBe(duracionMinutos…
+       |                                                   ^
+    109|         expect(vista.componentInstance.contexto.reserva()?.expiraEn).t…
+    110|         vi.advanceTimersByTime(61000 + desfaseMs);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts > DO-01/05/08: presentación y guías accesibles > no supera los 30 minutos anunciados con servidor adelantado 250 ms
+AssertionError: expected 31 to be 30 // Object.is equality
+
+- Expected
++ Received
+
+- 30
++ 31
+
+ ❯ src/app/demo/demo-pagina.spec.ts:108:51
+    106|         http.expectOne('/api/demo/reservas').flush({ ...reservaPrueba(…
+    107|         vista.detectChanges();
+    108|         expect(vista.componentInstance.minutos()).toBe(duracionMinutos…
+       |                                                   ^
+    109|         expect(vista.componentInstance.contexto.reserva()?.expiraEn).t…
+    110|         vi.advanceTimersByTime(61000 + desfaseMs);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+

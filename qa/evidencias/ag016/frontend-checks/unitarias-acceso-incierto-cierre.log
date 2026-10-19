@@ -1,0 +1,36 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/demo/*.spec.ts --include=src/app/identidad/autenticacion.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files                 | Names                            |  Raw size
+spec-app-demo-demo-pagina.js        | spec-app-demo-demo-pagina        |  30.93 kB | 
+spec-app-demo-demo-operaciones.js   | spec-app-demo-demo-operaciones   |  19.45 kB | 
+spec-app-demo-demo-api.js           | spec-app-demo-demo-api           |   8.06 kB | 
+spec-app-demo-demo-interceptor.js   | spec-app-demo-demo-interceptor   |   6.69 kB | 
+spec-app-identidad-autenticacion.js | spec-app-identidad-autenticacion |   6.52 kB | 
+chunk-RSTWSNOR.js                   | -                                |   4.75 kB | 
+chunk-NBCIGSH4.js                   | -                                |   4.70 kB | 
+chunk-GCT6NBWK.js                   | -                                |   4.66 kB | 
+spec-app-demo-demo-contexto.js      | spec-app-demo-demo-contexto      |   3.72 kB | 
+chunk-D4A2UHVX.js                   | -                                |   2.13 kB | 
+chunk-Q5H2SOOQ.js                   | -                                |   1.84 kB | 
+chunk-ZM7SWOGE.js                   | -                                |   1.65 kB | 
+styles.css                          | styles                           |   1.49 kB | 
+init-testbed.js                     | init-testbed                     |   1.21 kB | 
+vitest-mock-patch.js                | vitest-mock-patch                | 974 bytes | 
+
+                                    | Initial total                    |  98.80 kB
+
+Application bundle generation complete. [2.676 seconds] - 2026-10-16T11:06:19.634Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  6 passed (6)
+      Tests  54 passed (54)
+   Start at  13:06:20
+   Duration  3.23s (transform 342ms, setup 4.29s, import 774ms, tests 333ms, environment 11.31s)
+

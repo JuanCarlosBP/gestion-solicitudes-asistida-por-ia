@@ -1,0 +1,58 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test
+
+
+Running 1 test using 1 worker
+
+(node:26540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\demo-aislamiento.spec.ts:52:5 › 008: tres espacios exclusivos, recorrido real por roles, cuarto visitante y pestaña antigua (7.2s)
+
+
+  1) e2e\demo-aislamiento.spec.ts:52:5 › 008: tres espacios exclusivos, recorrido real por roles, cuarto visitante y pestaña antigua › solicitante crea, edita y presenta con catálogo preparado 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('.estado').first()
+    Expected: "Presentada"
+    Received: "Borrador"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" locator('.estado').first() with timeout 5000ms
+      - waiting for locator('.estado').first()
+        14 × locator resolved to <span class="estado" _ngcontent-ng-c2404591878="">Borrador</span>
+           - unexpected value "Borrador"
+
+
+      188 |       expect((await catalogoSupervisor).status()).toBe(200);
+      189 |       await expect(a.getByLabel('Supervisor', { exact: true })).toBeEnabled();
+    > 190 |       await expect(a.locator('#supervisor-seleccion option').nth(1)).toBeAttached();
+          |                                                  ^
+      191 |       await a.getByLabel('Supervisor', { exact: true }).selectOption({ index: 1 });
+      192 |       await expect(a.getByLabel('Supervisor', { exact: true })).toHaveValue(/^[0-9a-f-]{36}$/);
+      193 |       await a.getByRole('button', { name: 'Añadir concepto', exact: true }).click();
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\demo-aislamiento.spec.ts:190:50
+        at C:\Users\carli\gestion-solicitudes-asistida-por-ia\frontend\e2e\demo-aislamiento.spec.ts:156:5
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag016\e2e-demo-diagnostico-03\demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag016\e2e-demo-diagnostico-03\demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag016\e2e-demo-diagnostico-03\demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\qa\evidencias\ag016\e2e-demo-diagnostico-03\demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\test-failed-4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\qa\evidencias\ag016\e2e-demo-diagnostico-03\demo-aislamiento-008-tres--dd89e-visitante-y-pestaña-antigua\error-context.md
+
+  1 failed
+    e2e\demo-aislamiento.spec.ts:52:5 › 008: tres espacios exclusivos, recorrido real por roles, cuarto visitante y pestaña antigua 

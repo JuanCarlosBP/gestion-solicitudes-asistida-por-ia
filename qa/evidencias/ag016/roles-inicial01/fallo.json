@@ -1,0 +1,6 @@
+{
+  "observado": "2026-10-16T10:59:26.468Z",
+  "resultado": "FAIL",
+  "causa": "Arnés esperaba booleanos t/f, concatenación SQL devuelve true/false",
+  "atributos": "ag016_app_01|false|false|false|false|true\nag016_app_02|false|false|false|false|true\nag016_app_03|false|false|false|false|true\nag016_control_app|false|false|false|false|true\ngestion_app|false|false|false|false|false\ngestion_migracion|false|false|false|false|true"
+}

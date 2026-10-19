@@ -1,0 +1,362 @@
+[
+  {
+    "nombre": "01-portada",
+    "ancho": 320,
+    "archivo": "01-portada-320.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 360,
+    "archivo": "01-portada-360.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 390,
+    "archivo": "01-portada-390.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 768,
+    "archivo": "01-portada-768.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 1024,
+    "archivo": "01-portada-1024.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 1280,
+    "archivo": "01-portada-1280.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 1440,
+    "archivo": "01-portada-1440.png"
+  },
+  {
+    "nombre": "01-portada",
+    "ancho": 1920,
+    "archivo": "01-portada-1920.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 320,
+    "archivo": "02-inicio-320.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 360,
+    "archivo": "02-inicio-360.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 390,
+    "archivo": "02-inicio-390.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 768,
+    "archivo": "02-inicio-768.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 1024,
+    "archivo": "02-inicio-1024.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 1280,
+    "archivo": "02-inicio-1280.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 1440,
+    "archivo": "02-inicio-1440.png"
+  },
+  {
+    "nombre": "02-inicio",
+    "ancho": 1920,
+    "archivo": "02-inicio-1920.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 320,
+    "archivo": "03-acceso-conservado-320.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 360,
+    "archivo": "03-acceso-conservado-360.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 390,
+    "archivo": "03-acceso-conservado-390.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 768,
+    "archivo": "03-acceso-conservado-768.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 1024,
+    "archivo": "03-acceso-conservado-1024.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 1280,
+    "archivo": "03-acceso-conservado-1280.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 1440,
+    "archivo": "03-acceso-conservado-1440.png"
+  },
+  {
+    "nombre": "03-acceso-conservado",
+    "ancho": 1920,
+    "archivo": "03-acceso-conservado-1920.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 320,
+    "archivo": "04-demo-botones-320.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 360,
+    "archivo": "04-demo-botones-360.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 390,
+    "archivo": "04-demo-botones-390.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 768,
+    "archivo": "04-demo-botones-768.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 1024,
+    "archivo": "04-demo-botones-1024.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 1280,
+    "archivo": "04-demo-botones-1280.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 1440,
+    "archivo": "04-demo-botones-1440.png"
+  },
+  {
+    "nombre": "04-demo-botones",
+    "ancho": 1920,
+    "archivo": "04-demo-botones-1920.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 320,
+    "archivo": "05-buscadores-320.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 360,
+    "archivo": "05-buscadores-360.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 390,
+    "archivo": "05-buscadores-390.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 768,
+    "archivo": "05-buscadores-768.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 1024,
+    "archivo": "05-buscadores-1024.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 1280,
+    "archivo": "05-buscadores-1280.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 1440,
+    "archivo": "05-buscadores-1440.png"
+  },
+  {
+    "nombre": "05-buscadores",
+    "ancho": 1920,
+    "archivo": "05-buscadores-1920.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 320,
+    "archivo": "06-coma-editor-320.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 360,
+    "archivo": "06-coma-editor-360.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 390,
+    "archivo": "06-coma-editor-390.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 768,
+    "archivo": "06-coma-editor-768.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 1024,
+    "archivo": "06-coma-editor-1024.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 1280,
+    "archivo": "06-coma-editor-1280.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 1440,
+    "archivo": "06-coma-editor-1440.png"
+  },
+  {
+    "nombre": "06-coma-editor",
+    "ancho": 1920,
+    "archivo": "06-coma-editor-1920.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 320,
+    "archivo": "07-precios-legibles-320.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 360,
+    "archivo": "07-precios-legibles-360.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 390,
+    "archivo": "07-precios-legibles-390.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 768,
+    "archivo": "07-precios-legibles-768.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 1024,
+    "archivo": "07-precios-legibles-1024.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 1280,
+    "archivo": "07-precios-legibles-1280.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 1440,
+    "archivo": "07-precios-legibles-1440.png"
+  },
+  {
+    "nombre": "07-precios-legibles",
+    "ancho": 1920,
+    "archivo": "07-precios-legibles-1920.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 320,
+    "archivo": "08-aprobacion-320.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 360,
+    "archivo": "08-aprobacion-360.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 390,
+    "archivo": "08-aprobacion-390.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 768,
+    "archivo": "08-aprobacion-768.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 1024,
+    "archivo": "08-aprobacion-1024.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 1280,
+    "archivo": "08-aprobacion-1280.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 1440,
+    "archivo": "08-aprobacion-1440.png"
+  },
+  {
+    "nombre": "08-aprobacion",
+    "ancho": 1920,
+    "archivo": "08-aprobacion-1920.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 320,
+    "archivo": "09-auditoria-320.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 360,
+    "archivo": "09-auditoria-360.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 390,
+    "archivo": "09-auditoria-390.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 768,
+    "archivo": "09-auditoria-768.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 1024,
+    "archivo": "09-auditoria-1024.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 1280,
+    "archivo": "09-auditoria-1280.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 1440,
+    "archivo": "09-auditoria-1440.png"
+  },
+  {
+    "nombre": "09-auditoria",
+    "ancho": 1920,
+    "archivo": "09-auditoria-1920.png"
+  }
+]

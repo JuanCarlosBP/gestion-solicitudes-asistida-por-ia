@@ -1,0 +1,92 @@
+<testsuites id="" name="" tests="33" failures="0" skipped="0" errors="0" time="130.011157">
+<testsuite name="aprobaciones.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="3" failures="0" skipped="0" time="9.155" errors="0">
+<testcase name="AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales" classname="aprobaciones.spec.ts" time="3.941">
+</testcase>
+<testcase name="AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible" classname="aprobaciones.spec.ts" time="4.175">
+</testcase>
+<testcase name="AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora" classname="aprobaciones.spec.ts" time="1.039">
+</testcase>
+</testsuite>
+<testsuite name="base.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="5" failures="0" skipped="0" time="2.241" errors="0">
+<testcase name="inicio, recarga, raíz y ruta desconocida con API real" classname="base.spec.ts" time="0.386">
+</testcase>
+<testcase name="carga y error visible sin información interna, con recuperación" classname="base.spec.ts" time="0.3">
+</testcase>
+<testcase name="teclado, foco, idioma y ancho móvil" classname="base.spec.ts" time="0.197">
+</testcase>
+<testcase name="Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real" classname="base.spec.ts" time="1.339">
+</testcase>
+<testcase name="cabeceras, mínimo contrato y denegación por el backend" classname="base.spec.ts" time="0.019">
+</testcase>
+</testsuite>
+<testsuite name="historial.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="10" failures="0" skipped="0" time="8.58" errors="0">
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E01: autor lee timeline integrado y directo con fuentes y transición real" classname="historial.spec.ts" time="0.604">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E02: supervisor ve rechazo y el historial omite el motivo del detalle" classname="historial.spec.ts" time="0.436">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E03: global filtra, pagina, recarga y vuelve atrás con URL persistente" classname="historial.spec.ts" time="0.741">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E04: administrador y auditor consultan ciclo completo de proveedor" classname="historial.spec.ts" time="0.482">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E05: resumen corresponde a API por cuatro perfiles y conserva salud" classname="historial.spec.ts" time="1.417">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E06: sin rol no hay global/proveedor y recurso ajeno equivale a inexistente" classname="historial.spec.ts" time="0.837">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E07: historia anterior a V7 explícita y decisión previa conservada" classname="historial.spec.ts" time="0.457">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E08: vacío e inválidos muestran recuperación sin inventar eventos" classname="historial.spec.ts" time="0.718">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E09: fallo de red controlado y recuperación consulta PostgreSQL real" classname="historial.spec.ts" time="0.444">
+</testcase>
+<testcase name="007: diez recorridos de historial y resumen › HA-E2E10: teclado, foco, etiquetas y capturas360/768/1440" classname="historial.spec.ts" time="2.444">
+</testcase>
+</testsuite>
+<testsuite name="identidad.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="3" failures="0" skipped="0" time="1.08" errors="0">
+<testcase name="acceso, identidad, restauración, cierre y guard con backend real" classname="identidad.spec.ts" time="0.573">
+</testcase>
+<testcase name="formulario por teclado, error genérico, foco y validación nativa" classname="identidad.spec.ts" time="0.272">
+</testcase>
+<testcase name="CSRF obligatorio, restauración anónima y recursos públicos disponibles" classname="identidad.spec.ts" time="0.235">
+</testcase>
+</testsuite>
+<testsuite name="operaciones.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="9" failures="0" skipped="0" time="25.567" errors="0">
+<testcase name="CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta" classname="operaciones.spec.ts" time="1.088">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-01-04-06-07-1b079-y-recuperación-de-baja-alta\attachments\replay-csrf-d7edd3e0f17e14a06340c565f80d186884dbcbe2.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.827">
+</testcase>
+<testcase name="CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva" classname="operaciones.spec.ts" time="1.705">
+</testcase>
+<testcase name="CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar" classname="operaciones.spec.ts" time="1.594">
+</testcase>
+<testcase name="CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable" classname="operaciones.spec.ts" time="2.143">
+</testcase>
+<testcase name="CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave" classname="operaciones.spec.ts" time="0.808">
+</testcase>
+<testcase name="CI-05/07: permiso revocado antes de recuperar y replay no concede acceso" classname="operaciones.spec.ts" time="3.336">
+</testcase>
+<testcase name="CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable" classname="operaciones.spec.ts" time="4.989">
+</testcase>
+<testcase name="CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña" classname="operaciones.spec.ts" time="8.077">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|operaciones-CI-07-09-bloqu-e38ec--acotado-en-segunda-pestaña\attachments\diagnostico-progreso-6adea6f855829f1651e7958cc458e231e38a0795.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="proveedores.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="1" failures="0" skipped="0" time="4.274" errors="0">
+<testcase name="PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales" classname="proveedores.spec.ts" time="4.274">
+</testcase>
+</testsuite>
+<testsuite name="solicitudes.spec.ts" timestamp="2026-10-16T12:21:29.558Z" hostname="" tests="2" failures="0" skipped="0" time="5.372" errors="0">
+<testcase name="SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales" classname="solicitudes.spec.ts" time="4.669">
+</testcase>
+<testcase name="SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga" classname="solicitudes.spec.ts" time="0.703">
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,4 +1,4 @@
-name: Verificación de base, identidad, solicitudes, concurrencia e historial
+name: Verificación integral de solicitudes y demo independiente
 
 on:
   push:
@@ -119,6 +119,12 @@ jobs:
       PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tmp/playwright
       npm_config_cache: ${{ github.workspace }}/tmp/npm-cache
       QA_EVIDENCE_DIR: ${{ github.workspace }}/tmp/evidencias/compose
+      COMPOSE_PROJECT_NAME: gestion-solicitudes-ci-${{ github.run_id }}-${{ github.run_attempt }}
+      COMPOSE_FILE: ${{ github.workspace }}/infraestructura/compose.yaml
+      QA_ENTORNO: ${{ github.workspace }}/infraestructura/.env
+      QA_COMPOSE_OVERRIDE: ${{ github.workspace }}/qa/compose-ci.yaml
+      FRONTEND_PUERTO: '18080'
+      BASE_URL: http://127.0.0.1:18080
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -155,8 +161,8 @@ jobs:
       - name: Arranque local ficticio
         run: |
           cp infraestructura/.env.example infraestructura/.env
-          docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml config --quiet
-          docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml up -d --build --wait --wait-timeout 120
+          node qa/docker-contexto.mjs -- config --quiet
+          docker compose --project-name "$COMPOSE_PROJECT_NAME" --env-file "$QA_ENTORNO" -f "$COMPOSE_FILE" -f "$QA_COMPOSE_OVERRIDE" up -d --build --wait --wait-timeout 120
       - name: Persistencia, caída real y recuperación
         shell: pwsh
         run: ./qa/verificar-compose.ps1
@@ -178,6 +184,8 @@ jobs:
           const usuarios=JSON.parse(readFileSync(process.env.QA_EVIDENCE_DIR+'/usuarios-aprobaciones.json','utf8'));
           const historial=JSON.parse(readFileSync(process.env.QA_EVIDENCE_DIR+'/historial-fixture.json','utf8'));
           appendFileSync(process.env.GITHUB_ENV,'E2E_AJENO_CORREO='+usuarios.ajeno.correo+'\n'+'E2E_MULTIPLE_CORREO='+usuarios.multiple.correo+'\n'+'E2E_HISTORIAL_ANTERIOR_ID='+historial.historiaAnteriorId+'\n');"
+      - name: Inventario exacto OpenAPI y referencias internas
+        run: node qa/cierre008/verificar-openapi.mjs
       - name: Navegador 001 a 007, accesibilidad, historial, recuperación y Swagger
         working-directory: frontend
         run: npm run test:e2e
@@ -202,7 +210,7 @@ jobs:
           node --check qa/preparar-usuarios-solicitudes.mjs
       - name: Parada sin eliminar volúmenes
         if: ${{ always() }}
-        run: docker compose --env-file infraestructura/.env -f infraestructura/compose.yaml stop
+        run: node qa/docker-contexto.mjs -- stop frontend backend postgres
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: ${{ always() }}
         with:
@@ -211,3 +219,53 @@ jobs:
           path: |
             frontend/test-results/
             ${{ env.QA_EVIDENCE_DIR }}/
+
+  demo:
+    needs: [backend, frontend]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/tmp/playwright
+      QA_EVIDENCE_DIR: ${{ github.workspace }}/tmp/evidencias/demo
+      npm_config_cache: ${{ github.workspace }}/tmp/npm-cache
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.13.0'
+      - name: Docker fijado para demo
+        uses: docker/setup-docker-action@e43656e248c0bd0647d3f5c195d116aacf6fcaf4 # v4
+        with:
+          version: ${{ env.DOCKER_VERSION }}
+          channel: stable
+          set-host: 'true'
+      - name: Compose fijado
+        shell: bash
+        run: |
+          mkdir -p "$HOME/.docker/cli-plugins"
+          curl --fail --location --silent --show-error https://github.com/docker/compose/releases/download/v2.40.3/docker-compose-linux-x86_64 -o "$RUNNER_TEMP/docker-compose"
+          echo "dba9d98e1ba5bfe11d88c99b9bd32fc4a0624a30fafe68eea34d61a3e42fd372  $RUNNER_TEMP/docker-compose" | sha256sum --check
+          install -m 0755 "$RUNNER_TEMP/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+      - name: Dependencias del navegador
+        working-directory: frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npx --no-install playwright install --with-deps chromium
+      - name: Controles offline sin repetir dimensionamiento
+        run: >-
+          node --test qa/ag016/caducidad-carga.test.mjs
+          qa/ag016/observar-caducidad.test.mjs qa/ag016/evaluar.test.mjs
+          qa/ag016/restaurar-archivo.test.mjs qa/cierre008/contrato.test.mjs
+      - name: Demo aislada y recorrido real
+        run: node qa/cierre008/ci-demo.mjs
+      - name: Conservar resultados de demo
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: informes-demo-008
+          retention-days: 14
+          path: |
+            tmp/evidencias/demo/
+            qa/evidencias/ag016/ci008-*/

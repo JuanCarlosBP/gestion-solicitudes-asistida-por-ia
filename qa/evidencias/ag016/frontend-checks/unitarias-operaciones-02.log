@@ -1,0 +1,26 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/demo/demo-operaciones.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files               | Names                          |  Raw size
+spec-app-demo-demo-operaciones.js | spec-app-demo-demo-operaciones |  27.11 kB | 
+chunk-RSTWSNOR.js                 | -                              |   4.75 kB | 
+styles.css                        | styles                         |   1.49 kB | 
+init-testbed.js                   | init-testbed                   |   1.21 kB | 
+vitest-mock-patch.js              | vitest-mock-patch              | 974 bytes | 
+
+                                  | Initial total                  |  35.54 kB
+
+Application bundle generation complete. [2.881 seconds] - 2026-10-16T11:02:53.785Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  13:02:54
+   Duration  2.19s (transform 88ms, setup 516ms, import 87ms, tests 20ms, environment 1.34s)
+

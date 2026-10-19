@@ -1,0 +1,122 @@
+{
+  "inicio": "2026-10-16T13:30:21.226Z",
+  "fin": "2026-10-16T13:30:30.204Z",
+  "tipo": "DIAGNOSTICO_SOLO_LECTURA",
+  "proyecto": "gestion-solicitudes-ag016",
+  "pasada": "carga-final-a1",
+  "eventos": "ag016_demo_01|2026-10-16 12:23:28.076824+00|2026-10-16 13:23:28.076824+00||2026-10-16 13:14:55.009634+00\nag016_demo_02|2026-10-16 12:23:28.398302+00|2026-10-16 13:23:28.398302+00|2026-10-16 13:23:28.896724+00|2026-10-16 13:23:28.902324+00\nag016_demo_03|2026-10-16 12:23:28.708593+00|2026-10-16 13:23:28.708593+00|2026-10-16 13:23:28.896724+00|2026-10-16 13:23:28.904249+00",
+  "estados": "ag016_demo_01|RESERVADO|2026-10-16 14:15:28.981744+00\nag016_demo_02|LISTO|\nag016_demo_03|LISTO|",
+  "relojes": [
+    {
+      "repeticion": 1,
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "antesUTC": "2026-10-16T13:30:23.281Z",
+      "despuesUTC": "2026-10-16T13:30:23.508Z",
+      "servidorEpochMs": 1792157422251,
+      "duracionMs": 226.96100000000024,
+      "offsetMinimoMs": -1257,
+      "offsetMaximoMs": -1030
+    },
+    {
+      "repeticion": 1,
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "antesUTC": "2026-10-16T13:30:24.025Z",
+      "despuesUTC": "2026-10-16T13:30:24.267Z",
+      "servidorEpochMs": 1792157424875.228,
+      "duracionMs": 241.8755000000001,
+      "offsetMinimoMs": 608.22802734375,
+      "offsetMaximoMs": 850.22802734375
+    },
+    {
+      "repeticion": 2,
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "antesUTC": "2026-10-16T13:30:24.781Z",
+      "despuesUTC": "2026-10-16T13:30:24.984Z",
+      "servidorEpochMs": 1792157425551,
+      "duracionMs": 202.16760000000022,
+      "offsetMinimoMs": 567,
+      "offsetMaximoMs": 770
+    },
+    {
+      "repeticion": 2,
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "antesUTC": "2026-10-16T13:30:25.511Z",
+      "despuesUTC": "2026-10-16T13:30:25.751Z",
+      "servidorEpochMs": 1792157426269.863,
+      "duracionMs": 240.72820000000047,
+      "offsetMinimoMs": 518.863037109375,
+      "offsetMaximoMs": 758.863037109375
+    },
+    {
+      "repeticion": 3,
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "antesUTC": "2026-10-16T13:30:26.267Z",
+      "despuesUTC": "2026-10-16T13:30:26.473Z",
+      "servidorEpochMs": 1792157426951,
+      "duracionMs": 205.90470000000005,
+      "offsetMinimoMs": 478,
+      "offsetMaximoMs": 684
+    },
+    {
+      "repeticion": 3,
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "antesUTC": "2026-10-16T13:30:26.990Z",
+      "despuesUTC": "2026-10-16T13:30:27.233Z",
+      "servidorEpochMs": 1792157427662.614,
+      "duracionMs": 242.85940000000028,
+      "offsetMinimoMs": 429.614013671875,
+      "offsetMaximoMs": 672.614013671875
+    },
+    {
+      "repeticion": 4,
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "antesUTC": "2026-10-16T13:30:27.739Z",
+      "despuesUTC": "2026-10-16T13:30:27.959Z",
+      "servidorEpochMs": 1792157428348,
+      "duracionMs": 220.70490000000063,
+      "offsetMinimoMs": 389,
+      "offsetMaximoMs": 609
+    },
+    {
+      "repeticion": 4,
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "antesUTC": "2026-10-16T13:30:28.470Z",
+      "despuesUTC": "2026-10-16T13:30:28.720Z",
+      "servidorEpochMs": 1792157429063.136,
+      "duracionMs": 249.36679999999978,
+      "offsetMinimoMs": 343.135986328125,
+      "offsetMaximoMs": 593.135986328125
+    },
+    {
+      "repeticion": 5,
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "antesUTC": "2026-10-16T13:30:29.245Z",
+      "despuesUTC": "2026-10-16T13:30:29.456Z",
+      "servidorEpochMs": 1792157429755,
+      "duracionMs": 211.3585000000012,
+      "offsetMinimoMs": 299,
+      "offsetMaximoMs": 510
+    },
+    {
+      "repeticion": 5,
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "antesUTC": "2026-10-16T13:30:29.963Z",
+      "despuesUTC": "2026-10-16T13:30:30.204Z",
+      "servidorEpochMs": 1792157430462.35,
+      "duracionMs": 240.96930000000066,
+      "offsetMinimoMs": 258.35009765625,
+      "offsetMaximoMs": 499.35009765625
+    }
+  ],
+  "limite": "Los intervalos de desfase corresponden a estas lecturas posteriores, no reconstruyen exactamente el reloj en una sonda pasada. date usa el reloj del contenedor; los eventos RESERVADA/CADUCADA contienen Instant del backend."
+}

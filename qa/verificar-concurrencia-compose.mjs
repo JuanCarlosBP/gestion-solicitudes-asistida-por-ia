@@ -1,17 +1,16 @@
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { argumentosCompose, ejecutarDocker } from './docker-contexto.mjs';
 import { randomUUID, createHash } from 'node:crypto';
-import { prepararDirectorioEvidencias, raizProyecto, rutaDelProyecto } from './rutas-evidencia.mjs';
+import { prepararDirectorioEvidencias, raizProyecto } from './rutas-evidencia.mjs';
 
 const base = new URL(process.env.BASE_URL || 'http://127.0.0.1:18080');
 if (base.protocol !== 'http:' || !['127.0.0.1', 'localhost', '[::1]'].includes(base.hostname)
   || base.username || base.password || base.search || base.hash || base.pathname !== '/')
   throw new Error('QA006 requiere HTTP loopback sin credenciales en URL.');
 const evidencia = prepararDirectorioEvidencias();
-const ejecutar = promisify(execFile);
-const compose = ['compose', '--env-file', rutaDelProyecto(process.env.QA_ENTORNO || 'infraestructura/.env.example'), '-f', 'infraestructura/compose.yaml'];
+const ejecutar = ejecutarDocker;
+const compose = argumentosCompose();
 const controles = [], mediciones = [], sesiones = [];
 const marca = `QA006-${randomUUID()}`;
 let etapa = 'preparación', error, rolRetirado, postgresParado = false;

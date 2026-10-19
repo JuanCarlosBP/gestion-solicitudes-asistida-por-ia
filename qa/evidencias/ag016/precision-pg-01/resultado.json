@@ -1,0 +1,6 @@
+{
+  "fecha": "2026-10-16T13:47:12.726Z",
+  "tipo": "SELECT_SOLO_LECTURA",
+  "consulta": "SELECT to_char('2026-01-01T00:00:00.123456500Z'::timestamptz AT TIME ZONE 'UTC','YYYY-MM-DD\"T\"HH24:MI:SS.US\"Z\"'), to_char('2026-01-01T00:00:00.123457500Z'::timestamptz AT TIME ZONE 'UTC','YYYY-MM-DD\"T\"HH24:MI:SS.US\"Z\"');",
+  "observado": "2026-01-01T00:00:00.123456Z|2026-01-01T00:00:00.123458Z"
+}

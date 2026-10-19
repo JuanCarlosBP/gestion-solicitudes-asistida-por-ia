@@ -1,0 +1,569 @@
+{
+  "fecha": "2026-10-16T11:47:31.661Z",
+  "baseUrl": "http://127.0.0.1:18087",
+  "resultado": "PASS",
+  "controles": [
+    {
+      "criterio": "Fixtures usan precisión de segundos coherente con identidad antes de autenticar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio ADMINISTRADOR (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AJENO (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio MULTIPLE (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR_AJENO (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor exclusivo005 creado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Aprobación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Aprobación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Aprobación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decisión exige identidad aun con CSRF",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "ADMINISTRADOR no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "AUDITOR no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "SOLICITANTE no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "MULTIPLE no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "AJENO no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "SUPERVISOR_AJENO no asignado no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Bearer sin CSRF no decide",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clave obligatoria UUID",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Clave obligatoria UUID",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobación rechaza entrada inválida sin efecto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo exige motivo10–1000",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Versión obsoleta409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Negativos conservan estado/versión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Negativos no insertan evento",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobar cambia estado/versión una vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Resultado mínimo y fecha servidor coherentes",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decisión privada no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay exacto con texto normalizado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma clave/texto distinto409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma clave/operación distinta409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Estado final no admite decisión nueva",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decisión conserva cabecera, conceptos, fotografía, asignación y presentadoEn",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Detalle ofrece evento mínimo autorizado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Un único evento aprobar persistido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final visible SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final visible SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final visible AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final visible ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final invisible AJENO",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Final invisible SUPERVISOR_AJENO",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Listado final sin texto de decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Aprobada desaparece de pendientes",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay004 tras aprobación conserva resultado PRESENTADA original",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Rechazo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Rechazo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Rechazo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Misma clave en otro recurso409",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Rechazo válido final",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Motivo visible al autor y agregado preservado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay rechazo exacto",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Un único evento rechazar persistido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Comentario Unicode máximo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Comentario Unicode máximo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Comentario Unicode máximo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Comentario500 puntos Unicode permitido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Motivo mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Motivo mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Motivo mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Motivo10 permitido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Comentario opcional",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Comentario opcional",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Comentario opcional",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Comentario omitido normalizado null",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Multirrol asignado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Multirrol asignado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Multirrol asignado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Multirrol asignado decide por SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Propia multirrol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Propia multirrol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Propia multirrol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Multirrol nunca decide propia solicitud",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Proveedor desactivado después de presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Proveedor desactivado después de presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Proveedor desactivado después de presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Baja posterior de proveedor preparada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decidir usa fotografía sin exigir proveedor activo nuevamente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Proveedor ficticio reactivado",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Carrera aprobar-aprobar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Carrera aprobar-aprobar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Carrera aprobar-aprobar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera HTTP aprobar/aprobar, clave distinta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera incrementa versión una vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera deja un evento",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Carrera rechazar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Carrera rechazar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Carrera rechazar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera HTTP rechazar/rechazar, clave distinta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera incrementa versión una vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera deja un evento",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Carrera aprobar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Carrera aprobar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Carrera aprobar-rechazar-false",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera HTTP aprobar/rechazar, clave distinta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera incrementa versión una vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera deja un evento",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Carrera aprobar-aprobar-true",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Carrera aprobar-aprobar-true",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Carrera aprobar-aprobar-true",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera HTTP aprobar/aprobar, clave igual",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera incrementa versión una vez",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Carrera deja un evento",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Borrador Rol vigente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Agregado Rol vigente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada Rol vigente",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Presentada sin decisión previa",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decisión previa a revocar rol",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay denegado tras retirar rol aunque JWT conserva claim",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Replay denegado tras deshabilitar identidad",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR (HTTP 200)",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Decisión idempotente persiste tras reinicio/Flyway",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Logs sin comentario, motivo, descripción, fiscal ni claves reutilizables",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Un evento técnico APROBAR con petición y hash, sin duplicado por replay",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Un evento técnico RECHAZAR con petición y hash, sin duplicado por replay",
+      "resultado": "PASS"
+    }
+  ],
+  "etapa": "reinicio y privacidad",
+  "limite": "Datos ficticios únicos conservados; HTTP real. Rollback y carreras DB sincronizadas se verifican además en IT. No acredita carga objetivo ni OWASP completo."
+}

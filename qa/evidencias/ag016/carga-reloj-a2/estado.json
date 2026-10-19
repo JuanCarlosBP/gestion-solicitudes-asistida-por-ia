@@ -1,0 +1,30 @@
+{
+  "ejecucion": "carga-reloj-a2",
+  "modo": "MEDICION_65_MINUTOS",
+  "actualizado": "2026-10-16T21:48:40.394Z",
+  "fase": "fuera-ventana",
+  "inicioMedicion": "2026-10-16T20:43:39.976Z",
+  "transcurridoMs": 3900020.8077,
+  "finVentana": true,
+  "visitantes": [
+    {
+      "visitante": "A",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 147
+    },
+    {
+      "visitante": "B",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 148
+    },
+    {
+      "visitante": "C",
+      "pausas": [],
+      "recorridoEnCurso": false,
+      "siguienteRecorrido": 148
+    }
+  ],
+  "incidencias": 2
+}

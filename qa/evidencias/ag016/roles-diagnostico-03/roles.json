@@ -1,0 +1,152 @@
+{
+  "fecha": "2026-10-16T11:15:45.001Z",
+  "atributos": "ag016_app_01|false|false|false|false|true\nag016_app_02|false|false|false|false|true\nag016_app_03|false|false|false|false|true\nag016_control_app|false|false|false|false|true\ngestion_app|false|false|false|false|false\ngestion_migracion|false|false|false|false|true",
+  "acl": "ag016_app_01|ag016_control|false\nag016_app_01|ag016_demo_01|true\nag016_app_01|ag016_demo_02|false\nag016_app_01|ag016_demo_03|false\nag016_app_01|postgres|false\nag016_app_01|template1|true\nag016_app_02|ag016_control|false\nag016_app_02|ag016_demo_01|false\nag016_app_02|ag016_demo_02|true\nag016_app_02|ag016_demo_03|false\nag016_app_02|postgres|false\nag016_app_02|template1|true\nag016_app_03|ag016_control|false\nag016_app_03|ag016_demo_01|false\nag016_app_03|ag016_demo_02|false\nag016_app_03|ag016_demo_03|true\nag016_app_03|postgres|false\nag016_app_03|template1|true",
+  "controles": [
+    {
+      "rol": "ag016_app_01",
+      "destino": "ag016_demo_01",
+      "conexion": true,
+      "esperada": true,
+      "diagnostico": "conexion autorizada",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_01",
+      "destino": "ag016_demo_02",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_01",
+      "destino": "ag016_demo_03",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_01",
+      "destino": "ag016_control",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_01",
+      "destino": "postgres",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_01",
+      "destino": "template1",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "ag016_demo_01",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "ag016_demo_02",
+      "conexion": true,
+      "esperada": true,
+      "diagnostico": "conexion autorizada",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "ag016_demo_03",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "ag016_control",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "postgres",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_02",
+      "destino": "template1",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "ag016_demo_01",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "ag016_demo_02",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "ag016_demo_03",
+      "conexion": true,
+      "esperada": true,
+      "diagnostico": "conexion autorizada",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "ag016_control",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "postgres",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    },
+    {
+      "rol": "ag016_app_03",
+      "destino": "template1",
+      "conexion": false,
+      "esperada": false,
+      "diagnostico": "rechazo explícito HBA",
+      "resultado": "PASS"
+    }
+  ],
+  "limite": "template1 ACL PUBLIC conservado por protocolo; acceso efectivo denegado por pg_hba. Prueba TCP local a PostgreSQL real; no equivale aún a validación HTTP de aislamiento."
+}

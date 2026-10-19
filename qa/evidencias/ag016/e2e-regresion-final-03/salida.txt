@@ -1,0 +1,44 @@
+
+> gestion-solicitudes-frontend@0.0.1 test:e2e
+> playwright test
+
+
+Running 33 tests using 1 worker
+
+(node:39792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 e2e\aprobaciones.spec.ts:192:5 › AP-01/03/04/06/07/08: aprobación confirmada, replay y lectores autorizados reales (3.9s)
+  ok  2 e2e\aprobaciones.spec.ts:341:5 › AP-02/03/07/08: multirrol restringido, rechazo validado y motivo visible (4.1s)
+  ok  3 e2e\aprobaciones.spec.ts:484:5 › AP-05/08: versión obsoleta y dos pestañas reales conservan la única decisión ganadora (1.1s)
+  ok  4 e2e\base.spec.ts:3:5 › inicio, recarga, raíz y ruta desconocida con API real (385ms)
+  ok  5 e2e\base.spec.ts:21:5 › carga y error visible sin información interna, con recuperación (274ms)
+  ok  6 e2e\base.spec.ts:45:5 › teclado, foco, idioma y ancho móvil (202ms)
+  ok  7 e2e\base.spec.ts:75:5 › Swagger carga OpenAPI 3.1 y ejecuta la consulta técnica real (1.3s)
+  ok  8 e2e\base.spec.ts:144:5 › cabeceras, mínimo contrato y denegación por el backend (16ms)
+  ok  9 e2e\historial.spec.ts:150:7 › 007: diez recorridos de historial y resumen › HA-E2E01: autor lee timeline integrado y directo con fuentes y transición real (619ms)
+  ok 10 e2e\historial.spec.ts:185:7 › 007: diez recorridos de historial y resumen › HA-E2E02: supervisor ve rechazo y el historial omite el motivo del detalle (494ms)
+  ok 11 e2e\historial.spec.ts:199:7 › 007: diez recorridos de historial y resumen › HA-E2E03: global filtra, pagina, recarga y vuelve atrás con URL persistente (726ms)
+  ok 12 e2e\historial.spec.ts:229:7 › 007: diez recorridos de historial y resumen › HA-E2E04: administrador y auditor consultan ciclo completo de proveedor (557ms)
+  ok 13 e2e\historial.spec.ts:249:7 › 007: diez recorridos de historial y resumen › HA-E2E05: resumen corresponde a API por cuatro perfiles y conserva salud (1.4s)
+  ok 14 e2e\historial.spec.ts:277:7 › 007: diez recorridos de historial y resumen › HA-E2E06: sin rol no hay global/proveedor y recurso ajeno equivale a inexistente (775ms)
+  ok 15 e2e\historial.spec.ts:320:7 › 007: diez recorridos de historial y resumen › HA-E2E07: historia anterior a V7 explícita y decisión previa conservada (388ms)
+  ok 16 e2e\historial.spec.ts:339:7 › 007: diez recorridos de historial y resumen › HA-E2E08: vacío e inválidos muestran recuperación sin inventar eventos (707ms)
+  ok 17 e2e\historial.spec.ts:371:7 › 007: diez recorridos de historial y resumen › HA-E2E09: fallo de red controlado y recuperación consulta PostgreSQL real (378ms)
+  ok 18 e2e\historial.spec.ts:386:7 › 007: diez recorridos de historial y resumen › HA-E2E10: teclado, foco, etiquetas y capturas360/768/1440 (2.4s)
+  ok 19 e2e\identidad.spec.ts:15:5 › acceso, identidad, restauración, cierre y guard con backend real (603ms)
+  ok 20 e2e\identidad.spec.ts:93:5 › formulario por teclado, error genérico, foco y validación nativa (345ms)
+  ok 21 e2e\identidad.spec.ts:124:5 › CSRF obligatorio, restauración anónima y recursos públicos disponibles (245ms)
+  ok 22 e2e\operaciones.spec.ts:66:5 › CI-01/04/06/07: proveedor con respuesta perdida, mismo reintento y recuperación de baja/alta (1.2s)
+  ok 23 e2e\operaciones.spec.ts:177:7 › CI-04/07: alta de proveedor confirmada después del error bloquea el formulario anterior y permite una intención nueva (1.8s)
+  ok 24 e2e\operaciones.spec.ts:177:7 › CI-04/07: alta de solicitud confirmada después del error bloquea el formulario anterior y permite una intención nueva (1.8s)
+  ok 25 e2e\operaciones.spec.ts:278:5 › CI-06/07: alta de solicitud se recupera al recargar y al reabrir sin duplicar (1.4s)
+  ok 26 e2e\operaciones.spec.ts:317:5 › CI-04/06/07: presentar y decidir recuperan commit perdido con replay inmutable (2.0s)
+  ok 27 e2e\operaciones.spec.ts:421:5 › CI-07: dos pestañas, 400 tardío y commit con respuesta perdida mantienen la única clave (721ms)
+  ok 28 e2e\operaciones.spec.ts:490:5 › CI-05/07: permiso revocado antes de recuperar y replay no concede acceso (3.3s)
+  ok 29 e2e\operaciones.spec.ts:569:5 › CI-06/07: reinicio real conserva resultado de alta y descriptor recuperable (4.9s)
+  ok 30 e2e\operaciones.spec.ts:611:5 › CI-07/09: bloqueo PostgreSQL real produce progreso acotado en segunda pestaña (8.1s)
+  ok 31 e2e\proveedores.spec.ts:39:5 › PR-10: doce pasos de proveedores con Angular, API y PostgreSQL reales (4.2s)
+  ok 32 e2e\solicitudes.spec.ts:107:5 › SCI-01–13: trece pasos completos con Angular, API y PostgreSQL reales (4.8s)
+  ok 33 e2e\solicitudes.spec.ts:421:5 › SCI-04 / R004-UI01: carga posiciones no contiguas, añade, guarda y recarga (632ms)
+
+  33 passed (2.2m)

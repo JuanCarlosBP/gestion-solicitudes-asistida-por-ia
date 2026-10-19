@@ -1,0 +1,28 @@
+{
+  "fin": "2026-10-16T13:46:03.3124556Z",
+  "fuentes": [
+    {
+      "sha256": "3df56cccba1b279462a97b467aa7b29204c1fb779ecef47460af2f77e7826359",
+      "ruta": "qa/ag016/carga.mjs"
+    },
+    {
+      "sha256": "23f399fc982e5a583ff2ce53d7066fa4e3971582695ae978912b5ef535ea950f",
+      "ruta": "qa/ag016/caducidad-carga.mjs"
+    },
+    {
+      "sha256": "14b0fd896d6a82ef9167a9e80f8103f90ce6a929a29f28951f9649737da47dc2",
+      "ruta": "qa/ag016/observar-caducidad.mjs"
+    },
+    {
+      "sha256": "7173c9767ec86fba77698f4db10c2e538be5a0f591f4922ff99f4a6266e9e8ed",
+      "ruta": "qa/ag016/evaluar.mjs"
+    },
+    {
+      "sha256": "28ebc006000e50f9aa1226852f2a64c32959cdcc6fd9fae4092b6767eb7a7b9e",
+      "ruta": "qa/evidencias/ag016/contrato-carga-reloj.json"
+    }
+  ],
+  "inicio": "2026-10-16T13:46:01.9734993Z",
+  "exitCode": 0,
+  "tipo": "PRUEBAS_OFFLINE_NO_CAPACIDAD"
+}

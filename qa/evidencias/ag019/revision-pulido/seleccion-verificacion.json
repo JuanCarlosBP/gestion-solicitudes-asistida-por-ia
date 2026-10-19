@@ -1,0 +1,7 @@
+{
+  "estado": "ANGULAR_COMPLETO_PASS",
+  "pruebasOriginalesConservadas": true,
+  "nuevosCasos": 16,
+  "previo": "ui-20261019090141",
+  "limites": "Pruebas locales de la versión corregida; CI de GitHub y revisión humana pendientes."
+}

@@ -1,0 +1,90 @@
+{
+  "modo": "Versión pública instalada",
+  "casos": [
+    {
+      "tipo": "proveedor",
+      "modo": "automática por nombre completo",
+      "texto": "Proveedor ficticio 1",
+      "estado": 200,
+      "resultados": 11
+    },
+    {
+      "tipo": "proveedor",
+      "modo": "automática por parte del nombre",
+      "texto": "ficticio 1",
+      "estado": 200,
+      "resultados": 11
+    },
+    {
+      "tipo": "proveedor",
+      "modo": "botón",
+      "texto": "  FICTICIO 1  ",
+      "estado": 200,
+      "resultados": 11
+    },
+    {
+      "tipo": "proveedor",
+      "modo": "Enter",
+      "texto": "Proveedor ficticio 1",
+      "estado": 200,
+      "resultados": 11
+    },
+    {
+      "tipo": "proveedor",
+      "modo": "automática sin resultados",
+      "texto": "SinCoincidenciasQAf63eafe5",
+      "estado": 200,
+      "resultados": 0
+    },
+    {
+      "tipo": "proveedor",
+      "modo": "limpiar texto",
+      "texto": "",
+      "estado": 200,
+      "resultados": 20
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "automática por nombre completo",
+      "texto": "Demo supervisor",
+      "estado": 200,
+      "resultados": 1
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "automática por parte del nombre",
+      "texto": "pervisor",
+      "estado": 200,
+      "resultados": 1
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "botón",
+      "texto": "  PERVISOR  ",
+      "estado": 200,
+      "resultados": 1
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "Enter",
+      "texto": "Demo supervisor",
+      "estado": 200,
+      "resultados": 1
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "automática sin resultados",
+      "texto": "SinCoincidenciasQA509c7b6f",
+      "estado": 200,
+      "resultados": 0
+    },
+    {
+      "tipo": "supervisor",
+      "modo": "limpiar texto",
+      "texto": "",
+      "estado": 200,
+      "resultados": 1
+    }
+  ],
+  "mutacionesDuranteBusqueda": []
+}

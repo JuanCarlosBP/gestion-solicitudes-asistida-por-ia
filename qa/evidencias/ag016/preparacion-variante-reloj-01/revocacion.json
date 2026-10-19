@@ -1,0 +1,9 @@
+{
+  "inicio": "2026-10-16T13:33:50.509Z",
+  "fin": "2026-10-16T13:34:02.700Z",
+  "antes": "ag016_demo_01|RESERVADO|bfd3c630-d5eb-46b8-ba19-cd5b8db20778\nag016_demo_02|LISTO|10106389-6d26-4f20-a1cf-3bde90868f0b\nag016_demo_03|LISTO|f98dee30-ae0c-4359-9246-864c58be6eb1",
+  "retiradas": "ag016_demo_01\nINSERT 0 1",
+  "despues": "ag016_demo_01|LISTO|0151f88e-3e80-438b-a5c8-7b6d265bf0b7\nag016_demo_02|LISTO|10106389-6d26-4f20-a1cf-3bde90868f0b\nag016_demo_03|LISTO|f98dee30-ae0c-4359-9246-864c58be6eb1",
+  "provision": "Supervisor permanente: tres espacios LISTO, sin iniciar otra JVM.",
+  "estado": "PASS"
+}

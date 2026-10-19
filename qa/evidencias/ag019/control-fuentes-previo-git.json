@@ -1,0 +1,51 @@
+{
+  "id": "ui-20261019142334",
+  "imagen": "sha256:77feece8334f41295b3633d0f51723a11d269c8723dcf690cd4b2e7558f96145",
+  "controles": 132,
+  "pruebasAngular": 592,
+  "capturas": 72,
+  "complementoDeclarativo": {
+    "ruta": "qa/docker-contexto.d.mts",
+    "bytes": 491,
+    "sha256": "01c5c1056de631267628e793d3484a1777d1cf0ad8479249ae71f6d13dabdc51",
+    "runtime": "qa/docker-contexto.mjs",
+    "runtimeSHA256": "485b3977e40064a43a9f7469efb26f10e2d681e75f988989e4a0076e81a386b0",
+    "exports": [
+      "argumentosCompose",
+      "ejecutarDocker",
+      "ejecutarDockerSync"
+    ],
+    "firmas": {
+      "argumentosCompose": [
+        "export function argumentosCompose(): string[];"
+      ],
+      "ejecutarDocker": [
+        "export function ejecutarDocker(\n  comando: string,\n  argumentos: string[],\n  opciones?: ExecFileOptions,\n): Promise<{ stdout: string; stderr: string }>;"
+      ],
+      "ejecutarDockerSync": [
+        "export function ejecutarDockerSync(\n  comando: string,\n  argumentos: string[],\n  opciones: ExecFileOptions & { encoding: 'utf8' },\n): string;"
+      ]
+    },
+    "tipos": [],
+    "imports": [
+      "node:child_process"
+    ],
+    "compilador": "5.9.3",
+    "alcance": "Análisis declarativo, nombres/parámetros y comprobación TypeScript; no ejecuta Docker ni demuestra por sí solo todo el comportamiento del helper.",
+    "comprobaciones": {
+      "declaracion": {
+        "errores": 0,
+        "skipLibCheck": false
+      },
+      "proyectoE2E": {
+        "errores": 0,
+        "archivosRaiz": 11
+      },
+      "noEmit": true
+    }
+  },
+  "fecha": "2026-10-19T18:15:22.634Z",
+  "base": "eaa0baec78ed9b99d8039ea7e6256b254be295d3",
+  "estado": "Fuentes validadas; publicación y CI de esta revisión pendientes de ejecución",
+  "resumenGit": "La PR y sus ejecuciones constituyen la fuente de integración real."
+}

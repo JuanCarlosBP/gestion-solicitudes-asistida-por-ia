@@ -1,0 +1,31 @@
+{
+  "observado": "2026-10-16T13:36:21.8284297Z",
+  "motivo": "Conservar las fuentes concretas que cambiarán tras la pasada completa fallida carga-final-a1; contrato-carga.json original permanece intacto",
+  "archivos": [
+    {
+      "fuente": "qa/ag016/carga.mjs",
+      "copia": "qa/evidencias/ag016/fuentes-carga-v1/carga.mjs",
+      "sha256": "b11ee4085f3aecc32af50ee48fef0c2ff9608e9ff3987e8a9cdc857162cd373c"
+    },
+    {
+      "fuente": "qa/ag016/evaluar.mjs",
+      "copia": "qa/evidencias/ag016/fuentes-carga-v1/evaluar.mjs",
+      "sha256": "71256fc96ff28db6f1723c8059008bf4a1525bca3ec2ad521d1de179cda3f40c"
+    },
+    {
+      "fuente": "qa/ag016/muestrear.mjs",
+      "copia": "qa/evidencias/ag016/fuentes-carga-v1/muestrear.mjs",
+      "sha256": "cdfa0a45fc88d844cf56b1d13f011ca33ccc7d3d9fbad1a3eaf1463cfe592f4d"
+    },
+    {
+      "fuente": "qa/ag016/laboratorio.mjs",
+      "copia": "qa/evidencias/ag016/fuentes-carga-v1/laboratorio.mjs",
+      "sha256": "337b0c246e9ab56cfa4b7925f5ae6ed12e3f67fff6463915d8580942b19fcb9c"
+    },
+    {
+      "fuente": "qa/ag016/copia-restore.mjs",
+      "copia": "qa/evidencias/ag016/fuentes-carga-v1/copia-restore.mjs",
+      "sha256": "606bf0260e3f2249f71fae8f06b5ea6ced5e04f1d7e90ad32160b5484f1f4d68"
+    }
+  ]
+}

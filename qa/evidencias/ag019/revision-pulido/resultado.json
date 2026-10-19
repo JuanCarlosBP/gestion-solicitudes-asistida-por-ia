@@ -1,0 +1,22 @@
+{
+  "estado": "FRONTEND_PREPARADO_Y_PREVISUALIZADO",
+  "id": "ui-20261019142334",
+  "directorio": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\ag018\\pulido\\ui-20261019142334",
+  "paquete": "C:\\Users\\carli\\AppData\\Local\\Temp\\pulido008-seleccion-3f32e21d963d46f5bd37cc8d700b02c0\\PULIDO_008_REANUDAR",
+  "archivo": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\ag018\\pulido\\ui-20261019142334\\ui-20261019142334.tar.gz",
+  "sha256": "df9c5977aa5b010f3c4912d86e83c1a4fbee31cedb4b295b1d5e9ccc5974c3d9",
+  "script": "C:\\Users\\carli\\gestion-solicitudes-asistida-por-ia\\tmp\\ag018\\pulido\\ui-20261019142334\\ui-20261019142334-actualizar.py",
+  "scriptSHA256": "e38a5e344b8f56a46221fadb5331f23c5f719ea6ae20a8deb541241261629b8d",
+  "version": {
+    "id": "ui-20261019142334",
+    "base": "publico-20261019045121",
+    "tag": "jcbp-gestion-frontend:ui-20261019142334",
+    "imagen": "sha256:77feece8334f41295b3633d0f51723a11d269c8723dcf690cd4b2e7558f96145",
+    "fuentesSHA256": "6b51cae48fabbcfc5fd86497a15e1851e67c5595041fb43fdf7a3edb674a19d8",
+    "nginxAnteriorSHA256": "c3c38df060ad4b189165342afa406baf7f53cfd05626dc254d58b0868c5be236",
+    "archivos": {
+      "frontend.tar": "8ba9edb6e8568788472d4fb5196ffe29ffb10517d42dfc50faf8b59da64e3ea7",
+      "nginx.conf": "105e6cf486d01edc5bcfc52dc007a26cee32c0b46f41059078b7b01cbea61cc2"
+    }
+  }
+}

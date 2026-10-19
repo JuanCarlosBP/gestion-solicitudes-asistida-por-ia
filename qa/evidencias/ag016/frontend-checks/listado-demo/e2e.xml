@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="1" errors="0" time="0.06443500000000017">
+<testsuite name="demo-aislamiento.spec.ts" timestamp="2026-10-16T11:03:19.596Z" hostname="" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="008: tres espacios exclusivos, recorrido real por roles, cuarto visitante y pestaña antigua" classname="demo-aislamiento.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+{
+  "resultado": "FRONTEND_ACTUALIZADO_PENDIENTE_PRUEBAS_EXTERNAS",
+  "version": "ui-20261019142334",
+  "base": "publico-20261019045121",
+  "imagen": "sha256:77feece8334f41295b3633d0f51723a11d269c8723dcf690cd4b2e7558f96145",
+  "backendConservado": true,
+  "postgresConservado": true,
+  "provisionadorConservado": true,
+  "fuentesSHA256": "6b51cae48fabbcfc5fd86497a15e1851e67c5595041fb43fdf7a3edb674a19d8",
+  "momento": "2026-10-19T14:25:38.555804+00:00"
+}

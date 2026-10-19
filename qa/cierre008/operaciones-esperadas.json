@@ -1,0 +1,127 @@
+[
+  {
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/cerrar-sesion",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/autenticacion/csrf",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/iniciar-sesion",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/autenticacion/renovar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorAutenticacion.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/historial",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/historial/http/ControladorHistorial.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/identidad/supervisores",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorSupervisores.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/identidad/yo",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/identidad/http/ControladorIdentidad.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/operaciones-idempotentes/{clave}",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/operaciones/http/ControladorOperaciones.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/proveedores",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/proveedores",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/proveedores/{id}",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/api/proveedores/{id}",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/proveedores/{id}/desactivar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/proveedores/{id}/historial",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/historial/http/ControladorHistorial.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/proveedores/{id}/reactivar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/proveedores/http/ControladorProveedores.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/resumen",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/historial/http/ControladorHistorial.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/salud",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/salud/http/ControladorSalud.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/solicitudes",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/solicitudes",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/{id}",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/api/solicitudes/{id}",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/solicitudes/{id}/aprobar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/api/solicitudes/{id}/historial",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/historial/http/ControladorHistorial.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/solicitudes/{id}/presentar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/api/solicitudes/{id}/rechazar",
+    "controlador": "backend/src/main/java/es/gestionsolicitudes/solicitudes/http/ControladorSolicitudes.java"
+  }
+]

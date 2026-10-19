@@ -1,0 +1,11 @@
+{
+  "estado": "PENDIENTE",
+  "perfilRecomendado": null,
+  "pendientes": [
+    "Falta a1",
+    "Falta a2",
+    "Falta b1",
+    "Falta b2",
+    "Evidencia incompleta, sintética o versiones/contrato no comparables"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "fecha": "2026-10-16T12:23:29.073Z",
+  "perfil": "A",
+  "parametros": {
+    "runtime": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    },
+    "provisionador": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    }
+  },
+  "archivos": [
+    {
+      "ruta": "backend/target/gestion-solicitudes-0.0.1.jar",
+      "sha256": "0fbecb6dc3890ba27c73eed6280ddd0320b524725eb5fb4f9fc7b3931109650b"
+    },
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/index.html",
+      "sha256": "ea2997822a268401c67be2cd65d1dbd609004ababc404cfe59c828ed6c54fe4c"
+    },
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/main-I52BMCA5.js",
+      "sha256": "fde6f9cb7f6dee844073e22086a98a7fc8e0cb6a0da748acb696545f99e860fa"
+    },
+    {
+      "ruta": "frontend/dist/gestion-solicitudes-frontend/browser/styles-6GABB4AX.css",
+      "sha256": "0ad0cb4bec7335f81391a864482fdce09ac461cdbb28a5e68b25916a0ffc2717"
+    },
+    {
+      "ruta": "infraestructura/demo/compose.yaml",
+      "sha256": "acb3aa050e5152747430c04d7ea80b94b56f5922613e46b900b5713f9d61d7b0"
+    },
+    {
+      "ruta": "infraestructura/demo/inicializar.sh",
+      "sha256": "14c67cd5d546bf1223df80e916b05fbb11a1b3e8cebb0e48bd69ad1c5785be7a"
+    },
+    {
+      "ruta": "infraestructura/demo/nginx-local.conf",
+      "sha256": "a26090ca6a28956aae6f59cd8af707754bc7ac6b14a37f4da879849994cdddc5"
+    },
+    {
+      "ruta": "infraestructura/demo/pg_hba.conf",
+      "sha256": "f1f34a46bc0e901cc3b2b80fa6bf97f1c22bc7aa39051d5acea1b001a17c51cf"
+    },
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "b11ee4085f3aecc32af50ee48fef0c2ff9608e9ff3987e8a9cdc857162cd373c"
+    },
+    {
+      "ruta": "qa/ag016/cliente.mjs",
+      "sha256": "a0f0575444512638c1c2bec64130796b19a4f6ceb96005d33d96c6f236746540"
+    },
+    {
+      "ruta": "qa/ag016/copia-restore.mjs",
+      "sha256": "606bf0260e3f2249f71fae8f06b5ea6ced5e04f1d7e90ad32160b5484f1f4d68"
+    },
+    {
+      "ruta": "qa/ag016/laboratorio.mjs",
+      "sha256": "337b0c246e9ab56cfa4b7925f5ae6ed12e3f67fff6463915d8580942b19fcb9c"
+    },
+    {
+      "ruta": "qa/ag016/metricas.mjs",
+      "sha256": "7d71a34db80b20a54e3b593ae235754e352626c48424b8169f159837f7fd483f"
+    },
+    {
+      "ruta": "qa/ag016/muestrear.mjs",
+      "sha256": "cdfa0a45fc88d844cf56b1d13f011ca33ccc7d3d9fbad1a3eaf1463cfe592f4d"
+    },
+    {
+      "ruta": "qa/ag016/operar.mjs",
+      "sha256": "bb1b633ae19cd7e5486fce19b551e217452ac7c6ba3937d78529eb862378bea2"
+    },
+    {
+      "ruta": "qa/ag016/parametros-publicos.mjs",
+      "sha256": "4505f9c5007160239add3a1f3a1647e474f1cdfb569d3c31d1a35710817b5a1b"
+    },
+    {
+      "ruta": "qa/ag016/perfil.mjs",
+      "sha256": "703a3007497dad4550727ee3323a37c3925d8bf72db520907da1074bf0cbb9d4"
+    },
+    {
+      "ruta": "qa/ag016/plazo-arranque.mjs",
+      "sha256": "21a65a81975ce890470972bd9e9c5a927972d6234c31ccdbfc82fedb0b5b03a9"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "b6878c25966c17a5ad4b9fa7cefa148ecaab6a2bcc6c54dc7d81fb018c70e51d"
+    },
+    {
+      "ruta": "qa/evidencias/ag016/contrato-carga.json",
+      "sha256": "ccead245ea6f2e320886f0dc2e58137ab6ce7b79f24863d2e5e6d458a8aa6707"
+    }
+  ]
+}

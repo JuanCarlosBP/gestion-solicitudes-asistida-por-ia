@@ -1,0 +1,36 @@
+{
+  "resultados": [
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:47:00.6731929+02:00",
+      "script": "sesiones"
+    },
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:47:07.0818776+02:00",
+      "script": "proveedores"
+    },
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:47:14.2264590+02:00",
+      "script": "solicitudes"
+    },
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:47:31.6781513+02:00",
+      "script": "aprobaciones"
+    },
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:47:51.8423597+02:00",
+      "script": "concurrencia"
+    },
+    {
+      "exitCode": 0,
+      "fin": "2026-10-16T13:48:01.7722320+02:00",
+      "script": "historial"
+    }
+  ],
+  "fin": "2026-10-16T13:48:01.7723335+02:00",
+  "inicio": "2026-10-16T13:46:32.6383981+02:00"
+}

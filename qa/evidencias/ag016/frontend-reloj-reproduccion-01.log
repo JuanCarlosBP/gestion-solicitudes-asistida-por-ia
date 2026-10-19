@@ -1,0 +1,50 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/demo/demo-pagina.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files          | Names                     |  Raw size
+spec-app-demo-demo-pagina.js | spec-app-demo-demo-pagina |  44.80 kB | 
+chunk-RSTWSNOR.js            | -                         |   4.75 kB | 
+styles.css                   | styles                    |   1.49 kB | 
+init-testbed.js              | init-testbed              |   1.21 kB | 
+vitest-mock-patch.js         | vitest-mock-patch         | 974 bytes | 
+
+                             | Initial total             |  53.23 kB
+
+Application bundle generation complete. [2.617 seconds] - 2026-10-16T11:59:40.148Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts (5 tests | 1 failed) 103ms
+     × actualiza el reloj al reservar tras tener la página abierta y no muestra 61 minutos 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts > DO-01/05/08: presentación y guías accesibles > actualiza el reloj al reservar tras tener la página abierta y no muestra 61 minutos
+AssertionError: expected 61 to be 60 // Object.is equality
+
+- Expected
++ Received
+
+- 60
++ 61
+
+ ❯ src/app/demo/demo-pagina.spec.ts:79:49
+     77|       });
+     78|       vista.detectChanges();
+     79|       expect(vista.componentInstance.minutos()).toBe(60);
+       |                                                 ^
+     80|       expect((vista.nativeElement as HTMLElement).querySelector('.tiem…
+     81|         '60 min',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  13:59:40
+   Duration  2.23s (transform 95ms, setup 493ms, import 104ms, tests 103ms, environment 1.34s)
+

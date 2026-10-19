@@ -1,0 +1,14 @@
+{
+  "observado": "2026-10-16T10:48:37.117Z",
+  "rama": "ref: refs/heads/feature/008-demo-operacion-entrega",
+  "commit": "eaa0baec78ed9b99d8039ea7e6256b254be295d3",
+  "arbol": "5e5d0a92ed719e74729461ab3f8d63baaa84bcb2",
+  "metodo": "Lectura directa HEAD/ref y objeto commit en pack/idx; ningún comando Git",
+  "cierreDocumental": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/README.md",
+    "especificaciones/README.md",
+    "MEMORY.md"
+  ]
+}

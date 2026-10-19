@@ -1,0 +1,55 @@
+{
+  "inicio": "2026-10-16T11:58:22.170Z",
+  "fin": "2026-10-16T11:58:22.186Z",
+  "resultado": "PASS_OFFLINE",
+  "alcance": "Constante de desfases compartida y diagnóstico de rechazo con fetch simulado; no ejecución API ni capacidad",
+  "previo": {
+    "resultado": "FAIL_CONSERVADO",
+    "peticiones": 67,
+    "duracionMs": 548.355,
+    "iniciosABC": [
+      13.217,
+      13.448,
+      13.512
+    ],
+    "rechazosInesperados": 4
+  },
+  "correccion": "El modo de prueba aplicaba Promise.all sin desfase; ahora usa0/1000/2000ms ya declarados y registra sus inicios. No modifica límites, mezcla útil, ventanas ni añade retries.",
+  "desfasesMs": [
+    0,
+    1000,
+    2000
+  ],
+  "casos": [
+    {
+      "nombre": "rechazo-proxy-html",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "limite-aplicacion-json",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "sobrecupo-json",
+      "resultado": "PASS"
+    },
+    {
+      "nombre": "codigo-no-listado-omitido",
+      "resultado": "PASS"
+    }
+  ],
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/carga.mjs",
+      "sha256": "6c1f66ace4fe75f56bf63196b17638071b1d409cb2ab5507dd5f7e3ad6e8e1e7"
+    },
+    {
+      "ruta": "qa/ag016/recorrido.mjs",
+      "sha256": "b6878c25966c17a5ad4b9fa7cefa148ecaab6a2bcc6c54dc7d81fb018c70e51d"
+    },
+    {
+      "ruta": "qa/evidencias/ag016/contrato-carga.json",
+      "sha256": "ccead245ea6f2e320886f0dc2e58137ab6ce7b79f24863d2e5e6d458a8aa6707"
+    }
+  ]
+}

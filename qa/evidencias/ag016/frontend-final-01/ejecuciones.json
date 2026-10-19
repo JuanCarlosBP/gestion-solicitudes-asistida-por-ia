@@ -1,0 +1,48 @@
+{
+  "entorno": {
+    "node": "v24.13.0",
+    "plataforma": "win32"
+  },
+  "ejecuciones": [
+    {
+      "script": "test",
+      "inicio": "2026-10-16T11:38:48.450Z",
+      "fin": "2026-10-16T11:39:37.448Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "test.log"
+    },
+    {
+      "script": "typecheck",
+      "inicio": "2026-10-16T11:39:37.449Z",
+      "fin": "2026-10-16T11:39:41.546Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "typecheck.log"
+    },
+    {
+      "script": "lint",
+      "inicio": "2026-10-16T11:39:41.547Z",
+      "fin": "2026-10-16T11:40:03.337Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "lint.log"
+    },
+    {
+      "script": "format:check",
+      "inicio": "2026-10-16T11:40:03.338Z",
+      "fin": "2026-10-16T11:40:05.478Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "format-check.log"
+    },
+    {
+      "script": "build",
+      "inicio": "2026-10-16T11:40:05.479Z",
+      "fin": "2026-10-16T11:40:11.004Z",
+      "exitCode": 0,
+      "resultado": "PASS",
+      "log": "build.log"
+    }
+  ]
+}

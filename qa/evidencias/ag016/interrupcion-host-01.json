@@ -1,0 +1,11 @@
+{
+  "observado": "2026-10-16T13:25:47.8184664+02:00",
+  "ultimoArranqueWindows": "2026-10-16T13:24:05+02:00",
+  "hechos": [
+    "Sesión de ejecución15942 no disponible; ningún proceso Node/Java/Docker previo seguía vivo",
+    "Docker Desktop detenido; npipe ausente",
+    "ciclo-avanzado-01/restore.json registra copia y restorePASS antes del reinicio; no existe resultado completo del ciclo"
+  ],
+  "accion": "Arranque de Docker Desktop autorizado para continuar; no WSL global ni cambios de límites; comprobar IDs antes de operar",
+  "impacto": "Ensayo avanzado interrumpido. No contar como PASS, no sobrescribir QA restaurada ni evidencia. Benchmark todavía no iniciado."
+}

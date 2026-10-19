@@ -1,0 +1,61 @@
+{
+  "inicio": "2026-10-16T11:22:47.987Z",
+  "fin": "2026-10-16T11:23:19.808Z",
+  "base": "ag016_demo_01",
+  "qa": "ag016_restore_qa_funcional",
+  "estado": "PASS",
+  "mediciones": {
+    "copiaMs": 829.4645,
+    "restoreMs": 2461.029699999999
+  },
+  "tablas": [
+    {
+      "tabla": "conceptos_solicitud",
+      "datos": "0|d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "tabla": "decisiones_solicitud",
+      "datos": "0|d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "tabla": "eventos_historial",
+      "datos": "1|dc38fe822accba48eec7351f93edfb06"
+    },
+    {
+      "tabla": "flyway_schema_history",
+      "datos": "7|c9914da49dd6c342f4dd14bae64d43a1"
+    },
+    {
+      "tabla": "operaciones_idempotentes_solicitud",
+      "datos": "1|a243cf4f892960c4eb4a69d071c30c82"
+    },
+    {
+      "tabla": "proveedores",
+      "datos": "20|30bb9638c15d7fd8100370e9f4416496"
+    },
+    {
+      "tabla": "roles",
+      "datos": "4|4b15432c34d39cfd7840c2834af4ccb1"
+    },
+    {
+      "tabla": "solicitudes",
+      "datos": "1|e9e8c81db08d4e91842cb81fac6ba491"
+    },
+    {
+      "tabla": "usuarios",
+      "datos": "3|4806dbe3daf1233dd6c83bb366ea7cdd"
+    },
+    {
+      "tabla": "usuarios_roles",
+      "datos": "3|e7f3132cfeb9e5a7c8abb36a75f465d4"
+    }
+  ],
+  "bytesDump": 61506,
+  "bytesCifrado": 61546,
+  "sha256Cifrado": "7804fbe0ff315bbead36e81763ff3847b130ad0d7d38639815e3b4f5ba7e5ab7",
+  "sesionesVivasQA": "0|0",
+  "permisos": "ag016_app_01|false\nag016_app_02|false\nag016_app_03|false",
+  "fuenteIntacta": true,
+  "cifrado": "AES-256-GCM; clave separada fuera de Git",
+  "limite": "Cotejo excluye sesiones/refresh invalidados solo enQA. Datos/hash de filas se reducen a agregados, nunca se publican credenciales. RPO/RTO no contractuales."
+}

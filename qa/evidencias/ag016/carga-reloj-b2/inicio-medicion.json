@@ -1,0 +1,35 @@
+{
+  "inicio": "2026-10-16T23:56:12.829Z",
+  "origenMonoMs": 85761.0205,
+  "finPrevisto": "2026-10-17T01:01:12.829Z",
+  "duracionMs": 3900000,
+  "ejecucion": "carga-reloj-b2",
+  "perfil": "B",
+  "semilla": 160082026,
+  "fases": [
+    {
+      "nombre": "calentamiento",
+      "inicioMs": 0,
+      "finMs": 600000,
+      "intervaloMs": 30000
+    },
+    {
+      "nombre": "nominal",
+      "inicioMs": 600000,
+      "finMs": 2400000,
+      "intervaloMs": 30000
+    },
+    {
+      "nombre": "pico",
+      "inicioMs": 2400000,
+      "finMs": 2700000,
+      "intervaloMs": 10000
+    },
+    {
+      "nombre": "operaciones",
+      "inicioMs": 2700000,
+      "finMs": 3900000,
+      "intervaloMs": 30000
+    }
+  ]
+}

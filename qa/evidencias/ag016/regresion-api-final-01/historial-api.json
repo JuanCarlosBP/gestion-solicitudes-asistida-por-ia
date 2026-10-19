@@ -1,0 +1,585 @@
+{
+  "fecha": "2026-10-16T11:48:01.762Z",
+  "base": "http://127.0.0.1:18087",
+  "resultado": "PASS",
+  "etapa": "medición local",
+  "controles": [
+    {
+      "criterio": "Login ficticio ADMINISTRADOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SOLICITANTE",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio SUPERVISOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "Login ficticio AUDITOR",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 alta proveedor201",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA01 alta nueva con cobertura conocida",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 acción de alta exacta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 actor y versión inicial",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 campos de página cerrados",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 replay alta sin evento extra",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 modificar proveedor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 baja proveedor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 replay baja",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 no-op no registra hecho falso",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 reactivar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 cuatro acciones ordenadas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 campos de página cerrados",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 catálogo no concede historial",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 global restringido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 catálogo no concede historial",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 global restringido",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 crear borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 supervisor no ve borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 guardar borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 asignación borrador sigue oculta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 replay presentación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 decisión V5 aprobar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 replay decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA01 cuatro hechos reales",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 proyección V5",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 ninguna decisión duplicada V7",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 único registro autoritativo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 campos de página cerrados",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 supervisor conserva final asignada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 detalle autorizado original conserva textos de negocio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 crear borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 supervisor no ve borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 guardar borrador",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 asignación borrador sigue oculta",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 presentar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA02 replay presentación",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 decisión V5 rechazar",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 replay decisión",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA01 cuatro hechos reales",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 proyección V5",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 ninguna decisión duplicada V7",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA03 único registro autoritativo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 campos de página cerrados",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 evento solo campos mínimos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 actor mínimo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 sin datos privados de fixture",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 supervisor conserva final asignada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 detalle autorizado original conserva textos de negocio",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado size=0",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado size=101",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado page=-1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado page=0&page=1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado accion=INVENTADA",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado actor=no-uuid",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado desde=2026-01-01",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado desde=2026-02-30T00:00:00Z",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado desde=2026-10-16T00:00:00Z&hasta=2026-10-15T00:00:00Z",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 filtro inválido controlado desconocido=1",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 conteo y páginas",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 páginas sin duplicar en conjunto estable",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 aviso calculado antes de filtros",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 intervalo inclusivo",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 página vacía acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 resumen disponible admin",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 contadores coinciden BD visible admin",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 rol lector sin pendientes propios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 resumen disponible auditor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 contadores coinciden BD visible auditor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 rol lector sin pendientes propios",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 resumen disponible solicitante",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 contadores coinciden BD visible solicitante",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 resumen disponible supervisor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA07 contadores coinciden BD visible supervisor",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 autenticación requerida historial",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 autenticación requerida resumen",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 autenticación requerida proveedores",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 autenticación requerida solicitudes",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 proveedor inexistente404",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA05 solicitud inexistente404",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 global filtrado y límite histórico",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA04 no-store",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA01 fixture artificial sin creación registrada no inventa eventos",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    },
+    {
+      "criterio": "HA06 consulta acotada",
+      "resultado": "PASS"
+    }
+  ],
+  "limite": "Datos ficticios; tokens y cookies solo en memoria. Rollback/revocación/carreras y evolución se complementan con PostgreSQL IT."
+}

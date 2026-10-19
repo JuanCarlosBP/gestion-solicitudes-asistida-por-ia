@@ -1,0 +1,67 @@
+{
+  "fecha": "2026-10-16T12:09:56.566Z",
+  "casos": [
+    {
+      "nombre": "No exporta valores privados desconocidos",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Captura cambio de límite sin reinterpretarlo",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Rechaza clave pública duplicada",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Rechaza ausencia sin adoptar defaults",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Rechaza texto en campo numérico",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Rechaza destino fuera de inventario",
+      "estado": "PASS"
+    },
+    {
+      "nombre": "Runtime y provisionador reales comparten parámetros",
+      "estado": "PASS"
+    }
+  ],
+  "parametros": {
+    "runtime": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    },
+    "provisionador": {
+      "entorno": "local",
+      "espacios": [
+        "ag016_demo_01",
+        "ag016_demo_02",
+        "ag016_demo_03"
+      ],
+      "cupo": 3,
+      "duracion.minutos": 60,
+      "pool.maximo": 3,
+      "peticiones.minuto": 240,
+      "autenticacion.minuto": 30,
+      "reservas.minuto": 12,
+      "almacenamiento.bytes": 268435456,
+      "metricas.segundos": 10
+    }
+  }
+}

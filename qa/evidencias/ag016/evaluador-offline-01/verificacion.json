@@ -1,0 +1,53 @@
+{
+  "registradoEn": "2026-10-16T12:07:06.353Z",
+  "tipo": "VERIFICACION_OFFLINE_NO_BENCHMARK",
+  "fuentes": [
+    {
+      "ruta": "qa/ag016/evaluar.mjs",
+      "sha256": "9543eae3ad59772e92d1cb8adcf6effcd188399eb58d8fed6fc3fb24d38c1047"
+    },
+    {
+      "ruta": "qa/ag016/evaluar.test.mjs",
+      "sha256": "6b93b988efc6a830799f4e7a8f08473a26b77fa523d17efb47c98df09e95eafa"
+    }
+  ],
+  "comprobaciones": [
+    {
+      "comando": "node --check qa/ag016/evaluar.mjs",
+      "exitCode": 0
+    },
+    {
+      "comando": "node --test qa/ag016/evaluar.test.mjs",
+      "exitCode": 0,
+      "pruebas": 19,
+      "fallos": 0,
+      "omitidas": 0,
+      "evidenciaHerramienta": "exec chunk 26633a; ejecutado antes de este registro"
+    },
+    {
+      "comando": "node qa/ag016/evaluar.mjs --matriz",
+      "inicio": "2026-10-16T12:07:06.231Z",
+      "exitCode": 0,
+      "observado": "PENDIENTE; perfilRecomendado=null"
+    },
+    {
+      "comando": "node qa/ag016/evaluar.mjs evaluador-offline-01 perfil-inexistente",
+      "exitCode": 2,
+      "observado": "Rechazo por evaluacion.json existente; contenido idéntico"
+    }
+  ],
+  "alcance": [
+    "Sin Docker/Git ni compilaciones",
+    "19 fixtures sintéticos en memoria no equivalen a pasadas",
+    "No se ha evaluado ninguna pasada A/B real"
+  ],
+  "cli": {
+    "pasada": "node qa/ag016/evaluar.mjs carga-a1 perfil-a1",
+    "salida": "qa/evidencias/ag016/carga-a1/evaluacion.json; creación exclusiva wx",
+    "matriz": "node qa/ag016/evaluar.mjs --matriz carga-a1 carga-a2 carga-b1 carga-b2"
+  },
+  "pendientes": [
+    "Revisión independiente del evaluador",
+    "Evidencia real de las cuatro pasadas"
+  ]
+}

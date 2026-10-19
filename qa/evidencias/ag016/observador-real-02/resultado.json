@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-10-16T13:50:39.673Z",
+  "resultado": "PASS",
+  "tipo": "SOLO_LECTURA_INSTANT_ORIGINAL_Y_PRECISION",
+  "pasadaOrigen": "arnes-http-04",
+  "observaciones": [
+    {
+      "version": "AG016-observador-1",
+      "resultado": "ESPERANDO",
+      "espacio": "ag016_demo_02",
+      "generacion": "10106389-6d26-4f20-a1cf-3bde90868f0b",
+      "expiraEn": "2026-10-16T14:46:05.376018757Z",
+      "reservadaEn": "2026-10-16T13:46:05.376019Z",
+      "caducadaEn": null,
+      "ttlCoherente": true,
+      "posterior": null,
+      "retrasoServidorMs": null,
+      "observadoUTC": "2026-10-16T13:50:34.992Z",
+      "duracionMs": 2333.9219,
+      "identidad": {
+        "postgres": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+        "backend": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98"
+      }
+    },
+    {
+      "version": "AG016-observador-1",
+      "resultado": "ESPERANDO",
+      "espacio": "ag016_demo_03",
+      "generacion": "f98dee30-ae0c-4359-9246-864c58be6eb1",
+      "expiraEn": "2026-10-16T14:46:05.684019828Z",
+      "reservadaEn": "2026-10-16T13:46:05.684020Z",
+      "caducadaEn": null,
+      "ttlCoherente": true,
+      "posterior": null,
+      "retrasoServidorMs": null,
+      "observadoUTC": "2026-10-16T13:50:37.300Z",
+      "duracionMs": 2307.4688999999994,
+      "identidad": {
+        "postgres": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+        "backend": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98"
+      }
+    }
+  ],
+  "precision": [
+    {
+      "original": "2026-01-01T00:00:00.123456500Z",
+      "normalizada": "2026-01-01T00:00:00.123457Z",
+      "observado": "2026-01-01T00:00:00.123457Z",
+      "coincide": true
+    },
+    {
+      "original": "2026-01-01T00:00:00.123457500Z",
+      "normalizada": "2026-01-01T00:00:00.123458Z",
+      "observado": "2026-01-01T00:00:00.123458Z",
+      "coincide": true
+    },
+    {
+      "original": "2026-12-31T23:59:59.999999500Z",
+      "normalizada": "2027-01-01T00:00:00.000000Z",
+      "observado": "2027-01-01T00:00:00.000000Z",
+      "coincide": true
+    }
+  ],
+  "limite": "Reservas ya liberadas: sin CADUCADA, resultado ESPERANDO esperado para ese historial; no es prueba de caducidad natural de60min"
+}

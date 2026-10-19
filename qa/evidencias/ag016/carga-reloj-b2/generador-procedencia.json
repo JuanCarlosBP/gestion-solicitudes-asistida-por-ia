@@ -1,0 +1,14 @@
+{
+  "version": "AG016-planificador-entero-1",
+  "originalRuta": "qa/ag016/carga.mjs",
+  "originalSHA256": "3df56cccba1b279462a97b467aa7b29204c1fb779ecef47460af2f77e7826359",
+  "canonicoSHA256": "ec03e7eaa8ac76bcae6664060d6d02d740dcb7504a585cf005b475ddcf2fd523",
+  "ejecutableSHA256": "a7225daad18d578035d6262205e9c2aeb2d6d7b6fd2cdd14a471f9e3e69cd93d",
+  "ejecutableRelativo": "tmp/ag016/cierre-chat-lote3/generador/carga-planificador-entero.mjs",
+  "cambios": "Solo agenda por offsets enteros; imports redirigidos a los cuatro módulos originales del repositorio. No cambia HTTP, datos, parámetros, plazos, ni aserciones.",
+  "productoModificado": false,
+  "fuenteOriginalModificada": false,
+  "ejecucion": "carga-reloj-b2",
+  "emitidoEn": "2026-10-16T23:54:47.058Z",
+  "pidGenerador": 23680
+}

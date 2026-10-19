@@ -1,8 +1,9 @@
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
-import { prepararDirectorioEvidencias, raizProyecto, rutaDelProyecto } from './rutas-evidencia.mjs';
+import { argumentosCompose, ejecutarDocker } from './docker-contexto.mjs';
+import { prepararDirectorioEvidencias, raizProyecto } from './rutas-evidencia.mjs';
+
+const compose = argumentosCompose();
 
 // Solo datos ficticios y loopback. Nunca se escriben cuerpos de login ni tokens.
 const base = new URL(process.env.BASE_URL || 'http://127.0.0.1:18080');
@@ -11,9 +12,8 @@ if (base.protocol !== 'http:' || !['127.0.0.1', 'localhost', '[::1]'].includes(b
   throw new Error('Esta comprobación solo permite HTTP loopback, sin credenciales ni parámetros en URL.');
 }
 const evidencia = prepararDirectorioEvidencias();
-const entorno = rutaDelProyecto(process.env.QA_ENTORNO || 'infraestructura/.env.example');
 const controles = [];
-const ejecutar = promisify(execFile);
+const ejecutar = ejecutarDocker;
 const cuentas = ['SOLICITANTE', 'SUPERVISOR', 'AUDITOR', 'ADMINISTRADOR'];
 const publico = ['correo', 'id', 'nombreVisible', 'roles'];
 
@@ -118,7 +118,7 @@ try {
   }
 
   const sesion = await login();
-  await ejecutar('docker', ['compose', '--env-file', entorno, '-f', 'infraestructura/compose.yaml', 'restart', 'backend'], {
+  await ejecutar('docker', [...compose, 'restart', 'backend'], {
     cwd: raizProyecto, windowsHide: true, timeout: 60000,
   });
   await esperarSalud();

@@ -1,0 +1,10 @@
+{
+  "estado": "INTERRUMPIDA_NO_PASADA_VALIDA",
+  "motivo": "Revisión visual de E2E final03 muestra61min; congelar corrección de UI antes de las cuatro pasadas comparables",
+  "procesos": [
+    39472,
+    39560
+  ],
+  "fecha": "2026-10-16T14:13:47.4586784+02:00",
+  "dockerModificado": false
+}

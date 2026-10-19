@@ -1,0 +1,50 @@
+
+> gestion-solicitudes-frontend@0.0.1 test
+> ng test --watch=false --include=src/app/demo/*.spec.ts
+
+> Building...
+√ Building...
+Initial chunk files               | Names                          |  Raw size
+spec-app-demo-demo-pagina.js      | spec-app-demo-demo-pagina      |  30.90 kB | 
+spec-app-demo-demo-operaciones.js | spec-app-demo-demo-operaciones |  18.28 kB | 
+spec-app-demo-demo-interceptor.js | spec-app-demo-demo-interceptor |   6.49 kB | 
+chunk-MGVQ6E6H.js                 | -                              |   6.48 kB | 
+spec-app-demo-demo-api.js         | spec-app-demo-demo-api         |   5.19 kB | 
+chunk-RSTWSNOR.js                 | -                              |   4.75 kB | 
+chunk-7CSFDON2.js                 | -                              |   3.81 kB | 
+spec-app-demo-demo-contexto.js    | spec-app-demo-demo-contexto    |   3.69 kB | 
+chunk-ERX2JGPX.js                 | -                              |   2.08 kB | 
+chunk-WZH6FTNV.js                 | -                              |   1.62 kB | 
+styles.css                        | styles                         |   1.49 kB | 
+init-testbed.js                   | init-testbed                   |   1.21 kB | 
+vitest-mock-patch.js              | vitest-mock-patch              | 974 bytes | 
+
+                                  | Initial total                  |  86.96 kB
+
+Application bundle generation complete. [3.870 seconds] - 2026-10-16T10:57:50.537Z
+
+
+ RUN  v4.1.11 C:/Users/carli/gestion-solicitudes-asistida-por-ia/frontend
+
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-operaciones.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-interceptor.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-api.spec.ts (0 test)
+ ❯ |gestion-solicitudes-frontend| src/app/demo/demo-contexto.spec.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-api.spec.ts [ src/app/demo/demo-api.spec.ts ]
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-contexto.spec.ts [ src/app/demo/demo-contexto.spec.ts ]
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-interceptor.spec.ts [ src/app/demo/demo-interceptor.spec.ts ]
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-operaciones.spec.ts [ src/app/demo/demo-operaciones.spec.ts ]
+ FAIL  |gestion-solicitudes-frontend| src/app/demo/demo-pagina.spec.ts [ src/app/demo/demo-pagina.spec.ts ]
+Error: EPERM: operation not permitted, rename 'C:\Users\carli\AppData\Local\Packages\sandbox.{c4ec7384-baa9-480f-9f47-06e19a18b9b9}\AC\Temp\0SEc6CJjFmm8bheE6RlWn\client\.tmp-1792148285155-835s3smzt72' -> 'C:\Users\carli\AppData\Local\Packages\sandbox.{c4ec7384-baa9-480f-9f47-06e19a18b9b9}\AC\Temp\0SEc6CJjFmm8bheE6RlWn\client\0733a337d6a4bebf56cd2a62fdd2ccb946972f06'
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  no tests
+   Start at  12:57:52
+   Duration  12.70s (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 59.93s)
+

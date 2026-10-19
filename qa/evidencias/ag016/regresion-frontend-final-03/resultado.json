@@ -1,0 +1,36 @@
+{
+  "inicio": "2026-10-16T12:02:28.614Z",
+  "fin": "2026-10-16T12:02:34.194Z",
+  "estado": "PASS",
+  "objetivos": [
+    "frontend"
+  ],
+  "antes": [
+    {
+      "servicio": "postgres",
+      "id": "153558a9a557449b78ce629fa9fc7af21977d4fb06d9d437b24368aba3b1d09e"
+    },
+    {
+      "servicio": "backend",
+      "id": "758a1f197f269a4668672574cb22faabad65f067f2ecb3f406c182586813a298"
+    },
+    {
+      "servicio": "frontend",
+      "id": "215b747dcf21695efcd712eef6b08f8c6a84d95a9166f1cf6bfdd55f47372949"
+    }
+  ],
+  "despues": [
+    {
+      "servicio": "postgres",
+      "id": "153558a9a557449b78ce629fa9fc7af21977d4fb06d9d437b24368aba3b1d09e"
+    },
+    {
+      "servicio": "backend",
+      "id": "758a1f197f269a4668672574cb22faabad65f067f2ecb3f406c182586813a298"
+    },
+    {
+      "servicio": "frontend",
+      "id": "220449b7ab2c049bafc190854698f586c61d17a11f6d513a577da1af966eae67"
+    }
+  ]
+}

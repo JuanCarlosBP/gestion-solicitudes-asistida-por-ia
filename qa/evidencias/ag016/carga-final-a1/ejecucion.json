@@ -1,0 +1,44 @@
+{
+  "inicio": "2026-10-16T12:23:28.247Z",
+  "ejecucion": "carga-final-a1",
+  "modo": "MEDICION_65_MINUTOS",
+  "semilla": 160082026,
+  "perfil": "A",
+  "pasada": "a1",
+  "fases": [
+    {
+      "nombre": "calentamiento",
+      "inicioMs": 0,
+      "finMs": 600000,
+      "intervaloMs": 30000
+    },
+    {
+      "nombre": "nominal",
+      "inicioMs": 600000,
+      "finMs": 2400000,
+      "intervaloMs": 30000
+    },
+    {
+      "nombre": "pico",
+      "inicioMs": 2400000,
+      "finMs": 2700000,
+      "intervaloMs": 10000
+    },
+    {
+      "nombre": "operaciones",
+      "inicioMs": 2700000,
+      "finMs": 3900000,
+      "intervaloMs": 30000
+    }
+  ],
+  "mezcla": "recorrido.mjs",
+  "datosInicialesPorEspacio": {
+    "proveedores": 20,
+    "solicitudes": 100,
+    "conceptosPorSolicitud": 5,
+    "BORRADOR": 60,
+    "PRESENTADA": 20,
+    "APROBADA": 10,
+    "RECHAZADA": 10
+  }
+}

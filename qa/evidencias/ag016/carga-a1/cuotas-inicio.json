@@ -1,0 +1,55 @@
+{
+  "fecha": "2026-10-16T12:12:09.181Z",
+  "perfil": "A",
+  "limites": [
+    {
+      "servicio": "backend",
+      "id": "d64c3b5f31ef989f6854526927749a381c31d8f055857f04c12b39bfa0beab98",
+      "iniciadoEn": "2026-10-16T12:07:02.346055234Z",
+      "imagen": "sha256:1f500b8f2ae84da11b3bd52b8a65443d8a84be96e2227c141466f00f09df1e54",
+      "memoria": 1006632960,
+      "swap": 1006632960,
+      "nanoCpus": 550000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "1006632960\n0\n55000 100000"
+    },
+    {
+      "servicio": "postgres",
+      "id": "6c76f68bdce2715b529f0b94c96c29390b16df3c0974a074f3f4bdcfe7983330",
+      "iniciadoEn": "2026-10-16T12:06:59.867603369Z",
+      "imagen": "sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "memoria": 536870912,
+      "swap": 536870912,
+      "nanoCpus": 250000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "536870912\n0\n25000 100000"
+    },
+    {
+      "servicio": "frontend",
+      "id": "4e73ff87c6a1b8c13c897d2091320abf3eb0da39cea60351e9c4879caa56b052",
+      "iniciadoEn": "2026-10-16T12:07:03.211189427Z",
+      "imagen": "sha256:c48ec694555fb820a3023a9ac54e3df0c46034b2b25ee4627a35bc66ce8795fd",
+      "memoria": 67108864,
+      "swap": 67108864,
+      "nanoCpus": 50000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "67108864\n0\n5000 100000"
+    },
+    {
+      "servicio": "provisionador",
+      "id": "95b9d76061f11defb930909725c6377aa3008d53149a530b6c4071d5c9d06fa1",
+      "iniciadoEn": "2026-10-16T12:07:00.682938673Z",
+      "imagen": "sha256:1f500b8f2ae84da11b3bd52b8a65443d8a84be96e2227c141466f00f09df1e54",
+      "memoria": 268435456,
+      "swap": 268435456,
+      "nanoCpus": 50000000,
+      "reinicios": 0,
+      "oom": false,
+      "cgroup": "268435456\n0\n5000 100000"
+    }
+  ],
+  "reservaSO_MiB": 256
+}

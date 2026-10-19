@@ -1,0 +1,8 @@
+{
+  "fecha": "2026-10-16T12:26:17.471Z",
+  "estado": "PASS",
+  "archivos": 16,
+  "enlacesRelativos": 253,
+  "errores": [],
+  "limite": "Existencia de destinos locales, sin red ni validación semántica de anclas"
+}

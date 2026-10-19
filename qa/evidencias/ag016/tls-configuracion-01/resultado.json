@@ -1,0 +1,13 @@
+{
+  "inicio": "2026-10-16T11:44:54.277Z",
+  "fin": "2026-10-16T11:44:58.764Z",
+  "estado": "PASS",
+  "nginx": "nginx -t exit0",
+  "compose": "config --quiet exit0",
+  "certificado": "Autofirmado ficticio localhost, un día",
+  "incidencias": [
+    "OpenSSL requirió elevación formal por MSYS",
+    "docker cp no vio destino tmpfs; escritura por stdin dentro del mismo contenedor identificado"
+  ],
+  "limite": "Solo sintaxis/certificado y Compose. Ruta /run/tls sustituida por /tmp/ag016-tls en copia QA; sin listener público ni prueba de confianza/DNS."
+}
